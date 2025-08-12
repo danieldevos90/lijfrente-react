@@ -1,0 +1,12 @@
+{
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "x-vercel-protection-bypass", "value": "${VERCEL_PROTECTION_BYPASS}" }
+      ]
+    }
+  ]
+}
+
+
