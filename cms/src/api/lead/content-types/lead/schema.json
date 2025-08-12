@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leads",
+  "info": {
+    "singularName": "lead",
+    "pluralName": "leads",
+    "displayName": "Lead"
+  },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "siteId": { "type": "string", "required": true },
+    "amount_requested_eur": { "type": "decimal", "required": true },
+    "expected_revenue_next_12m_eur": { "type": "decimal", "required": true },
+    "kvk_number": { "type": "string" },
+    "company_name": { "type": "string" },
+    "use_of_funds": { "type": "enumeration", "enum": ["werkkapitaal","voorraden_en_crediteuren","meer_personeel","voertuigen_en_machines","inventaris_en_software","bedrijfspand_financieren","herfinanciering","overnamefinanciering","factoring","overig"], "required": true },
+    "email": { "type": "email" }
+  }
+}
+
+

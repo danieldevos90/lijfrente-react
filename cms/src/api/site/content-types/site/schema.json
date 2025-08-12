@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sites",
+  "info": {
+    "singularName": "site",
+    "pluralName": "sites",
+    "displayName": "Site"
+  },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "siteId": { "type": "uid", "targetField": "name", "required": true, "unique": true },
+    "name": { "type": "string", "required": true },
+    "domain": { "type": "string" }
+  }
+}
+
+

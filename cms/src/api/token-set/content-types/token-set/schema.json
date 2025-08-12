@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "token_sets",
+  "info": {
+    "singularName": "token-set",
+    "pluralName": "token-sets",
+    "displayName": "Token Set"
+  },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "siteId": { "type": "string", "required": true },
+    "colors": { "type": "json" },
+    "typography": { "type": "json" },
+    "components": { "type": "json" }
+  }
+}
+
+

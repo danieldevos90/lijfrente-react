@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navigation_items",
+  "info": {
+    "singularName": "navigation-item",
+    "pluralName": "navigation-items",
+    "displayName": "Navigation Item"
+  },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "siteId": { "type": "string", "required": true },
+    "label": { "type": "string", "required": true },
+    "href": { "type": "string", "required": true },
+    "order": { "type": "integer" }
+  }
+}
+
+
