@@ -46,6 +46,17 @@ export default function LeadForm({ siteId }: { siteId: string }) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [ok, setOk] = useState<string | null>(null);
+  const [amount, setAmount] = useState("");
+  const [revenue, setRevenue] = useState("");
+  const [kvk, setKvk] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [funds, setFunds] = useState("");
+  const [email, setEmail] = useState("");
+
+  // KvK typeahead state
+  const [kvkQuery, setKvkQuery] = useState("");
+  const [kvkResults, setKvkResults] = useState<Array<{kvk?: string; name?: string}>>([]);
+  const [kvkLoading, setKvkLoading] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -54,23 +65,40 @@ export default function LeadForm({ siteId }: { siteId: string }) {
     }
   }, []);
 
-  const defaultValues = useMemo(() => ({
-    siteId,
-    amount_requested_eur: "",
-    expected_revenue_next_12m_eur: "",
-    kvk_number: "",
-    company_name: "",
-    use_of_funds: "",
-    email: "",
-  }), [siteId]);
+  const defaultValues = useMemo(() => ({ siteId }), [siteId]);
+
+  // Debounced KvK search
+  useEffect(() => {
+    const controller = new AbortController();
+    const q = kvkQuery.trim();
+    if (q.length < 2) { setKvkResults([]); return; }
+    async function run() {
+      try {
+        setKvkLoading(true);
+        const res = await fetch(`/api/kvk?q=${encodeURIComponent(q)}`, { signal: controller.signal });
+        const json = await res.json();
+        const items = Array.isArray(json?.items) ? json.items : [];
+        setKvkResults(items.map((it: any) => ({ kvk: it.kvkNumber || it.kvk || it.id, name: it.tradeName || it.name || it.title })));
+        if (typeof window !== "undefined") {
+          (window as any).dataLayer.push({ event: 'kvk_search', query_len: q.length, has_results: items.length > 0 });
+        }
+      } catch {
+        setKvkResults([]);
+      } finally {
+        setKvkLoading(false);
+      }
+    }
+    const t = setTimeout(run, 250);
+    return () => { clearTimeout(t); controller.abort(); };
+  }, [kvkQuery]);
 
   async function onSubmit(form: any) {
     setErrors({});
     setOk(null);
     try {
       const parsed = schema.parse(form);
-      const amount = toNumber(parsed.amount_requested_eur) / 1000;
-      const revenue = toNumber(parsed.expected_revenue_next_12m_eur) / 1000;
+      const amountK = toNumber(parsed.amount_requested_eur) / 1000;
+      const revenueK = toNumber(parsed.expected_revenue_next_12m_eur) / 1000;
       if (typeof window !== "undefined") {
         (window as any).dataLayer.push({
           event: "form_start",
@@ -97,8 +125,8 @@ export default function LeadForm({ siteId }: { siteId: string }) {
           event: "form_submit",
           form_id: "finance_lead",
           valid: okRes,
-          amount_bucket: bucketize(amount, [25, 50, 100, 250]),
-          revenue_bucket: bucketize(revenue, [250, 500, 1000, 2500]),
+          amount_bucket: bucketize(amountK, [25, 50, 100, 250]),
+          revenue_bucket: bucketize(revenueK, [250, 500, 1000, 2500]),
           use_of_funds: form.use_of_funds,
         });
       }
@@ -121,35 +149,63 @@ export default function LeadForm({ siteId }: { siteId: string }) {
   }
 
   return (
-    <form action={async (formData) => {
-      const payload = Object.fromEntries(formData.entries());
-      await onSubmit(payload);
+    <form onSubmit={async (e) => {
+      e.preventDefault();
+      await onSubmit({
+        siteId,
+        amount_requested_eur: amount,
+        expected_revenue_next_12m_eur: revenue,
+        kvk_number: kvk,
+        company_name: companyName,
+        use_of_funds: funds,
+        email,
+      });
     }}>
       <input type="hidden" name="siteId" value={defaultValues.siteId} />
 
       <div className="row" style={{ flexDirection: "column", alignItems: "stretch" }}>
         <label>Hoeveel financiering heeft jouw klant nodig?</label>
-        <input name="amount_requested_eur" placeholder="€" inputMode="decimal" />
+        <input name="amount_requested_eur" placeholder="€" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} />
         {errors.amount_requested_eur && <span className="muted">{errors.amount_requested_eur}</span>}
       </div>
 
       <div className="row" style={{ flexDirection: "column", alignItems: "stretch" }}>
         <label>Hoeveel omzet verwacht jouw klant in 12 maanden?</label>
-        <input name="expected_revenue_next_12m_eur" placeholder="€" inputMode="decimal" />
+        <input name="expected_revenue_next_12m_eur" placeholder="€" inputMode="decimal" value={revenue} onChange={(e) => setRevenue(e.target.value)} />
         {errors.expected_revenue_next_12m_eur && <span className="muted">{errors.expected_revenue_next_12m_eur}</span>}
       </div>
 
       <div className="row" style={{ flexDirection: "column", alignItems: "stretch" }}>
         <label>KvK‑nummer (8c) of bedrijfsnaam</label>
-        <input name="kvk_number" placeholder="12345678" inputMode="numeric" />
+        <input name="kvk_number" placeholder="12345678" inputMode="numeric" value={kvk} onChange={(e) => setKvk(e.target.value)} />
         <div style={{ height: 6 }} />
-        <input name="company_name" placeholder="Bakkerij Jansen" />
+        <input name="company_name" placeholder="Bakkerij Jansen" value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
+        <div style={{ height: 6 }} />
+        <input placeholder="Zoek op bedrijfsnaam of KvK" value={kvkQuery} onChange={(e) => setKvkQuery(e.target.value)} />
+        {kvkLoading ? <span className="muted">Zoeken…</span> : null}
+        {kvkResults?.length > 0 && (
+          <div style={{ border: '1px solid var(--color-border)', borderRadius: '6px', padding: '8px' }}>
+            {kvkResults.slice(0, 8).map((it, idx) => (
+              <div key={idx} style={{ padding: '6px 4px', cursor: 'pointer' }}
+                onClick={() => {
+                  setKvk(it.kvk || '');
+                  setCompanyName(it.name || '');
+                  setKvkResults([]);
+                  if (typeof window !== 'undefined') {
+                    (window as any).dataLayer.push({ event: 'kvk_select', kvk_number_present: Boolean(it.kvk) });
+                  }
+                }}>
+                {(it.name || '—')} {it.kvk ? `· ${it.kvk}` : ''}
+              </div>
+            ))}
+          </div>
+        )}
         {(errors.kvk_number || errors.company_name) && <span className="muted">{errors.kvk_number || errors.company_name}</span>}
       </div>
 
       <div className="row" style={{ flexDirection: "column", alignItems: "stretch" }}>
         <label>Waarvoor gaat jouw klant de financiering gebruiken?</label>
-        <select name="use_of_funds" defaultValue="">
+        <select name="use_of_funds" value={funds} onChange={(e) => setFunds(e.target.value)}>
           <option value="" disabled>Maak een keuze</option>
           {useOfFundsOptions.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
         </select>
@@ -158,8 +214,26 @@ export default function LeadForm({ siteId }: { siteId: string }) {
 
       <div className="row" style={{ flexDirection: "column", alignItems: "stretch" }}>
         <label>E‑mail (optioneel)</label>
-        <input name="email" placeholder="jij@bedrijf.nl" inputMode="email" />
+        <input name="email" placeholder="jij@bedrijf.nl" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         {errors.email && <span className="muted">{errors.email}</span>}
+      </div>
+
+      <div className="row">
+        <button className="btn" type="button" onClick={async () => {
+          if (typeof window !== 'undefined') {
+            (window as any).dataLayer.push({ event: 'psd2_connect_start' });
+          }
+          try {
+            const res = await fetch('/api/psd2', { method: 'POST' });
+            const json = await res.json();
+            const url = json?.redirectUrl || '/psd2/callback';
+            window.location.href = url;
+          } catch {
+            if (typeof window !== 'undefined') {
+              (window as any).dataLayer.push({ event: 'psd2_connect_fail' });
+            }
+          }
+        }}>Koppel bank (PSD2)</button>
       </div>
 
       {errors.form && <p className="muted">{errors.form}</p>}
