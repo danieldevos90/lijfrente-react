@@ -21,6 +21,13 @@ export default async function Page({ params }: { params: { siteId: string, slug:
       <h1>{a.title}</h1>
       <p className="muted">{a.slug}</p>
       <div style={{ whiteSpace: 'pre-wrap' }}>{a.body}</div>
+      {(a.primaryCtaLabel || a.primaryCtaHref) && (
+        <div className="row" style={{ marginTop: 12 }}>
+          <a className="btn btn-primary" href={a.primaryCtaHref || `/sites/${params.siteId}/lead`}>
+            {a.primaryCtaLabel || 'Bereken aanbod'}
+          </a>
+        </div>
+      )}
       <div className="row" style={{ marginTop: 24 }}>
         <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Bereken aanbod</a>
         <a className="btn" href={`/sites/${params.siteId}`}>Terug</a>
