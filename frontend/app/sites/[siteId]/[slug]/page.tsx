@@ -15,7 +15,7 @@ async function fetchPage(siteId: string, slug: string) {
 export default async function Page({ params }: { params: { siteId: string, slug: string } }) {
   const page = await fetchPage(params.siteId, params.slug);
   if (!page) return notFound();
-  const a = page.attributes || {};
+  const a = page || {};
   return (
     <section>
       <h1>{a.title}</h1>

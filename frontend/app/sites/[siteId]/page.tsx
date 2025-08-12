@@ -37,23 +37,56 @@ async function fetchNav(siteId: string) {
   return Array.isArray(json?.data) ? json.data : [];
 }
 
+async function fetchHome(siteId: string) {
+  const base = process.env.NEXT_PUBLIC_STRAPI_URL;
+  const token = process.env.STRAPI_TOKEN;
+  if (!base) return null;
+  const res = await fetch(`${base}/api/pages?filters[siteId][$eq]=${encodeURIComponent(siteId)}&filters[slug][$eq]=home`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+    next: { revalidate: 60 },
+  });
+  const json = await res.json().catch(() => ({ data: [] }));
+  return Array.isArray(json?.data) ? json.data[0] : null;
+}
+
 export default async function SitePage({ params }: { params: { siteId: string } }) {
   const data = await fetchSite(params.siteId);
   if (!data) return notFound();
   const pages = await fetchPages(params.siteId);
   const nav = await fetchNav(params.siteId);
+  const home = await fetchHome(params.siteId);
 
-  const attrs = data.attributes ?? {};
   return (
     <section>
-      <h1>{attrs.name ?? params.siteId}</h1>
+      <h1>{data?.name ?? params.siteId}</h1>
       <p className="muted">Site ID: {params.siteId}</p>
+
+      {home && (
+        <div style={{
+          marginTop: 12,
+          padding: '16px',
+          border: '1px solid var(--color-border)',
+          borderRadius: '10px',
+          background: '#fff'
+        }}>
+          <h2 style={{ marginTop: 0 }}>{home.title}</h2>
+          <p className="muted" style={{ whiteSpace: 'pre-wrap' }}>{home.body}</p>
+          <div className="row" style={{ marginTop: 12 }}>
+            <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Bereken aanbod</a>
+            <a className="btn" href={`/sites/${params.siteId}/home`}>Lees verder</a>
+          </div>
+        </div>
+      )}
 
       {nav?.length > 0 && (
         <div className="row" style={{ flexWrap: 'wrap' }}>
-          {nav.map((n: any) => (
-            <a key={n.id} className="btn" href={n.attributes?.href || '#'}>{n.attributes?.label}</a>
-          ))}
+          {nav.map((n: any) => {
+            const href = n.href || '#';
+            const label = n.label || '';
+            // Force "Home" to point at /sites/[siteId]/home
+            const finalHref = label.toLowerCase() === 'home' ? `/sites/${params.siteId}/home` : href;
+            return <a key={n.id} className="btn" href={finalHref}>{label}</a>;
+          })}
         </div>
       )}
 
@@ -61,7 +94,7 @@ export default async function SitePage({ params }: { params: { siteId: string } 
       <ul>
         {pages.map((p: any) => (
           <li key={p.id}>
-            <a className="link" href={`/sites/${params.siteId}/${p.attributes?.slug}`}>{p.attributes?.title}</a>
+            <a className="link" href={`/sites/${params.siteId}/${p.slug}`}>{p.title}</a>
           </li>
         ))}
       </ul>
