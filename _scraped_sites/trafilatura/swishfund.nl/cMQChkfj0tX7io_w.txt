@@ -1,0 +1,84 @@
+---
+title: Frequently asked questions about the MT940 file | Swishfund
+author: Merel Nijland Marketer
+url: https://www.swishfund.nl/blog/veelgestelde-vragen-over-het-mt940-bestand
+hostname: swishfund.nl
+description: When you apply to Swishfund, we ask for your MT940 file. We are often asked what this file is, what we do with it and how to download it. In this blog, we have listed the most frequently asked questions for you.
+sitename: swishfund.nl
+date: 2022-02-13
+---
+# Frequently asked questions about the MT940 file
+
+#### Merel Nijland
+
+## Introduction
+
+When you apply to Swishfund, we ask for your MT940 file. We are often asked what this file is, what we do with it and how to download it. In this blog, we have listed the most frequently asked questions for you.
+
+**What is an MT940 file?**
+
+MT940 is a file format for exporting financial data. This file contains the transaction details of your business account (s). Think of data such as the transaction amount, the counter account and the description. This file type is also widely used by accounting software.
+
+**Why do you need this file?**
+
+Based on cash flow, Swishfund calculates the maximum borrowing capacity. In the MT940 file, we can read and analyze that cash flow through your transactions. For the analysis, we use a self-developed and automated assessment system. This allows you to apply for a loan from us without stacks of paperwork.
+
+**How do I download this file?**
+
+Downloading an MT940 file is easy. You do need a business account for it. You cannot download an MT940 file from a private account. You can download the file from the online banking environment. You can download an MT940 file from any bank. For the 4 most well-known banks, we have written the instructions below.
+
+*Is your bank not listed?** In the online banking environment, you can search for the option to 'export' or check your bank's FAQ. You can often find good instructions there. Can't you figure it out at all? Then you can always contact us!*
+
+**Download MT940 from ABN Amro**
+
+Watch **the animation** or follow the steps below:
+
+- Sign in to Internet Banking on your desktop.
+- Go to “Manage yourself” and then “Download debits and debits”.
+- Select all relevant business accounts.
+- Select the period of the past 12 months and choose the MT940 file format.
+- Click Download and save the file.
+
+**Download MT940 from ING**
+
+Watch **the animation** or follow the steps below:
+
+- Log into My ING Business on your desktop.
+- In the top right corner, click “Download”.
+- Click “Submissions and Credits.”
+- Select all relevant business accounts.
+- Select the period of the past 12 months and choose the MT940 file format.
+- Click Download and save the file.
+
+**Download MT940 from Knab**
+
+Watch **the animation** or follow the steps below:
+
+- Log in to Knab Business on your desktop.
+- Select all relevant business accounts.
+- Click “Credits and Deductions”.
+- Then click on “Accounting Export.”
+- Select the period of the past 12 months and click “Download Selection”.
+
+**Download MT940 from Rabobank**
+
+Watch **the animation**** **or follow the steps below:
+
+- Log into Rabo Internet Banking on your desktop.
+- Select all relevant business accounts.
+- Then click on “Download transactions”.
+- Select file format MT940 (.swi). Then the correct account (s) and the period of the past 12 months.
+- Click “Download File” and save the file.
+
+**Important:**
+
+- You can't open the file yourself. It is an encrypted file specially designed for software that can read it.
+- Download the file from your desktop. When you do this via your smartphone, it often automatically turns it into a PDF file. We cannot analyse a PDF file.
+
+**What do you do with this file?**
+
+The MT940 file is only used to analyze your cash flow and to make you a good and appropriate offer for a business loan. We keep your data in accordance with the GDPR guidelines. We do this as long as we have a relationship with you, unless there is a shorter retention period by law.
+
+**How do I send my MT940 file to you?**
+
+When you make a request on our website, you can upload your MT940 in step 3. Have you already made an application? Then you've probably also received an email from us. You can comment on this with the appropriate file attached. Didn't receive an email? Then you can mail the file to **upload@swishfund.nl** or contact your account manager.

@@ -1,0 +1,61 @@
+---
+title: Groeien zonder uit de bocht te vliegen | New10
+author: New
+url: https://new10.com/blog/groeien-zonder-uit-de-bocht-te-vliegen
+hostname: new10.com
+description: Met de lean startup approach test je plannen voor je onderneming tegen een geringe investering van tijd en geld. Lees verder.
+sitename: New10
+date: 2018-10-16
+---
+Je bent ondernemer geworden omdat je in je bovenkamer een ideeënmachine hebt zonder uitknop. Plannen voor een nieuw product, een verbetering van je service, of een strategie om een totaal andere doelgroep aan te spreken. Eigenlijk zou je die plannen moeten testen, alleen duurt dat allemaal lang: je wilt gewoon gaan! Gelukkig is er een manier waarop je je plannen al gaande kunt testen en verbeteren. En daarvoor gaan we naar Silicon Valley in Californië.
+
+De snelgroeiende technologiebedrijven in Silicon Valley hebben het antwoord gevonden op de vraag hoe je snel kunt groeien en veranderen, zonder uit de bocht te vliegen. De sleutel is de Lean Startup Approach. Deze aanpak is gebaseerd op een methodiek die is ontwikkeld door Eric Ries, en bestaat uit een simpele cyclus van testen, leren, verbeteren en opnieuw testen.
+
+Nu hoor ik je denken: “Tech startups? Silicon Valley? Serieus? Ik heb al 20 jaar een succesvol bedrijf, en dan komt iemand met nul kennis van mijn business mij vertellen hoe ik mijn zaak moet runnen? Laat me niet lachen!”
+
+Ok, een tech startup in Silicon Valley heeft een andere dynamiek dan een bakkerij in Utrecht. Toch leer ik je graag de 2 belangrijkste Lean Startup-principes, omdat ik denk dat iedere ondernemer er wat aan heeft. Met een voorbeeld breng ik de lessen in de praktijk. Ze kunnen jouw kleine of middelgrote onderneming zeker verder helpen, ongeacht in welke fase je je bevindt als ondernemer.
+
+Aan de slag!
+
+Als ondernemer moet je “*ontdekken wat klanten echt willen, niet wat ze zeggen dat ze willen of wat wij denken dat ze willen*” (The Lean Startup, Eric Ries). De Bouwen-Meten-Leren-cyclus is een gesimplificeerde versie van de methode waar wetenschappers mee werken:
+
+- Je start met een hypothese
+- Je bouwt de goedkoopste manier om die te testen
+- Je meet de resultaten
+- Je leert van het experiment
+- Je stelt je plannen bij
+
+Je doel is om zo snel mogelijk door dit proces heen te bewegen. Bij deze aanpak gebruik je zowel interviews met klanten (kwalitatieve data) als kille cijfers (kwantitatieve data).
+
+
+Het doel van een MVP is met zo min mogelijk investering van tijd en geld zoveel mogelijk feedback te verzamelen. De MVP is snel te ontwikkelen en heeft precies genoeg features om het product uit te kunnen brengen en te testen met gebruikers. Met die feedback verbeter je het product om het daarna opnieuw uit te brengen en te testen. “*In de MVP ontbreken allerlei functionaliteiten die later essentieel kunnen zijn. Op een bepaalde manier vergt het maken van een MVP wel extra werk. We moeten namelijk de impact kunnen meten. Maar als we iets maken dat niemand wil hebben, maakt het toch niet uit of we het binnen planning en budget bouwen.*” (The Lean Startup, Eric Ries).
+
+Nu gaan we deze concepten toepassen in een bedrijfsscenario waar totaal geen tech aan te pas komt. Stel, je runt een succesvolle keten van kip-piri-piri-restaurants en je wil weten of het publiek in Leiden klaar is voor een vestiging in de stad. Je wilt in ieder geval deze 2 hypothesen testen:
+
+- Willen mensen komen eten en ervoor betalen?
+- Wat is de beste plek om mijn restaurant te openen?
+
+**Bouwen**
+
+Een goedkope en snelle manier om beide hypothesen te testen is om een foodtruck te huren en door Leiden te trekken. Dit is je Minimum Viable Product (MVP). Door iedere week op een andere plek te gaan staan, ontdek je gemakkelijk de beste buurten om je business te runnen.
+
+**Meten**
+
+Je interviewt tijdens dit experiment zoveel mogelijk mensen. Stel vragen als:
+
+- Waarom koos je ervoor onze kip piri-piri te proberen?
+- Zou je ons eten aan vrienden aanraden?
+- Zou je dit soort eten in een restaurant eten? En zo ja, in wat voor setting? Ontspannen, elegant, chic, …?
+
+Je verzamelt ook kwantitatieve data, zoals:
+
+- In welke buurten was mijn verkoop het hoogste?
+- Op welke momenten van de dag had ik de meeste klanten?
+
+Nadat je alle feedback en data hebt verzameld, kun je gaan nadenken over de volgende stap. In deze situatie kun je 2 dingen doen.
+
+**Doorgaan**: mensen waren dol op je kip piri-piri en je vond een plek in de stad die flink wat omzet kan opleveren. Door de feedbackronde te herhalen kun je je plannen perfectioneren, bijvoorbeeld door te testen met prijzen en werkuren
+
+**Draaien**: het experiment heeft aangetoond dat je hypothese niet juist was. Let op: dit was geen verspilling van tijd of geld. Je hebt tenslotte geleerd wat niet werkt tegen een geringe investering. Met deze lessen kun je nieuwe hypothesen testen en experimenten uitvoeren, zoals ander eten of een andere stad.
+
+Op een gegeven moment heb je genoeg geleerd en verbeterd om van je Minimum Viable Product een écht kip-piri-piri-restaurant te maken. Tijd om op zoek te gaan naar investeerders om je dromen waar te maken. Bij New10 helpen we je graag op weg. Wij checken binnen 15 minuten gratis je mogelijkheden voor een lening. Dat is pas lean!

@@ -1,0 +1,16 @@
+---
+title: Geen factuurkosten of opstartkosten | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/rekenen-jullie-factuurkosten
+hostname: qeld.nl
+description: Qeld rekent voor digitale facturen geen factuurkosten. Wij maken zakelijk lenen eenvoudig en overzichtelijk, zonder verborgen kosten of gedoe. Lees meer:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Eenvoudig aanvraagproces
+
+Lening uitbetaald binnen 24 uur
+
+Geen extra kosten bij vervroegde aflossing
+
+Nee, bij Qeld rekenen we geen factuurkosten als je ervoor kiest om de facturen digitaal in PDF-versies te ontvangen. Het is ook mogelijk om papieren facturen per post te ontvangen, hier rekenen we €3 per verzonden factuur voor.

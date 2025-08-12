@@ -1,0 +1,8 @@
+---
+title: Bewaart Floryn mijn gegevens?
+url: https://www.floryn.com/kennisbank/bewaart-floryn-mijn-gegevens
+hostname: floryn.com
+description: Floryn bewaart je gegevens zolang je aanvraag in behandeling is en als je klant wordt. Wordt je aanvraag afgewezen of ben je niet langer klant, dan bewaren we de gegevens nog 15 maanden. Je kunt altij
+sitename: floryn.com
+---
+Floryn bewaart je gegevens zolang je aanvraag in behandeling is en als je klant wordt. Wordt je aanvraag afgewezen of ben je niet langer klant, dan bewaren we de gegevens nog 15 maanden. Je kunt altijd een verzoek indienen om de gegevens te laten verwijderen. Lees meer informatie in onze Privacyverklaring.

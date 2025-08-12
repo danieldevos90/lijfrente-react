@@ -1,0 +1,10 @@
+---
+title: What's the interest rate? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/whats-the-interest-rate-nl
+hostname: qeld.nl
+description: Qeld charges a fixed fee each month you need the loan, without hidden costs or start-up fees. Find our more about our business loans here:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Our loans do not have a separate interest rate. Instead, we charge a fixed amount each month you have the loan - there are no other fees. The monthly fee is individual and based on your company's Qeld-score, which is based on various data points and parameters and gives an overall evaluation of each application.

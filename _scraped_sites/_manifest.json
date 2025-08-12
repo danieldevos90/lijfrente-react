@@ -1,0 +1,23 @@
+{
+  "generated_at": "2025-08-12T00:00:00Z",
+  "entries": [
+    { "domain": "floryn.com", "url": "https://www.floryn.com/", "status": "ok", "file": "floryn.com.md", "urls_file": "floryn.com.urls.txt", "crawl_status": "completed", "crawl_pages": 100, "crawl_file": "floryn.com.crawl.md" },
+    { "domain": "qeld.nl", "url": "https://www.qeld.nl/", "status": "ok", "file": "qeld.nl.md", "urls_file": "qeld.nl.urls.txt", "crawl_status": "completed", "crawl_pages": 100, "crawl_file": "qeld.nl.crawl.md" },
+    { "domain": "bridgefund.nl", "url": "https://www.bridgefund.nl/", "status": "timeout", "file": null },
+    { "domain": "capitalbox.nl", "url": "https://www.capitalbox.nl/", "status": "ok", "file": "capitalbox.nl.md", "urls_file": "capitalbox.nl.urls.txt" },
+    { "domain": "swishfund.nl", "url": "https://www.swishfund.nl/", "status": "ok", "file": "swishfund.nl.md", "urls_file": "swishfund.nl.urls.txt" },
+    { "domain": "new10.com", "url": "https://new10.com/", "status": "ok", "file": "new10.com.md", "urls_file": "new10.com.urls.txt" },
+    { "domain": "yeaz.nl", "url": "https://www.yeaz.nl/", "status": "ok", "file": "yeaz.nl.md" },
+    { "domain": "5in5.nl", "url": "https://www.5in5.nl/", "status": "ok", "file": "5in5.nl.md" },
+    { "domain": "qredits.nl", "url": "https://www.qredits.nl/", "status": "ok", "file": "qredits.nl.md" },
+    { "domain": "zakelijkelening.nl", "url": "https://www.zakelijkelening.nl/", "status": "ok", "file": "zakelijkelening.nl.md" },
+    { "domain": "zakelijkgeld.nl", "url": "https://www.zakelijkgeld.nl/", "status": "ok", "file": "zakelijkgeld.nl.md" },
+    { "domain": "creddo.com/nl", "url": "https://www.creddo.com/nl/", "status": "ok", "file": "creddo.com-nl.md" },
+    { "domain": "fundingoptions.com/nl-nl", "url": "https://www.fundingoptions.com/nl-nl", "status": "ok", "file": "fundingoptions.com-nl-nl.md" },
+    { "domain": "credion.eu/nl", "url": "https://www.credion.eu/nl", "status": "ok", "file": "credion.eu-nl.md" },
+    { "domain": "financiering-regelen.nl", "url": "https://www.financiering-regelen.nl/", "status": "ok", "file": "financiering-regelen.nl.md" },
+    { "domain": "leningvoorbedrijven.nl", "url": "https://leningvoorbedrijven.nl/", "status": "ok", "file": "leningvoorbedrijven.nl.md" },
+    { "domain": "kredietvoorondernemers.nl", "url": "https://www.kredietvoorondernemers.nl/", "status": "ok", "file": "kredietvoorondernemers.nl.md" },
+    { "domain": "geldlenen-zakelijk.nl", "url": "https://geldlenen-zakelijk.nl/", "status": "dns_failed", "file": null }
+  ]
+}

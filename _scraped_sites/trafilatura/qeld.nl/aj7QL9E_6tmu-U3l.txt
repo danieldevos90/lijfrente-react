@@ -1,0 +1,10 @@
+---
+title: Hoe word ik een partner? | Qeld
+author: Samantha Bos
+url: https://www.qeld.nl/info/hoe-word-ik-partner-van-qeld
+hostname: qeld.nl
+description: Wil je partner worden van Qeld? Het aanmelden als nieuwe partner is simpel, snel en eenvoudig. Lees meer via deze pagina:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Wil je partner worden van Qeld? Het aanmelden als nieuwe partner is simpel, snel en eenvoudig. Je kunt een aanvraag tot partnerschap indienen via onze Partners-pagina door op de knop ‘Word partner van Qeld’ te klikken. Vul vervolgens je contact- en bedrijfsgegevens in om de aanvraag te voltooien. Ons team neemt spoedig contact op om de aanvraag voor partnerschap verder te bespreken.

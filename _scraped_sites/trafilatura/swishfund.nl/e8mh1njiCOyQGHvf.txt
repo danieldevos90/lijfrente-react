@@ -1,0 +1,40 @@
+---
+title: De voordelen van PSD2 | Swishfund
+author: Merel Nijland Marketeer
+url: https://www.swishfund.nl/blog/de-voordelen-van-psd2
+hostname: swishfund.nl
+description: In de snel evoluerende wereld van financiële diensten, is de Payment Services Directive 2 (PSD2) een kader dat veel teweeg brengt. Het heeft de manier waarop financiële transacties worden uitgevoerd en gereguleerd enorm veranderd. Voor klanten van Swishfund heeft PSD2 een specifiek voordeel gebracht: het gemakkelijker kunnen uploaden van MT940-bestanden. In dit blog gaan we dieper in op wat PSD2 inhoudt, hoe het de financiële sector heeft getransformeerd en hoe ondernemers met een zakelijke lening van Swishfund profiteren van de mogelijkheid om moeiteloos MT940-bestanden te uploaden.
+sitename: swishfund.nl
+date: 2022-04-10
+---
+# De voordelen van PSD2
+
+#### Merel Nijland
+
+## Introductie
+
+In de snel evoluerende wereld van financiële diensten, is de Payment Services Directive 2 (PSD2) een kader dat veel teweeg brengt. Het heeft de manier waarop financiële transacties worden uitgevoerd en gereguleerd enorm veranderd. Voor klanten van Swishfund heeft PSD2 een specifiek voordeel gebracht: het gemakkelijker kunnen uploaden van MT940-bestanden. In dit blog gaan we dieper in op wat PSD2 inhoudt, hoe het de financiële sector heeft getransformeerd en hoe ondernemers met een zakelijke lening van Swishfund profiteren van de mogelijkheid om moeiteloos MT940-bestanden te uploaden.
+
+**Wat is PSD2?**
+
+PSD2 is een Europese richtlijn die is ontworpen om de concurrentie, innovatie en beveiliging in de Europese betalingssector te bevorderen. Met als doel het openstellen van de markt voor nieuwe spelers, zogenoemde ‘Third Party Providers’ (TPP’s) en de veiligheid en bescherming van consumenten en ondernemers te waarborgen. PSD2 heeft belangrijke gevolgen voor de manier waarop banken en andere financiële instellingen hun diensten aanbieden. Daarnaast heeft het invloed op hoe ondernemers toegang krijgen of verlenen tot financiële gegevens.
+
+**Het gemak van MT940-bestanden uploaden voor Swishfund-klanten**
+
+Als moderne en vooruitstrevende financiële dienstverlener, heeft Swishfund de voordelen van PSD2 omarmd. Om zo ondernemers een naadloze ervaring te bieden bij het aanleveren van MT940-bestanden. Het MT940-formaat is een gestructureerd bestandsformaat dat banktransacties bevat, zoals betalingen, afschrijvingen en je saldo. Voorheen moest je MT940-bestanden handmatig downloaden via de bank en naar ons mailen. Met PSD2 is dit proces aanzienlijk vereenvoudigd.
+
+Door PSD2 kan je nu toestemming geven aan TPP’s, in dit geval dus Swishfund, om namens jou toegang te krijgen tot jouw bankrekeninginformatie. Dit betekent dat Swishfund direct verbinding kan maken met jouw bank en automatisch de benodigde transactiegegevens kan ophalen. Hierdoor hoef jij dus geen handmatige stappen meer te doorlopen om je MT940-bestanden te verkrijgen en te mailen. Het proces wordt gestroomlijnd en versneld, waardoor jij meer tijd over hebt voor dat waar jij goed in bent.
+
+**Voordelen voor ondernemers met een zakelijke lening:**
+
+**Tijdbesparing:**Het gemakkelijk kunnen uploaden van MT940-bestanden bespaart kostbare tijd. Je hoeft niet langer handmatig bestanden te downloaden en mailen, wat resulteert in een efficiënter en sneller proces.
+
+**Nauwkeurigheid:**Doordat het handmatige proces is geëlimineerd, wordt de kans op menselijke fouten verminderd. Het risico van verkeerd geüploade documenten of misinterpretatie van gegevens wordt geminimaliseerd, waardoor de nauwkeurigheid van de financiële rapportage en dus het advies, wordt verbeterd.
+
+**Real-time inzichten:**Met PSD2 kan Swishfund voor een bepaalde tijd real-time toegang krijgen tot je transactiegegevens. Dit stelt ons in staat om jouw financiële positie beter te begrijpen en inzicht te krijgen in jouw cashflow, hierdoor kunnen wij jou beter en meer persoonlijk adviseren.
+
+**Verbeterde veiligheid:**PSD2 heeft strikte veiligheidsmaatregelen en vereisten voor TPP’s opgelegd om de bescherming van klantgegevens te waarborgen. Je kan er dus op vertrouwen dat je financiële gegevens veilig zijn en beschermd worden tegen personen met ongeautoriseerde toegang.
+
+**Ervaar het zelf**
+
+Swishfund blijft zich inzetten voor het bieden van een eenvoudig en snelle gebruikerservaring, PSD2 speelt een essentiële rol in het realiseren van dat doel. Als ondernemer met een zakelijke lening van Swishfund kan je genieten van de voordelen van PSD2 en het gemak ervaren van het moeiteloos uploaden van MT940-bestanden. Vraag jouw zakelijke lening aan en ervaar het zelf.

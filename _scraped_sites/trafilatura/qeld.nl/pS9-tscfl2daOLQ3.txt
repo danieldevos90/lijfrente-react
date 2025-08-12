@@ -1,0 +1,15 @@
+---
+title: Contact - Openingstijden en contactgegevens | Qeld
+url: https://www.qeld.nl/contact
+hostname: qeld.nl
+description: Hier geven we een overzicht van de verschillende manieren waarop je contact kunt opnemen met Qeld. Bel, chat of e-mail - de keuze is aan jou! Je kunt onze zelfhulp ook vinden in MyQeld.
+sitename: qeld.nl
+date: 2025-01-01
+---
+## Hebben we contact met je opgenomen?
+
+Soms nemen we contact op met bedrijven om gevolg te geven aan een aanvraag of een actieve betrokkenheid bij ons. We kunnen op verschillende nummers bellen, afhankelijk van of het om een lening of een incassoprobleem gaat.
+
+Hebben we contact opgenomen met uw bedrijf en wilt u weten waarom? Bel ons op 020-808 6084, dan kunnen we je meer vertellen. Je kunt natuurlijk ook mailen naar support@qeld.nl of met ons chatten hier op de website.
+
+Vergeet niet dat je altijd kunt vragen om teruggebeld te worden als je gebeld wordt, om er zeker van te zijn dat het de juiste bank of het juiste bedrijf is waarmee je praat.

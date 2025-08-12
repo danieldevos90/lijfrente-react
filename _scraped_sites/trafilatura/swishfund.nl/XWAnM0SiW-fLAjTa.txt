@@ -1,0 +1,40 @@
+---
+title: The benefits of PSD2 | Swishfund
+author: Merel Nijland Marketer
+url: https://www.swishfund.nl/blog/de-voordelen-van-psd2
+hostname: swishfund.nl
+description: In the rapidly evolving world of financial services, the Payment Services Directive 2 (PSD2) is a framework that has a lot to do. It has dramatically changed how financial transactions are conducted and regulated. For Swishfund customers, PSD2 has brought a specific advantage: making it easier to upload MT940 files. In this blog, we'll dive deeper into what PSD2 means, how it has transformed the financial sector, and how entrepreneurs with a Swishfund business loan benefit from the ability to effortlessly upload MT940 files.
+sitename: swishfund.nl
+date: 2022-04-10
+---
+# The benefits of PSD2
+
+#### Merel Nijland
+
+## Introduction
+
+In the rapidly evolving world of financial services, the Payment Services Directive 2 (PSD2) is a framework that has a lot to do. It has dramatically changed how financial transactions are conducted and regulated. For Swishfund customers, PSD2 has brought a specific advantage: making it easier to upload MT940 files. In this blog, we'll dive deeper into what PSD2 means, how it has transformed the financial sector, and how entrepreneurs with a Swishfund business loan benefit from the ability to effortlessly upload MT940 files.
+
+**What is PSD2?**
+
+PSD2 is a European directive designed to promote competition, innovation and security in the European payments sector. With the aim of opening the market to new players, so-called “Third Party Providers” (TPPs) and to ensure the safety and protection of consumers and entrepreneurs. PSD2 has important consequences for how banks and other financial institutions offer their services. In addition, it affects how entrepreneurs get or provide access to financial data.
+
+**The convenience of uploading MT940 files for Swishfund customers**
+
+As a modern and forward-thinking financial services provider, Swishfund has embraced the benefits of PSD2. In order to offer entrepreneurs a seamless experience when delivering MT940files. The MT940 format is a structured file format that includes banking transactions, such as payments, debits, and your balance. Previously, you had to manually download MT940 files via the bank and mail them to us. With PSD2, this process has been considerably simplified.
+
+Through PSD2, you can now authorize TPPs, in this case Swishfund, to access your bank account information on your behalf. This means that Swishfund can connect directly to your bank and automatically retrieve the required transaction details. As a result, you no longer have to go through manual steps to obtain and email your MT940 files. The process is streamlined and accelerated, giving you more time to do what you're good at.
+
+**Benefits for entrepreneurs with a business loan:**
+
+**Time savings:**Easily uploading MT940 files saves valuable time. You no longer have to manually download and email files, resulting in a more efficient and faster process.
+
+**Accuracy:**By eliminating the manual process, the risk of human error is reduced. The risk of incorrectly uploaded documents or misinterpretation of data is minimized, improving the accuracy of financial reporting and thus advice.
+
+**Real-time insights:**With PSD2, Swishfund can get real-time access to your transaction data for a certain period of time. This allows us to better understand your financial position and gain insight into your cash flow, so we can advise you better and more personally.
+
+**Improved safety:**PSD2 has imposed strict security measures and requirements for TPPs to ensure the protection of customer data. So you can rest assured that your financial information is safe and protected from people with unauthorized access.
+
+**Experience it for yourself**
+
+Swishfund remains committed to providing a simple and fast user experience; PSD2 plays an essential role in achieving that goal. As an entrepreneur with a Swishfund business loan, you can enjoy the benefits of PSD2 and experience the convenience of effortlessly uploading MT940 files. Ask your business loan wear and experience it for yourself.

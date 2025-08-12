@@ -1,0 +1,8 @@
+---
+title: Is PSD2 veilig?
+url: https://www.floryn.com/kennisbank/is-psd2-veilig
+hostname: floryn.com
+description: PSD2 is veilig. Alle partijen die toegang vragen moeten een vergunning hebben van DNB (De Nederlandsche Bank) of een andere toezichthouder binnen de Europese Unie. PSD2 stelt strenge veiligheidseisen,
+sitename: floryn.com
+---
+PSD2 is veilig. Alle partijen die toegang vragen moeten een vergunning hebben van DNB (De Nederlandsche Bank) of een andere toezichthouder binnen de Europese Unie. PSD2 stelt strenge veiligheidseisen, regelt het toezicht en zorgt ervoor dat jij de baas bent en blijft over jouw data. Via een rechtstreekse en versleutelde verbinding met de bank kun je data uitwisselen. Dit is veel veiliger dan het downloaden en e-mailen van bestanden.

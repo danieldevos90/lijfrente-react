@@ -1,0 +1,18 @@
+---
+title: Waar kan ik mijn contract vinden?
+url: https://www.floryn.com/kennisbank/waar-kan-ik-mijn-contract-vinden
+hostname: floryn.com
+description: Jouw contract kun je vinden in je persoonlijke Floryn account. Volg deze eenvoudige stappen.
+sitename: floryn.com
+---
+- Login in je Floryn account.
+- Klik rechtsboven op “account”
+- Onder het kopje “je contract” vind je jouw overeenkomst en borgtocht.
+
+Mocht jouw contract niet op je account beschikbaar staan, mail ons dan gerust op klanten@floryn.com.
+
+- Login in je Floryn account.
+- Klik rechtsboven op “account”
+- Onder het kopje “je contract” vind je jouw overeenkomst en borgtocht.
+
+Mocht jouw contract niet op je account beschikbaar staan, mail ons dan gerust op klanten@floryn.com.

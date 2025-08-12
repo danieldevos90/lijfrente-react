@@ -1,0 +1,54 @@
+---
+title: The 8 benefits of e-invoicing for entrepreneurs | Swishfund
+author: Merel Nijland Marketer
+url: https://www.swishfund.nl/blog/de-8-voordelen-van-e-facturatie-voor-ondernemers
+hostname: swishfund.nl
+description: Did you know that it takes an average of 18 minutes to process a paper invoice? On the other hand, processing an e-invoice takes only 5 minutes on average. Then the choice for e-invoicing seems easy, isn't it?
+sitename: swishfund.nl
+date: 2020-11-29
+---
+# The 8 benefits of e-invoicing for entrepreneurs
+
+#### Merel Nijland
+
+## Introduction
+
+Did you know that it takes an average of 18 minutes to process a paper invoice? On the other hand, processing an e-invoice takes only 5 minutes on average. Then the choice for e-invoicing seems easy, isn't it?
+
+Nevertheless, many entrepreneurs still work with traditional invoices or a less efficient form of digital billing. In this blog, we explain the difference between digital invoicing and e-invoicing. And we'll show you how it works, how to get started and what the 8 benefits are.
+
+### The difference between digital invoicing and e-invoicing
+
+**Digital billing:** collective name for receiving, processing and sending digital invoices. However, it still takes about 10 minutes to process such files.1 These files often cannot be read by accounting systems. The most efficient form of digital invoicing is called e-invoicing.**E-invoicing: **well-structured digital files that are automatically processed in an accounting system. As a result, manual administration is no longer necessary.
+
+1 research BCT Software
+
+#### How does e-invoicing work?
+
+E-invoices have a standard processing format (usually the so-called. *Universal Business Language variant*) and were created specifically for accounting systems. In many European countries, UBL is already the standard digital language. Because of this file format, an e-invoice can be processed electronically from one system into another. The file contains codes. The software knows exactly what each code means. These invoices are not readable for you (and your customer). That is why the e-invoice is sent together with a copy in PDF.
+
+#### How to get started with e-invoicing
+
+To get started, you need an accounting package that can receive and send UBL invoices. On the website of **Go2UBL** you can find a list of suitable accounting software.
+
+We recommend that you choose accounting software that is affiliated with the **Dutch Peppol Authority**. The procedure can then be fully integrated. Most major suppliers are already affiliated with this foundation.
+
+**In addition, you should take into account the following aspects:**
+
+- Since 2009, an e-invoice has been legally equivalent to a paper invoice. Provided he's on
+**the same requirements**complies. - You must obtain permission from your customers in advance to send an e-invoice.
+- In addition to a UBL file, send a PDF file to your customers. The UBL is used to update the administration, so the PDF is for the archive. This is particularly useful for collective invoices.
+
+#### The 8 benefits of e-invoicing
+
+In addition to saving time, there are more reasons to switch to e-invoicing. We list the 8 most important ones for you:
+
+**Financial document security.**E-mail is now the most used channel for exchanging e-invoices between companies. Large companies set requirements for the safety and reliability of the delivery channel. E-invoicing has a high level of security and reliability. This is the case with e-invoicing, which is higher with e-invoicing.- Because the invoices are processed automatically,
+**fewer errors**created. - You are
+**less costs**lost to an accountant. - E-invoices are received more quickly by the right person. And that's why the invoices are
+**paid faster**. - By sending the invoices automatically, you are
+**always on time**and you can't forget it. **Save on physical space**because you no longer have to create folders in the office.**Higher customer satisfaction**by offering administrative convenience.**Good for the environment**because paper is no longer used.
+
+E-invoicing is the future of accounting. Switching is inevitable and, with all the benefits, why not do it now?
+
+You work more efficiently, save time and money. And you also contribute to the environment. You get your invoices paid faster and easier. And if that doesn't happen, you can come to Swishfund to help you **to finance debtors**. Contact our specialists for more information at 085 064 4144 whether info@swishfund.nl.

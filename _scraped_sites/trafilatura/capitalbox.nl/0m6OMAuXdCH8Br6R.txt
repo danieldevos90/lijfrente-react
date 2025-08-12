@@ -1,0 +1,12 @@
+---
+title: Klant login
+url: http://www.capitalbox.nl/account/login
+hostname: capitalbox.nl
+sitename: CapitalBox - Zakelijke Leningen
+date: 2025-01-01
+---
+Klantenservice 0207975825
+
+You are logged in as
+
+Bent u een partner? Log dan in op het partner gedeelte.

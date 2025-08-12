@@ -1,0 +1,38 @@
+---
+title: Documentatie bij Zakelijke Lening Plus-aanvraag | Qeld
+author: Samantha Bos
+url: https://www.qeld.nl/info/welke-documenten-zijn-er-nodig-bij-een-plus-aanvraag
+hostname: qeld.nl
+description: Deze documentatie is nodig om jouw sneller een aantrekkelijk aanbod voor een Zakelijke Lening Plus kunnen doen. Lees meer:
+sitename: qeld.nl
+date: 2025-04-17
+---
+Voor een goede beoordeling van je aanvraag hebben we de volgende documenten nodig:
+
+**Inzicht in bankafschriften van de afgelopen 6 maanden**
+
+Dit kan op twee manieren:
+
+- Door een MT940-bestand te uploaden
+
+- Of door je bankrekening te koppelen zodat onze beoordelaars direct toegang hebben.
+
+**Meest recente jaarrekening**
+
+Als de jaarrekening van dit jaar nog niet beschikbaar is, mag ook een kolommenbalans of een overzicht uit je boekhoudpakket worden aangeleverd.
+
+**Meest recente aangifte inkomstenbelasting**
+
+**Indien van toepassing: Informatie over mede-bestuurders/aandeelhouders**
+
+We ontvangen graag inzicht in wie betrokken zijn bij het bedrijf dat de aanvraag doet.
+
+**Hoe upload ik documentatie?**
+
+**Banktransacties + informatie over mede bestuurders/aandeelhouders**
+
+Tijdens het indienen van je aanvraag kun je extra informatie toevoegen door te kiezen voor de optie om de aanvraag te boosten.
+
+**Jaarrekening + aangifte inkomsten belasting**
+
+Je kunt de jaarrekening en aangifte inkomstenbelasting ook mailen naar: support@qeld.com*. Vermeld hierbij altijd het KvK-nummer van je bedrijf.*

@@ -1,0 +1,132 @@
+---
+title: Inleiding tot gegevensanalyse met Excel - deel 2
+url: http://www.capitalbox.nl/blog/inleiding-tot-gegevensanalyse-met-excel-deel-2
+hostname: capitalbox.nl
+description: Lees hier hoe u Excel kunt gebruiken om uw gegevens te analyseren.
+sitename: CapitalBox
+date: 2022-08-16
+---
+# Inleiding tot gegevensanalyse met Excel - deel 2
+
+In ons eerste deel van deze serie (Into data Analysis using Excel - Part 1) hebben we gesproken over het belang van data-analyse en zijn we begonnen met het opschonen en datavoorbereiden van de data van een magazijnbedrijf.
+
+Vandaag gaan we verder met ons voorbeeld van het gebruik van Excel om een dashboard voor dezelfde groothandelsonderneming te maken en gaan we in op meer details over hoe draaitabellen en draaigrafieken ons kunnen vereenvoudigen en ons kunnen helpen bij het interpreteren van gegevens.
+
+Laten we beginnen met het maken van de tabellen die we met ons team hebben afgesproken:
+
+## Gegevens samenvatten met draaitabellen - Verkoopevolutie creëren per land
+
+We beginnen door op onze tabel te klikken en vervolgens Tabelontwerp -> Samenvatten met draaitabel te selecteren
+
+We gaan door met het selecteren van Nieuw werkblad en vervolgens op Aan. Uw draaitabel wordt gemaakt in een nieuwe spreadsheet die er als volgt uitziet:
+
+
+
+We merken dat we het gebied met draaitabellen hebben in de spreadsheet en in draaitabelvelden. We zullen het draaitabelveld gebruiken om onze gegevens samen te vatten.
+
+
+**Tip! **
+
+Excel heeft ook PivotTables aanbevolen. Als u hulp nodig heeft om te zien hoe u gegevens kunt groeperen, gebruik dan deze functie. U vindt het onder Draaitabelanalyse en selecteert Aanbevolen draaitabellen en Excel zal een reeks draaitabellen aanbevelen die u kunt gebruiken.
+
+
+Wanneer we op een cel in de draaitabel klikken, verschijnt de lijst met velden en gebruiken we de lijst om velden te selecteren voor de draaitabellay-out en om velden naar een specifiek gebied in de lay-out te verplaatsen.
+
+Om de tabel voor Jaarlijkse verkoopevolutie per land te maken, slepen we de Orderdatum naar Rijen, Regio's naar Kolommen en Totale omzet naar Waarden.
+
+
+
+Om een draaigrafiek toe te voegen, klikt u op uw draaitabel en selecteert u Draaitabelanalyse en draaigrafiek. Aangezien we de jaarlijkse evolutie voor elke regio willen zien, gaan we een lijndiagram gebruiken, elke regio zal worden weergegeven door een lijn en we kunnen gemakkelijk visualiseren hoe de verkoop zich jaarlijks ontwikkel.
+
+
+
+
+**Tip!**
+
+Excel zal automatisch een diagram aanbevelen op basis van uw gegevens, rekening houdend met wat u wilt laten zien, kunt u het diagramtype nu of later wijzigen.
+
+
+## Wat laat onze gegevens zien?
+
+We hebben gemerkt dat onze beste inkomstenresultaten werden geregistreerd in 2014 in Sub-Sahara Afrika en, meer gezien, dat de trend afstamt. Als we dit opmerken, kunnen we dieper ingaan op ons onderzoek om erachter te komen wat de inkomsten in 2014 heeft gestimuleerd en wat er is gebeurd dat ons resultaat daarna drastisch veranderde.
+
+
+We kunnen nu de manier waarop onze grafiek eruitziet veranderen, net zoals we zouden doen met een klassieke grafiek in Excel. Om het lezen gemakkelijker te maken, kunnen we de weergave van de eenheden voor horizontale assen wijzigen en deze breder maken.
+
+We willen een dashboard maken met deze gegevens, dus we zullen de draaigrafiek verplaatsen (met knippen en plakken) naar een krantenblad en hernoemen naar Dashboard.
+
+Om dit spreadsheet meer op een dashboard te laten lijken, kunnen we de rasterlijnen verwijderen om een volledig wit canvas te krijgen (uit weergave -> rasterlijnen).
+
+
+## Verkoopevolutie per productcategorie creëren
+
+We moeten nu een ander PivotTable in Sheet 1 invoegen door naarInsert -> PivotTable te gaan met dezelfdeSalesRecordstable als bron.
+
+Om de evolutie van de jaarlijkse verkoop per productcategorie te creëren, zal de draaitabel het itemtype toevoegen aan kolommen, aanmaakdatum aan rijen en totale inkomsten in waarden.
+
+
+
+Het resultaat ziet er ongeveer hetzelfde uit als de eerder gemaakte draaitabel.
+
+We zullen een draaigrafiek op dezelfde manier toevoegen als eerder en die grafiek verplaatsen naar het dashboard. Voor deze serie hebben we gekozen voor de verticale staafdiagrammen omdat dit vooral handig is voor tijdreeksgegevens en het kijken naar gesegmenteerde informatie.
+
+
+
+
+## SalesSplit creëren op leeftijdsgroepen en geslacht
+
+Voor onze finalPivotTable zullen we nog een pivot invoegen (Insert -> PivotTable en met dezelfdeSalesRecordstable als bron).
+
+Om de Jaarlijkse verkoop opgesplitst op leeftijdsgroepen te maken, voegen we de leeftijdsgroep toe aan kolommen, aanmaakdatum aan rijen en totale omzet in waarden. We hebben gekozen voor hetzelfde staafdiagram, zodat we gemakkelijk de verschillen in de loop van de tijd voor elke leeftijdsgroep kunnen zien.
+
+
+
+## Welk verhaal zit er achter uw gegevens vertel**?**
+
+We merken dat we in 2013 meer hebben verkocht aan mensen van 41-45 jaar en dat de omzet sindsdien licht is gedaald voor dit segment. Dit is een indicator die we dieper moeten graven en of er een organische afname is of dat er iets is veranderd en waar. We zouden doorgaan met het stellen en beantwoorden van vragen zoals:
+
+- Is deze afname regulier in alle regio's of valt er een bijzonder op?
+- Uit die regio valt één land op?
+- Zo ja, welke itemtypen hebben grote verliezen geregistreerd?
+- Is er een trend zichtbaar in de regio?
+
+
+## Slicers en tijdlijnen
+
+Slicers in Excel zijn visuele filters of interactieve knoppen waarmee u kunt zien welke items zijn gekozen in een draaitabel. Ze zijn een must voor iedereen die interactiviteit in zijn rapporten en filtergemak wil toevoegen.
+
+We voegen slicers toe door te klikken op de draaigrafiek die de gegevens bevat waarop we willen filteren, en vervolgens naar Invoegen -> Slicer te gaan. Er verschijnt een pop-up waarin wordt gevraagd op welke kolom u wilt filteren, we selecteren Regio en OK.
+
+
+
+Vervolgens koppelen we deze slicer aan alle draaitabellen in het dashboard, zodat het filter op alle grafieken van toepassing is. Om dit te doen, selecteren we de slicer en gaan we naar het tabblad Snijder dat in het Excel-lint verschijnt en selecteren we Rapportverbindingen en vervolgens alle draaitabellen. Elke keer dat we filteren op een regio, worden alle grafieken bijgewerkt.
+
+Door Ctrl te gebruiken, kunnen we een regio selecteren of deselecteren of meerdere selecties uitvoeren.
+
+
+
+
+**Tijdlijn in Excel** is een type SmartArt dat is gemaakt om u te helpen filteren op tijd. Het wordt voornamelijk gebruikt voor het filteren van datums in uw onderliggende datasets die een datumveld in een draaitabel bevatten.
+
+Om een tijdlijn toe te voegen, selecteert u een diagram en gaat u naar Invoegen-> Tijdlijn. Net als bij de slicer, moeten we de tijdlijn koppelen aan alle andere draaitabellen. We selecteren de aangemaakte tijdlijn en gaan naar Tijdlijn-> Rapportverbindingen om deze te koppelen aan alle andere grafieken. Op deze manier worden alle grafieken aangepast wanneer we het tijdsbestek in deze tijdlijn wijzigen.
+
+
+
+
+U kunt uw diagrammen herschikken op een manier die gemakkelijk te volgen is. We zijn geland op:
+
+
+
+
+## Wat laat uw gegevens zien?
+
+Slicers en tijdlijnen maken het voor u gemakkelijker om meer details over verschillende draaitabellen te onderzoeken.
+
+Als we kijken naar de Noord-Amerikaanse gegevens, zien we dat de verkoop in 2014 voornamelijk werd gedreven door huishoudelijke artikelen en dat klanten in de leeftijdsgroep 41-45 jaar meer kochten dan in de komende jaren.
+
+De volgende stappen zouden zijn om erachter te komen of we in dat jaar iets in ons productaanbod hebben veranderd, of onze leveranciers iets in hun producten hebben veranderd, enzovoort.
+
+
+Zoals je hierboven hebt gezien, is Excel een zeer complexe tool die kan worden gebruikt voor eenvoudige en complexere gegevensanalyse. Als u weet dat gegevensanalyse een belangrijke rol speelt in elk bedrijf, en als u toegeeft dat het uw verantwoordelijkheid is als eigenaar van een klein bedrijf, kunt u ervoor zorgen dat u een inspiratiebron bent voor uw team om vragen te zoeken in de gegevens waartoe ze toegang hebben.
+
+We nodigen u uit om deze artikelen met uw teams te delen en te leren hoe u Excel kunt gebruiken om uw bedrijf beter te begrijpen en betere beslissingen te nemen.

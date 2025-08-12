@@ -1,0 +1,8 @@
+---
+title: Hoe verwerk ik mijn financiering in mijn boekhouding?
+url: https://www.floryn.com/kennisbank/hoe-verwerk-ik-mijn-financiering-in-mijn-boekhouding
+hostname: floryn.com
+description: In je account zie je de hoogte van je uitstaande financiering. Je wilt natuurlijk dat de financiering goed is verwerkt in je boekhouding. Lees meer!
+sitename: floryn.com
+---
+In je account zie je de hoogte van je uitstaande financiering. Je wilt natuurlijk dat de financiering goed is verwerkt in je boekhouding. De aflossing gebeurt via automatische incasso. Door deze incasso’s te verwerken in je boekhouding, is je financiering altijd up to date. Ontdek hier de stappen.

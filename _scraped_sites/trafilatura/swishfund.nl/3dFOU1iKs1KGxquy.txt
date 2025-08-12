@@ -1,0 +1,75 @@
+---
+title: 4 opkomende Betaalmethodes om je klant met gemak te laten betalen in 2021 | Swishfund
+author: Merel Nijland Marketeer
+url: https://www.swishfund.nl/blog/4-opkomende-betaalmethodes-om-je-klant-met-gemak-te-laten-betalen-in-2021
+hostname: swishfund.nl
+description: Sinds de start van de huidige COVID-19-crisis hebben digitale betaalmethodes, mede door maatregelen van banken, nóg verder terrein gewonnen ten opzichte van contant geld. Een trend die zich natuurlijk al een aantal jaren aan het ontwikkelen is maar nu in sneltreinvaart doorzet.
+sitename: swishfund.nl
+date: 2020-12-27
+---
+# 4 opkomende Betaalmethodes om je klant met gemak te laten betalen in 2021
+
+#### Merel Nijland
+
+## Introductie
+
+Sinds de start van de huidige COVID-19-crisis hebben digitale betaalmethodes, mede door maatregelen van banken, nóg verder terrein gewonnen ten opzichte van contant geld. Een trend die zich natuurlijk al een aantal jaren aan het ontwikkelen is maar nu in sneltreinvaart doorzet.
+
+Door de opkomst van nieuwe digitale diensten verandert de betalingsindustrie – en niet alleen online. Het betalen in fysieke winkels gebeurt ook steeds vaker via nieuwe diensten van techbedrijven die hun kansen schoon zien.
+
+In een markt die voorheen gedomineerd werd door contant geld zien we de machtsverhoudingen verschuiven door de opkomst van techgiganten als Apple, Google en Facebook. Door het enorme gebruiksgemak van de digitale betalingsmethodes die zij aanbieden is de drempel voor consumenten bijzonder klein om daarin mee te gaan.
+
+Tijd om dus te kijken hoe je deze betalingsmethodes voor je eigen voordeel in kunt zetten voor 2021! We geven je de 4 beste betaalmethodes om je klantenbestand zo optimaal mogelijk te kunnen bedienen.
+
+
+**Betalen met QR-code**
+
+QR-codes bevatten informatie die je razendsnel digitaal op kunt vragen en zijn een nieuwe manier van contactloos betalen. Een betaalmethode waar banken zoals de ING en Rabobank de absolute toekomst van betalen in zien. Het biedt namelijk véél extra gemak voor zowel de klant als jou als ondernemer.
+
+Stel dat je klant betaalt met het scannen van een sticker, dan scheelt dat jou personeel en rijen bij de kassa. Je klant hoeft geen portemonnee meer bij zich te hebben en is zo de winkel weer uit. Een win-win situatie dus!
+
+**Hoe werkt het?**Er zijn verschillende mogelijkheden om betalen via QR-code aan te bieden, bijvoorbeeld door middel van je eigen telefoon. Je toont de QR-code aan je klant, de klant scant deze en de betaling wordt direct afgerond. Andere mogelijkheden zijn het scannen op een betaalterminal, tablet, kassabon, telefoon, kassascherm, QR-sticker of online.
+
+
+**Bijna 8 miljoen mensen in Nederland gebruiken een bankapp voor betalingen.**
+
+
+**Betalen met Apple Pay (e-wallet)**
+
+De e-wallet, oftewel digitale portemonnee, rukt tevens op als betaalmiddel in Nederland. Hierbij wordt er een koppeling gemaakt tussen de bankrekening van de klant met een app.
+
+Waar deze manier van betalen eerst vooral online werd gebruikt zien we nu ook dat met name in de horeca dit soort transacties stijgen. De belangrijkste e-wallet van het moment is Apple Pay, maar ook grote spelers als Samsung, Google en Amazon hebben inmiddels een eigen e-wallet.
+
+**Hoe werkt het?**Om betalingen via een e-wallet zoals Apple Pay in je bedrijf te kunnen accepteren heb je wederom een betaalterminal nodig die geschikt is om contactloos te kunnen betalen. Het is het handigst om contact op te nemen met je betaalprovider. Die kan je helpen met het dusdanig instellen van je terminal om de app te kunnen accepteren.
+
+Partijen zoals Apple brengen overigens géén extra kosten in rekening voor het implementeren van de app. Afhankelijk van het soort gekozen e-wallet wordt de transactie vervolgens afgerond doordat je klant hun smartphone of andere portable device (smartwatch) dichtbij de betaalautomaat houdt.
+
+
+**Betalen via Afterpay**
+
+De naam zegt het al: met Afterpay betaalt men achteraf. Het idee is dat je klant het product eerst kan bekijken, proberen en ervaren. Je kunt je voorstellen dat dit heel veilig voelt voor je klanten! Hoewel de betaaloplossing voornamelijk online gebruikt wordt zijn er ook fysieke winkels die de optie aanbieden.
+
+Het is een mooi alternatief voor andere digitale betalingsmethodes, met als groot verschil dat de klant zelf bepaalt wanneer hij betaalt. Voor jou is het interessant om te weten dat AfterPay het volledige betaalrisico draagt en de facturatie verzorgt – je hebt dan geen omkijken meer naar de afhandeling van je betaling.
+
+**Hoe werkt het?**
+
+De integratie wordt zeer eenvoudig geregeld via een webplatform (zoals Shopify), Payment Service Provider (zoals Buckaroo) en diverse partners (zoals Thuiswinkel). Zij nemen het gehele betaalrisico over, ongeacht of de consument betaalt. Ook voor jou als ondernemer dus een veilig gevoel.
+
+**Sinds 2017 stijgen achterafbetaalmethoden zoals Afterpay en Klarna significant met resp. 93% en 65%.**
+
+
+**Betalen via WhatsApp**
+
+In juni dit jaar is Whatsapp een proef begonnen met digitale betalingen in Brazilië. Gebruikers koppelen hun bankpas of creditcard aan hun Whatsapp-account en worden beveiligd met een vingerafdruk of pincode. De verwachting is om dit wereldwijd uit te rollen.
+
+Omdat Whatsapp tegenwoordig de standaard manier van communiceren is onder allerlei doelgroepen is deze manier van betalen erg interessant. Een optie om nauwlettend in de gaten te houden dus.
+
+### Contant geld als betaalmethode is de grote verliezer
+
+Bij Swishfund volgen we nauwlettend de trends rondom betalingsverkeer. Wat we met zekerheid kunnen zeggen is dat contant geld de grote verliezer is in de strijd rondom betaalgemak.
+
+Aan het begin van 2020 lag het aandeel contante betalingen op 30% van het totale aantal contante en pinbetalingen aan de kassa. Het gebruik van contant geld was op zijn laagste punt 13% en is wel wat teruggeveerd naar 23%, maar ligt nog steeds een flink stuk lager dan voor de pandemie. Dit is te zien over alle leeftijdsgroepen.
+
+Bron: DNB
+
+Om terug te komen op het betaalgemak: dat is anno 2020 het belangrijkst. Zeker nu men noodgedwongen al gewend is geraakt aan andere manieren van betalen. Daarom is het slim om als ondernemer de meest gebruikte betaalmethodes aan te (gaan) bieden. Wij raden je aan om in ieder geval deze 4 opties te onderzoeken om van 2021 een succesvol jaar te maken.

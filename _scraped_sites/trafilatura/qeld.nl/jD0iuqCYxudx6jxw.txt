@@ -1,0 +1,16 @@
+---
+title: When should I repay the loan? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/when-should-i-repay-the-loan-nl
+hostname: qeld.nl
+description: You pay back in the loan in monthly installments, but also have the option to pay back the business loan in full at any time during your contract. More info:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Eenvoudig aanvraagproces
+
+Lening uitbetaald binnen 24 uur
+
+Geen extra kosten bij vervroegde aflossing
+
+You pay a fixed amount each month. If you took a loan on the 10th, then your first invoice will have due date on the 11th of the following month. We send invoices 10 days before the payment is due.

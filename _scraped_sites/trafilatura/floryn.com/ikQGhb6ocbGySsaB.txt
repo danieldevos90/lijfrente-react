@@ -1,0 +1,9 @@
+---
+title: Hoe kan ik mijn incassolimiet aanpassen?
+url: https://www.floryn.com/kennisbank/hoe-kan-ik-mijn-incassolimiet-aanpassen
+hostname: floryn.com
+description: Je kunt je incassolimiet aanpassen door een e-mail te sturen. We sturen je dan een mail met de stappen om een nieuwe machtiging te tekenen.
+sitename: floryn.com
+---
+
+Je kunt je incassolimiet aanpassen door een e-mail te sturen naar klanten@floryn.com. We sturen je dan een mail met de stappen om een nieuwe machtiging te tekenen. Voorkomen dat je bij een eventuele verhoging van je krediet een nieuwe machtiging af moet geven? Vul dan ‘€0,-’ in bij je limiet. Dan heb je hier geen omkijken meer naar.

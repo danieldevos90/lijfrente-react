@@ -1,0 +1,34 @@
+---
+title: Indicatoren voor succes
+url: http://www.capitalbox.nl/blog/indicatoren-voor-succes
+hostname: capitalbox.nl
+description: Marketing maakt gebruik van een groot aantal statistieken. Het is absoluut noodzakelijk dat bedrijven de juiste kiezen om de prestaties bij te houden en ervoor te zorgen dat dit bijdraagt aan de welvaart van het bedrijf zelf
+sitename: CapitalBox
+date: 2022-08-16
+---
+# Indicatoren voor succes
+
+De hoeveelheid gegevens die zelfs een bescheiden marketinginspanning kan opleveren, is tegenwoordig werkelijk verbluffend. Kleine of middelgrote bedrijven hoeven zelfs niets uit te geven aan speciale tools om ze te verzamelen en te analyseren. Er zijn een aantal gratis, beginnend bij alomtegenwoordige Google Analytics, die elk bezoek, elke actie of conversie zal ontleden en presenteren aan een geïnteresseerde ondernemer. Het is echter een spreekwoordelijke stok met twee uiteinden. Het is geweldig dat gegevens hier zijn om te analyseren en te verbeteren. Zonder de juiste focus kan de oceaan van beschikbare gegevens echter ook gemakkelijk iemand omleiden of verdrinken die op zoek is naar hoe succesvol zijn marketinginspanning was.
+
+Het krijgen van professionele hulp van buitenaf hoeft ook niet altijd het probleem op te lossen. Het meest recente voorstel voor een SEM-bureau (bedoeld om kleine AdWords-campagnes voor hen te beheren) dat ik persoonlijk heb gezien, ging helemaal over CPC- (kosten per klik) en CTR-doelen (klikfrequentie). Het nieuwste van SEO-bedrijf ging over het verhogen van het aantal bezoeken van organische zoekopdrachten en het aantal inhoudsartikelen op blog per maand. Het socialemediabureau heeft beloofd binnen een kwartaal 1000 volgers op het Facebook-account van bedrijven te bereiken en bood aan een social branding-campagne te organiseren voor slechts 3 EUR CPM (kosten per molen).
+
+Alle bovenstaande marketingafkortingen plus een score meer (tijd op de site; paginaweergaven per sessie; klikken enzovoort) zijn op zichzelf prima statistieken. De valkuil die een bedrijf zou moeten vermijden, is het stellen van een van de bovenstaande punten als een doel / doel voor verbetering.
+
+Wat is er mis met de kosten per klik (CPC)? Als het marketingteam of -bureau dit volgende maand met 10% zou kunnen verlagen, is het toch puur voordeel? Natuurlijk, maar wat als de verkoop daardoor met 10% of meer daalt - zal het dan nog steeds een goede transactie zijn?
+
+Hoe zit het met een betere klikfrequentie (CTR) volgende maand? Betere CTR - meer klikken - meer bezoeken aan de site, kan toch niet verkeerd zijn? Betekent meer resulterende bezoeken automatisch meer verkopen?
+
+Dezelfde geest met stijgende volgers, likers, abonnees etc. Of het tellen van blogposts per week / maand / kwartaal - wat is het positieve effect op de inkomstenstroom om die te bereiken? Onduidelijk, daarom zouden we met onze marketinginspanningen geen doelen moeten stellen om die parameters te verhogen.
+
+Kost per duizend (mill) impression (CPM) verdient een speciale vermelding, omdat naar mijn mening kleine en middelgrote ondernemingen in principe vrij moeten blijven van dit prijsmodel (als het minst transparant over de voordelen voor de betalende kant), laat staan dat het wordt vastgesteld als doelwit.
+
+Kosten per acquisitie (CPA) kunnen hier een goed startpunt zijn als ze goed zijn ingesteld. Het koppelt de kosten van marketingcampagnes aan het aantal verkopen, wat geweldig is. Niet zo geweldig is dat de enige campagnekosten aan het ene uiteinde van de vergelijking en het enige aantal verkopen aan het andere zijn:
+
+- Het bedrijfsleven kan extra kosten voor salarissen aan marketingmensen hebben (de volledige kosten van de werkplek zouden hier nog nauwkeuriger zijn) of derde partijen; kan een aantal extra betaalde marketingtools of -services gebruiken die niet direct campagnegerelateerd zijn. Alles bij elkaar optellen zou veel nauwkeurigere, volledig geladen marketingkosten opleveren, in plaats van alleen de campagnekosten.
+- Het aantal verkopen geeft op zich geen indicatie van de opbrengst. De verkochte goederen / diensten zullen ook hun productiekosten hebben, wat in die inkomsten zou drukken.
+
+De algemene trend zou nu zichtbaar moeten zijn - aangezien bedrijven zich bezighouden met winst, moeten de marketingdoelen ook winst gerelateerd zijn. Al het andere kan geweldige prestaties betekenen op het gebied van marketing, maar de bedrijfsresultaten afnemen.
+
+Welke indicator dan?
+
+Winst per uitgegeven marketing-EUR. Als het marketingteam de gestelde winstgevendheidsdoelen kan handhaven / verhogen, kan de bedrijfseigenaar niks geven om CPC; CTR; CPM; CPL; houdt van; bezoeken en al het andere. Winst per marketing EUR bestede indicator houdt al het andere op één lijn (als het toegewezen maandelijkse marketingbudget natuurlijk wordt gebruikt - om het vereiste volume van de totale winst te bereiken) en de enige resterende uitdaging is schaalvergroting / groei.

@@ -1,0 +1,14 @@
+---
+title: Hoe kan ik een nieuwe gebruiker toevoegen/verwijderen?
+url: https://www.floryn.com/kennisbank/hoe-kan-ik-een-nieuwe-gebruiker-toevoegen-of-verwijderen
+hostname: floryn.com
+description: Volg het eenvoudige stappenplan om een nieuwe gebruiker toe te voegen of te verwijderen. Je kunt hier ook de rechten van de gebruiker aanpassen.
+sitename: floryn.com
+---
+- Login op je persoonlijke account
+- Ga naar ‘Account’
+- Ga naar ‘Gebruikers’
+- Klik op ‘Nieuwe gebruiker uitnodigen’
+- Vul hier de basisgegevens in van de nieuwe gebruiker
+- Direct na het toevoegen van de nieuwe gebruiker kan je ook de rechten aanpassen
+- De nieuwe gebruiker krijgt een mailtje waarmee deze een wachtwoord in kan stellen om in te loggen

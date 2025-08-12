@@ -1,0 +1,123 @@
+---
+title: How do you calculate the profitability of your company? | Swishfund
+author: Merel Nijland Marketer
+url: https://www.swishfund.nl/blog/hoe-bereken-je-de-rentabiliteit-van-je-bedrijf
+hostname: swishfund.nl
+description: The profitability of your company indicates how much profit is made with the company's assets. In short: how profitable your company is. Profitability is about the return on investments you make. The higher the return, the higher the profitability, the greater the chance of success in applying for a loan.
+sitename: swishfund.nl
+date: 2021-07-11
+---
+# How do you calculate the profitability of your company?
+
+#### Merel Nijland
+
+## Introduction
+
+The profitability of your company indicates how much profit is made with the company's assets. In short: how profitable your company is. Profitability is about the return on investments you make. The higher the return, the higher the profitability, the greater the chance of success in applying for a loan.
+
+Do you have a financially healthy company? You can calculate profitability on your equity, debt (debts) and total assets. This allows you to calculate the return for owners and shareholders, the return of your lenders and the return of the entire company. In this article, we explain each calculation.
+
+**Profitability of Equity (REV)**
+
+Do you want to calculate the return on your equity? You can use this as a measure to compare profitability with other companies and to show owners and shareholders how much return an investment provides.
+
+*Calculating Profitability of Equity*
+
+*Calculating Profitability of Equity*
+
+Divide the net profit by the equity and multiply it by 100. The percentage that comes out is the profitability of equity. We use this calculation to determine the returns of the owner and shareholders.
+
+The **net profit **equals gross profit minus operating costs, interest and taxes.
+
+Under the **equity** we understand the remainder of the balance sheet. This also includes share capital. You can also easily find the average equity in the annual results. Add up the equity at the beginning of the year and at the end of the year and divide it by two.
+
+*REV calculation example*
+
+*REV calculation example*
+
+- Equity December 31, 2019: €33,000
+- Equity December 31, 2020: €35,000
+- Average equity: €68,000/2 = €34,000
+- Net profit: €7,500
+**REV**(*7,500/34,000 x 100%)*:**22.1%**
+
+
+In this case, it means that for every euro of equity, you have earned €0.221. When your REV is between 5% and 15%, you're doing a good job. The percentage says something about the company's profitability; the higher the percentage, the more risk decreases for lenders.
+
+**Debt Profitability (RVV)**
+
+Do you want to know what debt really costs? By calculating the profitability of debt, you know how much interest you pay.
+
+*Debt Profitability Calculation*
+
+*Debt Profitability Calculation*
+
+Divide the interest currently paid by the average debt (interest) and multiply it by 100. The resulting percentage is the profitability of debt.
+
+Under the **foreign capital** we mean all the company's debts to third parties, usually consisting mainly of loans and creditors. The average debt capital is calculated by adding up the debt on 1 January that year and 31 December the same year and dividing it by two.
+
+*RVV calculation example*
+
+*RVV calculation example*
+
+- Debt capital December 31, 2019: €200,000
+- Debt capital December 31, 2020: €175,000
+- Average debt: € 375,000/2 = €187,500
+- Interest 2020: €25,000
+**RVV***(25,000/187,500 x 100%)*:**13.3%**
+
+
+This means that you pay a total interest of 13.3% per annum. This means that for every euro of debt, you pay €0.133. That's on the high side, you want to keep this percentage as low as possible. The lower this percentage, the less interest you pay. It's best to keep this under 10%.
+
+**Total Assets Profitability (RTV)**
+
+Do you want to know the ratio between your profit and the capital invested? With this calculation, you can provide insight into the total profitability of your company.
+
+*Calculating Profitability Total Assets*
+
+*Calculating Profitability Total Assets*
+
+Divide the gross profit by the average total assets and multiply by 100. The percentage that comes out is the profitability of the total assets.
+
+The **gross profit** is equal to total turnover minus costs (excluding interest and profit tax).
+
+*RTV calculation example*
+
+*RTV calculation example*
+
+- Total assets December 31, 2019: €233,000
+- Total assets December 31, 2020: €210,000
+- Average total assets: € 443,000/2 = €221,500
+- Gross profit: €63,000
+**RTV***(63,000/221,500 x 100%)*:**28.4%**
+
+
+What a good RTV is depends on several factors. What kind of company is it? What industry does it work in? Size and age are also important. A young company accepts lower profitability in the growth phase, while renowned companies want to strive for a high level of profitability. Overall, a score between 5% and 10% is healthy.
+
+**When is profitability good?**
+
+- Equity: you're in the right place between 5% and 15%.
+- Debt: as low as possible. Preferably under 10%.
+- Total Power: Depends on the company. On average, between 5% and 10%.
+
+
+**How do you improve profitability?**
+
+Is your Total Profitability (RTV) below 5% and would you like to increase it? Then there are a number of ways you can make improvements.
+
+- Earn more sales
+- Reduce costs
+- By using the money (assets) in your company more efficiently, for example by:
+- to make debtors pay faster
+- keeping inventory as low as possible
+- creditors pay a little later, if you can agree that with them
+
+- Decrease total power
+- Attract debt
+
+
+The latter may be an unexpected suggestion. With this extra foreign capital, you can invest and ultimately increase profits. The condition is that the interest rate you pay is lower than your RTV. This creates the so-called leverage effect.
+
+**Improve your return with a business loan**
+
+Could your profitability use an improvement? Then it would **applying for a business loan** can be the next step at Swishfund. Via our website, you can easily apply for a loan within 5 minutes, this is completely optional. Within 24 hours, you will receive a proposal that suits your company.

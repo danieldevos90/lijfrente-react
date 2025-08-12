@@ -1,0 +1,65 @@
+---
+title: Hoe bouw je een financieel gezond bedrijf?
+author: Redactie Floryn
+url: https://www.floryn.com/blog/hoe-bouw-je-een-financieel-gezond-bedrijf
+hostname: floryn.com
+description: Een mooie omzet of stevige groei zegt niet altijd iets over de financiële gezondheid van je bedrijf. Het is veel slimmer om naar de kengetallen te kijken!
+sitename: Floryn
+date: 2021-10-14
+tags: ['Technology']
+---
+#### In het kort:
+
+-
+Gebruik kengetallen zoals liquiditeit, solvabiliteit en rendabiliteit voor een snelle blik op financiële gezondheid.
+
+-
+Liquiditeit meet betalingsvermogen; solvabiliteit toont verhouding vreemd en eigen vermogen voor langetermijnstabiliteit.
+
+-
+Rendabiliteit toont winst per geïnvesteerde euro; Floryn’s dashboard biedt een real-time financiële overzicht.
+
+
+We willen allemaal graag een financieel gezond bedrijf, maar hoe weet je precies of je bedrijf gezond is? Een mooie omzet of stevige groei zegt niet altijd iets over hoe goed het écht gaat met je bedrijf. Het is veel slimmer om naar de kengetallen te kijken.
+
+## Financiële kengetallen, wat zijn dat?
+
+Met behulp van kengetallen kun je in één oogopslag zien hoe je bedrijf er financieel voorstaat. Deze getallen laten de verhouding zien tussen twee cijfers uit de jaarrekening. Voor elk kengetal is er een bepaalde streefwaarde voor een financieel gezond bedrijf. Ook kun je de resultaten van je onderneming gemakkelijker vergelijken met andere bedrijven. We zoomen in dit artikel in op een drietal kengetallen: liquiditeit, solvabiliteit en rendabiliteit.
+
+## De liquiditeit
+
+Kun jij op korte termijn aan je betalingsverplichtingen voldoen, zonder dat je in financiële problemen komt? Dat wordt uitgedrukt in de liquiditeit. Dit is een belangrijke indicator voor de financiële gezondheid van je bedrijf. Je kunt de liquiditeit op verschillende manieren berekenen.
+
+Eén manier is de current ratio. Hierbij deel je al je vlottende activa door je kort vreemd vermogen. Als dit getal boven de 1 ligt, kun je aan je betalingsverplichtingen voldoen. Je onderneming is dan op dit vlak financieel gezond!
+
+## Hoe staat het met je solvabiliteit?
+
+Wat is de verhouding tussen vreemd en eigen vermogen binnen jouw bedrijf? Dat wordt de solvabiliteit genoemd. Je ziet hieraan in hoeverre je de schulden op de lange termijn kunt terugbetalen. Ook voor het uitrekenen van de solvabiliteit zijn verschillende methodes. Een daarvan is het delen van je eigen vermogen door het vreemd vermogen, keer honderd. Je ziet dan in één oogopslag hoeveel groter je eigen vermogen is dan het vreemd vermogen.
+
+Hoe groter het aandeel eigen vermogen, des te gezonder is je onderneming. Je bent dan namelijk minder afhankelijk van derde partijen, zoals de Floryn, de bank, investeerders of crowdfunders. Houd er wel rekening mee dat vreemd vermogen vaak een stuk goedkoper is dan eigen vermogen. Je bedrijf volledig opbouwen met eigen vermogen is dus niet per se slim. Een gezond bedrijf heeft gemiddeld genomen een solvabiliteit van tussen de 25% en 40% procent.
+
+## Rendabiliteit berekenen
+
+Hoeveel winst maak jij per geïnvesteerde euro? Dat noemen we ook wel de rendabiliteit. Zoals het woord al zegt, wordt je onderneming letterlijk rendabeler bij een hoge rendabiliteit.
+
+Benieuwd naar de rendabiliteit van het totale vermogen binnen je bedrijf (RTV)? Dat bereken je door je nettowinst door het gemiddelde geïnvesteerde totale vermogen te delen. Vermenigvuldig de uitkomst met honderd. Gemiddeld genomen is een rendabiliteit van 5 tot 10% een indicatie van een gezond bedrijf. Je maakt dan op elke geïnvesteerde euro 0,05 tot 0,10 euro winst.
+
+## Hoe bereken ik de rendabiliteit van mijn bedrijf en wat vertelt dit over mijn winstgevendheid?
+
+De rendabiliteit van je bedrijf bereken je door de nettowinst te delen door het eigen vermogen. Dit percentage laat zien hoe efficiënt je bedrijf winst maakt. Een hoge rendabiliteit wijst op gezonde bedrijfsvoering en goede investeringsresultaten. Belangrijk als je financiering zoekt of strategische keuzes wilt maken.
+
+## Hoe kan ik mijn cashflow verbeteren om de financiële gezondheid van mijn bedrijf te versterken?
+
+Je verbetert je cashflow door sneller facturen te innen, kosten te beheersen en slim voorraadbeheer toe te passen. Ook helpt het om betalingsafspraken met leveranciers te optimaliseren. Extra werkkapitaal, bijvoorbeeld via een zakelijk krediet, geeft ruimte om flexibel te blijven en financiële tegenvallers beter op te vangen.
+
+## Waarom is het belangrijk om een financiële buffer op te bouwen en hoe doe ik dit effectief?
+
+Een financiële buffer beschermt je bedrijf tegen onvoorziene uitgaven en tijdelijke tegenvallers. Het biedt stabiliteit en voorkomt stress bij cashflowproblemen. Bouw deze buffer op door maandelijks een percentage van je winst apart te zetten en kosten efficiënt te beheren. Zo creëer je een veilige basis voor groei.
+
+## Meer inzicht in je onderneming
+
+Een slimme manier om razendsnel meer inzicht te krijgen in de financiële gezondheid van je onderneming, is door middel van ons gratis financiële dashboard. Voor dit dashboard gebruiken we dezelfde technologie als bij financieringsaanvragen. Je vindt er bijvoorbeeld real-time inzichten in je saldoverloop, en een overzicht van je belangrijkste debiteuren en crediteuren. Het aanvragen en gebruiken van het dashboard is vrijblijvend, je zit nergens aan vast.
+
+## Een financieel gezond bedrijf?
+
+Met een financiering van nu kun je je ambities waarmaken en je bedrijf laten groeien. Vraag hier direct je financiering aan of ontdek via onze Quickscan binnen 2 minuten de mogelijkheden voor jouw bedrijf.

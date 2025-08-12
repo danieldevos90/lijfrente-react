@@ -1,0 +1,76 @@
+---
+title: Bescherm uw bedrijf tegen online bedreigingen en aanvallen
+author: Johannes Stevense
+url: https://www.qeld.nl/posts/cybersecurity---waar-moet-je-aan-denken
+hostname: qeld.nl
+description: Tijdens de zomer is uw online bedrijf kwetsbaar voor online aanvallen. Krijg praktische stappen om uw online bedrijf te beschermen tegen cybercriminelen
+sitename: qeld.nl
+date: 2025-01-04
+---
+**Leid je personeel op in online beveiliging**
+
+Gebrek aan veiligheid is zelden te wijten aan systemen en technologie, maar vaak aan een gebrek aan kennis bij de mens. Informeer jezelf en je medewerkers over de elementaire onlinebeveiliging, inclusief hoe je phishing-aanvallen en andere veelvoorkomende bedreigingen kunt herkennen.
+
+
+Tip:
+
+- Volg regelmatig veiligheidstrainingen.
+
+- Creëer een duidelijk beleid voor veiligheidsprotocollen en online gedrag.
+
+
+**Gebruik sterke wachtwoorden en tweefactorauthenticatie**
+
+Zorg ervoor dat al uw systemen en accounts zijn beveiligd met sterke, unieke wachtwoorden. Implementeer tweefactorauthenticatie (2FA) voor een extra beveiligingslaag.
+
+
+Tip:
+
+- Gebruik een wachtwoordbeheerder om sterke wachtwoorden te genereren en op te slaan.
+
+- Schakel 2FA in op alle mogelijke accounts, vooral voor belangrijke bedrijfssystemen.
+
+
+**Update je softwareprogramma's**
+
+Software-updates bevatten vaak belangrijke beveiligingsoplossingen. Zorg ervoor dat al je systemen en software up-to-date zijn om u te beschermen tegen bekende kwetsbaarheden.
+
+
+Tip:
+
+- Schakel waar mogelijk automatische updates in.
+
+- Zorg voor een routine om de software regelmatig te controleren en handmatig bij te werken.
+
+
+**Vergeet niet om back-ups te maken**
+
+Dit is waarschijnlijk een van de belangrijkste stappen, omdat het ervoor zorgt dat belangrijke gegevens niet verloren gaan als je pech heeft of wordt blootgesteld aan een aanval. Regelmatige back-ups beschermen je bedrijf tegen gegevensverlies als gevolg van cyberaanvallen, hardwarestoringen of andere problemen. Zorg ervoor dat je back-ups veilig worden opgeslagen en indien nodig snel kunnen worden hersteld.
+
+
+Tip:
+
+- Gebruik een combinatie van lokale en cloudgebaseerde back-ups.
+
+- Voer regelmatig tests uit om gegevens uit back-ups te herstellen om er zeker van te zijn dat ze correct werken.
+
+
+**Implementeer firewalls en antivirussoftware**
+
+Firewalls en antivirussoftware zijn basisbeveiligingshulpmiddelen die je netwerk en apparaten helpen beschermen tegen malware en ongeautoriseerde toegang.
+
+
+**Heb je een financiering nodig voor je onderneming?**
+
+Een zakelijke lening aanvragen is gratis en geheel vrijblijvend.
+
+Dien hier een aanvraag in en krijg binnen 24 uur reactie.
+
+
+**Heb je vragen?**
+
+We zijn op alle werkdagen bereikbaar van 8:00 tot 17:00 uur en op woensdagen tot 20:00 uur.
+
+Neem contact met ons op via e-mail op support@qeld.nl of telefonisch op 020 – 808 6084.
+
+Je kunt ons ook bereiken via de chatfunctie op onze website www.qeld.nl.

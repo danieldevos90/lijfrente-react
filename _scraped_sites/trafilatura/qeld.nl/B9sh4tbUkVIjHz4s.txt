@@ -1,0 +1,107 @@
+---
+title: Privacy Policy | Qeld
+author: Jenny Arvidsson
+url: https://www.qeld.nl/info/privacy-policy-nl
+hostname: qeld.nl
+description: What kind of personal data does Qeld Business Loans process? You can find out how we handle your personal data securely by consulting our privacy policy. More:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Qeld understands the importance of your personal integrity and privacy. The purpose of this Privacy Policy is to describe how Qeld collects and stores your personal data and why Qeld does it. In addition, this document describes your rights in relation to your personal data that we process, and how you can exercise them.
+
+In order to provide our services and business loans, we need to be able to process and use personal data as described in this Privacy Policy.
+
+"Qeld", "We", "our" or "us" means Qred Bank AB (org. no. 559008-9800) and all other companies within the Qred Group - Qred Holding AB (publ) (org. no. 559031-0685) registered with the Swedish companies register and with our main office located at Drottninggatan 98, 111 60 Stockholm. For the purposes of EU data regulation, we are the data controller in respect of the personal data we receive from you, or otherwise collect about you, and we are responsible for ensuring that we use your personal data in compliance with applicable data privacy regulation ( EU Regulation 2016/679).
+
+**By visiting our website you approve the processing of personal data described in this policy. **
+
+**Information you provide to us.** This includes personal data you provide us with as part of the credit application. It also includes personal data such as name, address, email, phone numbers and national ID-numbers. Also, information about your business, such as business plans, bank account information and payment history might be asked of you.
+
+**Information we collect about you. **As part of the credit assessment process, we need to collect certain information about you and your business. We do this in order to provide you with the best possible credit offer and to comply with our legal obligations under KYC, anti-money laundering and anti-terrorist financing regulations. We also collect information from third parties such as credit rating agencies and other publicly available information sources. This information may include the following:
+
+**Identification- and contact information:**name, date of birth, ID number, address, phone number, nationality etc.**Financial information:**information collected from a third party, such as income and other credit information.**Credit history:**information collected from a third party, such as financial history, negative payment remarks and previous payment- and credit acceptances.**Information on how you use our services and communicate with us:**how you use the Services, including information on outstanding and historical debts and your repayment history with Qeld; technical data such as page response times, download errors, personal preferences; your interactions with the Qeld customer team, etc.**Device information:**information such as IP address, language settings, browser settings, operating system and platform and screen resolution.**Geographic information:**information regarding your geographical position.**Information from external sanction lists and PEP lists:**we may screen your information against lists of persons subject to sanctions, and lists of persons who are so called Politically Exposed Persons.**Special categories of personal data:**you can, completely voluntary, choose to give us information that can be classified as “special categories” of information according to EU regulation 2016/679, which includes information that reveals your religion, political- or philosophical convictions, union membership, or information regarding health, sex life or sexual orientation. We will never ask for that information in order to provide our services. If you were to provide us with such information, it shall be considered completely voluntary and based on your expressive consent. If you wish to know more about consent and how to revoke it, see the consent section further down below.**Service specific information:**in order to provide you with some of our Services we may collect and process additional personal data that is not covered by the above categories.
+
+Offer and improve our services. We process personal data to provide our services and offer business loans to small and medium-sized businesses. As part of this process, we also collect personal data to improve our service. Below is an overview of how we process personal data and the legal basis for processing:
+
+
+
+The following services involve Qeld giving you a credit :
+
+- Qeld business loans
+- Qeld Factoring - factoring business (purchase of invoices)
+
+Your personal data is shared with companies that perform a credit assessment and other suppliers in order to make a credit worthiness check when you’re applying for a business loan (Qeld loan) the Qeld Factoring service.
+
+To be able to offer our Services, we do a credit assessment of you (credit worthiness check). The credit assessment is based on contact- and identification information, information on how you interact with Qeld and other financial information. Financial information includes information that is provided externally by companies that perform credit assessments, based on, for example, income and payment defaults.
+
+The credit assessment is based on contact- and identification information and information on how you interact with Qeld. This includes how you interact and communicate with us but also financial information that you provide us, for instance transactional records, bank account statements and external information from credit assessment companies.
+
+We can come to use your contact information in order to communicate with you. We can do this either by performing customer surveys or to send out offers regarding our products/services based on our relationship with you. If you choose to not receive such communication/information, you can at any time contact us at privacy@qeld.nl.
+
+To be able to give you customized offers and discounts etc, we look at information on how you interact with Qeld, your contact- and identification information, information about products/services and your usage of these services. This processing may constitute profiling (see excerpt 6 for more information). The information is the foundation regarding Qeld's marketing- and customer analysis and the development of statistical information. We customize offers where we use contact- and identification information, information on payment patterns, and your interaction with Qeld in order to improve our services and better our offers. We can utilize information in order to present personal offers via mail, email, text message, or other digital channels.
+
+You can unsubscribe from customized personal offers either by clicking on the link in the digital communication or by contacting us directly (see contact information below).
+
+In those cases where Qeld processes your personal information based on your consent or expressive consent (for instance when you give us a power of attorney for a third party to get access to your information, or give us additional information that constitutes sensitive data). You can at any time revoke this consent by contacting us. To revoke your consent will not lead to any lesser version of our service since we don’t need this information to offer our services.
+
+“Profiling” means automated processing of personal data to evaluate certain personal aspects relating to you, for example in order to analyse or predict aspects of your financial situation or your preferences, such as purchase interests. We use profiling based on the personal data we have about you in order to take individual or automated decisions about you, for the following purposes:
+
+- Predicting what marketing content would be of interest to you. You can always object to this and deregister from the marketing and this profiling, by contacting us. For further information about our processing of personal data for marketing purposes, see Section 4 above);
+- Deciding what offers that might suit you;
+- Deciding on the most suitable way to contact you concerning outstanding debt;
+
+In addition, some of our Services use profiling in order to deliver the applicable Service to you, for example delivering relevant financial insights to you, or to select which offers to give you, in accordance with the terms of the relevant Service.
+
+*Decisions with legal or similarly significant effect*
+
+Automated decision making with legal effects, or automated decisions with similarly significant effect, means that some decisions in our Services are solely based on automatic means, without any interaction from any of our employees, and carry a significant impact on you as a consumer with them. By making such decisions in an automated fashion, Qeld increases objectivity and transparency in the decisions when offering those Services.
+
+We use this type of automated decision making when we:
+
+- Decide to approve your application to use a credit Service;
+
+- Decide not to approve your application to use a credit Service;
+
+- Decide whether you pose a fraud- or money laundering risk, if our processing reveals that you display behaviour consistent with money laundering or fraudulent conduct, that your behaviour is inconsistent with your previous use of our Services,or that you appear to have deliberately hidden your true identity. In relevant cases, Qeld also checks whether or not a specific customer is listed on a so-called sanction list.
+
+You always have the right to challenge an automated decision which carries a legal or similarly significant effect (together with the profiling connected to it), by contacting us using the email address privacy@qeld.nl. A Qeld employee from the customer team will then look at your case.
+
+Suppliers or subcontractors. We can potentially share personal data with the suppliers and subcontractors we use to be able to offer our services to you. We for instance have several software-suppliers and business-consultants. They process the personal data received from us on our behalf. We can also come to share personal data with other financial suppliers that we have a business relationship with. We take reasonable, legal, technical and organizational measures in ensuring that the personal data is shared safely.
+
+Credit assessment companies. Your personal data will be shared with credit assessment companies and other similar suppliers to ensure that credit assessment is made before you apply for a loan.
+
+Authorities. We have a legal obligation to prevent money laundering and financing of terrorism, and to follow other regulatory requirement. Qeld can share your personal data with authorities (such as the police or the tax agency) when it is deemed necessary to fulfill a legal obligation.
+
+Debt collection companies. Qeld can share personal data when we sell or commission a debt collection company to collect a debt. The sharing of personal data in this regard, is done based on our legitimate interest to sell and collect debt. The debt collection companies will process the personal data either in accordance with their own privacy policy or on behalf of Qeld. The debt collection companies may also report your unpaid debts to credit assessment companies or to the enforcement agency, which can impact your credit worthiness and your prospects to apply for future credits.
+
+Divestment. In the event that Qeld sells or buys any claims, business or assets, Qeld may disclose your personal data to the prospective seller or buyer of such claims, business or assets. If Qeld or substantially all of its assets are acquired by a third party, personal data about Qeld's customers may be disclosed and shared.
+
+Social Media. In those cases you contact us via social media in any way, such as Facebook, Twitter or Instagram, your personal data will be subject to processing, even for the platform, in accordance with the respective platform’s privacy policy.
+
+We work towards processing all personal data within the EU/EES. In some cases the information may be transferred to, and be processed in, countries outside the EU/EES by another supplier. Qeld ensures that reasonable legal, technical and organizational measures are taken to ensure that all data is managed in a secure way. We ensure that an adequate level of protection is maintained, and that suitable safeguards are adopted in line with applicable regulation.
+
+We will process your personal data for the time period needed to fulfil the respective purpose of our processing, such as contractual obligation. These purposes are described in this Privacy Policy. This means that even though we stop processing your personal data for one purpose, we may still need to keep your personal data, if the data is needed for another purpose, such as because of a legal obligation.
+
+*Right to be informed*. You have the right to be informed about how we process your information. We do this through this Privacy Notice, other information on our website, and by answering questions sent to us.
+
+*Right to access your data*. You may request a copy of your data if you would like to know what personal data we process about you. This copy of your personal data can also be transmitted in a machine readable format (i.e. “data portability”).
+
+*Right to correction*. You have the right to correct inaccurate or incomplete information about yourself.
+
+*Right to erasure*. You have the right to request deletion of your personal data, for example when it is no longer necessary for us to process the data for the purpose it was collected, or when you have withdrawn your consent. However, In some cases we are obligated to keep the data because of a legal obligation stipulated by law.
+
+*Right to restrict processing of your data or object to our processing*. If you believe your information is incorrect or you believe we use your data unlawfully, you have the right to ask us to stop the processing. You may also object to our processing where you believe there are circumstances that would make such processing unlawful. Furthermore, you can always object to us using your data for direct marketing.
+
+*Right to withdraw consen*t. Where we process your data based on consent or explicit consent, you may withdraw this consent at any time.
+
+*Right to lodge a complaint*. You have the right to lodge a complaint with your national supervisory data protection authority or by contacting us, see contact information further down.
+
+We utilize cookies and similar technology when you use our website to better enhance the customer experience. We also use cookies to collect statistical data on how our website works and is being used with the purpose of improving our systems and website. To better enhance a tailor-made experience Qeld utilizes cookies and tracking technologies in our interfaces, such as our website. You can find information about cookies tracking technologies and how you accept or reject it in our online interfaces.
+
+Qeld is part of Qred Bank AB, registered with the Swedish Companies Registration Office and has the registration number 559008-9800.
+
+The Company’s headquarters are located on Drottninggatan 98, 111 60 Stockholm. If you have any questions about this Privacy Policy or how we process your personal data, please contact us at privacy@qeld.nl.
+
+You’re always welcome to contact us with questions regarding privacy information protection and personal data. Also see our website for additional information about us.
+
+Updating our privacy policy. Qeld may update and make changes in this privacy policy when Qeld sees fit. Notification of such may be posted on our website.

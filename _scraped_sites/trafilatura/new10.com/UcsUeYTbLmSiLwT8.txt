@@ -1,0 +1,34 @@
+---
+title: Zo houd je je team gemotiveerd op afstand: 6 tips voor ondernemers
+author: Rosanne van Veldhuisen; Sebastian Sawicki
+url: https://new10.com/blog/teamspirit-in-corona-tijd-7-tips-en-tricks
+hostname: new10.com
+description: Op afstand werken is uitdagend maar kan je bedrijf ook veel opleveren. Benieuwd hoe je als ondernemer je team gemotiveerd en betrokken houdt? Lees de tips en onze eigen New10 ervaringen?
+sitename: New10
+date: 2020-04-03
+---
+Rosanne van Veldhuisen & Sebastian Sawicki
+
+New10 • Slimmer ondernemen
+
+Kantoortuinen zijn uitgestorven en op afstand werken is de nieuwe norm voor veel bedrijven – iets wat voor de coronacrisis misschien ondenkbaar leek. Thuiswerken is voor ondernemers misschien spannend, maar het kan juist onderling vertrouwen vergroten en voordelen bieden. Denk aan snelle afstemming, meer focus en rust om achterstallige projecten op te pakken. Het is wel zaak om oog te houden voor je medewerkers: naast het werk kunnen andere taken als thuisscholing of het verlenen van zorg zich opstapelen. Een ander aandachtspunt is de motivatie van je team, dat door het gebrek aan fysieke contact mogelijk verslapt. Hoe zorg je ervoor dat je het teamgevoel behoudt? En wat zijn manieren om werken op afstand efficiënt én leuk te maken? Wij delen onze eigen tips en praktische stappen die je helpen om de betrokkenheid van medewerkers te vergroten en het beste te maken van thuiswerksituatie.
+
+Zonder dagelijkse interactie is het makkelijk om elkaar uit het oog te verliezen. Door het inplannen van vaste dagelijkse calls met je team of individuele medewerkers, kun je wat meer structuur aanbrengen. Bespreek dagelijks de resultaten van de voorgaande dag, de planning en struikelblokken. Zo houd je het team gemotiveerd en weet je van elkaar waar je mee bezig bent. Ook organisatie breed is het belangrijk om iedereen op één lijn te houden en actief bezig te zijn met scenario’ s voor de toekomst. Betrek je medewerkers hier dan ook bij. Bij New10 starten we iedere week met een online meeting voor het hele bedrijf. Daarin bespreken we de resultaten van de voorgaande week en kijken we vooruit naar wat de komende week ons brengt. Daarna hebben meeste teams ook een eigen daily check in, waarin specifieke punten worden besproken.
+
+Om goed te kunnen overleggen op afstand moet je team toegang hebben tot rijkere communicatietools dan alleen e-mail. Zo ondersteun je samenwerking op alle niveaus, van formeel tot informeel, en vergemakkelijk je onderlinge communicatie. Onmisbaar voor thuiswerkers is een tool voor videoconferencing, zoals Microsoft Teams of Bluejeans. Videobellen heeft veel voordelen, je stemt makkelijker complexe of gevoelige dingen face-to-face af en het geeft je het gevoel van persoonlijk contact.
+
+Heeft je bedrijf een informele cultuur en is er veel onderlinge afstemming nodig? Overweeg dan een zakelijke chattool: chatten is over het algemeen sneller dan e-mailen en er zijn meer functionaliteiten beschikbaar. Je kunt bijvoorbeeld makkelijk groepen aanmaken voor projectteams. Zo blijft iedereen op de hoogte van de laatste updates. Bij New10 maken we gebruik van zakelijke chattool Slack om elkaar in de loep te houden en informeel contact te stimuleren.
+
+Waar je normaal je op kantoor met elkaar de voortgang van het werk bespreekt, is de nood voor online projectmanagement tools hoog in thuiswerksituaties. Om de status van taken en projecten te monitoren zijn veel handige tools beschikbaar. Als ondernemer kan het in deze tijd lastig zijn om grip te houden op de werkzaamheden van je medewerkers. Met een projectmanagement tool zie je op één plek welke taken nog openstaan en kun je de productiviteit van je team verbeteren. Wij maken gebruiken van de projectmanagement software Jira, een tool die bij onze Agile werkwijze past. Je kunt in Jira borden aanmaken met doelstellingen, een takenoverzicht creëren en precies bijhouden wat de status is van bepaalde to-do’s. Andere projectmanagement tools zijn Asana, Basecamp en Scoro. Welke tool bij jouw bedrijf past hangt af van veel factoren zoals bijvoorbeeld het type werkzaamheden, de wensen voor dashboards en het gewenste gebruiksgemak.
+
+Kinderen die om aandacht schreeuwen, een werkplek aan de keukentafel: de thuissituatie is niet altijd ideaal voor medewerkers. Bovendien zit je uren achter een scherm en liggen klachten op het gebied van werkhouding op de loer. Door de juiste ondersteuning te bieden zorg je dat je medewerkers vitaal en gezond blijven. Onderzoek de mogelijkheden om kantoormeubilair aan huis te leveren bij medewerkers, zo maak je de thuiswerkplek al meer geschikt.
+
+Als je het kantoorpand verlaat dan is normaal gesproken de werkdag afgesloten. Werk je op afstand dan is het verleidelijk om langer door te werken en continu bereikbaar te willen zijn. Dit kan emotioneel gezien zijn tol eisen bij je team en bij jezelf. Het helpt om duidelijk te communiceren over je grenzen en te zorgen dat je medewerkers dit ook doen: ik ben vandaag tot 18.00 uur bereikbaar, stuur me een WhatsApp voor urgente zaken.
+
+Je team kijkt naar jou als ondernemer in crisissituaties. Zorg er dus voor dat je jouw voorbeeldfunctie serieus neemt en positief blijft. Is je bedrijf hard getroffen en is er veel onduidelijkheid over de koers? Dit zorgt voor onzekerheid en onrust bij je team. Bespreek regelmatig met elkaar de emotionele impact van deze situatie. Vraag je medewerkers regelmatig hoe de thuiswerksituatie gaat en of ze tegen moeilijkheden aanlopen.
+
+Juist de sociale momenten op kantoor zoals borrels, verjaardag vieringen en koffiemomentjes zorgen voor het gevoel van saamhorigheid en onderling vertrouwen. Ondanks de fysieke afstand kun je nog steeds sociale momenten inplannen gedurende de werkweek om de sfeer goed te houden. Denk aan het organiseren van virtuele koffiemomenten, borrels of een gezamenlijke sportsessie. Zorg dat je aan het begin van een meeting standaard ruimte incalculeert om even kort in te checken bij elkaar: wat speelt er privé vandaag en heb je hulp nodig bij je taken?
+
+**Hoe houden we werken of afstand leuk bij New10?**
+
+Bij New10 proberen we een positieve mindset te stimuleren door fun-elementen in de werkweek te integreren. Zo organiseren we een fotowedstrijd voor de leukste thuiswerkfoto, hebben we een gezamenlijke Spotify playlist, een wekelijkse interne nieuwbrief en virtuele activiteiten zoals een vrijdagmiddagborrel. Ook krijgen medewerkers regelmatig een oppepper in de brievenbus zoals een leuk kaartje. Juist door met elkaar de leuke momenten virtueel te delen blijf je een team. Zo kan het maar zo gebeuren dat door op afstand werken het onderlinge vertrouwen alleen maar groeit.

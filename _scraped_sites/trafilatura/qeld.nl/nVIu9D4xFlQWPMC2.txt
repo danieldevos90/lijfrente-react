@@ -1,0 +1,10 @@
+---
+title: BKR-registratie en zakelijk lenen | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/krijg-ik-een-bkr-registratie
+hostname: qeld.nl
+description: Zakelijk lenen en bedrijfskrediet via Qeld wordt geregistreerd om misbruik en wanbetaling te voorkomen. Zo werkt een BKR-registratie voor zakelijke leningen:
+sitename: qeld.nl
+date: 2025-05-08
+---
+Als betalingsinstelling heeft Qeld de verplichting om overeenkomsten te registeren bij de Stichting Bureau Krediet Registratie (BKR). Naast het aanmelden van de overeenkomst heeft Qeld tevens de verplichting om bij het langdurig uitblijven van een betaling hiervan melding te maken bij Stichting BKR.

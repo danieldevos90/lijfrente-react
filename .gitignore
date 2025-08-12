@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+venv/
+.venv/
+
+# Logs
+*.log
+*_run.log
+**/_run.log
+
+# Secrets / local configs
+google-ads.yaml
+google-ads.yaml.*
+!google-ads.yaml.example
+.env
+.env.*
+
+# Misc
+.cache/
+.ipynb_checkpoints/
+

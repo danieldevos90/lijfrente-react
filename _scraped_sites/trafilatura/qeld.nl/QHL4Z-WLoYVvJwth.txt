@@ -1,0 +1,16 @@
+---
+title: Gebruiksvoorwaarden rekeninginformatiedienst | Qred Bank
+author: Michiel de Haan
+url: https://www.qeld.nl/info/account-informatie-service
+hostname: qeld.nl
+description: Hier vindt u de gebruiksvoorwaarden van onze rekeninginformatiedienst.
+sitename: qeld.nl
+date: 2025-04-07
+---
+Eenvoudig aanvraagproces
+
+Lening uitbetaald binnen 24 uur
+
+Geen extra kosten bij vervroegde aflossing
+
+Hier vindt u de gebruiksvoorwaarden van onze rekeninginformatiedienst.

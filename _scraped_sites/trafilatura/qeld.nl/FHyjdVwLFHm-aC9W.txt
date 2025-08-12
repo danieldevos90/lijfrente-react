@@ -1,0 +1,10 @@
+---
+title: What happens if I can't pay on time? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/what-happens-if-i-cant-pay-on-time-nl
+hostname: qeld.nl
+description: Forgot to pay your monthly fee or ammortization? We'll let you know via a friendly payment reminder. More info on late payments can be found here:
+sitename: qeld.nl
+date: 2025-01-01
+---
+If you don't pay on time, you'll receive a friendly reminder about the missed invoice. Are you still not able to pay the outstanding amount? Then, in case of payment default, we may hand over your file to our collection department. Should no payment be received in due course, your file may then be transferred to an external collection agency. However, we fully understand that sometimes it can be possible to miss a payment or have some financial difficulties. That is exactly why we encourage our customers to reach out to us and inform us of their troubles, before defaulting on payments. If we know about your difficulties, we can help and proactively find a solution to prevent further escalation. We are there to help!

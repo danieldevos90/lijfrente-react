@@ -1,0 +1,45 @@
+---
+title: Cookieverklaring | Swishfund
+url: https://www.swishfund.nl/cookieverklaring
+hostname: swishfund.nl
+sitename: swishfund.nl
+date: 2025-01-01
+---
+# Cookie statement
+
+Om je de best mogelijke website-ervaring te geven, maakt de website van Swishfund gebruik van cookies. Door gebruik te maken van de website van Swishfund ga jij akkoord met het gebruik van deze cookies.
+
+**What are cookies?**
+
+Cookies are small text files that are downloaded to your computer or mobile device when you visit a website or application. Your web browser (such as Safari, Edge, Firefox, or Chrome) returns these cookies to the website or application each time you visit. This allows the website to recognize you and remember things such as personal information or user preferences.
+
+Cookies are very helpful and perform various functions to make your experience with the website as easy as possible. For example, they allow you to easily switch between different web pages, remember your preferences, and improve the functionality of the website.
+
+**Persistent cookies**
+
+With the help of a persistent cookie, we can recognize you when you visit our website again. The website can therefore be adjusted specifically to your preferences. Even if you have given permission to place cookies, we can remember this by means of a cookie. This means you don't have to repeat your preferences over and over again, saving you time and making it more comfortable to use our website. You can delete permanent cookies via your browser settings.
+
+**Session cookies**
+
+Using a session cookie, your browser can see which parts of the website you viewed during this visit. These cookies are automatically deleted when you close your web browser.
+
+**Tracking cookies**
+
+Tracking cookies can be requested as soon as you visit our platform. This allows us to find out that you have been to our website. The resulting profile serves to tailor our ads to your profile so that they are as relevant to you as possible.
+
+**Third party cookies**
+
+To improve the quality of the website, Swishfund may use other parties that can also place cookies; this to improve the functionality of the website. Swishfund sometimes posts information from Google, YouTube, etc. Pages where this information is available sometimes include parts of these websites. When you see the “Like” or “Share” buttons on our website, a cookie may be placed to the service you have chosen.
+
+**Google Analytics cookies**
+
+Through our website, a cookie from the American company Google is placed as part of the “Analytics” service. We use this service to track and get reports on how visitors use the website. Google may provide this information to third parties if Google is legally required to do so, or if third parties process the information on Google's behalf. We have no influence on this. We have allowed Google to use the analytics information obtained for other Google services.
+
+The information that Google collects is anonymized as much as possible. Your IP address is explicitly not provided. The information is transferred to and stored by Google on servers in the United States. Google states that it complies with the Privacy Shield principles and is affiliated with the U.S. Department of Commerce's Privacy Shield Program. This means that there is an appropriate level of protection for the processing of any personal data.
+
+**Blocking Cookies**
+
+If you continue to use the website without changing your preferences, Swishfund will assume that you have no problem receiving cookies from Swishfund. If you want to do this, you can change your cookie preferences at any time by adjusting your browser settings. You can set your browser not to receive cookies. This may mean that certain functionalities of our online platform work less well or not. More information about enabling, disabling and deleting cookies can be found in the instructions and/or using the Help function of your browser.
+
+
+-------------------------------------------

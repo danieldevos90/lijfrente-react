@@ -1,0 +1,39 @@
+---
+title: "New10 en mambu slaan handen ineen"
+url: https://new10.com/pers/persberichten/new10-en-mambu-slaan-handen-ineen
+hostname: new10.com
+description: Ontdek hier hoe New10 en Mambu samenwerken om innovatieve financiële oplossingen te bieden voor de klant. Samen vereenvoudigen we zakelijke financieringen.
+sitename: new10.com
+date: 2025-03-15
+---
+**New10 bouwt met Mambu’s SaaS-oplossing aan online zakelijk lenen voor mkb-ondernemers **
+
+**Amsterdam, 5 oktober 2017 – New10, de nieuwe online aanbieder van zakelijk krediet, heeft de SaaS-oplossing van Mambu geselecteerd om oplossingen voor zakelijk lenen voor Nederlandse mkb-ondernemers in de markt te zetten. New10 is in slechts 10 maanden ontwikkeld en gelanceerd, als onderdeel van ABN AMRO’s visie op digitalisering en innovatie. Op 9 oktober neemt New10 deel aan een keynote-sessie in Londen tijdens Lendit Europe 2017, de grootste FinTech-conferentie in Europa. Hier zet zij uiteen hoe zij erin is geslaagd een nieuw en volledig gedigitaliseerd FinTech-bedrijfsmodel te ontwikkelen. **
+
+“New10 combineert het beste van twee werelden: de wendbaarheid van een FinTech met de financiële kennis en expertise van ABN AMRO”, vertelt Mark Schröder, medeoprichter en commercieel directeur van New10. “We combineren de diepgaande kennis en ervaring binnen de bank met digitale vaardigheden en innovaties van buiten de bank. We doen dit in een snel veranderende markt die steeds digitaler wordt.” Bij New10 weten ondernemers binnen 15 minuten of ze kunnen lenen én tegen welke voorwaarden. Op deze manier speelt New10 in op de behoefte van mkb-ondernemers aan duidelijkheid en snelheid, zodat zij zich kunnen concenteren op het succes van hun onderneming.
+
+**Volledig in de cloud **
+
+“Met New10 willen we de nieuwe norm in online lenen neerzetten. Mambu biedt ons schaalbaarheid, flexibiliteit en een snelle time-to-market tegen een fractie van de kosten van traditionele systemen”, zegt Jaap Boersma, CTO van New10. “We zochten naar een oplossing die naadloos bij onze ambitie past en aansluit op de snelle en flexibele manier waarop wij werken. Om de digitale standaard van New10 tot leven te brengen, hanteren we een ondernemersgerichte aanpak waarbij we ervoor kiezen volledig in de cloud te werken.”
+
+“We geloven dat het initiatief van ABN AMRO om een onafhankelijk bedrijf als New10 te lanceren het meest optimale model is voor startups die succesvol willen zijn. Zij baseren zich op een wendbare, flexibele aanpak en zetten de allerlaatste technologie in om een nog onontgonnen markt met veel potentie te bedienen”, aldus Eugene Danilkis, CEO van Mambu. “Deze aanpak toont ook aan hoe cloud-technologie kan worden ingezet om op een snelle en eenvoudige manier te innoveren. We zijn er erg trots op een bijdrage te kunnen leveren aan dit baanbrekende initiatief.”
+
+**Implementatie binnen vier maanden **
+
+Mambu heeft nauw samengewerkt met het team van New10 team om een volledige implementatie binnen vier maanden mogelijk te maken. In een zeer gereguleerde omgeving heeft Mambu’s partnership met Amazon Web Services (AWS), die goedkeuring heeft gekregen van De Nederlandsche Bank (DNB), de weg naar de markt helpen vrijmaken. New10 is op 21 september gelanceerd.
+
+Joost Brouwer en Jaap Boersma van New10 nemen deel aan de keynote-sessie op 9 oktober tussen 11.00 en 11.25 uur. Beiden zijn daarna beschikbaar voor interviews.
+
+**Over New10**
+
+New10 biedt zakelijke leningen voor mkb-ondernemers en financiert hun plannen zo snel, simpel en duidelijk mogelijk. Ondernemers vragen bij New10 zelfstandig een zakelijke lening aan. Geheel online: van financiële gegevens uploaden tot contracten tekenen. Binnen 15 minuten biedt New10 een beslissing over het toekennen van de lening.
+
+ABN AMRO heeft New10 geïnitieerd om een nieuwe propositie van online lenen neer te zetten voor mkb-ondernemers. New10 combineert de financiële kennis van de bank met de wendbaarheid van een startup. Ondernemers lenen met de aantrekkelijke rente die ze van de bank gewend zijn, met het gemak en de snelheid van een online financieringspartner. Dat noemen wij: de nieuwe norm in zakelijk lenen.
+
+**Over Mambu **
+
+Mambu is de leidende SaaS-oplossing die innovatief bankeren en lenen mogelijk maakt en een flexibel alternatief biedt voor complexe bancaire systemen. Mambu ondersteunt klanten bij het succesvol opstarten van nieuwe zakelijke operaties, bij de transformatie van bestaande activiteiten, de lancering van nieuwe producten en de expansie naar nieuwe markten. Mambu biedt financiële instituties, ongeacht hun omvang, de noodzakelijke wendbaarheid om snel een portfolio op het gebied van bancaire diensten en leningen te ontwerpen, lanceren en schaalbaar te maken.
+
+Mambu is in 2011 opgericht en haar technologie staat aan de basis van ruim 5.000 producten op het gebied van leningen en deposito’s waarmee wereldwijd meer dan 4 miljoen eindklanten worden bediend. Met ruim 180 live operaties in meer dan 45 landen - variërend van FinTech’s tot traditionele banken - ondersteunt Mambu financiële instellingen bij hun ontwikkeling en groei in het digitale tijdperk.
+
+Raadpleeg voor meer informatie onze website: www.mambu.com

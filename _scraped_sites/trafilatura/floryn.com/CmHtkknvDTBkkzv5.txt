@@ -1,0 +1,45 @@
+---
+title: Wat is jouw onderneming waard?
+author: Redactie Floryn
+url: https://www.floryn.com/blog/wat-is-jouw-onderneming-waard
+hostname: floryn.com
+description: Er komt een moment dat je wil weten hoe het gaat met je bedrijf. Floryn vertelt je hoe je erachter komt hoeveel je bedrijf waard is. Lees het hier!
+sitename: Floryn
+date: 2021-10-14
+tags: ['Technology']
+---
+**Grote kans dat deze vraag al wel eens in je hoofd is opgedoken. Als je een tijdje aan de weg aan het timmeren bent met je onderneming, komt er waarschijnlijk een moment dat je gaat evalueren hoe het eigenlijk gaat. We bespreken een aantal manieren om erachter te komen hoeveel je bedrijf waard is.**
+
+De meeste ondernemers komen er pas achter wat hun bedrijf écht waard is, wanneer ze het willen verkopen. Je kunt dan prettig verrast worden, of juist even moeten slikken. Wat je reactie ook is, wanneer je het bedrag niet ziet aankomen heb je een minder goede onderhandelingspositie:
+
+- Doet de tegenpartij een goed bod, terwijl je een veel hoger bedrag in gedachten had? Dan zet je waarschijnlijk onnodig veel druk, waardoor de kans op een deal kleiner wordt.
+- Krijg je juist een te laag bod, terwijl je de waarde van je bedrijf zelf nog lager had ingeschat? Dan ga je wellicht veel te snel akkoord.
+
+## Investering nodig? Weet wat je onderneming waard is
+
+Heb je wel eens naar het programma Dragons’ Den gekeken? Dan weet je dat investeerders altijd graag willen weten hoeveel een bedrijf waard is. Sommige deelnemers zijn daarin iets te enthousiast en noemen dan een bijzonder optimistisch getal. Tot frustratie van de investeerders. Zorg dus dat je voor je investeringsronde een goed idee hebt van hoeveel je bedrijf waard is. Niemand zit te wachten op een ondernemer met te weinig inzicht in zijn of haar eigen financiën.
+
+## Zo bepaal je de waarde van je bedrijf
+
+Om de objectieve waarde van je onderneming te bepalen, kun je een aantal verschillende rekenmethodes gebruiken.
+
+### Multiples (vuistregels)
+
+De meest gebruikte methode om de waarde van een bedrijf te meten, is door middel van multiples, ook wel vuistregels genoemd. Hierbij wordt de netto winst, de omzet of het bedrijfsresultaat vermenigvuldigd met een bepaalde factor. Deze factor is verschillend per branche.
+
+### De Discounted Cash Flow (DCF)
+
+Deze populaire methode is gebaseerd op prognoses van de toekomstige winst, omzet en kasstromen van een bedrijf. Je berekent hiermee de waarde van je bedrijf in vier stappen.
+
+- Allereerst wordt de jaarrekening genormaliseerd, dit betekent dat je het corrigeert voor ongebruikelijke posten.
+- Vervolgens wordt een prognose gemaakt voor de toekomstige cashflow. Elk jaar wordt de inkomende cashflow verrekend de uitgaande. Zo bereken je de vrije kasstromen (Free Cash Flow).
+- Dan bepaal je de disconteringsfactor (in procenten) door de netto contante waarde van de toekomstige kasstromen te berekenen. Dat doe je op basis van de WACC (Weighted Average Cost of Capital).
+- Tot slot gebruik je de volgende formule: DCF= FCF * (1+g)/(r–g). FCF staat hierbij voor Free Cash Flow, g voor groei en r is de disconteringsfactor.
+
+### De rendabiliteitsmethode
+
+Wanneer je in de toekomst verwacht meer te gaan groeien, is de rendabiliteitsmethode een goed alternatief. In dit geval bepaal je eerst de gemiddelde winst op basis van het verleden (genormaliseerd) én je verwachtingen voor later. Dit bedrag deel je door het door de koper of investeerder vereiste rendement op je eigen vermogen (bijvoorbeeld 15%).
+
+## Meer inzicht in je cijfers met het financiële dashboard
+
+Om de waarde van je onderneming te berekenen, heb je dus een hoop financiële cijfers nodig. Met ons gratis financiële dashboard, wordt dit een stuk eenvoudiger. Je vindt er de belangrijkste cijfers in een handig overzicht. Denk bijvoorbeeld aan je omzet per maand, maar ook je top 5 debiteuren en crediteuren. Je aanvraag is volledig vrijblijvend, je zit nergens aan vast. Benieuwd geworden? Probeer het dashboard nu!

@@ -1,0 +1,20 @@
+---
+title: Hoe schakel ik de tweestapsverificatie in?
+url: https://www.floryn.com/kennisbank/hoe-schakel-ik-de-tweestapsverificatie-in
+hostname: floryn.com
+description: De tweestapsverificatie kun je eenvoudig inschakelen via je persoonlijke account.
+sitename: floryn.com
+---
+Login op je persoonlijke account.
+
+- Ga naar ‘Account’
+- Klik onder het kopje ‘Authenticatie in twee stappen’ op ‘Inschakelen’
+- Volg de stappen in het scherm
+- Gelukt! Je hebt nu authenticatie in twee stappen ingeschakeld
+
+Login op je persoonlijke account.
+
+- Ga naar ‘Account’
+- Klik onder het kopje ‘Authenticatie in twee stappen’ op ‘Inschakelen’
+- Volg de stappen in het scherm
+- Gelukt! Je hebt nu authenticatie in twee stappen ingeschakeld

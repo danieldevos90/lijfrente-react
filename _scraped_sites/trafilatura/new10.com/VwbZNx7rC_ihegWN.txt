@@ -1,0 +1,36 @@
+---
+title: Zo zet je als accountant big data handig in | New10
+author: New
+url: https://new10.com/blog/accountancy-big-data
+hostname: new10.com
+description: Als accountant zit je op een goudmijn van data. Lees in dit artikel 3 inzichten die je daaruit kan halen, plus tips om direct aan de slag te gaan.
+sitename: New10
+date: 2018-10-26
+---
+We verzamelen wereldwijd steeds meer data. En van deze grote hoeveelheid informatie, ofwel big data, kunnen we van alles leren. Zo wist de Amerikaanse supermarkt Walmart al op voorhand welke producten mensen massaal zouden inslaan voordat er een orkaan losbarstte. En de Verenigde Naties ontdekten met analyses van berichten op social media dat de stijgende prijs van rijst een voorbode is van inflatie in arme Afrikaanse landen.
+
+Ook als accountant zit je op een goudmijn van data. Via jaarrekeningen, transactiedata, prognoses en facturen heb je volledig inzicht in de staat van de onderneming van jouw klant. Waar komt het geld vandaan? Waar wordt het voor gebruikt? Hoe wordt het binnen het bedrijf verdeeld? Om het leven van je klanten (en jezelf) makkelijker te maken en om meer toegevoegde waarde te kunnen leveren aan jouw klant, is het belangrijk om te verkennen wat je met die data zou kunnen doen.
+
+**24/7 inzicht in de financiële situatie van jouw klant**
+
+Ondernemers willen continu weten hoe hun bedrijf er financieel voor staat. Als accountant is het jouw taak om deze inzichten te verschaffen. Met slimme boekhoudsoftware hoef je je niet langer te baseren op data die je eens per jaar krijgt aangeleverd. Je hebt namelijk continu inzicht in de actuele cijfers van jouw klant. Hierdoor kun je het hele jaar een vinger aan de pols houden en is de ondernemer altijd op de hoogte houden en helpen indien nodig.
+
+**Zie trends en geef advies en voorspellingen**
+
+Met een flinke bak data kun je trends vinden die je helpen voorspellingen in de toekomst te doen. Stel dat je in de cijfers van vorig jaar een omzetpiek ziet aan het eind van de zomer. Dat kan reden zijn je klant aan te raden meer voorraad aan te houden en extra personeel aan te nemen in die periode. Met de voorspellende kracht van data kan je dus gerichter advies geven op het moment dat het er echt toe doet.
+
+**Benchmarking – vergelijk met andere bedrijven of regio’s**
+
+Natuurlijk is het mooi als het bedrijf van je klant hard groeit. Maar groeit het bedrijf net zo hard als de markt? Of als zijn/haar concurrenten? Met benchmarking vind je het antwoord. Je vergelijkt de cijfers van je klant met die van concurrerende bedrijven op het gebied van bedrijfsresultaat, omzetontwikkeling en marge. De uitkomsten van deze analyse kun je vertalen in een advies. Denk aan de prijsstelling van producten wanneer de marge van jouw klant achterblijft of over de omloopsnelheid van de voorraden.
+
+**Formuleer een duidelijke onderzoeksvraag**
+
+Breng in kaart welke data je in bezit hebt. Bedenk vervolgens voor welke uitdagingen van jouw klant die data een oplossing biedt. Door dit te combineren kan je belangrijke vraagstukken van jouw klant helpen te beantwoorden.
+
+**Gebruik goede software**
+
+Zorg voor goed gereedschap om je data te verzamelen en te interpreteren. Met Tableau is het gemakkelijk om data te visualiseren en trends te spotten. Of ga aan de slag met Microsoft Power BI en combineer databronnen als Excel, Salesforce en zelfs social media. Zoek je een gratis oplossing? Je kunt meer dan 120 verschillende databronnen samenbrengen in Google Data Studio.
+
+**Combineer verschillende databronnen**
+
+Breng interne en externe databronnen samen. Heeft jouw klant bijvoorbeeld een bouwbedrijf dat afhankelijk is van de aanvoer van grondstoffen? Pak er historische klimaatdata en weersvoorspellingen bij en kijk of er een periode van droogte te verwachten valt. Zoals we afgelopen zomer hebben gezien, betekent droogte een lage waterstand in de grote rivieren als de Rijn. De aanvoer van bouwmaterialen per schip loopt zo gevaar. Verwacht je problemen? Raad je klant aan financiering aan te trekken om op tijd voorraden in te slaan, of om een financiële buffer op te bouwen.

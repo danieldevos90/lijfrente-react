@@ -1,0 +1,5 @@
+Geldlenen-zakelijk scrape failed due to DNS resolution error. Verify domain or try again.
+URL: https://geldlenen-zakelijk.nl/
+Status: DNS failed
+
+

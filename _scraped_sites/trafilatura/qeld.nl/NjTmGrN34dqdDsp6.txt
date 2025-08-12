@@ -1,0 +1,135 @@
+---
+title: Start een besloten vennootschap (BV) - Stap voor stap | Qeld
+author: Johannes Stevense
+url: https://www.qeld.nl/posts/start-een-besloten-vennootschap-bv-stap-voor-stap-gids
+hostname: qeld.nl
+description: Ben jij van plan een besloten vennootschap (BV) te starten? Qeld vertelt je alles wat jij moet weten om jouw BV op te zetten. Lees meer ...
+sitename: qeld.nl
+date: 2024-06-17
+---
+Overweeg je om een besloten vennootschap op te richten? Spannend! Maar wat is een BV eigenlijk en hoe werkt het? Maak je geen zorgen - hier vind je de antwoorden. Wij bij Qeld leggen alles uit wat je moet weten over het starten van een BV.
+
+**In 8 minuten of minder** lees je wat een BV is, hoe je er een vanaf nul start en hoe Qeld je kan helpen bij het financieren van de groei van je bedrijf.
+
+**Wat is een besloten vennootschap (BV)?**
+
+Een BV is een veelvoorkomende juridische entiteit die wordt opgericht door een of meerdere oprichters. Binnen een BV is eigendom en aansprakelijkheid gestructureerd verdeeld. Dit betekent dat jij als eigenaar van een BV beperkte persoonlijke aansprakelijkheid hebt voor de schulden van het bedrijf - dat wil zeggen dat je persoonlijke vermogen beschermd is als het bedrijf in financiële problemen komt. Het is als een bedrijfsstructuur met een ingebouwd vangnet.
+
+**BV vs. NV**
+
+Het belangrijkste verschil tussen een BV (Besloten Vennootschap) en een NV (Naamloze Vennootschap) is de eigendoms- en aansprakelijkheidsstructuur. BV's hebben doorgaans een beperkt aantal aandeelhouders, met beperkte aansprakelijkheid voor hun investeringen. NV's zijn vaak beursgenoteerde bedrijven met aandelen beschikbaar voor een breder publiek, waarbij aandeelhouders beperkte aansprakelijkheid hebben, maar hun persoonlijke vermogen nog steeds enig risico kan lopen. BV's zijn populair voor kleinere, hecht verbonden bedrijven, terwijl NV's vaak de voorkeur hebben voor grotere, beursgenoteerde ondernemingen.
+
+**Verschillen tussen verschillende soorten bedrijfsstructuren**
+
+Nu we begrijpen wat een BV is, hoe verhoudt het zich tot andere veelvoorkomende bedrijfsstructuren?
+
+**Eenmanszaak**: Een eenmanszaak is een rechtsvorm waarbij één persoon het bedrijf alleen runt. Het bedrijf en de eigenaar zijn dezelfde juridische entiteit, en de eigenaar is persoonlijk aansprakelijk voor de schulden van het bedrijf. Het is een eenvoudige en flexibele rechtsvorm, maar het ontbeert belastingvoordelen en kan riskant zijn als het bedrijf slecht presteert.
+
+**Vennootschap onder firma (VOF)**: Een VOF is een rechtsvorm waarbij twee of meer personen samen het bedrijf runnen. Elke vennoot is persoonlijk aansprakelijk voor de schulden van het bedrijf, en er is geen beperking op eigendom. Het is een goede rechtsvorm voor partnerschappen, maar lijkt op een eenmanszaak qua gebrek aan fiscale bescherming die een BV kan bieden.
+
+Als je twijfelt tussen het starten van een VOF, een eenmanszaak of een BV, overweeg dan dat een eenmanszaak en VOF complexere boekhoudkundige en administratieve verplichtingen met zich meebrengen. Hoewel deze twee opties je volledig persoonlijk eigendom en controle geven, komt dit ook met een grotere persoonlijke aansprakelijkheid voor de schulden van het bedrijf. Het verschil in belastingheffing en juridische aspecten is ook iets om te overwegen bij het kiezen van de juiste bedrijfsstructuur voor jouw behoeften.
+
+**Stapsgewijze handleiding: hoe start je een besloten vennootschap (BV)**
+
+Dus, nu is het tijd om de details in te duiken en precies te begrijpen hoe je stap voor stap een BV start. Onthoud dat goede voorbereiding de sleutel tot succes is, dus laten we aan de slag gaan met jouw reis.
+
+**Stap 1: Voorbereiding**
+
+Voordat je je in het avontuur van een BV stort, begin met voorbereiden. De eerste stap is het openen van een zakelijke rekening bij jouw bank. Hierop stort je het startkapitaal van minimaal €0.01. Zorg er ook voor dat je een sterke en gedenkwaardige bedrijfsnaam hebt.
+
+**Stap 2: Registreer de BV**
+
+Registreer je bedrijf bij de Kamer van Koophandel (KvK). Hier wordt alles afgehandeld, van de registratie van het bedrijf zelf, de registratie van de omzetbelasting (BTW) en het verkrijgen van een fiscaal identificatienummer (RSIN) tot de registratie van jezelf als werkgever. De registratiekosten variëren afhankelijk van de regio en het type bedrijf, maar bedragen doorgaans enkele euro's. Tijdens dit proces stel je de statuten op, die informatie bevatten over de oprichters, het aantal aandelen per oprichter en de aandelenprijzen.
+
+*Tips*: In deze stap kun je ook alle benodigde vergunningen veiligstellen die je nodig hebt om je BV te exploiteren. Afhankelijk van het soort bedrijf dat je runt, kunnen vergunningen lokaal, regionaal of nationaal worden verleend, maar over het algemeen kan de gemeente een goede bron van informatie zijn over dit onderwerp.
+
+**Stap 3: Maak de statuten**
+
+De statuten fungeren als een spelregelboek voor jouw bedrijf. Ze specificeren het type bedrijf, het adres, het minimale en maximale aandelenkapitaal, de locatie van de jaarlijkse algemene vergadering en hoe toekomstige oproepen moeten worden verstuurd. Het is belangrijk ervoor te zorgen dat ze duidelijk zijn en in overeenstemming zijn met de doelstellingen van jouw bedrijf.
+
+**Stap 4: Betaling en registratie van aandelen**
+
+Nu is het tijd om aandelen te tekenen en te betalen. Normaal gesproken betaalt elke aandeelhouder dezelfde prijs per aandeel, maar er is flexibiliteit om verschillende prijzen in te stellen als dat gewenst is. De betaling gebeurt door geld op de bankrekening van de BV te storten volgens de bankverklaring.
+
+**Stap 5: Meld de uiteindelijke begunstigde**
+
+Binnen vier weken na de registratie van jouw BV moet je melden wie de uiteindelijke begunstigde is. Dit betekent dat je rapporteert wie het bedrijf controleert door middel van aandelen of het recht om meer dan de helft van de bestuursleden aan te wijzen of af te zetten.
+
+*Tips*: Er kunnen meerdere uiteindelijke begunstigden zijn.
+
+**Stap 6: Bedrijfsverzekering**
+
+Om jouw bedrijf te beschermen tegen onverwachte kosten, is het verstandig om zakelijke verzekeringen af te sluiten. Dit omvat dekking voor schade die jouw bedrijf aan anderen kan toebrengen, verzekering tegen schade aan eigendommen, onderbreking van de bedrijfsactiviteiten en zelfs collectieve arbeidsovereenkomst-gerelateerde verzekeringen als je werknemers hebt.
+
+
+Met deze stappen ben je klaar om jouw BV te starten en met vertrouwen de zakenwereld in te stappen.
+
+**Is het mogelijk om een BV te starten zonder kapitaal?**
+
+Absoluut, het is mogelijk! Je kunt aan de slag met minimale financiële middelen. Hier zijn enkele alternatieve financieringsopties om te overwegen:
+
+**Crowdfunding**: Via platforms zoals Kickstarter of Indiegogo kun je kapitaal inzamelen bij een breed publiek dat gelooft in jouw idee.
+
+**Investeerders**: Zoek ondersteuning van investeerders die bereid zijn te investeren in jouw bedrijf in ruil voor aandelen.
+
+**Persoonlijke leningen**: Overweeg om je eigen spaargeld te gebruiken of een persoonlijke lening af te sluiten om het startkapitaal te financieren.
+
+**Bedrijfsleningen**: Neem contact op met jouw bank om de mogelijkheid van een bedrijfslening te bespreken om de opstartkosten van de BV te financieren.
+
+**Bootstrapping:** Probeer de kosten te minimaliseren door je eigen middelen te gebruiken en in het begin vanuit huis te werken.
+
+**Uitbesteding**: Maak gebruik van externe diensten en freelancers in plaats van fulltime medewerkers aan te nemen om kosten te besparen.
+
+Met de juiste strategie en creativiteit kun je een BV starten, zelfs als je beperkte kapitaalbronnen hebt. Het is belangrijk om grondig te plannen en de verschillende financieringsopties te overwegen die het beste bij jouw situatie en bedrijfsidee passen.
+
+**Kosten om een BV op te starten - Budget en uitgaven**
+
+Bij het plannen om jouw eigen bedrijf te starten, is het belangrijk om een duidelijk beeld te hebben van de kosten die kunnen ontstaan. Hier geven we je een overzicht van de meest voorkomende kosten en tips over hoe je een realistisch budget opstelt.
+
+De meest voorkomende kosten bij het opstarten van een BV zijn onder andere:
+
+**Registratiekosten**: In het begin moet je kosten betalen om jouw BV te registreren, meestal variërend van enkele honderden euro's tot meer, afhankelijk van de regio en het type bedrijf.
+
+**Startkapitaal:** Dit is geen directe kost op zich, maar een besloten BV vereist een startkapitaal van minimaal €0.01, wat het aandelenkapitaal van het bedrijf vertegenwoordigt.
+
+**Locatie en apparatuur:** Afhankelijk van jouw bedrijf moet je mogelijk kantoorruimte huren, apparatuur aanschaffen of investeren in opslagruimte.
+
+**Personeel:** Als je van plan bent personeel in dienst te nemen, moet je rekening houden met loonkosten en werkgeversbijdragen.
+
+**Marketing en reclame:** Het promoten van jouw bedrijf kan een aanzienlijk budget vergen voor advertenties, webdesign en marketingcampagnes.
+
+
+**Zo stel je een realistisch budget op:**
+
+**Identificeer en rangschik de kosten:** Ga zorgvuldig door alle potentiële uitgaven en categoriseer ze om een duidelijk overzicht te krijgen. Richt je op de noodzakelijke kosten die essentieel zijn om jouw bedrijf op gang te krijgen.
+
+**Meetbaarheid:** Maak je budget meetbaar door specifieke doelen en tijdlijnen vast te stellen om de kostenontwikkeling te volgen.
+
+**Flexibiliteit: **Wees bereid om jouw budget aan te passen als dat nodig is. Het is belangrijk om flexibel te zijn en je aan te passen aan veranderingen!
+
+Een realistisch budget is de sleutel om controle te houden over jouw kosten en ervoor te zorgen dat jouw BV financieel stabiel genoeg is om te gedijen.
+
+**Laat jouw BV groeien met een bedrijfslening van Qeld**
+
+Als jouw BV eenmaal op gang is en je op zoek bent naar financieringsopties om jouw bedrijf uit te breiden, kan Qeld jouw betrouwbare partner zijn. Qeld biedt zakelijke leningen aan van €1.000 tot €500.000 om je te helpen investeren in nieuwe apparatuur, jouw marketing te vergroten of jouw bedrijf uit te breiden. Met een eenvoudig aanvraagproces kun je snel en gemakkelijk toegang krijgen tot kapitaal - als alles in orde is, kun je zelfs op dezelfde dag nog het geld op jouw rekening hebben!
+
+**Veelgestelde vragen over het starten van een BV:**
+
+**Hoeveel geld is er nodig om een BV te starten?**
+
+Om een BV te starten, heb je €0.01 nodig als startkapitaal. Er is geen minimumbedrag vereist.
+
+
+**Kan je een BV helemaal alleen starten?**
+
+Ja, je kunt een BV helemaal alleen starten als de enige eigenaar en directeur als je dat wilt. Er is geen vereiste om andere eigenaren of bestuursleden te hebben.
+
+
+**Moet je een salaris opnemen uit een BV?**
+
+Nee, je bent niet verplicht om een salaris op te nemen uit een BV. Je kunt ervoor kiezen om een salaris op te nemen wanneer het bedrijf voldoende middelen heeft, of de winst in het bedrijf laten zitten en gebruiken voor groei.
+
+
+**Hoe lang duurt het om een BV op te richten?**
+
+De tijd die nodig is om een BV op te richten kan variëren, maar doorgaans kun je verwachten dat het proces enkele weken in beslag neemt. De registratie en afhandeling van de benodigde formaliteiten kan ook variëren in tijdsduur.

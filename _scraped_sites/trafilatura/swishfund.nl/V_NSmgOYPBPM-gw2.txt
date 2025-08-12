@@ -1,0 +1,63 @@
+---
+title: VAT return: How does sales tax work for entrepreneurs | Swishfund
+author: Merel Nijland Marketer
+url: https://www.swishfund.nl/blog/btw-aangifte-hoe-werkt-omzetbelasting-voor-ondernemers
+hostname: swishfund.nl
+description: The third quarter of 2022 is over, which means that another blue letter is on the mat. Time to report the sales tax, also known as a VAT return. This is probably one of your least favorite activities as an entrepreneur, but it is very important. Perhaps it's a piece of cake for you by now and you'll have the job done in no time. But it is also possible that you look at the forms to fill out and ask yourself: How does the VAT return actually work and how do I know what to look for? That's exactly what we've selected for you, we'll give you the answers and more.
+sitename: swishfund.nl
+date: 2022-09-04
+---
+# VAT return: How does sales tax work for entrepreneurs
+
+#### Merel Nijland
+
+## Introduction
+
+The third quarter of 2022 is over, which means that another blue letter is on the mat. Time to report the sales tax, also known as a VAT return. This is probably one of your least favorite activities as an entrepreneur, but it is very important. Perhaps it's a piece of cake for you by now and you'll have the job done in no time. But it is also possible that you look at the forms to fill out and ask yourself: How does the VAT return actually work and how do I know what to look for? That's exactly what we've selected for you, we'll give you the answers and more.
+
+**What is sales tax?**
+
+Sales tax is the VAT that consumers and companies pay when purchasing a particular product or service. Sales tax rates may vary, but in general, the standard in the Netherlands is 21% VAT. This usually concerns non-food products such as clothing, a phone, or the graphic designer you hired. Another common rate is 9%. This is used for food such as food and drinks. There are also cases where no tax has to be paid at all. You can find these exceptions below;
+
+**Check whether or not you need to file a VAT return**
+
+- There are a number of professions that are exempt from VAT. This concerns professions in healthcare, education, journalism and childcare. You then do not have to pay VAT, but you are not allowed to charge it either. If this is the case for you, you are also not allowed to deduct the VAT you have paid.
+- Do you deliver goods abroad or store them in a customs warehouse? Then the VAT becomes 0%, also known as reverse VAT. This means that the VAT is transferred from the supplier to the customer. Always check carefully whether this also applies to your goods first.
+- Does your turnover fall below 20,000 euros per year? Then you may not have to pay VAT based on the KOR (Small Entrepreneurs Scheme). If you use this scheme, you are also not allowed to charge VAT or deduct VAT that you pay yourself.
+
+**Difference between sales tax and income tax**
+
+Sales tax and income tax are often confused. **These two forms of taxation are independent of each other.** Sales tax includes the VAT you have received from your customers and the VAT you have paid yourself for business products or services. That is why you can also call sales tax a VAT return. Income tax is tax that you pay on your income from work and home. The applicable percentage depends on your annual income. Another important difference is the payment time. You usually pay sales tax quarterly, while you pay income tax once a year.
+
+**How does the sales tax return work? **
+
+The VAT that you pay to the tax authorities always comes from the invoices you send. You are responsible for ensuring that this money ultimately ends up with the tax authorities, even if your customer has not paid the invoice yet. So keep this in mind when invoicing at the end of a quarter. In principle, you can deduct the VAT that was charged to you from the VAT due. Generally, this includes VAT on business purchases, costs and investments.
+
+Perhaps the most important advice: Pay on time! The tax authorities have a leniency period of 7 days. If you have not paid or not paid in full after that, you risk a fine of a minimum of €50 and a maximum of €5,514.
+
+**How to prevent quarterly stress**
+
+Make sure you have insight into your sales tax. You do this by incorporating the VAT into your cash flow planning. You know when to expect the VAT return letter and it's nice to have insight into this to avoid unpleasant surprises.
+
+**Tip: Make a VAT “pot” on your business account. Once you have received a payment, set the VAT aside. This way, you can be sure that you have the amount available as soon as the VAT return has to be submitted. **
+
+For income tax, you have two options. With a fixed income, you can set aside a standard amount each month. If your income is variable, it is more convenient to set the income tax percentage separately for each invoice. In most cases, 40% of your turnover is fine. If you have a business loan, as a sole trader, you can deduct the interest and closing costs from your profit when filing income tax. If you have a BV, you can deduct it from your profit before profit tax. As a result, you ultimately pay less tax.
+
+Managing your cash flow properly ensures that you have insight into your income and expenses, so that you have set aside sufficient money and prevent fines. Curious about what else you can do to optimize your cash flow, check out our cash flow tips.
+
+**The VAT return checklist**
+
+At many times, filing the declaration can get stuck or cause uncertainty. So make sure you get started well prepared with the checklist below.
+
+**Here's what you need: **
+
+- Your sales tax number
+- VAT Identification Number
+- eHerkenning (not necessary as a self-employed person)
+- The net amounts received and paid
+- The separate VAT
+- All invoices sent and received for check
+
+**Business loan: quick and easy**
+
+Do you see opportunities for your company with our business loan? Do you want to invest in smooth cash flow, optimize inventory, or do you making a company more sustainable? At Swishfund, you can take out a business loan easily and quickly. Curious about the possibilities? Watch business Swishfund loan for the options or apply for your loan directly below.

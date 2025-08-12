@@ -1,0 +1,70 @@
+---
+title: Wat je moet weten over werkkapitaal
+author: New
+url: https://new10.com/blog/wat-je-moet-weten-over-werkkapitaal
+hostname: new10.com
+description: Wat is werkkapitaal? Om je bedrijf soepel draaiende te houden heb je als ondernemer werkkapitaal nodig. Lees hier hoe je berekent hoeveel je nodig hebt!
+sitename: New10
+date: 2024-10-16
+---
+New10
+
+New10 • Financieringen
+
+Werkkapitaal is het kapitaal dat je gebruikt om aan je dagelijkse verplichtingen te voldoen en bestaat uit je voorraad, debiteuren en financiële middelen, kortom vlottende activa. Denk aan het uitbetalen van salarissen, de kosten die je maakt voor de huur van een ruimte en het betalen van je leveranciers (vlottende passiva). Ook het aanvullen van je voorraden doe je met je werkkapitaal. Het werkkapitaal is in feite dus een indicatie van je cashflow waarmee je op korte termijn je rekeningen betaalt.
+
+Het is belangrijk om de juiste balans te vinden in de hoogte van je werkkapitaal. Met voldoende ‘spek op de botten' verklein je namelijk het risico op betalingsproblemen en kun je zorgeloos aan je financiële verplichtingen voldoen. Is het dan goed om zoveel mogelijk werkkapitaal te hebben? Nee. Wanneer je te veel werkkapitaal hebt, heb je minder ruimte om investeringen te doen in de groei van je bedrijf. Het geld zit immers vast in je voorraden of debiteuren. Denk bijvoorbeeld aan een te grote voorraad die onverhoopt onverkoopbaar blijkt. Het kan ook zijn dat je bedrijf sterk groeit en dat er veel geld vast zit in uitstaande facturen bij nieuwe debiteuren. Deze debiteuren zou je kunnen financieren met een werkkapitaalfinanciering zoals een zakelijk krediet.
+
+Heb je voldoende geld in kas voor de korte termijn? Met een werkkapitaalberekening bekijk je de verhouding tussen je kapitaal en de te betalen rekeningen. Het bruto werkkapitaal is je vlottende activa (liquide middelen, voorraad en debiteuren). Wanneer je kortlopende schulden hierop in mindering brengt, weet je je netto werkkapitaal.
+
+**Bruto en netto werkkapitaal in formules**
+
+Bruto werkkapitaal = voorraad + debiteuren + liquide middelen
+
+Netto werkkapitaal = bruto werkkapitaal – crediteuren
+
+**Voorbeeld:**
+
+*Je voorraad telt een waarde van in totaal €20.000. Je hebt voor €20.000 aan facturen uitstaan en het geld op je bankrekening bedraagt €40.000. Je bruto werkkapitaal is dan €80.000. Om te weten hoeveel geld je daadwerkelijk in de kas hebt, breng je de door jou te betalen rekening in mindering op dit bedrag. Wanneer je €50.000 aan crediteuren open hebt staan, is je netto werkkapitaal in dit geval €30.000.*
+
+Veel werkkapitaal betekent niet direct dat je bedrijf financieel gezond is. Een handige graadmeter om te weten of je voldoende werkkapitaal hebt, is de current ratio of quick ratio. Je bekijkt hiermee de verhouding tussen je kapitaal en de te betalen rekeningen. Een current ratio boven de 1 betekent dat je voldoende werkkapitaal hebt om aan je financiële verplichtingen te voldoen. Met de quick ratio bereken je of je ook voldoende ruimte hebt wanneer je de voorraad niet meetelt. Bijvoorbeeld als je verwacht dat je deze voorraad niet op korte termijn kunt omzetten in liquide middelen (of geld).
+
+**Current en quick ratio in formules**
+
+Current ratio = vlottende activa (inclusief liquide middelen) / vlottende passiva
+
+Quick ratio = (vlottende activa (inclusief liquide middelen) – voorraden) / vlottende passiva
+
+Voor veel ondernemers is het een uitdaging om de juiste balans te vinden hoeveel werkkapitaal je hebt. Herken jij deze uitdaging? Probeer dan eens deze tips:
+
+-
+**Optimaliseer je voorraad**Zorg dat je inzicht hebt in welke producten makkelijk en minder makkelijk verkopen. In onverkochte producten zit geld opgesloten! Lees meer over slim voorraadbeheer. -
+**Factureer op tijd**
+
+Zo voorkom je dat je geen betalingen kunt verrichten omdat je zit te wachten op betalingen die nog binnen moeten komen. -
+**Check de kredietwaardigheid van nieuwe klanten**
+
+Zo verklein je het risico dat een onverhoopt faillissement of wanbetalers impact hebben op jouw werkkapitaal. Lees meer over kredietwaardigheid checken. -
+**Werk met meerdere leveranciers**
+
+Dit maakt je minder kwetsbaar en zekerder van de continuïteit van jouw business. -
+**Ontdek jouw fiscale mogelijkheden**
+
+Onderzoek welke fiscale mogelijkheden er zijn om meer balans te kunnen brengen in je werkkapitaal. -
+**Creëer ruimte voor jezelf**
+
+Maak afspraken met leveranciers over betaaltermijnen om zo ruimte voor jezelf te creëren. -
+**Betaal sneller in ruil voor korting**
+
+Heb je toch geld over? Misschien kun je leveranciers sneller betalen in ruil voor een korting!
+
+Een positief netto werkkapitaal betekent dat de vlottende activa groter zijn dan de vlottende passiva. Dit is over het algemeen een goed teken en geeft aan dat het bedrijf voldoende kortetermijnactiva heeft om aan zijn kortetermijnverplichtingen te voldoen. Positief netto werkkapitaal heeft de volgende voordelen:
+
+**Liquiditeit:**Het bedrijf heeft voldoende liquiditeit om dagelijkse operationele kosten en onverwachte uitgaven te dekken.**Kredietwaardigheid:**Een gezond netto werkkapitaal kan de kredietwaardigheid van het bedrijf verbeteren, waardoor het gemakkelijker wordt om leningen of kredieten te krijgen.**Investeringsmogelijkheden:**Het bedrijf heeft de flexibiliteit om te investeren in groei- en uitbreidingsmogelijkheden zonder afhankelijk te zijn van externe financiering.
+
+Een negatief netto werkkapitaal betekent dat de vlottende passiva groter zijn dan de vlottende activa. Dit kan een teken zijn van financiële problemen, omdat het bedrijf mogelijk niet voldoende kortetermijnactiva heeft om aan zijn kortetermijnverplichtingen te voldoen. Negatief netto werkkapitaal kan leiden tot:
+
+-
+**Liquiditeitsproblemen:**Het bedrijf kan moeite hebben om dagelijkse operationele kosten te betalen en kan afhankelijk worden van kortlopende leningen of kredieten. -
+**Kredietproblemen:**Negatief netto werkkapitaal kan de kredietwaardigheid van het bedrijf schaden, waardoor het moeilijker wordt om financiering te krijgen. -
+**Risico op faillissement:**Als een bedrijf niet in staat is om zijn kortlopende verplichtingen te voldoen, kan dit uiteindelijk leiden tot faillissement.

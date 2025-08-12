@@ -1,0 +1,89 @@
+---
+title: Cashflow berekenen: zo krijg je grip op je geldstromen
+author: Shirley Wijngaarden
+url: https://new10.com/blog/cashflow-berekenen
+hostname: new10.com
+description: Cashflow berekenen? Leer hoe je inzicht krijgt in je inkomsten en uitgaven. Inclusief formule en voorbeelden. Lees meer op New10
+sitename: New10
+date: 2025-06-26
+---
+Shirley Wijngaarden
+
+New10 redactie • Geldzaken
+
+**Cashflow** is het verschil tussen je inkomsten en uitgaven in een bepaalde periode. Het laat zien hoeveel geld er daadwerkelijk binnenkomt en uitgaat, los van boekhoudkundige winst.
+
+Je kunt een positieve cashflow hebben (meer geld komt binnen dan eruit gaat) of een negatieve (meer geld gaat eruit dan erin komt). Die laatste wil je natuurlijk liever vermijden.
+
+Cashflow geeft inzicht in je liquiditeit. Zelfs als je winst maakt op papier, kun je in de praktijk in de knel komen als klanten te laat betalen of je veel voorraad moet inkopen. Een gezonde cashflow is dus cruciaal om:
+
+-
+Je rekeningen op tijd te betalen
+
+-
+Te investeren in groei
+
+-
+Financiële risico’s op te vangen
+
+
+Er zijn verschillende manieren om de **cashflow te berekenen**, maar de meest gebruikte formule is:
+
+**Cashflow = Ontvangen inkomsten – Gedane uitgaven**
+
+Een andere methode — die vooral in de bedrijfseconomie wordt gebruikt — is de operationele cashflow:
+
+**Operationele cashflow = Nettowinst + Afschrijvingen – Mutatie werkkapitaal**
+
+**Uitgebreid voorbeeld:**
+
+Stel, jouw onderneming heeft in een kwartaal de volgende cijfers:
+
+-
+**Nettowinst:**€ 20.000 -
+**Afschrijvingen op machines:**€ 5.000 -
+**Toename in werkkapitaal (meer voorraad & debiteuren):**€ 3.000
+
+Dan is je operationele cashflow:
+
+**€ 20.000 + € 5.000 – € 3.000 = € 22.000**
+
+Je genereert dus € 22.000 aan kasstromen uit je dagelijkse bedrijfsvoering — dat is positief!
+
+Een cashflowprognose (of kasstroomplanning) is een inschatting van je toekomstige inkomsten en uitgaven. Hiermee kun je anticiperen op pieken en dalen in je cashflow en tijdig maatregelen nemen.
+
+**Waarom is een cashflowprognose belangrijk?**
+
+- Je kunt beter plannen wanneer je investeert of personeel aanneemt
+- Je voorkomt onverwachte tekorten
+- Je vergroot je slagkracht bij financieringsaanvragen
+
+**Hoe maak je een eenvoudige prognose?**
+
+-
+Maak een overzicht van verwachte inkomsten per maand
+
+-
+Zet daar alle verwachte uitgaven tegenover
+
+-
+Trek de uitgaven af van de inkomsten: dat is je verwachte cashflow per maand
+
+
+Je kunt dit eenvoudig bijhouden in een spreadsheet, of gebruikmaken van je boekhoudpakket.
+
+Een goede cashflow begint bij goed inzicht, maar vraagt ook om actie:
+
+-
+Factureer op tijd en hanteer duidelijke betaaltermijnen
+
+-
+Beheer je voorraad slim om onnodige kosten te vermijden
+
+-
+Stel een cashflowprognose op om vooruit te kijken
+
+
+- Cashflow berekenen geeft je grip op je financiën
+- Gebruik de eenvoudige én de bedrijfseconomische formule
+- Werk met een cashflowprognose voor financiële rust en sturing

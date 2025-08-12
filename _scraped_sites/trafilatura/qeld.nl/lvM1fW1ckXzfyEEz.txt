@@ -1,0 +1,10 @@
+---
+title: When will the loan be paid out? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/when-will-the-loan-be-paid-out-nl
+hostname: qeld.nl
+description: Our Qeld Business Loans can be paid out the same working day if you sign digitally. It's fast, secure and easy! Discover how much you can lend via Qeld now:
+sitename: qeld.nl
+date: 2025-01-01
+---
+The loan is paid out the same working day you accept and digitally sign our loan offer (providing the accordance is received before 5pm). Depending on holidays and weekends, it can take a couple of days before the funds are available in your business account.

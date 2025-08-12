@@ -1,0 +1,10 @@
+---
+title: How is Qeld different? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/how-is-qeld-business-loans-different-nl
+hostname: qeld.nl
+description: We've invested in a modern system that allows us to quickly and realiably perform credit assessments. That is how we can give out same-day business loans! More:
+sitename: qeld.nl
+date: 2025-01-01
+---
+We've invested heavily in a modern, digital solution, with no expensive branch network. By automating data extraction and through smart analysis of hundreds of data points we are able to quickly get to an evaluation of most businesses. As far as we know, nobody else in Northern and West Europe can approve and pay out a business loan faster than Qeld. What's also unique is you only pay for each month you have the loan. Simple and straightforward.

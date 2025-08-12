@@ -1,0 +1,13 @@
+---
+title: Veelgestelde vragen over bedrijfsfinanciering van Floryn
+url: https://www.floryn.com/veelgestelde-vragen
+hostname: floryn.com
+description: Wij zijn geen bank, maar ondernemers, net als jij. Daarom geven we je graag antwoord op al je vragen, in duidelijke taal, zonder gedoe.
+sitename: Floryn
+date: 2025-01-01
+---
+# Veelgestelde vragen
+
+Vind hier het antwoord op jouw vraag. Staat jouw vraag er niet tussen? Bel ons of neem contact op via de chat. Wil je meteen inzicht in jouw mogelijkheden? Doe dan onze Quickscan.
+
+Ben je al klant, en heb je vragen over je financiering, het aflossen, je account of wil je gegevens wijzigen? Klik dan hier om naar de Kennisbank te gaan.

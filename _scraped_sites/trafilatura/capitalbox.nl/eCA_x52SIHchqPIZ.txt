@@ -1,0 +1,139 @@
+---
+title: Bedrijfsliquiditeit en het belang van bedrijfsfinanciering
+url: http://www.capitalbox.nl/blog/bedrijfsliquiditeit
+hostname: capitalbox.nl
+description: Lees hier voor meer informatie over het begrip liquiditeit is en hoe je als ondernemer de liquiditeit van jouw bedrijf kunt verbeteren.
+sitename: CapitalBox
+date: 2024-04-26
+---
+# Bedrijfsliquiditeit en het belang van bedrijfsfinanciering
+
+## Wat is liquiditeit?
+
+Liquiditeit is het vermogen van een bedrijf om op korte termijn om te gaan met plotselinge en onvoorziene uitgaven en financiële verplichtingen. Liquiditeit omvat onder meer de liquide middelen van een bedrijf. Dit wil zeggen het geld dat op korte termijn beschikbaar kan worden gemaakt en uitstaande vorderingen op klanten die al zijn geïnd.
+
+Liquiditeit is van groot belang voor een bedrijf. Het laat zien of het goed gaat met het bedrijf of dat het te maken heeft met operationele problemen. Naast winstgevendheid en solvabiliteit is liquiditeit één van de belangrijkste voorwaarden om een bedrijf te kunnen runnen.
+
+Heb je als bedrijf liquiditeitsproblemen dan kunnen deze op een aantal manieren worden opgelost: bijvoorbeeld met extra bedrijfsfinanciering aan te trekken, door de vorderingen van het bedrijf te verkopen aan een bedrijf dat gespecialiseerd is in factuurfinanciering (factoring) of door tegen redelijke voorwaarden een zakelijke lening aan te vragen waarmee het bedrijf zijn operaties kan voortzetten.
+
+
+## Liquiditeitsrisico’s
+
+Als een bedrijf met een lage cashflow (er komt weinig geld binnen) en een kleine financiële buffer zijn uitstaande vorderingen niet op tijd weet te innen dan kan dat leiden tot een gedwongen liquiditeitsfaillissement. Als de cashflow of de financiële buffer onvoldoende is om het gebrek aan liquiditeit op te vangen, kan dat op zijn beurt weer leiden tot wanbetaling en nog meer kosten.
+
+In het ergste geval kan het voortbestaan van het bedrijf in gevaar komen. Een goed liquiditeitsbeheer en risicopreventie maken normaal gesproken dan ook deel uit van het risicomanagement van een bedrijf.
+
+
+## Zo verbeter je de liquiditeit van jouw bedrijf
+
+Er bestaat niet één standaard aanpak om de liquiditeit van een bedrijf te verbeteren. Elke bedrijfssituatie is weer anders. Maar wat altijd belangrijk is, is dat je op tijd in actie komt en de juiste beslissingen neemt. Daarmee kun je de toekomst van het bedrijf veiligstellen.
+
+
+## De rol van bedrijfsfinanciering bij het verbeteren van de liquiditeit
+
+Er zijn ten minste een paar financiële maatregelen die je kunt nemen om de liquiditeit van jouw bedrijf te verbeteren. Je kunt afspraken maken met crediteuren over flexibele betalingsplannen en contractueel vastleggen dat facturen later kunnen worden betaald. Op die manier kom je niet in problemen als de cashflow tijdelijk opdroogt.
+
+En een andere maatregel die je kunt nemen is het afsluiten van een aanvullende zakelijke lening om het liquiditeitsprobleem op te lossen.
+
+
+KIJK HIER VOOR MEER INFO OVER DE ZAKELIJKE LENINGEN VAN CAPITALBOX
+
+
+## Hoe bereken je de liquiditeit van jouw bedrijf?
+
+##### Liquiditeitsratio’s
+
+Met behulp van de hieronder beschreven ratio’s kun je de liquiditeit van jouw bedrijf berekenen. Deze ratio’s vormen de basis van de liquiditeitsberekening. Bij liquiditeitsratio’s onderscheiden we de statische liquiditeit (gebaseerd op reserves) en de dynamische liquiditeit (gebaseerd op geldstromen).
+
+Een bedrijf moet beide liquiditeitsratio’s op orde hebben, want als de cashflowliquiditeit slecht is, kan het met een goede financiële buffer nog steeds de lopende uitgaven dekken.
+
+
+### Statische liquiditeit
+
+
+Statische liquiditeit (gebaseerd op reserves) verwijst naar de financiële buffer van een bedrijf op basis van de liquide middelen, dus zonder rekening te houden met inkomsten en uitgaven.
+
+
+### Quick ratio (enge liquiditeit)
+
+
+Met deze liquiditeitsratio (ook wel acid test, lakmoesproef genoemd) wordt de liquiditeit van een bedrijf op korte termijn berekend in termen van financiële activa, d.w.z. contanten en kasequivalenten, en de middelen die snel in contanten kunnen worden omgezet. Dit wordt ook wel de financiële buffer genoemd.
+
+Zo bereken je de quick ratio:
+
+**Quick ratio = financiële activa / (kortlopende schulden - ontvangen vooruitbetalingen) **
+
+Financiële activa = contanten en kasequivalenten + financiële waarborgen + kortetermijnvorderingen
+
+Zo interpreteer je de resultaten:
+
+| Hoger dan 1,5 | = Uitstekend |
+| Tussen 1,0 - 1,5 | = Goed |
+| Tussen 0,5 - 1,0 | = Voldoende |
+| Lager dan 0,5 | = Slecht |
+
+
+Een resultaat van 1,0 betekent dat een bedrijf net genoeg liquiditeit heeft om op korte termijn aan zijn financiële verplichtingen te voldoen, als het al zijn financiële activa hiervoor gebruikt.
+
+Als in de berekening onzekere activa worden meegenomen (uitstaande vorderingen die als oninbaar worden beschouwd), kan het resultaat minder betrouwbaar zijn.
+
+
+### Current ratio (algemene liquiditeit)
+
+
+Het begrip current ratio wordt meestal gebruikt om de liquiditeit van een bedrijf over een periode van ca. een jaar te berekenen, dus een iets langere periode dan bij de quick ratio. Hierbij worden niet alleen de financiële activa meegerekend, maar ook de voorraden.
+
+Zo berekent u de current ratio:
+
+**Current ratio = (financiële activa + vlottende activa) / kortlopende schulden **
+
+Financiële activa = contanten en kasequivalenten + financiële waarborgen + vorderingen
+
+Vlottende activa = vlottende activa van de onderneming zoals materialen, voorraden, producten etc.
+
+De resultaten van de berekening van de current ratio verschillen per bedrijfstak en zijn ook afhankelijk van hoe nauwkeurig de waarde van de voorraden kan worden berekend. De waarde van de current ratio moet eigenlijk niet lager zijn dan 2.
+
+
+### Dynamische liquiditeit
+
+
+Dynamische liquiditeit (gebaseerd op geldstromen) verwijst naar de liquiditeit van een bedrijf op basis van de cashflow.
+
+
+### Cashflowpercentage
+
+
+Een ratio die nauwkeurig insolventie kan voorspellen. Het financiële resultaat van een bedrijf maakt duidelijk in hoeverre de activiteiten van het bedrijf voldoende inkomsten opleveren om werkkapitaal, investeringen, aflossingen en winstdeling mogelijk te maken.
+
+**Percentage financieel resultaat = 100 * (financieel resultaat / omzet)**
+
+Financieel resultaat = nettoresultaat + afschrijving en amortisatie
+
+Als de ratio van het financiële resultaat negatief is, betekent dat dat het bedrijf activa heeft moeten realiseren of dat het zich dieper in de schulden heeft moeten steken om de lopende uitgaven te dekken en winstdeling mogelijk te maken.
+
+Een bedrijf moet er in elk geval naar streven dat deze ratio positief is om ervoor te zorgen dat het voldoende cashflow heeft om zijn leningen te kunnen aflossen.
+
+
+### Ratio financieel overschot
+
+
+Een financieel overschot geeft aan dat een bedrijf voldoende inkomsten genereert om de transacties in contanten te dekken die het resultaat zijn van de bedrijfsactiviteiten, en om zijn financiële verplichtingen na te komen.
+
+**Ratio financiële balans = 100 * (financiële balans / uit bedrijfsactiviteiten gegenereerde contanten)**
+
+Er is geen kritische ondergrens waar een bedrijf boven moet blijven. Dat komt omdat dit een vluchtige waarde is die zelfs bij een solvent bedrijf sterk kan fluctueren.
+
+
+### Vermogensratio en liquiditeit
+
+
+Zowel de liquiditeit als het vermogen van een bedrijf vormen een maatstaf die aangeeft hoe het bedrijf presteert, niet alleen naar de buitenwereld maar ook voor de ondernemer zelf.
+
+De vermogensratio verwijst naar de kapitaalverdeling in het bedrijf, d.w.z. de verhouding tussen het vermogen van het bedrijf en de schulden die het heeft. Het geeft ook een indicatie van de winstgevendheid op lange termijn.
+
+De vermogensratio geeft een indruk van de solvabiliteit van een bedrijf en geeft aan in hoeverre het op lange termijn bestand is tegen financiële verliezen. Het kan ook gebruikt worden om insolventie te voorspellen.
+
+Het risico op definitieve insolventie wordt gedefinieerd als een situatie waarin de resultaten van een bedrijf negatief worden terwijl de vermogensratio lager is dan 10%.
+
+
+Op zoek naar meer informatie over bedrijfseconomie en bedrijfsontwikkeling kijk dan op onze blog pagina voor meer artikelen.

@@ -1,0 +1,40 @@
+---
+title: Zwakke plekken in IT-systemen melden
+url: https://new10.com/security
+hostname: new10.com
+description: We willen onze klanten veilig laten bankieren. Daarom verbeteren we onze systemen en processen continu, om deze betrouwbaar te houden.
+sitename: new10.com
+date: 2025-03-15
+---
+We willen onze klanten veilig laten bankieren. Daarom verbeteren we onze systemen en processen continu, om deze betrouwbaar te houden. Ziet u toch een zwakke plek in een IT-systeem? Dan stellen we het op prijs als u dit aan ons wilt melden.
+
+Fouten komen voor, we willen deze niet verbergen. Maar als u zwakke plekken in onze IT-systemen openbaar maakt zonder eerst met ons te overleggen, kan dat ernstige gevolgen hebben. Hoe goed uw bedoeling ook is. Criminelen kunnen uw informatie gebruiken en zo bijvoorbeeld internetfraude plegen. Daarom vragen we u de fout eerst aan ons te melden en samen met ons te werken aan een oplossing. Zo kunnen we voorkomen dat er fraude plaatsvindt of dat systemen uitvallen.
+
+U kunt, liefst zo snel mogelijk, alle soorten zwakke plekken in onze IT-systemen melden:
+
+- cross-scripting-kwetsbaarheden
+- SQL-injectie-kwetsbaarheden
+- encryptie-zwakheden, etc.
+
+Meld uw zwakke plek via ABN AMRO Vulnerability Disclosure Program
+
+Een team van beveiligingsexperts onderzoekt uw melding en neemt binnen 2 werkdagen contact met u op. Dat kan gaan over de door u gevonden zwakke punten, hoe u die heeft gevonden en de vervolgacties.
+
+We zullen uw persoonsgegevens alleen gebruiken om actie te ondernemen naar aanleiding van uw melding. We geven uw persoonsgegevens in principe niet aan anderen zonder uw toestemming.
+
+Tijdens uw onderzoek kan het zijn dat u handelingen uitvoert die strafbaar zijn. Houdt u zich aan de regels voor het melden van zwakke plekken in onze IT-systemen, dan doen we geen aangifte en dienen we geen schadeclaim in.
+
+We kunnen u niet beloven dat u nooit vervolgd zult worden als u bij uw onderzoek strafbare feiten begaat. Ook als we geen aangifte doen. De Officier van Justitie beslist namelijk altijd zelf of u vervolgd wordt. Wij gaan daar niet over.
+
+*Deze regels zijn gebaseerd op de richtlijnen van het Nationaal Cyber Security Centrum van het Ministerie van Veiligheid en Justitie.*
+
+- Wees verantwoordelijk en voorzichtig.
+- Gebruik alleen methoden die nodig zijn om de zwakheden te vinden of aan te tonen.
+- Beveilig uw eigen systemen zo goed mogelijk.
+- Gebruik zwakheden die u ontdekt alleen voor uw eigen onderzoek en niet voor iets anders.
+- Gebruik geen social engineering of brute-force aanvallen om toegang te krijgen tot een systeem.
+- Plaats geen backdoor in een systeem. Ook niet om de kwetsbaarheid aan te tonen. Door een backdoor wordt een systeem nog onveiliger.
+- Wijzig of verwijder geen gegevens in het systeem.
+- Kopieer nooit meer gegevens dan nodig is. Is 1 record voldoende voor uw onderzoek? Ga dan niet verder.
+- Lukt het om een systeem binnen te dringen? Doe dit dan niet vaker dan nodig is.
+- Deel eventuele toegang tot een systeem niet met anderen.

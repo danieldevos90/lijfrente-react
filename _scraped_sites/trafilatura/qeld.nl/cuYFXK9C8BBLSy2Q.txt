@@ -1,0 +1,10 @@
+---
+title: Who can apply? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/who-can-apply-nl
+hostname: qeld.nl
+description: Qeld tries to help all types of entrepreneurs, including limited liability businesses and sole proprietors. Discover more about who can apply for a loan here:
+sitename: qeld.nl
+date: 2025-01-01
+---
+All Dutch limited liability business, partnerships, sole proprietorships / traders, and more can apply and be approved a loan, as long as the valid chamber of commerce number is presented and the director or the company is resident in the Netherlands. It can be a proud, old business, or a brand new startup, large or small. We work with businesses in virtually every industry, from north to south - even businesses with a checkered credit history can qualify. We evaluate each business individually - the key for us is that there is a solid business idea and qualified business owners behind the company.

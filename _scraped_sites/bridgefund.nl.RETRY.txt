@@ -1,0 +1,5 @@
+BridgeFund scrape failed with repeated timeouts (408). Retry later with higher timeout and allow JS rendering.
+URL: https://www.bridgefund.nl/
+Last attempt: 180s timeout
+
+

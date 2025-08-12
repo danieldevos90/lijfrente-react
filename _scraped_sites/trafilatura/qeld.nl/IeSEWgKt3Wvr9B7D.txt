@@ -1,0 +1,16 @@
+---
+title: Is there an invoice charge? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/is-there-an-invoice-charge-nl
+hostname: qeld.nl
+description: If you choose our default option of digital invoices, you don't pay any invoice costs. Our invoicing is convenient and fast: just like our business loans. More:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Eenvoudig aanvraagproces
+
+Lening uitbetaald binnen 24 uur
+
+Geen extra kosten bij vervroegde aflossing
+
+No, as long as you choose the default option of PDF-invoice via e-mail. If you prefer a mailed paper invoice there is a € 3 charge for postage, service and handling.

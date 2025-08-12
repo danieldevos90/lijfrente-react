@@ -1,0 +1,19 @@
+---
+title: PSD2-koppeling voor partners van Floryn
+url: https://www.floryn.com/partners/psd2
+hostname: floryn.com
+description: ✓ Digitale en veilige koppeling met de bank van jouw klant ✓ Geen papierwerk, maar gegevens delen via één druk op de knop ✓ Toegang financieel dashboard!
+sitename: Floryn
+date: 2025-01-01
+tags: ['Bekijk alles']
+---
+# PSD2-koppeling voor partners
+
+-
+Geheel digitale en veilige koppeling met de bank van jouw klant
+
+-
+Geen bergen papierwerk, maar gegevens delen via één druk op de knop
+
+-
+De cashflow van jouw klant binnen handbereik middels het financieel dashboard

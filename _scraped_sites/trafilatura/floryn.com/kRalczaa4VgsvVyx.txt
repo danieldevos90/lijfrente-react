@@ -1,0 +1,20 @@
+---
+title: PSD2: volledige controle over jouw betaalgegevens
+url: https://www.floryn.com/psd2
+hostname: floryn.com
+description: PSD2 is de Europese wet voor betalingsverkeer. Hiermee kun je partijen toegang geven tot je betaalrekening, saldo en afschriften. Lees hier hoe het werkt.
+sitename: Floryn
+date: 2025-01-01
+---
+# De zekerheid van PSD2
+
+Met PSD2 heb je volledige controle over jouw gegevens. Je regelt eenvoudig je financiële zaken en bepaalt zelf wie jouw data wel en niet mag inzien. Wel zo fijn.
+
+-
+Snel geregeld, zonder gedoe met documenten
+
+-
+Veiliger dan ooit, want de toegang bepaal jij
+
+-
+Direct inzicht via een financieel dashboard

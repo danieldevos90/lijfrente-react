@@ -1,0 +1,14 @@
+---
+title: Search Results
+url: https://www.qeld.nl/search
+hostname: qeld.nl
+sitename: qeld.nl
+date: 2025-01-01
+---
+Eenvoudig aanvraagproces
+
+Lening uitbetaald binnen 24 uur
+
+Geen extra kosten bij vervroegde aflossing
+
+Niet gevonden wat je zocht?

@@ -1,0 +1,10 @@
+---
+title: Wij gaan zorgvuldig om met jouw gegevens | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/worden-mijn-wachtwoorden-bewaard
+hostname: qeld.nl
+description: Ons klantenportal maakt gebruik van gecodeerde wachtwoorden en cookies, zodat Qeld Bedrijfsleningen jouw integriteit en veiligheid kan waarborgen!
+sitename: qeld.nl
+date: 2025-01-01
+---
+Om de hoogst mogelijke beveiliging te kunnen behouden in onze service, worden wachtwoorden in een gecodeerd formaat opgeslagen. Daarom moet je een nieuw wachtwoord instellen als je jouw vorige wachtwoord voor ons klantenportal bent vergeten. Het is belangrijk dat je een wachtwoord kiest dat niemand kent, bij voorkeur met zowel letters, cijfers als speciale tekens.

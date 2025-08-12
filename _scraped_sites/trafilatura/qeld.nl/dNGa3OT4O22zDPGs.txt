@@ -1,0 +1,16 @@
+---
+title: Do you save my password? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/do-you-save-my-password-nl
+hostname: qeld.nl
+description: Qeld may save your password to improve your user-experience of our website and make it easier to apply for a business loan. Read more here:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Eenvoudig aanvraagproces
+
+Lening uitbetaald binnen 24 uur
+
+Geen extra kosten bij vervroegde aflossing
+
+Yes, in encrypted form, for maximum security. This is why you have to create a new one if you forget your password. Please choose a password that nobody else knows or can easily guess, with letters, numbers and special symbols!

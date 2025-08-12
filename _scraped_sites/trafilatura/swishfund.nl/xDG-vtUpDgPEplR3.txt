@@ -1,0 +1,45 @@
+---
+title: Cookieverklaring | Swishfund
+url: https://www.swishfund.nl/cookieverklaring
+hostname: swishfund.nl
+sitename: swishfund.nl
+date: 2025-01-01
+---
+# Cookieverklaring
+
+Om je de best mogelijke website-ervaring te geven, maakt de website van Swishfund gebruik van cookies. Door gebruik te maken van de website van Swishfund ga jij akkoord met het gebruik van deze cookies.
+
+**Wat zijn cookies?**
+
+Cookies zijn kleine tekstbestanden die gedownload worden naar je computer of mobiel apparaat, wanneer je een website of applicatie bezoekt. Je webbrowser (zoals Safari, Edge, Firefox of Chrome) stuurt deze cookies terug naar de website of applicatie bij ieder afzonderlijk bezoek. Hierdoor kan de website jou herkennen en dingen herinneren zoals persoonlijke gegevens of gebruikersvoorkeuren.
+
+Cookies zijn zeer behulpzaam en voeren verschillende functies uit om je ervaringen met de website zo gemakkelijk mogelijk te doen verlopen. Bijvoorbeeld, ze laten je gemakkelijk wisselen tussen verschillende webpagina’s, onthouden je voorkeuren, en verbeteren de functionaliteit van de website.
+
+**Permanente cookies**
+
+Met behulp van een permanente cookie kunnen wij je herkennen bij een nieuw bezoek op onze website. De website kan daardoor speciaal op uw voorkeuren worden ingesteld. Ook wanneer je toestemming hebt gegeven voor het plaatsen van cookies kunnen wij dit door middel van een cookie onthouden. Hierdoor hoeft je niet steeds je voorkeuren te herhalen waardoor je tijd bespaart en prettiger gebruik van onze website kunt maken. Permanente cookies kan je verwijderen via de instellingen van je browser.
+
+**Sessie cookies**
+
+Met behulp van een sessie cookie kan je browser zien welke onderdelen van de website je met dit bezoek hebt bekeken. Deze cookies worden automatisch verwijderd zodra je jouw webbrowser afsluit.
+
+**Tracking cookies**
+
+Tracking cookies kunnen worden opgevraagd zodra je ons platform bezoekt. Hierdoor kunnen wij te weten komen dat je op onze website bent geweest. Het daardoor opgebouwde profiel dient om onze advertenties af te stemmen op jouw profiel, zodat deze zo relevant mogelijk voor je zijn.
+
+**Derde partij cookies**
+
+Om de kwaliteit van de website te verbeteren, mag Swishfund gebruik maken van andere partijen die ook cookies kunnen plaatsen; dit om de functionaliteit van de website te verbeteren. Swishfund plaatst soms informatie van Google, YouTube, etc. Pagina’s waar deze informatie aanwezig is, bevatten soms delen van deze websites. Wanneer je de “Like” of “Share” knoppen op onze website ziet, kan er een cookie geplaatst worden naar de service die je hebt gekozen.
+
+**Google Analytics cookies**
+
+Via onze website wordt een cookie geplaatst van het Amerikaanse bedrijf Google, als deel van de "Analytics"-dienst. Wij gebruiken deze dienst om bij te houden en rapportages te krijgen over hoe bezoekers de website gebruiken. Google kan deze informatie aan derden verschaffen indien Google hiertoe wettelijk wordt verplicht, of voor zover derden de informatie namens Google verwerken. Wij hebben hier geen invloed op. Wij hebben Google toegestaan de verkregen analytics informatie te gebruiken voor andere Google diensten.
+
+De informatie die Google verzamelt wordt zo veel mogelijk geanonimiseerd. Uw IP-adres wordt nadrukkelijk niet meegegeven. De informatie wordt overgebracht naar en door Google opgeslagen op servers in de Verenigde Staten. Google stelt zich te houden aan de Privacy Shield principles en is aangesloten bij het Privacy Shield-programma van het Amerikaanse Ministerie van Handel. Dit houdt in dat er sprake is van een passend beschermingsniveau voor de verwerking van eventuele persoonsgegevens.
+
+**Cookies Blokkeren**
+
+Wanneer je blijft gebruik maken van de website, zonder je voorkeuren te veranderen, zal Swishfund aannemen dat je geen problemen hebt bij het ontvangen van cookies van Swishfund. Indien je dit wil, kan je jouw cookie voorkeuren op ieder ogenblik veranderen door je browser instellingen te aan te passen. Je kan je browser zo instellen dat hij geen cookies ontvangt. Mogelijk leidt dat ertoe dat bepaalde functionaliteiten van ons online platform minder goed of niet werken. Meer informatie omtrent het in- en uitschakelen en het verwijderen van cookies kunt je vinden in de instructies en/of met behulp van de Help-functie van uw browser.
+
+
+-------------------------------------------

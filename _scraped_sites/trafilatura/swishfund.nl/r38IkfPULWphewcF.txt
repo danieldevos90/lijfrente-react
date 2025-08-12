@@ -1,0 +1,75 @@
+---
+title: UBO register: don't you forget your registration? | Swishfund
+author: Merel Nijland Marketer
+url: https://www.swishfund.nl/blog/ubo-register-vergeet-jij-je-inschrijving-niet
+hostname: swishfund.nl
+description: Since September 27, 2020, it has been mandatory for most entrepreneurs to register in the UBO register. This will involve approximately 1.5 million organizations in the Netherlands. But what exactly is the UBO register, and why do you need to register? Until when do you have the time? And who can view that data? In this blog, we give you the answers to these questions. This way, you are well prepared for this new obligation for the entrepreneurial Netherlands.
+sitename: swishfund.nl
+date: 2020-10-04
+---
+# UBO register: don't you forget your registration?
+
+#### Merel Nijland
+
+## Introduction
+
+Since September 27, 2020, it has been mandatory for most entrepreneurs to register in the UBO register. This will involve approximately 1.5 million organizations in the Netherlands. But what exactly is the UBO register, and why do you need to register? Until when do you have the time? And who can view that data? In this blog, we give you the answers to these questions. This way, you are well prepared for this new obligation for the entrepreneurial Netherlands.
+
+### What is the UBO register?
+
+The Ultimate Beneficial Owner (UBO) register keeps track of an organization's stakeholders. These are the people who control or own the organization. For example, you fall under these headings if you own more than 25% shares in a private limited company. Or if you have more than 25% direct/indirect ownership interest in a partnership or partnership.
+
+#### Why do I need to sign up?
+
+Every country that is a member of the EU must keep the UBO register. This is defined in European regulations. The goal is to prevent the use of our money laundering and terrorism system. This register makes it easier to see who is at the helm of Dutch organizations. And it is becoming more difficult to conceal this by legal entities. The advantage is that this way you know better who you are doing business with. In the end, every organization benefits from this.
+
+#### Is registration mandatory?
+
+It is mandatory to register the UBOs for the legal forms below. This is what you do at the Chamber of Commerce:
+
+- unlisted private and limited companies;
+- foundations;
+
+- associations;
+- with full legal capacity
+- with limited legal capacity but with company
+
+- mutual insurance companies;
+- cooperatives;
+- partnerships: partnerships, partnerships and limited partnerships;
+- shipping companies;
+- SE — European limited companies;
+- SCE — European Cooperative Companies;
+- EESV — European economic partnerships that, according to their statutes, have their seat in the Netherlands;
+- denominations (more details will be announced later).
+
+#### Who is not required to register?
+
+For the following legal forms, it is not mandatory to report the UBOs to the Chamber of Commerce:
+
+- sole traders;
+- listed private and limited companies;
+- 100% subsidiaries of listed companies;
+- owners' associations;
+- legal entities under incorporation;
+- associations with limited legal capacity that do not conduct a business;
+- legal entities under public law;
+- other legal entities under private law, including historical legal entities (such as guilds and courtyards);
+- foreign legal entities (such as a Ltd or GmbH);
+- foreign legal entities that only have branches in the Netherlands (branch offices).
+
+#### Until when do I have time to register?
+
+You have until March 27, 2022 to complete the assignment, which, by the way, does not involve any costs. Organizations subject to declaration automatically receive a letter from the Chamber of Commerce. This explains how to register the UBOs. You don't have to wait for the invitation and can do it now at www.kvk.nl/ubo. Do you have multiple organizations? Then you must submit a UBO statement for each organization. This can also be done by mail or the notary if it suits your situation better.
+
+#### Who can view my data?
+
+The registration is carried out and managed fully in accordance with the General Data Protection Regulation (AVG). However, it has been determined that part of the UBO data will be made public. Everyone can then view this information. It's about:
+
+- first and last name;
+- month and year of birth;
+- nationality;
+- country in which you live;
+- the nature and extent of the interest.
+
+From September 27, 2020, this can be viewed via an extract from the Chamber of Commerce for an amount of €2.50. The rest of the information remains classified. This can only be viewed by, for example, the Public Prosecutor's Office.

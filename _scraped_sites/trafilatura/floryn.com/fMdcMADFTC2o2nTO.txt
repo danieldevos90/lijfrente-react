@@ -1,0 +1,8 @@
+---
+title: Wat als ik tijdelijk geen geld nodig heb?
+url: https://www.floryn.com/kennisbank/wat-als-ik-tijdelijk-geen-geld-nodig-heb
+hostname: floryn.com
+description: Als je geen gebruik maakt van je krediet betaal je hier uiteraard geen rente over. Het kan wel voorkomen, afhankelijk van het product dat je bij ons hebt afgesloten, dat je een service fee per kwartaa
+sitename: floryn.com
+---
+Als je geen gebruik maakt van je krediet betaal je hier uiteraard geen rente over. Het kan wel voorkomen, afhankelijk van het product dat je bij ons hebt afgesloten, dat je een service fee per kwartaal verschuldigd bent over je kredietlimiet om hierover te kunnen blijven beschikken.

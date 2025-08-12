@@ -1,0 +1,48 @@
+---
+title: Solvabiliteit: wat is het en hoe kun je het berekenen? | Swishfund
+author: Merel Nijland Marketeer
+url: https://www.swishfund.nl/blog/solvabiliteit-wat-is-het-en-hoe-kun-je-het-berekenen
+hostname: swishfund.nl
+description: Solvabiliteit geeft inzicht in de weerbaarheid van je bedrijf. Een hoge solvabiliteit maakt je minder afhankelijk van externe partijen, omdat investeringen met eigen vermogen gefinancierd kunnen worden. Wil je toch gebruik maken van een financiering, dan betekent een hogere solvabiliteit een laag risico. En een laag risico betekent een aantrekkelijkere rente voor financiering. In dit artikel lees je hoe we dit berekenen.
+sitename: swishfund.nl
+date: 2022-02-20
+---
+# Solvabiliteit: wat is het en hoe kun je het berekenen?
+
+#### Merel Nijland
+
+## Introductie
+
+Solvabiliteit geeft inzicht in de weerbaarheid van je bedrijf. Een hoge solvabiliteit maakt je minder afhankelijk van externe partijen, omdat investeringen met eigen vermogen gefinancierd kunnen worden. Wil je toch gebruik maken van een financiering, dan betekent een hogere solvabiliteit een laag risico. En een laag risico betekent een aantrekkelijkere rente voor financiering. In dit artikel lees je hoe we dit berekenen.
+
+**Wat is solvabiliteit?**
+
+De solvabiliteit van je bedrijf is de verhouding van het eigen vermogen ten opzichte van het totale vermogen. Onder het eigen vermogen rekenen we de bezittingen (activa) minus de schulden (passiva). Hoe hoger dit eigen vermogen, hoe beter dit is voor je bedrijf.
+
+**Solvabiliteit berekenen**
+
+Nu wil je natuurlijk zelf de solvabiliteit van je bedrijf checken. Dit kan je gemakkelijk zelf, gebruik de volgende berekening:
+
+**(eigen vermogen/totaal vermogen) x 100% = solvabiliteitsratio. **
+
+De bedragen van zowel het eigen als het totaal vermogen haal je uit de balans van je jaarrekening. Door dit met regelmaat te checken krijg je sneller inzicht in de financiële situatie van je bedrijf.
+
+**Voorbeeldberekening solvabiliteit**
+
+Je hebt een totaal vermogen van € 225.000 en een eigen vermogen van € 75.000. Dan is het solvabiliteitsratio (75.000/225.000) x 100 = 28
+
+**Wat is een goede solvabiliteit?**
+
+Hier geldt: hoe hoger, hoe beter, maar een solvabiliteit vanaf 25 is goed. Dit is ook nog afhankelijk van de branche. Iedere branche heeft zijn eigen kenmerken die het financiële beeld kunnen beïnvloeden. Vaak zit een goede solvabiliteit dus tussen de 25 en 40. Dit betekent dat 25% tot 40% van je bedrijf gefinancierd is met eigen geld.
+
+Een goede ratio is belangrijk vooral belangrijk voor zakenpartners, geldverstrekkers en beleggers. Het laat zien of je bedrijf kredietwaardig is. Geldverstrekkers kijken bijvoorbeeld naar het eigen vermogen en wat er overblijft na een faillissement. Op basis daarvan bepalen ze het risiconiveau en de bijbehorende kosten.
+
+**Hoe kun je het verbeteren?**
+
+Er zijn een aantal dingen die je kunt doen om je solvabiliteit stabiel te houden of te verhogen. We hebben de drie belangrijkste voor je op een rij gezet.
+
+**Laat je klanten zo snel mogelijk betalen.**Als ze sneller betalen, heb jij sneller geld op je rekening. Dit is positief voor je werkkapitaal en zorgt ervoor dat je niet zo snel financiering nodig hebt.**Optimaliseer je voorraad.****Voorraadbeheer**is een flinke klus, maar het is belangrijk dit te doen. Geld zit vast in voorraad. Hoe minder voorraad, hoe minder totaal vermogen. Als je eigen vermogen hetzelfde blijft en je totale vermogen vermindert, dan stijgt de solvabiliteit.**Vergroot je winst.**Dit klinkt als een open deur, maar op dit gebied kun je veel optimaliseren. Enerzijds kun je de omzet proberen te verhogen en anderzijds kun je kijken welke kosten er verlaagd kunnen worden.
+
+**Is jouw bedrijf financieel gezond?**
+
+Of jouw bedrijf financieel gezond is, is niet alleen afhankelijk van het solvabiliteitsratio. Ook de **liquiditeit** en **rentabiliteit** zijn belangrijk om een volledig financieel plaatje te maken. Ben jij benieuwd naar de financiële gezondheid van je bedrijf? We hebben **5 signalen** beschreven van een gezond bedrijf. Komen deze signalen je bekend voor? Dan ben je lekker bezig!

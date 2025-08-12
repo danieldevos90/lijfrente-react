@@ -1,0 +1,19 @@
+---
+title: Apply for a Scholarship | Qeld
+url: https://www.qeld.nl/en/scholarship
+hostname: qeld.nl
+description: Qeld's Scholarship is intended for students who write a thesis on entrepreneurship and small businesses to promote innovation and knowledge in this sector. Apply now...
+sitename: qeld.nl
+date: 2024-06-21
+---
+## Who can receive the grant?
+
+Qeld's Scholarship is awarded to an article or thesis written to highlight and address issues related to entrepreneurship and running small businesses. The fair is intended to promote knowledge and innovation for the entrepreneurial sectors in which Qeld is active.
+
+
+The grant is awarded to the person behind a research question who stands out from the crowd, who wants to bring up unexplored topics and who have chosen an interesting approach.
+
+
+The stock market has a value of: **€1,000**
+
+*See full terms and conditions below.*

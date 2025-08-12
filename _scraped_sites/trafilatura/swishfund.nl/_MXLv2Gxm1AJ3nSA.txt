@@ -1,0 +1,158 @@
+---
+title: Privacyverklaring | Swishfund
+url: https://www.swishfund.nl/privacyverklaring
+hostname: swishfund.nl
+sitename: swishfund.nl
+date: 2025-01-01
+---
+# Privacy statement
+
+Last modified on Jan 1, 2025
+
+##### 1. Applicability
+
+Swishfund Nederland B.V. and Swishfund Finance B.V. (hereafter alone and jointly) **Swishfund**) processes personal data about you when you apply for and/or use a credit from us. Below is an overview of the personal data that we process:
+
+- First and last name;
+- Gender;
+- Date of birth;
+- Place of birth;
+- Address details;
+- Telephone number;
+- Email address;
+- Information about your company and your role/position within it;
+- Information about the business owners listed in the Chamber of Commerce or that we have received from you;
+- Financial information such as bank account numbers and bank transactions (Note: such information does not always qualify as personal data);
+- Chamber of Commerce extract, VAT returns, debtor lists and creditor lists;
+- Data that you provide to us during the intake, or that we otherwise record, including possible call recordings;
+- A copy of your passport or other means of identification;
+- Other information as part of a creditworthiness check;
+- Other personal data that you actively provide, for example in correspondence and by telephone;
+- Information about your activities on our website.
+
+
+##### 2. Registration/create an account
+
+Swishfund processes this personal data for the following purposes:
+
+A. To assess your eligibility for credit and under what conditions.
+
+B. To provide the credit and provide automatic repayment, or otherwise to execute the agreement with you.
+
+C. To record agreements made and to store these agreements on our servers.
+
+D. When signing digitally, the name, date of birth, email address, and mobile phone number of the person (s) authorized to sign are used to determine the signer's identity. This information is also included in the cover page of the signed document.
+
+E. To provide targeted marketing and advertising, newsletters and promotional offers.
+
+F. To maintain contact with you and to approach you from time to time about lending.
+
+G. To outsource the collection of our claim against you by engaging a third party to take over or settle our claim on our behalf, for example if you no longer meet your repayment obligations.
+
+H. To comply with (legal) obligations that lie on us, such as in the context of combating fraud and preventing money laundering. In this context, your personal data can also be provided to third parties (such as government agencies) insofar as we have to comply with a legal obligation.
+
+I. To be able to improve its services. In order to provide the highest quality service, it is necessary for Swishfund to carry out statistical research so that it can make adjustments to its services. Only specially appointed Swishfund employees have access to your personal data for this purpose. The results of the research are always aggregated, so that the data in the research result cannot be traced back to you personally.
+
+
+The basis for processing the data mentioned under A, B, C, D and G is the necessity for the execution of the agreement. Without this information, it is not possible for us to conclude an agreement with you.
+
+The basis for processing the data mentioned under E, F and I is our legitimate business interest, namely our commercial interest in serving you as a customer in the best possible way. You can object to this processing at any time by contacting privacy@swishfund.nl.
+
+The basis for processing data mentioned under H is to comply with a legal obligation that is incumbent on us.
+
+
+**Retention periods**
+
+We keep your personal data for as long as we have a relationship with you, unless there is a shorter retention period by law or the data is no longer necessary for the purpose for which the data was collected. After termination of our relationship with you, we will keep your personal data for a period that allows us to:
+
+- to comply with our legal obligations, including legal retention periods;
+- investigating or defending legal claims;
+- to be able to deal with your questions, requests, or complaints; and
+- maintaining our records for analysis and/or control purposes.
+
+
+##### 3. Other data processing (websites and bank transactions)
+
+**In connection with our website: **
+
+Swishfund also processes data about visitors to Swishfund website (s). This concerns the following information:
+
+- Visitors' IP addresses and data collected via cookies (see our cookie statement)
+- information that you actively provide to us by filling out a contact form or by signing up for our newsletter.
+
+We use this information to improve our website and services, maintain contact with you and/or send you our newsletter. The basis for these processing operations is our legitimate business interest. In all newsletters, we offer you the opportunity to object to this processing by unsubscribing from our mailing list.
+
+You can also unsubscribe from our newsletter by sending an email to privacy@swishfund.nl.
+
+
+*Debtor list*
+
+As part of assessing credit applications, we may ask our customers to provide securities. One possible security is the pledge of your claims against your debtors. To establish this security, we may ask you (monthly) to provide us with a debtor list. This debtor list will be presented to the tax authorities to register the pledge. This list includes the name, address and outstanding amount of your debtors.
+
+We also use the debtor list to grant credit and assess debtor risk.
+
+
+*Creditor list*
+
+As part of the review of credit applications, we ask our customers to provide a list of its creditors, including the outstanding amounts. This creditor list may include third party personal data, such as name, address and the outstanding amount of your creditors, invoice date and invoice payment date. We use the creditor list to determine the possible credit that we provide to our customer and to review and monitor credit applications.
+
+
+*Personal data in our clients' bank transactions *
+
+As part of assessing credit applications, we ask our customers to provide us with the bank transactions (from 12 to 24 months ago) from the account where they receive (pin) payments, via a file to be provided or via digital access. These bank transactions may include the personal data of third parties. We use bank transactions to determine the possible credit that we provide to our customer and to review and monitor credit applications.
+
+We may also request and use the bank transactions during the term of the credit to assess the correct use of the credit, to monitor our customer's repayment obligations and as part of an ongoing risk assessment of the credit provided.
+
+Swishfund also uses this data to improve its services, more specifically to improve the service's analysis model. This data is aggregated and used anonymously as much as possible.
+
+
+##### 4. Share with others
+
+Swishfund maakt bij het aanbieden van haar dienst in sommige gevallen gebruik van derde partijen, bijvoorbeeld voor het hosten van haar centrale database of voor het verkrijgen van incassomachtigingen. Met bedrijven die jouw gegevens verwerken in onze opdracht, sluiten wij een verwerkersovereenkomst o.a. om te zorgen voor een passend niveau van beveiliging en vertrouwelijkheid van jouw gegevens. Swishfund blijft verantwoordelijk voor deze verwerkingen.
+
+If you no longer meet your repayment obligations, we can hand over your claim for collection. In that case, we provide your data to a collection agency, which processes your data on our behalf.
+
+We may also share your personal data with parties that finance us in order to control the value of our loan portfolio and to control the securities we provide to them, in the form of pledging the claims.
+
+In addition, we may share your information if we are legally required to do so, in the context of an investigation into fraudulent or illegal activity, or when necessary in a court of law, or if we deem it necessary to defend our own rights.
+
+Finally, Swishfund believes it is important that your personal data is stored within the European Economic Area (hereinafter: “EEA”). If in the future, Swishfund decides to also store personal data outside the EEA, it will inform you. Wherever Swishfund stores personal data, it will ensure that this storage is always in accordance with the law.
+
+
+##### 5. Testing and registration with BKR
+
+In the application process, business owners, who are listed at the Chamber of Commerce or as specified by you to us, can be tested at the Credit Registration Office (BKR) Foundation in Tiel.
+
+The person making the application is responsible for ensuring that all parties and shareholders associated with the borrower's business are informed that they can be reviewed as part of the application.
+
+If the outcome of the credit application is positive and credit is made, Swishfund reports this agreement to the BKR. BKR processes this data in the Central Credit Information System (CKI) for the purpose of preventing and limiting credit and payment risks for affiliated institutions and preventing and limiting the overlending of those involved (borrowers and guarantors), as well as to contribute to preventing problematic debt situations. As part of the aforementioned objective, this data is made available by BKR to the affiliated institutions, which is possible in a factual and statistically edited form.
+
+In addition to registering the agreement, Swishfund has also undertaken the obligation to report to BKR any arrears in fulfilling the payment obligations under this agreement of more than 2 months. This can have consequences for any subsequent funding request.
+
+
+##### 6. Your rights with regard to data processing
+
+If you want to know what information Swishfund collects about you, you can ask Swishfund to send an overview of this information. You can make this request by sending an email to privacy@swishfund.nl. To make sure that the information you request actually belongs to you, we ask you to send a copy of a valid ID. We request that you make the social security number shown on your ID unreadable. Swishfund will respond to your request within four (4) weeks.
+
+If, based on the overview, you want to have your personal data changed, deleted, blocked or restricted processing by Swishfund, you can send a new request to the address mentioned above. Swishfund will also respond to this request within four (4) weeks. If Swishfund decides not to carry out your request, it will indicate why it will not do so.
+
+Finally, in some cases, you have the right to object or have your data transferred in an appropriate form. In addition, you have the right to file a complaint with Swishfund or the Data Protection Authority. You can exercise these rights by sending an email to privacy@swishfund.nl. Swishfund will respond to your request within four weeks.
+
+
+##### 7. Security
+
+Swishfund takes appropriate measures to prevent misuse, loss, unauthorized access, unwanted disclosure and unauthorized modification of personal data under our responsibility.
+
+Your data is stored on data servers within the EEA and will not be processed outside the EEA unless you are notified.
+
+If you feel that your data is not properly secured or if there are indications of abuse, please contact us at privacy@swishfund.nl.
+
+
+##### 8. Changes
+
+We may change this Privacy Statement and/or our policy with regard to the processing of personal data at any time, including in connection with changes in regulations or technological developments. If Swishfund makes fundamental changes to the change to this Privacy Statement or if the changes otherwise affect you (for example, if Swishfund were to process your data for a different purpose than previously communicated to you), Swishfund will inform you of these changes before the changes are made. Here, Swishfund will explain what possible consequences the change may have for you.
+
+
+##### 9. Contact
+
+If you have any questions about this Privacy Statement or how Swishfund handles your data, you can send an email to privacy@swishfund.nl.

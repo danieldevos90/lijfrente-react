@@ -1,0 +1,10 @@
+---
+title: Who is Qeld for Partners? | Qeld
+author: Samantha Bos
+url: https://www.qeld.nl/info/who-is-qeld
+hostname: qeld.nl
+description: Who is Qeld and how do we help entrepreneurs find the right financing and business loans for investments and growth. Read more here:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Qeld is the Dutch division of Qred AB: an expert in business loans and business financing. Founded in 2015, Qred’s mission is to power entrepreneurs and help businesses grow, invest and expand. We provide flexible business loans without start-up costs, hidden fees or hassle: exactly how business lending should be.

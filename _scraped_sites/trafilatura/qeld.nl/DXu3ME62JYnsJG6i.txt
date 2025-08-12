@@ -1,0 +1,14 @@
+---
+title: How do I apply? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/how-do-i-apply-nl
+hostname: qeld.nl
+description: Applying for a business loan is easy and quick: it only takes one minute! Plus, any quote is non-binding and completely free. Apply for a business loan today!
+sitename: qeld.nl
+date: 2025-01-01
+---
+It's easy and non-binding to apply for a loan offer. There are 3 easy steps:
+
+- Submit your primary company details and personal information via the form on our homepage.
+- Additional information can be sent to speed up the handling of your application.
+- Are we able to give you a loan offer and do you agree with the costs and terms? Upon approval viaiDIN we will pay out the loan the same day.

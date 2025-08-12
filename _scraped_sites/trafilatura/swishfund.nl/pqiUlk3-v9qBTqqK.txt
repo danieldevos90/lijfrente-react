@@ -1,0 +1,73 @@
+---
+title: Hoe bereken je werkkapitaal? | Swishfund
+author: Merel Nijland Marketeer
+url: https://www.swishfund.nl/blog/hoe-bereken-je-werkkapitaal
+hostname: swishfund.nl
+description: Er is meer nodig dan een goed idee en een portie lef om een succesvolle onderneming te runnen. Als het erop aankomt, heb je geld nodig om aan al je financiële verplichtingen te kunnen voldoen. Dat is logisch. Denk aan zaken zoals het aanvullen van voorraden, het betalen van je leveranciers, het plegen van onderhoud en het uitkeren van salarissen. Dit valt onder de noemer werkkapitaal. In dit blog laten we je zien hoe je dit berekent.
+sitename: swishfund.nl
+date: 2020-12-06
+---
+# Hoe bereken je werkkapitaal?
+
+#### Merel Nijland
+
+## Introductie
+
+Er is meer nodig dan een goed idee en een portie lef om een succesvolle onderneming te runnen. Als het erop aankomt, heb je geld nodig om aan al je financiële verplichtingen te kunnen voldoen. Dat is logisch. Denk aan zaken zoals het aanvullen van voorraden, het betalen van je leveranciers, het plegen van onderhoud en het uitkeren van salarissen. Dit valt onder de noemer werkkapitaal. In dit blog laten we je zien hoe je dit berekent.
+
+### Wat is werkkapitaal?
+
+Zoals we in het intro al even benoemd hebben heeft ieder bedrijf geld nodig om aan zijn (dagelijkse) financiële verplichten te kunnen voldoen. Dat noemen we het *werkkapitaal.** *Iedere ondernemer heeft hiermee te maken.
+
+Sinds de kredietcrisis is het werkkapitaal een nóg belangrijker aspect geworden. Niet alleen voor het verkrijgen van een lening, maar ook voor de ondernemer zelf. Het geeft je inzicht in de **gezondheid van je onderneming**.
+
+#### Waarom is dit kapitaal belangrijk?
+
+Als je niet genoeg geld hebt om de dagelijkse gang van zaken te kunnen betalen, kun je eenvoudig in de problemen komen. Probeer je werknemers maar eens een maand niet te betalen!
+
+Maar let op; een overschot aan werkkapitaal is ook niet voordelig. Dat geld levert namelijk niets op. Het staat niet op een spaarrekening waar je rente over ontvangt, bijvoorbeeld.
+
+Als je het zo bekijkt ‘kost’ het dus eigenlijk geld om werkkapitaal te hebben. Nog een reden om er slim mee om te gaan.
+
+#### Hoe bereken je het netto werkkapitaal?
+
+Het netto werkkapitaal is het verschil tussen vlottende activa (zoals voorraden) en vlottende passiva (zoals crediteuren).
+
+**Wat zijn vlottende activa?**
+
+De vlottende activa zijn bezittingen die slechts een korte tijd in een bedrijf aanwezig zijn. Andere termen hiervoor zijn ook wel *vlottend kapitaal, vlottende kapitaalgoederen of bedrijfskapitaal.* Denk aan:
+
+- Liquide middelen (verspreid over bank- en kas)
+- Debiteuren
+- De waarde van (product) voorraden
+
+**Wat zijn vlottende passiva?**
+
+Vlottende passiva zijn korte termijn schulden die meestal binnen 1 jaar zijn afbetaald. Vlottende passiva is onderdeel van het vreemde vermogen.
+
+**Formule werkkapitaal**
+
+Hoe gebruik je de vlottende activa en passiva om te berekenen wat je werkkapitaal is? We laten je de werkkapitaal formule zien in dit voorbeeld:
+
+Je kijkt wat er binnen je bedrijf op korte termijn verkocht kan worden. Voorraden, debiteuren, kortlopende vorderingen en andere bezittingen komen hiervoor in aanmerking.
+
+Daarna bekijk je wat je kortlopende schulden zijn. Daarvoor kun je crediteuren, belastingschulden, pensioenschulden en andere korte termijn aflossingen meerekenen.
+
+Vervolgens is het een simpele optel- en aftreksom waarmee je het netto werkkapitaal berekent.
+
+#### Hoe kun je het beïnvloeden?
+
+Zoals je in het bovenstaande voorbeeld kunt zien, zijn de debiteuren, voorraden en crediteuren factoren die het werkkapitaal beïnvloeden. Als je debiteuren er lang over doen om hun facturen te betalen, moet je langer op je geld wachten. Daarmee is een lange betaaltermijn dus niet gunstig voor het werkkapitaal. Datzelfde geldt ook voor voorraden en crediteuren. Hiervoor hebben we enkele tips:
+
+- Screen (potentiële) klanten op hun betaalgedrag en kredietwaardigheid.
+- Kijk kritisch naar hoe je factureert: wat kun je verbeteren?
+- Hoe gaat het met je debiteurenbeheer?
+- Stem je voorraden af op de behoefte van de markt.
+
+#### Werkkapitaal financieren
+
+Het gebeurt vaak dat je verschillende prioriteiten uit hebt staan. Je moet je personeel betalen, maar je wilt ook investeren in nieuwe apparatuur. Het op orde krijgen van de tips hierboven gaat ook niet vanzelf. Sommige bedrijven moeten echt ‘opgevoed’ worden om sneller te betalen. Daar kan een werkkapitaalfinanciering een rol spelen.
+
+Door het gebruik van financiering is het mogelijk om onder andere je voorraden op peil te houden en de salarissen van je werknemers te betalen wanneer je werkkapitaal niet toereikend is. Swishfund helpt je daarbij.
+
+Meer weten over (het aanvragen van) een werkkapitaalfinanciering bij Swishfund? Neem dan contact met on op via 085 064 4144 of stuur een e-mail naar info@swishfund.nl.

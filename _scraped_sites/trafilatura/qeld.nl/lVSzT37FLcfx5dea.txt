@@ -1,0 +1,36 @@
+---
+title: Ga de Strijd Aan met Zakelijke Identiteitsfraude | Qeld
+author: Johannes Stevense
+url: https://www.qeld.nl/posts/ga-de-strijd-aan-met-zakelijke-identiteitsfraude
+hostname: qeld.nl
+description: Ontdek hoe je zakelijke identiteitsfraude kunt voorkomen met praktische tips van Qeld. Bescherm je bedrijf online en offline tegen fraudeurs. Lees meer...
+sitename: qeld.nl
+date: 2024-03-27
+---
+Bij Qeld snappen we helemaal dat het veilig houden van je bedrijfsidentiteit geen kleinigheid is, zeker niet met alle online gevaren van tegenwoordig. Stel je voor: oplichters die doen alsof ze jou zijn, handel drijven, nepfacturen sturen of zich voordoen als jouw bedrijf op social media. Dat is zakelijke identiteitsfraude, en het is een van de snelst groeiende problemen voor ondernemers. Maar geen zorgen, er zijn slimme manieren om je bedrijf te wapenen tegen deze fraudeurs.
+
+**Tips om Zakelijke Identiteitsfraude te Slim Af te Zijn**
+
+**1. Blijf op de hoogte met ****Google Alerts**: Zet een alert op je bedrijfsnaam en krijg meteen een seintje als iemand jouw naam online gebruikt. Zo spot je snel een fraudeur die jouw naam misbruikt.
+
+**2. Wees zuinig op je info:** Ga slim om met je bedrijfs- en persoonsgegevens. Check je domeininfo bij Whois of SIDN en vraag je hostingprovider om je gegevens, zoals e-mailadressen en telefoonnummers, af te schermen.
+
+**3. Bereid je team voor:** Leer je medewerkers over de risico's van het delen van gevoelige info. Een duidelijk ICT-beleid is goud waard voor het veilig bewaren en verwerken van data.
+
+**4. Houd documenten veilig: **Bewaar belangrijke papieren op een veilige plek, gebruik een shredder voor oude documenten en laat niks waardevols slingeren waar het niet hoort.
+
+**5. Check dubbel:** Verifieer altijd wie je klanten en medewerkers zijn om fraude te voorkomen.
+
+**Online Misbruik Tackelen**
+
+Als iemand online doet alsof hij jouw bedrijf is, bijvoorbeeld op social media of via een nepwebsite, kun je actie ondernemen. Sites als Facebook, Twitter, Instagram en LinkedIn hebben speciale pagina's waar je dit kunt melden. Zij checken je melding en grijpen in waar nodig. Voor nepwebsites kun je via whois.com uitzoeken wie de eigenaar is en hem vragen de site offline te halen.
+
+**Voorbeelden van Misbruik**
+
+Denk aan een nepwebshop die jouw bedrijfsnaam gebruikt om spullen te verkopen die nooit geleverd worden. De klachten komen bij jou terecht, terwijl jij van niks weet. In zulke gevallen is het belangrijk om meteen actie te ondernemen, bijvoorbeeld door de politie in te schakelen en je klanten op de hoogte te stellen.
+
+Factuurfraude is ook een bekend probleem, waarbij oplichters nepfacturen sturen die sprekend lijken op de echte deal. Technieken zoals formjacking, waarbij oplichters een echt formulier op je site vervangen door een nepversie, laten zien hoe belangrijk het is om altijd alert te blijven.
+
+**Conclusie**
+
+Zakelijke identiteitsfraude is serieus, maar met de juiste aanpak kun je jezelf en je bedrijf beschermen. Zorg dat je team op de hoogte is, beveilig je documenten, houd je online aanwezigheid in de gaten en meld misbruik altijd meteen. Bij Qeld staan we klaar om ondernemers zoals jij te helpen hun bedrijf te beveiligen.

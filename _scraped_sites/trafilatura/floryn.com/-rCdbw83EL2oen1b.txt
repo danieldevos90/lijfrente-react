@@ -1,0 +1,31 @@
+---
+title: Floryn introduceert nieuwe app: wat ging hieraan vooraf?
+author: Redactie Floryn
+url: https://www.floryn.com/blog/floryn-introduceert-nieuwe-app-wat-ging-hieraan-vooraf
+hostname: floryn.com
+description: Ken je de Floryn app al? Sinds kort kun je via deze weg altijd en overal geld opnemen van je financiering. Download hem hier!
+sitename: Floryn
+date: 2022-10-18
+tags: ['Technology']
+---
+**Ken je de Floryn app al? Sinds kort kun je via deze weg altijd en overal geld opnemen van je financiering. Ook heb je een financieel overzicht met je saldo en laatste transacties bij de hand. Software Engineers Iris Heling-Hanique en Hugo van de Vliert vertellen hoe het development team van Floryn de app heeft ontwikkeld. Wat komt daar allemaal bij kijken?**
+
+De keuze voor een app was eigenlijk heel logisch. Bij Floryn zagen we dat heel veel klanten op hun telefoon inlogden op onze website: 43% in het afgelopen half jaar. “Met een app bieden we deze klanten een makkelijke manier om in te loggen en daardoor wordt Floryn toegankelijker”, leggen Iris en Hugo uit. “Daarnaast hebben klanten expliciet naar het bestaan van een app gevraagd.”
+
+De app-bouwers gingen aan de slag met het doel een zo goed mogelijke klantervaring te bieden, dat geeft namelijk vertrouwen. “Die klantervaring willen we niet alleen bieden tijdens het onboardingproces, maar ook wanneer mensen langer klant zijn.”
+
+Extra fijn: een app heeft andere mogelijkheden dan een website. In de toekomst zou het dus mogelijk kunnen zijn om (push)notificaties toe te voegen, bijvoorbeeld informatie over je krediet.
+
+## Hoe maak je een app?
+
+
+Voor niet-developers is het soms een raadsel hoe apps precies gebouwd worden. In de eerste fase begonnen het ontwikkelteam met het ontwerpen van het design van de app. Denk hierbij aan de login-pagina, de overzichtspagina en de instellingen. “Dat zorgde ervoor dat we nadachten over welke functionaliteiten er in de app zouden komen, en hoe die werkten.” Zo moest er bepaald worden hoe de loginprocedure werkt, wat er wel en niet in het overzicht komt en wat er op de instellingenpagina staat. Nadat dit duidelijk voor ze was begonnen ze met coderen.
+
+Vervolgens zijn de app-bouwers begonnen met de kern van de app. Dit is het overzicht waar je als klant al je transacties kunt bekijken en geld kunt opnemen uit je lening. Toen dit eenmaal klaar was, zijn het inlogscherm en de instellingspagina toegevoegd. Parallel aan het bouwen van de app is het development team aan de slag gegaan met alle technische randvoorwaarden om de app te kunnen onderhouden en te publiceren.
+
+## Het resultaat mag er zijn
+
+Iris en Hugo zijn het meest trots dat ze de applicatie zowel voor iOS als Android hebben kunnen bouwen. Zo kunnen bijna alle klanten met de app aan de slag. Ook zijn ze heel blij met de manier waarop het pin-inlogscherm werkt. Die is namelijk bijzonder gebruiksvriendelijk!
+
+
+Benieuwd hoe de app is geworden? Download hem hieronder gratis in de Google Play Store of App store.

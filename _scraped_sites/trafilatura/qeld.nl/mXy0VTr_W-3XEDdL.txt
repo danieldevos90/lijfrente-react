@@ -1,0 +1,12 @@
+---
+title: Wie kan een lening aanvragen? | Qeld
+author: Samantha Bos
+url: https://www.qeld.nl/info/wie-kan-een-lening-aanvragen-bij-qeld
+hostname: qeld.nl
+description: Alle Nederlandse ondernemers, groot en klein, kunnen bij Qeld een zakelijke lening aanvragen, inclusief BVs, NVs, VoFs en ZZP'ers. Lees meer over onze voorwaarden hier:
+sitename: qeld.nl
+date: 2025-05-08
+---
+Alle Nederlandse ondernemers, groot en klein, kunnen bij Qeld een zakelijke lening aanvragen, inclusief BVs, VoFs en ZZP'ers. De enige harde eisen die wij stellen is dat het bedrijf reeds is ingeschreven in het Handelsregister van de Kamer van Koophandel (geldig KvK-nummer) en dat de leiding van het bedrijf in Nederland woonachtig is. Het maakt niet uit in welke sector het bedrijf actief is, hoelang de onderneming al bestaat of hoeveel werknemers er zijn: Qeld beoordeelt iedere aanvraag individueel o.b.v een snelle en geavanceerde kredietbeoordeling.
+
+Wij geven alle ondernemers, klein en groot, een kans!

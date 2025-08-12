@@ -1,0 +1,11 @@
+# Midjourney prompts (copy into /imagine)
+
+Logo (wordmark)
+minimal flat logo, wordmark with subtle spark icon, fintech, trustworthy, deep blue #173B63 and green #23C483, vector, white background, simple, balanced spacing, sans-serif
+
+Hero image
+small business owner in a modern Dutch workshop reviewing finances on a laptop, natural light, shallow depth of field, cinematic, realistic, 35mm, soft contrast, product shots in background, no text
+
+Sector collage
+Dutch SME storefronts collage (retail, horeca, logistics), clean modern, optimistic lighting, realistic photography, subtle blue/green palette, no text, grid layout
+

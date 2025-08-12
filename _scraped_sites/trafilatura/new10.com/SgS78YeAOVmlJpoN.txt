@@ -1,0 +1,28 @@
+---
+title: 7 onmisbare tools die je leven als ondernemer makkelijker maken
+author: Rosanne van Veldhuisen
+url: https://new10.com/blog/7-onmisbare-tools-ondernemer-makkelijker
+hostname: new10.com
+description: Lees hier je welke tools jou als ondernemer tijd en kosten gaan besparen en je leven als ondernemer makkelijker maken.
+sitename: New10
+date: 2020-09-04
+---
+Rosanne van Veldhuisen
+
+New10 • Slimmer ondernemen
+
+Zijn je acquisitiekosten per nieuwe klant aan de hoge kant? Dan biedt de tool Instapage uitkomst: je kunt eenvoudig gepersonaliseerde landingspagina’s bouwen en daarmee de conversie van je campagnes en advertenties te verhogen. Creëer een persoonlijke ervaring door demografische gegevens of intent te integreren op je landingspagina en verhoog daarmee de ROI van digitale advertenties. Je kunt ook A/B testen en het gedrag van bezoekers analyseren met deze tool.
+
+Een deel van de bezoekers op je website converteren niet in klanten. Uiteindelijk wil je van deze bezoekers leren: wat is de reden dat ze niet zijn overgegaan tot een aankoop of actie? Met de tool Hotjar krijg je inzicht in het gedrag op je website door ‘Heatmaps’, surveys en klantfeedback. Deze tool helpt je het gedrag van je websitebezoekers beter begrijpen. Zo kun je de juiste verbeteringen implementeren om uiteindelijk je conversies te laten groeien.
+
+**Tip:** Heb je een app? Dan is de tool Adjust een vergelijkbaar middel om het gedrag van je bezoekers te analyseren.
+
+Een persoonlijke assistent die op je website bezoekers op weg helpt, dat is wat de tool Drift je biedt. Deze chatbot stelt de juiste vragen om er achter te komen wat de bezoeker nodig heeft en begeleidt je leads vervolgens naar de juiste oplossing. Deze tool kan een enorme tijdbesparing opleveren voor je klantenservice team omdat leads direct antwoord krijgen op vragen. Ook kunnen bezoekers door de chatbot 24/7 afspraken inplannen met één van je medewerkers, allemaal geautomatiseerd.
+
+Welke copy werkt het best of welk design kies ik voor mijn nieuwe pagina? Soms maak je beslissingen op de gok, maar het liefst zou je optimalisaties willen testen bij je doelgroep. Dat kan met de tool UsabilityHub. Een gebruikerstest platform waarbij je feedback krijgt van echte mensen. Je begint met samenstellen van een testgroep die de kenmerken heeft van jouw eigen doelgroep. Vervolgens kun je testen waar deze mensen als eerste op klikken en wat hun voorkeuren zijn.
+
+Zit je in een sector met veel concurrentie, dan zit je waarschijnlijk bovenop je (online) marktaandeel. De tool Similarweb geeft je inzicht in actuele marktinformatie om je aandeel in beeld te krijgen en te vergroten. Zo kun je zien hoe je benchmarkt ten opzichte van je concurrenten en branche en je krijgt inzicht in de sales strategie van vergelijkbare bedrijven. De tool helpt je om nieuwe kansen of partners te ontdekken en je klant beter te leren kennen.
+
+Om de naamsbekendheid van je bedrijf te vergroten en nieuwe klanten aan te trekken zijn sociale media een krachtig middel. Wanneer je regelmatig post op Facebook, LinkedIn of Instagram blijf je top of mind, maar dat vraagt wel tijd en structuur. De tool Buffer helpt je om je social posts in te plannen en zo efficiënt te werken.
+
+Je klantgegevens en data zijn vaak opgeslagen in verschillende apps en systemen. Tegenwoordig kun je veel tijd besparen en slimmer werken door je workflows te automatiseren. En nee, daar heb je geen dure automation voor nodig. Met Zapier kun je eenvoudig apps aan elkaar verbinden en je processen automatiseren. Heb je bijvoorbeeld een enquête gebouwd in een tool als Typeform dan kun je volledig geautomatiseerd de antwoorden opslaan in Excel en vervolgens automatische een e-mail sturen naar je klant dankzij één tool.

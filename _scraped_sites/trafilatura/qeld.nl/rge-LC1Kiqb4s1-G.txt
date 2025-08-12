@@ -1,0 +1,12 @@
+---
+title: Je nieuwe zakelijke lening wordt dezelfde werkdag overgemaakt! | Qeld
+author: Anne Buckers
+url: https://www.qeld.nl/info/wanneer-wordt-de-lening-overgemaakt
+hostname: qeld.nl
+description: Heb jij een directe financieringsbehoefte? Qeld helpt je snel schakelen met een zakelijke lening die binnen een werkdag wordt uitbetaald! Vraag nu aan:
+sitename: qeld.nl
+date: 2025-08-12
+---
+Bij digitale ondertekening van het contract proberen wij de zakelijke lening nog dezelfde dag over te maken (indien de kredietaanvraag vóór 17:00 uur is goedgekeurd en getekend).
+
+Let op: als de lening wordt overgemaakt, betekent dit niet dat het bedrag automatisch op je rekening staat. We zijn voor de verwerking van betalingen afhankelijk van banken en systemen. Voor de meeste klanten is het geld de volgende werkdag al beschikbaar op de rekening, maar het kan zijn dat uitbetaling iets langer duurt i.v.m. de verwerkingstijd van de klant's bank.

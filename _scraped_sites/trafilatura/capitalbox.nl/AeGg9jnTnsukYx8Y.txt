@@ -1,0 +1,62 @@
+---
+title: Cookiebeleid
+url: http://www.capitalbox.nl/cookies
+hostname: capitalbox.nl
+description: Een cookie is een klein bestand dat op uw computer of een ander apparaat waarmee u onze website bezoekt wordt geplaatst.
+sitename: CapitalBox - Zakelijke Leningen
+date: 2025-01-01
+---
+## Cookiebeleid
+
+Een cookie is een klein bestand dat op uw computer of een ander apparaat waarmee u onze website bezoekt (hierna: apparaat) wordt geplaatst. Cookies kunnen worden gebruikt voor het analyseren van internetverkeer en het signaleren van uw website bezoek. Met behulp van cookies kunnen webapplicaties op u persoonlijk reageren. Door informatie over uw voorkeuren te verzamelen en te bewaren kan de webapplicatie haar functioneren afstemmen op uw behoeftes en wat u wel en niet leuk vindt. Een cookie verschaft geen toegang tot het apparaat.
+
+**1. Het doel van cookiegebruik**
+
+Wij gebruiken cookies om inzicht te krijgen in de behoeftes van de klant (websitebezoeker), zodat wij onze dienstverlening kunnen verbeteren, in het bijzonder met betrekking tot:
+
+- Interne administratie
+- Verbetering van producten en diensten
+- Veiligheid van de website, zodat wij kunnen garanderen dat het raadplegen van onze webpagina en het gebruik van onze systemen veilig is
+- Daarnaast gebruiken wij cookies die ervoor zorgen dat onze website de best mogelijke gebruikerservaring biedt en advertenties toont die relevant voor u zijn. Cookies worden gebruikt om te 'onthouden' wanneer het apparaat van een klant onze website heeft bezocht en maken het mogelijk voor webapplicaties om op de klant persoonlijk te reageren. Het doel van de webapplicatie is om haar functioneren af te stemmen op de behoeftes van de klant (wat hij/zij wel en niet leuk vindt) door informatie over voorkeuren te verzamelen en bewaren.
+
+**2. Soorten cookies**
+
+Hieronder vindt u een overzicht van de belangrijkste cookies die door ons kunnen worden gebruikt als u onze website bezoekt.
+
+- Sessiecookie: hiermee kunnen wij volgen hoe u van de ene pagina naar de andere gaat, zodat u niet herhaaldelijk wordt gevraagd naar informatie die u al hebt verstrekt. Dankzij een dergelijke cookie kunt u snel en eenvoudig door verschillende pagina's van de website navigeren, zonder dat u telkens opnieuw gegevens hoeft te verifiëren of verwerken.
+- Loadbalancer: dit type cookie is nodig om ervoor te zorgen dat onze website goed wordt geladen door bezoekers over verschillende webservers te verdelen. Zo'n cookie bevat geen persoonlijke gegevens van individuele bezoekers, en hij wordt uitsluitend gebruikt voor de duur van uw websitebezoek. De cookie wordt dus verwijderd zodra u de browser sluit.
+- Affiliate cookie: deze traceercookie vertelt ons dat u op onze website terecht bent gekomen via een affiliate-link, en helpt ons de applicatie beter op maat te maken. Dit wordt daarnaast ook gedaan aan de hand van een unieke URL-identifier in de description URL tijdens uw eerste bezoek aan de website.
+- Beveiliging: wij hebben de juiste fysieke, elektronische en administratieve procedures geïmplementeerd om ongeautoriseerde toegang of openbaarmaking te voorkomen en de informatie die wij online hebben verzameld (technische gegevens, locatie- en geolocatiegegevens en gegevens omtrent digitaal gedrag) te beschermen en beveiligen.
+
+**3. Cookies van derden**
+
+Cookies kunnen ook door derden worden ingesteld. Derden kunnen echter nooit persoonlijke gegevens verzamelen waarmee ze u persoonlijk zouden kunnen identificeren.
+
+- Dataverzameling en -analyse: deze cookies volgen welk soort bezoekers op de website komen en hoe zij de site gebruiken, en helpen ons bij het verbeteren van onze diensten. Wij gebruiken bijvoorbeeld populaire analyseprogramma's als Google Analytics en Salesforce DMP van respectievelijk Google en Salesforce. Op de privacypagina's van Google en Salesforce kunt u meer lezen over deze cookies.
+- Advertentie-tracking: deze cookies worden gebruikt om niet-persoonlijke informatie over uw interactie met advertenties op andere websites te verzamelen, voordat die advertenties op onze website verschijnen, en om bij te houden welke advertenties onze bezoekers het liefst zien. Met die informatie kunnen wij advertenties laten zien die aansluiten bij de interesses en voorkeuren van de klant, bepalen hoe vaak de klant een bepaalde advertentie te zien krijgt, en meten hoe effectief bepaalde reclamecampagnes zijn. Wij gebruiken hiervoor populaire sociale netwerkdiensten zoals Facebook pixel van Facebook. Op de privacypagina van Facebook kunt u meer lezen over deze cookies.
+- Targeting en attributie via verschillende apparaten: deze cookies worden gebruikt om niet-persoonlijke informatie over de interactie van een gebruiker met onze websites te verzamelen. Zo kunnen wij het consumentengedrag op de verschillende apparaten analyseren en advertenties laten zien die aansluiten bij de interesses en voorkeuren van de gebruiker, bepalen hoe vaak u een bepaalde advertentie te zien krijgt, en meten hoe effectief bepaalde reclamecampagnes zijn. Wij gebruiken hiervoor bijvoorbeeld Salesforce Mailchimp pixel, een populaire CRM-, analyse- en communicatiedienst van Mailchimp. Op de privacypagina van Salesforce kunt u meer lezen over deze cookies.
+- Her-identificatie: met deze cookies kunnen wij anonieme, niet-persoonlijke informatie over de interactie van gebruikers met onze website en advertenties verzamelen, en die informatie in verband brengen met onze database. Wij gebruiken deze informatie met name voor analysedoeleinden, maar ook om advertenties te kunnen laten zien die aansluiten bij de interesses en voorkeuren van de consument, om te bepalen hoe vaak u een bepaalde advertentie te zien krijgt, en te meten hoe effectief en relevant bepaalde reclamecampagnes zijn.
+- Website testen: met deze cookies kunnen wij verschillende versies van dezelfde pagina of functie van de website laten zien en volgen welke versie het beste werkt. Met de cookie kunnen we regelen welke versie u te zien krijgt als u de website bezoekt. De variant die u te zien krijgt wordt willekeurig gekozen. Deze cookie bewaart of verzamelt geen persoonlijke informatie.
+- Veiligheidswaarborgen: deze cookies worden gebruikt om uw interactie met en gebruik van onze website te monitoren en eventueel verdacht gedrag op te sporen. Er wordt over deze activiteit gerapporteerd op geaggregeerde wijze. De informatie wordt uitsluitend gebruikt voor het monitoren en beveiligen van deze website, zodat wij u ervan kunnen verzekeren dat het gebruik van onze dienst veilig is. Deze cookies slaan nooit informatie op waarmee u persoonlijk kan worden geïdentificeerd.
+
+Lees meer over derden die cookies kunnen instellen als u onze website gebruikt via deze link.
+
+**4. Cookiebeheer**
+
+**4.1. Cookies en expliciete toestemming**
+
+Voor de meeste cookies die op onze website worden gebruikt, heeft u de mogelijkheid ze te accepteren of te weigeren. Sommige cookies (sommige cookies van derden bijvoorbeeld) mogen wettelijk alleen worden gebruikt als u hier vooraf toestemming voor heeft gegeven. Wanneer u de website en applicaties voor het eerst gebruikt, zult u expliciet om toestemming worden gevraagd. Verder heeft u ook het recht de persoonlijke gegevens die door het gebruik van cookies openbaar zijn geworden, te raadplegen, wijzigen of verwijderen.
+
+**4.2 Cookies en het functioneren van de website**
+
+Sommige cookies, zoals bepaalde essentiële cookies en veiligheidscookies (van derden) kunnen niet worden geweigerd, omdat zij nodig zijn voor het runnen van de website en het waarborgen van een veilige interactie met en veilig gebruik van onze diensten.
+
+De meeste webbrowsers accepteren het gebruik van cookies automatisch. Meestal kunt u echter in de instellingen van uw browser handmatig aangeven dat u cookies wilt weigeren, als u dat zou willen. De hulpfunctie van de browser kan u daarbij helpen.
+
+U kunt ook meer informatie vinden op http://www.aboutads.info/choices of http://www.youronlinechoices.eu/ of http://www.allaboutcookies.org. Deze websites geven gedetailleerde aanwijzingen voor het gebruiken van speciale instellingen in allerlei verschillende browsers. U vindt er informatie over hoe u cookies van een apparaat verwijdert (inclusief die van dit bezoek), maar ook meer algemene informatie over cookies.
+
+Houdt u er rekening mee dat instellingswijzigingen of het niet geven van uw toestemming tot gevolg kan hebben dat u de website misschien niet optimaal kunt benutten.
+
+**5. Opslag van cookies**
+
+Hoelang cookies precies worden bewaard, verschilt van cookie tot cookie. Maar de opslagperiode begint bij ieder bezoek aan de website opnieuw.

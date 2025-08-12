@@ -1,0 +1,12 @@
+---
+title: Is a loan tax-free? - Questions and Answers | Qeld
+author: Michiel de Haan
+url: https://www.qeld.nl/en/info/is-it-tax-free
+hostname: qeld.nl
+description: A Qeld business loan is tax deductible for interest and costs. Flexible borrowing up to €500,000, with transparent terms and no binding term.
+sitename: qeld.nl
+date: 2025-05-08
+---
+A business loan itself is not tax-free; you do not pay tax on the loan amount yourself, as it is not income. However, the loan must be included as a debt on your company's balance sheet. In addition, you can usually deduct the interest and costs you pay on a business loan from the profit as business costs. This can be beneficial because it reduces your taxable profit, which in turn can provide a tax advantage.
+
+At Qeld, part of Qred Bank, we help entrepreneurs with loans between €5,000 and €500,000, without a binding term and with a transparent cost structure. For detailed tax advice, it's always wise to contact a tax advisor so you can be sure how a loan affects your specific tax situation.

@@ -1,0 +1,10 @@
+---
+title: Klantoverzicht | Swishfund
+url: https://www.swishfund.nl/klantoverzicht
+hostname: swishfund.nl
+sitename: swishfund.nl
+date: 2025-01-01
+---
+# Our customers tell
+
+Whether it's about growth, innovation or bridging a challenging period, every experience is a source of inspiration. Every entrepreneur has a unique story and each loan has a different goal. Our customers share their story and tell how a Swishfund business loan has helped them move forward.

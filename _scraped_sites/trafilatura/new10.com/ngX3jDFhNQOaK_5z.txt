@@ -1,0 +1,59 @@
+---
+title: Alles over rente
+url: https://new10.com/rente
+hostname: new10.com
+description: Benieuwd naar de rente over een zakelijke lening, krediet of financiering? Lees direct alles over het rentepercentage bij New10 en hoe we het berekenen.
+sitename: new10.com
+date: 2025-03-15
+---
+Geld lenen kost geld. Dat begrijp je allang. Maar hoe berekent New10 deze rente precies? Hoe is het rentepercentage opgebouwd en welke factoren spelen mee bij het vatstellen van de rente? We leggen het je uit.
+
+Start een aanvraag en krijg binnen 15 minuten een persoonlijk voorstel of bereken eerst je geschatte kosten.
+
+De rente die je betaalt over je lening verschilt van tijd tot tijd, maar varieert ook tussen leendiensten, en bijvoorbeeld je financiële product. Voor een zakelijke lening betaal je een vast rentepercentage over het openstaande bedrag. Voor zakelijk krediet betaal je alleen rente over het opgenomen bedrag in die maand.
+
+We laten het je zien in dit rekenvoorbeeld:
+
+**Zakelijke Lening**
+
+Stel, je leent € 54.000 met een looptijd van 3 jaar. Met een rentepercentage van 9,1% betaal je in dit voorbeeld de volgende kosten:
+
+Aflossing: **€ 1.500**
+
+Rente: **€ 403,90**
+
+Maandelijks betaal je in dit voorbeeld een bedrag van **€ 1903,90** voor een zakelijke lening.
+
+Vanaf de eerste maand betaal je aflossing, waardoor het bedrag waar je rente over betaalt steeds lager wordt. Hierdoor worden de maandelijkse kosten ook steeds lager.
+
+**Zakelijk krediet**
+
+Je hebt een zakelijk krediet met een limiet van € 54.000 en een jaarlijks rentepercentage van 6,5%. Hier neem je € 10.000 uit op. Voor het gemak gaan we ervan uit dat je dit bedrag 30 dagen hebt opgenomen. De kosten voor deze maand zijn dan:
+
+Servicekosten (maximaal 0,2% over je totale krediet): 0,2% van € 54.000 = 0,002 x 54.000 = **€ 108**
+
+Aflossing (1,5% over het opgenomen bedrag): 1,5% van € 10.000 = 0,015 x 10.000 = **€ 150**
+
+Rente (6,5% over het opgenomen bedrag): 6,5% van € 10.000, gedeeld door 365 (dagen per jaar), vermenigvuldigd met 30 (aantal dagen waarop je hebt opgenomen). De kosten aan rente komen dan uit op: 0,065 x 10.000 / 365 x 30 = **€ 53,42**
+
+Maandelijks betaal je in dit voorbeeld een bedrag van **€ 311,42** voor een zakelijk krediet.
+
+De rente die je betaalt over bedrijfsfinanciering is opgebouwd uit een aantal onderdelen. Een deel daarvan staat vast en het andere gedeelte is specifiek voor jouw situatie: de risicokosten. Met deze kosten dekken we het risico dat je de financiering niet terug kunt betalen.
+
+In onderstaande grafiek zie je hoe het rentepercentage bij New10 is opgebouwd.
+
+**Basisrente**: Dit zijn de kosten voor het inkopen van geld op de geld- en kapitaalmarkt. Daarom wordt de basisrente ook wel marktrente genoemd.
+
+**Kapitaalkosten**: Wij moeten altijd een kapitaalbuffer aanhouden en maken daar kosten voor.
+
+**Marge**: Dit is de winst die New10 maakt. Een deel van de winst investeren we in het bedrijf, een deel keren we uit aan onze aandeelhouders.
+
+**Operationele kosten**: Dit zijn de kosten voor ons personeel, de systemen, het kantoor en andere vaste kosten. Hoe hoger het leenbedrag, hoe lager het berekende rentepercentage.
+
+**Risicokosten**: Dit zijn de kosten waarmee we het risico afdekken dat de financiering niet wordt afgelost. De hoogte van de risicokosten hangt samen met het risicoprofiel van je onderneming.
+
+Als je geld leent, bestaat er altijd de kans dat je de lening niet kunt aflossen. Een financier moet daar rekening mee houden om geld uit te kunnen lenen en rekent daarom risicokosten, ofwel risico-opslag. Om de hoogte van die kosten in te schatten kijkt een financier naar de financiële gezondheid van je onderneming. Hoe beter je er voor staat, hoe hoger de kans dat je de lening terugbetaalt en dus hoe lager je risicokosten. Lees onze tips voor het checken van de financiële gezondheid van je bedrijf.
+
+Geld lenen aan een financieel gezonde onderneming betekent minder risico voor een financier en dat vertaalt zich vaak in een lager rentepercentage voor je bedrijf. Check onze tips om je winstgevendheid te verbeteren, onze tips om je solvabiliteit te verhogen en onze tips om je liquiditeit te verhogen.
+
+Staat jouw vraag er niet tussen? Bekijk meer vragen en antwoorden op service & contact.

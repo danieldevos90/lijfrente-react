@@ -1,0 +1,51 @@
+---
+title: Money Laundering | Qeld
+author: Elina Eriksson
+url: https://www.qeld.nl/info/money-laundering-nl
+hostname: qeld.nl
+description: As a payment institution, Qeld Business Loans adheres to strict guidelines and regulations regarding money laundering and terrorism financing. Read more:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Qred AB (“**Qeld**”) is a payment institution regulated by the Swedish Financial Supervisory Authority. Qeld is thus obliged to comply with the Act (2017: 630) on measures against money laundering and terrorist financing (the “**Money Laundering Act**”). On this page, we collect information about what money laundering means, what the law requires and how it affects you as a customer.
+
+Money laundering is the conversion of money that originates from criminal activities for the purpose of hiding or covering the illegal origin of the money. Money laundering can also mean trying to hide money earned from legal activities in an attempt to evade taxation. By laundering money, criminals can use illegal money without arousing suspicion.
+
+Terrorist financing implicate the financial support of terrorism. This can be done through direct donations, but also indirectly by collecting, providing or receiving money to be used for terrorism. The financing can be made by legally obtained money with the ultimate purpose of financing terrorism, which is illegal.
+
+Money laundering and terrorist financing are serious threats to our society. We at Qeld take our responsibility to prevent money laundering and terrorist financing and must therefore ask certain questions to our customers.
+
+The requirements of customer knowledge are high according to the Money Laundering Act. Qeld is always obliged to obtain information about the customers and assess the risk of the services being used for money laundering or terrorist financing.
+
+Both new and existing customers are covered by the customer knowledge requirements, as the information must always be kept up to date. Therefore, existing customers may from time to time be obligated to update their information.
+
+The requirements for customer knowledge results in Qeld being obligated to verify the customer's identity, the ultimate beneficial owner’s identity, information about PEP and the purpose and nature of the transaction. If we are not given answers to the questions asked, this can result in us not being able to offer our services or having to terminate agreements with existing customers.
+
+*What is a PEP?*
+
+PEP is an abbreviation for Politically Exposed Person. It is a broad concept that includes persons who have or have had public commitments, or a function in the management of an international organization, as well as that person's family and well-known employees. With "important public function" the following are intended:
+
+- The Heads of State or Government, minister or vice- or deputy minister;
+- Member of parliament;
+- Member of the Board of a political parliamentary party;
+- Judge in high-level legal body whose decisions can not be appealed;
+- High officer;
+- Senior officials at the audit authorities and members of the central bank's governing bodies;
+- Ambassadors or diplomatic envoys; or
+- Persons included in the administrative, management or supervisory bodies of state-owned companies.
+
+*What is an ultimate beneficial owner?*
+
+An ultimate beneficial owner is/are the person/s who ultimately own or control a company or association, or for whom someone else acts in favor of. An ultimate beneficial owner is thus always a natural person.
+
+Owning or having the control of a company can take various forms, for example owning more than 25 % of the shares in a company or having the right to appoint or remove more than half of the board members.
+
+If a person owns or controls a limited liability company together with related parties (spouse / cohabitant / registered partner, parents, children or the children's spouses / cohabitants / registered partner), their control must be added together. For example, if two spouses own 20 % each in a company, their share must be added together. Then the ownership share becomes 40 % and both spouses are considered to be ultimate beneficial owners in the company.
+
+If there is no ultimate beneficial owner, the chairman of the board, CEO, trustee or responsible partner must be stated as the ultimate beneficial owner.
+
+*Why do we have to state the purpose of the transaction?*
+
+When you apply for a business loan, you must answer questions about e.g. the company's operations, turnover and what the money will be used for. This is because Qeld must understand the background of the transaction, what the money will be used for and also where the money comes from when the loan is repaid.
+
+In some cases, Qeld may need to collect additional information such as agreements, receipts, invoices or similar documents from you.

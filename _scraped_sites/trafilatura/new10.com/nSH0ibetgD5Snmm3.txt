@@ -1,0 +1,58 @@
+---
+title: Wat is solvabiliteit? | New10
+author: New
+url: https://new10.com/blog/solvabiliteit
+hostname: new10.com
+description: Lees wat solvabiliteit betekent en waarom het belangrijk is. Bereken je solvabiliteitsratio en lees alles over de waarde van een gezonde solvabiliteit.
+sitename: New10
+date: 2023-10-17
+---
+New10
+
+New10 • Geldzaken
+
+Solvabiliteit (of de solvabiliteitsratio) is de verhouding tussen het eigen vermogen en het vreemd vermogen in je onderneming. Vreemd vermogen is het geld dat je met je bedrijf hebt geleend van anderen. Met eigen vermogen bedoelen we het verschil tussen de bezittingen (vaste activa en vlottende activa) en de schulden van je bedrijf (passiva). Deze verhouding geeft aan hoe afhankelijk je bedrijf is van externe financiers. Solvabiliteit is dus iets anders dan liquiditeit. Je kunt namelijk veel eigen vermogen hebben (solvabiliteit) zonder één cent op de bankrekening (liquiditeit).
+
+Een goede solvabiliteit betekent dat je bedrijf bestand is tegen financiële tegenslagen. Als je onderneming groeit, groeit ook je financiële balans. Daarom is het belangrijk je eigen vermogen in de gaten te houden. Groei je te snel zonder een solide basis van eigen vermogen? Dan kan het lastig zijn om financiële tegenvallers op te vangen. Houd controle over je onderneming door je solvabiliteit in de gaten te houden en te vergroten als dat nodig is.
+
+Bij een financieringsaanvraag kijken we naar de financiële gezondheid van je bedrijf. We checken de kredietwaardigheid van je onderneming op basis van winstgevendheid, liquiditeit, terugbetaalcapaciteit én solvabiliteit. Een gezonde solvabiliteit is dus niet alleen belangrijk voor het opvangen van tegenslagen, maar ook voor het succesvol aantrekken van nieuw kapitaal.
+
+Je solvabiliteit berekenen is een goede manier om je financiële situatie in kaart te brengen. Pak je jaarrekening erbij en zoek de posten **eigen vermogen** en **totaal vermogen** of **totale activa**.
+
+**Bereken met deze formule je solvabiliteit:**
+
+- Deel het eigen vermogen door het totale vermogen
+- Vermenigvuldig de uitkomst met 100%
+
+**Eigen vermogen**= € 1.000.000**Totaal vermogen**= € 1.500.000
+
+€ 1.000.000 / € 1.500.000 x 100% = 66,6%.
+
+In het voorbeeld is de solvabiliteit **66,6%**. Dat betekent dat van iedere euro in de onderneming 66,6 cent eigen geld is.
+
+*Let op: dit is een ruwe schatting van de solvabiliteit. Banken voeren soms correcties uit op het eigen vermogen, ze trekken goodwill en leningen aan de directeur-grootaandeelhouder af. Klop bij je financieel adviseur aan als je echt wilt weten hoe het zit.*
+
+Ja, solvabiliteit is een sleutelfactor wanneer je financiering gaat aanvragen. Financiers, zoals wij bij New10, kijken nauwkeurig hoeveel eigen geld er in je bedrijf zit. Dit vertelt ons hoeveel vermogen je zelf in de onderneming hebt gestoken. We kijken ook naar de uitstaande vorderingen van je bedrijf en brengen deze in mindering op je eigen vermogen. Een hogere solvabiliteit betekent voor ons minder risico en dus een lagere rente op je financiering.
+
+Solvabiliteit zegt echter niet alles. Als je geld bijvoorbeeld volledig vast zit in niet-liquide voorraad, heb je zelfs met 75% solvabiliteit onvoldoende liquiditeit om rekeningen te betalen. Lees meer over het belang van liquiditeit.
+
+Een hogere solvabiliteit betekent minder risico voor de financier en dus een lagere rente.
+
+
+Financiers geven de voorkeur aan een zo hoog mogelijke solvabiliteit. Een hogere solvabiliteit betekent namelijk dat er een grotere buffer is, wat de kans verkleint dat je de financiering niet kunt terugbetalen. De minimale solvabiliteit die financiers hanteren, verschilt per type onderneming. Zo zien we bij dienstverleners vaak een norm van 15%, bij handelsondernemingen 25%, en bij productiebedrijven een norm van 25% tot 30%.
+
+Bij New10 vragen we in ieder geval een **positieve solvabiliteit**. Hoe beter jouw solvabiliteit, hoe kleiner ons risico en hoe aantrekkelijker het rente-aanbod dat we kunnen doen. Het verbeteren van je solvabiliteit kan dus direct voordelig zijn voor de voorwaarden van je financiering.
+
+Je solvabiliteit verhogen doe je door de verhouding tussen het eigen vermogen en het vreemde vermogen te verbeteren. Op de balans moet meer eigen vermogen staan, en minder vreemd vermogen. Je kunt een aantal dingen doen om je solvabiliteit te verbeteren:
+
+**Vergroot je winst**:
+
+Extra winst betekent meer eigen vermogen. Vergroot dus je inkomsten of verklein je uitgaven voor een hogere winstgevendheid. Neem verkoopprijzen onder de loep, maak nieuwe afspraken met leveranciers of bespaar op je vaste lasten, zoals kantoorhuur. Neem verkoopprijzen onder de loep, maak nieuwe afspraken met leveranciers of bespaar op je vaste lasten, zoals kantoorhuur.**Keer minder winst (dividend) uit**:
+
+Steek de winst in de spaarpot van je bedrijf. Zo vergroot je het eigen vermogen van je onderneming.**Zorg dat je klanten hun facturen sneller betalen**:
+
+Minder openstaande facturen betekent meer geld op de rekening van je bedrijf. Zo hoef je minder geld te lenen om je werkkapitaal op peil te houden, waardoor het vreemd vermogen op je balans daalt en je solvabiliteitsratio stijgt.**Optimaliseer je voorraad zodat je nooit teveel hebt**:
+
+Voorraad is kapitaal dat je niet kunt gebruiken tot het verkocht is. Hoe minder voorraad je hebt, hoe lager je totale vermogen. En een lager totaal vermogen met een gelijk eigen vermogen betekent een hogere solvabiliteit. Zorg dus voor een voorraadbeheer.
+
+Vraag je een financiering aan bij New10? Dan checken wij de financiële gezondheid van je onderneming, inclusief de solvabiliteit. Start een aanvraag voor een zakelijke lening of een zakelijk krediet en binnen 15 minuten krijg je een persoonlijk voorstel.

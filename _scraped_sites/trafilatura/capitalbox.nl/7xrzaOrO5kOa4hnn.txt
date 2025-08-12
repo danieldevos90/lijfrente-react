@@ -1,0 +1,78 @@
+---
+title: Handige tools om jouw bedrijf mee te moderniseren en digitaliseren
+url: http://www.capitalbox.nl/blog/handige-tools-om-jouw-bedrijf-mee-te-moderniseren-en-digitaliseren
+hostname: capitalbox.nl
+description: Het moderniseren van een bedrijf hoeft niet duur te zijn. Om je te helpen bij het digitaliseren van jouw bedrijf, hebben we enkele hulpmiddelen opgeschreven.
+sitename: CapitalBox
+date: 2022-08-16
+---
+# Handige tools om jouw bedrijf mee te moderniseren en digitaliseren
+
+Veranderingen aanbrengen in een bedrijf kan een uitdaging lijken, vooral in onzekere tijden. Echter, er is een grote verscheidenheid aan gebruiksvriendelijke en redelijk geprijsde tools die je hierbij kunnen helpen en het voeren van je bedrijf makkelijker kunnen maken. Door nu tijd en energie te stoppen in modernisering, wordt het bedrijf wendbaarder, is het voorbereid op de toekomst en levert het hopelijk succes op de lange termijn.
+
+
+Digitale tools vormen de kern van de meest succesvolle startups in onze tijd. Van het tonen van producten en diensten, klantcontact, facturering en budgettering, tot aan het vereenvoudigen van de interne samenwerking. Overal is tegenwoordig een tool, app of software voor en sommige kunnen kosteloos worden gebruikt.
+
+
+Om je hierbij te ondersteunen, hebben we een lijst van tools en hulpmiddelen samengesteld die wij het overwegen waard vinden.
+
+
+1. **WordPress**. Je hebt er waarschijnlijk weleens van gehoord of gebruikt het al. Wordpress stelt je kosteloos in staat om een website te maken of een blog te ontwikkelen. Er zijn tientallen gratis, aanpasbare, ontwerpen en thema's, evenals een overvloed aan plugins die de meeste van jouw zakelijke behoeften kunnen oplossen. Wordpress biedt gratis hosting en ondersteuning.
+
+
+2. **WooCommerce** is een open source eCommerce platform gebouwd voor WordPress. Het is volledig aanpasbaar en geeft je de mogelijkheid om gemakkelijk online te verkopen op jouw WordPress website.
+
+
+3. Een ander alternatief voor het bouwen van jouw website is **Wix** website bouwer - Met Wix kun je kosteloos een professionele website bouwen, helemaal zelfstandig.
+
+
+4. **Shopify** is een abonnement op een softwaredienst waarmee je een website kunt maken en hun winkelwagenoplossing kunt gebruiken om producten te verkopen, te verzenden en te beheren. Met behulp van hun service, kun je toegang krijgen tot een eenvoudig te gebruiken admin panel waar je producten kunt toevoegen, bestellingen kunt verwerken en winkelgegevens kunt invoeren.
+
+
+5. **Avast** antivirus biedt een bekroonde gratis antivirus voor PC, Mac & Android. Ze bieden ook VPN-diensten aan waarmee je veilig en privé kunt surfen.
+
+
+6. **MailChimp** is een alles-in-één geïntegreerd marketingplatform voor kleine bedrijven. Vanuit hun hoofdfunctie als e-mailserviceprovider hebben ze hun service uitgebreid zodat je een website kunt maken, nieuwsbrieven kunt versturen, enquêtes kunt houden, retargeting advertenties kunt uitvoeren en geautomatiseerde e-mailcampagnes kunt opzetten. Het is eenvoudig te gebruiken en ze bieden ook een gratis plan aan voor maximaal 2.000 contacten.
+
+
+7. **Google Workspace** (voorheen Google suite) is een verzameling tools, software en producten om productiviteit en samenwerking te optimaliseren. Het is ontwikkeld en op de markt gebracht door Google en het omvat onder andere Gmail, Docs, Drive, Calendar, Meet. Door het gebruik van Google Workspace kun je heel gemakkelijk online samenwerken in de Cloud.
+
+
+8. **Google Analytics** is een webanalyseservice die door Google wordt aangeboden en die het verkeer op de website bijhoudt en rapporteert. Als de website eenmaal operationeel is, is het een goed idee om te zien wie jouw bezoekers zijn en wat ze doen op de website. Google Analytics is een complexe tool, maar gelukkig biedt Google ook gratis onlinecursussen aan om je hierbij te helpen.
+
+
+9. **Google My Business** is een must voor elk fysiek aanwezig bedrijf. Het is een gratis en eenvoudig te gebruiken tool van Google voor bedrijven en organisaties om te helpen de online aanwezigheid in Google te beheren, inclusief Search en Maps. Als je de bedrijfsgegevens verifieert en bewerkt, help je klanten om jouw bedrijf te vinden en een Google review achter te laten.
+
+
+10. Afhankelijk van de branche kan het beheren van contracten een behoorlijk uitdagende taak zijn, gelukkig is er ook op dit gebied software die dit vereenvoudigd. Met behulp van contractsotware kan het bedrijf elektronische overeenkomsten beheren. Het wordt steeds meer gebruikt, en digitale handtekeningen worden wettelijk steeds meer erkend. Hier zijn enkele voorbeelden van contractmanagementsoftware:
+
+**DocuSign**biedt eSignature, een manier om elektronisch te ondertekenen op verschillende apparaten.**PandaDoc**biedt document automatiseringssoftware als service met ingebouwde elektronische handtekeningen, workflowbeheer, een documentbouwer en CPQ-functionaliteit.
+
+
+11. Het goed organiseren van een team en de taken zal een groot verschil maken tussen jou en je concurrenten. Het gebruik van een organiserende app kan een team helpen om het werk beter te organiseren en zo dingen efficiënter gedaan te krijgen. Hier zijn enkele organisatie-apps die kunnen helpen bij een meer georganiseerde manier van zakendoen:
+
+**Trello**is een web-based applicatie voor het maken van lijsten in Kanban-stijl. Kanban is een van de meest gebruikte Agile werkwijzen. Het is oneindig flexibel, gemakkelijk te gebruiken en het is gratis. Trello helpt het team alles bij te houden en af te stemmen en maakt het mogelijk om projecten op een leuke en flexibele manier te delen.**Asana**is een web- en mobiele applicatie die is ontworpen om teams, eventueel op afstand, te helpen bij het organiseren, volgen en beheren van hun werk.
+
+
+12. **Evernote Scannable** helpt je om papieren documenten vast te leggen en om te zetten in hoogwaardige scans en PDF bestanden die je kunt opslaan of delen.
+
+
+13. Software voor afsprakenplanning of tools voor het plannen van vergaderingen biedt de mogelijkheid om eenvoudig afspraken en boekingen te beheren. Het zal veel tijd en energie besparen:
+
+
+**SimplyBook.me**zorgt voor een online reserveringssysteem voor Service Providers en biedt ook een mobiele app aan, zodat de kalander altijd bij de hand is.**SuperSaas**biedt voor elke situatie een eenvoudig programma voor het maken van afspraken. Ze bieden 6 pakketten voor verschillende zakelijke behoeften.**Timify**biedt een online reserveringssysteem dat flexibel en eenvoudig te gebruiken is. Ze bieden ook een gratis account aan waarmee een onbeperkt aantal boekingen kan worden gemaakt, een mini-website, e-mailberichten en online betalingen.
+
+
+14. Het aanbieden van contactloze betaling helpt om het winkelen en betalen in de winkel snel en gemakkelijk te maken, verkort de wachttijden voor klanten en geeft hen keuze en flexibiliteit. Hier zijn een paar van de meest bekende diensten voor contactloos betalen:
+
+
+**SumUp**stelt bedrijven in staat om kaartbetalingen te accepteren in het verkooppunt of onderweg. Uw inkomsten staan binnen 1-3 werkdagen op uw bankrekening en er wordt geen maandelijks bedrag in rekening gebracht.**Adyen**stelt bedrijven in staat om e-commerce, mobiel en point-of-sale betalingen te accepteren.**iZettle**is een Zweeds financieel technologiebedrijf dat in april 2010 is opgericht. Zij waren de eerste die een chipkaartlezer en app voor mobiele verkoop ontwikkelden die voldoet aan de internationale veiligheidseisen. Uitbetalingen zijn binnen 1 tot 2 werkdagen zichtbaar op je account.**myPOS**is een Europese betaaldienstverlener die mobiele betaalterminals en online betaaloplossingen aanbiedt aan kleine en middelgrote bedrijven.
+
+
+Het lijdt geen twijfel dat de huidige Corona-crisis invloed heeft en zal blijven hebben op de manier waarop we zakendoen. Kijk hoe u de negatieve effecten van de pandemie om kunt buigen door te zoeken naar de mogelijkheden die het kan bieden - een van die mogelijkheden kan zijn het moderniseren en digitaliseren van de bedrijfsvoering.
+
+
+Nu steeds meer klanten zich richten op e-commerce, contactloze betalingen, afhaal- of leveringsdiensten, is het verstandig om na te gaan of er tools op deze lijst staan die voor succes kunnen zorgen binnen jouw bedrijf.
+
+
+Heb je extra werkkapitaal nodig om te investeren in de modernisering of digitalisering van jouw bedrijf? Dan helpen wij je bij CapitalBox graag vooruit. We verstrekken leningen vanaf €1.000 tot €350.000 met een maximale looptijd tot 36 maanden en we vragen geen zakelijke zekerheden, zoals een onderpand. Het aanvraagproces is volledig online, zonder papier en duurt slechts enkele minuten. Binnen een werkdag komen we bij je terug of we de aanvraag kunnen goedkeuren, en bij een goedkeuring kun je binnen enkele dagen beschikken over de lening.

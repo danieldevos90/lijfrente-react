@@ -1,0 +1,10 @@
+---
+title: Hier weet je precies wat je zakelijke lening kost! | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/wanneer-dient-de-lening-terugbetaald-te-worden
+hostname: qeld.nl
+description: Bij Qeld betaal je één keer per maand de aflossing en vaste kosten. De looptijd is flexibel en op ieder moment af te lossen. Ontdek nu hoeveel jij kunt lenen:
+sitename: qeld.nl
+date: 2025-05-08
+---
+Je betaalt één keer per maand onze vaste kosten en aflossing. Een voorbeeld: als u de lening op de 10e van de maand heeft geaccepteerd, dan dient de eerste betaling bij ons de 10e van de volgende maand binnen te zijn. We sturen de factuur via de e-mail 10 dagen voor de betaaldatum op. De totale terugbetaling van de lening is afhankelijk van de gekozen looptijd/leentermijn.

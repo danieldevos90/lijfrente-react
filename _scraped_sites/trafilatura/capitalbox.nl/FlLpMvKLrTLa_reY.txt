@@ -1,0 +1,114 @@
+---
+title: Introductie in gegevensanalyse met Excel – deel 1: Voorbereiding
+url: http://www.capitalbox.nl/blog/introductie-gegevensanalyse-met-excel-deel-1-voorbereiding
+hostname: capitalbox.nl
+description: Elke bedrijfseigenaar droomt ervan om op basis van de beschikbare gegevens betere beslissingen te kunnen nemen en meer inzicht te krijgen in zijn eigen bedrijf. Hier vindt u meer informatie over hoe u daarmee een begin kunt maken.
+sitename: CapitalBox
+date: 2022-08-16
+---
+# Introductie in gegevensanalyse met Excel – deel 1: Voorbereiding
+
+Gegevensanalyse is een complex proces, waarbij gegevens worden verzameld, onderzocht, opgeschoond, geconverteerd en gemodelleerd. Het doel is om nuttige informatie te vinden waarmee zinvolle conclusies kunnen worden getrokken, die op termijn kunnen leiden tot betere beslissingen.
+
+Hoewel deze definitie in het begin misschien wat kan afschrikken, is de realiteit dat iedereen gewoon ergens begint. Verder verschilt gegevensanalyse van bedrijf tot bedrijf. Het ene bedrijf gebruikt andere instrumenten en technieken dan het andere, en het verschilt ook voor welke onderdelen van het bedrijf ze worden gebruikt.
+
+Gegevensanalyse bestaat uit veel verschillende aspecten en technieken. Toch zijn er enkele overeenkomsten die u op weg helpen als u met gegevensanalyse begint. Dit zijn de eerste punten waar u aandacht aan moet besteden:
+
+- Stel vast welke gegevens u wilt en kunt verzamelen
+- Zorg ervoor dat u over de juiste instrumenten beschikt om de gegevens te analyseren, in ons geval Excel
+- Zorg ervoor dat uw gegevens zijn opgeschoond en dat u begrijpt wat ze betekenen
+- Als u niet weet waar u op moet letten, begin dan met een verkennende gegevensanalyse. Dat betekent dat u onderzoekt wat de gegevens u nog meer vertellen dan wat u al had gezien.
+- Zorg ervoor dat de gegevensbronnen met elkaar overeenstemmen. Anders vertellen de gegevens die u uit de verschillende bronnen haalt u niet de waarheid.
+
+Naarmate u beter wordt in het analyseren van uw bedrijfsgegevens, kunt u betere beslissingen nemen en ziet u eerder welke onderdelen van uw bedrijf kunnen worden verbeterd. Met gegevensanalyse krijgt u meer inzicht in uw eigen bedrijf. Enkele voorbeelden van wat u ermee kunt:
+
+- Een overzicht van uw bedrijf in één oogopslag
+- Voorraadbeheer
+- Het benaderen van de juiste klanten op het juiste moment met de juiste content
+- Cross-selling van producten
+- Het verbeteren van procedures en logistiek
+
+## Het gebruik van Excel voor gegevensanalyse
+
+Microsoft Excel is een van de bekendste en beste instrumenten om gegevens te analyseren. De ingebouwde draaitabellen van dit programma vormen waarschijnlijk een van de meest gebruikte analyse-instrumenten. Kennis van Excel en draaitabellen is niet alleen nuttig bij uw dagelijkse activiteiten, maar ook als u moeilijke beslissingen moet nemen.
+
+Wat u in dit artikel leert kunt u ook gemakkelijk gebruiken bij alternatieven voor Excel, bijvoorbeeld Google Sheets en Zoho Sheet. Als u niet de beschikking hebt over Excel, zijn er dus ook andere instrumenten waarmee u uw bedrijfsgegevens kunt analyseren.
+
+In deze reeks artikelen leert u hoe u met uw gegevens draaitabellen kunt maken in Excel:
+
+- Flexibele gegevenssamenstellingen creëren met draaitabellen
+- Gegevens visueel weergeven met draaigrafieken
+- Gegevens in meerdere draaitabellen filteren met slicers
+
+We zullen deze begrippen nader uitleggen aan de hand van een praktijkvoorbeeld. Stel, u bent eigenaar van een groothandel en u wilt een dashboard maken dat u een duidelijk beeld geeft van hoe het met de verkoop gaat en wie uw klanten zijn.
+
+Zo’n dashboard is nuttig als u de verkoopgeschiedenis wilt bekijken, maar ook als u probeert te voorspellen hoe de verkoop zich in de nabije toekomst zal ontwikkelen. Een ander belangrijk doel is de mogelijkheid om deze gegevens met uw medewerkers te delen. Zo krijgen zij meer inzicht in het bedrijf en de belangrijke KPI’s, en ze begrijpen beter hoe hun eigen prestaties van invloed zijn op het totale bedrijfsresultaat.
+
+Nadat u samen met uw teams hebt gebrainstormd over de gegevens die u nodig hebt en het onderwerp online hebt bestudeerd, hebt u besloten dat u de volgende gegevenssets wilt onderzoeken:
+
+- Jaarlijkse ontwikkeling van de verkoop per land
+- Jaarlijkse ontwikkeling van de verkoop per productcategorie
+- Jaarlijkse verkoop per leeftijdsgroep
+
+U haalt de gegevens op uit uw CRM-systeem. Deze worden weergegeven in een eenvoudig rekenblad met meerdere rijen en kolommen. Er zijn nog geen samenvattingen gemaakt.
+
+
+## Gegevens opschonen
+
+Voordat u een samenvatting of een dashboard kunt maken, moet u de onbewerkte gegevens eerst geschikt maken voor verwerking. Daarvoor moet u de onbewerkte gegevens controleren met behulp van de volgende vragen:
+
+- Beschikken we over de gegevens die we nodig hebben?
+U moet nagaan of u met de beschikbare kolommen aan de slag kunt. U gebruikt de kolommen Order date (besteldatum), Item Type (type product), Sales Channel (verkoopkanaal), Region (regio), Country (land), Units Sold (aantal verkocht), en Total Revenue (omzet) om een beeld te krijgen van de verkoopresultaten voor een bepaalde periode.
+
+Daarna gebruikt u Date of Birth (geboortedatum) en Total Revenue om te onderzoeken in welke leeftijdsgroep uw beste klanten zitten.
+
+
+Moeten we de gegevens opschonen?
+
+U moet vaststellen of er sprake is van onvolledige, onjuiste, onnauwkeurige of niet-relevante (delen van) gegevens. Daarna moet u deze vuile gegevens vervangen, aanpassen of verwijderen. Daarbij kan het bijvoorbeeld gaan om een vermenging van cijfers en tekst, een punt op de verkeerde plaats of een incoherent type gegevens binnen één kolom. In dit geval zijn de gegevens correct en klaar voor gebruik.
+
+
+Als we niet over de benodigde gegevens beschikken, kunnen we ze dan extraheren?
+
+U wilt uw klanten onderzoeken op basis van hun leeftijdsgroep. Deze informatie staat niet in de tabel, maar u kunt deze gegevens creëren door hun geboortedatum te gebruiken.
+
+
+
+
+## Voorbereiden van de gegevensset en extraheren van niet-beschikbare gegevens
+
+1. Eerst converteert u uw gegevensset naar een tabel. Hiervoor gaat u naar het menu Invoegen en kiest u Tabel uit de groep Tabellen. Als u graag sneltoetsen gebruikt, selecteert u de gegevens met Ctrl+A en typt u daarna Ctrl+T.
+
+
+De meeste tabellen hebben een koptekst (of hebben er een nodig). Als u een koptekst gebruikt, selecteer dan De tabel bevat kopteksten.
+
+
+
+Om de tabel later gemakkelijk terug te kunnen vinden geeft u deze de naam Sales Records. Hiervoor gaat u naar het menu Tabelontwerp. Onder Tabelnaam typt u Sales Records en daarna drukt u op Enter. Als u vanaf nu een nieuwe draaitabel wilt invoegen waarbij u deze tabel gebruikt, hoeft u alleen maar de naam van de tabel in te typen. Excel weet dan naar welke gegevens u verwijst.
+
+- Het gebruik van tabellen in Excel is eenvoudig om de volgende redenen:
+- U kunt altijd een koptekst gebruiken.
+- Filters. Het eerste wat u zult opmerken als u een tabel creëert, is dat er automatisch filters aan de kopteksten worden toegevoegd.
+- Sorteren. U kunt de filterpijltjes gebruiken om per kolom de gegevens snel te sorteren. Als u op meerdere velden tegelijk wilt sorteren, gebruik dan Gegevens - Sorteren.
+- Eenvoudige gegevensinvoer voor grafieken en draaitabellen. Als u een grafiek hebt gecreëerd met een gegevensbereik en u voegt een nieuwe record toe in de rij aan het einde van het bereik, registreert de grafiek de nieuwe record niet. Als uw gegevens echter in een tabel staan, wordt de tabel automatisch uitgebreid als er een nieuwe record wordt toegevoegd. De nieuwe record wordt dan wel geregistreerd en uw grafiek wordt automatisch bijgewerkt.
+- Automatisch doorvoeren. Als u in een tabel een nieuwe record toevoegt, krijgt deze niet alleen dezelfde opmaak, maar de tabel voert ook automatisch alle formules door die u in uw tabel hebt opgenomen. Hiermee kunt u veel tijd besparen.
+- Berekende kolommen. Als u in een tabel een formule invoert in een lege kolom, gebruikt Excel berekende kolommen om automatisch de rest van de rijen in de kolom in te vullen. Dit gaat veel sneller dan wanneer u de formule in een cel invoert en deze dan naar de hele kolom kopieert.
+
+Aangezien u een rapport wilt creëren over de jaarlijkse verkoop, uitgesplitst naar leeftijdsgroep, moet u vervolgens de leeftijd extraheren en de leeftijdsgroep berekenen. Dat doet u door twee nieuwe kolommen te creëren, genaamd Age en Age Group.
+
+
+
+Om de leeftijd te berekenen gebruikt u de volgende formules:
+
+**Functie VANDAAG**– Deze functie levert de huidige datum op en wordt altijd bijgewerkt als een werkblad wordt gewijzigd of geopend. De functie VANDAAG heeft geen argumenten. U kunt de waarde die de functie VANDAAG oplevert opmaken met elke gewenste standaard datumnotatie.**Functie JAAR**– Deze functie levert het jaar op als component van een datum, in de vorm van een viercijferig getal. U kunt de functie JAAR gebruiken om een jaartal uit een datum naar een cel te extraheren, of om een jaartal te extraheren en deze waarde in een andere formule in te voeren.**Aftrekken**.- U
+**wijzigt de celopmaak**voor deze kolom in Getal en 0 decimalen.
+
+Om de leeftijdsgroep te berekenen moet u de ALS-formule gebruiken (in oudere versies van Microsoft Excel moet u geneste ALS-formules gebruiken).
+
+
+
+De **ALS-functie** doet meerdere tests en levert een waarde op die overeenkomt met het eerste resultaat dat WAAR is. Gebruik de ALS-functie als u meerdere voorwaarden wilt evalueren, zonder meerdere geneste ALS-instructies. Met ALS kunt u kortere, gemakkelijker leesbare formules maken.
+
+In ons tweede artikel vervolgen we het onderzoek naar hoe we Microsoft Excel kunnen gebruiken voor gegevensanalyse met behulp van draaitabellen, draaigrafieken, slicers, tijdlijnen en dashboards (Introductie in gegevensanalyse met Excel – deel 2: Analyse).
+
+We benadrukken nogmaals dat gegevensanalyse van groot belang is als u beslissingen wilt nemen op een wetenschappelijke basis en als u uw bedrijf efficiënter wilt runnen. Daarom hebt u er op lange termijn veel baat bij als u de technieken en instrumenten van de gegevensanalyse leert gebruiken.

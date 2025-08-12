@@ -1,0 +1,51 @@
+---
+title: Witwassen en veiligheid | Qeld
+author: Elina Eriksson
+url: https://www.qeld.nl/info/witwassen-nl
+hostname: qeld.nl
+description: Qeld heeft als betalingsinstelling de verplichting om te voldoen aan de wet- en regelgeving rondom witwassen. Je vindt hier meer info over dit onderwerp:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Qred Bank AB ("**Qeld**") is een betalingsinstelling gereguleerd door de Zweedse financiële toezichthoudende autoriteit. Qeld is daarom verplicht om te voldoen aan de Zweedse wet (2017: 630) inzake maatregelen tegen witwassen en terrorismefinanciering (de “**Witwaswet**”). Op deze pagina verzamelen we informatie over wat witwassen inhoudt, wat de wet vereist en welke gevolgen dit heeft voor u als Qeld-klant.
+
+Witwassen is het omzetten van geld dat afkomstig is uit criminele activiteiten met als doel het maskeren van de illegale herkomst van het geld. Witwassen van geld kan ook betekenen dat u probeert om geld te verbergen dat is verdiend met legale activiteiten in een poging belasting te ontwijken. Door geld wit te wassen, kunnen criminelen illegaal geld gebruiken zonder argwaan te wekken.
+
+Terrorismefinanciering impliceert de financiële ondersteuning van terrorisme. Dit kan door middel van directe schenkingen, maar ook indirect door het inzamelen, verstrekken of ontvangen van geld voor terrorisme-doeleinden. De financiering kan mogelijk gemaakt worden door middel van legaal verkregen geld met het uiteindelijke doel terrorisme te financieren, wat illegaal is.
+
+Witwassen van geld en terrorismefinanciering vormen een ernstige bedreiging voor onze samenleving. Wij bij Qeld nemen onze verantwoordelijkheid om witwassen en terrorismefinanciering te voorkomen en moeten daarom bepaalde vragen stellen aan onze klanten.
+
+De eisen aan klantkennis zijn hoog volgens de huidige wetgeving omtrent witwassen. Qeld is altijd verplicht om informatie over de klanten in te winnen en een risico-inschatting te maken of de diensten worden gebruikt voor witwassen of terrorismefinanciering.
+
+Zowel nieuwe als bestaande klanten vallen onder deze kennisbehoefte, aangezien de informatie altijd up-to-date moet worden gehouden. Daarom kunnen bestaande klanten van tijd tot tijd worden verplicht om hun klantinformatie bij te werken.
+
+De vereisten voor klantkennis leiden ertoe dat Qeld verplicht is om de identiteit van de klant, de identiteit van de uiteindelijke begunstigde, informatie over PEP en het doel en de aard van de transactie te verifiëren. Als wij geen antwoord krijgen op de gestelde vragen, kan dit ertoe leiden dat wij onze diensten niet kunnen aanbieden of overeenkomsten met bestaande klanten moeten beëindigen.
+
+*Wat is een PEP?*
+
+PEP is de afkorting voor ‘Politically Exposed Person’, dit noemen we in het Nederlands een ‘Politiek Prominent Persoon’. PEP is een breed concept dat personen omvat die publieke verplichtingen hebben of hebben gehad, of een functie hebben in het management van een internationale organisatie, evenals het gezin van die persoon en werknemers. Met ‘Politiek Prominent Persoon" wordt bedoeld:
+
+- De staatshoofden en regeringsleiders, minister-president en vicepremier
+- Parlementsleden
+- Lid van het bestuur van een politieke parlementaire partij
+- Rechter in een juridische organisatie op hoog niveau tegen wiens beslissingen geen beroep kan worden aangetekend
+- Hoge officieren
+- Hoge ambtenaren bij de auditautoriteiten en leden van de bestuursorganen van de centrale bank
+- Ambassadeurs of diplomatieke gezanten
+- Personen die zijn opgenomen in de bestuurs-, leidinggevende of toezichthoudende organen van staatsbedrijven
+
+*Wat is een ‘uiteindelijk belanghebbende’?*
+
+Een ‘uiteindelijk belanghebbende’ is/zijn de persoon/personen die uiteindelijk eigenaar zijn van of zeggenschap hebben over een bedrijf of vereniging, of voor wie een ander optreedt. Een uiteindelijk belanghebbende is dus altijd een natuurlijk persoon (een mens in juridische zin, als iemand die drager van rechten en verplichtingen kan zijn).
+
+Het bezit, of het hebben van zeggenschap, over een vennootschap kan verschillende vormen aannemen, bijvoorbeeld het bezit van meer dan 25% van de aandelen in een vennootschap of het recht hebben om meer dan de helft van de bestuursleden te benoemen of te ontslaan.
+
+Als een persoon samen met verbonden partijen (echtgeno(o)t(e)/samenwonende/geregistreerde partner, ouders, kinderen of de echtgenoten/samenwonenden/geregistreerde partner van de kinderen eigenaar is van of zeggenschap heeft over een vennootschap met beperkte aansprakelijkheid, moet hun zeggenschap worden opgeteld. Als twee echtgenoten bijvoorbeeld elk 20% in een bedrijf bezitten, moet hun aandeel bij elkaar worden opgeteld. Dan wordt het eigendomsaandeel 40% en worden beide echtgenoten beschouwd als de uiteindelijke begunstigden van het bedrijf.
+
+Indien er geen uiteindelijk belanghebbende is, dient de voorzitter van de raad, CEO, trustee of verantwoordelijke partner als uiteindelijk belanghebbende te worden vermeld.
+
+*Waarom moeten we het doel van de transactie vermelden?*
+
+Als u een zakelijke lening aanvraagt, moet u vragen beantwoorden over bijvoorbeeld de bedrijfsvoering, de omzet en waar het geld voor wordt gebruikt. Dit komt omdat Qeld de achtergrond van de transactie moet begrijpen, alsmede waarvoor het geld gebruikt zal worden en waar het geld vandaan komt als de lening wordt afgelost.
+
+In sommige gevallen moet Qeld mogelijk aanvullende informatie van u verzamelen, zoals overeenkomsten, ontvangstbewijzen, facturen of soortgelijke documenten.

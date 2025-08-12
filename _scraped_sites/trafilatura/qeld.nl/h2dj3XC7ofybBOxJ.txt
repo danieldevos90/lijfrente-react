@@ -1,0 +1,10 @@
+---
+title: Wij gebruiken kredietinformatie voor een beter aanbod | Qeld
+author: Anne Buckers
+url: https://www.qeld.nl/info/ontvangen-jullie-kredietinformatie-over-mij
+hostname: qeld.nl
+description: Als ondernemers zakelijk krediet aanvragen via Qeld, voeren wij een kredietbeoordeling uit om een zo gunstig mogelijk aanbod te kunnen doen. Ontdek hier meer:
+sitename: qeld.nl
+date: 2025-08-12
+---
+Ja, om uw aanvraag voor een zakelijke lening naar behoeven te kunnen beoordelen, gebruiken wij kredietinformatie verkregen via gerenommeerde kredietbeoordelaars. Dit betreft kredietinformatie over zowel persoonlijke kredietwaardigheid als die van de onderneming van de aanvrager.

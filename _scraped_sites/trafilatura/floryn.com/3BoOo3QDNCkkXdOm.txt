@@ -1,0 +1,39 @@
+---
+title: Vanaf 2022 nieuw portaal btw-aangifte: dit moet je weten!
+author: Redactie Floryn
+url: https://www.floryn.com/blog/vanaf-2022-nieuw-portaal-btw-aangifte
+hostname: floryn.com
+description: Doe jij als ondernemer zelf je aangifte omzetbelasting? Vanaf de eerste btw-aangifte van 2022 gebruik je een nieuw portaal. Dit moet je weten!
+sitename: Floryn
+date: 2022-04-28
+tags: ['Bedrijfsgroei']
+---
+**Doe jij als ondernemer zelf je aangifte omzetbelasting? Dan gaat er voor jou iets veranderen. Vanaf de eerste btw-aangifte van 2022 gebruik je een nieuw, veiliger portaal: Mijn Belastingdienst Zakelijk.**
+
+Grote kans dat je inmiddels aardig gewend bent geraakt aan je oude manier van aangifte doen. Toch was het welbekende systeem met de donkerblauwe achtergrond en paarse vlakken niet bijzonder gebruiksvriendelijk. Ook wil de Belastingdienst een nieuwe stap maken op het gebied van security. Het resultaat? Vanaf nu doe je de btw-aangifte via één van deze drie opties:
+
+- In het nieuwe portaal: Mijn Belastingdienst Zakelijk
+- Via je boekhouder of accountant
+- Met behulp van administratie software. Je hebt hiervoor wel een directe koppeling met de Belastingdienst nodig.
+
+## Hoe werkt Mijn Belastingdienst Zakelijk?
+
+Het belangrijkste verschil met het oude portaal is de manier van inloggen. Waar je in het oude portaal inlogde met je gebruikersnaam en wachtwoord, doe je dit bij Mijn Belastingdienst Zakelijk met je DigiD of eHerkenning. Welke je moet gebruiken, hangt af van je rechtsvorm. Als je een eenmanszaak hebt, kun je gewoon inloggen met DigiD. Dit is relatief eenvoudig. Daarnaast kun je met het nieuwe systeem je oude aangifte altijd nog terugvinden in het portaal. Zo heb je alles bij de hand.
+
+Heb je een andere rechtsvorm, zoals de besloten vennootschap (bv) of naamloze vennootschap (nv)? Dan heb je eHerkenning nodig. Je kunt dit ook aanvragen voor een van je medewerkers.
+
+## eHerkenning voor Mijn Belastingdienst Zakelijk
+
+eHerkenning is een methode waarmee je als ondernemer veilig kunt inloggen op websites van de (semi-)overheid. Het wordt daarom ook wel de DigiD voor bedrijven genoemd. Inmiddels zijn ruim 500 (semi-)overheidsorganisaties aangesloten. Denk hierbij aan aanvraagportals voor subsidie, maar ook het aanvragen van een Verklaring omtrent Gedrag (VOG).
+
+Er zijn verschillende betrouwbaarheidsniveaus van eHerkenning: EH2, EH2+, EH3 en EH4. Hoe hoger het niveau, des te strikter de beveiliging. Voor het inloggen bij de aangifte omzetbelasting heb je betrouwbaarheidsniveau EH3 of hoger nodig. Let op: eHerkenning is niet gratis, je kunt de dienst aanvragen bij een zestal leveranciers die worden erkend door de overheid. Hier vind je een overzicht. Er is ook een speciaal eHerkenningsmiddel ontwikkeld voor de btw-aangifte. Je kunt hiermee alleen inloggen op Mijn Belastingdienst Zakelijk. Voor dit middel kun je één keer per jaar € 24,20 vergoed krijgen. Dit vraag je aan bij de Rijksdienst voor Ondernemend Nederland.
+
+## Wanneer moet ik precies overstappen?
+
+Wanneer je precies moet overgaan op de nieuwe manier van aangifte doen, verschilt:
+
+- Doe je aangifte per maand? Dan stapte je over op februari 2022 (over januari 2022)
+- Als je aangifte per kwartaal doet, dan stap je over in april 2022 (over 1e kwartaal 2022)
+- Doe je jaarlijks aangifte? Dan stap je over in maart 2023 (over 2022)
+
+De Belastingdienst raadt aan om vóór 26 april eHerkenning aan te vragen als je dit nodig hebt om in te loggen. Lukt dat niet, en kun je daardoor niet inloggen om aangifte te doen? Dan bel je de BelastingTelefoon om als uitzondering nog één keer gebruik te mogen maken van het oude portaal: 0800 0543.

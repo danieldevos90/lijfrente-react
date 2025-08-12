@@ -1,0 +1,12 @@
+---
+title: No lock-in period | Qeld
+author: Samantha Bos
+url: https://www.qeld.nl/info/no-lock-in-nl
+hostname: qeld.nl
+description: Qeld's business loans have no lock-in period! You can pay back the loan at any time without penalty or hidden costs. Read more about this flexibility here:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Our Qeld business loans don’t have a lock-in period, which means that our customers are completely free to pay off the loan in full at any time during their contract.
+
+How does it work? When you take a business loan via Qeld, you select a standard loan term: ranging from 6 to 18 months. You then pay a monthly service cost for using the loan, plus standard amortisation. If you decide you no longer need the loan, you can repay the outstanding loan sum in full at any time during your loan term without penalty. That is how you keep control over your finances and don’t have to worry about lock-in periods. Clever.

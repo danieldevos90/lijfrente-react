@@ -1,0 +1,41 @@
+---
+title: Wereld Meisjesdag: Floryn viert sterke vrouwen in de IT
+author: Redactie Floryn
+url: https://www.floryn.com/blog/wereldmeisjesdag-floryn-viert-sterke-vrouwen-in-de-it
+hostname: floryn.com
+description: Elk jaar op 11 oktober is het wereldmeisjesdag, zo ook bij Floryn. Een dag waar aandacht wordt gevraagd voor gelijke rechten en kansen voor vrouwen.
+sitename: Floryn
+date: 2022-10-12
+tags: ['Personeel']
+---
+**Elk **jaar op 11 oktober vieren we wereldmeisjesdag, een dag waar aandacht wordt gevraagd voor gelijke rechten en kansen voor vrouwen. Een mooi moment om eens te kijken hoe het voor de vrouwen in ons eigen development team is om in een door mannen gedomineerde industrie te werken.
+
+Vroeger werden de IT- en techwereld gezien als iets typisch mannelijks. Dit zorgde ervoor dat vrouwen met ambitie niet zo makkelijk voet aan de grond kregen. Gelukkig kiezen steeds meer vrouwen voor een carrière in de IT of tech. Een mooie ontwikkeling die zorgt voor meer diversiteit op de werkvloer.
+
+Een start in de IT
+
+Zo leerde stagiaire data-analyse Annebelle coderen op zomerkamp Kode with Klossy in de VS. “Ik heb er veel mensen leren kennen zoals ik, en ik zie het nog steeds als een highlight in mijn leven. Het heeft me een boost gegeven om mee te doen aan wedstrijden en hackatons, en om te leren over de technologie achter ons dagelijks leven.”
+
+Machine Learning Engineer Giorgia besloot computer science te gaan studeren op aanraden van haar vader. “Ik was positief verrast door hoe cool programmeren is. Je kunt in vrijwel iedere sector iets bijdragen, van het redden van kinderen tot het uitroeien van honger in Afrika.”
+
+Uitdagingen als vrouw
+
+Met IT kun je dus een grote impact maken, toch kan de scheve man/vrouw verhouding soms leiden tot vervelende situaties. Voordat onze developers bij Floryn kwamen, hebben ze dit zelf ook meegemaakt. Machine Learning Engineer Giorgia vond het soms ook best eenzaam: “Mannen en vrouwen zijn anders, en zo’n verschil in percentage in de tech industrie kan je het gevoel geven dat je ondervertegenwoordigd bent, en soms gewoon niet begrepen.”
+
+Onze operations analyst worstelde er vooral mee dat haar stem niet altijd zo luid werd gehoord als die van een man, dat is gelukkig anders bij Floryn. Toch voelt ze zich thuis in de industrie en is ze heel trots op wat ze nu al heeft bereikt. “Maar ik wil en zal nog meer bereiken.”
+
+Data analyst Danielle ervaart minder nadelen dan de andere vrouwen uit dit artikel. “In de techbranch zijn altijd veel mannen, maar ik zie dit nooit als een dingetje. Ik vind het wel leuk als er meiden in mijn team zitten, maar is geen pre.” Ze ziet haar vrouw-zijn in bepaalde situaties zelfs als voordeel. “Vanuit sales zetten ze vaak een man tegenover een vrouw om iets te bereiken.”
+
+Werken bij Floryn
+
+Bij Floryn zijn vrouwen nog in de minderheid. Toch voelen de developers zich hier wel degelijk thuis. Annebelle legt uit: “Het voelt alsof ik in een soort cliché-versie van een baan in tech leef. Ik ben nog steeds aan het wachten tot de ‘honeymoon phase’ overgaat. Mijn collega’s zeggen dan dat dit niet zal gebeuren.”
+
+Danielle vindt het heel leuk om met klantdata te werken. Daarvoor kan ze bij Floryn haar hart ophalen. “Met mijn werk help ik om data een gezicht te geven. Zo kan ik iemand van sales inzichten geven in hoe ze conversie kunnen verhogen, of marketing helpen om beslissingen te maken welke kanalen ze moeten inzetten. Hier krijg ik onwijs veel energie van.
+
+Onze operations analyst is vooral enthousiast over de manier waarop Floryn omgaat met haar medewerkers. “Er is een geweldige bedrijfscultuur bij Floryn”, vertelt ze. “De directie geeft het goede voorbeeld en ik heb het gevoel dat we allemaal de kans krijgen om te groeien binnen het bedrijf.”
+
+Tips voor meiden
+
+Bij Floryn verwelkomen we graag nog meer vrouwen om onze developers te versterken. Daarom vroegen we de geïnterviewden welke tips ze aan jonge meiden willen meegeven over hun industrie.
+
+Wat de geïnterviewden graag nog mee willen geven aan de jonge meiden in de industrie is om altijd hun stem te laten horen, wees nieuwsgierig en doe wat je écht wilt voor jezelf. Jouw kennis en kritisch denkvermogen zijn het krachtigste middel dat je hebt om dingen te veranderen. Een mix van business knowledge en een beetje nerdy zijn is de perfecte cocktail voor een developer bij Floryn.

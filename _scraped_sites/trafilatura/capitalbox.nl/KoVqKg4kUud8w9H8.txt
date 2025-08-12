@@ -1,0 +1,98 @@
+---
+title: De rentabiliteitsberekening is de grondslag van een gezond bedrijf
+url: http://www.capitalbox.nl/blog/rentabiliteitsberekening
+hostname: capitalbox.nl
+description: De rentabiliteitsberekening van een bedrijf is de basis van een gezonde onderneming - leer hoe je een rentabiliteitsberekening maakt en bekijk onze voorbeelden
+sitename: CapitalBox
+date: 2022-08-16
+---
+# De rentabiliteitsberekening is de grondslag van een gezond bedrijf
+
+
+Rentabiliteit, hoe zit dat ook alweer?
+
+De rentabiliteit is een eenvoudige berekening die gebruikt wordt om het rendement van een belegging te berekenen en die te vergelijken met andere beleggingsmogelijkheden. Het is de procentuele verandering in de waarde van een belegging over een bepaalde periode
+
+Wanneer moet je rentabiliteit gebruiken? Wat zijn enkele voorbeelden van hoe je rentabiliteit kunt berekenen? En waarom is dat eigenlijk zo belangrijk? Dit zijn enkele van de vragen die we beantwoorden.
+
+Er zijn verschillende methoden om rentabiliteit te berekenen, maar de meest gebruikelijke is de nettowinst te delen door de totale activa. Als je nettowinst bijvoorbeeld €50.000 is, en je totale activa zijn €200.000, dan zou je rentabiliteit 25 procent zijn. Een gangbare definitie van rentabiliteit is "een maatstaf voor winstgevendheid die de prestaties van een bedrijf beoordeelt door de nettowinst te delen door het netto vermogen".
+
+**In een MKB onderneming of een starter kun je rentabiliteit gebruiken om bijvoorbeeld te meten hoe een bepaalde prijsstelling werkt, of nagaan wat jouw investering heeft gedaan.** Als je bedrijfsmiddelen koopt, zoals voorraad of apparatuur, verwacht je dat je bepaalde financiële voordelen hebt vanwege die aankoop. Met een rentabiliteitsberekening kun je bijvoorbeeld beslissen tussen twee verschillende opties die of inkomsten gaan genereren of kosten gaan besparen.
+
+## Hoe bereken je rendabiliteit voor je bedrijf?
+
+Het berekenen van rendabiliteit kan voor grote bedrijven een complex proces worden. Voor kleine ondernemers is het echter relatief eenvoudig.
+
+Stel dat je vreemde vermogen €15.000 is, terwijl je eigen vermogen €45.000 is. Samen kom je dan op € 60.000. Intussen is het totale netto inkomen na aftrek van belastingen voor je bedrijf in het eerste bedrijfsjaar €135.000. Om je rendement op je investering voor het eerste jaar te bepalen, gebruik je simpelweg de volgende berekening
+
+€135.000 ÷ €60.000 = 2.25 ofwel een rendabiliteit van 225%
+
+Dit is hoog. Dit verandert van jaar tot jaar, vooral als er meer langlopende schuld aan de onderneming wordt gekoppeld of als je meer geld in de onderneming investeert.
+
+**Voorbeeld van rendabiliteit **
+
+Om meer klanten te bereiken, investeer je €20.000 in een marketingcampagne om nieuwe klanten aan te trekken. Aan het eind van het jaar heb je een totale opbrengst van €150.000, waarvan €75.000 rechtstreeks uit de campagne voortvloeit.
+
+(€75.000 - €20.000) ÷ €20.000 = 2,75 of 275%.
+
+Dit betekent dat je een rendabiliteit van 275% hebt voor je marketing campagne.
+
+## Hoe moet je rendabiliteit analyseren?
+
+Rentabiliteitsanalyse is belangrijk, en gelukkig is het analyseren van je rendabiliteit tamelijk eenvoudig. Hoe hoger de rendabiliteit, hoe efficiënter je jouw investering gebruikt om inkomsten te genereren.
+
+In het voorbeeld hierboven berekenden we de rendabiliteit voor het eerste bedrijfsjaar en de initiële investering. Door regelmatig rendabiliteit te berekenen krijg je een veel duidelijker beeld van hoe je investeringen het doen.
+
+Omdat de rendabiliteit nogal kan variëren, afhankelijk van de soort investering en de bedrijfstak waarin je actief bent, is er geen doorsnee rendabiliteit om je resultaten mee te vergelijken. Vergelijk in plaats daarvan je resultaten met die van andere ondernemingen in hun eerste bedrijfsjaar om te zien hoe jouw rendabiliteit zich verhoudt. Als je toch een vergelijking berekent, zorg er dan voor dat je je bedrijfsprestaties vergelijkt met die van een soortgelijk bedrijf om de meeste waarde uit de rendabiliteitsresultaten te halen.
+
+## Drie voordelen van het berekenen van rendabiliteit
+
+Het berekenen van rendabiliteit voor je bedrijf biedt een aantal verschillende voordelen. Dit zijn een aantal van de belangrijkste voordelen.
+
+### Gemakkelijk te berekenen
+
+De rendabiliteit van je investering leren berekenen is eenvoudig, het kan met slechts een paar zakelijke cijfers zoals nettowinst en het benodigde investeringsbedrag, hierdoor krijg je snel inzicht in je initiële investering.
+
+### Resultaten zijn gemakkelijk te interpreteren
+
+De uitkomst van je rendabiliteit is eenvoudig te interpreteren. Een positief getal betekent dat je een positief rendement hebt, terwijl een negatief getal betekent dat je geld verloren hebt op deze investering. Rendabiliteit is gemakkelijk te begrijpen, zelfs door mensen die geen boekhouders zijn. Hierdoor zijn de berekeningsresultaten een waardevolle maatstaf om te gebruiken bij gesprekken met investeerders of met instellingen waar je een lening kunt afsluiten.
+
+### Biedt flexibiliteit
+
+Rendabiliteit kan berekend worden voor allerlei investeringen, of het kan berekend worden voor je bedrijf als geheel. Zo kun je zien welke delen van je bedrijf van een bepaalde investering hebben geprofiteerd, zoals een reclamecampagne die de inkomsten verhoogde of een tweede vestiging die het verkoopvolume verhoogde. Je kunt een rendement op eigen vermogen berekenen op welke manier jij ook wil.
+
+## Drie nadelen van het berekenen van rendabiliteit
+
+Hoewel het berekenen van de rendabiliteit veel voordelen biedt, moet je ook rekening houden met een paar nadelen.
+
+### Beantwoordt niet alle vragen
+
+Wat is een goed investeringsrendement? Is het 10%, 25%, 100%, of zelfs meer? Het hangt af van de initiële investering, wat voor rendement je verwacht, en hoe soortgelijke bedrijven in je sector het doen. Als je rendabiliteit gebruikt om je informatie te geven over hoe een investering presteert, dat werkt helemaal prima. Maar verwacht niet dat het je alles vertelt wat je over je bedrijf of zelfs die investering moet weten.
+
+### Tijd is onbelangrijk
+
+Als je de rendabiliteit van twee investeringen die je bedrijf gedaan heeft vergelijkt, kijk dan ook achter de schermen naar extra informatie waarmee geen rekening gehouden wordt bij de berekening van de rendabiliteit. Bijvoorbeeld met betrekking tot tijd.
+
+Je hebt bijvoorbeeld twee investeringen die beide een rendabiliteit van 25% hebben. De ene investering was een eenjarige marketingcampagne, terwijl de andere een tweejarige investering in gemoderniseerde apparatuur was. Dat kan een groot verschil maken bij het analyseren van de rendabiliteitsresultaten, want de marketingcampagne leverde na één jaar een rendabiliteit van 25% op, terwijl de upgrade van de apparatuur na twee jaar een rendabiliteit van 25% opleverde. Het allebei wel 25%, maar feitelijk zijn ze niet gelijk aan elkaar.
+
+### Gebrek aan exacte nauwkeurigheid
+
+Het is moeilijk om de rendabiliteit van een social media campagne te berekenen als je de resultaten niet direct aan de campagne kunt koppelen. Hetzelfde geldt voor bedrijven die een blog beginnen of een nieuwe website maken. Hoewel deze taken voor een bedrijf natuurlijk zijn vruchten kunnen afwerpen, kan het moeilijk zijn ze direct te koppelen aan een verhoogde rendabiliteit. Daarnaast zou je ook nog moeten kijken naar hoe je een investering hebt gefinancierd. Kon dat gewoon met de bestaande middelen of moest het bijvoorbeeld via een rekening courant?
+
+## Waarom is rendabiliteit belangrijk voor je bedrijf?
+
+Wanneer je geld investeert, of het nu in een nieuwe onderneming is, moderne apparatuur, of een gerichte marketingcampagne is, wil je altijd zien hoe goed die investering heeft uitgepakt.
+
+Met het berekenen van rendabiliteit kun je dat doen. Niet alleen geeft rendabiliteit je informatie over je investeringen, maar het kan je ook helpen bij het nemen van beslissingen over andere zakelijke investeringen.
+
+Hoewel het belangrijk is om bij de berekening van de rendabiliteit rekening te houden met bijkomende informatie, zoals de tijdsfactor en hoe je rendabiliteit zich verhoudt tot die van andere soortgelijke bedrijven, kan de rendabiliteit je direct laten zien hoe je investering het heeft gedaan.
+
+## Hoe kun je de rendabiliteit van jouw bedrijf verbeteren?
+
+Er zijn een aantal manieren waarop je de rendabiliteit van jouw bedrijf kunt verbeteren. Hieronder kun je er drie vinden die helpen:
+
+Je kunt meer vreemd vermogen aantrekken – De rentabiliteit van je eigen vermogen kun je verbeteren door meer vreemd vermogen aan te trekken. Dit wordt ook wel eens ‘financial leverage’ of het ‘hefboomeffect’ genoemd. Dit gaat echter alleen werken als elke euro totaal vermogen meer gaat opleveren dan een euro aan vreemd vermogen gaat kosten.
+
+Op lange termijn de winstmarge verbeteren – Als je minder uitgeeft (dus de kosten kan verlagen) kun je met hetzelfde aantal euro’s dat je hebt meer doen. Daarom is het een goed idee om leveranciers in kaart te brengen. Kun je misschien veiliger en slimmer inkopen? Bijvoorbeeld door meerdere orders samen te voegen en zo korting te krijgen? Wat zou je kunnen doen met de algemene kosten? Of de verkoopkosten? Of de huisvestingskosten?
+
+Verbeter de omloopsnelheid van jouw vermogen – De snelste en meest effectieve manier om de rentabiliteit van jouw organisatie te verbeteren is de omloopsnelheid van jouw werkkapitaal te verbeteren. Het is altijd beter als je effectiever gebruik kunt maken van jouw beschikbare vermogen.

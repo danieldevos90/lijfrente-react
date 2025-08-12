@@ -1,0 +1,46 @@
+---
+title: Jaarrekening opstellen: handige tips & templates
+author: Rosanne van Veldhuisen
+url: https://new10.com/blog/je-jaarrekening-opstellen-tips-veelgemaakte-fouten
+hostname: new10.com
+description: Zelf je jaarrekening opstellen? New10 vertelt je alles over het maken van een jaarrekening. Download handige templates voor onder andere Excel.
+sitename: New10
+date: 2020-11-20
+---
+We helpen je graag op weg met uitleg over jaarrekeningen, geven tips om je jaarrekening eenvoudiger op te stellen en verklaren veelvoorkomende fouten in het boeken van posten.
+
+Een jaarrekening is onderdeel van het jaarverslag en geeft een samenvatting van hoe het afgelopen (boek)jaar financieel ging met je bedrijf. Het is verplicht om een jaarrekening te maken voor je administratie, je hoeft hem niet in alle gevallen ook openbaar te maken (te deponeren). Een jaarrekening wordt opgesteld uit:
+
+- de balans
+- de winst- en verliesrekening
+- een toelichting
+
+Deponeren betekent dat je de financiële informatie van je onderneming beschikbaar maakt voor iedereen die daarin geïnteresseerd is. Het verschilt per type bedrijf welke informatie je van de jaarrekening je moet deponeren. Hoe groter je bedrijf, hoe meer informatie je moet deponeren.
+
+Heb je een eenmanszaak of ben je zzp’er? Dan is deponeren **niet verplicht**. Je kan je jaarrekening in de meeste gevallen online deponeren via Standard Business Reporting (SBR), dit moet in ieder geval binnen 12 maanden na afloop van het boekjaar.
+
+Het verschilt per bedrijfsgrootte welke informatie je openbaar moet maken. Eenmanszaken en zzp’ers hoeven niet te deponeren. Bedrijven tot 10 personen hoeven alleen hun beperkte balans openbaar te maken. Kleine bedrijven (tot en met 50 personen) moeten een verkorte balans en de toelichting deponeren. Vanaf 50 personen wordt het uitgebreider, je vindt op de website van de KvK een handig overzicht van welke stukken je openbaar moet maken.
+
+Moeite met het opstellen van je jaarrekening? Je bent niet de enige! We hebben een aantal tips voor je verzameld waarmee je eenvoudiger je jaarrekening opstelt en fouten voorkomt.
+
+Als beginnende ondernemer was een Excel-bestand voor je administratie misschien nog voldoende. Toch is het handmatig bijhouden van je administratie foutgevoeliger en vooral bij een complexere bedrijfsvoering en veel transacties niet houdbaar. Tegenwoordig zijn er allerlei eenvoudige boekhoudprogramma’s die je leven makkelijker maken en die je helpen om geautomatiseerd facturen en bankafschriften in te boeken. De meeste administratieprogramma's kosten maar een paar tientjes per maand en kunnen je veel tijd schelen. Handige administratietools zijn MoneyMonk, ABN AMRO Boekhouden, Jortt, Exact, Ficsus, ReeLeeZee en Think.
+
+Sommige gebeurtenissen of kosten zijn lastig te categoriseren. Zorg dat je niet wacht tot het einde van het boekjaar om advies in te winnen over deze posten. Wanneer je kosten verkeerd boekt, kan dat bij het opstellen van je jaarrekening problemen geven. Vraag de hulp van een boekhouder, financieel adviseur of administratiekantoor: zij kunnen je helpen om je administratie op orde te krijgen.
+
+Heb je op financieel vlak niet genoeg kennis in huis en is je jaarrekening ieder jaar een doorn in het oog? Overweeg dan om het opstellen volledig uit te besteden aan een adviesbureau.
+
+Heb je je administratie op orde, dan bouw je vanuit hier de verschillende posten van de balans op. Zorg er altijd voor dat je iedere balanspost duidelijk kunt onderbouwen met documenten, facturen of andere bewijzen. De toelichting is een belangrijk onderdeel van de jaarrekening.
+
+Niet alle kosten of gebeurtenissen zijn eenvoudig weg te zetten op je balans. Boek je posten verkeerd, dan betekent het dat jij of je adviseur meer tijd besteedt aan alles kloppend krijgen. Wij zien dat vaak fouten worden gemaakt bij de volgende posten:
+
+**Vooruitbetaalde kosten**
+
+Deze kosten horen nog niet bij de uitgaves van het huidige jaar, maar moeten als vooruitbetaald op de balans worden gezet.**Nog te betalen kosten**
+
+Dit zijn gemaakte kosten waarvan de factuur nog niet is ontvangen. Deze kosten moeten als nog te betalen kosten op de balans worden gezet en als kosten in de winst- en verliesrekening.**Activeren van uitgaven**
+
+Grotere uitgaven zoals de aanschaf van een laptop of machine worden niet in één keer als kosten geboekt, maar worden geactiveerd en afgeschreven.
+
+Ga je zelf aan de slag met het maken van de jaarrekening? Online zijn er handige templates te vinden die je hierbij een handje helpen. Deze vind je bijvoorbeeld op de sites Boekhouden in Excel, Finn Models Lab en Jaarrekeningen in Excel.
+
+Als je de hulp van een financieel adviseur inschakelt bij het opstellen van je jaarrekening, ontvang je een samenstellingsverklaring. Dit is een verklaring waarin de adviseur beschrijft wat de opdracht was, zijn taken en de verantwoordelijkheden van jou als ondernemer. Bij een controleopdracht controleert een accountant de jaarrekening die de onderneming heeft opgesteld en geeft een controleverklaring af. Deze controleverklaring is alleen verplicht voor bedrijven met een jaaromzet boven 12 miljoen euro.

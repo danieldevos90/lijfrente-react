@@ -1,0 +1,14 @@
+---
+title: Wat is een PSD2 koppeling?
+url: https://www.floryn.com/kennisbank/wat-is-een-psd2-koppeling-1
+hostname: floryn.com
+description: PSD2 is de Europese wet voor betalingsverkeer. Met PSD2 heb je volledige controle over jouw gegevens. Je regelt eenvoudig je financiële zaken en bepaalt zelf wie jouw data wel en niet mag inzien. Zo
+sitename: floryn.com
+---
+PSD2 is de Europese wet voor betalingsverkeer. Met PSD2 heb je volledige controle over jouw gegevens. Je regelt eenvoudig je financiële zaken en bepaalt zelf wie jouw data wel en niet mag inzien.
+
+Zo kun je zonder stapels papierwerk een auto leasen, je uitgaven bijhouden in een app of een lening afsluiten.
+
+Met PSD2 wordt alles makkelijker en overzichtelijker. Het is niet meer nodig om handmatig je bankgegevens te downloaden en met ons te delen. Dat gaat volledig automatisch! Dit scheelt tijd en gedoe en is ook nog eens een stuk veiliger.
+
+Alle informatie over PSD2 vind je op deze pagina.

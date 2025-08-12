@@ -1,0 +1,123 @@
+---
+title: Hoe bereken je de rentabiliteit van je bedrijf? | Swishfund
+author: Merel Nijland Marketeer
+url: https://www.swishfund.nl/blog/hoe-bereken-je-de-rentabiliteit-van-je-bedrijf
+hostname: swishfund.nl
+description: De rentabiliteit van je bedrijf geeft aan hoeveel winst er gemaakt wordt met het vermogen van het bedrijf. Kort gezegd: hoe rendabel je bedrijf is. Rentabiliteit gaat over het rendement op de investeringen die je doet. Hoe hoger het rendement, hoe hoger de rentabiliteit, hoe meer kans op succes bij het aanvragen van een lening.
+sitename: swishfund.nl
+date: 2021-07-11
+---
+# Hoe bereken je de rentabiliteit van je bedrijf?
+
+#### Merel Nijland
+
+## Introductie
+
+De rentabiliteit van je bedrijf geeft aan hoeveel winst er gemaakt wordt met het vermogen van het bedrijf. Kort gezegd: hoe rendabel je bedrijf is. Rentabiliteit gaat over het rendement op de investeringen die je doet. Hoe hoger het rendement, hoe hoger de rentabiliteit, hoe meer kans op succes bij het aanvragen van een lening.
+
+Heb jij een financieel gezond bedrijf? Je kunt de rentabiliteit berekenen over je eigen vermogen, het vreemd vermogen (je schulden) en het totale vermogen. Hiermee kun je berekenen wat het rendement is voor eigenaren en aandeelhouders, het rendement van je kredietverstrekkers en het rendement van het gehele bedrijf. In dit artikel leggen we iedere berekening uit.
+
+**Rentabiliteit Eigen Vermogen (REV)**
+
+Wil je berekenen wat het rendement van je eigen vermogen is? Je kunt dit gebruiken als maatstaaf om de winstgevendheid te vergelijken met andere bedrijven en om eigenaren en aandeelhouders te laten zien hoeveel rendement een investering oplevert.
+
+*Berekening Rentabiliteit Eigen Vermogen*
+
+*Berekening Rentabiliteit Eigen Vermogen*
+
+Deel de nettowinst door het eigen vermogen en vermenigvuldig dit met 100. Het percentage wat hier uitkomt is de rentabiliteit eigen vermogen. We gebruiken deze berekening om het rendement van de eigenaar en aandeelhouders vast te stellen.
+
+De **nettowinst **staat gelijk aan de brutowinst minus de bedrijfskosten, rente en belastingen.
+
+Onder het **eigen vermogen** verstaan we de restpost van de balans. Hier valt ook het aandelenkapitaal onder. Het gemiddelde eigen vermogen kun je ook makkelijk vinden in de jaarcijfers. Tel het eigen vermogen aan het begin van het jaar en aan het einde van het jaar op en deel dit door twee.
+
+*Voorbeeld berekening REV*
+
+*Voorbeeld berekening REV*
+
+- Eigen vermogen 31 december 2019: € 33.000
+- Eigen vermogen 31 december 2020: € 35.000
+- Gemiddeld eigen vermogen: € 68.000/2 = € 34.000
+- Nettowinst: € 7.500
+**REV**(*7.500/34.000 x100%)*:**22,1%**
+
+
+In dit geval betekent het dat je met iedere euro eigen vermogen € 0,221 hebt verdiend. Wanneer jouw REV tussen de 5% en 15% zit, ben je goed bezig. Het percentage zegt iets over de winstgevendheid van het bedrijf, hoe hoger het percentage hoe meer het risico afneemt voor kredietverstrekkers.
+
+**Rentabiliteit Vreemd Vermogen (RVV)**
+
+Wil je weten wat vreemd vermogen nou écht kost? Door de rentabiliteit vreemd vermogen te berekenen, weet je hoeveel rente je betaalt.
+
+*Berekening Rentabiliteit Vreemd Vermogen*
+
+*Berekening Rentabiliteit Vreemd Vermogen*
+
+Deel de op dat moment betaalde rente door het gemiddelde vreemd vermogen (interest) en vermenigvuldig dit met 100. Het percentage wat hier uitkomt is de rentabiliteit vreemd vermogen.
+
+Onder het **vreemd vermogen** verstaan we alle schulden van het bedrijf aan derden, meestal voornamelijk bestaande uit leningen en crediteuren. Het gemiddeld vreemd vermogen bereken je door het vreemd vermogen op 1 januari dat jaar en 31 december hetzelfde jaar bij elkaar op te tellen en te delen door twee.
+
+*Voorbeeld berekening RVV*
+
+*Voorbeeld berekening RVV*
+
+- Vreemd vermogen 31 december 2019: € 200.000
+- Vreemd vermogen 31 december 2020: € 175.000
+- Gemiddeld vreemd vermogen: € 375.000/2 = € 187.500
+- Interest 2020: € 25.000
+**RVV***(25.000/187.500 x100%)*:**13,3%**
+
+
+Dit betekent dus dat je een totale rente van 13,3% betaalt per jaar. Dit betekent dat je voor iedere euro vreemd vermogen € 0,133 betaalt. Dat is aan de hoge kant, je wilt dit percentage zo laag mogelijk houden. Hoe lager dit percentage, hoe minder rente jij betaalt. Dit kun je het beste onder de 10% te houden.
+
+**Rentabiliteit Totaal Vermogen (RTV)**
+
+Wil je weten wat de verhouding is tussen je winst en het geïnvesteerde vermogen? Met deze berekening maak je de totale winstgevendheid van je bedrijf inzichtelijk.
+
+*Berekening Rentabiliteit Totaal Vermogen*
+
+*Berekening Rentabiliteit Totaal Vermogen*
+
+Deel de brutowinst door het gemiddelde totale vermogen en vermenigvuldig dit met 100. Het percentage dat hier uitkomt is de rentabiliteit van het totaal vermogen.
+
+De **brutowinst** is gelijk aan de totale omzet min de kosten (zonder de rente en winstbelasting).
+
+*Voorbeeld berekening RTV*
+
+*Voorbeeld berekening RTV*
+
+- Totaal vermogen 31 december 2019: € 233.000
+- Totaal vermogen 31 december 2020: € 210.000
+- Gemiddeld totaal vermogen: € 443.000/2 = € 221.500
+- Brutowinst: € 63.000
+**RTV***(63.000/221.500 x100%)*:**28,4%**
+
+
+Wat een goede RTV is, hangt van verschillende factoren af. Wat voor bedrijf is het? In welke branche is het werkzaam? Ook de grootte en leeftijd is belangrijk. Een jong bedrijf accepteren in de groeifase een lagere rentabiliteit, terwijl de gerenommeerde bedrijven een hoge rentabiliteit willen nastreven. Over het algemeen is een score tussen de 5% en 10% gezond.
+
+**Wanneer is de rentabiliteit goed?**
+
+- Eigen Vermogen: tussen de 5% en 15% zit je goed.
+- Vreemd Vermogen: zo laag mogelijk. Het liefste onder de 10%.
+- Totaal Vermogen: afhankelijk v/h bedrijf. Gemiddeld tussen 5% en 10%.
+
+
+**Hoe verbeter je de rentabiliteit?**
+
+Is je Rentabiliteit Totaal Vermogen (RTV) lager dan 5% en wil je deze graag verhogen? Dan zijn er een aantal manieren waarop je een verbeterslag kunt maken.
+
+- Meer omzet draaien
+- Minder kosten maken
+- Door het geld (vermogen) in je bedrijf efficiënter in te zetten, door bijvoorbeeld:
+- debiteuren sneller te laten betalen
+- voorraad zo laag mogelijk te houden
+- crediteuren iets later betalen, als je dat kan afspreken met ze
+
+- Het totaal vermogen verlagen
+- Vreemd vermogen aantrekken
+
+
+Die laatste is misschien een onverwachte suggestie. Met dit extra vreemde vermogen kun je investeren en uiteindelijk de winsten vergroten. Voorwaarde is dat het rentepercentage dat je betaalt, lager is dan je RTV. Daarmee creëer je het zogenaamde hefboomeffect.
+
+**Verbeter je rendement met een zakelijke lening**
+
+Kan jouw rentabiliteit wel een verbetering gebruiken? Dan zou het **aanvragen van een zakelijke lening** bij Swishfund een volgende stap kunnen zijn. Via onze website vraag je eenvoudig en binnen 5 minuten een lening aan, dit is geheel vrijblijvend. Binnen 24 uur ontvang je een voorstel, passend bij jouw bedrijf.

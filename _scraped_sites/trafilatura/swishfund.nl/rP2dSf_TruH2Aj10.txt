@@ -1,0 +1,54 @@
+---
+title: De 8 voordelen van e-facturatie voor ondernemers | Swishfund
+author: Merel Nijland Marketeer
+url: https://www.swishfund.nl/blog/de-8-voordelen-van-e-facturatie-voor-ondernemers
+hostname: swishfund.nl
+description: Wist je dat het verwerken van een papieren factuur gemiddeld 18 minuten in beslag neemt? Het verwerken van een e-factuur kost daarentegen gemiddeld slechts 5 minuten. Dan lijkt de keuze voor e-facturatie snel gemaakt, nietwaar?
+sitename: swishfund.nl
+date: 2020-11-29
+---
+# De 8 voordelen van e-facturatie voor ondernemers
+
+#### Merel Nijland
+
+## Introductie
+
+Wist je dat het verwerken van een papieren factuur gemiddeld 18 minuten in beslag neemt? Het verwerken van een e-factuur kost daarentegen gemiddeld slechts 5 minuten. Dan lijkt de keuze voor e-facturatie snel gemaakt, nietwaar?
+
+Tóch werken veel ondernemers nog met traditionele facturen of een minder efficiënte vorm van digitale facturatie. In dit blog leggen we je uit wat het verschil is tussen digitaal factureren en e-facturatie. En laten we je zien hoe het werkt, hoe je ermee begint en wat de 8 voordelen zijn.
+
+### Het verschil tussen digitaal factureren en e-facturatie
+
+**Digitaal factureren:** verzamelnaam voor het ontvangen, verwerken en versturen van digitale facturen. Echter ben je aan het verwerken van dergelijke bestanden nog steeds een minuut of 10 kwijt.1 Deze bestanden kunnen vaak niet worden ingelezen door boekhoudsystemen. De meeste efficiënte vorm van digitaal factureren heet e-facturatie.**E-facturatie: **goed opgebouwde digitale bestanden die automatisch worden verwerkt in een boekhoudsysteem. Daardoor is handmatige administratie niet meer nodig.
+
+1 Onderzoek BCT Software
+
+#### Hoe werkt e-facturatie?
+
+E-facturen hebben een standaard verwerkingsformaat (meestal de zgn. *Universal Business Language-variant*) en zijn speciaal voor boekhoudsystemen gemaakt. In veel Europese landen is UBL al de digitale standaardtaal. Door dit bestandsformaat is een e-factuur vanuit het ene systeem elektronisch te verwerken in het andere. Het bestand bevat codes. De software weet precies wat iedere code betekent. Deze facturen zijn voor jou (en je klant) niet leesbaar. Daarom wordt de e-factuur samen met een kopie in PDF verstuurd.
+
+#### Hoe begin je met e-facturatie?
+
+Om te beginnen heb je een boekhoudpakket nodig die UBL-facturen kan ontvangen en verzenden. Op de website van **go2UBL** kun je een lijst met geschikte boekhoudsoftware vinden.
+
+We raden je aan om boekhoudsoftware uit te kiezen die aangesloten is bij de **Nederlandse Peppolautoriteit**. De procedure kan dan volledig geïntegreerd worden. De meeste grote leveranciers zijn al aangesloten bij deze stichting.
+
+**Daarnaast dien je rekening te houden met de volgende aspecten:**
+
+- Sinds 2009 staat een e-factuur juridisch gelijk aan een papieren factuur. Mits hij aan
+**dezelfde eisen**voldoet. - Je dient vooraf toestemming te vragen aan je klanten om een e-factuur te kunnen sturen.
+- Stuur naast een UBL-bestand ook een PDF-bestand naar je klanten. De UBL wordt gebruikt om de administratie bij te werken, de pdf is dan voor het archief. Dit is vooral handig bij verzamelfacturen.
+
+#### De 8 voordelen van e-facturatie
+
+Naast het besparen van tijd zijn er meer redenen om over te stappen op e-facturatie. We zetten de 8 belangrijkste voor je op een rij:
+
+**Veiligheid van financiële documenten.**E-mail is nu het meest gebruikte kanaal om e-facturen tussen bedrijven uit te wisselen. Grote ondernemingen stellen eisen aan veiligheid en betrouwbaarheid van het afleverkanaal. E-facturatie heeft een hoge veiligheid en betrouwbaarheid. Dit ligt bij e-facturatie wat hoger ligt bij e-facturatie.- Doordat de facturen automatisch worden verwerkt worden er
+**minder fouten**gemaakt. - Je bent
+**minder kosten**kwijt aan een boekhouder. - E-facturen worden sneller ontvangen door de juiste persoon. En daardoor worden de facturen ook
+**sneller betaald**. - Door het automatisch versturen van de facturen ben je
+**altijd op tijd**en kun je het niet vergeten. **Besparen op fysieke ruimte**doordat je geen mappen meer hoeft aan te leggen op kantoor.**Hogere klanttevredenheid**door het bieden van administratief gemak.**Goed voor het milieu**omdat er geen gebruik meer wordt gemaakt van papier.
+
+E-facturatie is de toekomst van boekhouden. Overstappen is onvermijdelijk en waarom zou je dat met alle voordelen niet nu al doen?
+
+Je werkt efficiënter, bespaart tijd en geld. En je draagt ook nog een steentje bij aan het milieu. Je krijgt je facturen sneller en gemakkelijker betaald. En als dat niet gebeurt, kun je bij Swishfund terecht om je **debiteuren te financieren**. Neem contact op met onze specialisten voor meer informatie op 085 064 4144 of info@swishfund.nl.

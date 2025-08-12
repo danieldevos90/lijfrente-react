@@ -1,0 +1,105 @@
+---
+title: Cookie statement van Floryn
+url: https://www.floryn.com/cookiestatement
+hostname: floryn.com
+description: Met cookies zorgen we ervoor dat je niet steeds dezelfde informatie in hoeft te voeren als je de website bezoekt. Wel zo handig.
+sitename: Floryn
+date: 2025-01-29
+---
+# Cookie statement Floryn
+
+**Per 29-01-2025**
+
+
+**Per 29-01-2025**
+
+
+Deze website gebruikt cookies. Met cookies zorgen we ervoor dat je niet steeds dezelfde informatie in hoeft te voeren als je de website bezoekt. Wel zo handig. Ook helpen ze ons begrijpen hoe je de website gebruikt en hoe wij deze gebruiksvriendelijker kunnen maken. En omdat we graag transparant zijn: we gebruiken ze ook voor marketingdoeleinden. Zo helpen ze om alleen relevante berichten te tonen en om vragen te stellen via de chat makkelijker te maken.
+
+
+Voor de liefhebbers en techneuten: op onze website maken we gebruik van drie soorten cookies. Functionele, analytische en tracking cookies. Hieronder staat een overzicht per soort. Wij doen ons uiterste best om deze informatie actueel te houden. Mocht je een cookie tegenkomen die niet op deze lijst staat, dan kun je dit aan ons melden via privacy@floryn.com.
+
+Dit zijn cookies die noodzakelijk zijn om de door jou gevraagde diensten te leveren, bijvoorbeeld om ervoor te zorgen dat je niet steeds opnieuw hoeft in te loggen.
+
+|
+|
+|
+|
+|
+|
+Google Tag Manager helpt ons met het beheren van de daartoe behorende cookies (ook wel tags genoemd). Hierdoor kunnen we efficiënter te werk gaan. Benieuwd naar hoe Google Tag Manager omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Google Tag Manager. |
+2 jaar |
+|
+|
+Segment verzamelt al onze data en verstuurt dit vervolgens door naar onze interne systemen. Hierdoor kunnen wij efficiënter werken. Benieuwd naar hoe Segment omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Segment. |
+1 jaar |
+|
+|
+HubSpot plaatst een aantal cookies wanneer een bezoeker op de website terechtkomt om het gedrag beter te begrijpen. Hierdoor kunnen wij de gebruikerservaring optimaliseren. Benieuwd naar hoe Hubspot omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Hubspot. |
+180 dagen |
+
+Dit zijn bijvoorbeeld cookies die het gebruik van de website, zoals het aantal bezoekers en de bekeken pagina’s, analyseren en in kaart brengen, zodat wij de kwaliteit en/of de effectiviteit van de website kunnen verbeteren. Hieronder vallen ook affiliate cookies die bijhouden welke advertentie leidt tot afname van een dienst, zodat degene die deze advertentie heeft getoond (de affiliate) daarvoor een beloning kan ontvangen van de adverteerder.
+
+|
+|
+|
+|
+|
+|
+Hotjar helpt ons met het analyseren van gebruikersgedrag van de daartoe behorende webpagina's. Benieuwd naar hoe Hotjar omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Hotjar. |
+1 jaar |
+|
+|
+Optimizely is een tool die ons helpt met het uitvoeren van experimenten waar we de online ervaring van de bezoeker mee kunnen verbeteren. Benieuwd naar hoe Optimizely omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Optimizely. |
+10 jaar |
+|
+|
+Google Analytics houdt bij hoe vaak pagina’s worden bezocht. Met deze informatie verbeteren wij onze website. Google Analytics slaat geen persoonlijke informatie op. De informatie die wordt gebruikt kan niet worden herleid tot een persoon. Benieuwd naar hoe Google Analytics omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Google Analytics. |
+6 maanden |
+|
+|
+Mixpanel is een analytics platform dat is ontworpen om gebruikersinteracties te analyseren. Door real-time inzichten te bieden in klantgedrag, stelt het Floryn in staat om geïnformeerde beslissingen te nemen. Benieuwd naar hoe Mixpanel omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Mixpanel. |
+6 maanden |
+
+Dit zijn cookies die gebruikt worden om jouw surfgedrag vast te leggen, zodat wij (of derden) je op basis daarvan gericht aanbiedingen kunnen doen en inhoud kunnen tonen die voor jou relevant is. Dit doen wij niet alleen via de website, maar ook via advertenties die worden getoond. Als tracking cookies niet worden gebruikt, dan betekent dit niet dat je geen advertenties meer te zien krijgt. De advertenties zijn in dat geval alleen niet langer toegesneden op je persoonlijke voorkeuren en interesses.
+
+|
+|
+|
+|
+|
+|
+Google Analytics houdt bij hoe vaak pagina’s worden bezocht. Met deze informatie verbeteren wij onze website. Google Analytics slaat geen persoonlijke informatie op. De informatie die wordt gebruikt kan niet worden herleid tot een persoon. Benieuwd naar hoe Google Analytics omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Google Analytics. |
+6 maanden |
+|
+|
+Microsoft Clarity is een tool om gebruikersgedrag te analyseren. Hiermee krijgen wij inzicht in de manier waarop bezoekers ons platform gebruiken. Benieuwd naar hoe Microsoft Clarity omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Microsoft Clarity. |
+6 maanden |
+|
+|
+De cookies van Facebook helpen ons om relevante advertenties te tonen op basis van eerdere bezoeken aan onze website. Benieuwd naar hoe Facebook omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Facebook. |
+3 maanden |
+|
+|
+De cookies van Google Ads helpen ons om te meten hoe onze advertenties op Google presteren. Ze houden bij welke advertenties je al hebt gezien en hoeveel mensen op onze advertenties klikken. Ook houden ze bij hoeveel mensen een dienst afnemen na het zien van een advertentie. Daarnaast verzamelen wij gegevens die je verstrekt via formulieren, zoals je e-mailadres. Deze sturen wij versleuteld naar Google. Deze gegevens gebruiken we om conversies te meten en advertenties te optimaliseren. We gebruiken deze informatie om de effectiviteit van onze advertenties te meten en onze marketing te verbeteren. Benieuwd naar hoe Google Ads omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Google Ads. |
+6 maanden |
+|
+|
+De cookies van Microsoft Bing helpen ons te meten hoe onze advertenties op Bing presteren. Ze houden bij welke advertenties je al hebt gezien en hoeveel mensen op onze advertenties klikken. Ook houden ze bij hoeveel mensen een dienst afnemen na het zien van een advertentie. Benieuwd naar hoe Microsoft Bing omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van Microsoft Bing. |
+6 maanden |
+|
+|
+DoubleClick is een systeem van Google waarmee we advertenties tonen en wijzigen. We registreren welke advertenties effectief zijn en welke niet. We delen geen persoonlijke informatie met Google. Benieuwd naar hoe DoubleClick omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van DoubleClick. |
+6 maanden |
+|
+|
+De cookies van LinkedIn helpen ons om relevante advertenties te tonen op basis van eerdere bezoeken aan onze website. Benieuwd naar hoe LinkedIn omgaat met de verzamelde gegevens? Bekijk dan het privacybeleid van LinkedIn. |
+3 maanden |
+
+Als je meer wil weten over hoe we omgaan met je persoonsgegevens bekijk dan ons privacy statement. En als je vragen hebt over dit cookie statement kun je een e-mail sturen naar privacy@floryn.com.
+
+Go for it.
+
+Bel 073 851 15 45 of gebruik de chat.
+
+Ontvang wekelijks nieuwe inzichten voor de ondernemer van nu.

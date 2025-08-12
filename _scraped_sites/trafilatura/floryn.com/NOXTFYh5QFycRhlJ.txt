@@ -1,0 +1,11 @@
+---
+title: Hoe kan ik een rekening toevoegen of verwijderen?
+url: https://www.floryn.com/kennisbank/hoe-kan-ik-een-rekening-toevoegen-of-verwijderen
+hostname: floryn.com
+description: Je kunt een rekening toevoegen of verwijderen door een e-mail te sturen.
+sitename: floryn.com
+---
+Je kunt een rekening toevoegen of verwijderen door een e-mail te sturen naar klanten@floryn.com met daarin de volgende informatie:
+
+- Welk rekeningnummer wil je toevoegen/verwijderen en waarom?
+- Wanneer je een rekeningnummer wil toevoegen, ontvangen we hier graag de laatste afschriften van.

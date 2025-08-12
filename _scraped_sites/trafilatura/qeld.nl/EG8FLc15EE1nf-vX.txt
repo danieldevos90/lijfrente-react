@@ -1,0 +1,10 @@
+---
+title: What happens if I do not repay the loan? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/what-happens-if-i-do-not-repay-the-loan-nl
+hostname: qeld.nl
+description: Are you having financial difficulties? Then please contact us so our team can try to find a solution. More info on late payments is found here:
+sitename: qeld.nl
+date: 2025-01-01
+---
+We will first send you a reminder that you have forgotten to pay the monthly fee. After you've been reminded and contacted, eventually the loan will be sent to a debt collections company. If your company still cannot pay, you can become personally responsible for the remaining debt. We strongly advise you to contact us if you have problems paying an invoice. We are always willing to discuss a solution and help keep your company debt-free!

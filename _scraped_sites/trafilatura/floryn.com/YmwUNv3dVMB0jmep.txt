@@ -1,0 +1,21 @@
+---
+title: Floryn ontvangt een PSD2-vergunning van DNB
+author: Redactie Floryn
+url: https://www.floryn.com/blog/floryn-ontvangt-psd2-vergunning-van-dnb
+hostname: floryn.com
+description: Floryn heeft een PSD2-vergunning ontvangen van De Nederlandsche Bank. Daarmee is Floryn het eerste Nederlandse financieringsplatform met PSD2-vergunning.
+sitename: Floryn
+date: 2021-10-14
+tags: ['Technology', 'Floryn']
+---
+Floryn, een snelgroeiend Nederlands fintechbedrijf actief in de markt van online krediet voor het midden- en kleinbedrijf, heeft een PSD2-vergunning ontvangen van De Nederlandsche Bank. Daarmee is Floryn het eerste Nederlandse financieringsplatform met een PSD2-vergunning.
+
+Floryn, dat met behulp van innovatieve technologie razendsnel kredietaanvragen beoordeelt, heeft met de felbegeerde PSD2-vergunning een grote stap gezet om een leidende positie te veroveren in Nederland. Het bedrijf heeft daarnaast het kroonjuweel van de nieuwe Europese betaalrichtlijn veroverd, de zogenoemde dienst 8 en komt daarmee onder toezicht te staan van DNB. Floryn mag - na individuele toestemming van klanten - meekijken in de betaaldata van deze bedrijven.
+
+“Floryn heeft als missie om bedrijven de beste klantervaring en service te bieden bij een financiering in het segment tot 2 miljoen euro krediet”, zegt Sven van der Biezen, CEO en mede-oprichter van Floryn. “Met het verkrijgen van een PSD2-vergunning hebben we een grote stap gezet in het realiseren van onze visie, waarbij bedrijven direct inzicht krijgen in hun financiële gezondheid, een financiering kunnen aanvragen, op basis van banktransacties worden beoordeeld en direct geld kunnen opnemen.”
+
+De vergunning voor betaalinstelling is verleend door DNB, waarbij Floryn als betaalinstelling is opgenomen in het openbaar register van DNB en de European Banking Authority (EBA). In Nederland mogen reeds een handvol bedrijven diensten aanbieden op het gebied van PSD2, waaronder Google, Revolut en Adyen. Maar een financieringsplatform met een PSD2-vergunning was er nog niet. Floryn zet hiermee opnieuw de norm in online krediet.
+
+“PSD2 maakt het voor ons nog makkelijker om te concurreren met banken, omdat we hierdoor een betere oplossing aan bedrijven kunnen bieden”, zegt Sven van der Biezen. “In tegenstelling tot banken en andere financiers in de markt, komt er bij ons geen papierwerk meer aan te pas. Met slechts een druk op de knop kunnen bedrijven altijd en overal, vanaf bijvoorbeeld hun mobiele telefoon, hun betaaldata veilig met ons delen. De tijd die ondernemers daarmee besparen is enorm.”
+
+Floryn zal in het eerste kwartaal 2020 beginnen met het uitrollen van de PSD2 functionaliteiten.

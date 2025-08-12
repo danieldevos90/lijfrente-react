@@ -1,0 +1,35 @@
+---
+title: Growth hacking: 5 praktische tips voor ondernemers om snel te groeien
+author: Evita Kuznecova
+url: https://new10.com/blog/growth-hacking-5-tips-voor-ondernemers
+hostname: new10.com
+description: Benieuwd wat growth hacking voor jouw bedrijf kan betekenen? Leer de belangrijkste principes en stappen toepassen om online te groeien!
+sitename: New10
+date: 2020-02-24
+---
+Evita Kuznecova
+
+New10 • Slimmer ondernemen
+
+Hoe krijgen kleine bedrijven het voor elkaar om met weinig middelen exponentieel te groeien? Grote kans dat growth hacking, een relatief nieuw vakgebied binnen marketing, het geheime wapen is. Voorheen waren het vooral startups die vanwege beperkte middelen en tijd growth hackers inhuurden. Nu maken ook grote bedrijven als Airbnb explosieve groei door met de growth hacking methodiek. Maar wat is growth hacking precies? Net zoals echte ‘hackers’ zijn growth hackers continu bezig met het testen van hypotheses en het uitvoeren van online experimenten, maar dan met als doel om de ultieme groeistrategie te vinden voor je bedrijf. Het is een data gedreven vorm van marketing, gericht op de hele customer journey (van het aantrekken tot het behouden van klanten).
+
+Als je een eigen bedrijf runt, betekent dit vaak dat je beperkte middelen en grote ambities hebt. Benieuwd wat de growth hacking methode jouw bedrijf kan brengen? In twee artikelen neemt onze growth marketeer Evita Kuznecova je mee in de belangrijkste stappen waarmee je de basis legt voor pijlsnelle groei voor je bedrijf.
+
+In 2010 bedacht Sean Ellis, een bekende groeiguru en de man die veel Silicon Valley bedrijven explosief wist te laten groeien, de term ‘growth hacker’. Wanneer hij zijn groeiplannen overdroeg aan een ‘gewone’ marketeer kwam er niets van terecht. Zijn oplossing? Het creëren van een eigen vakgebied. Volgens Sean baseert een growth hacker alle beslissingen op groei, terwijl een normale marketeer een bredere focus en belangen heeft. Bovendien kijken growth marketeers naar de hele klantreis, van acquisitie tot retentie. De inzichten uit de customer journey gebruiken ze om creatieve technieken te ontwikkelen waarmee ze je bedrijf helpen groeien.
+
+Sean Ellis: “A growth hacker is a person whose true north is growth.”
+
+
+Met een eigen bedrijf moet je veel ballen tegelijk in de lucht houden. Heb je weinig tijd om zelf met growth hacking aan de slag te gaan? Dan kun je er ook voor kiezen om expertise in te huren. Met onderstaande stappen leer je begrijpen welke processen je moet inrichten om growth marketing toe te passen voor je bedrijf. Zo kun je niet alleen de juiste persoon vinden om je te helpen, maar ook zelf monitoren of de gestelde doelen behaald worden. Hoe zet je growth hacking in voor je bedrijf?
+
+Heb jij al voldoende inzicht in het gedrag van je potentiële klanten? Je website is een bron van waardevolle informatie. Leer meer over de interesse in je product of dienst en de behoeftes van je bezoekers door tracking te implementeren. Zorg dat je in ieder geval inzicht hebt in het aantal bezoekers, clicks, scrolls en interacties op je website. Google Tag Manager helpt je om je tagbeheer in te richten, maar dit kun je ook uitbesteden aan professional. Heb je de tags op orde? Dan kun je de data analyseren in Google Analytics. Zo kun je meten of je jouw gestelde doelen behaald met de middelen die je inzet. Wil je bijvoorbeeld nieuwe klanten aantrekken door advertenties op Google? In Google Analytics zie je of je het effect heeft.
+
+Of je nu boeken verkoopt, een restaurant runt of een praktijk aan huis hebt, op je website wil je dat bezoekers overgaan tot bepaalde acties. Denk aan een reservering maken, je product kopen of zich inschrijven voor de nieuwsbrief. Al deze verschillende acties waarmee bezoekers ‘converteren’ noemen we conversies. Breng voor je gehele website in kaart wat de conversiepunten zijn met de meeste impact op jouw bedrijfsdoelen. Wil je je omzet vergroten? Dan is de conversie naar een aankoop één van de punten waar je op kunt
+
+Heb je de belangrijkste conversiepunten op je website in kaart gebracht? Dan is het zaak om regelmatig te gaan meten. Zorg dat je in Analytics en Google Tag Manager de juist statistieken en meetinstrumenten hebt toegevoegd. Bedenk voor elk conversiepunt wat je beoogde doel is, bijvoorbeeld: 15% van de bezoekers neemt contact op via een formulier op de homepage. Bekijk wekelijks of je de conversiedoelen behaald.
+
+Welke onderdelen op je website converteren het best of waar je zie juist de meeste bezoekers afhaken? Naast de conversiepunten kunnen er ook andere factoren van invloed zijn op de groei van je bedrijf. Zorg dat je de belangrijkste statistieken voor groei geïdentificeerd hebt. Zie je bijvoorbeeld dat door focussen. je websitesnelheid bezoekers niet verder komen dan de homepage? Of converteert een bepaalde campagne niet als verwacht? Onderzoek wat de onderliggende factoren zijn die van invloed zijn op de performance.
+
+Growth Marketeer Evita licht dit toe met onderstaand voorbeeld: “Een tijd geleden werkte ik voor een ecommerce bedrijf. In Google Analytics zag ik dat er veel verkeer uit Italië kwam wat niet converteerde: ze verlieten de winkelmand zonder af te rekenen. We hebben toen een chatbot ingezet en onderzoek gedaan om erachter te komen wat de reden was dat ze hun aankoop niet voltooide. Uiteindelijk bleek dat we een populaire betaalmethode in Italië niet als betaalmogelijkheid hadden.”
+
+Heb je eenmaal je belangrijkste doelen en meetpunten op orde? Dan kun je gaan experimenteren. Stel hypotheses op en ga testen met verschillende verbeterideeën. Dit kunnen allerlei verschillende experimenten zijn. Denk aan je homepage opnieuw opbouwen of een reminder sturen als mensen hun winkelmandje niet afrekenen. Zorg dat je met kleine aanpassingen quick wins kunt realiseren. Heb je doel bereikt en bijvoorbeeld je conversiepunten geoptimaliseerd? Kies dan een andere metriek en begin opnieuw met experimenteren.

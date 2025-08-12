@@ -1,0 +1,63 @@
+---
+title: Liquiditeit: cash is king | New10
+author: New
+url: https://new10.com/blog/rentabiliteit
+hostname: new10.com
+description: In deze blog lees je alles wat je moet weten over rentabiliteit. Wat is het, hoe bereken je het en nog wat handige tips.
+sitename: New10
+date: 2024-09-09
+---
+Rentabiliteit geeft de verhouding weer tussen de winst van je bedrijf en het geld dat je erin stopt (eigen vermogen, vreemd vermogen of totale activa). Het laat goed zien hoe effectief jij je kapitaal inzet om winst te maken. Een hoge rentabiliteit betekent dat je in staat bent om rendement te halen uit het geïnvesteerde vermogen. En, hoe hoger de rentabiliteit, hoe groter de kans dat je een zakelijke lening of zakelijk krediet krijgt.
+
+Een goede rentabiliteit is belangrijk omdat het laat zien dat je bedrijf winstgevend is. Wanneer je bijvoorbeeld een lening of financiering aanvraagt, kijkt de financier naar de financiële gezondheid van je bedrijf. Belangrijk is hoeveel geld er binnenkomt en uitgaat (liquiditeit) en het vermogen van je bedrijf om financiële tegenvallers op te vangen (solvabiliteit). Ook de gezondheid van je bedrijf op de langere termijn is belangrijk.
+
+Heb je weleens je rentabiliteit berekend? Het is slim om dat om de zoveel tijd te doen. Zo krijg je goed inzicht in wat je investeringen opleveren. Soms kan je daardoor betere keuzes maken in je investeringen. Er zijn verschillende manieren om rentabiliteit te meten: rentabiliteit eigen vermogen (REV), rentabiliteit vreemd vermogen (RVV) en rentabliteit totaal vermogen (RTV). Wij leggen je uit hoe je met deze methoden je rentabiliteit berekent.
+
+De rentabiliteit eigen vermogen (REV) laat de winstgevendheid van je bedrijf zien met het geld dat je er zelf in hebt gestopt. Pak je jaarrekening erbij en zoek de posten 'eigen vermogen' en 'netto winst'. Je berekent de REV met de volgende formule:
+
+- Deel de nettowinst door het eigen vermogen
+- Vermenigvuldig de uitkomst met 100%
+
+- Nettowinst: € 50.000
+- Eigen vermogen: € 200.000
+
+REV = 50.000 / 200.000 x 100% = 25%
+
+Een rentabiliteit van je eigen vermogen van 25% betekent dat je 25 cent winst hebt gemaakt voor elke geïnvesteerde euro.
+
+De rentabiliteit op vreemd vermogen bereken je om te zien hoeveel rente je als ondernemer betaalt over je leningen of investeringen. Dit cijfer geeft een bank of investeerder inzicht in het rendement dat zij op hun geïnvesteerde geld verdienen. Zo bereken je de RRV:
+
+- De te betalen rente deel je door het gemiddeld vreemd vermogen
+- Vermenigvuldig de uitkomst met 100%
+
+- Vreemd vermogen begin boekjaar € 200.000 + vreemd vermogen einde boekjaar € 175.000/2 = € 187.500
+- Rente: € 25.000
+
+RVV = 25.000/ 187.500 x100% = 13,3%
+
+Je betaalt dus jaarlijks een totale rente van 13,3%. Dit betekent dat je voor elke euro aan vreemd vermogen €0,133 aan rente hebt betaald.
+
+De rentabiliteit totaal vermogen (RTV) vertelt hoe goed je bedrijf winst maakt met ál het geld dat beschikbaar is. Dus zowel eigen vermogen als geleend geld. Zo bereken je de RTV:
+
+- Tel de nettowinst en de te betalen rente bij elkaar op
+- Deel dit getal door het totale vermogen
+- Vermenigvuldig de uitkomst met 100%
+
+- Nettowinst plus rentekosten en belasting: € 70.000
+- Totale vermogen: € 300.000
+
+RTV = 70.000 / 300.000 x 100% = 23,33%
+
+Een rentabiliteit van het totale vermogen van 23,33% betekent dat je 23,33 cent winst hebt gemaakt voor elke euro die je in het totale vermogen van het bedrijf hebt geïnvesteerd.
+
+Een goede rentabiliteit is afhankelijk van de branche waarin je bedrijf actief is. Als je rentabiliteit hoger is dan het gemiddelde van je sector, is dat een betrouwbare indicatie.
+
+Je rentabiliteit verbeteren kun je doen op verschillende manieren. Hier zijn wat handige tips om je totale winstgevendheid te verhogen:
+
+-
+**Verkoop, verkoop, verkoop**: Zet een tandje bij in je marketing en sales. Misschien is het tijd om nieuwe markten te verkennen, je productlijn uit te breiden of je prijzen eens goed onder de loep te nemen. Elke extra euro omzet kan al een verschil maken! -
+**Slim voorraadbeheer**: Te veel voorraad kost geld en te weinig kost klanten. Zorg dus voor een goed voorraadbeheer zodat je nooit misgrijpt, maar ook niet blijft zitten met onverkochte voorraad. -
+**Focus op wat het meeste oplevert**: Kijk welke producten of diensten de meeste marge opleveren en zet daar op in. Soms betekent dit dat je minder winstgevende dingen moet laten voor wat ze zijn. -
+**Blijf scherp met je cijfers**: Houd je financiën goed in de gaten met regelmatige checks en updates. Stel duidelijke budgetten op en plan vooruit, zodat je niet voor verrassingen komt te staan.
+
+Begrijpen hoe rentabiliteit werkt en deze actief managen – dat is de sleutel tot een financieel gezonde en groeiende onderneming. Het laat zien hoeveel winst je investeringen opleveren in verhouding tot het kapitaal dat je erin hebt gestoken. Met andere woorden: het vertelt je of je onderneming echt winst maakt met de euro's die je erin stopt. Wel zo handig. Want met dat inzicht kan je misschien nog wel betere keuzes maken én meer groeien.

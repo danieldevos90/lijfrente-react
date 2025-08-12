@@ -1,0 +1,16 @@
+---
+title: Do you request credit info? | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/do-you-request-credit-information-nl
+hostname: qeld.nl
+description: Qeld performs an individual credit assessment for all business loan applications, because that is how we can give you the best possible offer. More info:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Eenvoudig aanvraagproces
+
+Lening uitbetaald binnen 24 uur
+
+Geen extra kosten bij vervroegde aflossing
+
+Yes. We request information about your company from a number of credit rating agencies. We also request information about your personal creditworthiness and payment history.

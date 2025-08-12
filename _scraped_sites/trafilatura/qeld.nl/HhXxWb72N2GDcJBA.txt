@@ -1,0 +1,10 @@
+---
+title: BKR registration and business loans | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/en/info/will-i-get-bkr-registration
+hostname: qeld.nl
+description: Business loans and business credit via Qeld are registered to prevent abuse and default. This is how a BKR registration for business loans works:
+sitename: qeld.nl
+date: 2025-05-08
+---
+As a payment institution, Qeld has the obligation to register agreements with the Credit Registration Office Foundation (BKR). In addition to registering the agreement, Qeld also has the obligation to report this to the BKR Foundation in the event of a prolonged absence of payment.

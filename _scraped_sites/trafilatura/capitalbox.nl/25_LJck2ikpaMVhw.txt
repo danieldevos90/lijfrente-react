@@ -1,0 +1,107 @@
+---
+title: Hoe download ik een MT940 bestand?
+url: http://www.capitalbox.nl/hoe-download-ik-een-mt940-bestand
+hostname: capitalbox.nl
+description: Zo download je bankafschriften. Volg onze eenvoudige stapsgewijze instructies voor elke bank.
+sitename: CapitalBox - Zakelijke Leningen
+date: 2025-01-01
+---
+## Veelgestelde vragen over een MT940 document
+
+Een MT940-bestand, of SWIFT-MT940-bestand, is een digitale overzicht van de banktransacties op uw zakelijke rekening. Boekhoudprogramma's gebruiken dit om banktransacties automatisch te verwerken. Een MT940-bestand bevat gegevens zoals het transactiebedrag, omschrijving en tegenrekening.
+
+Met het MT940-bestand kan onze slimme scan automatisch een nauwkeurige inschatting maken van uw maximale leencapaciteit. Hiervoor hebben wij uw banktransacties van de afgelopen 12 maanden nodig. Met het MT940 bestand hoef je geen aparte bankafschriften mee te sturen, maar heb je alles in één digitaal bestand. Makkelijk toch?
+
+We gebruiken uw MT940-bestand om de maximale leencapaciteit van uw bedrijf te bepalen. Ons team van analisten gebruikt uw MT940 om een nauwkeurige inschatting te maken van wat u verantwoord kunt lenen. Daarom kunt u bij ons vaak een lening aanvragen zonder dat u jaarcijfers hoeft te verstrekken.
+
+Om een MT940 bestand te downloaden heeft u een zakelijk account nodig. Het MT940-bestand is eenvoudig te downloaden via internetbankieren. Scroll naar beneden voor onze stapsgewijze instructies per bank.
+
+## Volg de stapsgewijze instructies voor elke bank
+
+- Log in bij ABN AMRO
+- Kies in het menu 'zelf regelen' voor 'bij en afschrijvingen downloaden'
+- Selecteer de juiste rekening(en)
+- Voer de datum in van precies een jaar geleden tot de datum van vandaag.
+- Selecteer bij 'Formaat' – MT940.
+- Klik op downloaden. Als u zelf geen locatie kiest, dan wordt het vaak opgeslagen in de map 'downloads'.
+
+- Log in op Rabo Internetbankieren
+- Klik op 'Transacties downloaden'
+- Selecteer de juiste rekening(en), een periode van 12 maanden en het bestandsformaat (MT940 (.swi)). Let op: er mag geen extra leesteken aan de bestandsnaam worden toegevoegd.
+- Klik op ‘Bestand downloaden’ en sla het bestand op. Als u zelf geen locatie kiest, dan wordt het vaak opgeslagen in de map 'downloads'.
+
+- Log in bij ING met uw laptop of desktop
+- Klik rechtsboven op 'downloaden'
+- Selecteer 'af- en bijschrijvingen'
+- Selecteer de juiste rekening(en) en de juiste datum
+- Klik op download en het bestand wordt op uw computer opgeslagen. Als u zelf geen locatie kiest, dan wordt het vaak opgeslagen in de map 'downloads'.
+
+- Log in op KNAB
+- Ga naar uw persoonlijke bankomgeving via 'Betalen > Bij- en afschrijvingen > Bij- Af >Boekhoudexport
+- Selecteer de periode
+- Klik op ‘Downloaden’ en sla het bestand op. Als u zelf geen locatie kiest, dan wordt het vaak opgeslagen in de map 'downloads'.
+
+- Log in op SNS Bank
+- Klik in het menu 'Betalen' op 'Rekeningafschrift'
+- Selecteer de juiste zakelijke rekening(en)
+- Selecteer de juiste periode
+- Selecteer het juist formaat 'Bestandsformaat IBAN' – SWIFT MT940
+- Klik op ‘Downloaden’ en sla het bestand op. Als u zelf geen locatie kiest, dan wordt het vaak opgeslagen in de map 'downloads'.
+- U download een Zip bestand. Extract / pak het Zip-bestand uit
+
+- Log in bij Triodos
+- Ga naar overzicht
+- Klik op downloaden
+- Selecteer de juiste zakelijke rekening(en)
+- Selecteer de juiste periode
+- Selecteer bij 'Bestandsindeling' - STRUCTURED MT940 en
+*niet*de unstructured versie - Klik op 'Ophalen' en sla het bestand op. Als u zelf geen locatie kiest, dan wordt het vaak opgeslagen in de map 'downloads'. On the computer, the file is saved in the Downloads folder.
+
+- Log in bij Regiobank
+- Klik op Bij- en afschrijvingen
+- Selecteer uw zakelijke rekening(en)
+- Selecteer de juiste periode
+- Selecteer bij 'Bestandsformaat met IBAN' – SWIFT MT940
+- Klik op ‘Downloaden’ en sla het bestand op. Als u zelf geen locatie kiest, dan wordt het vaak opgeslagen in de map 'downloads'
+- U download een Zip bestand. Extract / pak het Zip-bestand uit
+
+- Log in bij Bunq
+- Selecteer uw zakelijke rekening(en)
+- Ga naar Instellingen
+- Klik op Exporteer overzicht
+- Selecteer de juiste datum
+- Selecteer bij ‘Formaat’ – MT940
+- Klik op Exporteer overzicht en download het bestand. Als u zelf geen locatie kiest, dan wordt het vaak opgeslagen in de map 'downloads'.
+
+- Log in bij ASN Bank
+- Selecteer Betalen en sparen.
+- Klik op Transactiehistorie.
+- Selecteer de juiste datum
+- Kies bij ‘Bestandsformaat’ – SWIFT MT940.
+- Klik op ‘Downloaden’ en sla het bestand op. Als u zelf geen locatie kiest, dan wordt het vaak opgeslagen in de map 'downloads'
+
+Lukt het downloaden niet? Probeer het via de browser van uw pc/desktop of laptop middels de webpagina van uw bank. Staat uw bank er niet tussen of heeft u hulp nodig? Neem dan contact met ons op via telefoonnummer 0207975825.
+
+
+Bij CapitalBox accepteren we ook TAB of; .CSV (komma gescheiden) bestanden. Dus mocht een MT940 echt niet lukken, dan is één van deze 2 bestanden ook voldoende.
+
+## Zakelijk lenen vanaf €5.000 tot €350.000
+
+#### Eenvoudig en snel
+
+- Binnen enkele minuten aangevraagd
+- Volledig online, zonder afspraak of papierwerk
+- Beoordeling binnen één werkdag
+
+#### Flexibel
+
+- Looptijd tot 36 maanden
+- Flexibele aflossingsmogelijkheden
+- Boetevrij vervroegd aflossen
+
+
+Transparant
+
+- Geen verborgen kosten
+- Wij vragen geen onderpand
+- Lenen op transparante manier

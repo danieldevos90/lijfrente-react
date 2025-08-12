@@ -1,0 +1,47 @@
+---
+title: Ondernemerslessen van Marijn van Aerle (CTO)
+author: Redactie Floryn
+url: https://www.floryn.com/blog/ondernemerslessen-van-marijn-van-aerla-cto
+hostname: floryn.com
+description: Als ondernemers kunnen we van elkaar leren. Daarom delen we graag onze ondernemerslessen met je! Marijn (CTO) deelt de lessen die hij leerde.
+sitename: Floryn
+date: 2021-10-14
+tags: ['Ondernemen']
+---
+Wij zijn geen bank, maar ondernemers. Net als jij. Daardoor kennen we het klappen van de zweep, leren we van onze fouten en weten we hoe belangrijk het is om kansen te pakken. En als ondernemers onder elkaar, kunnen we veel van elkaar opsteken. Daarom deelt Marijn van Aerle, mede-oprichter van Floryn, wat hij als eigenaar van verschillende bedrijven leerde.
+
+## Wie is Marijn?
+
+Marijn is de CTO van Floryn en heeft inmiddels een heel team aan developers onder zich. Maar het liefst gaat hij zelf ook gewoon aan de slag met programmeren. “Ik vind het ontzettend leuk om samen met anderen dingen te bouwen en iets op te zetten.”
+
+Hij werkte in Silicon Valley met engineers van Google, Yahoo en partners als Facebook, Box en Disney. Uiteindelijk kwam hij terug naar Nederland om samen met Sven van der Biezen en Gion van den Bogaert Floryn op te zetten. “Het was geweldig om weer iets op te zetten. De eerste fase van een onderneming vind ik dan ook de leukste. Echt iets nieuws bouwen.”
+
+Na aan het roer te hebben gestaan van verschillende bedrijven, deelt hij nu lessen die hij leerde als ondernemer.
+
+## De ondernemerslessen van Marijn
+
+**Doe zoveel mogelijk in-house**
+
+**“**Wil je echt disrupten, zorg dan dat je van alle markten thuis bent. Bij Floryn doen we zoveel mogelijk zelf en in-house: marketing, sales, risk, finance en data-analyse. Door geen dure consultants of grote bureau’s in te huren, kunnen we snel beslissingen maken en doorvoeren in het hele bedrijf. We hebben zo zelf de meeste invloed op het product en de ervaring van onze klant.”
+
+“Laatst hebben we ons zakelijk krediet eenvoudig gemaakt, waardoor we ondernemers nu nog beter kunnen helpen. Er kwamen heel wat veranderingen bij kijken, maar doordat we alles zelf doen, konden we het optimaal op elkaar afstemmen. De marketing en sales, maar ook de het nieuwe product zelf.”
+
+“Let wel op dat je alleen dingen zelf doet die dicht tegen je core-business aan zitten en waar je verschil kunt maken.”
+
+**Goede funding is belangrijk **
+
+Heb je funding op orde. Op het moment dat de zaken goed gaan is het vaak eenvoudiger om geld op te halen bij financiers of investeerders, dan wanneer je met je rug tegen de muur staat.
+
+Als het banksaldo te snel zakt, word je als ondernemer vaak erg voorzichtig. Je kunt dan ‘verlamd’ worden en durft geen geld meer uit te geven. Maar daardoor kun je interessante kansen missen of gaat goed personeel bij je weg. Daarom is het zo belangrijk om je funding op orde te hebben. Dan kun je door met ondernemen en kansen pakken.
+
+Aan de andere kant is het zonde als er te veel geld op de rekening staat dat niet aan het werk is. Een goede balans is dus essentieel.
+
+**Maak fouten**
+
+“Geef mensen verantwoordelijkheid en laat ze fouten maken. Facebook noemt het ‘move fast and break things. Google zegt ‘reward failure’ en de topman van Tata reikt ieder jaar een prijs uit voor het beste gefaalde idee onder het mom ‘failure is a gold mine’.”
+
+“Bij het maken van een fout, ga je kijken waarom het gebeurd is, en vervolgens leer je ervan. Vaak kom je dan veel verder dan wanneer de fout nooit gemaakt was.”
+
+“Daarnaast is het zowel voor de motivatie als de productiviteit niet goed als je team geen fouten meer durft te maken. Ze zullen minder snel met ideeën of originele oplossingen komen. Zet daarom een organisatie en structuur op waarin fouten gemaakt kunnen worden.”
+
+Ook onderzoek wijst uit dat fouten maken goed is voor de cultuur en prestaties van een organisatie. Lees hier 5 redenen waarom fouten maken goed is. Al overtuigd van het nut van falen? Zo ontwikkel je een cultuur waar je fouten mag maken.

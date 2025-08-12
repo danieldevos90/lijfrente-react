@@ -1,0 +1,12 @@
+---
+title: Partner login
+url: http://www.capitalbox.nl/partner/login
+hostname: capitalbox.nl
+sitename: CapitalBox - Zakelijke Leningen
+date: 2025-01-01
+---
+Klantenservice 0207975825
+
+You are logged in as
+
+Controleer het bankrekeningnummer nogmaals, het voldoet niet aan de landstandaard

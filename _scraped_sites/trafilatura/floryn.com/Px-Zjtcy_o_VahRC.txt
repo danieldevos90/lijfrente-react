@@ -1,0 +1,10 @@
+---
+title: Hoe wordt de wekelijkse aflossing berekend?
+url: https://www.floryn.com/kennisbank/wekelijkse-incasso
+hostname: floryn.com
+description: Wekelijks wordt er 4% geïncasseerd. Dit bedrag bestaat uit aflossing en rente. Elke week wordt het percentage wat je aflost groter en de rente kleiner.
+sitename: floryn.com
+---
+Wekelijks wordt er 4% geïncasseerd. Dit bedrag bestaat uit aflossing en rente. Elke week wordt het percentage wat je aflost groter en de rente kleiner.
+
+Wekelijks wordt er 4% geïncasseerd. Dit bedrag bestaat uit aflossing en rente. Elke week wordt het percentage wat je aflost groter en de rente kleiner.

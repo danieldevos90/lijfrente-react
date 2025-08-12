@@ -1,0 +1,10 @@
+---
+title: Qeld is een reguleerde betalingsinstelling | Qeld
+author: Janette Snell
+url: https://www.qeld.nl/info/wie-is-de-toezichthouder-van-jullie-bedrijf
+hostname: qeld.nl
+description: Bedrijfskrediet van Qeld wordt gereguleerd door de financiële toezichthoudende autoriteit, zodat jij kunt lenen met vol vertrouwen en transparantie. Lees meer:
+sitename: qeld.nl
+date: 2025-05-08
+---
+Qeld is het Nederlandse filiaal van Qred Bank AB: een betalingsinstelling gereguleerd door de Zweedse financiële toezichthoudende autoriteit (Finansinspektionen). Onze bedrijfsactiviteiten worden tevens gecontroleerd door een erkende accountant. Qeld staat ook geregistreerd in het handelsregister van de Kamer van Koophandel (KvK-nummer 72603372).

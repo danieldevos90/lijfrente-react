@@ -1,0 +1,92 @@
+---
+title: Renteaftrek Bedrijfsleningen | Qeld
+author: Johannes Stevense
+url: https://www.qeld.nl/en/posts/renteaftrek-bedrijfsleningen
+hostname: qeld.nl
+description: Ontdek hoe renteaftrek jouw kleine bedrijf kan beïnvloeden. Leer in 5 minuten over aftrekmogelijkheden voor bedrijfsleningen met Qeld.
+sitename: qeld.nl
+date: 2025-04-25
+---
+Als kleine ondernemer kom je vaak situaties tegen waarin extra kapitaal nodig kan zijn - onverwachte omstandigheden, investeringen in dure apparatuur of de behoefte aan startkapitaal. Een bedrijfslening kan een oplossing zijn, en de voordelen ervan worden versterkt door iets dat renteaftrek heet. Maar wat is renteaftrek precies? Ga met ons mee bij Qeld en ontdek wat renteaftrek is en hoe het jouw kleine bedrijf kan beïnvloeden.
+
+**In 5 minuten of minder leer je over** renteaftrek voor bedrijfsleningen en hoe het wordt berekend met verschillende modellen.
+
+**Wat is renteaftrek voor bedrijfsleningen?**
+
+Wanneer je een lening afsluit, moet je rente betalen - een vergoeding aan degene die geld uitleent. Om meer mensen in staat te stellen leningen af te sluiten en terug te betalen, heeft de overheid iets geïntroduceerd dat renteaftrek heet - een manier om de kosten van de lening te verlagen.
+
+Renteaftrek voor bedrijfsleningen is een mogelijkheid voor bedrijven om hun leenkosten te verlagen door een deel van de rentekosten af te trekken van hun winstbelasting. Dit gebeurt jaarlijks via de belastingaangifte van het bedrijf.
+
+**Wie kan renteaftrek doen?**
+
+De renteaftrek is beschikbaar voor rechtspersonen en bepaalde vennootschappen. Het is belangrijk om de vereisten te kennen die gelden om renteaftrek voor bedrijfsleningen te kunnen doen:
+
+- Alleen degene die betalingsverantwoordelijk is voor een lening kan de aftrek doen
+- Er moet een negatief rentesaldo zijn (waarbij de rentekosten hoger zijn dan de rente-inkomsten)
+- De rente en de schuld moeten ook binnen het belastingjaar betaald zijn
+
+**Berekening van de renteaftrek**
+
+Om je renteaftrek te berekenen, begin je met het uitrekenen van je rentesaldo: rente-inkomsten minus rente-uitgaven.
+
+- Rente-inkomsten: de inkomsten voor het hebben van geld op de bank
+- Rente-uitgaven: de kosten voor de rente op de lening (exclusief aflossing)
+- Rentesaldo = rente-inkomsten - rente-uitgaven
+
+Voorbeeld: Als je rente-inkomsten 10.000 euro zijn en de rente-uitgaven 15.000 euro, dan is het rentesaldo -5.000 euro (negatief), wat betekent dat je aftrek kunt doen.
+
+Om de grootte van de aftrek te berekenen, zijn er twee modellen:
+
+**EBITDA-model**
+
+Dit model begint met het uitrekenen van het verschil tussen rente-inkomsten en rente-uitgaven. Dat bedrag wordt vervolgens vermenigvuldigd met 30% om de aftrekruimte te berekenen. Het is belangrijk om te weten dat de aftrek beperkt kan zijn, dus houd hier rekening mee.
+
+*Voorbeeld: *Een bedrijf ontvangt 10.000 euro via zijn rente-inkomsten en heeft jaarlijks 100.000 euro aan rente-uitgaven:
+
+10.000 - 100.000 = - 90.000
+
+- 90.000 x 0,3 (30%) = - 27.000
+
+In dit geval is er een maximale aftrek van 27.000 euro.
+
+**Vereenvoudigingsregel**
+
+Dit model is vooral voordelig voor kleine ondernemers. Het staat een aftrek toe tot 5 miljoen euro ongeacht de 30%-regel in het EBITDA-model. Deze regel is vooral geschikt voor bedrijven met lagere leenkosten.
+
+*Voorbeeld:* Een bedrijf ontvangt 10.000 euro via rente-inkomsten en heeft rente-uitgaven van 100.000 euro.
+
+10.000 - 100.000 = - 90.000
+
+Rentesaldo = - 90.000
+
+In dit geval geldt een maximale aftrek van 90.000 euro van de winstbelasting! Dit geldt zelfs als de aftrek hoger is dan bij het gebruik van EBITDA, zolang het maar minder dan 5 miljoen in totaal is.
+
+**Belangrijk om te onthouden bij belastingaangifte**
+
+Wanneer je kleine bedrijf belastingaangifte doet, is het belangrijk om de voorgedrukte gegevens over rente-uitgaven te controleren. Onthoud dat de renteaftrek voor bedrijven gekoppeld moet zijn aan het huidige belastingjaar en niet kan worden overgedragen naar volgende jaren.
+
+**Sluit een bedrijfslening af bij Qeld**
+
+Heb je een bedrijfslening nodig? Voor een verstandige lening, kies Qeld! De enige kosten voor je lening bij Qeld zijn een vaste maandelijkse vergoeding, die wordt bepaald op basis van de grootte van de lening en de kredietwaardigheid van je bedrijf. Qeld biedt bedrijfsleningen aan tussen de 1.000 en 500.000 euro die je kunnen helpen investeren in nieuwe apparatuur, je marketing uitbreiden of je bedrijf uitbreiden. We hebben geen verborgen kosten of bindende termijnen op je lening - met een eenvoudige aanvraagprocedure van één minuut kun je snel en gemakkelijk toegang krijgen tot kapitaal. Als alles er goed uitziet, kun je zelfs dezelfde dag nog het geld op je rekening hebben!
+
+**Mis de renteaftrek voor je bedrijf niet**
+
+Het begrijpen en gebruiken van renteaftrek voor bedrijfsleningen kan een aanzienlijk financieel voordeel zijn voor je bedrijf. Dit geldt vooral voor kleine ondernemers die de vereenvoudigingsregel kunnen gebruiken - door zorgvuldig je renteaftrek te berekenen en aan te vragen, kun je de kosten van je bedrijfslening verlagen en bijdragen aan een stabielere financiële situatie voor je bedrijf. Succes met ondernemen!
+
+**FAQs over renteaftrek voor bedrijfsleningen**
+
+**Krijg je renteaftrek op alle leningen?**
+
+Nee, renteaftrek is niet beschikbaar voor alle soorten leningen. Het is specifiek ontworpen voor bepaalde bedrijfsleningen en hypotheken. Voorwaarden voor renteaftrek kunnen variëren, en het is belangrijk om de specifieke vereisten voor de lening die je hebt te begrijpen.
+
+**Wie heeft recht op renteaftrek?**
+
+De renteaftrek is beschikbaar voor rechtspersonen en bepaalde vennootschappen. Het is belangrijk dat het bedrijf een negatief rentesaldo heeft, dat wil zeggen dat de rentekosten hoger zijn dan de rente-inkomsten, om in aanmerking te komen voor renteaftrek.
+
+**Krijg je het volledige bedrag van de renteaftrek terug?**
+
+Nee, je krijgt niet het volledige bedrag van de renteaftrek terug in de vorm van een teruggave. In plaats daarvan vermindert de renteaftrek het bedrag aan belasting dat het bedrijf verschuldigd is. Het exacte bedrag van de aftrek hangt af van het rentesaldo van het bedrijf en welk berekeningsmodel wordt gebruikt.
+
+**Hoeveel van de rente is aftrekbaar?**
+
+Het aftrekbare deel van de rente wordt gewoonlijk berekend op 30% van het rentesaldo (het verschil tussen rentekosten en rente-inkomsten), de zogenaamde EBITDA-model. Er zijn echter beperkingen en speciale regels, zoals de vereenvoudigingsregel, waar bedrijven een aftrek tot 5 miljoen euro kunnen doen ongeacht de 30%-regel.

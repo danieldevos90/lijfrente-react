@@ -1,0 +1,51 @@
+---
+title: Cookies
+url: https://new10.com/cookies
+hostname: new10.com
+description: Hier lees je meer over welke cookies New10 plaatst en waarvoor we ze gebruiken.
+sitename: new10.com
+date: 2025-03-15
+---
+**Een cookie is een klein tekstbestandje. We slaan het op je computer, tablet of mobiele telefoon op wanneer je New10.com gebruikt. Een cookie heeft een uniek nummer waaraan gegevens gekoppeld kunnen worden. Er is een aantal soorten cookies: functionele cookies, analytische cookies en advertentiecookies. Hier lees je meer over welke cookies New10 plaatst en waarvoor we ze gebruiken.**
+
+**Functionele cookies**
+
+Functionele cookies zorgen ervoor dat de website goed werkt. Je hoeft dan bijvoorbeeld je inloggegevens niet steeds opnieuw in te vullen. Ook gebruiken wij functionele cookies voor het opsporen van misbruik van onze website en diensten. Bijvoorbeeld door het registreren van een aantal opeenvolgende mislukte inlogpogingen. Wij zijn niet verplicht toestemming te vragen voor het plaatsen van functionele cookies.
+
+**Analytische cookies**
+
+Met analytische cookies meten wij het bezoek aan New10.com. Zo bepalen wij welke onderdelen van onze website het meest interessant zijn voor onze bezoekers. Analytische cookies helpen ons ook bij het beter maken van de website. We gebruiken hiervoor software van een derde partij: Google Analytics, Google Ads, Blueconic, Leadinfo en Hotjar. Voor onze functionele en analytische cookies verwerken we IP-adressen. De statistieken en rapportages die hieruit voortkomen zijn niet tot personen te herleiden. Wij zijn niet verplicht toestemming te vragen voor het plaatsen van analytische cookies.
+
+**Voorkeuren cookies**
+
+Voorkeuren cookies zorgen ervoor dat bepaalde instellingen en voorkeuren onthouden blijven op onze website, zoals taalvoorkeur.
+
+**Advertentiecookies**
+
+Met deze cookies kunnen wij je aanbiedingen en informatie laten zien die voor jou interessant kunnen zijn. De cookies zijn afkomstig van andere partijen dan New10. Met jouw toestemming willen wij je op onze website en op de websites van derden graag informatie laten zien waar je echt wat aan hebt. Daarom proberen wij zo goed mogelijk in te schatten wat je interesseert en wat niet. Op basis van de pagina's die je bezoekt op onze website, krijg je andere informatie te zien dan andere bezoekers. Hiermee maken we onze website relevanter voor jou. Ben je klant van ons? Dan kunnen we deze gegevens bovendien combineren met de informatie die wij al over jou hebben.
+
+Voor het tonen van relevante aanbiedingen gebruiken wij 'DoubleClick by Google', Google Ads, Facebook en Linkedin. Wij tonen deze aanbiedingen op de website van New10, op websites van derden en binnen de diensten van Google.
+
+Wil je weten wat Google met de opgeslagen data doet? Check het privacybeleid van Google.
+
+Wil je weten wat Facebook met de opgeslagen data doet? Check het privacybeleid van Facebook (Engels).
+
+Wil je weten wat Bing Ads (Microsoft) met de opgeslagen data doet? Check het privacybeleid van Microsoft.
+
+Wil je weten wat LinkedIn met de opgeslagen data doet? Check het privacybeleid van LinkedIn.
+
+**Hoe lang geef ik toestemming voor cookies?**
+
+New10 legt vast of je toestemming hebt gegeven om een cookie te plaatsen. Elk jaar krijgt je opnieuw de vraag of je de cookie accepteert. Je kunt dan opnieuw jouw toestemming geven voor het plaatsen van de cookie. Dit geldt ook voor cookies die langer dan 1 jaar geldig zijn.
+
+**Ik wil minder cookies laten plaatsen**
+
+Hieronder stel je in hoeveel cookies wij mogen plaatsen bij je bezoek aan onze website. Vink je de optie uit en druk je op Opslaan, dan plaatsen wij geen advertentiecookies. Het weigeren van deze cookies betekent niet dat je geen advertenties meer te zien krijgt. De advertenties zijn dan alleen niet aangepast aan jouw interesses en worden vaker herhaald. Jouw gekozen instellingen kan je later altijd aanpassen.
+
+**Ik wil helemaal geen cookies laten plaatsen**
+
+Wil je niet dat New10 cookies op jouw computer plaatst? Dan moet je jouw browserinstellingen aanpassen. Je krijgt dan een waarschuwing voordat er cookies worden geplaatst. Ook kan je instellen dat jouw browser alle cookies of alleen de cookies van derde partijen weigert. Ten slotte kan je cookies die al zijn geplaatst verwijderen. Let erop dat je de instellingen apart voor elke browser en computer die je gebruikt moet aanpassen.
+
+**Blijf op de hoogte**
+
+Wij zullen deze informatie af en toe aanpassen, bijvoorbeeld omdat onze website of de regels rond cookies wijzigen. Elke aanpassing wordt hier gepubliceerd. We raden je daarom aan deze informatie regelmatig te bekijken.

@@ -1,0 +1,31 @@
+---
+title: Klachtenformulier
+url: http://www.capitalbox.nl/complaints
+hostname: capitalbox.nl
+sitename: CapitalBox - Zakelijke Leningen
+date: 2025-01-01
+---
+Skip to main content
+Klantenservice
+0207975825
+You are logged in as
+Vraag aan
+HOME
+Producten
+Zakelijk Krediet
+Zakelijke Lening
+Factuuraankoop
+Veelgestelde vragen
+Blog
+Over ons
+Partners
+Inloggen
+VRAAG AAN
+Klachtenformulier
+Naam en Achternaam*
+KvK nummer*
+E-mailadres*
+Telefoonnummer*
+Vermeld de aard van het conflict, je claim en de redenen voor het indienen van de klacht*
+CAPTCHA
+This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.

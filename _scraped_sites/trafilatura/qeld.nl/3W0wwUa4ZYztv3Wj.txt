@@ -1,0 +1,10 @@
+---
+title: No hidden fees | Qeld
+author: Samantha Bos
+url: https://www.qeld.nl/info/no-hidden-fees-nl
+hostname: qeld.nl
+description: At Qeld, we are honest and upfront about the costs of our business loans: there are no hidden fees. We make business lending easy and transparent. Read more:
+sitename: qeld.nl
+date: 2025-01-01
+---
+At Qeld, we are honest and upfront about the costs of our business loans: there are no hidden fees. We simply charge our customers a standard monthly fee for the usage of our loan, plus monthly amortisation. When you combine the two costs (monthly fee and amortisation) you have the total sum you owe each month. No hidden charges, surprise fees or fluctuating costs. Easy and transparent: that is business credit via Qeld.

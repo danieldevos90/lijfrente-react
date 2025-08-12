@@ -1,0 +1,109 @@
+---
+title: Hoe verbeter je de cybersecurity van jouw bedrijf
+url: http://www.capitalbox.nl/blog/hoe-verbeter-je-de-cybersecurity-van-jouw-bedrijf
+hostname: capitalbox.nl
+description: Cybersecurity is essentieel voor het MKB. Slechte IT-beveiliging kan leiden tot enorme schade. In deze blog geven we je tips om jouw cybersecurity te verbeteren.
+sitename: CapitalBox
+date: 2024-02-28
+---
+# Hoe verbeter je de cybersecurity van jouw bedrijf
+
+**Cybersecurity is absoluut essentieel voor het MKB. Slechte IT-beveiliging kan leiden tot enorme verliezen als cybercriminelen door de firewall breken en jouw bedrijf lamleggen. **
+
+Veel MKB-bedrijven zijn te slecht beschermd tegen digitale aanvallen van criminelen. 1 op de 10 Nederlandse bedrijven is jaarlijks slachtoffer van cybercrime. Gelukkig zijn er een aantal eenvoudige tips om jouwbedrijf te beschermen tegen dit soort criminaliteit. In deze gids maken we je wijzer over wat cybersecurity is en hoe je met relatief eenvoudige methoden jouw digitale beveiliging kunt verbeteren.
+
+## Wat is cybersecurity?
+
+Laten we beginnen met de basis op zijn plaats te krijgen. Want wat is cybersecurity eigenlijk?
+
+Kort gezegd, cybersecurity is de beveiliging van de computers, IT-servers, mobiele telefoons, tablets, netwerken en gegevens van jouw bedrijf tegen aanvallen van buitenaf en kwaadwillende.
+
+De afgelopen tijd zijn cybercriminelen een grote dreiging geweest voor bedrijven over de hele wereld. Het zijn niet alleen grote bedrijven die slachtoffer worden van dit soort aanvallen. Ook kleine en middelgrote ondernemingen worden blootgesteld aan verschillende aanvallen die grote schade kunnen aanrichten.
+
+Het is daarom uitermate belangrijk dat je als ondernemer controle heeft over de cybersecurity van jouw bedrijf. Je hebt misschien wel gehoord van een firewall die bescherming biedt tegen virussen, maar dat is slechts een klein deel van de algehele IT-beveiliging.
+
+## Wat heb je nodig om te beschermen?
+
+Vrijwel alle bedrijven hebben een gegevens- en IT-systemen die moeten worden beschermd omdat ze essentieel zijn voor de bedrijfsvoering en het bestaan van het bedrijf. Er is niet een overzicht dat geldt voor alle bedrijven, maar gegevens en systemen die vaak voorkomen zijn:
+
+- Klantgegevens (bijv. Bedrijfsnaam, e-mail, bankgegevens)
+- Persoonlijk gevoelige informatie (informatie die onder de AVG valt)
+- Bedrijf kritische gegevens (handelsgeheimen, handleidingen, strategieën, patenten en dergelijke)
+- Financiële kerncijfers (omzet, etc.)
+- Productie (IT-systemen, gegevens en materialen die nodig zijn om de operaties en productie in stand te houden)
+
+Dit is ook waar jouw reis naar verbeterde cybersecurity het beste kan beginnen. Zorg voor een schriftelijk overzicht van de kritieke gegevens en IT-systemen van het bedrijf, zodat je weet wat er moet worden beschermd.
+
+Wees er alert op in binnen het bedrijf, anders loop je het risico een belangrijk systeem of datapunt te missen dat je kwetsbaar maakt. Je kunt ook een tool gebruiken om te zien hoe jouw bedrijf scoort op de basisprincipes van veilig digitaal ondernemen. Deze tool heet de Basisscan Cyberweerbaarheid en is onderdeel van het Ministerie van Economische Zaken en Klimaat.
+
+## Houd programma's up-to-date en beschermd
+
+Een goede manier om jouw bedrijf te beschermen is door alle updates voor je programma's en de beveiligingssoftware altijd te installeren. Dit kun je automatisch instellen zodat medewerkers het niet vergeten te doen.
+
+Dit verkleint het risico dat criminelen jouw systemen kunnen binnendringen maar dit wil niet zeggen dat jouw bedrijf met deze eenvoudige stappen alle aanvallen kan weerstaan. Er kunnen nog fouten zijn in de setup van je programma's, of een van jouw collega's heeft slechte wachtwoorden gemaakt, waardoor criminelen alsnog toe kunnen slaan.
+
+Met een regelmatige update van de programma's verbetert de cybersecurity van het bedrijf echter aanzienlijk.
+
+Tips om systemen en programma's up-to-date te houden:
+
+- Maak één persoon verantwoordelijk voor het proces
+- Stel het installeren van updates automatisch
+- Werk alle programma's direct bij wanneer als er een update is
+- Gebruik unieke wachtwoorden en werk met tweefactorverificatie
+
+## Voorkom dat je in de phishingval trapt
+
+Je hebt vast wel eens gehoord van phishing-e-mails of -berichten. Mocht je de term niet eerder hebben gehoord: phishing is een vorm van oplichting. Criminelen proberen o.a. via nep e-mails, sms of whatsapp berichten en telefoontjes gevoelige informatie te stelen.
+
+Meestal is een phishing-e-mail zo ontworpen dat deze lijkt alsof de mail echt afkomstig is van een afzender die je kent. Dat kan bijvoorbeeld een overheidsinstantie zijn, jouw bank, een collega of een leverancier.
+
+In het bericht staat vaak een link waarop je dient klikken. Doe je dat, dan kom je veelal uit op een website, die op zijn beurt hetzelfde is ontworpen als de website die je kent en die je vaak vertrouwd. Vervolgens wordt er via de website-informatie aan je gevraagd waarnaar de hackers op zoek zijn.
+
+Met gezond verstand en een kritische benadering kun je vaak voorkomen dat je in de val loopt. Maar helaas zijn de phising mails tegenwoordig zo goed ontworpen dat ze niet van echt zijn te onderscheiden. Hier een aantal tips om phising te voorkomen:
+
+- Vermijd het klikken in e-mails en het ophalen van bijlagen van onbekende afzenders - of van bekende afzenders waarvan u niets had verwacht
+- Geef nooit gevoelige persoonlijke informatie via e-mail. Jouw huisbank, overheidsinstanties, digitale diensten en bedrijven vragen niet om gevoelige informatie via e-mail of sms
+- Download bijlagen niet automatisch. Sommige e-mailclients hebben mogelijk automatische download als functie, maar schakel deze uit
+- En denk eraan, als je twijfelt niet doen. Neem telefonisch contact op met bijvoorbeeld de bank of de overheidsinstantie waarvan je de mail hebt ontvangen en check of het klopt
+
+## Sterke wachtwoorden = sterke cybersecurity
+
+Met het juiste wachtwoord - voor het juiste systeem - kunnen cybercriminelen direct toegang krijgen tot het de systemen van jouw bedrijf.
+
+Daarom is het erg belangrijk dat alle medewerkers sterke wachtwoorden gebruiken. Cybercriminelen gebruiken verschillende tools om de IT-beveiliging te breken.
+
+Een wachtwoord korter dan 8 tekens wordt zwak gezien. Het liefst moet een wachtwoord 12 tekens of meer bevatten, dan is het veel moeilijker te kraken. En probeer, voor zover mogelijk, niet hetzelfde wachtwoord voor meerdere systemen te gebruiken. Om alle wachtwoorden te onthouden zijn er zogeheten wachtwoordmanagers. Dit zijn tools die jouw wachtwoorden voor je onthouden. Je hoeft hiervoor alleen een hoofdwachtwoord te onthouden die je toegang geeft tot al je wachtwoorden.
+
+Je kan overwegen om een tweefactorverificatie te gebruiken. Hier vul je en wachtwoord in op de computer, waarna je de login bevestigt via jouw mobiele telefoon.
+
+## Antivirus en firewall
+
+Twee klassiekers als het gaat om cybersecurity; antivirus-software en firewall.
+
+Sommigen denken misschien dat ze hetzelfde zijn maar dat klopt niet. Een antivirusprogramma is een software dat alle bestanden en verkeer op computers analyseert. Het programma voorkomt dat schadelijke software jouw computer vernietigt. Hiermee zijn de benodigde gegevens en systemen beveiligd.
+
+Wees niet zuinig bij het kiezen van een antivirusprogramma. Neem indien nodig contact op met jouw IT-provider en vraag om advies bij het kiezen van de juiste. En zorg ervoor dat het programma automatisch wordt bijgewerkt en constant actief is.
+
+Een firewall voorkomt dat hackers toegang krijgen tot jouw netwerk. Afhankelijk van de netwerkcomplexiteit van jouw bedrijf, kan het een goed idee zijn om in een eigen firewall te investeren of een buitenstaander in te huren om de firewall te helpen beheren.
+
+## Back-up, back-up, back-up
+
+Als de hackers door jouw cybersecurity heen komen, is het noodzakelijk dat je een back-up van belangrijke data hebt. Omdat de hackers je meestal meteen buitensluiten van de systemen ben je op dat moment volledig verlamd als je geen back-up hebt.
+
+Daarom is het verstandig om van belangrijke gegevens een back-up te maken. Een paar tips:
+
+- Maak een overzicht van de gegevens waarvan een back-up moet worden gemaakt
+- Stel een back-upmanager aan
+- Maak met enige regelmaat een back-up
+- Bewaar de back-up op een veilige plaats
+
+## Huur een IT-professional in om de cybersecurity te verbeteren
+
+Voor veel kleine en middelgrote bedrijven kan het verbeteren van cybersecurity een grote en onhandelbare taak lijken.
+
+Maar zoals we al meermaals hebben vermeld, is het een belangrijke taak. Want als de cybercriminelen met kwade bedoelingen binnenkomen, loopt jouw bedrijf een risico met grote gevolgen.
+
+Het kan daarom een goed idee zijn om een IT-professional in te huren om je helpen om cybersecurity te verbeteren en up to date te houden. Dit kan zowel een vaste medewerker, een freelancer of een IT-beveiligingsbedrijf. Hoe dan ook, het is verstandig om er een prioriteit van te maken.
+
+
+**Met de bovenstaande tips kom je een heel eind! Maar heb je geen tijd of energie om zelf de cybersecurity in orde te maken, zoek dan naar een IT-professional die het voor jou in orde maak. Op zoek naar extra financiering om dit te bekostigen? Bij CapitalBox kun je binnen 5 minuten een aanvraag indienen voor een zakelijke lening. Deze is vrijblijvend binnen 1 dag weet je wat de mogelijkheden zijn. Ga je akkoord met ons voorstel, dan staat de financiering nog dezelfde dag op je rekening. Start nu de aanvraag! **

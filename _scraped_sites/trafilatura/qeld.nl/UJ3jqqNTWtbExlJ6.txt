@@ -1,0 +1,15 @@
+---
+title: Dit is Qeld: zakelijk lenen zonder gedoe
+url: https://www.qeld.nl/pers
+hostname: qeld.nl
+description: Wilt u meer weten over Qeld? Ontdek hier onze geschiedenis, publications en persmaterialen:
+sitename: qeld.nl
+date: 2025-01-01
+---
+Eenvoudig aanvraagproces
+
+Lening uitbetaald binnen 24 uur
+
+Geen extra kosten bij vervroegde aflossing
+
+Vragen? Neem voor meer informatie en persmateriaal contact op met.

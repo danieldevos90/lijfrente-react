@@ -1,0 +1,75 @@
+---
+title: How do you calculate working capital? | Swishfund
+author: Merel Nijland Marketer
+url: https://www.swishfund.nl/blog/hoe-bereken-je-werkkapitaal
+hostname: swishfund.nl
+description: It takes more than a good idea and a bit of guts to run a successful business. When it comes down to it, you need money to meet all your financial obligations. That makes sense. Think about things like replenishing stocks, paying your suppliers, carrying out maintenance and paying salaries. This falls under the heading of working capital. In this blog, we'll show you how to calculate this.
+sitename: swishfund.nl
+date: 2020-12-06
+---
+# How do you calculate working capital?
+
+#### Merel Nijland
+
+## Introduction
+
+It takes more than a good idea and a bit of guts to run a successful business. When it comes down to it, you need money to meet all your financial obligations. That makes sense. Think about things like replenishing stocks, paying your suppliers, carrying out maintenance and paying salaries. This falls under the heading of working capital. In this blog, we'll show you how to calculate this.
+
+### What is Working Capital?
+
+As we mentioned in the intro, every company needs money to meet its (daily) financial obligations. That's what we call it *working capital.** *Every entrepreneur has to deal with this.
+
+Since the credit crisis, working capital has become an even more important aspect. Not only for obtaining a loan, but also for the entrepreneur himself. It gives you insight into the **the health of your company**.
+
+#### Why is this capital important?
+
+If you don't have enough money to pay for day-to-day business, you can easily get into trouble. Try not to pay your employees for a month!
+
+But beware; a surplus of working capital is also not beneficial. After all, that money brings nothing. It's not in a savings account where you receive interest, for example.
+
+So if you look at it that way, it actually 'costs' money to have working capital. Another reason to be smart about it.
+
+#### How do you calculate net working capital?
+
+Net working capital is the difference between current assets (such as inventories) and current liabilities (such as creditors).
+
+**What are current assets?**
+
+Current assets are assets that are only present in a company for a short period of time. Other terms for this are also called *current capital, current capital or working capital.* Think about:
+
+- Cash (spread across bank and cash)
+- Debtors
+- The value of (product) stocks
+
+**What are current liabilities?**
+
+Current liabilities are short-term debts that are usually paid off within 1 year. Current liabilities are part of the foreign capital.
+
+**Working Capital Formula**
+
+How do you use current assets and liabilities to calculate your working capital? We'll show you the working capital formula in this example:
+
++ stock€15,000 + debtors€30,000 + in the bank account €50,000 **= gross working capital €95,000**— creditors €40,000 **= net working capital €55,000**
+
+You see what can be sold within your company in the short term. Inventories, debtors, current receivables and other assets are eligible for this.
+
+Then you see what your short-term liabilities are. This includes creditors, tax debts, pension debts and other short-term repayments.
+
+Next, it's a simple addition and deduction sum that you use to calculate the net working capital.
+
+#### How can you influence it?
+
+As you can see in the example above, debtors, inventories, and creditors are factors that influence working capital. If your debtors take a long time to pay their bills, you'll have to wait longer for your money. As a result, a long payment period is therefore not beneficial for working capital. The same also applies to stocks and creditors. To do this, we have some tips:
+
+- Screen (potential) customers for their payment behavior and creditworthiness.
+- Take a critical look at how you invoice: what can you improve?
+- How is your debtor management doing?
+- Align your stocks to the needs of the market.
+
+#### Financing working capital
+
+It often happens that you have different priorities off. You have to pay your staff, but you also want to invest in new equipment. Getting the tips above in order isn't easy either. Some companies really need to be “educated” to pay faster. Working capital financing can play a role here.
+
+By using financing, it is possible, among other things, to maintain your stocks and pay the salaries of your employees when your working capital is insufficient. Swishfund helps you with that.
+
+Want to know more about (applying for) working capital financing from Swishfund? Please contact us via 085 064 4144 or send an email to info@swishfund.nl.

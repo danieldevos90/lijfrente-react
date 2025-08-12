@@ -1,0 +1,111 @@
+---
+title: Uw eerste Facebook-advertentie maken
+url: http://www.capitalbox.nl/blog/uw-eerste-facebook-advertentie-maken
+hostname: capitalbox.nl
+description: Facebook is een geweldige manier om uw potentiële en bestaande klant te bereiken. Leer hoe u uw eerste Facebook-advertentie opnieuw kunt beoordelen
+sitename: CapitalBox
+date: 2022-08-16
+---
+# Uw eerste Facebook-advertentie maken
+
+Facebook is een geweldige manier om uw potentiële en bestaande klant te bereiken. Het kost vaak minder dan de meeste andere kanalen en is ook een geweldige plek om uw online advertentiereis in het algemeen te beginnen. De eenvoudige en intuïtieve gebruikersinterface maakt het één van de meest gebruiksvriendelijke advertentieplatforms die er zijn. Laten we beginnen.
+
+**Dingen die je nodig hebt voordat je begint**
+
+Voordat u uw advertenties kunt publiceren, moet u eerst een Facebook-pagina voor uw bedrijf maken en een betalingsmethode toevoegen, evenals een Facebook-pixel (een trackingcode). Als je dit al hebt gedaan, kun je dit deel overslaan en doorgaan naar het gedeelte 'Je eerste advertentie maken' van dit bericht. Anders heeft u het volgende nodig:
+
+**Stap 1: Maak een Facebook-pagina voor uw bedrijf **
+
+Om Facebook-advertenties weer te geven, heeft u een bedrijfspagina nodig. U kunt het bericht 'Een Facebook-pagina voor uw bedrijf maken' bekijken voor gedetailleerde instructies en tips.
+
+
+**Stap 2: Voeg een betaalmethode toe aan uw zakelijke account**
+
+U moet uw creditcard / betaalpas of PayPal-account koppelen om te betalen voor de advertenties die u weergeeft. Om een betalingsmethode aan uw Facebook-pagina toe te voegen, klikt u eerst op de vervolgkeuzepijl in de rechterbovenhoek van uw pagina en selecteert u 'Advertenties beheren'.
+
+
+
+Dit brengt u naar Facebook Ads Manager, waar u het volgende moet doen:
+
+- Klik op het vervolgkeuzemenu linksboven op de pagina
+- Selecteer Advertentie-accountinstellingen
+- Selecteer de Betalingsinstellingen knop
+- Klik op Betaalmethode toevoegen.
+
+
+**Stap 3: Facebook Pixel toevoegen (optioneel)**
+
+Facebook Pixel is een klein stukje trackingcode dat u aan uw website of app toevoegt. Het is niet nodig om het te hebben om advertenties weer te geven. Maar zonder dit heeft u geen toegang tot enkele van de beste functies die Facebook-advertenties te bieden hebben: aangepaste / vergelijkbare doelgroepen en conversies als advertentiedoel. Kortom, Facebook-pixel leert over uw klanten en helpt u mensen te vinden die op hen lijken. U kunt het als volgt toevoegen:
+
+- Klik nogmaals op het vervolgkeuzemenu in de linkerbovenhoek van de pagina
+- Selecteer Evenementenbeheer
+- Zoek Facebook Pixel en klik op "Aan de slag"
+- Geef uw pixel een naam en voer uw website in
+- Integratie
+
+
+
+Partnerintegratie is een geautomatiseerd instellingsproces en vereist geen technische kennis. Facebook kan worden geïntegreerd met de meeste platforms, maar als uw website op maat is gemaakt, moet u mogelijk contact opnemen met de ontwikkelaar die deze codeert.
+
+Met dat uit de weg kunnen we onze eerste advertentie maken.
+
+**Uw eerste Facebook-advertentie maken**
+
+**1. Klik op "Promoten"**
+
+**2. Selecteer advertentiedoel**
+
+
+Het doel van Facebook (en ook dat van jou!) Is ervoor te zorgen dat je advertentie op het juiste moment aan de juiste persoon wordt getoond. Advertentiedoelstellingen zijn belangrijk omdat ze Facebook vertellen welk type persoon of welk type gedrag je zoekt:
+
+Haal meer aankopen op de website (“Get more website purchases”)
+
+Dit vertelt Facebook om te zoeken naar mensen die zijn zoals uw huidige klanten die al iets hebben gekocht.
+
+Promoot je pagina (“Promote your page”)
+
+Dit vertelt Facebook om te zoeken naar mensen die interesse tonen en pagina's hebben ‘’geliket ‘’die op die van jou lijken.
+
+Promoot uw bedrijf lokaal (“Promote your business locally”)
+
+Dit vertelt Facebook om te zoeken naar mensen die dicht bij uw bedrijf wonen of werken. Deze doelstelling is geweldig voor bedrijven die fysiek aanwezig zijn en meer mensen naar hun winkel willen halen.
+
+Haal meer websitebezoekers (“Get more website visitors”)
+
+Dit vertelt Facebook om te zoeken naar mensen die eerder op uw advertentie klikken en uw website bezoeken. Deze doelstelling is vaak de beste eerste stap in de meeste e-commercebedrijven die nog niet over de nodige verkoopgegevens beschikken om de doelstelling Conversie (website-aankopen) te gebruiken.
+
+Krijg meer leads ("Get more leads”)
+
+Dit vertelt Facebook om te zoeken naar mensen die eerder een aanvraagformulier invullen. Onthoud dat Facebook op zoek is naar mensen die het formulier zullen invullen, niet naar mensen die waardevolle klanten zullen zijn.
+
+Als u de online verkoop wilt verhogen, kiest u 'Meer websiteaankopen ontvangen' (als u een actieve Facebook-pixel heeft) of 'Meer websitebezoekers genereren'. Als u een kapperszaak of een ander lokaal bedrijf bent, kiest u 'Promoot uw bedrijf lokaal'.
+
+Advertentiedoelstellingen zijn iets waar u mee moet spelen. Soms werkt het een beter dan het ander zonder een goede reden of uitleg. Het is een algoritme dat menselijk gedrag probeert te voorspellen - zelfs voor Facebook een moeilijk doel. Het goede is dat je de mogelijkheid hebt om het algoritme van Facebook te helpen door aangepaste targeting te gebruiken.
+
+
+**3. Gericht op**
+
+Zijn alle mensen geïnteresseerd in wat je verkoopt? Hoogstwaarschijnlijk niet. Facebook is enorm en proberen je advertentie aan iedereen te laten zien, is een trefzekere manier om veel geld te verspillen. Dit is waar detailtargeting in het spel komt. Kent u een type klant (geslacht, leeftijd, locatie, interesses) die meestal bij u koopt? Als dat het geval is, kunt u met de targeting van Facebook uw doelgroep beperken, zodat u uw advertentie alleen aan mensen toont die er misschien om geven.
+
+Targeting gebruiken:
+
+Scrol omlaag naar het gedeelte 'Doelgroep' en selecteer 'Mensen die u kiest via targeting' en klik op Bewerken.
+
+
+Denk na over uw perfecte klant en kies leeftijd, geslacht, taal en locatie op basis van uw idee van wie ze kunnen zijn en waar. Voor meer informatie over het definiëren van je publiek en het maken van persona's, ga je naar "Wat is een persona voor kopers".
+
+Met Facebook-targeting kunt u zelfs bepaalde mensen uitsluiten waarvan u zeker weet dat ze niet geïnteresseerd zijn in wat u aanbiedt. Wanneer u echter net begint, kunt u het beter niet overdrijven met de targetingopties. Een publiek dat iets te breed is, is beter dan een publiek dat te smal is.
+
+
+
+**4. Duur en budget**
+
+Het is volledig aan u om te beslissen hoelang u wilt dat uw advertenties worden weergegeven en hoeveel u bereid bent te besteden. Facebook probeert op nuttige wijze de resultaten te schatten die u met een bepaald budget kunt verwachten. Hoe meer u uitgeeft, hoe meer resultaten (en sneller) u kunt verwachten. Het hangt natuurlijk af van de resultaten die u zoekt. Een websitebezoek kost minder dan het aanmelden voor een nieuwsbrief, wat minder kost dan een daadwerkelijke aankoop. Naarmate doelen ingewikkelder worden (een website bezoeken versus iets kopen), worden ze duurder. Bedenk hoeveel het u gewoonlijk kost om uw product te verkopen en pas een vergelijkbare logica toe op uw Facebook-advertentiebudget (in het begin tenminste).
+
+Maar vergeet niet dat u uw budget altijd kunt verhogen zodra u merkt dat de advertentie die weergeeft,werkt.
+
+
+
+**5. De daadwerkelijke advertentie**
+
+Het enige dat u nog hoeft te doen, is een in het oog springende visuele en een activerende tekst gebruiken en uw advertentie is klaar om te worden gepubliceerd. Heb je daar wat hulp bij nodig? Bekijk het bericht 'Anatomie van geweldige advertenties.

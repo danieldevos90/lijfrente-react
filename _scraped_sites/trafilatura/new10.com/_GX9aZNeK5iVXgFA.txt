@@ -1,0 +1,39 @@
+---
+title: Reporting weak spots in IT systems
+url: https://new10.com/security/en
+hostname: new10.com
+description: To ensure secure banking for our customers, we are continuously improving our systems and processes to maintain their reliability.
+sitename: new10.com
+date: 2025-03-15
+---
+To ensure secure banking for our customers, we are continuously improving our systems and processes to maintain their reliability. If you nevertheless notice a weak spot in one of our IT systems, we would appreciate it if you would report it to us.
+
+Anyone can make a mistake. We won't deny that this can also happen to us. However, publicising weak spots in our IT systems without having spoken to us about them first may have serious consequences, however good your intentions are. Criminals might use your information, for example, to commit internet fraud. For this reason, we want to ask you to first report the mistake to us and to work with us to find a solution so that we can prevent fraud or system failures.
+
+You can report a range of weak spots in our IT systems to us, preferably as soon as possible. These include:
+
+- cross-site scripting vulnerabilities
+- SQL injection vulnerabilities
+- encryption weaknesses, etc.
+
+Please report your finding via ABN AMRO Vulnerability Disclosure Program
+
+A team of security experts will investigate your report and will contact you within 2 working days. This may be in relation to the weak spots you identified, how you found these and any subsequent steps.
+
+Your personal data will only be used to undertake further action based on the information you provide in your report. In principle, we will not share your personal data with third parties without your permission.
+
+During your investigations, you may carry out actions that are punishable by law. As long as you keep to the rules for reporting weak spots in our IT systems, we will not report you to the police or claim for losses or damage.
+
+We cannot guarantee that you will never be prosecuted if you commit a punishable offence during the course of your investigations, even if we do not report such an offence. The public prosecutor always has the final say as to whether or not you will be prosecuted. We have no say in this.
+
+*These rules are based on guidelines developed by the Dutch National Cyber Security Centre, which is part of the Ministry of Justice and Security.*
+
+- Be responsible and be careful.
+- Only use methods that are strictly necessary for finding or pointing out the vulnerabilities.
+- Ensure that your own systems are kept as well protected as possible.
+- Use the weaknesses you have identified only for your own investigations and never for any other purpose.
+- Do not use social engineering or brute-force attacks to gain access to a system.
+- Do not install a backdoor in a system, even with the intention of demonstrating the vulnerability. A backdoor renders a system even more insecure.
+- Do not change or delete any details in the system. 8, Never copy more data than necessary. If a single record is sufficient for your investigations, do not copy any more.
+- Do not penetrate a system more often than necessary.
+- and do not share the access you gained with others.

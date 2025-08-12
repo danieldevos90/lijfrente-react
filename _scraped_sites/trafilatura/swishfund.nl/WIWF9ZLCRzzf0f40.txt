@@ -1,0 +1,84 @@
+---
+title: Veelgestelde vragen over het MT940 bestand | Swishfund
+author: Merel Nijland Marketeer
+url: https://www.swishfund.nl/blog/veelgestelde-vragen-over-het-mt940-bestand
+hostname: swishfund.nl
+description: Als je een aanvraag doet bij Swishfund vragen we om jouw MT940 bestand. We krijgen vaak de vraag wat dit bestand is, wat we ermee doen en hoe dit bestand gedownload kan worden. In dit blog hebben we de meest gestelde vragen voor je op een rij gezet.
+sitename: swishfund.nl
+date: 2022-02-13
+---
+# Veelgestelde vragen over het MT940 bestand
+
+#### Merel Nijland
+
+## Introductie
+
+Als je een aanvraag doet bij Swishfund vragen we om jouw MT940 bestand. We krijgen vaak de vraag wat dit bestand is, wat we ermee doen en hoe dit bestand gedownload kan worden. In dit blog hebben we de meest gestelde vragen voor je op een rij gezet.
+
+**Wat is een MT940 bestand?**
+
+MT940 is een bestandsformaat om financiële gegevens te exporteren. In dit bestand staan de transactiegegevens van jouw zakelijke rekening(en). Denk aan gegevens zoals het transactiebedrag, de tegenrekening en de omschrijving. Dit bestandstype wordt ook veel gebruikt door boekhoudsoftware.
+
+**Waarom hebben jullie dit bestand nodig?**
+
+Swishfund berekent op basis van cashflow wat de maximale leencapaciteit is. In het MT940 bestand kunnen we die cashflow, door middel van je transacties, aflezen en analyseren. Voor de analyse gebruiken we een zelfontwikkeld en geautomatiseerd beoordelingssysteem. Hierdoor kan je bij ons een lening aanvragen zonder stapels papierwerk.
+
+**Hoe download ik dit bestand?**
+
+Het downloaden van een MT940 bestand is makkelijk. Je hebt er wel een zakelijke rekening voor nodig. Van een privérekening kun je geen MT940 bestand downloaden. Vanuit de online bankomgeving kun je het bestand downloaden. Bij iedere bank kun je een MT940 bestand downloaden. Voor de 4 meest bekende banken hebben we de instructies hieronder uit geschreven.
+
+*Staat jouw bank er niet tussen?** In de online bankomgeving kun je zoeken naar de optie om te ‘exporteren’ of kijk in de FAQ van jouw bank. Daar vind je vaak een goede instructie. Kom je er helemaal niet uit? Dan mag je altijd contact met ons opnemen!*
+
+**MT940 downloaden bij ABN Amro**
+
+Bekijk **de animatie** of volg onderstaande stappen:
+
+- Log in op Internet Bankieren op je desktop.
+- Ga naar ‘Zelf regelen’ en vervolgens op ‘Bij- en afschrijvingen downloaden’.
+- Selecteer alle relevante zakelijke rekeningen.
+- Selecteer de periode van de afgelopen 12 maanden en kies voor bestandsformaat MT940.
+- Klik op ‘Download’ en sla het bestand op.
+
+**MT940 downloaden bij ING**
+
+Bekijk **de animatie** of volg onderstaande stappen:
+
+- Log in op Mijn ING Zakelijk op je desktop.
+- Klik rechtsboven op ‘Downloaden’.
+- Klik op ‘Af- en bijschrijvingen’.
+- Selecteer alle relevante zakelijke rekeningen.
+- Selecteer de periode van afgelopen 12 maanden en kies voor bestandsformaat MT940.
+- Klik op ‘Download’ en sla het bestand op.
+
+**MT940 downloaden bij Knab**
+
+Bekijk **de animatie** of volg onderstaande stappen:
+
+- Log in op Knab Zakelijk op je desktop.
+- Selecteer alle relevante zakelijke rekeningen.
+- Klik op ‘Bij- en afschrijvingen’.
+- Klik vervolgens op ‘Boekhoudexport’.
+- Selecteer de periode van de afgelopen 12 maanden en klik op ‘Selectie downloaden’.
+
+**MT940 downloaden bij Rabobank**
+
+Bekijk **de animatie**** **of volg onderstaande stappen:
+
+- Log in op Rabo Internetbankieren op je desktop.
+- Selecteer alle relevante zakelijke rekeningen.
+- Klik vervolgens op ‘Download transacties’.
+- Selecteer bestandsformaat MT940 (.swi). Vervolgens de juiste rekening(en) en de periode van de afgelopen 12 maanden.
+- Klik op ‘Bestand downloaden’ en sla het bestand op.
+
+**Belangrijk:**
+
+- Je kunt het bestand zelf niet openen. Het is een gecodeerd bestand speciaal voor software die dit kan lezen.
+- Download het bestand via je desktop. Wanneer je dit via je smartphone doet, maakt deze er vaak automatisch een pdf-bestand van. Een pdf-bestand kunnen we niet analyseren.
+
+**Wat doen jullie met dit bestand?**
+
+Het MT940 bestand wordt alleen gebruikt om je cashflow te analyseren en jou een goede en passende aanbieding te kunnen doen voor een zakelijke lening. We bewaren je gegevens volgens richtlijnen van de AVG. Dit doen we zo lang we een relatie met je hebben, tenzij er op basis van de wet een kortere bewaartermijn geldt.
+
+**Hoe kan ik mijn MT940 bestand naar jullie verzenden?**
+
+Wanneer je een aanvraag doet op onze website kun je bij stap 3 je MT940 uploaden. Heb je al een aanvraag gedaan? Dan heb je waarschijnlijk ook een mail van ons ontvangen. Hier kun je op reageren met je het juiste bestand in de bijlage. Geen mail ontvangen? Dan kun je het bestand mailen naar **upload@swishfund.nl** of contact opnemen met jouw accountmanager.

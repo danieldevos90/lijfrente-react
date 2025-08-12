@@ -1,0 +1,22 @@
+---
+title: Phishing (valse e-mail of sms)
+url: https://new10.com/phishing
+hostname: new10.com
+sitename: new10.com
+date: 2025-03-15
+---
+Ben je gemaild, gebeld of ge-sms't door oplichters? Breng ons op de hoogte.
+
+- Klik niet op links of bijlagen in de e-mail of sms
+- Beantwoord de e-mail of sms niet
+- Stuur de phishing-e-mail door naar: valse-email@new10.com
+- Stuur het valse sms-bericht door naar: 097 008 101 095
+- Verwijder de valse e-mail of sms
+
+Phishing is de meest bekende vorm van online fraude. We leggen je uit hoe het werkt en hoe je een valse e-mail kunt herkennen.
+
+Bij phishing sturen oplichters je een e-mail die erg lijkt op een bericht van New10, een bank of een ander bekend bedrijf. In de e-mail wordt u gevraagd op een link of bijlage te klikken. Je komt dan op een nepwebsite die erg lijkt op de site van de bank of het bedrijf. Op die website wordt u meestal gevraagd om uw gegevens en uw beveiligingscodes in te voeren. Door op een link of bijlage in de e-mail te klikken, kunnen oplichters ook malware op uw computer installeren.
+
+Iedereen kan de naam New10 of een ander bekend bedrijf als afzender gebruiken. Controleer daarom altijd het e-mailadres van de afzender. Dit doe je door op de naam van de afzender te klikken. Oplichters gebruiken vaak een onduidelijk en lang e-mailadres.
+
+Bij smishing sturen oplichters je geen e-mail, maar een sms die erg lijkt op een bericht van de bank, een instelling of bedrijf. Soms met een link en het verzoek om je gegevens achter te laten via de link in dit sms-bericht. Klik niet op deze link. Heb je een vals sms ontvangen? Stuur het bericht door naar: 097 008 101 095 en verwijder het sms-bericht.

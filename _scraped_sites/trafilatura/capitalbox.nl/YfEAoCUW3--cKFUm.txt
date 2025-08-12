@@ -1,0 +1,486 @@
+---
+title: CapitalBox’s Principes voor de Verwerking van Persoonsgegevens van Klanten (Privacybeleid)
+url: http://www.capitalbox.nl/node/8
+hostname: capitalbox.nl
+description: Persoonsgegevens die worden verzameld zijn noodzakelijk voor de hierna toegelichte doeleinden, rekening houdend met de aard van de door CapitalBox aangeboden diensten.
+sitename: CapitalBox - Zakelijke Leningen
+date: 2010-02-04
+---
+## CapitalBox’s Principes voor de Verwerking van Persoonsgegevens van Klanten (Privacybeleid)
+
+*Laatst bijgewerkt op op 10 januari 2025*
+
+
+Deze principes voor de verwerking van persoonsgegevens van de gemachtigde van Klanten (hierna ook principes genoemd) beschrijven hoe CapitalBox (hierna ook wij, ons of onze genoemd) persoonsgegevens verwerkt van de gemachtigde van de Klanten en andere betrokkenen (hierna ook u genoemd) in verband met de diensten en producten die wij aanbieden. Deze principes zijn van toepassing als u gebruikmaakt, hebt gemaakt, de intentie hebt getoond om gebruik te maken, of op enige andere wijze gerelateerd bent aan onze producten of diensten, of indien u uw wens hebt geuit om informatie over onze producten of diensten te ontvangen.
+
+
+**1. Definities**
+
+1.1 **Gemachtigde van de Klant**– Een natuurlijke persoon die de rechtspersoon vertegenwoordigt die de intentie heeft getoond om gebruik te maken van de producten of diensten die door CapitalBox worden aangeboden, een garantieovereenkomst met CapitalBox wil sluiten of informatie wil ontvangen over de producten of diensten van CapitalBox;
+
+1.2 **Klant **– rechtspersoon die een lening aanvraagt;
+
+1.3 **Contract **– Een contract gesloten tussen CapitalBox en de Klant;
+
+1.4 **Gegevensbeschermingsregels **– Alle toepasselijke wetten en regelgeving met betrekking tot de verwerking van persoonsgegevens, waaronder maar niet beperkt tot de Algemene Verordening Gegevensbescherming van de Europese Unie (hierna AVG genoemd);
+
+1.5 **Betrokkene **– Een identificeerbare natuurlijke persoon die direct of indirect kan worden geïdentificeerd, met name aan de hand van een identificator zoals een naam, een identificatienummer, locatiegegevens, een online identificator of aan de hand van één of meer factoren die specifiek zijn voor de fysieke, fysiologische, genetische, mentale, economische, culturele of sociale identiteit van die natuurlijke persoon;
+
+1.6 **CapitalBox** – CapitalBox AB, 556695-9655, Linnégatan 22, 114 47 Stockholm, Zweden, telefoon 020 797 58 25, e-mail support@capitalbox.nl;
+
+1.7 **Multitude Group**– CapitalBox samen met bedrijven waarvan CapitalBox's moederonderneming, Multitude AG (registratiecode CHE-455.352.012) (Grafenauweg 8, 6300 Zug, Switzerland) direct of indirect meerderheidsaandeelhouder is;
+
+1.8 **AVG **– Algemene Verordening Gegevensbescherming (EU) 2016/679 van het Europees Parlement en de Raad van 27 april betreffende de bescherming van natuurlijke personen in verband met de verwerking van persoonsgegevens en betreffende het vrije verkeer van die gegevens en tot intrekking van Richtlijn 95/46/EG;
+
+1.9 **Persoonsgegevens **– Alle informatie met betrekking tot een geïdentificeerde of identificeerbare natuurlijke persoon (betrokkene). Gegevens die onder het bankgeheim vallen kunnen ook persoonsgegevens omvatten;
+
+1.10 **Verwerking** – Elke bewerking of reeks van bewerkingen die wordt uitgevoerd op persoonsgegevens of op een set van persoonsgegevens, al dan niet met geautomatiseerde middelen, zoals verzamelen, registreren, opslaan, wijzigen, toegang verlenen tot, navragen, overdragen, bekijken, enz.
+
+
+**2. Verwerkingsverantwoordelijke**
+
+2.1 CapitalBox is verantwoordelijk voor de verwerking van uw persoonsgegevens en is om die reden de verwerkingsverantwoordelijke onder de AVG.
+
+2.2 Omdat CapitalBox een bedrijf is dat is opgericht naar Zweeds recht, is de verwerking van uw persoonsgegevens onderworpen aan de wetten van Zweden.
+
+
+**3. Verzameling van uw persoonsgegevens**
+
+3.1 CapitalBox verzamelt uw persoonsgegevens op de volgende manieren:
+
+3.1.1 U verstrekt uw persoonsgegevens rechtstreeks aan CapitalBox tijdens het aanvraagproces van de Klant om te solliciteren voor de producten en/of diensten van CapitalBox;
+
+3.1.2 CapitalBox heeft zelf uw persoonsgegevens verzameld tijdens uw eerdere gebruik van CapitalBox-diensten;
+
+3.1.3 CapitalBox verzamelt zelf uw persoonsgegevens uit externe bronnen tijdens het aanvraagproces van de Klant om producten en/of diensten van CapitalBox aan te vragen. Dergelijke externe bronnen omvatten, maar zijn niet beperkt tot, openbare en particuliere registers die CapitalBox gebruikt om de Klant en u te identificeren, uw identiteit te verifiëren en krediet- en risicobeoordelingen uit te voeren. De vereiste persoonsgegevens zijn afhankelijk van de aangevraagde diensten of producten van de Klant (bijv. of u krediet aanvraagt of optreedt als persoonlijke borgsteller);
+
+3.1.4 Uw persoonsgegevens worden aan ons verstrekt door de Klant die de producten en/of diensten van CapitalBox aanvraagt, bijvoorbeeld als u optreedt als persoonlijke borgsteller van de Klant; of als u de uiteindelijke begunstigde eigenaar van de Klant bent, enz.;
+
+3.1.5 Door middel van automatische middelen wanneer u de website van CapitalBox gebruikt. Dergelijke verwerking wordt nader toegelicht in onze Cookieverklaring die beschikbaar is op onze website en die deel uitmaakt van deze principes. De Cookieverklaring is te vinden onderaan onze website en is ook beschikbaar via de Cookie-banner.
+
+3.2 De verzamelde persoonsgegevens zijn noodzakelijk voor de hieronder uitgelegde doeleinden, rekening houdend met de aard van de door CapitalBox aangeboden diensten en producten en de noodzaak om voldoende vast te stellen de identiteit van de Klanten en de gemachtigde vertegenwoordiger(s) van de Klant, hun kredietwaardigheid en betrouwbaarheid.
+
+
+**4. Verwerkte persoonsgegevens**
+
+4.1 Gezien de financiële aard van onze diensten en producten verwerkt CapitalBox persoonsgegevens die zijn verzameld voor de volgende doeleinden:
+
+4.1.1 Het sluiten en uitvoeren van het contract met onze Klant. Dit omvat een juiste identificatie van de Klant en het uitvoeren van krediet- en risicobeoordelingen om te bepalen of en onder welke voorwaarden het contract moet worden gesloten. De rechtsgrond voor deze verwerking is het sluiten en uitvoeren van het contract met de Klant of de gerechtvaardigde belangen van CapitalBox om ervoor te zorgen dat de Klant en de gemachtigde vertegenwoordiger(s) van de Klant betrouwbaar en kredietwaardig zijn, evenals om bedragen te innen die verschuldigd zijn;
+
+4.1.2 Het nakomen van onze verplichtingen die voortvloeien uit de wet (bijv. anti-witwas- en terrorismefinancieringsregels en -regelgeving om de Klant correct te identificeren en de betrouwbaarheid en kredietwaardigheid van de Klant te waarborgen);
+
+4.1.3 Het beschermen van onze rechten (vaststellen, uitoefenen en verdedigen van juridische claims). De rechtsgrond voor deze verwerking is het gerechtvaardigde belang van CapitalBox;
+
+4.1.4 Het beoordelen en verder ontwikkelen van de kwaliteit van onze diensten en producten (bijv. klantenservice en kwaliteitsborgingsdienst). De rechtsgrond voor deze verwerking is het gerechtvaardigde belang van CapitalBox;
+
+4.1.5 Het beoordelen van de kwaliteit van de diensten van onze (potentiële) dienstverleners, zodat wij de kwaliteit van de diensten en producten die wij onze Klanten aanbieden, kunnen evalueren en verder ontwikkelen. De rechtsgrond voor deze verwerking is het gerechtvaardigde belang van CapitalBox en het verder ontwikkelen van de kwaliteit van de klantenservice.
+
+4.2 Voor de bovenstaande doeleinden verwerkt CapitalBox de volgende persoonsgegevens:
+
+4.2.1 Identificatiegegevens (bijv. naam, geboortedatum, geboorteplaats, nationaliteit, gegevens en kopie van ID, gezichts-/ID-herkenning, stem, foto, video, handtekening, adres);
+
+4.2.2 Contactgegevens (bijv. adres, telefoonnummer, e-mailadres, communicatietaal);
+
+4.2.3 Bankgegevens (bijv. bank-ID, banknaam, rekeninghouder, rekeningnummer, transactie-informatie van uw bankrekening als u hiermee hebt ingestemd);
+
+4.2.4 Professionele gegevens (bijv. huidige en voormalige werkgever en functie);
+
+4.2.5 Financiële gegevens (bijv. salaris, inkomen, vermogen, verplichtingen, eigendommen, belastinggegevens);
+
+4.2.6 Gegevens betreffende de herkomst van activa (bijv. gegevens betreffende werkgever, handelspartners, zakelijke activiteiten en feitelijke begunstigden, gegevens die de bron van uw inkomen en vermogen aantonen);
+
+4.2.7 Gegevens betreffende kredietwaardigheid/betrouwbaarheid (bijv. gegevens betreffende betaalgedrag, schade veroorzaakt aan CapitalBox of andere personen, gegevens om de maatregelen van klantidentificatie in verband met de preventie van witwassen en terrorismefinanciering uit te voeren en om te zorgen voor de naleving van internationale sancties, inclusief het doel van de zakelijke relatie en of de Klant of de vertegenwoordiger van de Klant een politiek prominent persoon is);
+
+4.2.8 Gegevens verkregen bij het uitvoeren van een wettelijke verplichting (bijv. informatie ontvangen uit informatieverzoeken van onderzoeksinstanties, notarissen, belastingautoriteiten, rechtbanken en deurwaarders);
+
+4.2.9 Communicatiegegevens (bijv. e-mails, telefoonopnamen);
+
+4.2.10 Inloggegevens voor het CapitalBox-account;
+
+4.2.11 Gegevens met betrekking tot de producten en diensten (bijv. uitvoering van het contract of het niet nakomen ervan, transactiegeschiedenis, ingediende aanvragen, verzoeken en klachten).
+
+4.3 Partners. Samen met onze partners Focum Groep B.V., Creditsafe Nederland B.V. (Graydon), EDR, Company.Info, LexisNexis Risk Solutions, Kamer van Koophandel (KVK) NL verwerken wij uw persoonsgegevens ten behoeve van kredietwaardigheid en compliance. We gebruiken de diensten van onze partners om informatie over uw financiën en achtergrond te verzamelen en te raadplegen ten behoeve van onze kredietrisico- en compliancebeoordeling. Het is onze wettelijke plicht om uw gegevens zo actueel en volledig mogelijk te beoordelen.
+
+4.4 Voordat we een overeenkomst met u sluiten willen wij een beeld vormen van eventuele betalingsrisico's. Zo bepalen wij of we een overeenkomst met u aangaan en welke voorwaarden wij toepassen. We zullen uw gegevens daarvoor ook verstrekken aan Focum. Focum controleert persoonsgegevens en levert kredietinformatierapporten met risicoprofiel. Informatie over de verwerking van persoonsgegevens door Focum kunt u hier lezen in het Privacyverklaring Focum uitgebreid. Daarin staat ook hoe u uw rechten, zoals recht op inzage, bezwaar en wissing kunt uitoefenen.
+
+
+**5. Verwerkingsvereiste**
+
+5.1 De verwerking van uw persoonsgegevens door CapitalBox kan vereist zijn voor wettelijke doeleinden zoals uiteengezet in Clausule 4.1.2. CapitalBox kan uw persoonsgegevens ook nodig hebben voor contractuele doeleinden zoals uiteengezet in Clausule 4.1.1. Indien de rechtsgrond voor de verwerking van uw persoonsgegevens wettelijk of contractueel is, zou het niet verstrekken van uw persoonsgegevens aan CapitalBox in beide scenario's ertoe leiden dat CapitalBox geen relatie met u kan aangaan, en dit kan u verhinderen om gebruik te maken van onze diensten en producten.
+
+
+**6. Verwerking op basis van toestemming**
+
+6.1 CapitalBox verwerkt ook persoonsgegevens op basis van uw toestemming (bijv. voor directe marketingdoeleinden, het voorbereiden en opbouwen van lookalike-doelgroepen, het uitvoeren van marktonderzoek, het opstellen van statistische onderzoeksrapporten en het analyseren van klantgroepen, marktaandelen van producten en diensten en andere financiële indicatoren om de verwachtingen van Klanten beter te begrijpen en de modellen, producten, diensten en processen van CapitalBox te ontwikkelen).
+
+6.2 Wanneer de verwerking gebaseerd is op uw toestemming, kunt u uw toestemming op elk moment intrekken door contact op te nemen met CapitalBox via de contactgegevens die hieronder in Sectie 13 zijn vermeld. Houd er rekening mee dat het intrekken van uw toestemming geen invloed heeft op de rechtmatigheid van de verwerking die gebaseerd is op toestemming voorafgaand aan de intrekking.
+
+6.3 Om uw cookie-gebaseerde voorkeuren te beheren en te wijzigen, zie de Cookieverklaring op onze website die deel uitmaakt van deze principes.
+
+6.4 Wat betreft directe marketingberichten die per e-mail worden ontvangen, kunt u ook uw toestemming intrekken en zich afmelden voor het ontvangen van verdere e-mails door te klikken op de 'afmelden'-link onderaan elke e-mail.
+
+
+**7. Geautomatiseerde besluitvorming en profilering**
+
+7.1 CapitalBox beslist op basis van profilering en geautomatiseerde besluitvorming of de aanvraag van de Klant om onze producten of diensten te ontvangen, volledig of gedeeltelijk wordt geaccepteerd of afgewezen.
+
+7.2 De beslissing wordt genomen op basis van informatie die is ontvangen van de Klant en de gemachtigde vertegenwoordiger(s) van de Klant in de aanvraag, informatie die is ontvangen uit externe bronnen zoals openbare en particuliere registers en andere derden, evenals het eerdere betalingsgedrag van de Klant bij CapitalBox. Er worden geen speciale categorieën persoonsgegevens (zoals gezondheidsgegevens, genetische gegevens) verwerkt.
+
+7.3 Profilering en/of geautomatiseerde besluitvorming is noodzakelijk voor het aangaan van het contract, het voldoen aan de wettelijke verplichtingen van CapitalBox om de Klant correct te identificeren, de kredietwaardigheid van de Klant te beoordelen, fraude te voorkomen en het witwassen van geld te voorkomen. Geautomatiseerde besluitvorming helpt CapitalBox om uw identiteit te verifiëren en of u betrouwbaar en kredietwaardig bent om uw verplichtingen onder het contract na te komen. Geautomatiseerde besluitvorming helpt ons om eerlijke en verantwoorde beslissingen te nemen en de kans op menselijke fouten, discriminatie en machtsmisbruik te verkleinen, evenals om binnen een kortere periode beslissingen te nemen, rekening houdend met het aantal aanvragen dat CapitalBox ontvangt. CapitalBox zal geen lening verstrekken en kan een verstrekte lening aan de Klant annuleren als blijkt dat de Klant betalingsproblemen heeft of onjuiste informatie aan CapitalBox heeft verstrekt.
+
+7.4 Omdat de besluitvorming geautomatiseerd is, komt de Klant mogelijk niet in aanmerking voor onze producten of diensten. We hebben passende maatregelen geïmplementeerd om de rechten en vrijheden van de Klant en legitieme belangen te beschermen, en kunnen verzekeren dat we regelmatig onze geautomatiseerde methoden, bijvoorbeeld kredietscoremethoden, testen om ervoor te zorgen dat ze eerlijk, effectief en onpartijdig blijven. Als u echter een geautomatiseerde beslissing wilt aanvechten of uw standpunt wilt uiten, kunt u contact met ons opnemen via de contactgegevens die hieronder in Sectie 13 zijn vermeld.
+
+7.5 CapitalBox gebruikt profilering naast bovenstaande om op basis van de financiële gezondheid van de Klant bij het gebruik van onze producten en diensten te beslissen of we op eigen initiatief een hoger kredietbedrag of andere diensten en producten aan de bestaande Klant willen aanbieden. We hebben deze verwerking gebaseerd op ons gerechtvaardigde belang om onze diensten en producten te promoten. Als gevolg van de beschreven profilering kunnen sommige Klanten dergelijke aanbiedingen niet ontvangen. Deze profilering heeft echter geen directe juridische gevolgen voor de Klant en heeft geen aanzienlijke invloed op de Klant, aangezien dit geen invloed heeft op het al bestaande contract en de Klant de mogelijkheid heeft om op eigen initiatief een nieuw kredietproduct aan te vragen.
+
+
+**8. Openbaarmaking van persoonsgegevens**
+
+8.1 De financiële aard van de producten en diensten van CapitalBox vereist dat wij uw persoonsgegevens delen om ons dagelijkse bedrijf uit te voeren, transacties te verwerken, klantaccounts te beheren en aan openbare instellingen te rapporteren. We zullen altijd zorgen voor het respecteren van relevante geheimhoudingsverplichtingen in de financiële sector voordat we enige persoonsgegevens delen.
+
+8.2 We delen uw persoonsgegevens alleen met zorgvuldig geselecteerde en vertrouwde partners aan wie CapitalBox diensten wil toevertrouwen of heeft toevertrouwd, en met de derden die functies vervullen die aan hen zijn gedelegeerd door de wet, indien hierin vastgelegd, vereist onder de toepasselijke wetgeving (bijv. wanneer CapitalBox verplicht is om persoonsgegevens te delen met de autoriteiten) of met uw toestemming.
+
+8.3 CapitalBox kan uw persoonsgegevens delen met de volgende partners en derden:
+
+8.3.1 Gemachtigde vertegenwoordigers van de Klant die uw verplichtingen aan CapitalBox garanderen (bijv. borgsteller, garant). De rechtsgrond voor deze voorziening is de gerechtvaardigde belangen van CapitalBox om naleving van het contract te waarborgen;
+
+8.3.2 Klant voor wiens verplichtingen u garant staat. De rechtsgrond voor deze voorziening is de gerechtvaardigde belangen van CapitalBox om naleving van het contract te waarborgen;
+
+8.3.3 Personen die databanken onderhouden van wanbetalingen. De rechtsgrond voor deze uitwisseling is het gerechtvaardigde belang van CapitalBox om de uitvoering van het contract te waarborgen of de wettelijke verplichting om ervoor te zorgen dat de diensten die door CapitalBox worden verleend, geschikt en proportioneel zijn voor de Klant;
+
+8.3.4 Kredietinformatiebureaus die kredietrapporten verstrekken. De rechtsgrond voor deze uitwisseling is onze gerechtvaardigde belangen om de uitvoering van het contract te waarborgen of de wettelijke verplichting om de principes van verantwoord lenen te volgen;
+
+8.3.5 Incassobureaus en deurwaarders. De rechtsgrond voor deze voorziening is de gerechtvaardigde belangen van CapitalBox om de uitvoering van het contract te waarborgen;
+
+8.3.6 Accountants, auditors en toezichthouders van CapitalBox. De rechtsgrond voor deze voorziening wordt gevormd door de wettelijke verplichtingen die op CapitalBox van toepassing zijn;
+
+8.3.7 Andere groepsentiteiten van Multitude. De rechtsgrond voor deze uitwisseling is de gerechtvaardigde belangen van CapitalBox en de Multitude Group om ervoor te zorgen dat het contract wordt uitgevoerd en het gerechtvaardigde belang van de Klant om ervoor te zorgen dat de door CapitalBox geleverde diensten passend en proportioneel zijn;
+
+8.3.8 Samenwerkingspartners van CapitalBox met wie CapitalBox co-branded producten en diensten aanbiedt voor het leveren en promoten van die diensten en producten. De rechtsgrond voor deze uitwisseling is ofwel uw toestemming of ons gerechtvaardigd belang om u die producten en diensten aan te bieden als u onze bestaande Klant bent of onlangs onze producten of diensten hebt gebruikt;
+
+8.3.9 Marketingpartners van CapitalBox. De rechtsgrond voor deze uitwisseling is de gerechtvaardigde belangen van CapitalBox en zijn marketingpartner om de kwaliteit en uitvoering van de marketingcampagne te waarborgen;
+
+8.3.10 Verwerkers van persoonsgegevens en hun subverwerkers, bijv. juridische en andere adviseurs, opslagdienstverleners, telemarketing, marketing- en enquête dienstverleners, communicatie dienstverleners, identificatie- en certificeringsdienstverleners, kaartbeheer dienstverleners, facturerings- en betalingsdienstverleners, krediet- en financiële instellingen, bankgegevens scraping, score- en kredietcontrole dienstverleners, online en offline tussenpersonen, IT-dienstverleners, enz. De rechtsgrond voor deze uitwisseling is ofwel uw toestemming of onze gerechtvaardigde belangen om de continuïteit van ons bedrijf en de voortdurende levering van onze producten en diensten te waarborgen, inclusief de noodzakelijke financiering voor het aanbieden van onze producten en diensten en de terugbetaling van door ons verleende kredietproducten;
+
+8.3.11 Kredietinformatiebureaus die kredietrapporten verstrekken. De rechtsgrond voor deze uitwisseling is onze gerechtvaardigde belangen om de uitvoering van het contract te waarborgen of de wettelijke verplichting om de principes van verantwoord lenen te volgen;
+
+8.3.12 Incassobureaus en deurwaarders. De rechtsgrond voor deze uitwisseling is onze gerechtvaardigde belangen om de uitvoering van het contract te waarborgen;
+
+8.3.13 Andere partners en derden aan wie wij onze rechten en verplichtingen kunnen overdragen, verpanden of overdragen voor zover vereist of toegestaan onder de wetgeving die op CapitalBox van toepassing is of volgens het met u gesloten contract. De rechtsgrond voor deze uitwisseling is ofwel uw toestemming of onze gerechtvaardigde belangen om de continuïteit van ons bedrijf te waarborgen.
+
+
+
+**9. Overdracht van persoonsgegevens buiten de EER**
+
+9.1 CapitalBox draagt persoonsgegevens alleen buiten de Europese Economische Ruimte over wanneer we een wettige basis hebben om dit te doen, dat wil zeggen aan een ontvanger die: (i) zich bevindt in een land dat een passend beschermingsniveau biedt voor persoonsgegevens; of (ii) onder een instrument valt dat voldoet aan de vereisten van de Europese Unie voor de overdracht van persoonsgegevens buiten de Europese Economische Ruimte.
+
+
+**10. Bescherming van persoonsgegevens**
+
+10.1 CapitalBox streeft ernaar om fysieke, technische en procedurele waarborgen te handhaven die geschikt zijn voor de gevoeligheid van de betreffende persoonsgegevens. Deze waarborgen zijn ontworpen om uw persoonsgegevens te beschermen tegen verlies en ongeautoriseerde toegang, kopiëren, gebruik, wijziging of openbaarmaking. Ondanks deze waarborgen, houd er rekening mee dat geen enkele methode van overdracht via internet of gegevensopslag volledig veilig is. Indien wij wettelijk verplicht zijn u te informeren over een inbreuk op uw persoonsgegevens, kunnen wij u elektronisch, schriftelijk of telefonisch op de hoogte stellen.
+
+
+**11. Persoonsgegevens up-to-date houden**
+
+11.1 Wij zetten ons in om de nauwkeurigheid, volledigheid en relevantie van uw persoonsgegevens in ons bezit te behouden. Als zodanig is het een wettelijke verplichting voor ons om uw persoonsgegevens up-to-date te houden in overeenstemming met de gegevensbeschermingsregels.
+
+11.2 U hebt een doorlopende verplichting om ons schriftelijk onmiddellijk te informeren over wijzigingen in uw persoonsgegevens, inclusief maar niet beperkt tot wijzigingen in uw contactgegevens of andere relevante informatie die wij over u hebben. Wij raden u aan ons onmiddellijk op de hoogte te stellen van dergelijke wijzigingen, zodat wij onze dossiers dienovereenkomstig kunnen bijwerken.
+
+11.3 Indien wij niet in staat zijn om contact met u op te nemen via de door u opgegeven contactgegevens, of indien wij vermoeden dat de door u verstrekte persoonsgegevens onjuist of verouderd zijn, zullen wij redelijke stappen ondernemen om uw persoonsgegevens te verifiëren en bij te werken door, indien mogelijk, rechtstreeks contact met u op te nemen via openbare bronnen en/of de desbetreffende derde-diensten die voor ons beschikbaar zijn.
+
+
+**12. Bewaring van gegevens**
+
+12.1 CapitalBox bewaart uw persoonsgegevens in overeenstemming met de richtlijnen van de industrie zolang als nodig is voor de doeleinden waarvoor ze zijn verzameld, of zolang als nodig is om onze rechten te beschermen, of zolang als vereist door toepasselijke wettelijke voorschriften. Houd er rekening mee dat als dezelfde persoonsgegevens voor meerdere doeleinden worden verwerkt, wij de persoonsgegevens zullen bewaren voor de langste toepasselijke bewaartermijn. Voor ons is de maximale toepasselijke periode de verjaringstermijn voor vorderingen die voortvloeien uit transacties, welke tot 10 jaar is vanaf de datum van uw laatste transactie of sluiting van de rekening, afhankelijk van wat later is.
+
+
+**13. Uw rechten**
+
+13.1 Voor zover vereist door toepasselijke gegevensbeschermingsregels hebt u alle rechten van een betrokkene met betrekking tot uw persoonsgegevens. Dit omvat het recht om:
+
+13.1.1 toegang te vragen tot uw persoonsgegevens;
+
+13.1.2 een kopie van uw persoonsgegevens te verkrijgen;
+
+13.1.3 onjuiste of onvolledige persoonsgegevens over u te rectificeren;
+
+13.1.4 uw persoonsgegevens te wissen;
+
+13.1.5 de verwerking van uw persoonsgegevens te beperken
+
+13.1.6 de overdraagbaarheid van uw persoonsgegevens;
+
+13.1.7 bezwaar te maken tegen de verwerking van uw persoonsgegevens die is gebaseerd op uw dwingende bijzondere situatie en die wordt verwerkt voor direct marketingdoeleinden of in vertrouwen op de gerechtvaardigde belangen van CapitalBox of een derde;
+
+13.1.8 uw toestemming in te trekken waar onze verwerking van uw persoonsgegevens is gebaseerd op uw toestemming;
+
+13.1.9 geïnformeerd te worden over de bron waaruit uw persoonsgegevens afkomstig zijn, wanneer de persoonsgegevens die wij over u bewaren niet rechtstreeks door u aan ons zijn verstrekt;
+
+13.1.10 Indien u van mening bent dat uw rechten zijn geschonden, hebt u het recht om een klacht in te dienen bij:
+
+- CapitalBox klantenservice via support@capitalbox.nl; of
+
+- de functionaris voor gegevensbescherming van CapitalBox via support@capitalbox.nl; of
+
+-De Zweedse Gegevensbeschermingsautoriteit met het adres Integritetsskyddsmyndigheten, Box 8114, 104 20 Stockholm, Zweden, telefoonnummer +46 (0)8 657 61 00, via https://e-tjanster.imy.se/en/klagomal; of
+
+- De gegevensbeschermingsautoriteit van uw land.
+
+13.2 Wanneer u toegang vraagt tot of rectificatie of verwijdering van uw persoonsgegevens, houd er dan rekening mee dat wij specifieke informatie van u zullen opvragen om ons in staat te stellen uw identiteit en recht op toegang, rectificatie of verwijdering te bevestigen, evenals om de persoonsgegevens die wij over u hebben te zoeken en aan u te verstrekken.
+
+13.3 Houd er rekening mee dat uw recht op toegang, rectificatie of verwijdering van uw persoonsgegevens die wij over u hebben, niet absoluut is. Er zijn gevallen waarin toepasselijke wetgeving of regelgeving ons toestaat of verplicht om uw verzoek te weigeren. Daarnaast kunnen de persoonsgegevens al vernietigd, gewist of geanonimiseerd zijn in overeenstemming met onze verplichtingen en praktijken op het gebied van gegevensbewaring zoals hierboven beschreven in Sectie 12.
+
+13.4 Als we u geen toegang, rectificatie of verwijdering van uw persoonsgegevens kunnen bieden, zullen we u informeren over de redenen waarom, onder voorbehoud van eventuele wettelijke of regelgevende beperkingen. We kunnen u verzekeren dat we u niet zullen discrimineren voor het uitoefenen van een van uw rechten zoals beschreven in deze Principes.
+
+13.5 Om uw rechten uit te oefenen, kunt u contact opnemen met CapitalBox via de bovenstaande contactgegevens. Houd er rekening mee dat u sommige rechten kunt uitoefenen door in te loggen op uw persoonlijke CapitalBox gebruikersaccount.
+
+
+**14. Wijziging van deze principes**
+
+14.1 Indien onze praktijken op het gebied van de verwerking van persoonsgegevens veranderen of indien het nodig is om deze principes te wijzigen op grond van toepasselijke wetgeving, jurisprudentie of richtlijnen van bevoegde autoriteiten, hebben wij het recht om deze principes op elk moment eenzijdig te wijzigen. Onze meest recente principes zullen altijd worden gepubliceerd op onze website en we raden u aan dit ten minste één keer per maand te controleren.
+
+
+**15. Contact**
+
+15.1 Als u vragen heeft over de verwerking van uw persoonsgegevens door CapitalBox of als u uw rechten als betrokkene wilt uitoefenen, kunt u contact met ons opnemen via de bovenstaande contactgegevens in Sectie 13.
+
+CapitalBox heeft een Functionaris Gegevensbescherming aangesteld, die u ook kunt contacteren voor hetzelfd.
+
+
+
+**CapitalBox´s Principles of Processing its Clients Personal Data (Privacy Policy)**
+
+
+*Latest updated on January 10, 2025*
+
+These principles for Processing the Personal Data of the authorized representative(s) of Clients (hereinafter also **principles**) describe how CapitalBox (hereinafter also **we, us** or **our**) processes Personal Data of the authorized representatives of the Clients and other Data Subjects (hereinafter also **you**) in relation to the services and products we offer. These principles apply if you use, have used, have expressed an intention to use or are in any other way related to our products or services, or in case you have expressed your wish to receive any information about our products or services.
+
+
+**1. Definitions**
+
+**1.1. Authorized representative(s) of the Client** – A natural person representing the legal entity, who expressed an intention to use the products or services offered by CapitalBox or to conclude a guarantee agreement with CapitalBox or expressed a wish to receive information about CapitalBox’s products or services;
+
+**1.2. Client** – legal entity that applies for a loan;
+
+**1.3. Contract** – A contract concluded between CapitalBox and the Client;
+
+**1.4. Data Protection Regulations **– Any applicable laws and regulations regulating the processing of Personal Data, including but not limited to the European Union’s General Data Protection Regulation (hereinafter GDPR);
+
+**1.5. Data Subject **–an identifiable natural person who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person;
+
+**1.6. CapitalBox** – CapitalBox AB, 556695-9655, Linnégatan 22, 114 47 Stockholm, Sweden, phone 020 797 58 25, email support@capitalbox.nl;
+
+**1.7. Multitude Group** – CapitalBox together with companies the majority shareholder of which is directly or indirectly CapitalBox's parent undertaking Multitude AG (Registry Code CHE-455.352.012) (Grafenauweg 8, 6300 Zug, Switzerland);
+
+**1.8. GDPR –** General Data Protection Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC;
+
+**1.9. Personal Data –** Any information relating to an identified or identifiable natural person (Data Subject). Data which is protected by banking secrecy may also include Personal Data;
+
+**1.10. Processing** – Any operation or set of operations which is performed on Personal Data or on sets of Personal Data, whether or not by automated means, such as collection, recording, storing, alteration, granting access to, making enquiries, transfer, viewing, etc.
+
+
+**2. Data Controller**
+
+2.1. CapitalBox is responsible for the Processing of your Personal Data and for those reasons we are the Data Controller under the GDPR.
+
+2.2. As CapitalBox is a company established under the laws of Sweden, then the Processing of your Personal Data shall be governed by the laws of Sweden.
+
+
+**3. Collecting of your Personal Data**
+
+3.1. CapitalBox collects your Personal Data in the following ways:
+
+3.1.1. you provide your Personal Data directly to CapitalBox during the Client’s application process to apply for the CapitalBox products and/or services;
+
+3.1.2. CapitalBox has collected itself your Personal Data in your previous use of CapitalBox services;
+
+3.1.3. CapitalBox collects itself your Personal Data from external sources during the Client’s application process to apply for the CapitalBox products and/or services. Such external sources include but are not limited to public and private registers which CapitalBox uses to identify the Client and you and to verify your identity and perform credit and risk assessments. The Personal Data required depends on the services or products requested by the Client (e.g., whether you are applying for a credit, or acting as a personal guarantor);
+
+3.1.4. your Personal Data is provided to us by the Client requesting the CapitalBox products and/or services, for example if you are acting as a personal guarantor of the Client; or you are the ultimate beneficial owner of the Client, etc.;
+
+3.1.5. By automatic means when you use CapitalBox website. Such Processing is further explained in our Cookie Declaration available at our website, which forms part of these principles. The Cookie Declaration can be found at the footer of our website and is also available through the Cookie banner.
+
+3.2. The Personal Data collected is necessary for the purposes explained below, taking into account the nature of the services and products offered by CapitalBox and the need to sufficiently establish the identity of the Clients and the Client's authorized representatives(s) and their creditworthiness and reliability.
+
+
+**4. Personal Data Processed**
+
+4.1. Considering the financial nature of our services and products, CapitalBox Processes Personal Data collected for the following purposes:
+
+4.1.1. Concluding and performing the Contract with our Client. This includes properly identifying the Client and performing credit and risk checks and assessments on the Client to determine whether and on which conditions to conclude the Contract. The legal basis for such Processing is either entering into and performing the Contract with the Client or CapitalBox´s legitimate interests to ensure the Client and the Client's authorized representatives(s) are trust- and creditworthy as well as to collect amounts due;
+
+4.1.2. Performance of our obligations arising from law (e.g., anti-money laundering and terrorist financing rules and regulations to properly identify the Client and ensure the trust- and creditworthiness of the Client);
+
+4.1.3. Safeguarding our rights (establishing, exercising, and defending legal claims). The legal basis for such Processing is CapitalBox’s legitimate interest;
+
+4.1.4. Assessing and developing further the quality of our services and products (e.g., customer support service and quality assurance service). The legal basis for such processing is the legitimate interest of CapitalBox;
+
+4.1.5. Assessing the quality of our (potential) service providers services which enables us to evaluate and develop further the quality of the services and products we offer to our Clients. The legal basis for such processing is the legitimate interest of CapitalBox and developing the quality of customer service.
+
+4.2. For the foregoing, CapitalBox Processes the following Personal Data:
+
+4.2.1. Identification data (e.g., name, date of birth, place of birth, nationality, data and copy of ID, facial/ID recognition, voice, picture, video, signature, address);
+
+4.2.2. Contact data (e.g., address, phone number, e-mail address, language of communication);
+
+4.2.3. Bank data (e.g., bank ID, bank name, account holder, account number, transaction information from your bank account, if you have consented to this);
+
+4.2.4. Professional data (e.g., current and former employer and position);
+
+4.2.5. Financial data (e.g., salary, income, assets, liabilities, properties, tax data);
+
+4.2.6. Data concerning origin of assets (e.g., data concerning employer, transaction partners, business activities and actual beneficiaries, data showing the source of your income and wealth);
+
+4.2.7. Data concerning creditworthiness/trustworthiness (e.g., data concerning payment behaviour, damages caused to CapitalBox or other persons, data to perform the due diligence measures regarding money laundering and terrorist financing prevention and to ensure the compliance with international sanctions, including the purpose of the business relationship and whether the Client or the Client's representative is a politically exposed person);
+
+4.2.8. Data obtained when performing an obligation arising from the law (e.g., information received from requests for information submitted by investigative bodies, notaries, tax authorities, courts and bailiffs);
+
+4.2.9. Communication data (e.g., e-mails, phone call recordings);
+
+4.2.10. Log-in data for the CapitalBox´s account;
+
+4.2.11. Data related to the products and services (e.g., performance of the Contract or the failure thereof, transactions history, submitted applications, requests and complaints).
+
+4.3 Partners. We together with our partners Focum Groep B.V, Creditsafe Nederland B.V. (Graydon), EDR, Company.Info, LexisNexis Risk Solutions, Kamer van Koophandle (KVK) NL Chamber of commerce shall process your personal data for creditworthiness and compliance purposes. We use our partners services to access and collect information about your finances and background for our credit risk and compliance assessment. It is our legal duty to assess your information that is as up-to-date and complete as possible.
+
+4.4 Before we enter into an agreement with you, we want to form an image of any payment risks. This is how we determine whether we enter into an agreement with you and which conditions we apply. We will also provide your data to Focum for this purpose. Focum checks personal data and provides credit information reports with risk profiles. Information about the processing of personal data by Focum can be read here in the Privacyverklaring Focum uitgebreid. This also states how you can exercise your rights, such as the right to access, object and delete.
+
+
+**5. Processing Requirement **
+
+5.1. The Processing of your Personal Data by CapitalBox may be required for statutory purposes as set out in Clause 4.1.2. CapitalBox may also require your Personal Data for contractual purposes as set out in Clause 4.1.1. Where the lawful basis of Processing your Personal Data is either statutory or a contractual requirement, failure to provide your Personal Data to CapitalBox in either scenario would result in CapitalBox being unable to enter into a relationship with you and this may prevent you from availing yourself of our services and products.
+
+
+**6. Processing based on consent**
+
+6.1. CapitalBox also processes the Personal Data based on your consent (e.g., for direct marketing purposes, preparing and building lookalike audience groups, conducting market research, drawing up statistical research reports and analysing customer groups, market shares of products and services and other financial indicators to better understand Client expectations and to develop CapitalBox's models, products, services and processes).
+
+6.2. When the Processing is based on your consent, you can withdraw your consent at any time by contacting CapitalBox on the contact details provided below in Section 13. Please note that withdrawing your consent does not affect the lawfulness of Processing based on consent before its withdrawal.
+
+6.3. To manage and change your cookie-based preferences, see the Cookie Declaration on our website, which forms part of these principles.
+
+6.4. As for direct marketing messages received by e-mail, you can also withdraw consent and unsubscribe from receiving any further e-mails by clicking on the ‘unsubscribe’ link at the end of each e-mail.
+
+
+**7. Automated decision-making and profiling**
+
+7.1. CapitalBox decides based on profiling and automated decision-making whether the Client’s application to receive our products or services is fully or partially accepted or rejected.
+
+7.2. The decision is made based on information received from the Client and the authorized representative(s) of the Client in the application, information received from external sources, such as public and private registers and other third parties, as well as the previous payment behaviour of the Client at CapitalBox. No special categories of Personal Data (such as health data, genetic data) are processed.
+
+7.3. Profiling and/or automated decision-making are necessary for entering the Contract, to meet CapitalBox's legal obligations to properly identify the Client, for assessing the creditworthiness of the Client, fraud prevention and prevention of money laundering. Automated decision-making helps CapitalBox to verify your identity and whether you are trust- and creditworthy to fulfil your obligations under the Contract. Automated decision-making helps us to make fair and responsible decisions and reduce the potential for human error, discrimination, and abuse of power, as well as enables to deliver decision-making within a shorter period, taking into account the volume of applications received by CapitalBox. CapitalBox will not grant a loan and may cancel a loan granted to the Client if it discovers that the Client has payment problems or has provided CapitalBox with untrue information.
+
+7.4. Because the decision-making is automated, the Client might not be eligible for our products or services. We have implemented suitable measures to safeguard the Client's rights and freedoms and legitimate interests and can assure that we regularly test our automated methods, e.g., credit scoring methods, to ensure they remain fair, effective, and unbiased. However, if you want to contest an automated decision made or express your point of view, please contact us on the contact details provided below in Section 13.
+
+7.5. CapitalBox uses profiling in addition to above to decide based on the Client’s financial soundness in using our products and services whether to offer on our own initiative a higher credit amount or other services and products to the existing Client. We have based such Processing on our legitimate interest to market our services and products. As a result of described profiling, some Clients may not receive such offers. However, such profiling does not directly produce any legal effects on the Client or otherwise significantly affect the Client, as this does not influence the already existing Contract and the Client has the chance to apply for a new credit product on the Client´s own initiative.
+
+
+**8. Disclosing the Personal Data**
+
+8.1. The financial nature of CapitalBox products and services require us to share your Personal Data to run our everyday business to process transactions, maintain customer accounts, and report to public institutions. We will always ensure to respect relevant financial industry secrecy obligations before sharing any Personal Data.
+
+8.2. We only share your Personal Data with those carefully selected and trusted partners to whom CapitalBox wishes to entrust or has entrusted the provision of services and with the third parties performing functions delegated to them by law, if stipulated herein, required under the applicable law (e.g., when CapitalBox is obligated to share Personal Data with the authorities) or with your consent.
+
+8.3. CapitalBox may share your Personal Data with the following partners and third parties:
+
+8.3.1. Authorized representatives of the Client who guarantee your obligations to CapitalBox (e.g., guarantor, surety). The legal basis for this provision is CapitalBox's legitimate interests in ensuring compliance with the Contract;
+
+8.3.2. Client for whose obligations you guarantee. The legal basis for this provision is CapitalBox's legitimate interests in ensuring compliance with the Contract;
+
+8.3.3. Persons who maintain databases of payment defaults. The legal basis for such sharing is the legitimate interest of CapitalBox to ensure the performance of the Contract or the legal obligation to ensure the services provided by CapitalBox would be suitable and proportionate for the Client;
+
+8.3.4. Credit reference agencies who provide credit reports. The legal basis for such sharing is our legitimate interests to ensure the performance of the Contract or the legal obligation to follow the principles of responsible lending;
+
+8.3.5. Debt collection agencies and bailiffs. The legal basis for this provision is CapitalBox's legitimate interests in ensuring the performance of the Contract;
+
+8.3.6. CapitalBox's accountants, auditors and regulators. The legal basis for this provision is formed by the legal obligations that apply to CapitalBox;
+
+8.3.7. Other group entities of Multitude. The legal basis for such sharing is the legitimate interests of CapitalBox and Multitude Group to ensure that the contract is performed and the legitimate interest of the Client to ensure that the services provided by CapitalBox are appropriate and proportionate;
+
+8.3.8. CapitalBox cooperation partners with whom CapitalBox offers co-branded products and services for providing and marketing those services and products. The legal basis for such sharing is either your consent or our legitimate interest to offer you those product and services if you are our existing Client or used recently our products or services;
+
+8.3.9. Marketing partners of CapitalBox. The legal basis for such sharing is the legitimate interests of CapitalBox and its marketing partner to ensure the quality and execution of the marketing campaign;
+
+8.3.10. Personal Data processors and their sub-processors, e.g., legal and other advisors, data storage providers, telemarketing, marketing and surveys service providers, communication service providers, identification and certification service providers, card management service providers, invoicing and payment service providers, credit and financial institutions, bank data scraping, scoring and credit check service providers, online and offline intermediaries, IT service providers, etc. The legal basis for such sharing is either your consent or our legitimate interests to ensure the continuity of our business and the continued provision of our products and services, including the necessary financing for offering our products and services and the return of credit products granted by us;
+
+8.2.11. Credit reference agencies who provide credit reports. The legal basis for such sharing is our legitimate interests to ensure the performance of the Contract or the legal obligation to follow the principles of responsible lending;
+
+8.3.12. Debt collection agencies and bailiffs. The legal basis for such sharing is our legitimate interests to ensure the performance of the Contract;
+
+8.3.13. Other partners and third parties to which we may assign, pledge, or transfer our rights and obligations to the extent required or allowed under the legislation applicable to CapitalBox or according to the contract concluded with you. The legal basis for such sharing is either your consent or our legitimate interests of ensuring the continuity of our business.
+
+
+**9. Transferring Personal Data outside the EEA**
+
+9.1. CapitalBox transfers Personal Data outside of the European Economic Area only where we have a lawful basis to do so, i.e., to a recipient who is: (i) in a country which provides an adequate level of protection for Personal Data; or (ii) under an instrument which covers the European Union requirements for the transfer of Personal Data outside the European Economic Area.
+
+
+**10. Protection of Personal Data**
+
+10.1. CapitalBox endeavours to maintain physical, technical, and procedural safeguards appropriate to the sensitivity of the Personal Data in question. These safeguards are designed to protect your Personal Data from loss and unauthorized access, copying, use, modification, or disclosure. Despite these safeguards, please note that no method of transmission over the internet or data storage is fully secure. Should we be required by law to inform you of a breach to your Personal Data we may notify you electronically, in writing, or by phone.
+
+
+**11. Keeping Personal Data Up to Date**
+
+11.1. We are committed to maintaining the accuracy, completeness, and relevance of your Personal Data in our possession. As such, it is a legal obligation for us to keep your Personal Data up to date in accordance with the Data Protection Regulations.
+
+11.2. You have an ongoing obligation to promptly inform us in writing of any changes to your Personal Data, including but not limited to changes in your contact information or any other relevant information we hold about you. We encourage you to notify us immediately of any such changes so that we can update our records accordingly.
+
+11.3. In the event that we are unable to contact you using the contact information provided by you, or if we suspect that the personal data provided by you is inaccurate or outdated, we will take reasonable steps to verify and update your personal data by contacting, if possible, you directly, by using publicly available sources and/or respective third-party services available to us.
+
+
+**12. Retention of data**
+
+12.1. CapitalBox retains your Personal Data in accordance with industry guidelines for as long as necessary for the purposes for which they were collected, or for as long as necessary to safeguard our rights, or for as long as required by applicable legal acts. Kindly note that if the same Personal Data is Processed for several purposes, we will retain the Personal Data for the longest retention period applicable. For us, the maximum period applicable is the limitation period for claims arising from transactions, which is up to 10 years from the date of your last transaction or closure of the account, whichever is the latest.
+
+
+**13. Your Rights**
+
+13.1. To the extent required by applicable Data Protection Regulations, you have all the rights of a Data Subject regarding your Personal Data. This includes the right to:
+
+13.1.1. request access to your Personal Data;
+
+13.1.2. obtain a copy of your Personal Data;
+
+13.1.3. rectify incorrect or incomplete Personal Data relating to you;
+
+13.1.4. erase your Personal Data;
+
+13.1.5. restrict the Processing of your Personal Data;
+
+13.1.6. portability of your Personal Data;
+
+13.1.7. object to Processing of your Personal Data which is based on your overriding particular situation and which is Processed for direct marketing purposes or in reliance on CapitalBox´s or a third party’s, legitimate interest;
+
+13.1.8. withdraw your consent where our Processing of your Personal Data is based on your consent;
+
+13.1.9. be informed of the source from which your Personal Data originates where the Personal Data we hold about you was not provided to us directly by you;
+
+13.1.10. Should you believe that your rights have been violated, you have the right to lodge a complaint with:
+
+- CapitalBox customer service at support@capitalbox.nl; or
+
+- CapitalBox's data protection officer at support@capitalbox.nl; or
+
+- The Swedish Data Protection Authority with the address Integritetsskyddsmyndigheten, Box 8114, 104 20 Stockholm, Sweden, phone number +46 (0)8 657 61 00 at https://e-tjanster.imy.se/en/klagomal; or
+
+- Data Protection Supervisory Authority of your country.
+
+13.2. When requesting access to, or rectification or deletion of your Personal Data, please note that we shall request specific information from you to enable us to confirm your identity and right to access, rectify or delete, as well as to search for and provide you with the Personal Data that we hold about you.
+
+13.3. Kindly note that your right to access, rectify, or delete your Personal Data we hold about you is not absolute. There are instances where applicable law or regulatory requirements allow or require us to refuse your request. In addition, the Personal Data may have already been destroyed, erased, or made anonymous in accordance with our record retention obligations and practices as described above in Section 12.
+
+13.4. If we cannot provide you with access to, or rectification or deletion of your Personal Data, we will inform you of the reasons why, subject to any legal or regulatory restrictions. We can assure you we will not discriminate you for exercising any of your rights described in these Principles.
+
+13.5.To exercise your rights, please contact CapitalBox on the contact details above. Please note that you can exercise some rights by logging into your CapitalBox personal user account.
+
+
+**14. Amending these principles**
+
+14.1. Should our Personal Data Processing practices change or there shall be a need to amend these principles under the applicable law, case-law or guidelines issued by competent authorities, we are entitled to unilaterally amend these principles at any time. Our most recent principles will always be published on our website, and we urge you to check this at least once a month.
+
+
+**15. Contact**
+
+15.1. If you have any questions about the Processing of your Personal Data by CapitalBox or would like to exercise your rights as a Data Subject, you can contact us using the contact details above in Section 13.
+
+15.2. CapitalBox appointed a Data Protection Officer whom you also may contact regarding the same on the contact details provided above in Section 13.

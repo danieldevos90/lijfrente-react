@@ -1,0 +1,98 @@
+---
+title: Wat is Customer Lifetime Value en waarom meet je het
+url: http://www.capitalbox.nl/blog/wat-customer-lifetime-value-en-waarom-meet-je-het
+hostname: capitalbox.nl
+description: Ontdek wat de waarde van je klant is en maak per klantsegment inzichtelijk wat ze in hun totale klantperiode aan omzet zullen bijdragen.
+sitename: CapitalBox
+date: 2022-08-16
+---
+# Wat is Customer Lifetime Value en waarom meet je het
+
+Wanneer je, jouw return on investment (ROI) meet dan ben heb je als bedrijf al een goede stap gezet. Maar stel dat je door middel van een marketingbudget nog effectiever je klanten kunt benaderen en ze op lange termijn aan je kunt weten te binden. Door middel van Customer Lifetime Value kun je de waarde van je klant bepalen. Hiermee kun je vaststellen wat je kunt uitgeven om klanten te werven op lange termijn en houd je rekening met herhaalaankopen.
+
+
+**Waarom is Consumer Lifetime Value belangrijk?**
+
+Consumer Lifetime Value (CLV, ook bekend als CLTV) wordt meestal gedefinieerd als het nettobedrag dat een klant bijdraagt gedurende zijn totale periode als klant. Kortom; de omzet die een klant genereert vanaf de eerste tot de laatste aankoop.
+
+Als je de klanten enkel beoordeelt op het bedrag dat zij op korte termijn besteden, zal dit je slechts een beperkt inzicht geven. Het is goed om ook de toekomstige waarde van de klanten inzichtelijk te krijgen zodat je de juiste investeringen kunt doen om de klant op lange termijn aan je te binden.
+
+Zodra je weet wat de waarde is, kun je deze gaan verbeteren. Je kunt investeren in het maken en implementeren van strategieën voor het behoud van klanten. Dit kan met behulp van email marketing, social media, en andere kanalen, afhankelijk van de branche waarin jouw bedrijf actief is.
+
+Natuurlijk wil je nog steeds nieuwe klanten weren, maar de terugkerende klanten mogen niet vergeten worden.
+
+
+**Niet alle klanten zijn hetzelfde **
+
+Als je ervan uitgaat dat alle klanten hetzelfde kosten om te acquireren, gemiddeld hetzelfde uitgeven en hetzelfde aantal terugkerende aankopen doen, zal dit leiden tot twijfelachtige beslissingen.
+
+Het is misschien eerlijk om aan te nemen dat de meeste klanten ergens in het midden zullen vallen, wat betekent dat ze enigszins actieve en winstgevende klanten zijn. Ongeveer 20% van het totale klantenbestand wordt inactief en 20% blijft zeer actief.
+
+De zeer actieve en vaak tevreden klanten zijn je ambassadeurs. Zij zijn fan van jouw merk of bedrijf en promoten het “gratis” omdat ze het een goed merk vinden.
+
+
+**Hoe wordt CLV berekend?**
+
+Er zijn heel wat manieren waarop bedrijven CLV kunnen berekenen. De keuze is afhankelijk van jouw resources en zakelijke behoeftes. Je kunt een CLV berekenen op basis van historische aankopen of met behulp van een voorspellende methode. Je voorspelt hiermee wat jouw klanten zullen gaan uitgeven.
+
+Ongeacht de gebruikte methode heb je een gemiddelde winstmarge voor een aankoop nodig, je dient te weten wat het kost om een klant te verwerven en wat de duur van de relatie met jouw klanten is.
+
+De manier waarop je de CLV berekent verschilt ook per bedrijfsmodel. Het zal gemakkelijker zijn om het te berekenen als je als ondernemer werkt met een abonnementsmodel, dan wanneer je een e-commerce bedrijf hebt. Het is gemakkelijk om voor een abonnementsmodel de verkoop te voorspellen.
+
+1. De eenvoudigste formule voor het berekenen van CLV zou zijn:
+
+*Consumer Lifetime Value = Omzet van de klant – De kosten voor het werven en bedienen van die klant*
+
+2. Als data geen probleem is dan werkt het berekenen van CLV op basis van historische gegevens mogelijk het beste. Hiervoor kun je de volgende formule gebruiken:
+
+*Consumer Lifetime Value = Totale waarde van elke transactie * Gemiddelde brutomarge*
+
+3. Als u ervoor kiest om de voorspellende benadering te gebruiken, zul je meer in detail moeten treden. Hiervoor heb je nodig:
+
+- Gemiddelde maandelijkse transacties
+- Gemiddeld uitgegeven bedrag per transactie
+- Gemiddeld aantal maanden dat uw klanten trouw blijven
+- Gemiddelde brutomarge
+
+*Customer Lifetime Value = Gemiddelde maandelijkse transacties * Gemiddelde orderwaarde * Gemiddelde levensduur van de klant * Gemiddelde brutomarge*
+
+
+**Manieren om de Customer Lifetime Value te verhogen**
+
+Afhankelijk van uw bedrijfsmodel hier zijn de meest voorkomende strategieën die je zou kunnen gebruiken om jouw Customer Lifeime value te verhogen:
+
+
+**Segmenteer de e-mail en sms-bestanden**
+
+Of je nu met jouw klanten praat via e-mail, sms - of beide – zorg ervoor dat je segmenteert op basis van waar ze zich bevinden in de verkooptrechter en op basis van hun interesses. Maak het bericht relevant voor hun behoefte, zodat jouw kans om daadwerkelijk met hen in contact te komen vergroot. Ook de inhoud zal moeten worden aangepast op basis van waar klanten zich in hun customer journey bevinden.
+
+Een andere goede manier om CLV te verhogen is om te segmenteren op basis van terugkerende klanten. Weten wie deze klanten zijn geeft je de mogelijkheid om met ze in contact te komen en ze op lange termijn herhaaldelijk terug te laten komen.
+
+Zodra je de klantbestanden hebt gesegmenteerd, kan een volgende stap zijn om een automatiseringscampagne op te zetten waarmee je zowel potentiële als bestaande klanten voorziet van informatie en nieuws. Houd er rekening mee dat je niet te veel berichten verzendt. Voer hiervoor A/B-tests (twee of meerdere varianten) uit om het juiste aantal e-mails te vinden waarbij jouw klanten zich prettig voelen en jij een relatie met ze kan opbouwen.
+
+
+**Creëer services of producten die een aanvulling vormen op het bestaande aanbod**
+
+Jouw aanbod is afhankelijk van verschillende factoren. Dit is gebaseerd op de behoefte in de markt en hoe waarschijnlijk de klanten terugkomen om meer producten te kopen. Bijvoorbeeld, iemand die kleding verkoopt zal waarschijnlijk meer producten verkopen dan iemand die apparaten verkoopt. Mensen hebben immers vaker kleding nodig dan nieuwe apparaten.
+
+Echter, je kunt producten of diensten leveren die jouw bestaande aanbod aanvullen om daarmee de verkoop aan te moedigen. Denk na over welke producten jouw huidige aanbod perfect zouden aanvullen. Heb je geen idee? Vraag het aan de klanten!
+
+Als mensen herhaaldelijk jouw product kopen dan kunnen jouw inspanningen wellicht beter worden besteed om jouw product ook aan te bevelen als een potentieel geschenk of bij de uitvoering van een verwijzingsprogramma waar jouw klanten van kunnen profiteren.
+
+
+**Bied een loyaliteitsprogramma aan**
+
+Een andere goede manier om CLV te verhogen is het starten van een loyaliteitsprogramma. Het toestaan van klanten om geld te besparen voor een latere aankoop door het belonen van de huidige aankopen. Dit kan een goede motivator zijn voor klanten om terug te komen naar uw winkel.
+
+
+**Check-in bij je klanten**
+
+Een andere goede manier om de Customer Lifetime value te verhogen is om inactieve klanten een mail te sturen. Inactieve klanten hebben in het verleden bij je gekocht, maar zijn gedurende een langere periode niet actief geweest.
+
+Een e-mail die terloops vraagt hoe het met ze gaat en of ze nog geïnteresseerd zijn in jouw producten, kan een goede manier zijn om ze weer te activeren. Je kunt deze gelegenheid ook gebruiken om hen te vragen of ze uw e-mails nog steeds willen ontvangen, waardoor jouw emailbestanden schoon blijven met klanten die geïnteresseerd zijn. Door het geven van de opt-out optie geef je ze ook geen reden om de mail direct in de ‘spam box’ te plaatsen.
+
+Klanten die die jouw e-mails willen blijven ontvangen kun je eraan herinneren hoe graag ze jouw producten of diensten willen zodat ze terug kerenDit verlengt de customer lifetime van jouw klant.
+
+CLV is belangrijker dan je denkt. Het beïnvloedt de tarieven voor klantenbinding, onthult het niveau van de merkloyaliteit van de klant en helpt uw bedrijf winstgevend te blijven.
+
+Als je niet probeert om actief de levensduur van de klant te verbeteren of te verlengen is het nu tijd om te beginnen! Hoe meer moeite je hiervoor doet, hoe meer inkomsten je genereert.

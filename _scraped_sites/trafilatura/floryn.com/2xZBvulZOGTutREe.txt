@@ -1,0 +1,10 @@
+---
+title: Hoe geef ik Floryn toegang?
+url: https://www.floryn.com/kennisbank/hoe-geef-ik-floryn-toegang
+hostname: floryn.com
+description: Als je een kredietaanvraag doet via onze website kun je inloggen via internetbankieren. Eenmaal ingelogd kun je Floryn toegang geven tot je betaalgegevens. Dit werkt net zo eenvoudig als betalen via i
+sitename: floryn.com
+---
+Als je een kredietaanvraag doet via onze website kun je inloggen via internetbankieren. Eenmaal ingelogd kun je Floryn toegang geven tot je betaalgegevens. Dit werkt net zo eenvoudig als betalen via iDeal.
+
+Als je een kredietaanvraag doet via onze website kun je inloggen via internetbankieren. Eenmaal ingelogd kun je Floryn toegang geven tot je betaalgegevens. Dit werkt net zo eenvoudig als betalen via iDeal.
