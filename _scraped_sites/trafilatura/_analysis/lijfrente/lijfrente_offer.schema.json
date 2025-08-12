@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LijfrenteIndicativeOfferInput",
+  "type": "object",
+  "required": [
+    "age",
+    "sex",
+    "principal_amount_eur",
+    "start_date",
+    "payout_frequency"
+  ],
+  "properties": {
+    "age": { "type": "integer", "minimum": 18, "maximum": 99 },
+    "sex": { "type": "string", "enum": ["M", "F", "X"] },
+    "principal_amount_eur": { "type": "number", "minimum": 1000 },
+    "start_date": { "type": "string", "format": "date" },
+    "payout_frequency": { "type": "string", "enum": ["monthly", "quarterly", "yearly"] },
+    "product_type": { "type": "string", "enum": ["immediate", "deferred"], "default": "immediate" },
+    "guarantee_period_years": { "type": "integer", "minimum": 0, "maximum": 30 },
+    "survivor_benefit_percent": { "type": "number", "minimum": 0, "maximum": 100 },
+    "tax_bracket_percent": { "type": "number", "minimum": 0, "maximum": 60 },
+    "postcode": { "type": "string", "pattern": "^[0-9]{4}[A-Za-z]{2}$" },
+    "country": { "type": "string", "default": "NL" },
+    "consents": {
+      "type": "object",
+      "required": ["data_processing"],
+      "properties": {
+        "data_processing": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+
+
