@@ -59,16 +59,23 @@ export default async function SiteLayout({
     <div style={style as any}>
       {nav?.length > 0 && (
         <div className="row" style={{ justifyContent: 'flex-start', gap: '8px' }}>
-          {nav.map((n: any) => {
-            const label = n.label || n.attributes?.label || '';
-            const hrefRaw = n.href || n.attributes?.href || '#';
-            const href = label.toLowerCase() === 'home' ? `/sites/${params.siteId}/home` : hrefRaw;
-            return (
-              <a key={n.id} className="btn" href={href}>
-                {label}
-              </a>
-            );
-          })}
+          {nav
+            .filter((n: any) => {
+              const label = (n.label || n.attributes?.label || '').toLowerCase();
+              const href = (n.href || n.attributes?.href || '').toLowerCase();
+              return label !== 'btw' && !href.startsWith('/btw');
+            })
+            .map((n: any) => {
+              const label = n.label || n.attributes?.label || '';
+              const hrefRaw = n.href || n.attributes?.href || '#';
+              const href = label.toLowerCase() === 'home' ? `/sites/${params.siteId}/home` : hrefRaw;
+              return (
+                <a key={n.id} className="btn" href={href}>
+                  {label}
+                </a>
+              );
+            })}
+          <a className="btn btn-primary" href={`/sites/${params.siteId}/lijfrente`}>Lijfrente offerte</a>
         </div>
       )}
       {children}

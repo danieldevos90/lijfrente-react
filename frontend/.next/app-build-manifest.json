@@ -1,0 +1,70 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-1c76a82e09875507.js",
+      "static/chunks/fd9d1056-86a7a8de46c326ec.js",
+      "static/chunks/23-a60378231116fdef.js",
+      "static/chunks/main-app-00ed8c881300f5d1.js",
+      "static/chunks/app/_not-found/page-edad00f5e78d85ff.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-1c76a82e09875507.js",
+      "static/chunks/fd9d1056-86a7a8de46c326ec.js",
+      "static/chunks/23-a60378231116fdef.js",
+      "static/chunks/main-app-00ed8c881300f5d1.js",
+      "static/css/bba1240ab45a22fe.css",
+      "static/chunks/app/layout-c836c9f5c102b250.js"
+    ],
+    "/lead/page": [
+      "static/chunks/webpack-1c76a82e09875507.js",
+      "static/chunks/fd9d1056-86a7a8de46c326ec.js",
+      "static/chunks/23-a60378231116fdef.js",
+      "static/chunks/main-app-00ed8c881300f5d1.js",
+      "static/chunks/772-7cf5cbb99bb72e66.js",
+      "static/chunks/app/lead/page-972e2ccbb6b1f099.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-1c76a82e09875507.js",
+      "static/chunks/fd9d1056-86a7a8de46c326ec.js",
+      "static/chunks/23-a60378231116fdef.js",
+      "static/chunks/main-app-00ed8c881300f5d1.js",
+      "static/chunks/app/page-11ca4a48267ce2d8.js"
+    ],
+    "/sites/[siteId]/[slug]/page": [
+      "static/chunks/webpack-1c76a82e09875507.js",
+      "static/chunks/fd9d1056-86a7a8de46c326ec.js",
+      "static/chunks/23-a60378231116fdef.js",
+      "static/chunks/main-app-00ed8c881300f5d1.js",
+      "static/chunks/app/sites/[siteId]/[slug]/page-85d2e6d54a009a70.js"
+    ],
+    "/sites/[siteId]/layout": [
+      "static/chunks/webpack-1c76a82e09875507.js",
+      "static/chunks/fd9d1056-86a7a8de46c326ec.js",
+      "static/chunks/23-a60378231116fdef.js",
+      "static/chunks/main-app-00ed8c881300f5d1.js",
+      "static/chunks/app/sites/[siteId]/layout-93d18a357a11c502.js"
+    ],
+    "/sites/[siteId]/lijfrente/page": [
+      "static/chunks/webpack-1c76a82e09875507.js",
+      "static/chunks/fd9d1056-86a7a8de46c326ec.js",
+      "static/chunks/23-a60378231116fdef.js",
+      "static/chunks/main-app-00ed8c881300f5d1.js",
+      "static/chunks/app/sites/[siteId]/lijfrente/page-8956e445ca49b2db.js"
+    ],
+    "/sites/[siteId]/page": [
+      "static/chunks/webpack-1c76a82e09875507.js",
+      "static/chunks/fd9d1056-86a7a8de46c326ec.js",
+      "static/chunks/23-a60378231116fdef.js",
+      "static/chunks/main-app-00ed8c881300f5d1.js",
+      "static/chunks/app/sites/[siteId]/page-add75d75016ecc34.js"
+    ],
+    "/sites/[siteId]/lead/page": [
+      "static/chunks/webpack-1c76a82e09875507.js",
+      "static/chunks/fd9d1056-86a7a8de46c326ec.js",
+      "static/chunks/23-a60378231116fdef.js",
+      "static/chunks/main-app-00ed8c881300f5d1.js",
+      "static/chunks/772-7cf5cbb99bb72e66.js",
+      "static/chunks/app/sites/[siteId]/lead/page-afbbd7b9a591512b.js"
+    ]
+  }
+}

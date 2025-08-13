@@ -67,6 +67,14 @@ export default function LeadForm({ siteId }: { siteId: string }) {
 
   const defaultValues = useMemo(() => ({ siteId }), [siteId]);
 
+  // Prefill from query (support hand-off from lijfrente step)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const url = new URL(window.location.href);
+    const amountQ = url.searchParams.get('amount');
+    if (amountQ) setAmount(String(amountQ));
+  }, []);
+
   // Debounced KvK search
   useEffect(() => {
     const controller = new AbortController();
@@ -131,6 +139,12 @@ export default function LeadForm({ siteId }: { siteId: string }) {
         });
       }
       if (!okRes) throw new Error("Submit failed");
+      try {
+        const json = await res.json().catch(() => ({}));
+        if (typeof window !== 'undefined') {
+          (window as any).dataLayer.push({ event: 'lead_created', id_present: Boolean(json?.id || json?.data?.id) });
+        }
+      } catch {}
       setOk("Bedankt! We sturen je aanbod spoedig.");
     } catch (e: any) {
       if (e?.issues) {
@@ -140,6 +154,11 @@ export default function LeadForm({ siteId }: { siteId: string }) {
           map[key] = issue.message;
         }
         setErrors(map);
+        if (typeof window !== 'undefined') {
+          for (const issue of e.issues) {
+            (window as any).dataLayer.push({ event: 'form_field_error', field: issue.path?.[0] || 'form', error_code: 'invalid' });
+          }
+        }
       } else {
         setErrors({ form: "Verzenden mislukt, probeer opnieuw." });
       }

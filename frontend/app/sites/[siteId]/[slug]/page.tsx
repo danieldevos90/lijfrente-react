@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import dynamic from 'next/dynamic';
+const StickyCTA = dynamic(() => import('../../../../components/StickyCTA'), { ssr: false });
 
 async function fetchPage(siteId: string, slug: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
@@ -12,10 +14,62 @@ async function fetchPage(siteId: string, slug: string) {
   return Array.isArray(json?.data) ? json.data[0] : null;
 }
 
+async function fetchPages(siteId: string) {
+  const base = process.env.NEXT_PUBLIC_STRAPI_URL;
+  const token = process.env.STRAPI_TOKEN;
+  if (!base) return [] as any[];
+  const res = await fetch(`${base}/api/pages?filters[siteId][$eq]=${encodeURIComponent(siteId)}&sort=title:asc&pagination[pageSize]=100`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+    next: { revalidate: 60 },
+  });
+  const json = await res.json().catch(() => ({ data: [] }));
+  const items = Array.isArray(json?.data) ? json.data : [];
+  return items.filter((p: any) => typeof p?.slug === 'string' ? !p.slug.toLowerCase().startsWith('btw') : true);
+}
+
 export default async function Page({ params }: { params: { siteId: string, slug: string } }) {
-  const page = await fetchPage(params.siteId, params.slug);
+  const [page, all] = await Promise.all([
+    fetchPage(params.siteId, params.slug),
+    fetchPages(params.siteId),
+  ]);
   if (!page) return notFound();
   const a = page || {};
+  const kw = (String(a.title || '') + ' ' + String(a.body || ''))
+    .toLowerCase();
+  // Sitemap-driven mapping: prefer items whose path appears in our sitemap data (excluding BTW)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/app/data/sitemap.md`).catch(() => null);
+  const smText = await response?.text().catch(() => '') || '';
+  const sitemapPaths = smText.split('\n')
+    .map(l => (l.match(/`([^`]+)`/)?.[1] || '').trim())
+    .filter(p => p && !p.startsWith('/btw'));
+  const curatedSlugs = new Set([
+    'wat-is-lijfrente',
+    'lijfrente-berekenen',
+    'direct-ingaande-lijfrente',
+    'lijfrente-voor-dga',
+    'veelgestelde-vragen',
+  ]);
+
+  const related = all
+    .filter((p: any) => p.slug !== a.slug)
+    .filter((p: any) => curatedSlugs.has((p.slug || '').toLowerCase()))
+    .map((p: any) => {
+      const text = (String(p.title || '') + ' ' + String(p.body || '')).toLowerCase();
+      let score = 0;
+      for (const token of ['lijfrente','pensioen','rente','uitkering','annuiteit']) {
+        if (text.includes(token)) score += 2;
+        if (kw.includes(token)) score += 1;
+      }
+      // sitemap path preference
+      const inSitemap = sitemapPaths.some(pth => pth.endsWith(`/${p.slug}`));
+      if (inSitemap) score += 3;
+      return { p, score };
+    })
+    .filter(x => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(x => x.p);
+
   return (
     <section>
       <h1>{a.title}</h1>
@@ -29,9 +83,20 @@ export default async function Page({ params }: { params: { siteId: string, slug:
         </div>
       )}
       <div className="row" style={{ marginTop: 24 }}>
-        <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Bereken aanbod</a>
+        <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Vraag financiering aan</a>
         <a className="btn" href={`/sites/${params.siteId}`}>Terug</a>
       </div>
+      {related?.length > 0 && (
+        <div style={{ marginTop: 24 }}>
+          <h3 style={{ marginTop: 0 }}>Verder lezen</h3>
+          <ul>
+            {related.map((r: any) => (
+              <li key={r.id}><a className="link" href={`/sites/${params.siteId}/${r.slug}`}>{r.title}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" />
     </section>
   );
 }

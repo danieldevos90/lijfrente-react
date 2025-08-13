@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import dynamic from 'next/dynamic';
+const StickyCTA = dynamic(() => import('../../../components/StickyCTA'), { ssr: false });
 
 async function fetchSite(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
@@ -22,7 +24,9 @@ async function fetchPages(siteId: string) {
     next: { revalidate: 60 },
   });
   const json = await res.json().catch(() => ({ data: [] }));
-  return Array.isArray(json?.data) ? json.data : [];
+  const pages = Array.isArray(json?.data) ? json.data : [];
+  // Filter out non-lijfrente hubs like BTW to keep focus
+  return pages.filter((p: any) => typeof p?.slug === 'string' ? !p.slug.toLowerCase().startsWith('btw') : true);
 }
 
 async function fetchNav(siteId: string) {
@@ -52,7 +56,10 @@ async function fetchHome(siteId: string) {
 export default async function SitePage({ params }: { params: { siteId: string } }) {
   const data = await fetchSite(params.siteId);
   if (!data) return notFound();
-  const pages = await fetchPages(params.siteId);
+  const pages = (await fetchPages(params.siteId)).filter((p: any) => (
+    ['zakelijke-financiering','corporate-financing','small-business-financing','werkkapitaal','veelgestelde-vragen']
+      .includes((p.slug || '').toLowerCase())
+  ));
   const nav = await fetchNav(params.siteId);
   const home = await fetchHome(params.siteId);
 
@@ -72,7 +79,7 @@ export default async function SitePage({ params }: { params: { siteId: string } 
           <h2 style={{ marginTop: 0 }}>{home.title}</h2>
           <p className="muted" style={{ whiteSpace: 'pre-wrap' }}>{home.body}</p>
           <div className="row" style={{ marginTop: 12 }}>
-            <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Bereken aanbod</a>
+            <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Vraag financiering aan</a>
             <a className="btn" href={`/sites/${params.siteId}/home`}>Lees verder</a>
           </div>
         </div>
@@ -80,13 +87,19 @@ export default async function SitePage({ params }: { params: { siteId: string } 
 
       {nav?.length > 0 && (
         <div className="row" style={{ flexWrap: 'wrap' }}>
-          {nav.map((n: any) => {
-            const href = n.href || '#';
-            const label = n.label || '';
-            // Force "Home" to point at /sites/[siteId]/home
-            const finalHref = label.toLowerCase() === 'home' ? `/sites/${params.siteId}/home` : href;
-            return <a key={n.id} className="btn" href={finalHref}>{label}</a>;
-          })}
+          {nav
+            .filter((n: any) => {
+              const label = (n.label || '').toLowerCase();
+              const href = (n.href || '').toLowerCase();
+              return label !== 'btw' && !href.startsWith('/btw');
+            })
+            .map((n: any) => {
+              const href = n.href || '#';
+              const label = n.label || '';
+              const finalHref = label.toLowerCase() === 'home' ? `/sites/${params.siteId}/home` : href;
+              return <a key={n.id} className="btn" href={finalHref}>{label}</a>;
+            })}
+          <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Aanvragen</a>
         </div>
       )}
 
@@ -100,9 +113,9 @@ export default async function SitePage({ params }: { params: { siteId: string } 
       </ul>
 
       <div className="row" style={{ marginTop: 24 }}>
-        <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Bereken aanbod</a>
-        <a className="btn" href="/">Terug</a>
+        <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Vraag financiering aan</a>
       </div>
+      <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" />
     </section>
   );
 }
