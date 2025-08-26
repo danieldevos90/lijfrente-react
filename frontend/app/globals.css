@@ -508,3 +508,42 @@ input:focus, select:focus {
   font-weight: bold;
   margin-right: 0.5rem;
 }
+
+/* Homepage Styles */
+.homepage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin: 0 0 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin: 0 0 2rem;
+  color: var(--color-muted);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-section {
+  margin-top: 2rem;
+}
+
+.cta-section .btn {
+  font-size: 18px;
+  padding: 16px 32px;
+}
