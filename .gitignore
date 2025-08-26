@@ -23,6 +23,12 @@ google-ads.yaml.*
 .env
 .env.*
 
+# Node.js
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/.vercel/
+
 # Misc
 .cache/
 .ipynb_checkpoints/
