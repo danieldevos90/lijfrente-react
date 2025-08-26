@@ -57,28 +57,25 @@ export default async function SiteLayout({
 
   return (
     <div style={style as any}>
-      {nav?.length > 0 && (
-        <div className="row" style={{ justifyContent: 'flex-start', gap: '8px' }}>
-          {nav
-            .filter((n: any) => {
-              const label = (n.label || n.attributes?.label || '').toLowerCase();
-              const href = (n.href || n.attributes?.href || '').toLowerCase();
-              return label !== 'btw' && !href.startsWith('/btw');
-            })
-            .map((n: any) => {
-              const label = n.label || n.attributes?.label || '';
-              const hrefRaw = n.href || n.attributes?.href || '#';
-              const href = label.toLowerCase() === 'home' ? `/sites/${params.siteId}/home` : hrefRaw;
-              return (
-                <a key={n.id} className="btn" href={href}>
-                  {label}
-                </a>
-              );
-            })}
-          <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Aanvragen</a>
+      <header className="site-header">
+        <div className="container">
+          <div className="brand">Zakelijk Lening Project</div>
+          <nav className="nav">
+            <a className="link" href={`/sites/${params.siteId}`}>Home</a>
+            <a className="link" href={`/sites/${params.siteId}/zakelijke-financiering`}>Zakelijke Financiering</a>
+            <a className="link" href={`/sites/${params.siteId}/werkkapitaal`}>Werkkapitaal</a>
+            <a className="link" href={`/sites/${params.siteId}/veelgestelde-vragen`}>FAQ</a>
+            <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Offerte Aanvragen</a>
+          </nav>
         </div>
-      )}
+      </header>
       {children}
+      <footer className="site-footer">
+        <div className="container">
+          <div>© 2025 Zakelijk Lening Project</div>
+          <div>Betrouwbare zakelijke financiering</div>
+        </div>
+      </footer>
     </div>
   );
 }

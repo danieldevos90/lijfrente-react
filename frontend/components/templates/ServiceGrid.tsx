@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { Briefcase, Building2, User, Target, ArrowRight } from 'lucide-react';
 
 interface Service {
   icon: string;
@@ -7,6 +8,13 @@ interface Service {
   description: string;
   href?: string;
 }
+
+const iconMap: Record<string, React.ComponentType<any>> = {
+  '💼': Briefcase,
+  '🏢': Building2,
+  '👔': User,
+  '🎯': Target,
+};
 
 interface ServiceGridProps {
   title?: string;
@@ -51,7 +59,6 @@ export default function ServiceGrid({ title, subtitle, services }: ServiceGridPr
               textAlign: 'center',
               padding: 'var(--space-lg)',
               background: '#fff',
-              borderRadius: 'var(--radius-md)',
               border: '1px solid var(--color-border)',
               transition: 'all 0.2s ease',
               cursor: service.href ? 'pointer' : 'default'
@@ -71,11 +78,15 @@ export default function ServiceGrid({ title, subtitle, services }: ServiceGridPr
             }}
           >
             <div style={{ 
-              fontSize: '48px',
               marginBottom: 'var(--space-md)',
-              color: 'var(--color-brand)'
+              color: 'var(--color-brand)',
+              display: 'flex',
+              justifyContent: 'center'
             }}>
-              {service.icon}
+              {iconMap[service.icon] ? 
+                React.createElement(iconMap[service.icon], { size: 48 }) : 
+                <span style={{ fontSize: '48px' }}>{service.icon}</span>
+              }
             </div>
             <h3 style={{ 
               fontSize: '18px',

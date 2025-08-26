@@ -1,10 +1,18 @@
 "use client";
 import React from 'react';
+import { CheckCircle, Zap, Lock, FileText } from 'lucide-react';
 
 interface TrustBadge {
   icon: string;
   text: string;
 }
+
+const trustIconMap: Record<string, React.ComponentType<any>> = {
+  '✓': CheckCircle,
+  '⚡': Zap,
+  '🔒': Lock,
+  '📋': FileText,
+};
 
 interface TrustBadgesProps {
   badges: TrustBadge[];
@@ -30,16 +38,19 @@ export default function TrustBadges({ badges, variant = 'default' }: TrustBadges
             gap: 'var(--space-sm)',
             padding: variant === 'compact' ? 'var(--space-sm)' : 'var(--space-md)',
             background: '#F8FAFC',
-            borderRadius: 'var(--radius-md)',
             border: '1px solid var(--color-border)',
             minWidth: variant === 'compact' ? 'auto' : '200px'
           }}
         >
           <div style={{ 
-            fontSize: '20px',
-            color: 'var(--color-brand)'
+            color: 'var(--color-brand)',
+            display: 'flex',
+            alignItems: 'center'
           }}>
-            {badge.icon}
+            {trustIconMap[badge.icon] ? 
+              React.createElement(trustIconMap[badge.icon], { size: 20 }) : 
+              <span style={{ fontSize: '20px' }}>{badge.icon}</span>
+            }
           </div>
           <span style={{ 
             fontSize: '14px',

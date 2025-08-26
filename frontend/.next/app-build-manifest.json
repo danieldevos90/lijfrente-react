@@ -20,6 +20,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/sites/[siteId]/layout.js"
+    ],
+    "/sites/[siteId]/lead/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sites/[siteId]/lead/page.js"
+    ],
+    "/sites/[siteId]/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sites/[siteId]/[slug]/page.js"
     ]
   }
 }

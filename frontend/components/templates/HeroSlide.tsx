@@ -30,48 +30,63 @@ export default function HeroSlide({
 
   return (
     <div className="hero-slide" style={{ 
-      padding: 'var(--space-xl)', 
-      borderRadius: 'var(--radius-lg)', 
-      border: '1px solid var(--color-border)',
+      minHeight: '80vh',
+      display: 'flex',
+      alignItems: 'center',
+      padding: '6rem 0',
       color: textColor,
       ...bgStyle 
     }}>
-      {badge && (
-        <div className="badge" style={{ 
-          background: variant === 'gradient' || variant === 'image' ? 'rgba(255,255,255,0.2)' : '#EFF6FF',
-          color: variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-brand)',
-          border: variant === 'gradient' || variant === 'image' ? '1px solid rgba(255,255,255,0.3)' : '1px solid #DBEAFE'
+      <div className="container">
+        {badge && (
+          <div className="badge" style={{ 
+            background: variant === 'gradient' || variant === 'image' ? 'rgba(255,255,255,0.2)' : '#EFF6FF',
+            color: variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-brand)',
+            border: variant === 'gradient' || variant === 'image' ? '1px solid rgba(255,255,255,0.3)' : '1px solid #DBEAFE',
+            marginBottom: '1.5rem'
+          }}>
+            {badge}
+          </div>
+        )}
+        <h1 style={{ 
+          fontSize: '64px', 
+          margin: '0 0 1.5rem', 
+          lineHeight: 1.1,
+          fontWeight: 700,
+          maxWidth: '800px'
         }}>
-          {badge}
-        </div>
-      )}
-      <h1 style={{ fontSize: '36px', margin: '0 0 var(--space-sm)', lineHeight: 1.2 }}>
-        {title}
-      </h1>
-      {subtitle && (
-        <p style={{ 
-          margin: '0 0 var(--space-md)', 
-          fontSize: '18px', 
-          opacity: variant === 'gradient' || variant === 'image' ? 0.9 : 0.8 
-        }}>
-          {subtitle}
-        </p>
-      )}
-      {ctaLabel && ctaHref && (
-        <div className="row" style={{ marginTop: 'var(--space-md)' }}>
-          <a 
-            className="btn btn-primary" 
-            href={ctaHref}
-            style={{
-              background: variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-brand)',
-              color: variant === 'gradient' || variant === 'image' ? 'var(--color-brand)' : '#fff',
-              border: variant === 'gradient' || variant === 'image' ? '1px solid #fff' : '1px solid var(--color-brand)'
-            }}
-          >
-            {ctaLabel}
-          </a>
-        </div>
-      )}
+          {title}
+        </h1>
+        {subtitle && (
+          <p style={{ 
+            margin: '0 0 2.5rem', 
+            fontSize: '22px', 
+            opacity: variant === 'gradient' || variant === 'image' ? 0.9 : 0.8,
+            maxWidth: '600px',
+            lineHeight: 1.5
+          }}>
+            {subtitle}
+          </p>
+        )}
+        {ctaLabel && ctaHref && (
+          <div>
+            <a 
+              className="btn btn-primary" 
+              href={ctaHref}
+              style={{
+                background: variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-brand)',
+                color: variant === 'gradient' || variant === 'image' ? 'var(--color-brand)' : '#fff',
+                border: variant === 'gradient' || variant === 'image' ? '1px solid #fff' : '1px solid var(--color-brand)',
+                fontSize: '18px',
+                padding: '20px 40px',
+                fontWeight: 600
+              }}
+            >
+              {ctaLabel}
+            </a>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

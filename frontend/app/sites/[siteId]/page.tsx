@@ -75,131 +75,120 @@ export default async function SitePage({ params }: { params: { siteId: string } 
 
   return (
     <div>
-      <HeroSlide
-        badge="Snel & Transparant"
-        title="Zakelijke financiering zonder gedoe"
-        subtitle="Van aanvraag tot uitbetaling in 24 uur. Helder, flexibel en zonder papierwerk."
-        ctaLabel="Start aanvraag"
-        ctaHref={`/sites/${params.siteId}/lead`}
-        variant="image"
-        backgroundImage="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop"
-      />
-
-      <TrustBadges
-        variant="centered"
-        badges={[
-          { icon: "✓", text: "Gecertificeerd en betrouwbaar" },
-          { icon: "⚡", text: "Binnen 24 uur inzicht" },
-          { icon: "🔒", text: "100% transparant" },
-          { icon: "📋", text: "Geen papieren gedoe" }
-        ]}
-      />
-
-      <ImageTextBlock
-        title="Goed geregeld, zo'n extra pensioenpoortje"
-        content="Zakelijke financiering die écht werkt voor jouw onderneming. Geen ingewikkelde procedures, geen verrassingen achteraf. Gewoon duidelijke afspraken en snelle service."
-        layout="image-right"
-        ctaLabel="Lees meer"
-        ctaHref={`/sites/${params.siteId}/over-ons`}
-        variant="default"
-      />
-
-      <ServiceGrid
-        title="Waar begin ik?"
-        subtitle="De eerste stap is vaak het moeilijkst. Wij maken het je gemakkelijk."
-        services={[
-          { 
-            icon: "💼", 
-            title: "Ik ben werkgever", 
-            description: "Financiering voor bedrijfsuitgaven en groei",
-            href: `/sites/${params.siteId}/werkgever`
-          },
-          { 
-            icon: "🏢", 
-            title: "Ik ben werkgever", 
-            description: "Zakelijke leningen en kredietfaciliteiten",
-            href: `/sites/${params.siteId}/zakelijk`
-          },
-          { 
-            icon: "👔", 
-            title: "Ik ben ondernemer", 
-            description: "Financiering voor zelfstandigen en DGA's",
-            href: `/sites/${params.siteId}/ondernemer`
-          },
-          { 
-            icon: "🎯", 
-            title: "Voor mijn kind", 
-            description: "Investeren in de toekomst van je bedrijf",
-            href: `/sites/${params.siteId}/investeren`
-          }
-        ]}
-      />
-
-      <TestimonialSection
-        title="Bekijk wat anderen zeggen"
-        testimonials={[
-          {
-            name: "Petra Jongkind",
-            company: "Eco Film B.V.",
-            text: "Supersnelle service en heldere communicatie. Binnen een dag wisten we waar we aan toe waren.",
-            rating: 5
-          },
-          {
-            name: "Simone Brandt",
-            company: "Creative Solutions",
-            text: "Eindelijk een financieringspartner die begrijpt wat ondernemers nodig hebben. Aanrader!",
-            rating: 5
-          }
-        ]}
-      />
-
-      {home && (
-        <div style={{
-          marginTop: 12,
-          padding: '16px',
-          border: '1px solid var(--color-border)',
-          borderRadius: '10px',
-          background: '#fff'
-        }}>
-          <h2 style={{ marginTop: 0 }}>{home.title}</h2>
-          <p className="muted" style={{ whiteSpace: 'pre-wrap' }}>{home.body}</p>
-          <div className="row" style={{ marginTop: 12 }}>
-            <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Vraag financiering aan</a>
-            <a className="btn" href={`/sites/${params.siteId}/home`}>Lees verder</a>
-          </div>
-        </div>
-      )}
-
-      {nav?.length > 0 && (
-        <div className="row" style={{ flexWrap: 'wrap' }}>
-          {nav
-            .filter((n: any) => {
-              const label = (n.label || '').toLowerCase();
-              const href = (n.href || '').toLowerCase();
-              return label !== 'btw' && !href.startsWith('/btw');
-            })
-            .map((n: any) => {
-              const href = n.href || '#';
-              const label = n.label || '';
-              const finalHref = label.toLowerCase() === 'home' ? `/sites/${params.siteId}/home` : href;
-              return <a key={n.id} className="btn" href={finalHref}>{label}</a>;
-            })}
-          <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Aanvragen</a>
-        </div>
-      )}
-
-      <h2 style={{ marginTop: 24 }}>Pagina’s</h2>
-      <ul>
-        {pages.map((p: any) => (
-          <li key={p.id}>
-            <a className="link" href={`/sites/${params.siteId}/${p.slug}`}>{p.title}</a>
-          </li>
-        ))}
-      </ul>
-
-      <div className="row" style={{ marginTop: 24 }}>
-        <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Vraag financiering aan</a>
+      {/* Hero Section - Full width */}
+      <div className="full-width">
+        <HeroSlide
+          badge="Snel & Transparant"
+          title="Zakelijke financiering zonder gedoe"
+          subtitle="Van aanvraag tot uitbetaling in 24 uur. Helder, flexibel en zonder papierwerk."
+          ctaLabel="Start aanvraag"
+          ctaHref={`/sites/${params.siteId}/lead`}
+          variant="image"
+          backgroundImage="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop"
+        />
       </div>
+
+      {/* Trust Badges - White section */}
+      <div className="full-width section-white py-16">
+        <div className="container">
+          <TrustBadges
+            variant="centered"
+            badges={[
+              { icon: "✓", text: "Gecertificeerd en betrouwbaar" },
+              { icon: "⚡", text: "Binnen 24 uur inzicht" },
+              { icon: "🔒", text: "100% transparant" },
+              { icon: "📋", text: "Geen papieren gedoe" }
+            ]}
+          />
+        </div>
+      </div>
+
+      {/* Image Text Block - Gray section */}
+      <div className="full-width section-gray py-24">
+        <div className="container">
+          <ImageTextBlock
+            title="Zakelijke financiering die écht werkt"
+            content="Geen ingewikkelde procedures, geen verrassingen achteraf. Gewoon duidelijke afspraken en snelle service. Wij begrijpen dat ondernemers snel willen handelen en daarom zorgen wij voor een proces dat net zo dynamisch is als jouw bedrijf."
+            layout="image-right"
+            ctaLabel="Lees meer"
+            ctaHref={`/sites/${params.siteId}/over-ons`}
+            variant="default"
+          />
+        </div>
+      </div>
+
+      {/* Service Grid - White section */}
+      <div className="full-width section-white py-24">
+        <div className="container">
+          <ServiceGrid
+            title="Waar begin ik?"
+            subtitle="De eerste stap is vaak het moeilijkst. Wij maken het je gemakkelijk."
+            services={[
+              { 
+                icon: "💼", 
+                title: "Ik ben werkgever", 
+                description: "Financiering voor bedrijfsuitgaven en groei van je team",
+                href: `/sites/${params.siteId}/werkgever`
+              },
+              { 
+                icon: "🏢", 
+                title: "Ik heb een bedrijf", 
+                description: "Zakelijke leningen en kredietfaciliteiten op maat",
+                href: `/sites/${params.siteId}/zakelijk`
+              },
+              { 
+                icon: "👔", 
+                title: "Ik ben ondernemer", 
+                description: "Financiering voor zelfstandigen en DGA's",
+                href: `/sites/${params.siteId}/ondernemer`
+              },
+              { 
+                icon: "🎯", 
+                title: "Ik wil investeren", 
+                description: "Investeren in de toekomst van je bedrijf",
+                href: `/sites/${params.siteId}/investeren`
+              }
+            ]}
+          />
+        </div>
+      </div>
+
+      {/* Testimonials - Blue section */}
+      <div className="full-width section-blue py-24">
+        <div className="container">
+          <TestimonialSection
+            title="Bekijk wat anderen zeggen"
+            testimonials={[
+              {
+                name: "Petra Jongkind",
+                company: "Eco Film B.V.",
+                text: "Supersnelle service en heldere communicatie. Binnen een dag wisten we waar we aan toe waren.",
+                rating: 5
+              },
+              {
+                name: "Simone Brandt",
+                company: "Creative Solutions",
+                text: "Eindelijk een financieringspartner die begrijpt wat ondernemers nodig hebben. Aanrader!",
+                rating: 5
+              }
+            ]}
+          />
+        </div>
+      </div>
+
+      {/* CTA Section - Dark section */}
+      <div className="full-width section-dark py-20">
+        <div className="container text-center">
+          <h2 className="text-white">Klaar om te starten?</h2>
+          <p className="text-white" style={{ fontSize: '20px', marginBottom: '2rem' }}>
+            Vraag binnen 2 minuten je zakelijke financiering aan
+          </p>
+          <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`} style={{ fontSize: '18px', padding: '20px 40px' }}>
+            Start je aanvraag nu
+          </a>
+        </div>
+      </div>
+
       <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" />
     </div>
   );
