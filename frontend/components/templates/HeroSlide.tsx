@@ -37,7 +37,7 @@ export default function HeroSlide({
       color: textColor,
       ...bgStyle 
     }}>
-      <div className="container">
+      <div className="container" style={{ textAlign: 'left' }}>
         {badge && (
           <div className="badge" style={{ 
             background: variant === 'gradient' || variant === 'image' ? 'rgba(255,255,255,0.2)' : '#f5f5f5',
