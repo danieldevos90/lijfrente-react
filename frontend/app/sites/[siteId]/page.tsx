@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { messaging, buildTitle, buildDescription } from '../../messaging';
 import dynamic from 'next/dynamic';
 const StickyCTA = dynamic(() => import('../../../components/StickyCTA'), { ssr: false });
 
@@ -65,8 +67,13 @@ export default async function SitePage({ params }: { params: { siteId: string } 
 
   return (
     <section>
-      <h1>{data?.name ?? params.siteId}</h1>
-      <p className="muted">Site ID: {params.siteId}</p>
+      <div style={{ marginBottom: 16 }}>
+        <h1 style={{ margin: 0 }}>{messaging.heroTitle}</h1>
+        <p className="muted" style={{ marginTop: 8 }}>{messaging.heroSub}</p>
+        <div className="row" style={{ marginTop: 12 }}>
+          <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>{messaging.ctaLabel}</a>
+        </div>
+      </div>
 
       {home && (
         <div style={{
@@ -118,6 +125,13 @@ export default async function SitePage({ params }: { params: { siteId: string } 
       <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" />
     </section>
   );
+}
+
+export async function generateMetadata({ params }: { params: { siteId: string } }): Promise<Metadata> {
+  return {
+    title: buildTitle('Zakelijke financiering — snel geregeld'),
+    description: buildDescription(),
+  };
 }
 
 

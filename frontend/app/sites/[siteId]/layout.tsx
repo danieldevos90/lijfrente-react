@@ -75,7 +75,7 @@ export default async function SiteLayout({
                 </a>
               );
             })}
-          <a className="btn btn-primary" href={`/sites/${params.siteId}/lijfrente`}>Lijfrente offerte</a>
+          <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Aanvragen</a>
         </div>
       )}
       {children}

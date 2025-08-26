@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { buildTitle, buildDescription } from '../../../messaging';
 import dynamic from 'next/dynamic';
 const StickyCTA = dynamic(() => import('../../../../components/StickyCTA'), { ssr: false });
 
@@ -99,6 +101,15 @@ export default async function Page({ params }: { params: { siteId: string, slug:
       <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" />
     </section>
   );
+}
+
+export async function generateMetadata({ params }: { params: { siteId: string, slug: string } }): Promise<Metadata> {
+  const pg = await fetchPage(params.siteId, params.slug);
+  const titlePrefix = (pg?.title as string) || 'Zakelijke financiering';
+  return {
+    title: buildTitle(titlePrefix),
+    description: buildDescription('Zakelijke financiering zonder gedoe — snel geregeld, helder en flexibel.'),
+  };
 }
 
 
