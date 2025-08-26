@@ -18,4 +18,11 @@ label { display: block; font-weight: 600; margin-bottom: 6px; }
 input, select { width: 100%; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); }
 input:focus, select:focus { outline: 2px solid var(--color-brand); border-color: var(--color-brand); }
 
+.hero { padding: var(--space-xl); background: linear-gradient(180deg, rgba(14,165,233,0.08), rgba(14,165,233,0.02)); border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+.hero h1 { font-size: 32px; margin: 0 0 var(--space-sm); }
+.hero p { margin: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-md); }
+.card { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-md); background: #fff; }
+.badge { display: inline-block; padding: 4px 8px; border-radius: 999px; font-size: 12px; background: #EFF6FF; color: var(--color-brand); border: 1px solid #DBEAFE; }
+
 

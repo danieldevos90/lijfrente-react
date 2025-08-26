@@ -2,6 +2,10 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { messaging, buildTitle, buildDescription } from '../../messaging';
 import dynamic from 'next/dynamic';
+import HeroSlide from '../../../components/templates/HeroSlide';
+import FeatureGrid from '../../../components/templates/FeatureGrid';
+import ImageTextBlock from '../../../components/templates/ImageTextBlock';
+import ColumnLayout from '../../../components/templates/ColumnLayout';
 const StickyCTA = dynamic(() => import('../../../components/StickyCTA'), { ssr: false });
 
 async function fetchSite(siteId: string) {
@@ -67,13 +71,54 @@ export default async function SitePage({ params }: { params: { siteId: string } 
 
   return (
     <section>
-      <div style={{ marginBottom: 16 }}>
-        <h1 style={{ margin: 0 }}>{messaging.heroTitle}</h1>
-        <p className="muted" style={{ marginTop: 8 }}>{messaging.heroSub}</p>
-        <div className="row" style={{ marginTop: 12 }}>
-          <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>{messaging.ctaLabel}</a>
-        </div>
-      </div>
+      <HeroSlide
+        badge="Snel & Transparant"
+        title={messaging.heroTitle}
+        subtitle={messaging.heroSub}
+        ctaLabel={messaging.ctaLabel}
+        ctaHref={`/sites/${params.siteId}/lead`}
+        variant="gradient"
+      />
+
+      <FeatureGrid
+        title="Waarom kiezen voor zakelijke financiering?"
+        subtitle="Alles wat je nodig hebt voor een snelle en transparante financiering"
+        features={[
+          { icon: "⚡", title: "Direct geregeld", description: "Binnen 24 uur inzicht in je mogelijkheden" },
+          { icon: "📋", title: "Geen papieren gedoe", description: "Alles online, snel en simpel" },
+          { icon: "💯", title: "100% transparant", description: "Heldere voorwaarden, geen verrassingen" },
+          { icon: "🎯", title: "Op maat", description: "Financiering die met je meebeweegt" }
+        ]}
+        columns={2}
+      />
+
+      <ImageTextBlock
+        title="Flexibele voorwaarden"
+        content="Jij bepaalt de looptijd en kunt altijd boetevrij aflossen. Onze financiering beweegt mee met jouw onderneming."
+        layout="image-right"
+        ctaLabel="Bekijk voorwaarden"
+        ctaHref={`/sites/${params.siteId}/voorwaarden`}
+        variant="shadow"
+      />
+
+      <ColumnLayout
+        variant="3-column"
+        columns={[
+          { 
+            title: "Werkkapitaal", 
+            content: "Voor dagelijkse uitgaven en seizoensschommelingen",
+            badge: "Populair"
+          },
+          { 
+            title: "Groeifinancering", 
+            content: "Investeer in nieuwe apparatuur of uitbreiding"
+          },
+          { 
+            title: "Overbrugging", 
+            content: "Tijdelijke financiering voor cashflow"
+          }
+        ]}
+      />
 
       {home && (
         <div style={{
