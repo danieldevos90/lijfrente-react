@@ -58,7 +58,12 @@ const steps = [
   { id: 6, title: 'Afronding', icon: Check, description: 'Laatste details' }
 ];
 
-export default function InteractiveLeadForm() {
+interface InteractiveLeadFormProps {
+  onSuccess?: () => void;
+  isModal?: boolean;
+}
+
+export default function InteractiveLeadForm({ onSuccess, isModal = false }: InteractiveLeadFormProps = {}) {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -137,8 +142,13 @@ export default function InteractiveLeadForm() {
       });
       
       if (response.ok) {
-        // Redirect to thank you page or show success message
-        window.location.href = '/bedankt';
+        if (isModal && onSuccess) {
+          // Call success callback for modal
+          onSuccess();
+        } else {
+          // Redirect to thank you page
+          window.location.href = '/bedankt';
+        }
       }
     } catch (error) {
       console.error('Form submission error:', error);

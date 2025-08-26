@@ -1,3 +1,7 @@
+import dynamic from 'next/dynamic';
+
+const StickyCTA = dynamic(() => import('../components/StickyCTA'), { ssr: false });
+
 export default function HomePage() {
   return (
     <div className="homepage">
@@ -12,6 +16,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <StickyCTA href="/sites/demo/lead" label="Probeer lead formulier" useModal={true} />
     </div>
   );
 }

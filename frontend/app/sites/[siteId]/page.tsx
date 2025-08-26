@@ -168,7 +168,7 @@ export default async function SitePage({ params }: { params: { siteId: string } 
         background="dark"
       />
 
-      <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" />
+                <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" useModal={true} />
     </div>
   );
 }
