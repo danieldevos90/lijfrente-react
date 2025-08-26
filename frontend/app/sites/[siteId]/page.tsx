@@ -200,7 +200,7 @@ export default async function SitePage({ params }: { params: { siteId: string } 
         <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Vraag financiering aan</a>
       </div>
       <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" />
-    </section>
+    </div>
   );
 }
 
