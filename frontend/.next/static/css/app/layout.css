@@ -156,6 +156,49 @@ input:focus, select:focus {
 .hero h1 { font-size: 56px; margin: 0 0 var(--space-md); }
 .hero p { margin: 0 0 var(--space-lg); font-size: 20px; }
 
+/* Hero slide specific styles */
+.hero-slide {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 0;
+  width: 100%;
+}
+.hero-slide .container {
+  text-align: left;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+.hero-slide h1 {
+  font-size: 64px;
+  margin: 0 0 1.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  max-width: 800px;
+}
+.hero-slide p {
+  margin: 0 0 2.5rem;
+  font-size: 22px;
+  opacity: 0.9;
+  max-width: 600px;
+  line-height: 1.5;
+}
+.hero-slide .badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.hero-slide .btn-primary {
+  font-size: 18px;
+  padding: 20px 40px;
+  font-weight: 600;
+}
+
 /* Cards and grids */
 .cards { 
   display: grid; 

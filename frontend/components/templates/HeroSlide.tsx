@@ -28,59 +28,32 @@ export default function HeroSlide({
 
   const textColor = variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-text)';
 
-  return (
+    return (
     <div className="hero-slide" style={{ 
-      minHeight: '80vh',
-      display: 'flex',
-      alignItems: 'center',
-      padding: '6rem 0',
       color: textColor,
       ...bgStyle 
     }}>
-      <div className="container" style={{ textAlign: 'left' }}>
+      <div className="container">
         {badge && (
           <div className="badge" style={{ 
             background: variant === 'gradient' || variant === 'image' ? 'rgba(255,255,255,0.2)' : '#f5f5f5',
             color: variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-brand)',
-            border: variant === 'gradient' || variant === 'image' ? '1px solid rgba(255,255,255,0.3)' : '1px solid #e5e5e5',
-            borderRadius: 'var(--radius-sm)',
-            marginBottom: '1.5rem'
+            border: variant === 'gradient' || variant === 'image' ? '1px solid rgba(255,255,255,0.3)' : '1px solid #e5e5e5'
           }}>
             {badge}
           </div>
         )}
-        <h1 style={{ 
-          fontSize: '64px', 
-          margin: '0 0 1.5rem', 
-          lineHeight: 1.1,
-          fontWeight: 700,
-          maxWidth: '800px'
-        }}>
-          {title}
-        </h1>
-        {subtitle && (
-          <p style={{ 
-            margin: '0 0 2.5rem', 
-            fontSize: '22px', 
-            opacity: variant === 'gradient' || variant === 'image' ? 0.9 : 0.8,
-            maxWidth: '600px',
-            lineHeight: 1.5
-          }}>
-            {subtitle}
-          </p>
-        )}
+        <h1>{title}</h1>
+        {subtitle && <p>{subtitle}</p>}
         {ctaLabel && ctaHref && (
           <div>
-            <a 
-              className="btn btn-primary" 
+            <a
+              className="btn btn-primary"
               href={ctaHref}
               style={{
                 background: variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-brand)',
                 color: variant === 'gradient' || variant === 'image' ? 'var(--color-brand)' : '#fff',
-                border: variant === 'gradient' || variant === 'image' ? '1px solid #fff' : '1px solid var(--color-brand)',
-                fontSize: '18px',
-                padding: '20px 40px',
-                fontWeight: 600
+                border: variant === 'gradient' || variant === 'image' ? '1px solid #fff' : '1px solid var(--color-brand)'
               }}
             >
               {ctaLabel}
