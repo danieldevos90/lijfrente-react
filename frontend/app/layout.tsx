@@ -40,16 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             />
           </noscript>
         ) : null}
-        <div className="container">
-          <header className="site-header">
-            <div className="brand">{SITE_NAME}</div>
-            <nav className="nav">
-              <a href="/" className="link">Home</a>
-            </nav>
-          </header>
-          <main>{children}</main>
-          <footer className="site-footer">© {new Date().getFullYear()} Multi‑Site</footer>
-        </div>
+        {children}
       </body>
     </html>
   );
