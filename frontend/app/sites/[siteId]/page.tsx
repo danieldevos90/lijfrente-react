@@ -64,7 +64,8 @@ async function fetchHome(siteId: string) {
 
 export default async function SitePage({ params }: { params: { siteId: string } }) {
   const data = await fetchSite(params.siteId);
-  if (!data) return notFound();
+  // Fallback for demo site if no Strapi data
+  const siteData = data || { name: 'Zakelijk Lening Project', siteId: params.siteId };
   const pages = (await fetchPages(params.siteId)).filter((p: any) => (
     ['zakelijke-financiering','corporate-financing','small-business-financing','werkkapitaal','veelgestelde-vragen']
       .includes((p.slug || '').toLowerCase())
