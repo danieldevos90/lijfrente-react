@@ -24,7 +24,7 @@ export default function HeroSlide({
     ? { backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }
     : variant === 'gradient' 
     ? { background: 'linear-gradient(135deg, var(--color-brand), var(--color-brand-dark))' }
-    : { background: 'linear-gradient(180deg, rgba(14,165,233,0.08), rgba(14,165,233,0.02))' };
+    : { background: 'linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.02))' };
 
   const textColor = variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-text)';
 
@@ -40,9 +40,10 @@ export default function HeroSlide({
       <div className="container">
         {badge && (
           <div className="badge" style={{ 
-            background: variant === 'gradient' || variant === 'image' ? 'rgba(255,255,255,0.2)' : '#EFF6FF',
+            background: variant === 'gradient' || variant === 'image' ? 'rgba(255,255,255,0.2)' : '#f5f5f5',
             color: variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-brand)',
-            border: variant === 'gradient' || variant === 'image' ? '1px solid rgba(255,255,255,0.3)' : '1px solid #DBEAFE',
+            border: variant === 'gradient' || variant === 'image' ? '1px solid rgba(255,255,255,0.3)' : '1px solid #e5e5e5',
+            borderRadius: 'var(--radius-sm)',
             marginBottom: '1.5rem'
           }}>
             {badge}

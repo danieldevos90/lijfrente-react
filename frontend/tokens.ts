@@ -1,7 +1,7 @@
 export const tokens = {
   colors: {
-    brand: '#0EA5E9',
-    brandDark: '#0369A1',
+    brand: '#000000',
+    brandDark: '#1a1a1a',
     text: '#0F172A',
     muted: '#64748B',
     bg: '#FFFFFF',

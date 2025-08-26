@@ -39,6 +39,7 @@ export default function TrustBadges({ badges, variant = 'default' }: TrustBadges
             padding: variant === 'compact' ? 'var(--space-sm)' : 'var(--space-md)',
             background: '#F8FAFC',
             border: '1px solid var(--color-border)',
+            borderRadius: 'var(--radius-md)',
             minWidth: variant === 'compact' ? 'auto' : '200px'
           }}
         >

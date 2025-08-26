@@ -2,8 +2,8 @@
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./app/tokens.css ***!
   \************************************************************************************************************************************************************************************************************************************************************/
 :root {
-  --color-brand: #0EA5E9;
-  --color-brand-dark: #0369A1;
+  --color-brand: #000000;
+  --color-brand-dark: #1a1a1a;
   --color-text: #0F172A;
   --color-muted: #64748B;
   --color-bg: #FFFFFF;
@@ -95,9 +95,10 @@ p { line-height: 1.6; color: var(--color-text); margin: 0 0 var(--space-md); fon
 /* Layout utilities */
 .row { display: flex; gap: var(--space-md); align-items: center; margin: var(--space-md) 0; flex-wrap: wrap; }
 
-/* Buttons - no border radius */
+/* Buttons - with border radius */
 .btn { 
   border: 1px solid var(--color-border); 
+  border-radius: var(--radius-md);
   padding: 16px 32px; 
   background: #fff; 
   color: var(--color-text); 
@@ -117,12 +118,12 @@ p { line-height: 1.6; color: var(--color-text); margin: 0 0 var(--space-md); fon
   background: var(--color-brand); 
   color: #fff; 
   border-color: var(--color-brand);
-  box-shadow: 0 2px 8px rgba(14,165,233,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 .btn-primary:hover { 
   background: var(--color-brand-dark); 
   border-color: var(--color-brand-dark);
-  box-shadow: 0 6px 20px rgba(14,165,233,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 /* Utility classes */
@@ -130,12 +131,13 @@ p { line-height: 1.6; color: var(--color-text); margin: 0 0 var(--space-md); fon
 .text-center { text-align: center; }
 .text-white { color: white; }
 
-/* Form elements - no border radius */
+/* Form elements - with border radius */
 label { display: block; font-weight: 600; margin-bottom: 6px; }
 input, select { 
   width: 100%; 
   padding: 12px 16px; 
   border: 1px solid var(--color-border); 
+  border-radius: var(--radius-sm);
   font-size: 16px;
 }
 input:focus, select:focus { 
@@ -146,7 +148,7 @@ input:focus, select:focus {
 /* Hero section - full width and larger */
 .hero { 
   padding: 6rem 0; 
-  background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(14,165,233,0.05)); 
+  background: linear-gradient(135deg, rgba(0,0,0,0.1), rgba(0,0,0,0.05)); 
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -164,6 +166,7 @@ input:focus, select:focus {
 }
 .card { 
   border: 1px solid var(--color-border); 
+  border-radius: var(--radius-md);
   padding: var(--space-lg); 
   background: #fff; 
   transition: all 0.2s ease;
@@ -177,11 +180,12 @@ input:focus, select:focus {
 .badge { 
   display: inline-block; 
   padding: 6px 12px; 
+  border-radius: var(--radius-sm);
   font-size: 14px; 
   font-weight: 600;
-  background: #EFF6FF; 
+  background: #f5f5f5; 
   color: var(--color-brand); 
-  border: 1px solid #DBEAFE; 
+  border: 1px solid #e5e5e5; 
 }
 
 /* Responsive design */

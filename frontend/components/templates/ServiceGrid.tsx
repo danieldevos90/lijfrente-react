@@ -60,6 +60,7 @@ export default function ServiceGrid({ title, subtitle, services }: ServiceGridPr
               padding: 'var(--space-lg)',
               background: '#fff',
               border: '1px solid var(--color-border)',
+              borderRadius: 'var(--radius-md)',
               transition: 'all 0.2s ease',
               cursor: service.href ? 'pointer' : 'default'
             }}
