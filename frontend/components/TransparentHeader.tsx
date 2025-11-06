@@ -22,11 +22,11 @@ export default function TransparentHeader() {
       left: 0,
       right: 0,
       zIndex: 100,
-      background: 'rgba(255, 255, 255, 0.98)',
-      borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+      background: isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'transparent',
+      borderBottom: isScrolled ? '1px solid rgba(0, 0, 0, 0.1)' : '1px solid transparent',
       padding: '1rem 0',
       transition: 'all 0.3s ease',
-      boxShadow: isScrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : '0 2px 4px rgba(0, 0, 0, 0.05)',
+      boxShadow: isScrolled ? '0 2px 10px rgba(0, 0, 0, 0.05)' : 'none',
     }}>
       <div className="container" style={{
         display: 'flex',
