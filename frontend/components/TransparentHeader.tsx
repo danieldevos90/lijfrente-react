@@ -72,15 +72,29 @@ export default function TransparentHeader() {
           <button 
             className="btn btn-primary"
             style={{
-              background: 'var(--color-primary)',
+              border: '1px solid var(--color-charcoal)',
+              backgroundColor: 'var(--color-charcoal)',
               color: 'white',
-              border: 'none',
-              padding: '0.625rem 1.5rem',
-              borderRadius: 'var(--radius-md)',
-              fontWeight: 600,
-              fontSize: '15px',
+              textAlign: 'center',
+              borderRadius: '.25rem',
+              justifyContent: 'center',
+              alignItems: 'center',
+              minWidth: '10.5rem',
+              maxHeight: '2.75rem',
+              padding: '1rem 1.5rem',
+              fontFamily: 'Public Sans Variable, sans-serif',
+              fontSize: '1rem',
+              fontWeight: 500,
+              lineHeight: 1,
+              transition: 'border-color .28s, background-color .28s',
+              display: 'flex',
               cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(69, 127, 255, 0.3)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(15, 23, 32, 0.85)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
             }}
           >
             Aanvragen

@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_sections_two_column_support",
+  "info": {
+    "displayName": "Two Column Support",
+    "description": "A two-column section with support info and testimonial"
+  },
+  "options": {},
+  "attributes": {
+    "leftTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Reliable assistance"
+    },
+    "leftDescription": {
+      "type": "text",
+      "required": true
+    },
+    "leftButtonLabel": {
+      "type": "string",
+      "default": "Contact Us"
+    },
+    "leftButtonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "leftBackgroundColor": {
+      "type": "string",
+      "default": "#bfdbfe",
+      "description": "Hex color code for left column background"
+    },
+    "testimonialName": {
+      "type": "string",
+      "required": true
+    },
+    "testimonialRole": {
+      "type": "string",
+      "required": true
+    },
+    "testimonialText": {
+      "type": "text",
+      "required": true
+    },
+    "testimonialImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "showCarousel": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show previous/next navigation buttons"
+    }
+  }
+}
+

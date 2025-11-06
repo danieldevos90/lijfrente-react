@@ -9,7 +9,6 @@ const StickyCTA = dynamic(() => import('../components/StickyCTA'), { ssr: false 
 
 export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [currentBenefit, setCurrentBenefit] = useState(0);
   
   const testimonials = [
     {
@@ -85,22 +84,6 @@ export default function HomePage() {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const cardsPerView = 3; // Number of cards visible at once on desktop
-  
-  const nextBenefit = () => {
-    setCurrentBenefit((prev) => {
-      const maxIndex = benefits.length - cardsPerView;
-      return prev >= maxIndex ? 0 : prev + 1;
-    });
-  };
-
-  const prevBenefit = () => {
-    setCurrentBenefit((prev) => {
-      const maxIndex = benefits.length - cardsPerView;
-      return prev <= 0 ? maxIndex : prev - 1;
-    });
-  };
-
   return (
     <>
       <TransparentHeader />
@@ -137,42 +120,52 @@ export default function HomePage() {
             Van aanvraag tot uitbetaling in 24 uur. Helder, flexibel en zonder papierwerk.
           </p>
           
-          <button style={{
-            background: 'var(--color-primary)',
-            color: 'white',
-            border: 'none',
-            padding: '1.25rem 3rem',
-            fontSize: '1.25rem',
-            fontWeight: 600,
-            borderRadius: 'var(--radius-lg)',
-            cursor: 'pointer',
-            boxShadow: '0 10px 40px rgba(69, 127, 255, 0.4)',
-            transition: 'all 0.3s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-4px)';
-            e.currentTarget.style.boxShadow = '0 20px 50px rgba(69, 127, 255, 0.5)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 10px 40px rgba(69, 127, 255, 0.4)';
-          }}>
-            Start aanvraag
-          </button>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <button style={{
+              border: '1px solid var(--color-charcoal)',
+              backgroundColor: 'var(--color-charcoal)',
+              color: 'white',
+              textAlign: 'center',
+              borderRadius: '.25rem',
+              justifyContent: 'center',
+              alignItems: 'center',
+              minWidth: '10.5rem',
+              maxHeight: '2.75rem',
+              padding: '1rem 1.5rem',
+              fontFamily: 'Public Sans Variable, sans-serif',
+              fontSize: '1rem',
+              fontWeight: 500,
+              lineHeight: 1,
+              transition: 'border-color .28s, background-color .28s',
+              display: 'flex',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(15, 23, 32, 0.85)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
+            }}>
+              Start aanvraag
+            </button>
+          </div>
         </div>
       </section>
 
       {/* Benefits Carousel Section */}
       <section id="benefits" style={{
         background: 'var(--color-bg)',
-        padding: '8rem 2rem',
+        padding: '8rem 0',
         position: 'relative',
+        overflow: 'hidden',
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '5rem', paddingLeft: '2rem', paddingRight: '2rem', maxWidth: '800px', margin: '0 auto 5rem' }}>
             <h2 style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              fontWeight: 700,
+              fontFamily: 'PP Neue Montreal, sans-serif',
+              fontSize: '3.75rem',
+              fontWeight: 400,
+              lineHeight: 1,
               marginBottom: '1rem',
               color: 'var(--color-text)',
             }}>
@@ -191,66 +184,74 @@ export default function HomePage() {
           {/* Benefits Cards Carousel */}
           <div style={{
             position: 'relative',
-            overflow: 'hidden',
-            minHeight: '320px',
-          }}>
+            overflow: 'auto',
+            minHeight: '560px',
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none', // Firefox
+            msOverflowStyle: 'none', // IE/Edge
+            marginLeft: '-4rem',
+            marginRight: '-4rem',
+            paddingLeft: '4rem',
+            paddingRight: '4rem',
+          }}
+          className="benefits-scroll-container"
+          >
             <div style={{
               display: 'flex',
-              transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-              transform: `translateX(-${currentBenefit * (100 / cardsPerView)}%)`,
-              gap: '1.5rem',
+              gap: '2rem',
+              paddingBottom: '1rem',
             }}>
               {benefits.map((item, index) => {
                 const Icon = item.icon;
+                const isColored = index % 2 === 0;
+                const bgColor = isColored ? item.color : 'white';
+                const textColorMain = isColored ? item.textColor : 'var(--color-text)';
+                const iconBgColor = isColored ? 'rgba(15, 23, 32, 0.08)' : item.color;
+                const iconColor = isColored ? item.textColor : item.textColor;
+                
                 return (
                   <div
                     key={index}
                     style={{
-                      minWidth: `calc((100% - ${(cardsPerView - 1) * 1.5}rem) / ${cardsPerView})`,
+                      minWidth: '35rem',
+                      maxWidth: '35rem',
                       flex: '0 0 auto',
+                      scrollSnapAlign: 'start',
                     }}
                   >
                     <div
                       className="benefit-card"
                       style={{
-                        background: item.color,
-                        borderRadius: '24px',
-                        padding: '2rem',
-                        height: '100%',
-                        minHeight: '280px',
+                        background: bgColor,
+                        borderRadius: '.625rem',
+                        padding: '5rem 5.625rem',
+                        width: '35rem',
+                        height: '35rem',
                         display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'space-between',
-                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                        flexFlow: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        textAlign: 'center',
                         transition: 'all 0.3s ease',
                       }}
                     >
-                      <div>
-                        <div style={{
-                          width: '64px',
-                          height: '64px',
-                          borderRadius: '16px',
-                          background: 'rgba(15, 23, 32, 0.08)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          marginBottom: '1.5rem',
-                        }}>
-                          <Icon size={32} color={item.textColor} strokeWidth={2} />
-                        </div>
-                        <h3 style={{
-                          fontSize: '1.5rem',
-                          fontWeight: 600,
-                          marginBottom: '1rem',
-                          color: item.textColor,
-                        }}>
-                          {item.title}
-                        </h3>
-                      </div>
+                      <Icon size={40} color="black" strokeWidth={1} style={{ marginBottom: '2rem', width: '9rem', height: 'auto' }} />
+                      <h3 style={{
+                        fontFamily: 'PP Neue Montreal, sans-serif',
+                        fontSize: '3rem',
+                        fontWeight: 400,
+                        lineHeight: 1.08,
+                        marginBottom: '1.5rem',
+                        color: textColorMain,
+                      }}>
+                        {item.title}
+                      </h3>
                       <p style={{
-                        fontSize: '1rem',
-                        color: item.textColor,
-                        lineHeight: 1.6,
+                        fontSize: '1.125rem',
+                        fontWeight: 300,
+                        color: textColorMain,
+                        lineHeight: 1.7,
                         opacity: 0.85,
                       }}>
                         {item.desc}
@@ -260,94 +261,86 @@ export default function HomePage() {
                 );
               })}
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevBenefit}
-              style={{
-                position: 'absolute',
-                left: '1rem',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                background: 'white',
-                border: 'none',
-                width: '56px',
-                height: '56px',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)',
-                transition: 'all 0.3s ease',
-                zIndex: 10,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
-                e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.15)';
-              }}
-            >
-              <ChevronLeft size={28} color="var(--color-text)" strokeWidth={2.5} />
-            </button>
-
-            <button
-              onClick={nextBenefit}
-              style={{
-                position: 'absolute',
-                right: '1rem',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                background: 'white',
-                border: 'none',
-                width: '56px',
-                height: '56px',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)',
-                transition: 'all 0.3s ease',
-                zIndex: 10,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
-                e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.15)';
-              }}
-            >
-              <ChevronRight size={28} color="var(--color-text)" strokeWidth={2.5} />
-            </button>
-
-            {/* Dots Indicator */}
+      {/* Feature Section with Image */}
+      <section id="feature" style={{
+        background: 'white',
+        padding: '8rem 2rem',
+      }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
+            gap: '4rem',
+            alignItems: 'center',
+          }}>
+            {/* Image */}
             <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '0.75rem',
-              marginTop: '3rem',
+              width: '100%',
+              height: '100%',
+              minHeight: '600px',
+              borderRadius: '1.5rem',
+              overflow: 'hidden',
+              background: `url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=1000&fit=crop') center/cover`,
             }}>
-              {Array.from({ length: benefits.length - cardsPerView + 1 }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentBenefit(index)}
-                  style={{
-                    width: currentBenefit === index ? '40px' : '12px',
-                    height: '12px',
-                    borderRadius: '6px',
-                    background: currentBenefit === index ? 'var(--color-primary)' : 'rgba(15, 23, 32, 0.2)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                  }}
-                />
-              ))}
+            </div>
+
+            {/* Text Content */}
+            <div style={{
+              padding: '2rem',
+            }}>
+              <h2 style={{
+                fontFamily: 'PP Neue Montreal, sans-serif',
+                fontSize: '3.75rem',
+                fontWeight: 400,
+                lineHeight: 1,
+                marginBottom: '2rem',
+                color: 'var(--color-text)',
+              }}>
+                Earned wage access
+              </h2>
+              <p style={{
+                fontSize: '1.125rem',
+                fontWeight: 300,
+                color: 'var(--color-text)',
+                lineHeight: 1.7,
+                opacity: 0.85,
+                marginBottom: '3rem',
+              }}>
+                Employees have the flexibility to withdraw up to 50% of their earned wages at any moment, presenting a dependable option for immediate financial requirements. It grants real-time visibility into accrued wages.
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                <button style={{
+                  border: '1px solid var(--color-charcoal)',
+                  backgroundColor: 'var(--color-charcoal)',
+                  color: 'white',
+                  textAlign: 'center',
+                  borderRadius: '.25rem',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  minWidth: '10.5rem',
+                  maxHeight: '2.75rem',
+                  padding: '1rem 1.5rem',
+                  fontFamily: 'Public Sans Variable, sans-serif',
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                  lineHeight: 1,
+                  transition: 'border-color .28s, background-color .28s',
+                  display: 'flex',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(15, 23, 32, 0.85)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
+                }}>
+                  Learn more
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -690,27 +683,30 @@ export default function HomePage() {
             Vraag binnen 2 minuten uw zakelijke financiering aan
           </p>
           <button style={{
-            background: 'var(--color-primary)',
+            border: '1px solid var(--color-charcoal)',
+            backgroundColor: 'var(--color-charcoal)',
             color: 'white',
-            border: 'none',
-            padding: '1.25rem 3rem',
-            fontSize: '1.25rem',
-            fontWeight: 600,
-            borderRadius: 'var(--radius-lg)',
-            cursor: 'pointer',
-            display: 'inline-flex',
+            textAlign: 'center',
+            borderRadius: '.25rem',
+            justifyContent: 'center',
             alignItems: 'center',
+            minWidth: '10.5rem',
+            maxHeight: '2.75rem',
+            padding: '1rem 1.5rem',
+            fontFamily: 'Public Sans Variable, sans-serif',
+            fontSize: '1rem',
+            fontWeight: 500,
+            lineHeight: 1,
+            transition: 'border-color .28s, background-color .28s',
+            display: 'flex',
             gap: '0.75rem',
-            transition: 'all 0.3s ease',
-            boxShadow: '0 8px 24px rgba(69, 127, 255, 0.4)',
+            cursor: 'pointer',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-4px)';
-            e.currentTarget.style.boxShadow = '0 12px 32px rgba(69, 127, 255, 0.5)';
+            e.currentTarget.style.backgroundColor = 'rgba(15, 23, 32, 0.85)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 8px 24px rgba(69, 127, 255, 0.4)';
+            e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
           }}>
             Start je aanvraag nu
             <ArrowRight size={24} />
@@ -733,9 +729,15 @@ export default function HomePage() {
           }
         }
 
-        .benefit-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15) !important;
+        .benefits-scroll-container::-webkit-scrollbar {
+          display: none;
+        }
+
+        @media (max-width: 640px) {
+          .benefits-scroll-container > div > div {
+            min-width: 320px !important;
+            max-width: 320px !important;
+          }
         }
       `}</style>
     </>

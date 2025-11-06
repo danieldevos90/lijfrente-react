@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_faq_section",
+  "info": {
+    "displayName": "FAQ Section",
+    "description": "A FAQ section with accordion items"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Veelgestelde vragen"
+    },
+    "subtitle": {
+      "type": "text",
+      "required": false,
+      "default": "Vind antwoorden op de meest gestelde vragen"
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq-item",
+      "required": true
+    }
+  }
+}
+

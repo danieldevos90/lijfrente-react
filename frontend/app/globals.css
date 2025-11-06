@@ -63,6 +63,9 @@
   font-display: swap;
 }
 
+/* Import Inter from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 /* Global reset and base styles */
 * { box-sizing: border-box; }
 html, body { 
@@ -70,7 +73,7 @@ html, body {
   padding: 0; 
   background: #f9f9f8;
   color: var(--color-text); 
-  font-family: var(--font-base); 
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6; 
 }
 
@@ -134,7 +137,13 @@ h3 {
   line-height: 1; 
   margin: 0 0 var(--space-sm); 
 }
-p { line-height: 1.6; color: var(--color-text); margin: 0 0 var(--space-md); font-size: 18px; }
+p { 
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6; 
+  color: var(--color-text); 
+  margin: 0 0 var(--space-md); 
+  font-size: 18px; 
+}
 
 /* Layout utilities */
 .row { display: flex; gap: var(--space-md); align-items: center; margin: var(--space-md) 0; flex-wrap: wrap; }
