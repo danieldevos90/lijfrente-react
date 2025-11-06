@@ -54,11 +54,11 @@ function PasswordForm() {
         <div className="password-card">
           <div className="password-header">
             <div className="lock-icon">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
+            <svg 
+              width="48" 
+              height="48" 
+              viewBox="0 0 24 24" 
+              fill="none" 
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -70,19 +70,19 @@ function PasswordForm() {
                 />
                 <path
                   d="M7 11V7C7 5.67392 7.52678 4.40215 8.46447 3.46447C9.40215 2.52678 10.6739 2 12 2C13.3261 2 14.5979 2.52678 15.5355 3.46447C16.4732 4.40215 17 5.67392 17 7V11"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
                 />
-              </svg>
-            </div>
+            </svg>
+          </div>
             <h1 className="password-title">Site Under Development</h1>
             <p className="password-description">
               This site is currently in development. Please enter the password to continue.
             </p>
-          </div>
-
+        </div>
+        
           <form onSubmit={handleSubmit} className="password-form">
             <div className="form-group">
               <label htmlFor="password" className="form-label">
@@ -102,8 +102,8 @@ function PasswordForm() {
               {error && <p className="error-message">{error}</p>}
             </div>
 
-            <button
-              type="submit"
+            <button 
+              type="submit" 
               className="submit-button"
               disabled={isLoading || !password}
             >
@@ -132,7 +132,7 @@ function PasswordForm() {
               </svg>
               Your access is secured and encrypted
             </p>
-          </div>
+        </div>
         </div>
       </div>
     </div>

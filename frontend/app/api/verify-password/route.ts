@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 
     if (password === correctPassword) {
       // Set a cookie to remember the user has entered the correct password
-      const cookieStore = cookies();
+      const cookieStore = await cookies();
       cookieStore.set('site-password-verified', 'true', {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
