@@ -12,17 +12,19 @@ export default function HomePage() {
     <>
       <TransparentHeader />
       
-      {/* Big Hero Section with Image */}
+      {/* Big Hero Section with Image - FULLSCREEN */}
       <section style={{
         position: 'relative',
-        minHeight: '100vh',
+        height: '100vh',
+        width: '100vw',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: `linear-gradient(rgba(15, 23, 32, 0.7), rgba(15, 23, 32, 0.7)), url('https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1600&h=1000&fit=crop') center/cover`,
+        background: `linear-gradient(rgba(15, 23, 32, 0.6), rgba(15, 23, 32, 0.6)), url('https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1920&h=1080&fit=crop') center/cover`,
+        backgroundAttachment: 'fixed',
         color: 'white',
         textAlign: 'center',
-        padding: '8rem 2rem 4rem',
+        padding: '2rem',
       }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h1 style={{
