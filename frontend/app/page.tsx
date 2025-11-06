@@ -1,55 +1,111 @@
 import dynamic from 'next/dynamic';
 import Logo from '../components/Logo';
 
+// Section Components
+import HeroSection from '../components/sections/HeroSection';
+import TrustSection from '../components/sections/TrustSection';
+import ContentSection from '../components/sections/ContentSection';
+import ServicesSection from '../components/sections/ServicesSection';
+import TestimonialsSection from '../components/sections/TestimonialsSection';
+import CTASection from '../components/sections/CTASection';
+
 const StickyCTA = dynamic(() => import('../components/StickyCTA'), { ssr: false });
 
 export default function HomePage() {
   return (
-    <div className="homepage-minimal">
-      <section className="hero-minimal">
-        <div className="container">
-          <div className="hero-content-minimal">
-            <Logo size={64} showText={true} />
-            <h1>Zakelijke Financiering Snel Geregeld</h1>
-            <p className="hero-lead">Krijg binnen 24 uur duidelijkheid over uw zakelijke lening. Simpel, snel en transparant.</p>
-            
-            <div className="hero-features-list">
-              <div className="feature-item">
-                <span className="feature-icon">⚡</span>
-                <span>Binnen 24 uur reactie</span>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">✓</span>
-                <span>Transparante voorwaarden</span>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">🔒</span>
-                <span>Geen verborgen kosten</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="info-section">
-        <div className="container">
-          <div className="info-grid">
-            <div className="info-card">
-              <h3>Voor elke ondernemer</h3>
-              <p>Van ZZP'er tot MKB, wij helpen u verder met passende financiering</p>
-            </div>
-            <div className="info-card">
-              <h3>Snel en eenvoudig</h3>
-              <p>Vul het formulier in en ontvang binnen 24 uur een vrijblijvende offerte</p>
-            </div>
-            <div className="info-card">
-              <h3>Persoonlijk advies</h3>
-              <p>Onze specialisten denken graag met u mee over de beste oplossing</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
+    <div>
+      {/* Hero Section with Background Image */}
+      <HeroSection
+        badge="Snel & Transparant"
+        title="Zakelijke financiering zonder gedoe"
+        subtitle="Van aanvraag tot uitbetaling in 24 uur. Helder, flexibel en zonder papierwerk."
+        ctaLabel="Start aanvraag"
+        ctaHref="/lead"
+        variant="image"
+        backgroundImage="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop"
+      />
+
+      {/* Trust Badges */}
+      <TrustSection
+        badges={[
+          { icon: "✓", text: "Gecertificeerd en betrouwbaar" },
+          { icon: "⚡", text: "Binnen 24 uur inzicht" },
+          { icon: "🔒", text: "100% transparant" },
+          { icon: "📋", text: "Geen papieren gedoe" }
+        ]}
+      />
+
+      {/* Content Section */}
+      <ContentSection
+        title="Zakelijke financiering die écht werkt"
+        content="Geen ingewikkelde procedures, geen verrassingen achteraf. Gewoon duidelijke afspraken en snelle service. Wij begrijpen dat ondernemers snel willen handelen en daarom zorgen wij voor een proces dat net zo dynamisch is als jouw bedrijf."
+        layout="image-right"
+        ctaLabel="Lees meer"
+        ctaHref="/over-ons"
+        background="gray"
+      />
+
+      {/* Services Section */}
+      <ServicesSection
+        title="Waar begin ik?"
+        subtitle="De eerste stap is vaak het moeilijkst. Wij maken het je gemakkelijk."
+        services={[
+          { 
+            icon: "💼", 
+            title: "Ik ben werkgever", 
+            description: "Financiering voor bedrijfsuitgaven en groei van je team",
+            href: "/werkgever"
+          },
+          { 
+            icon: "🏢", 
+            title: "Ik heb een bedrijf", 
+            description: "Zakelijke leningen en kredietfaciliteiten op maat",
+            href: "/zakelijk"
+          },
+          { 
+            icon: "👔", 
+            title: "Ik ben ondernemer", 
+            description: "Financiering voor zelfstandigen en DGA's",
+            href: "/ondernemer"
+          },
+          { 
+            icon: "🎯", 
+            title: "Ik wil investeren", 
+            description: "Investeren in de toekomst van je bedrijf",
+            href: "/investeren"
+          }
+        ]}
+      />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection
+        title="Bekijk wat anderen zeggen"
+        testimonials={[
+          {
+            name: "Petra Jongkind",
+            company: "Eco Film B.V.",
+            text: "Supersnelle service en heldere communicatie. Binnen een dag wisten we waar we aan toe waren.",
+            rating: 5
+          },
+          {
+            name: "Simone Brandt",
+            company: "Creative Solutions",
+            text: "Eindelijk een financieringspartner die begrijpt wat ondernemers nodig hebben. Aanrader!",
+            rating: 5
+          }
+        ]}
+      />
+
+      {/* CTA Section */}
+      <CTASection
+        title="Klaar om te starten?"
+        subtitle="Vraag binnen 2 minuten je zakelijke financiering aan"
+        ctaLabel="Start je aanvraag nu"
+        ctaHref="/lead"
+        background="dark"
+      />
+
+      {/* Sticky CTA with Drawer */}
       <StickyCTA label="⚡ Aanvraag starten" useDrawer={true} />
     </div>
   );
