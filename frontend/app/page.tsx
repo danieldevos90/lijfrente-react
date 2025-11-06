@@ -85,12 +85,20 @@ export default function HomePage() {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const cardsPerView = 3; // Number of cards visible at once on desktop
+  
   const nextBenefit = () => {
-    setCurrentBenefit((prev) => (prev + 1) % benefits.length);
+    setCurrentBenefit((prev) => {
+      const maxIndex = benefits.length - cardsPerView;
+      return prev >= maxIndex ? 0 : prev + 1;
+    });
   };
 
   const prevBenefit = () => {
-    setCurrentBenefit((prev) => (prev - 1 + benefits.length) % benefits.length);
+    setCurrentBenefit((prev) => {
+      const maxIndex = benefits.length - cardsPerView;
+      return prev <= 0 ? maxIndex : prev - 1;
+    });
   };
 
   return (
@@ -180,16 +188,17 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* BIG Colored Cards Carousel */}
+          {/* Benefits Cards Carousel */}
           <div style={{
             position: 'relative',
             overflow: 'hidden',
-            minHeight: '400px',
+            minHeight: '320px',
           }}>
             <div style={{
               display: 'flex',
               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-              transform: `translateX(-${currentBenefit * 100}%)`,
+              transform: `translateX(-${currentBenefit * (100 / cardsPerView)}%)`,
+              gap: '1.5rem',
             }}>
               {benefits.map((item, index) => {
                 const Icon = item.icon;
@@ -197,51 +206,51 @@ export default function HomePage() {
                   <div
                     key={index}
                     style={{
-                      minWidth: '100%',
-                      padding: '0 1rem',
+                      minWidth: `calc((100% - ${(cardsPerView - 1) * 1.5}rem) / ${cardsPerView})`,
+                      flex: '0 0 auto',
                     }}
                   >
                     <div
-                      className="big-card"
+                      className="benefit-card"
                       style={{
                         background: item.color,
-                        borderRadius: '32px',
-                        padding: '4rem',
-                        minHeight: '400px',
+                        borderRadius: '24px',
+                        padding: '2rem',
+                        height: '100%',
+                        minHeight: '280px',
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'space-between',
-                        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-                        margin: '0 auto',
-                        maxWidth: '900px',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                        transition: 'all 0.3s ease',
                       }}
                     >
                       <div>
                         <div style={{
-                          width: '96px',
-                          height: '96px',
-                          borderRadius: '24px',
+                          width: '64px',
+                          height: '64px',
+                          borderRadius: '16px',
                           background: 'rgba(15, 23, 32, 0.08)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          marginBottom: '2.5rem',
+                          marginBottom: '1.5rem',
                         }}>
-                          <Icon size={48} color={item.textColor} strokeWidth={2} />
+                          <Icon size={32} color={item.textColor} strokeWidth={2} />
                         </div>
                         <h3 style={{
-                          fontSize: '2.5rem',
-                          fontWeight: 500,
-                          marginBottom: '1.5rem',
+                          fontSize: '1.5rem',
+                          fontWeight: 600,
+                          marginBottom: '1rem',
                           color: item.textColor,
                         }}>
                           {item.title}
                         </h3>
                       </div>
                       <p style={{
-                        fontSize: '1.375rem',
+                        fontSize: '1rem',
                         color: item.textColor,
-                        lineHeight: 1.7,
+                        lineHeight: 1.6,
                         opacity: 0.85,
                       }}>
                         {item.desc}
