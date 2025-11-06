@@ -3,10 +3,6 @@ import './globals.css';
 import type { ReactNode } from 'react';
 import GlobalWidgetProvider from '../components/GlobalWidgetProvider';
 
-// Force dynamic rendering to avoid build-time issues
-export const dynamic = 'force-dynamic';
-export const runtime = 'nodejs';
-
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
 export const metadata = {
   title: SITE_NAME + ' - Zakelijke Financiering',

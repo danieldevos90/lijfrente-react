@@ -9,9 +9,6 @@ import FeatureSection from '../components/FeatureSection';
 import { useWidget } from '../components/GlobalWidgetProvider';
 import { ArrowRight } from 'lucide-react';
 
-// Mark as dynamic to prevent build-time prerendering issues with event handlers
-export const dynamic = 'force-dynamic';
-
 export default function HomePage() {
   
   const { openDrawer } = useWidget();
