@@ -44,9 +44,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             />
           </noscript>
         ) : null}
-        <GlobalWidgetProvider>
-          {children}
-        </GlobalWidgetProvider>
+        <PasswordProtection>
+          <GlobalWidgetProvider>
+            {children}
+          </GlobalWidgetProvider>
+        </PasswordProtection>
       </body>
     </html>
   );
