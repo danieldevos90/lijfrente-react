@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, ReactNode } from 'react';
+import Image from 'next/image';
 
 interface PasswordProtectionProps {
   children: ReactNode;
@@ -14,67 +15,60 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
-
-  console.log('[PasswordProtection] Component mounted, loading:', loading);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    console.log('[PasswordProtection] useEffect running');
     // Check localStorage when component mounts
     if (typeof window !== 'undefined') {
-      console.log('[PasswordProtection] Window is defined');
       const verified = localStorage.getItem('site_password_verified');
-      console.log('[PasswordProtection] localStorage value:', verified);
       if (verified === 'true') {
-        console.log('[PasswordProtection] User already authenticated');
         setIsAuthenticated(true);
-      } else {
-        console.log('[PasswordProtection] User NOT authenticated');
       }
       setLoading(false);
-    } else {
-      console.log('[PasswordProtection] Window is undefined (SSR)');
     }
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    console.log('[PasswordProtection] Form submitted with password:', password);
 
     if (password === CORRECT_PASSWORD) {
-      console.log('[PasswordProtection] Password correct, saving to localStorage');
       localStorage.setItem('site_password_verified', 'true');
       setIsAuthenticated(true);
     } else {
-      console.log('[PasswordProtection] Password incorrect');
-      setError('Invalid password');
+      setError('Onjuist wachtwoord');
       setPassword('');
     }
   };
 
-  console.log('[PasswordProtection] Current state - loading:', loading, 'isAuthenticated:', isAuthenticated);
-
   // Don't show anything while checking localStorage
   if (loading) {
-    console.log('[PasswordProtection] Still loading, returning null');
     return null;
   }
 
   // Show password form if not authenticated
   if (!isAuthenticated) {
-    console.log('[PasswordProtection] Not authenticated, showing password form');
     return (
       <div style={styles.overlay}>
         <div style={styles.container}>
-          <h1 style={styles.title}>🔐</h1>
-          <h2 style={styles.subtitle}>Password Required</h2>
+          <div style={styles.iconWrapper}>
+            <Image 
+              src="/icons/SVG/interface/lock.svg" 
+              alt="Beveiligd" 
+              width={72} 
+              height={72}
+              style={{ opacity: 1 }}
+            />
+          </div>
+          <h1 style={styles.title}>Beveiligde Toegang</h1>
+          <p style={styles.subtitle}>Voer het wachtwoord in om door te gaan</p>
           
           <form onSubmit={handleSubmit} style={styles.form}>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter password"
+              placeholder="Wachtwoord"
               style={styles.input}
               autoFocus
             />
@@ -83,38 +77,23 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
             
             <button
               type="submit"
-              style={styles.button}
+              style={{
+                ...styles.button,
+                backgroundColor: isHovered ? '#333333' : '#000000',
+              }}
               disabled={!password}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              Access Site
+              Toegang Verkrijgen
             </button>
           </form>
-          
-          {/* Debug panel */}
-          <div style={{
-            marginTop: '30px',
-            padding: '15px',
-            backgroundColor: '#f5f5f5',
-            borderRadius: '8px',
-            fontSize: '12px',
-            textAlign: 'left',
-            fontFamily: 'monospace',
-            color: '#666'
-          }}>
-            <div>Debug Info:</div>
-            <div>Loading: {String(loading)}</div>
-            <div>Authenticated: {String(isAuthenticated)}</div>
-            <div>Password: {password ? password.length + ' chars' : 'empty'}</div>
-            <div>Expected: {CORRECT_PASSWORD}</div>
-            <div>Window defined: {String(typeof window !== 'undefined')}</div>
-          </div>
         </div>
       </div>
     );
   }
 
   // Show the actual site content
-  console.log('[PasswordProtection] User authenticated, showing site content');
   return <>{children}</>;
 }
 
@@ -125,58 +104,83 @@ const styles: { [key: string]: React.CSSProperties } = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f9f9f8',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 9999,
+    fontFamily: 'PP Neue Montreal, -apple-system, BlinkMacSystemFont, sans-serif',
   },
   container: {
     textAlign: 'center',
-    padding: '40px',
-    maxWidth: '400px',
+    padding: '3rem',
+    maxWidth: '480px',
     width: '100%',
+    backgroundColor: '#ffffff',
+    borderRadius: '1.5rem',
+    boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+  },
+  iconWrapper: {
+    marginBottom: '2rem',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   title: {
-    fontSize: '60px',
-    margin: '0 0 20px',
+    fontSize: 'clamp(2rem, 5vw, 2.5rem)',
+    fontWeight: '400',
+    lineHeight: '1.1',
+    margin: '0 0 1rem',
+    color: '#0f1720',
+    fontFamily: 'PP Neue Montreal, sans-serif',
   },
   subtitle: {
-    fontSize: '24px',
-    fontWeight: '600',
-    color: '#0f1720',
-    margin: '0 0 30px',
-    fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
+    fontSize: '1.125rem',
+    fontWeight: '300',
+    color: '#6c737a',
+    margin: '0 0 2.5rem',
+    lineHeight: '1.5',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '15px',
+    gap: '1.25rem',
   },
   input: {
-    padding: '15px',
+    padding: '1rem 1.25rem',
     fontSize: '16px',
-    border: '2px solid #e0e0e0',
-    borderRadius: '8px',
+    border: '1px solid #e2e8f0',
+    borderRadius: '0.75rem',
     fontFamily: 'inherit',
     width: '100%',
     boxSizing: 'border-box',
     outline: 'none',
+    transition: 'border-color 0.2s ease',
+    backgroundColor: '#ffffff',
+    color: '#0f1720',
   },
   button: {
-    padding: '15px 30px',
-    fontSize: '16px',
-    fontWeight: '600',
+    border: 'none',
     backgroundColor: '#000000',
     color: 'white',
-    border: 'none',
-    borderRadius: '8px',
+    textAlign: 'center',
+    borderRadius: '10rem',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minWidth: '14rem',
+    padding: '1.25rem 2.5rem',
+    fontFamily: 'Public Sans Variable, sans-serif',
+    fontSize: '18px',
+    fontWeight: '400',
+    lineHeight: '1rem',
+    transition: 'all .28s',
+    display: 'flex',
     cursor: 'pointer',
-    fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
+    margin: '0 auto',
   },
   error: {
     color: '#dc3545',
-    fontSize: '14px',
+    fontSize: '0.875rem',
     margin: '0',
   },
 };
