@@ -11,10 +11,12 @@ export default function TransparentHeader() {
       left: 0,
       right: 0,
       zIndex: 100,
-      background: 'rgba(255, 255, 255, 0.95)',
-      backdropFilter: 'blur(10px)',
-      borderBottom: '1px solid rgba(108, 115, 122, 0.1)',
+      background: 'rgba(255, 255, 255, 0.1)',
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
       padding: '1rem 0',
+      transition: 'all 0.3s ease',
     }}>
       <div className="container" style={{
         display: 'flex',
@@ -34,10 +36,11 @@ export default function TransparentHeader() {
           <Link 
             href="/over-ons" 
             style={{
-              color: 'var(--color-text)',
+              color: 'white',
               textDecoration: 'none',
               fontWeight: 500,
               fontSize: '15px',
+              textShadow: '0 1px 2px rgba(0,0,0,0.3)',
             }}
           >
             Over ons
@@ -45,10 +48,11 @@ export default function TransparentHeader() {
           <Link 
             href="/contact" 
             style={{
-              color: 'var(--color-text)',
+              color: 'white',
               textDecoration: 'none',
               fontWeight: 500,
               fontSize: '15px',
+              textShadow: '0 1px 2px rgba(0,0,0,0.3)',
             }}
           >
             Contact
@@ -64,6 +68,7 @@ export default function TransparentHeader() {
               fontWeight: 600,
               fontSize: '15px',
               cursor: 'pointer',
+              boxShadow: '0 2px 8px rgba(69, 127, 255, 0.3)',
             }}
           >
             Aanvragen
