@@ -2,6 +2,7 @@ import './tokens.css';
 import './globals.css';
 import type { ReactNode } from 'react';
 import GlobalWidgetProvider from '../components/GlobalWidgetProvider';
+import PasswordProtection from '../components/PasswordProtection';
 
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
 export const metadata = {
