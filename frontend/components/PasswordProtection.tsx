@@ -7,15 +7,15 @@ interface PasswordProtectionProps {
   children: ReactNode;
 }
 
-// SIMPLE PASSWORD CHECK - Change password here
-const CORRECT_PASSWORD = 'test123';
-
 export default function PasswordProtection({ children }: PasswordProtectionProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+  
+  // Get password from environment variable
+  const CORRECT_PASSWORD = process.env.NEXT_PUBLIC_SITE_PASSWORD || 'lekkergeld';
 
   useEffect(() => {
     // Check localStorage when component mounts
