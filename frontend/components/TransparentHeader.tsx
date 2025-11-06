@@ -12,8 +12,6 @@ export default function TransparentHeader() {
       right: 0,
       zIndex: 100,
       background: 'rgba(255, 255, 255, 0.1)',
-      backdropFilter: 'blur(20px)',
-      WebkitBackdropFilter: 'blur(20px)',
       borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
       padding: '1rem 0',
       transition: 'all 0.3s ease',
