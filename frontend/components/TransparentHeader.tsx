@@ -1,9 +1,20 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import Link from 'next/link';
 
 export default function TransparentHeader() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <header style={{
       position: 'fixed',
@@ -11,10 +22,11 @@ export default function TransparentHeader() {
       left: 0,
       right: 0,
       zIndex: 100,
-      background: 'rgba(255, 255, 255, 0.1)',
-      borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+      background: isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'transparent',
+      borderBottom: isScrolled ? '1px solid rgba(0, 0, 0, 0.1)' : '1px solid transparent',
       padding: '1rem 0',
       transition: 'all 0.3s ease',
+      boxShadow: isScrolled ? '0 2px 10px rgba(0, 0, 0, 0.05)' : 'none',
     }}>
       <div className="container" style={{
         display: 'flex',
@@ -34,11 +46,12 @@ export default function TransparentHeader() {
           <Link 
             href="/over-ons" 
             style={{
-              color: 'white',
+              color: isScrolled ? 'var(--color-text)' : 'white',
               textDecoration: 'none',
               fontWeight: 500,
               fontSize: '15px',
-              textShadow: '0 1px 2px rgba(0,0,0,0.3)',
+              textShadow: isScrolled ? 'none' : '0 1px 2px rgba(0,0,0,0.3)',
+              transition: 'all 0.3s ease',
             }}
           >
             Over ons
@@ -46,11 +59,12 @@ export default function TransparentHeader() {
           <Link 
             href="/contact" 
             style={{
-              color: 'white',
+              color: isScrolled ? 'var(--color-text)' : 'white',
               textDecoration: 'none',
               fontWeight: 500,
               fontSize: '15px',
-              textShadow: '0 1px 2px rgba(0,0,0,0.3)',
+              textShadow: isScrolled ? 'none' : '0 1px 2px rgba(0,0,0,0.3)',
+              transition: 'all 0.3s ease',
             }}
           >
             Contact
