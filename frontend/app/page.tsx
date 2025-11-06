@@ -8,7 +8,8 @@ import dynamic from 'next/dynamic';
 const StickyCTA = dynamic(() => import('../components/StickyCTA'), { ssr: false });
 
 export default function HomePage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [currentBenefit, setCurrentBenefit] = useState(0);
   
   const testimonials = [
     {
@@ -31,20 +32,73 @@ export default function HomePage() {
     },
   ];
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+  const benefits = [
+    { 
+      icon: Zap, 
+      title: 'Razendsnel', 
+      desc: 'Binnen 24 uur reactie op uw aanvraag. We begrijpen dat tijd geld is voor ondernemers.',
+      color: '#fff2b2',
+      textColor: '#5e5515'
+    },
+    { 
+      icon: Shield, 
+      title: 'Betrouwbaar', 
+      desc: 'Volledig gecertificeerd en transparant. Geen verborgen kosten of verrassingen achteraf.',
+      color: '#bbe7be',
+      textColor: '#114e0b'
+    },
+    { 
+      icon: Clock, 
+      title: 'Flexibel', 
+      desc: 'Looptijd en voorwaarden volledig op maat van uw bedrijf en situatie.',
+      color: '#aad5fc',
+      textColor: '#0f1720'
+    },
+    { 
+      icon: TrendingUp, 
+      title: 'Groei', 
+      desc: 'Investeer in de toekomst van uw bedrijf met onze flexibele financieringsoplossingen.',
+      color: '#d7d0ff',
+      textColor: '#3b0b0b'
+    },
+    { 
+      icon: Users, 
+      title: 'Persoonlijk', 
+      desc: 'Een dedicated adviseur begeleidt u door het hele proces, van aanvraag tot uitbetaling.',
+      color: '#f8e4e4',
+      textColor: '#3b0b0b'
+    },
+    { 
+      icon: Award, 
+      title: 'Bewezen', 
+      desc: 'Meer dan 500 tevreden ondernemers gingen u voor. Bekijk hun ervaringen hieronder.',
+      color: '#fcf8d8',
+      textColor: '#5e5515'
+    },
+  ];
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const nextBenefit = () => {
+    setCurrentBenefit((prev) => (prev + 1) % benefits.length);
+  };
+
+  const prevBenefit = () => {
+    setCurrentBenefit((prev) => (prev - 1 + benefits.length) % benefits.length);
   };
 
   return (
     <>
       <TransparentHeader />
       
-      {/* Big Hero Section with Image - FULLSCREEN */}
-      <section style={{
+      {/* Hero Section */}
+      <section id="hero" style={{
         position: 'relative',
         height: '100vh',
         width: '100vw',
@@ -75,7 +129,6 @@ export default function HomePage() {
             Van aanvraag tot uitbetaling in 24 uur. Helder, flexibel en zonder papierwerk.
           </p>
           
-          {/* Single CTA in center */}
           <button style={{
             background: 'var(--color-primary)',
             color: 'white',
@@ -101,8 +154,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Animated Stacking Cards Section - COLORFUL LIKE IMAGE */}
-      <section style={{
+      {/* Benefits Carousel Section */}
+      <section id="benefits" style={{
         background: 'var(--color-bg)',
         padding: '8rem 2rem',
         position: 'relative',
@@ -127,177 +180,172 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* BIG Colored Cards Grid */}
+          {/* BIG Colored Cards Carousel */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
-            gap: '2.5rem',
+            position: 'relative',
+            overflow: 'hidden',
+            minHeight: '400px',
           }}>
-            {[
-              { 
-                icon: Zap, 
-                title: 'Razendsnel', 
-                desc: 'Binnen 24 uur reactie op uw aanvraag. We begrijpen dat tijd geld is voor ondernemers.',
-                color: '#fff2b2',
-                textColor: '#5e5515'
-              },
-              { 
-                icon: Shield, 
-                title: 'Betrouwbaar', 
-                desc: 'Volledig gecertificeerd en transparant. Geen verborgen kosten of verrassingen achteraf.',
-                color: '#bbe7be',
-                textColor: '#114e0b'
-              },
-              { 
-                icon: Clock, 
-                title: 'Flexibel', 
-                desc: 'Looptijd en voorwaarden volledig op maat van uw bedrijf en situatie.',
-                color: '#aad5fc',
-                textColor: '#0f1720'
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="big-card"
-                  style={{
-                    background: item.color,
-                    borderRadius: '24px',
-                    padding: '3.5rem',
-                    minHeight: '320px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    animation: `slideUp 0.8s ease-out ${index * 0.15}s both`,
-                    cursor: 'pointer',
-                  }}
-                >
-                  <div>
-                    <div style={{
-                      width: '80px',
-                      height: '80px',
-                      borderRadius: '20px',
-                      background: 'rgba(15, 23, 32, 0.08)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '2rem',
-                    }}>
-                      <Icon size={40} color={item.textColor} strokeWidth={2} />
+            <div style={{
+              display: 'flex',
+              transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+              transform: `translateX(-${currentBenefit * 100}%)`,
+            }}>
+              {benefits.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={index}
+                    style={{
+                      minWidth: '100%',
+                      padding: '0 1rem',
+                    }}
+                  >
+                    <div
+                      className="big-card"
+                      style={{
+                        background: item.color,
+                        borderRadius: '32px',
+                        padding: '4rem',
+                        minHeight: '400px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+                        margin: '0 auto',
+                        maxWidth: '900px',
+                      }}
+                    >
+                      <div>
+                        <div style={{
+                          width: '96px',
+                          height: '96px',
+                          borderRadius: '24px',
+                          background: 'rgba(15, 23, 32, 0.08)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          marginBottom: '2.5rem',
+                        }}>
+                          <Icon size={48} color={item.textColor} strokeWidth={2} />
+                        </div>
+                        <h3 style={{
+                          fontSize: '2.5rem',
+                          fontWeight: 700,
+                          marginBottom: '1.5rem',
+                          color: item.textColor,
+                        }}>
+                          {item.title}
+                        </h3>
+                      </div>
+                      <p style={{
+                        fontSize: '1.375rem',
+                        color: item.textColor,
+                        lineHeight: 1.7,
+                        opacity: 0.85,
+                      }}>
+                        {item.desc}
+                      </p>
                     </div>
-                    <h3 style={{
-                      fontSize: '2rem',
-                      fontWeight: 700,
-                      marginBottom: '1rem',
-                      color: item.textColor,
-                    }}>
-                      {item.title}
-                    </h3>
                   </div>
-                  <p style={{
-                    fontSize: '1.125rem',
-                    color: item.textColor,
-                    lineHeight: 1.7,
-                    opacity: 0.85,
-                  }}>
-                    {item.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
 
-          {/* Second Row */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
-            gap: '2.5rem',
-            marginTop: '2.5rem',
-          }}>
-            {[
-              { 
-                icon: TrendingUp, 
-                title: 'Groei', 
-                desc: 'Investeer in de toekomst van uw bedrijf met onze flexibele financieringsoplossingen.',
-                color: '#d7d0ff',
-                textColor: '#3b0b0b'
-              },
-              { 
-                icon: Users, 
-                title: 'Persoonlijk', 
-                desc: 'Een dedicated adviseur begeleidt u door het hele proces, van aanvraag tot uitbetaling.',
-                color: '#f8e4e4',
-                textColor: '#3b0b0b'
-              },
-              { 
-                icon: Award, 
-                title: 'Bewezen', 
-                desc: 'Meer dan 500 tevreden ondernemers gingen u voor. Bekijk hun ervaringen hieronder.',
-                color: '#fcf8d8',
-                textColor: '#5e5515'
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevBenefit}
+              style={{
+                position: 'absolute',
+                left: '1rem',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'white',
+                border: 'none',
+                width: '56px',
+                height: '56px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)',
+                transition: 'all 0.3s ease',
+                zIndex: 10,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.15)';
+              }}
+            >
+              <ChevronLeft size={28} color="var(--color-text)" strokeWidth={2.5} />
+            </button>
+
+            <button
+              onClick={nextBenefit}
+              style={{
+                position: 'absolute',
+                right: '1rem',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'white',
+                border: 'none',
+                width: '56px',
+                height: '56px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)',
+                transition: 'all 0.3s ease',
+                zIndex: 10,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.15)';
+              }}
+            >
+              <ChevronRight size={28} color="var(--color-text)" strokeWidth={2.5} />
+            </button>
+
+            {/* Dots Indicator */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '0.75rem',
+              marginTop: '3rem',
+            }}>
+              {benefits.map((_, index) => (
+                <button
                   key={index}
-                  className="big-card"
+                  onClick={() => setCurrentBenefit(index)}
                   style={{
-                    background: item.color,
-                    borderRadius: '24px',
-                    padding: '3.5rem',
-                    minHeight: '320px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    animation: `slideUp 0.8s ease-out ${(index + 3) * 0.15}s both`,
+                    width: currentBenefit === index ? '40px' : '12px',
+                    height: '12px',
+                    borderRadius: '6px',
+                    background: currentBenefit === index ? 'var(--color-primary)' : 'rgba(15, 23, 32, 0.2)',
+                    border: 'none',
                     cursor: 'pointer',
+                    transition: 'all 0.3s ease',
                   }}
-                >
-                  <div>
-                    <div style={{
-                      width: '80px',
-                      height: '80px',
-                      borderRadius: '20px',
-                      background: 'rgba(15, 23, 32, 0.08)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '2rem',
-                    }}>
-                      <Icon size={40} color={item.textColor} strokeWidth={2} />
-                    </div>
-                    <h3 style={{
-                      fontSize: '2rem',
-                      fontWeight: 700,
-                      marginBottom: '1rem',
-                      color: item.textColor,
-                    }}>
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p style={{
-                    fontSize: '1.125rem',
-                    color: item.textColor,
-                    lineHeight: 1.7,
-                    opacity: 0.85,
-                  }}>
-                    {item.desc}
-                  </p>
-                </div>
-              );
-            })}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Carousel Section */}
-      <section style={{
+      <section id="testimonials" style={{
         background: 'white',
         padding: '8rem 2rem',
         position: 'relative',
@@ -339,8 +387,8 @@ export default function HomePage() {
                   position: 'absolute',
                   width: '100%',
                   padding: '0 3rem',
-                  opacity: currentSlide === index ? 1 : 0,
-                  transform: `translateX(${(index - currentSlide) * 100}%)`,
+                  opacity: currentTestimonial === index ? 1 : 0,
+                  transform: `translateX(${(index - currentTestimonial) * 100}%)`,
                   transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
                   display: 'flex',
                   flexDirection: 'column',
@@ -392,7 +440,7 @@ export default function HomePage() {
 
             {/* Navigation Buttons */}
             <button
-              onClick={prevSlide}
+              onClick={prevTestimonial}
               style={{
                 position: 'absolute',
                 left: '1rem',
@@ -424,7 +472,7 @@ export default function HomePage() {
             </button>
 
             <button
-              onClick={nextSlide}
+              onClick={nextTestimonial}
               style={{
                 position: 'absolute',
                 right: '1rem',
@@ -467,12 +515,12 @@ export default function HomePage() {
               {testimonials.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setCurrentSlide(index)}
+                  onClick={() => setCurrentTestimonial(index)}
                   style={{
-                    width: currentSlide === index ? '32px' : '12px',
+                    width: currentTestimonial === index ? '32px' : '12px',
                     height: '12px',
                     borderRadius: '6px',
-                    background: currentSlide === index ? 'var(--color-primary)' : 'rgba(15, 23, 32, 0.2)',
+                    background: currentTestimonial === index ? 'var(--color-primary)' : 'rgba(15, 23, 32, 0.2)',
                     border: 'none',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
@@ -485,7 +533,7 @@ export default function HomePage() {
       </section>
 
       {/* How It Works Section */}
-      <section style={{
+      <section id="how-it-works" style={{
         background: 'var(--color-bg)',
         padding: '8rem 2rem',
       }}>
@@ -609,7 +657,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section style={{
+      <section id="cta" style={{
         background: 'var(--color-charcoal)',
         padding: '8rem 2rem',
         textAlign: 'center',
@@ -658,7 +706,7 @@ export default function HomePage() {
             Start je aanvraag nu
             <ArrowRight size={24} />
           </button>
-    </div>
+        </div>
       </section>
 
       <Footer />

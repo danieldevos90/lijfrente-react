@@ -46,10 +46,11 @@ export default function TransparentHeader() {
           <Link 
             href="/over-ons" 
             style={{
-              color: 'var(--color-text)',
+              color: isScrolled ? 'var(--color-text)' : 'white',
               textDecoration: 'none',
               fontWeight: 500,
               fontSize: '15px',
+              textShadow: isScrolled ? 'none' : '0 1px 2px rgba(0,0,0,0.3)',
               transition: 'all 0.3s ease',
             }}
           >
@@ -58,10 +59,11 @@ export default function TransparentHeader() {
           <Link 
             href="/contact" 
             style={{
-              color: 'var(--color-text)',
+              color: isScrolled ? 'var(--color-text)' : 'white',
               textDecoration: 'none',
               fontWeight: 500,
               fontSize: '15px',
+              textShadow: isScrolled ? 'none' : '0 1px 2px rgba(0,0,0,0.3)',
               transition: 'all 0.3s ease',
             }}
           >
