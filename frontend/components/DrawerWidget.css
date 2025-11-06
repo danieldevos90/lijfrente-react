@@ -1,0 +1,329 @@
+/* Drawer Overlay */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn var(--transition-slow, 0.3s) ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Drawer Container */
+.drawer-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 440px;
+  max-width: 100vw;
+  background: var(--color-white);
+  box-shadow: var(--shadow-2xl);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-slow) ease-out;
+}
+
+.drawer-container.open {
+  transform: translateX(0);
+}
+
+/* Drawer Header */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.drawer-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.drawer-title h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.step-indicator {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  padding: var(--space-sm);
+  cursor: pointer;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-close:hover {
+  background: var(--color-gray-200);
+  color: var(--color-text);
+}
+
+/* Drawer Progress */
+.drawer-progress {
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--color-gray-200);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  transition: width var(--transition-slow) ease-out;
+}
+
+.progress-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-gray-200);
+  transition: all var(--transition-slow) ease;
+}
+
+.progress-dot.active {
+  background: var(--color-primary);
+}
+
+.progress-dot.current {
+  width: 12px;
+  height: 12px;
+  background: var(--color-primary-dark);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+}
+
+/* Drawer Body */
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.drawer-step h2 {
+  margin: 0 0 var(--space-sm);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.step-description {
+  margin: 0 0 var(--space-xl);
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+/* Form Fields */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-gray-700);
+}
+
+.field-group input,
+.field-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  color: var(--color-text);
+  transition: all var(--transition-base);
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.field-group input.error,
+.field-group textarea.error {
+  border-color: var(--color-error);
+}
+
+.field-group input.error:focus,
+.field-group textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.field-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.field-error {
+  margin-top: 0.375rem;
+  font-size: 13px;
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Drawer Footer */
+.drawer-footer {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.drawer-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.drawer-nav .btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.75rem var(--space-lg);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.drawer-nav .btn-secondary {
+  background: var(--color-white);
+  color: var(--color-gray-700);
+  border: 1px solid var(--color-gray-300);
+}
+
+.drawer-nav .btn-secondary:hover {
+  background: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+}
+
+.drawer-nav .btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  flex: 1;
+  justify-content: center;
+}
+
+.drawer-nav .btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-primary-dark), #047857);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.drawer-nav .btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.drawer-trust {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .drawer-container {
+    width: 100vw;
+  }
+  
+  .drawer-header {
+    padding: 1rem;
+  }
+  
+  .drawer-title h2 {
+    font-size: 18px;
+  }
+  
+  .drawer-progress {
+    padding: 1rem;
+  }
+  
+  .drawer-body {
+    padding: 1.5rem 1rem;
+  }
+  
+  .drawer-step h2 {
+    font-size: 20px;
+  }
+  
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .drawer-footer {
+    padding: 1rem;
+  }
+  
+  .drawer-trust {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+

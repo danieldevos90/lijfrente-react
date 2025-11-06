@@ -108,6 +108,6 @@ export default function ThankYouPage() {
 }
 
 export const metadata = {
-  title: 'Bedankt voor uw aanvraag | Zakelijk Lening Project',
+  title: 'Bedankt voor uw aanvraag | GeldGeregeld',
   description: 'Uw financieringsaanvraag is ontvangen. We nemen binnen 24 uur contact met u op.',
 };

@@ -1,26 +1,26 @@
 "use client";
 import React, { useState } from "react";
-import LeadFormModal from "./modals/LeadFormModal";
+import DrawerWidget from "./DrawerWidget";
 
 interface StickyCTAProps {
   href?: string;
   label?: string;
-  useModal?: boolean;
+  useDrawer?: boolean;
 }
 
-export default function StickyCTA({ href, label, useModal = true }: StickyCTAProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function StickyCTA({ href, label, useDrawer = true }: StickyCTAProps) {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleClick = (e: React.MouseEvent) => {
-    if (useModal) {
+    if (useDrawer) {
       e.preventDefault();
-      setIsModalOpen(true);
+      setIsDrawerOpen(true);
       
-      // Track modal open event
+      // Track drawer open event
       if (typeof window !== 'undefined') {
         (window as any).dataLayer = (window as any).dataLayer || [];
         (window as any).dataLayer.push({ 
-          event: 'cta_sticky_modal_open',
+          event: 'cta_sticky_drawer_open',
           source: 'sticky_cta'
         });
       }
@@ -36,14 +36,14 @@ export default function StickyCTA({ href, label, useModal = true }: StickyCTAPro
     }
   };
 
-  const handleModalClose = () => {
-    setIsModalOpen(false);
+  const handleDrawerClose = () => {
+    setIsDrawerOpen(false);
     
-    // Track modal close event
+    // Track drawer close event
     if (typeof window !== 'undefined') {
       (window as any).dataLayer = (window as any).dataLayer || [];
       (window as any).dataLayer.push({ 
-        event: 'cta_sticky_modal_close',
+        event: 'cta_sticky_drawer_close',
         source: 'sticky_cta'
       });
     }
@@ -53,12 +53,10 @@ export default function StickyCTA({ href, label, useModal = true }: StickyCTAPro
     <>
       <div style={{
         position: 'fixed',
-        bottom: 12,
-        left: 12,
-        right: 12,
+        bottom: 20,
+        left: '50%',
+        transform: 'translateX(-50%)',
         zIndex: 50,
-        display: 'flex',
-        justifyContent: 'center',
       }}>
         <button
           className="btn btn-primary"
@@ -66,17 +64,19 @@ export default function StickyCTA({ href, label, useModal = true }: StickyCTAPro
           style={{
             boxShadow: '0 6px 18px rgba(0,0,0,0.15)',
             border: 'none',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            fontSize: '16px',
+            padding: '14px 32px',
           }}
         >
           {label || 'Vraag financiering aan'}
         </button>
       </div>
 
-      {useModal && (
-        <LeadFormModal 
-          isOpen={isModalOpen} 
-          onClose={handleModalClose}
+      {useDrawer && (
+        <DrawerWidget 
+          isOpen={isDrawerOpen} 
+          onClose={handleDrawerClose}
         />
       )}
     </>

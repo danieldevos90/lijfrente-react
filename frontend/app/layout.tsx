@@ -2,10 +2,10 @@ import './tokens.css';
 import './globals.css';
 import type { ReactNode } from 'react';
 
-const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'Zakelijk Lening Project';
+const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
 export const metadata = {
-  title: SITE_NAME,
-  description: 'Corporate & MKB financiering – snelle aanvraag en transparante voorwaarden',
+  title: SITE_NAME + ' - Zakelijke Financiering',
+  description: 'Snel en simpel zakelijke financiering regelen – binnen 24 uur reactie en transparante voorwaarden',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
