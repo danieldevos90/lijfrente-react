@@ -114,7 +114,7 @@ export default function HomePage() {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h1 style={{
             fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-            fontWeight: 700,
+            fontWeight: 500,
             marginBottom: '1.5rem',
             lineHeight: 1.1,
           }}>
@@ -231,7 +231,7 @@ export default function HomePage() {
                         </div>
                         <h3 style={{
                           fontSize: '2.5rem',
-                          fontWeight: 700,
+                          fontWeight: 500,
                           marginBottom: '1.5rem',
                           color: item.textColor,
                         }}>
@@ -422,7 +422,7 @@ export default function HomePage() {
                 <div>
                   <div style={{
                     fontSize: '1.25rem',
-                    fontWeight: 700,
+                    fontWeight: 500,
                     color: 'var(--color-text)',
                     marginBottom: '0.25rem',
                   }}>
@@ -636,7 +636,7 @@ export default function HomePage() {
                 <div style={{ padding: '2rem' }}>
                   <h3 style={{
                     fontSize: '1.5rem',
-                    fontWeight: 700,
+                    fontWeight: 500,
                     marginBottom: '0.75rem',
                     color: 'var(--color-text)',
                   }}>
@@ -666,7 +666,7 @@ export default function HomePage() {
           <CheckCircle size={80} color="var(--color-sun)" strokeWidth={2} style={{ marginBottom: '2rem' }} />
           <h2 style={{
             fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-            fontWeight: 700,
+            fontWeight: 500,
             marginBottom: '1.5rem',
             color: 'white',
           }}>
@@ -706,7 +706,7 @@ export default function HomePage() {
             Start je aanvraag nu
             <ArrowRight size={24} />
           </button>
-        </div>
+    </div>
       </section>
 
       <Footer />
