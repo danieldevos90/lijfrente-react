@@ -2,6 +2,7 @@ import './tokens.css';
 import './globals.css';
 import type { ReactNode } from 'react';
 import GlobalWidgetProvider from '../components/GlobalWidgetProvider';
+import PasswordGate from './PasswordGate';
 
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
 export const metadata = {
@@ -41,9 +42,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             />
           </noscript>
         ) : null}
-        <GlobalWidgetProvider>
-          {children}
-        </GlobalWidgetProvider>
+        <PasswordGate>
+          <GlobalWidgetProvider>
+            {children}
+          </GlobalWidgetProvider>
+        </PasswordGate>
       </body>
     </html>
   );
