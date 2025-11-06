@@ -333,7 +333,7 @@ export default function HomePage() {
               gap: '0.75rem',
               marginTop: '3rem',
             }}>
-              {benefits.map((_, index) => (
+              {Array.from({ length: benefits.length - cardsPerView + 1 }).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentBenefit(index)}
@@ -733,9 +733,9 @@ export default function HomePage() {
           }
         }
 
-        .big-card:hover {
-          transform: translateY(-12px) scale(1.02);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        .benefit-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15) !important;
         }
       `}</style>
     </>
