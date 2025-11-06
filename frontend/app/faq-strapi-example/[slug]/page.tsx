@@ -14,13 +14,8 @@ import { notFound } from 'next/navigation';
  * 3. Render FAQ component with proper types
  */
 
-// This function generates static paths for all pages at build time
-export async function generateStaticParams() {
-  // In production, you'd fetch all page slugs from Strapi
-  return [
-    { slug: 'faq-strapi-example' },
-  ];
-}
+// Mark as dynamic to prevent build-time prerendering when Strapi is not available
+export const dynamic = 'force-dynamic';
 
 // This function generates metadata for SEO
 export async function generateMetadata({ params }: { params: { slug: string } }) {

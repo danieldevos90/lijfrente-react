@@ -127,8 +127,8 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
     
     try {
       // Track form submission
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'form_submit', {
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'form_submit', {
           event_category: 'Lead Generation',
           event_label: 'Interactive Form Complete'
         });

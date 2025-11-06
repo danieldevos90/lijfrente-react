@@ -1,6 +1,7 @@
 import './tokens.css';
 import './globals.css';
 import type { ReactNode } from 'react';
+import GlobalWidgetProvider from '../components/GlobalWidgetProvider';
 
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
 export const metadata = {
@@ -40,7 +41,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             />
           </noscript>
         ) : null}
-        {children}
+        <GlobalWidgetProvider>
+          {children}
+        </GlobalWidgetProvider>
       </body>
     </html>
   );

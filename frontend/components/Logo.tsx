@@ -1,48 +1,29 @@
 "use client";
 import React from 'react';
-import { ThumbsUp } from 'lucide-react';
+import Link from 'next/link';
 
 interface LogoProps {
   size?: number;
-  showText?: boolean;
   className?: string;
+  textColor?: string;
+  showText?: boolean;
 }
 
-export default function Logo({ size = 40, showText = true, className = '' }: LogoProps) {
+export default function Logo({ size = 40, className = '', textColor, showText = true }: LogoProps) {
   return (
-    <div className={`geldgeregeld-logo ${className}`} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-      {/* Icon: Thumbs up in circle */}
-      <div style={{
-        width: size,
-        height: size,
-        borderRadius: '50%',
-        background: 'var(--color-primary)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexShrink: 0,
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
-      }}>
-        <ThumbsUp 
-          size={size * 0.5} 
-          color="white" 
-          strokeWidth={2.5}
-          fill="white"
-        />
-      </div>
-      
+    <Link href="/" className={`geldgeregeld-logo ${className}`} style={{ textDecoration: 'none' }}>
       {showText && (
         <span style={{
           fontSize: size * 0.55,
           fontWeight: 700,
-          color: 'var(--color-text)',
-          fontFamily: 'var(--font-heading)',
-          letterSpacing: '-0.01em'
+          color: textColor || 'var(--color-text)',
+          fontFamily: 'var(--font-logo)',
+          letterSpacing: '0.03em'
         }}>
-          GeldGeregeld
+          Geldgeregeld.nl
         </span>
       )}
-    </div>
+    </Link>
   );
 }
 

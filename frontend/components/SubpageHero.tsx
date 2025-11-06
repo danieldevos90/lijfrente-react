@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 
 interface SubpageHeroProps {
   title: string;
@@ -8,6 +9,8 @@ interface SubpageHeroProps {
   ctaHref?: string;
   onCtaClick?: () => void;
   backgroundColor?: string;
+  backgroundImage?: string;
+  iconPath?: string;
 }
 
 export default function SubpageHero({
@@ -17,79 +20,144 @@ export default function SubpageHero({
   ctaHref,
   onCtaClick,
   backgroundColor = '#f5f5f5',
+  backgroundImage,
+  iconPath,
 }: SubpageHeroProps) {
   return (
-    <section style={{
-      background: backgroundColor,
-      padding: '12rem 2rem 8rem',
-      minHeight: '60vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-    }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <h1 style={{
-          fontFamily: 'PP Neue Montreal, sans-serif',
-          fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-          fontWeight: 400,
-          lineHeight: 1.1,
-          marginBottom: subtitle ? '2rem' : '3rem',
-          color: 'var(--color-text)',
-        }}>
+    <section 
+      className="subpage-hero"
+      style={{
+        background: backgroundColor,
+        padding: '12rem 2rem 8rem',
+        minHeight: '60vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+      }}
+    >
+      <div style={{ margin: '0 auto' }}>
+        {/* Icon */}
+        {iconPath && (
+          <div 
+            className="subpage-hero-icon-wrapper"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: '2rem',
+            }}
+          >
+            <div 
+              className="subpage-hero-icon"
+              style={{
+                width: '80px',
+                height: '80px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Image
+                src={iconPath}
+                alt={title}
+                width={80}
+                height={80}
+                style={{
+                  objectFit: 'contain',
+                }}
+              />
+            </div>
+          </div>
+        )}
+
+        <h1 
+          className="subpage-hero-title"
+          style={{
+            fontFamily: 'PP Neue Montreal, sans-serif',
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            fontWeight: 400,
+            lineHeight: 1.1,
+            marginBottom: subtitle ? '2rem' : '3rem',
+            color: 'var(--color-text)',
+          }}
+        >
           {title}
         </h1>
         
         {subtitle && (
-          <p style={{
-            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-            fontWeight: 300,
-            color: 'var(--color-text)',
-            lineHeight: 1.6,
-            opacity: 0.75,
-            marginBottom: '3rem',
-            maxWidth: '800px',
-            margin: '0 auto 3rem',
-          }}>
+          <p 
+            className="subpage-hero-subtitle"
+            style={{
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              fontWeight: 300,
+              color: 'var(--color-text)',
+              lineHeight: 1.6,
+              opacity: 0.75,
+              marginBottom: '3rem',
+              maxWidth: '800px',
+              margin: '0 auto 3rem',
+            }}
+          >
             {subtitle}
           </p>
         )}
-
-        {ctaText && (
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <button
-              onClick={onCtaClick}
-              style={{
-                border: '1px solid var(--color-charcoal)',
-                backgroundColor: 'var(--color-charcoal)',
-                color: 'white',
-                textAlign: 'center',
-                borderRadius: '.25rem',
-                justifyContent: 'center',
-                alignItems: 'center',
-                minWidth: '10.5rem',
-                maxHeight: '2.75rem',
-                padding: '1rem 1.5rem',
-                fontFamily: 'Public Sans Variable, sans-serif',
-                fontSize: '1rem',
-                fontWeight: 500,
-                lineHeight: 1,
-                transition: 'border-color .28s, background-color .28s',
-                display: 'flex',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(15, 23, 32, 0.85)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
-              }}
-            >
-              {ctaText}
-            </button>
-          </div>
-        )}
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .subpage-hero {
+            padding: 8rem 1.5rem 4rem !important;
+            min-height: 40vh !important;
+          }
+          
+          .subpage-hero-icon-wrapper {
+            margin-bottom: 1.5rem !important;
+          }
+          
+          .subpage-hero-icon {
+            width: 60px !important;
+            height: 60px !important;
+          }
+          
+          .subpage-hero-icon img {
+            width: 60px !important;
+            height: 60px !important;
+          }
+          
+          .subpage-hero-title {
+            margin-bottom: 1.5rem !important;
+          }
+          
+          .subpage-hero-subtitle {
+            margin-bottom: 2rem !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .subpage-hero {
+            padding: 7rem 1rem 3rem !important;
+            min-height: 35vh !important;
+          }
+          
+          .subpage-hero-icon {
+            width: 50px !important;
+            height: 50px !important;
+          }
+          
+          .subpage-hero-icon img {
+            width: 50px !important;
+            height: 50px !important;
+          }
+          
+          .subpage-hero-title {
+            margin-bottom: 1rem !important;
+          }
+          
+          .subpage-hero-subtitle {
+            margin-bottom: 1.5rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

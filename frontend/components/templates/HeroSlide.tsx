@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 
 interface HeroSlideProps {
   badge?: string;
@@ -9,6 +10,8 @@ interface HeroSlideProps {
   ctaHref?: string;
   backgroundImage?: string;
   variant?: 'default' | 'gradient' | 'image';
+  iconPath?: string;
+  icons?: string[]; // Array of icon paths for multiple icons
 }
 
 export default function HeroSlide({
@@ -18,7 +21,9 @@ export default function HeroSlide({
   ctaLabel,
   ctaHref,
   backgroundImage,
-  variant = 'default'
+  variant = 'default',
+  iconPath,
+  icons
 }: HeroSlideProps) {
   const bgStyle = variant === 'image' && backgroundImage 
     ? { backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }
@@ -27,6 +32,7 @@ export default function HeroSlide({
     : { background: 'linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.02))' };
 
   const textColor = variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-text)';
+  const displayIcons = icons || (iconPath ? [iconPath] : []);
 
     return (
     <div className="hero-slide" style={{ 
@@ -43,6 +49,57 @@ export default function HeroSlide({
             {badge}
           </div>
         )}
+        
+        {/* Icons Display */}
+        {displayIcons.length > 0 && (
+          <div 
+            className="hero-icons"
+            style={{
+              display: 'flex',
+              gap: '1.5rem',
+              marginBottom: '2rem',
+              flexWrap: 'wrap',
+            }}
+          >
+            {displayIcons.map((icon, index) => (
+              <div
+                key={index}
+                className="hero-icon"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  background: variant === 'gradient' || variant === 'image' 
+                    ? 'rgba(255, 255, 255, 0.15)' 
+                    : 'white',
+                  borderRadius: '12px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '12px',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: variant === 'gradient' || variant === 'image'
+                    ? '0 4px 12px rgba(0, 0, 0, 0.2)'
+                    : '0 4px 12px rgba(0, 0, 0, 0.08)',
+                  transition: 'transform 0.2s ease',
+                }}
+              >
+                <Image
+                  src={icon}
+                  alt=""
+                  width={40}
+                  height={40}
+                  style={{
+                    objectFit: 'contain',
+                    filter: variant === 'gradient' || variant === 'image' 
+                      ? 'brightness(0) invert(1)' 
+                      : 'none',
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+        
         <h1>{title}</h1>
         {subtitle && <p>{subtitle}</p>}
         {ctaLabel && ctaHref && (
@@ -61,6 +118,45 @@ export default function HeroSlide({
           </div>
         )}
       </div>
+      
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .hero-icons {
+            gap: 1rem !important;
+          }
+          
+          .hero-icon {
+            width: 48px !important;
+            height: 48px !important;
+          }
+          
+          .hero-icon img {
+            width: 32px !important;
+            height: 32px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .hero-icons {
+            gap: 0.75rem !important;
+          }
+          
+          .hero-icon {
+            width: 40px !important;
+            height: 40px !important;
+            padding: 8px !important;
+          }
+          
+          .hero-icon img {
+            width: 24px !important;
+            height: 24px !important;
+          }
+        }
+        
+        .hero-icon:hover {
+          transform: translateY(-2px);
+        }
+      `}</style>
     </div>
   );
 }

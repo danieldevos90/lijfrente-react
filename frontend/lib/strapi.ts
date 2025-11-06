@@ -1,4 +1,4 @@
-import { StrapiResponse, Page } from '@/types/strapi';
+import { StrapiResponse, StrapiAttributes, Page, PageAttributes } from '@/types/strapi';
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
@@ -50,12 +50,16 @@ async function strapiRequest<T>(
  * Get all pages
  */
 export async function getPages(populate: string = '*'): Promise<Page[]> {
-  const response = await strapiRequest<StrapiResponse<Page>>('/api/pages', {
+  const response = await strapiRequest<StrapiResponse<PageAttributes>>('/api/pages', {
     params: { populate },
     next: { revalidate: 3600 }, // Revalidate every hour
   });
 
-  return Array.isArray(response.data) ? response.data : [response.data];
+  const data = Array.isArray(response.data) ? response.data : [response.data];
+  return data.map((item: StrapiAttributes<PageAttributes>) => ({
+    id: item.id,
+    attributes: item.attributes
+  }));
 }
 
 /**
@@ -65,7 +69,7 @@ export async function getPageBySlug(
   slug: string,
   populate: string = 'sections.faqItems,sections.faq-section'
 ): Promise<Page | null> {
-  const response = await strapiRequest<StrapiResponse<Page>>('/api/pages', {
+  const response = await strapiRequest<StrapiResponse<PageAttributes>>('/api/pages', {
     params: {
       'filters[slug][$eq]': slug,
       populate,
@@ -74,7 +78,13 @@ export async function getPageBySlug(
   });
 
   const pages = Array.isArray(response.data) ? response.data : [response.data];
-  return pages[0] || null;
+  if (pages.length === 0) return null;
+  
+  const item = pages[0];
+  return {
+    id: item.id,
+    attributes: item.attributes
+  };
 }
 
 /**
@@ -88,7 +98,7 @@ export async function getPageWithSections(slug: string): Promise<Page | null> {
  * Get FAQ page specifically
  */
 export async function getFAQPage(slug: string = 'faq'): Promise<Page | null> {
-  const response = await strapiRequest<StrapiResponse<Page>>('/api/pages', {
+  const response = await strapiRequest<StrapiResponse<PageAttributes>>('/api/pages', {
     params: {
       'filters[slug][$eq]': slug,
       'populate[faqSection][populate]': 'faqItems',
@@ -97,7 +107,13 @@ export async function getFAQPage(slug: string = 'faq'): Promise<Page | null> {
   });
 
   const pages = Array.isArray(response.data) ? response.data : [response.data];
-  return pages[0] || null;
+  if (pages.length === 0) return null;
+  
+  const item = pages[0];
+  return {
+    id: item.id,
+    attributes: item.attributes
+  };
 }
 
 /**
@@ -107,7 +123,7 @@ export async function searchPages(
   query: string,
   populate: string = '*'
 ): Promise<Page[]> {
-  const response = await strapiRequest<StrapiResponse<Page>>('/api/pages', {
+  const response = await strapiRequest<StrapiResponse<PageAttributes>>('/api/pages', {
     params: {
       'filters[$or][0][title][$containsi]': query,
       'filters[$or][1][body][$containsi]': query,
@@ -116,7 +132,11 @@ export async function searchPages(
     next: { revalidate: 60 },
   });
 
-  return Array.isArray(response.data) ? response.data : [response.data];
+  const data = Array.isArray(response.data) ? response.data : [response.data];
+  return data.map((item: StrapiAttributes<PageAttributes>) => ({
+    id: item.id,
+    attributes: item.attributes
+  }));
 }
 
 /**
@@ -126,7 +146,7 @@ export async function getPagesBySiteId(
   siteId: string,
   populate: string = '*'
 ): Promise<Page[]> {
-  const response = await strapiRequest<StrapiResponse<Page>>('/api/pages', {
+  const response = await strapiRequest<StrapiResponse<PageAttributes>>('/api/pages', {
     params: {
       'filters[siteId][$eq]': siteId,
       populate,
@@ -134,14 +154,18 @@ export async function getPagesBySiteId(
     next: { revalidate: 3600 },
   });
 
-  return Array.isArray(response.data) ? response.data : [response.data];
+  const data = Array.isArray(response.data) ? response.data : [response.data];
+  return data.map((item: StrapiAttributes<PageAttributes>) => ({
+    id: item.id,
+    attributes: item.attributes
+  }));
 }
 
 /**
  * Client-side fetch (no cache)
  */
 export async function fetchPageClient(slug: string): Promise<Page | null> {
-  const response = await strapiRequest<StrapiResponse<Page>>('/api/pages', {
+  const response = await strapiRequest<StrapiResponse<PageAttributes>>('/api/pages', {
     params: {
       'filters[slug][$eq]': slug,
       'populate': 'sections.faqItems,sections.*',
@@ -150,7 +174,13 @@ export async function fetchPageClient(slug: string): Promise<Page | null> {
   });
 
   const pages = Array.isArray(response.data) ? response.data : [response.data];
-  return pages[0] || null;
+  if (pages.length === 0) return null;
+  
+  const item = pages[0];
+  return {
+    id: item.id,
+    attributes: item.attributes
+  };
 }
 
 /**

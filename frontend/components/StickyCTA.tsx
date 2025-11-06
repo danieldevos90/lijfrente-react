@@ -51,46 +51,36 @@ export default function StickyCTA({ href, label, useDrawer = true }: StickyCTAPr
 
   return (
     <>
-      <div style={{
-        position: 'fixed',
-        bottom: 20,
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 50,
-      }}>
-        <button
-          className="btn btn-primary"
-          onClick={handleClick}
-          style={{
-            border: '1px solid var(--color-charcoal)',
-            backgroundColor: 'var(--color-charcoal)',
-            color: 'white',
-            textAlign: 'center',
-            borderRadius: '.25rem',
-            justifyContent: 'center',
-            alignItems: 'center',
-            minWidth: '10.5rem',
-            maxHeight: '2.75rem',
-            padding: '1rem 1.5rem',
-            fontFamily: 'Public Sans Variable, sans-serif',
-            fontSize: '1rem',
-            fontWeight: 500,
-            lineHeight: 1,
-            transition: 'border-color .28s, background-color .28s',
-            display: 'flex',
-            cursor: 'pointer',
-            boxShadow: '0 6px 18px rgba(0,0,0,0.15)',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(15, 23, 32, 0.85)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
-          }}
-        >
-          {label || 'Vraag financiering aan'}
-        </button>
-      </div>
+      <button
+        className="btn btn-primary"
+        onClick={handleClick}
+        style={{
+          border: 'none',
+          backgroundColor: '#000000',
+          color: 'white',
+          textAlign: 'center',
+          borderRadius: '10rem',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minWidth: '14rem',
+          padding: '1.5rem 3rem',
+          fontFamily: 'Public Sans Variable, sans-serif',
+          fontSize: '18px',
+          fontWeight: 400,
+          lineHeight: '1rem',
+          transition: 'all .28s',
+          display: 'flex',
+          cursor: 'pointer',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = '#333333';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = '#000000';
+        }}
+      >
+        {label || 'Vraag financiering aan'}
+      </button>
 
       {useDrawer && (
         <DrawerWidget 

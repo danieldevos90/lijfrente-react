@@ -9,7 +9,7 @@ interface ContentSectionProps {
   layout?: 'image-left' | 'image-right';
   ctaLabel?: string;
   ctaHref?: string;
-  variant?: 'default' | 'compact';
+  variant?: 'default' | 'bordered' | 'shadow';
   background?: 'white' | 'gray' | 'blue' | 'dark';
 }
 

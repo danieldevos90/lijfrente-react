@@ -86,6 +86,12 @@ export default async function SitePage({ params }: { params: { siteId: string } 
         ctaHref={`/sites/${params.siteId}/lead`}
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop"
+        icons={[
+          '/icons/SVG/interface/zap.svg',
+          '/icons/SVG/finance/trend-up.svg',
+          '/icons/SVG/interface/shield.svg',
+          '/icons/SVG/finance/wallet.svg'
+        ]}
       />
 
       {/* Trust Badges */}
@@ -168,7 +174,7 @@ export default async function SitePage({ params }: { params: { siteId: string } 
         background="dark"
       />
 
-                <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" useModal={true} />
+                <StickyCTA href={`/sites/${params.siteId}/lead`} label="Vraag financiering aan" useDrawer={true} />
     </div>
   );
 }

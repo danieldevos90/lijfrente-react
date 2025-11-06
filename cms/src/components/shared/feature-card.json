@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_shared_feature_card",
+  "info": {
+    "displayName": "Feature Card",
+    "description": "A card with image, icon badge, and text overlay"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"],
+      "description": "Main background image for the card"
+    },
+    "iconImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Small icon/avatar image to display in the circle badge"
+    },
+    "iconEmoji": {
+      "type": "string",
+      "required": false,
+      "description": "Alternative to icon image - use an emoji or icon character"
+    },
+    "badgeText": {
+      "type": "string",
+      "required": true,
+      "description": "Text to display next to the icon (e.g., '+$210.10')"
+    },
+    "badgeColor": {
+      "type": "string",
+      "default": "#e9d5ff",
+      "description": "Background color for the badge (hex code)"
+    },
+    "badgePosition": {
+      "type": "enumeration",
+      "enum": ["top-left", "top-center", "top-right", "center", "bottom-left", "bottom-center", "bottom-right"],
+      "default": "top-left",
+      "description": "Position of the badge overlay on the image"
+    },
+    "overlayText": {
+      "type": "text",
+      "required": false,
+      "description": "Optional overlay text at the bottom"
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "#d1fae5",
+      "description": "Background color for the overlay text (hex code)"
+    },
+    "overlayIcon": {
+      "type": "string",
+      "required": false,
+      "description": "Icon or emoji to show before overlay text (e.g., '✓')"
+    }
+  }
+}
+

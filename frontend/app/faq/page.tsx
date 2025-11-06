@@ -1,8 +1,18 @@
 import FAQSection from '@/components/FAQSection';
 import TransparentHeader from '@/components/TransparentHeader';
 import Footer from '@/components/Footer';
+import SubpageHero from '@/components/SubpageHero';
+
+// Mark as dynamic to prevent build-time prerendering issues with event handlers
+export const dynamic = 'force-dynamic';
 
 export default function FAQDemo() {
+  const handleCtaClick = () => {
+    // Note: For server component compatibility, we'd typically use a client component wrapper
+    // For now, keeping the link approach
+    window.location.href = '/lead';
+  };
+
   // Sample FAQ data - in production this would come from Strapi
   const sampleFAQs = [
     {
@@ -39,39 +49,18 @@ export default function FAQDemo() {
 
   return (
     <>
-      <TransparentHeader />
-      <main>
-        {/* Hero Section */}
-        <section style={{
-          background: 'linear-gradient(135deg, #0f1720 0%, #1e293b 100%)',
-          color: 'white',
-          padding: '8rem 0 4rem',
-          textAlign: 'center',
-        }}>
-          <div className="container" style={{
-            maxWidth: '800px',
-            margin: '0 auto',
-            padding: '0 2rem',
-          }}>
-            <h1 style={{
-              fontFamily: "'Neue Montreal', sans-serif",
-              fontSize: '56px',
-              fontWeight: 600,
-              lineHeight: 1.1,
-              marginBottom: '1.5rem',
-            }}>
-              Veelgestelde vragen
-            </h1>
-            <p style={{
-              fontSize: '20px',
-              opacity: 0.9,
-              margin: 0,
-            }}>
-              Heeft u een vraag? Bekijk hier de antwoorden op de meest gestelde vragen.
-            </p>
-          </div>
-        </section>
-
+      <TransparentHeader transparent={true} textColor="black" onCtaClick={handleCtaClick} />
+      
+      <SubpageHero
+        title="Veelgestelde vragen"
+        subtitle="Heeft u een vraag? Bekijk hier de antwoorden op de meest gestelde vragen."
+        backgroundColor="var(--color-bg)"
+        iconPath="/icons/SVG/interface/question.svg"
+      />
+      
+      <main style={{
+        background: 'var(--color-bg)',
+      }}>
         {/* FAQ Section */}
         <FAQSection 
           title="Veelgestelde vragen"
@@ -82,53 +71,59 @@ export default function FAQDemo() {
         {/* CTA Section */}
         <section style={{
           background: 'white',
-          padding: '5rem 0',
+          padding: '5rem 2rem',
           textAlign: 'center',
         }}>
           <div className="container" style={{
             maxWidth: '700px',
             margin: '0 auto',
-            padding: '0 2rem',
           }}>
             <h2 style={{
-              fontFamily: "'Neue Montreal', sans-serif",
-              fontSize: '36px',
-              fontWeight: 500,
+              fontFamily: 'PP Neue Montreal, sans-serif',
+              fontSize: '2.5rem',
+              fontWeight: 400,
               marginBottom: '1.5rem',
-              color: '#0f1720',
+              color: 'var(--color-text)',
             }}>
               Staat uw vraag er niet bij?
             </h2>
             <p style={{
-              fontSize: '18px',
-              color: '#6b7280',
+              fontSize: '1.125rem',
+              color: 'var(--color-text-muted)',
               marginBottom: '2rem',
             }}>
               Neem contact met ons op. We helpen u graag verder met al uw vragen.
             </p>
-            <button 
-              className="btn btn-primary"
+            <a
+              href="/contact"
               style={{
-                border: '1px solid #0f1720',
-                backgroundColor: '#0f1720',
+                border: 'none',
+                backgroundColor: 'var(--color-charcoal)',
                 color: 'white',
                 textAlign: 'center',
-                borderRadius: '.25rem',
+                borderRadius: 'var(--radius-full)',
                 justifyContent: 'center',
                 alignItems: 'center',
-                minWidth: '10.5rem',
-                padding: '1rem 2rem',
-                fontFamily: "'Neue Montreal', sans-serif",
-                fontSize: '1rem',
-                fontWeight: 500,
-                lineHeight: 1,
-                transition: 'all 0.3s ease',
+                minWidth: '14rem',
+                padding: '1.25rem 2.5rem',
+                fontFamily: 'Public Sans Variable, sans-serif',
+                fontSize: '1.125rem',
+                fontWeight: 400,
+                lineHeight: '1rem',
+                transition: 'all 0.28s',
                 display: 'inline-flex',
                 cursor: 'pointer',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#333333';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
               }}
             >
               Contact opnemen
-            </button>
+            </a>
           </div>
         </section>
       </main>

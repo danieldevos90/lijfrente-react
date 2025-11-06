@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_sections_feature_showcase",
+  "info": {
+    "displayName": "Feature Showcase",
+    "description": "A section displaying feature cards with images and overlays"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "description": "Optional section title"
+    },
+    "description": {
+      "type": "text",
+      "required": false,
+      "description": "Optional section description"
+    },
+    "featureCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.feature-card",
+      "required": true,
+      "min": 1
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": ["grid-2", "grid-3", "grid-4", "slider"],
+      "default": "grid-2",
+      "description": "Layout style for displaying cards"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ffffff",
+      "description": "Background color for the section (hex code)"
+    }
+  }
+}
+

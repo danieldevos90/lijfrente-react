@@ -1,3 +1,17 @@
+/* Europa Grotesk Font Face - for Logo */
+@font-face {
+  font-family: "Europa Grotesk SH DemBol";
+  src: url("https://db.onlinewebfonts.com/t/c37a9f31696dbcc8b86a42827beae565.eot");
+  src: url("https://db.onlinewebfonts.com/t/c37a9f31696dbcc8b86a42827beae565.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/c37a9f31696dbcc8b86a42827beae565.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/c37a9f31696dbcc8b86a42827beae565.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/c37a9f31696dbcc8b86a42827beae565.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/c37a9f31696dbcc8b86a42827beae565.svg#Europa Grotesk SH DemBol") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Neue Montreal Font Faces */
 @font-face {
   font-family: 'Neue Montreal';
@@ -66,6 +80,102 @@
 /* Import Inter from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* CSS Variables - Theme Colors */
+:root {
+  /* Background Colors */
+  --background-color--background-alternate: #f4f4ef;
+  --background-color--background-error: #f8e4e4;
+  --background-color--background-primary: #f9f9f8;
+  --background-color--background-secondary: #0f1720;
+  --background-color--background-success: #cef5ca;
+  --background-color--background-tertiary: #e4f2ff;
+  --background-color--background-warning: #fcf8d8;
+  --background-color--background-white: #fff;
+  
+  /* Brand Colors */
+  --base-color-brand--brand: #457fff;
+  --base-color-brand--mint: #bbe7be;
+  --base-color-brand--pink-light: #d7d0ff;
+  --base-color-brand--sky: #aad5fc;
+  --base-color-brand--sky500: #e4f2ff;
+  --base-color-brand--sun: #fff2b2;
+  
+  /* Neutral Colors */
+  --base-color-neutral--charcoal: #0f1720;
+  --base-color-neutral--charcoal100: #e9eaea;
+  --base-color-neutral--charcoal200: #b5b8bc;
+  --base-color-neutral--charcoal400: #6c737a;
+  --base-color-neutral--charcoal500: #555c64;
+  --base-color-neutral--cultured: #f4f4ef;
+  --base-color-neutral--cultured25: #f9f9f8;
+  --base-color-neutral--cultured600: #ddddd7;
+  --base-color-neutral--white: #fff;
+  
+  /* System Colors */
+  --base-color-system--error-red: #f8e4e4;
+  --base-color-system--error-red-dark: #3b0b0b;
+  --base-color-system--focus-state: #2d62ff;
+  --base-color-system--success-green: #cef5ca;
+  --base-color-system--success-green-dark: #114e0b;
+  --base-color-system--warning-yellow: #fcf8d8;
+  --base-color-system--warning-yellow-dark: #5e5515;
+  
+  /* Border Colors */
+  --border-color--border-alternate: #555c64;
+  --border-color--border-primary: #6c737a;
+  --border-color--border-secondary: #457fff;
+  
+  /* Simplified Aliases for Components */
+  --color-primary: #457fff;
+  --color-primary-dark: #2d62ff;
+  --color-charcoal: #0f1720;
+  --color-text: #0f1720;
+  --color-text-muted: #6c737a;
+  --color-white: #fff;
+  --color-bg: #f9f9f8;
+  --color-bg-alt: #f4f4ef;
+  --color-border: #e9eaea;
+  --color-error: #f8e4e4;
+  --color-error-dark: #3b0b0b;
+  
+  /* Gray Scale */
+  --color-gray-50: #f9f9f8;
+  --color-gray-200: #e9eaea;
+  --color-gray-300: #ddddd7;
+  --color-gray-400: #b5b8bc;
+  --color-gray-700: #6c737a;
+  
+  /* Brand Colors (for legacy compatibility) */
+  --color-brand: #000000;
+  --color-brand-dark: #1a1a1a;
+  --color-muted: #6c737a;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease-out;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
 /* Global reset and base styles */
 * { box-sizing: border-box; }
 html, body { 
@@ -78,7 +188,7 @@ html, body {
 }
 
 /* Layout containers */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg); }
+.container { margin: 0 auto; padding: 0 var(--space-lg); }
 .full-width { width: 100vw; margin-left: calc(-50vw + 50%); }
 
 /* Section backgrounds */
@@ -397,6 +507,16 @@ input:focus, select:focus {
   .trust-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+  
+  /* Mobile grid improvements */
+  .cards {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Auto-fit grids should become single column on mobile */
+  div[style*="grid-template-columns: repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
   }
 }
 

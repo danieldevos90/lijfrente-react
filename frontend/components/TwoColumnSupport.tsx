@@ -42,17 +42,20 @@ export default function TwoColumnSupport({
       padding: '8rem 2rem',
     }}>
       <div style={{
-        maxWidth: '1400px',
         margin: '0 auto',
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))',
+          gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '3rem',
           alignItems: 'stretch',
-        }}>
+        }}
+        className="two-column-grid"
+        >
           {/* Left Column - Support Info */}
-          <div style={{
+          <div 
+            className="support-column"
+            style={{
             background: bgColor,
             borderRadius: theme.radius.xl,
             padding: '4rem',
@@ -121,7 +124,9 @@ export default function TwoColumnSupport({
           </div>
 
           {/* Right Column - Testimonial */}
-          <div style={{
+          <div 
+            className="testimonial-column"
+            style={{
             background: theme.colors.backgroundAlt,
             borderRadius: theme.radius.xl,
             padding: '4rem',
@@ -272,8 +277,34 @@ export default function TwoColumnSupport({
       {/* Responsive styles */}
       <style jsx>{`
         @media (max-width: 1024px) {
-          section > div > div {
+          .two-column-grid {
             grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+          
+          .support-column,
+          .testimonial-column {
+            min-height: 400px !important;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          section {
+            padding: 4rem 1rem !important;
+          }
+          
+          .support-column,
+          .testimonial-column {
+            padding: 2rem !important;
+            min-height: 350px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .support-column,
+          .testimonial-column {
+            min-height: 300px !important;
+            padding: 1.5rem !important;
           }
         }
       `}</style>

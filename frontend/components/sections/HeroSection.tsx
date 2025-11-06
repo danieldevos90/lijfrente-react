@@ -10,6 +10,8 @@ interface HeroSectionProps {
   ctaHref?: string;
   backgroundImage?: string;
   variant?: 'default' | 'gradient' | 'image';
+  iconPath?: string;
+  icons?: string[]; // Array of icon paths for multiple icons
 }
 
 export default function HeroSection(props: HeroSectionProps) {
