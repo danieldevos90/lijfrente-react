@@ -33,12 +33,10 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
     setError('');
 
     console.log('=== PASSWORD DEBUG ===');
-    console.log('Entered password:', password);
-    console.log('Expected password:', CORRECT_PASSWORD);
     console.log('Entered length:', password.length);
     console.log('Expected length:', CORRECT_PASSWORD.length);
     console.log('Match:', password === CORRECT_PASSWORD);
-    console.log('Env var:', process.env.NEXT_PUBLIC_SITE_PASSWORD);
+    console.log('Env var available:', !!process.env.NEXT_PUBLIC_SITE_PASSWORD);
 
     if (password === CORRECT_PASSWORD) {
       console.log('✅ Password correct!');
@@ -98,23 +96,6 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
               Toegang Verkrijgen
             </button>
           </form>
-          
-          {/* Debug info */}
-          <div style={{
-            marginTop: '2rem',
-            padding: '1rem',
-            backgroundColor: '#f5f5f5',
-            borderRadius: '0.5rem',
-            fontSize: '12px',
-            fontFamily: 'monospace',
-            textAlign: 'left',
-            color: '#666'
-          }}>
-            <div><strong>Debug Info:</strong></div>
-            <div>Expected: "{CORRECT_PASSWORD}"</div>
-            <div>Length: {CORRECT_PASSWORD.length}</div>
-            <div>Source: {process.env.NEXT_PUBLIC_SITE_PASSWORD ? 'env var' : 'fallback'}</div>
-          </div>
         </div>
       </div>
     );
