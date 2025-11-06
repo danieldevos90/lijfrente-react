@@ -440,15 +440,16 @@ export default function HomePage() {
               </div>
             ))}
 
-            {/* Navigation Buttons */}
+            {/* Navigation Buttons - Simple round style */}
             <button
               onClick={prevTestimonial}
+              aria-label="Vorige"
               style={{
                 position: 'absolute',
                 left: '1rem',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                background: 'white',
+                background: '#0f1720',
                 border: 'none',
                 width: '48px',
                 height: '48px',
@@ -457,30 +458,28 @@ export default function HomePage() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 transition: 'all 0.3s ease',
                 zIndex: 10,
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
-                e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
               }}
             >
-              <ChevronLeft size={24} color="var(--color-text)" />
+              <ChevronLeft size={24} color="white" strokeWidth={2} />
             </button>
 
             <button
               onClick={nextTestimonial}
+              aria-label="Volgende"
               style={{
                 position: 'absolute',
                 right: '1rem',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                background: 'white',
+                background: '#0f1720',
                 border: 'none',
                 width: '48px',
                 height: '48px',
@@ -489,20 +488,17 @@ export default function HomePage() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 transition: 'all 0.3s ease',
                 zIndex: 10,
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
-                e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
               }}
             >
-              <ChevronRight size={24} color="var(--color-text)" />
+              <ChevronRight size={24} color="white" strokeWidth={2} />
             </button>
 
             {/* Dots Indicator */}
