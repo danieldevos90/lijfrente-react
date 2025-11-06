@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, ChevronLeft, Check, Building, Euro, Target, User, Phone, Mail, MapPin } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Check, Building, Euro, Target, User, Phone, Mail, MapPin, Shield, Zap, PhoneCall } from 'lucide-react';
 
 interface FormData {
   // Step 1: Financing Amount
@@ -546,9 +546,15 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
         
         <div className="form-trust">
           <div className="trust-items">
-            <span>🔒 100% veilig</span>
-            <span>⚡ Binnen 24 uur reactie</span>
-            <span>📞 Gratis adviesgesprek</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Shield size={16} /> 100% veilig
+            </span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Zap size={16} /> Binnen 24 uur reactie
+            </span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <PhoneCall size={16} /> Gratis adviesgesprek
+            </span>
           </div>
         </div>
       </div>

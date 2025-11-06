@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { X, ChevronRight, ChevronLeft, Check } from 'lucide-react';
+import { X, ChevronRight, ChevronLeft, Check, Zap, Shield } from 'lucide-react';
 import Logo from './Logo';
 import './DrawerWidget.css';
 
@@ -489,8 +489,12 @@ export default function DrawerWidget({ isOpen, onClose }: DrawerWidgetProps) {
           </div>
           
           <div className="drawer-trust">
-            <span>🔒 Veilig en vertrouwd</span>
-            <span>⚡ Binnen 24 uur reactie</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Shield size={16} /> Veilig en vertrouwd
+            </span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Zap size={16} /> Binnen 24 uur reactie
+            </span>
           </div>
         </div>
       </div>
