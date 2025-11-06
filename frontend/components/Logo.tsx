@@ -16,7 +16,7 @@ export default function Logo({ size = 40, showText = true, className = '' }: Log
         width: size,
         height: size,
         borderRadius: '50%',
-        background: 'linear-gradient(135deg, #10b981, #059669)',
+        background: 'var(--color-primary)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
