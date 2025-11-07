@@ -55,10 +55,10 @@ export default function HowItWorksBento() {
       <div style={{ margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
           <h2 style={{
-            fontFamily: 'PP Neue Montreal, sans-serif',
-            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+            fontFamily: '"PP Neue Montreal", sans-serif',
+            fontSize: 'clamp(2rem, 5vw, 3.75rem)',
             fontWeight: 400,
-            lineHeight: 1,
+            lineHeight: 1.1,
             marginBottom: '1rem',
             color: 'var(--color-text)',
           }}>

@@ -70,11 +70,12 @@ export default function TwoColumnSupport({
               maxWidth: '500px',
             }}>
               <h2 style={{
-                fontSize: '3rem',
-                fontWeight: 500,
-                marginBottom: '2rem',
+                fontFamily: '"PP Neue Montreal", sans-serif',
+                fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+                fontWeight: 400,
+                lineHeight: 1.1,
+                marginBottom: '1rem',
                 color: theme.colors.black,
-                lineHeight: 1.2,
               }}>
                 {leftTitle}
               </h2>

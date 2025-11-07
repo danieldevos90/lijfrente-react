@@ -29,8 +29,11 @@ export default function InfoSection({
     <div style={containerStyle}>
       {title && (
         <h2 style={{ 
-          fontSize: '24px', 
-          margin: '0 0 var(--space-sm)', 
+          fontFamily: '"PP Neue Montreal", sans-serif',
+          fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+          fontWeight: 400,
+          lineHeight: 1.1,
+          marginBottom: '1rem',
           color: 'var(--color-text)' 
         }}>
           {title}

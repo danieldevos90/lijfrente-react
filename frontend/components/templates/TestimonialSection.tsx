@@ -63,8 +63,11 @@ export default function TestimonialSection({ title, testimonials }: TestimonialS
       {title && (
         <h2 style={{ 
           textAlign: 'center',
-          fontSize: '28px',
-          margin: '0 0 var(--space-xl)',
+          fontFamily: '"PP Neue Montreal", sans-serif',
+          fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+          fontWeight: 400,
+          lineHeight: 1.1,
+          marginBottom: '1rem',
           color: 'var(--color-text)'
         }}>
           {title}

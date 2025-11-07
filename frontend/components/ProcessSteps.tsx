@@ -13,46 +13,61 @@ interface Step {
 
 interface ProcessStepsProps {
   steps: Step[];
+  title?: string;
+  subtitle?: string;
 }
 
-export default function ProcessSteps({ steps }: ProcessStepsProps) {
+export default function ProcessSteps({ 
+  steps, 
+  title = "Het proces",
+  subtitle = "Simpel, transparant en snel"
+}: ProcessStepsProps) {
   return (
-    <section id="process-steps" style={{
-      background: 'var(--color-bg)',
-      padding: '8rem 2rem',
-    }}>
-      <div style={{
-        margin: '0 auto',
+    <>
+      {/* Header Section */}
+      <section id="process-steps-header" style={{
+        background: 'var(--color-bg)',
+        padding: '8rem 2rem 0',
       }}>
         <div style={{
-          textAlign: 'center',
-          marginBottom: '5rem',
+          margin: '0 auto',
         }}>
-          <h2 style={{
-            fontFamily: 'PP Neue Montreal, sans-serif',
-            fontSize: '3.75rem',
-            fontWeight: 400,
-            lineHeight: 1,
-            marginBottom: '1rem',
-            color: 'var(--color-text)',
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '5rem',
           }}>
-            Het proces
-          </h2>
-          <p style={{
-            fontSize: '1.25rem',
-            color: 'var(--color-text-muted)',
-            maxWidth: '700px',
-            margin: '0 auto',
-          }}>
-            Simpel, transparant en snel
-          </p>
+            <h2 style={{
+              fontFamily: '"PP Neue Montreal", sans-serif',
+              fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+              fontWeight: 400,
+              lineHeight: 1.1,
+              marginBottom: '1rem',
+              color: 'var(--color-text)',
+            }}>
+              {title}
+            </h2>
+            {subtitle && (
+              <p style={{
+                fontSize: '1.25rem',
+                color: 'var(--color-text-muted)',
+                maxWidth: '700px',
+                margin: '0 auto',
+              }}>
+                {subtitle}
+              </p>
+            )}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Stacking Cards Container */}
-      <div style={{
-        margin: '0 auto',
+      {/* Steps Section */}
+      <section id="process-steps" style={{
+        background: 'var(--color-bg)',
+        padding: '0 2rem 8rem',
       }}>
+        <div style={{
+          margin: '0 auto',
+        }}>
         {steps.map((step, index) => {
           const isEven = index % 2 === 1; // Even cards (0-indexed, so odd index numbers)
           
@@ -174,19 +189,35 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
             </div>
           );
         })}
+        
+        {/* Extra space for last card to be visible */}
+        <div style={{ height: '100px' }} />
       </div>
-
-      {/* Extra space for last card to be visible */}
-      <div style={{ height: '100px' }} />
       
       <style jsx>{`
+        #process-steps-header {
+          padding-top: 8rem;
+          padding-bottom: 0;
+        }
+        
         #process-steps {
           --sticky-top-offset: 40px;
+          padding-top: 0;
+          padding-bottom: 8rem;
         }
         
         @media (max-width: 768px) {
+          #process-steps-header {
+            padding-top: 4rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          
           #process-steps {
             --sticky-top-offset: 20px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 4rem;
           }
           
           .process-step-card {
@@ -219,8 +250,13 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
         }
         
         @media (max-width: 480px) {
+          #process-steps-header {
+            padding-top: 3rem;
+          }
+          
           #process-steps {
             --sticky-top-offset: 10px;
+            padding-bottom: 3rem;
           }
           
           .process-step-card {
@@ -244,7 +280,8 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
           }
         }
       `}</style>
-    </section>
+      </section>
+    </>
   );
 }
 

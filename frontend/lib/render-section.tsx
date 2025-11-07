@@ -119,6 +119,8 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <ProcessSteps
           key={index}
+          title={sectionData.title}
+          subtitle={sectionData.subtitle}
           steps={sectionData.steps?.map(s => ({
             number: s.number,
             title: s.title,

@@ -52,11 +52,11 @@ export default function FeatureSection({
             order: imagePosition === 'left' ? 1 : 0,
           }}>
             <h2 style={{
-              fontFamily: 'PP Neue Montreal, sans-serif',
+              fontFamily: '"PP Neue Montreal", sans-serif',
               fontSize: 'clamp(2rem, 5vw, 3.75rem)',
               fontWeight: 400,
               lineHeight: 1.1,
-              marginBottom: '2rem',
+              marginBottom: '1rem',
               color: 'var(--color-text)',
             }}>
               {title}

@@ -55,7 +55,14 @@ const FeatureShowcase: React.FC<FeatureShowcaseProps> = ({
         {(title || description) && (
           <div className="text-center mb-12">
             {title && (
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 style={{
+                fontFamily: '"PP Neue Montreal", sans-serif',
+                fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+                fontWeight: 400,
+                lineHeight: 1.1,
+                marginBottom: '1rem',
+                color: 'var(--color-text)',
+              }}>
                 {title}
               </h2>
             )}

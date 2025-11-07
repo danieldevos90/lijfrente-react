@@ -23,7 +23,18 @@ export default function CTASection({
   return (
     <Section background={background} padding="lg">
       <div className={`text-center ${textColor}`}>
-        <h2 className={textColor}>{title}</h2>
+        <h2 
+          className={textColor}
+          style={{
+            fontFamily: '"PP Neue Montreal", sans-serif',
+            fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+            fontWeight: 400,
+            lineHeight: 1.1,
+            marginBottom: '1rem',
+          }}
+        >
+          {title}
+        </h2>
         {subtitle && (
           <p 
             className={textColor} 

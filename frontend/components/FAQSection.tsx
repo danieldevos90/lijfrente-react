@@ -41,12 +41,12 @@ export default function FAQSection({
           marginBottom: '3rem',
         }}>
           <h2 style={{
-            fontFamily: "'Neue Montreal', sans-serif",
-            fontSize: '48px',
-            fontWeight: 500,
+            fontFamily: '"PP Neue Montreal", sans-serif',
+            fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+            fontWeight: 400,
             lineHeight: 1.1,
             marginBottom: '1rem',
-            color: '#0f1720',
+            color: 'var(--color-text)',
           }}>
             {title}
           </h2>
