@@ -2,35 +2,58 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import Link from 'next/link';
+import { getNavigationItems } from '@/lib/strapi-cms';
+import { StrapiNavigationItem } from '@/types/strapi-cms';
 
 interface TransparentHeaderProps {
   onCtaClick?: () => void;
-  transparent?: boolean; // New prop to control transparency
-  textColor?: 'white' | 'black'; // Text color when transparent (white for dark backgrounds, black for light backgrounds)
+  transparent?: boolean;
+  textColor?: 'white' | 'black';
+  siteId?: string;
 }
 
-export default function TransparentHeader({ onCtaClick, transparent = false, textColor: initialTextColor = 'white' }: TransparentHeaderProps) {
+export default function TransparentHeader({ 
+  onCtaClick, 
+  transparent = false, 
+  textColor: initialTextColor = 'white',
+  siteId = 'geldgeregeld'
+}: TransparentHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [navItems, setNavItems] = useState<StrapiNavigationItem[]>([]);
+
+  // Fetch navigation from Strapi
+  useEffect(() => {
+    async function fetchNav() {
+      try {
+        const items = await getNavigationItems(siteId);
+        setNavItems(items || []);
+      } catch (error) {
+        console.error('Error fetching navigation:', error);
+        // Fallback to default navigation
+        setNavItems([
+          { id: 1, attributes: { siteId, label: 'Hoe werkt het', href: '/hoe-werkt-het', order: 1, createdAt: '', updatedAt: '' } },
+          { id: 2, attributes: { siteId, label: 'Over ons', href: '/over-ons', order: 2, createdAt: '', updatedAt: '' } },
+          { id: 3, attributes: { siteId, label: 'Contact', href: '/contact', order: 3, createdAt: '', updatedAt: '' } },
+        ]);
+      }
+    }
+    fetchNav();
+  }, [siteId]);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Determine if scrolled past threshold
       setIsScrolled(currentScrollY > 50);
       
-      // Determine visibility based on scroll direction
       if (currentScrollY < 50) {
-        // Always show at top
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY) {
-        // Scrolling down - hide
         setIsVisible(false);
       } else if (currentScrollY < lastScrollY) {
-        // Scrolling up - show
         setIsVisible(true);
       }
       
@@ -41,7 +64,6 @@ export default function TransparentHeader({ onCtaClick, transparent = false, tex
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -54,7 +76,6 @@ export default function TransparentHeader({ onCtaClick, transparent = false, tex
     };
   }, [isMobileMenuOpen]);
 
-  // Close mobile menu when resizing to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768 && isMobileMenuOpen) {
@@ -66,13 +87,16 @@ export default function TransparentHeader({ onCtaClick, transparent = false, tex
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
 
-  // Determine if header should be transparent (only if transparent prop is true AND not scrolled)
   const isTransparent = transparent && !isScrolled;
-  // Determine if header should show white/solid background
   const isSolid = !transparent || isScrolled;
-  
-  // Use dynamic text color when transparent (based on initialTextColor prop), black text when solid
   const textColor = isTransparent ? initialTextColor : 'var(--color-text)';
+
+  // Sort nav items by order
+  const sortedNavItems = [...navItems].sort((a, b) => {
+    const aData = a.attributes || a;
+    const bData = b.attributes || b;
+    return (aData.order || 0) - (bData.order || 0);
+  });
 
   return (
     <header style={{
@@ -102,45 +126,25 @@ export default function TransparentHeader({ onCtaClick, transparent = false, tex
           gap: '2rem',
           alignItems: 'center',
         }}>
-          <Link 
-            href="/hoe-werkt-het" 
-            style={{
-              color: textColor,
-              textDecoration: 'none',
-              fontWeight: 500,
-              fontSize: '15px',
-              textShadow: 'none',
-              transition: 'all 0.3s ease',
-            }}
-          >
-            Hoe werkt het
-          </Link>
-          <Link 
-            href="/over-ons" 
-            style={{
-              color: textColor,
-              textDecoration: 'none',
-              fontWeight: 500,
-              fontSize: '15px',
-              textShadow: 'none',
-              transition: 'all 0.3s ease',
-            }}
-          >
-            Over ons
-          </Link>
-          <Link 
-            href="/contact" 
-            style={{
-              color: textColor,
-              textDecoration: 'none',
-              fontWeight: 500,
-              fontSize: '15px',
-              textShadow: 'none',
-              transition: 'all 0.3s ease',
-            }}
-          >
-            Contact
-          </Link>
+          {sortedNavItems.map((item) => {
+            const itemData = item.attributes || item;
+            return (
+              <Link 
+                key={item.id}
+                href={itemData.href} 
+                style={{
+                  color: textColor,
+                  textDecoration: 'none',
+                  fontWeight: 500,
+                  fontSize: '15px',
+                  textShadow: 'none',
+                  transition: 'all 0.3s ease',
+                }}
+              >
+                {itemData.label}
+              </Link>
+            );
+          })}
           <button 
             className="btn btn-primary"
             onClick={onCtaClick}
@@ -269,48 +273,26 @@ export default function TransparentHeader({ onCtaClick, transparent = false, tex
           </svg>
         </button>
 
-        <Link 
-          href="/hoe-werkt-het" 
-          onClick={() => setIsMobileMenuOpen(false)}
-          style={{
-            color: 'var(--color-text)',
-            textDecoration: 'none',
-            fontWeight: 500,
-            fontSize: '18px',
-            padding: '0.75rem 0',
-            borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          Hoe werkt het
-        </Link>
-        <Link 
-          href="/over-ons" 
-          onClick={() => setIsMobileMenuOpen(false)}
-          style={{
-            color: 'var(--color-text)',
-            textDecoration: 'none',
-            fontWeight: 500,
-            fontSize: '18px',
-            padding: '0.75rem 0',
-            borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          Over ons
-        </Link>
-        <Link 
-          href="/contact" 
-          onClick={() => setIsMobileMenuOpen(false)}
-          style={{
-            color: 'var(--color-text)',
-            textDecoration: 'none',
-            fontWeight: 500,
-            fontSize: '18px',
-            padding: '0.75rem 0',
-            borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          Contact
-        </Link>
+        {sortedNavItems.map((item) => {
+          const itemData = item.attributes || item;
+          return (
+            <Link 
+              key={item.id}
+              href={itemData.href} 
+              onClick={() => setIsMobileMenuOpen(false)}
+              style={{
+                color: 'var(--color-text)',
+                textDecoration: 'none',
+                fontWeight: 500,
+                fontSize: '18px',
+                padding: '0.75rem 0',
+                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+              }}
+            >
+              {itemData.label}
+            </Link>
+          );
+        })}
         <button 
           className="btn btn-primary"
           onClick={() => {
@@ -376,4 +358,3 @@ export default function TransparentHeader({ onCtaClick, transparent = false, tex
     </header>
   );
 }
-

@@ -1,134 +1,253 @@
-import FAQSection from '@/components/FAQSection';
-import TransparentHeader from '@/components/TransparentHeader';
-import Footer from '@/components/Footer';
-import SubpageHero from '@/components/SubpageHero';
+import { getPageBySlug } from '@/lib/strapi-cms';
+import { StrapiSection } from '@/types/strapi-cms';
+import HeaderWithWidget from '../HeaderWithWidget';
+import Footer from '../../components/Footer';
+import HeroSection from '../../components/sections/HeroSection';
+import BenefitsCarousel from '../../components/BenefitsCarousel';
+import FeatureSectionWrapper from '../FeatureSectionWrapper';
+import TestimonialsCarousel from '../../components/TestimonialsCarousel';
+import HowItWorksBento from '../../components/HowItWorksBento';
+import CTASection from '../../components/sections/CTASection';
+import ProcessSteps from '../../components/ProcessSteps';
+import WhyChooseSection from '../../components/WhyChooseSection';
+import ContentSection from '../../components/sections/ContentSection';
+import ServicesSection from '../../components/sections/ServicesSection';
+import TrustSection from '../../components/sections/TrustSection';
+import FAQSection from '../../components/FAQSection';
+import FeatureShowcase from '../../components/sections/FeatureShowcase';
+import TwoColumnSupport from '../../components/TwoColumnSupport';
+import SubpageHero from '../../components/SubpageHero';
 
-// Mark as dynamic to prevent build-time prerendering issues with event handlers
+const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
+
 export const dynamic = 'force-dynamic';
 
-export default function FAQDemo() {
-  const handleCtaClick = () => {
-    // Note: For server component compatibility, we'd typically use a client component wrapper
-    // For now, keeping the link approach
-    window.location.href = '/lead';
-  };
+function renderSection(section: StrapiSection, index: number) {
+  switch (section.__component) {
+    case 'sections.hero-section':
+      return (
+        <HeroSection
+          key={index}
+          badge={section.badge}
+          title={section.title}
+          subtitle={section.subtitle}
+          backgroundImage={section.backgroundImage}
+          variant={section.variant}
+          iconPath={section.iconPath}
+          icons={section.icons}
+          ctaLabel={section.primaryCta?.label}
+          ctaHref={section.primaryCta?.href}
+        />
+      );
+    
+    case 'sections.benefits-carousel':
+      return (
+        <BenefitsCarousel
+          key={index}
+          benefits={section.benefits?.map(b => ({
+            iconPath: b.iconPath,
+            title: b.title,
+            desc: b.description,
+            color: b.color || '#fff2b2',
+            textColor: b.textColor || '#5e5515'
+          })) || []}
+          title={section.title}
+          subtitle={section.subtitle}
+          backgroundColor={section.backgroundColor}
+        />
+      );
+    
+    case 'sections.feature-section':
+      return (
+        <FeatureSectionWrapper
+          key={index}
+          title={section.title}
+          description={section.description}
+          buttonText={section.buttonText}
+          imagePath={section.imagePath}
+          imagePosition={section.imagePosition}
+          backgroundColor={section.backgroundColor}
+        />
+      );
+    
+    case 'sections.testimonials-carousel':
+      return (
+        <TestimonialsCarousel
+          key={index}
+          testimonials={section.testimonials?.map(t => ({
+            name: t.name,
+            role: t.role,
+            text: t.text,
+            image: t.image
+          })) || []}
+        />
+      );
+    
+    case 'sections.how-it-works-bento':
+      return (
+        <HowItWorksBento key={index} />
+      );
+    
+    case 'sections.process-steps':
+      return (
+        <ProcessSteps
+          key={index}
+          steps={section.steps?.map(s => ({
+            number: s.number,
+            title: s.title,
+            description: s.description,
+            details: s.details || [],
+            imagePath: s.imagePath
+          })) || []}
+        />
+      );
+    
+    case 'sections.why-choose-section':
+      return (
+        <WhyChooseSection
+          key={index}
+          benefits={section.benefits?.map(b => ({
+            title: b.title,
+            description: b.description,
+            iconPath: b.iconPath,
+            color: b.color || '#fff2b2',
+            textColor: b.textColor || '#5e5515'
+          })) || []}
+          title={section.title}
+          subtitle={section.subtitle}
+        />
+      );
+    
+    case 'sections.content-section':
+      return (
+        <ContentSection
+          key={index}
+          title={section.title}
+          content={section.content}
+          layout={section.layout}
+          variant={section.variant}
+          background={section.background}
+          ctaLabel={section.ctaLabel}
+          ctaHref={section.ctaHref}
+        />
+      );
+    
+    case 'sections.services-section':
+      return (
+        <ServicesSection
+          key={index}
+          title={section.title}
+          subtitle={section.subtitle}
+          services={section.services || []}
+        />
+      );
+    
+    case 'sections.trust-section':
+      return (
+        <TrustSection
+          key={index}
+          badges={section.badges || []}
+          variant={section.variant}
+        />
+      );
+    
+    case 'sections.cta-section':
+      return (
+        <CTASection
+          key={index}
+          title={section.title}
+          subtitle={section.subtitle}
+          ctaLabel={section.ctaLabel}
+          ctaHref={section.ctaHref}
+          background={section.background}
+        />
+      );
+    
+    case 'sections.faq-section':
+      return (
+        <FAQSection
+          key={index}
+          title={section.title}
+          subtitle={section.subtitle}
+          faqItems={section.faqItems?.map((item, idx) => ({
+            id: `faq-${idx}`,
+            question: item.question,
+            answer: item.answer
+          })) || []}
+        />
+      );
+    
+    case 'sections.feature-showcase':
+      return (
+        <FeatureShowcase
+          key={index}
+          title={section.title}
+          featureCards={section.features?.map((f, idx) => ({
+            id: idx,
+            backgroundImage: { url: '/images/placeholder.jpg' },
+            badgeText: f.title || '',
+            badgeColor: '#457fff'
+          })) || []}
+        />
+      );
+    
+    case 'sections.two-column-support':
+      return (
+        <TwoColumnSupport
+          key={index}
+          leftTitle={section.title}
+          leftDescription={section.content}
+        />
+      );
+    
+    default:
+      console.warn('Unknown section type:', section.__component);
+      return null;
+  }
+}
 
-  // Sample FAQ data - in production this would come from Strapi
-  const sampleFAQs = [
-    {
-      id: '1',
-      question: 'Hoe lang duurt het voordat ik een beslissing krijg?',
-      answer: 'In de meeste gevallen ontvangt u binnen 24 uur een eerste reactie op uw aanvraag. De complete beoordeling en beslissing duurt gemiddeld 2-3 werkdagen, afhankelijk van de volledigheid van uw aanvraag en de beschikbaarheid van aanvullende informatie.'
-    },
-    {
-      id: '2',
-      question: 'Wat zijn de voorwaarden voor een zakelijke lening?',
-      answer: 'De voorwaarden variëren per type lening en uw specifieke situatie. Over het algemeen kijken we naar uw bedrijfsresultaten van de afgelopen jaren, uw kredietwaardigheid, en het doel van de financiering. We werken graag samen met ondernemers die al minimaal 1 jaar actief zijn.'
-    },
-    {
-      id: '3',
-      question: 'Kan ik een lening aanvragen als ik een startende ondernemer ben?',
-      answer: 'Ja, ook startende ondernemers kunnen bij ons terecht. Voor starters hebben we speciale programma\'s en voorwaarden. We kijken dan bijvoorbeeld naar uw businessplan, eventuele persoonlijke zekerheden, en uw ervaring in de branche. Het is belangrijk dat u een goed doordacht plan heeft.'
-    },
-    {
-      id: '4',
-      question: 'Welke documenten heb ik nodig voor mijn aanvraag?',
-      answer: 'Voor een complete aanvraag hebben we doorgaans nodig: uw laatste jaarrekening, BTW-aangiftes van het afgelopen jaar, een recent bankoverzicht, en een kopie van uw identiteitsbewijs. Afhankelijk van uw situatie kunnen er aanvullende documenten nodig zijn.'
-    },
-    {
-      id: '5',
-      question: 'Zijn er kosten verbonden aan het aanvragen?',
-      answer: 'Nee, het aanvragen van een offerte is volledig kosteloos en vrijblijvend. U betaalt alleen als u daadwerkelijk een lening afsluit. Alle kosten en voorwaarden worden vooraf helder met u gecommuniceerd, zodat u precies weet waar u aan toe bent.'
-    },
-    {
-      id: '6',
-      question: 'Kan ik vervroegd aflossen?',
-      answer: 'Ja, vervroegd aflossen is mogelijk. Afhankelijk van het type lening en de afspraken kunnen hier kosten aan verbonden zijn. We adviseren u graag over de mogelijkheden en eventuele kosten van vervroegd aflossen bij uw specifieke lening.'
-    }
-  ];
+export default async function FAQPage() {
+  let page = null;
+  
+  try {
+    page = await getPageBySlug('faq', SITE_ID);
+  } catch (e) {
+    console.warn('Strapi fetch failed for FAQ page');
+  }
+  
+  const pageData = page?.attributes || page;
+  const sections = pageData?.sections;
+
+  if (!page || !sections || !Array.isArray(sections)) {
+    return (
+      <>
+        <HeaderWithWidget />
+        <main>
+          <SubpageHero
+            title="Veelgestelde vragen"
+            subtitle="Laden..."
+            backgroundColor="var(--color-bg)"
+          />
+        </main>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
-      <TransparentHeader transparent={true} textColor="black" onCtaClick={handleCtaClick} />
-      
-      <SubpageHero
-        title="Veelgestelde vragen"
-        subtitle="Heeft u een vraag? Bekijk hier de antwoorden op de meest gestelde vragen."
-        backgroundColor="var(--color-bg)"
-        iconPath="/icons/SVG/interface/question.svg"
-      />
-      
-      <main style={{
-        background: 'var(--color-bg)',
-      }}>
-        {/* FAQ Section */}
-        <FAQSection 
-          title="Veelgestelde vragen"
-          subtitle="Vind snel antwoord op uw vraag"
-          faqItems={sampleFAQs}
-        />
-
-        {/* CTA Section */}
-        <section style={{
-          background: 'white',
-          padding: '5rem 2rem',
-          textAlign: 'center',
-        }}>
-          <div className="container" style={{
-            maxWidth: '700px',
-            margin: '0 auto',
-          }}>
-            <h2 style={{
-              fontFamily: 'PP Neue Montreal, sans-serif',
-              fontSize: '2.5rem',
-              fontWeight: 400,
-              marginBottom: '1.5rem',
-              color: 'var(--color-text)',
-            }}>
-              Staat uw vraag er niet bij?
-            </h2>
-            <p style={{
-              fontSize: '1.125rem',
-              color: 'var(--color-text-muted)',
-              marginBottom: '2rem',
-            }}>
-              Neem contact met ons op. We helpen u graag verder met al uw vragen.
-            </p>
-            <a
-              href="/contact"
-              style={{
-                border: 'none',
-                backgroundColor: 'var(--color-charcoal)',
-                color: 'white',
-                textAlign: 'center',
-                borderRadius: 'var(--radius-full)',
-                justifyContent: 'center',
-                alignItems: 'center',
-                minWidth: '14rem',
-                padding: '1.25rem 2.5rem',
-                fontFamily: 'Public Sans Variable, sans-serif',
-                fontSize: '1.125rem',
-                fontWeight: 400,
-                lineHeight: '1rem',
-                transition: 'all 0.28s',
-                display: 'inline-flex',
-                cursor: 'pointer',
-                textDecoration: 'none',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#333333';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
-              }}
-            >
-              Contact opnemen
-            </a>
-          </div>
-        </section>
+      <HeaderWithWidget />
+      <main>
+        {sections.map((section: any, index: number) => {
+          try {
+            return renderSection(section, index);
+          } catch (e) {
+            console.error(`Error rendering section ${index}:`, e);
+            return null;
+          }
+        })}
       </main>
       <Footer />
     </>
   );
 }
-

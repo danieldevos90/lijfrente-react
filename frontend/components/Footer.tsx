@@ -1,10 +1,51 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Linkedin } from 'lucide-react';
 import Logo from './Logo';
+import { getFooterContent } from '@/lib/strapi-cms';
+import { useWidget } from './GlobalWidgetProvider';
+
+const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
 export default function Footer() {
+  const { openDrawer } = useWidget();
+  const [footerData, setFooterData] = useState<any>(null);
+
+  useEffect(() => {
+    async function fetchFooter() {
+      try {
+        const data = await getFooterContent(SITE_ID);
+        setFooterData(data);
+      } catch (error) {
+        console.error('Error fetching footer:', error);
+      }
+    }
+    fetchFooter();
+  }, []);
+
+  // Fallback data if Strapi is not available
+  const footer = footerData?.attributes || footerData || {
+    companyName: 'GeldGeregeld B.V.',
+    address: 'Herengracht 282',
+    postalCode: '1016 BX',
+    city: 'Amsterdam',
+    country: 'Nederland',
+    linkedinUrl: 'https://linkedin.com',
+    linkedinText: 'Volg ons op LinkedIn',
+    description1: 'GeldGeregeld B.V. is een Nederlandse financiële dienstverlener die ondernemers helpt bij het verkrijgen van passende zakelijke financiering. Wij werken samen met een netwerk van gerenommeerde kredietverstrekkers en bemiddelen tussen ondernemers en financiers.',
+    description2: 'Het verstrekken van financiering gebeurt door onze partnercrediteurs onder de voorwaarden die door hen worden gesteld. GeldGeregeld verstrekt zelf geen krediet. Wij helpen bij het vinden van de meest geschikte financiering voor uw onderneming.',
+    description3: 'Let op: lenen kost geld. Raadpleeg uw adviseur en vraag indien nodig advies over de voorwaarden en risico\'s. Alle financieringsvormen en voorwaarden zijn afhankelijk van goedkeuring door de crediteur. Restricties zijn van toepassing; zie de voorwaarden van de betreffende crediteur voor details.',
+    copyright: '©2025 GeldGeregeld B.V. Alle rechten voorbehouden.',
+    footerLinks: [
+      { label: 'Privacy', href: '/privacy' },
+      { label: 'Cookies', href: '/cookies' },
+      { label: 'Algemene Voorwaarden', href: '/algemene-voorwaarden' },
+      { label: 'Disclaimer', href: '/disclaimer' },
+      { label: 'Contact', href: '/contact' },
+    ]
+  };
+
   return (
     <footer style={{
       background: '#0f1720',
@@ -27,7 +68,7 @@ export default function Footer() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <a 
-              href="https://linkedin.com" 
+              href={footer.linkedinUrl || 'https://linkedin.com'} 
               target="_blank" 
               rel="noopener noreferrer"
               style={{
@@ -47,7 +88,7 @@ export default function Footer() {
               }}
             >
               <Linkedin size={16} />
-              <span>Volg ons op LinkedIn</span>
+              <span>{footer.linkedinText || 'Volg ons op LinkedIn'}</span>
             </a>
           </div>
         </div>
@@ -84,67 +125,76 @@ export default function Footer() {
               lineHeight: '1.6',
               marginBottom: '1.5rem',
             }}>
-              GeldGeregeld B.V.<br />
-              Herengracht 282<br />
-              1016 BX Amsterdam<br />
-              Nederland
+              {footer.companyName || 'GeldGeregeld B.V.'}<br />
+              {footer.address || 'Herengracht 282'}<br />
+              {footer.postalCode || '1016 BX'} {footer.city || 'Amsterdam'}<br />
+              {footer.country || 'Nederland'}
             </address>
             
-            <button style={{
-              border: 'none',
-              backgroundColor: 'white',
-              color: '#0f1720',
-              textAlign: 'center',
-              borderRadius: '10rem',
-              justifyContent: 'center',
-              alignItems: 'center',
-              minWidth: '12rem',
-              padding: '0.75rem 2rem',
-              fontFamily: 'Public Sans Variable, sans-serif',
-              fontSize: '18px',
-              fontWeight: 400,
-              lineHeight: '1rem',
-              transition: 'all .28s',
-              display: 'flex',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#f3f4f6';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'white';
-            }}>
+            <button 
+              onClick={() => openDrawer('footer')}
+              style={{
+                border: 'none',
+                backgroundColor: 'white',
+                color: '#0f1720',
+                textAlign: 'center',
+                borderRadius: '10rem',
+                justifyContent: 'center',
+                alignItems: 'center',
+                minWidth: '12rem',
+                padding: '0.75rem 2rem',
+                fontFamily: 'Public Sans Variable, sans-serif',
+                fontSize: '18px',
+                fontWeight: 400,
+                lineHeight: '1rem',
+                transition: 'all .28s',
+                display: 'flex',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#f3f4f6';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'white';
+              }}
+            >
               Neem contact op
             </button>
           </div>
 
           {/* Right Column - Legal Text */}
           <div>
-            <p style={{
-              color: 'rgba(255, 255, 255, 0.6)',
-              fontSize: '12px',
-              lineHeight: '1.7',
-              marginBottom: '1rem',
-            }}>
-              GeldGeregeld B.V. is een Nederlandse financiële dienstverlener die ondernemers helpt bij het verkrijgen van passende zakelijke financiering. Wij werken samen met een netwerk van gerenommeerde kredietverstrekkers en bemiddelen tussen ondernemers en financiers.
-            </p>
+            {footer.description1 && (
+              <p style={{
+                color: 'rgba(255, 255, 255, 0.6)',
+                fontSize: '12px',
+                lineHeight: '1.7',
+                marginBottom: '1rem',
+              }}>
+                {footer.description1}
+              </p>
+            )}
             
-            <p style={{
-              color: 'rgba(255, 255, 255, 0.6)',
-              fontSize: '12px',
-              lineHeight: '1.7',
-              marginBottom: '1rem',
-            }}>
-              Het verstrekken van financiering gebeurt door onze partnercrediteurs onder de voorwaarden die door hen worden gesteld. GeldGeregeld verstrekt zelf geen krediet. Wij helpen bij het vinden van de meest geschikte financiering voor uw onderneming.
-            </p>
+            {footer.description2 && (
+              <p style={{
+                color: 'rgba(255, 255, 255, 0.6)',
+                fontSize: '12px',
+                lineHeight: '1.7',
+                marginBottom: '1rem',
+              }}>
+                {footer.description2}
+              </p>
+            )}
 
-            <p style={{
-              color: 'rgba(255, 255, 255, 0.6)',
-              fontSize: '12px',
-              lineHeight: '1.7',
-            }}>
-              Let op: lenen kost geld. Raadpleeg uw adviseur en vraag indien nodig advies over de voorwaarden en risico's. Alle financieringsvormen en voorwaarden zijn afhankelijk van goedkeuring door de crediteur. Restricties zijn van toepassing; zie de voorwaarden van de betreffende crediteur voor details.
-            </p>
+            {footer.description3 && (
+              <p style={{
+                color: 'rgba(255, 255, 255, 0.6)',
+                fontSize: '12px',
+                lineHeight: '1.7',
+              }}>
+                {footer.description3}
+              </p>
+            )}
           </div>
         </div>
 
@@ -163,75 +213,32 @@ export default function Footer() {
             fontSize: '12px',
             margin: 0,
           }}>
-            ©2025 GeldGeregeld B.V. Alle rechten voorbehouden.
+            {footer.copyright || '©2025 GeldGeregeld B.V. Alle rechten voorbehouden.'}
           </p>
           
           <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <Link 
-              href="/privacy" 
-              style={{
-                color: 'rgba(255, 255, 255, 0.5)',
-                textDecoration: 'none',
-                fontSize: '12px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.5)'}
-            >
-              Privacy
-            </Link>
-            <Link 
-              href="/cookies" 
-              style={{
-                color: 'rgba(255, 255, 255, 0.5)',
-                textDecoration: 'none',
-                fontSize: '12px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.5)'}
-            >
-              Cookies
-            </Link>
-            <Link 
-              href="/algemene-voorwaarden" 
-              style={{
-                color: 'rgba(255, 255, 255, 0.5)',
-                textDecoration: 'none',
-                fontSize: '12px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.5)'}
-            >
-              Algemene Voorwaarden
-            </Link>
-            <Link 
-              href="/disclaimer" 
-              style={{
-                color: 'rgba(255, 255, 255, 0.5)',
-                textDecoration: 'none',
-                fontSize: '12px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.5)'}
-            >
-              Disclaimer
-            </Link>
-            <Link 
-              href="/contact" 
-              style={{
-                color: 'rgba(255, 255, 255, 0.5)',
-                textDecoration: 'none',
-                fontSize: '12px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.5)'}
-            >
-              Contact
-            </Link>
+            {(footer.footerLinks || [
+              { label: 'Privacy', href: '/privacy' },
+              { label: 'Cookies', href: '/cookies' },
+              { label: 'Algemene Voorwaarden', href: '/algemene-voorwaarden' },
+              { label: 'Disclaimer', href: '/disclaimer' },
+              { label: 'Contact', href: '/contact' },
+            ]).map((link: any, index: number) => (
+              <Link 
+                key={index}
+                href={link.href} 
+                style={{
+                  color: 'rgba(255, 255, 255, 0.5)',
+                  textDecoration: 'none',
+                  fontSize: '12px',
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.5)'}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -247,4 +254,3 @@ export default function Footer() {
     </footer>
   );
 }
-

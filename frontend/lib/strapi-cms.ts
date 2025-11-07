@@ -164,12 +164,50 @@ export async function getNavigationItems(
 ): Promise<StrapiNavigationItem[]> {
   const endpoint = `/navigation-items?filters[siteId][$eq]=${siteId}&sort=order:asc`;
   
-  const response = await fetchStrapi<StrapiCollectionResponse<StrapiNavigationItem>>(
-    endpoint,
-    options
-  );
+  try {
+    const response = await fetchStrapi<StrapiCollectionResponse<StrapiNavigationItem>>(
+      endpoint,
+      options
+    );
 
-  return response.data;
+    if (!response || !response.data) {
+      return [];
+    }
+
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching navigation items:', error);
+    return [];
+  }
+}
+
+/**
+ * Fetch footer content from site configuration
+ * 
+ * @example
+ * const footer = await getFooterContent('geldgeregeld');
+ */
+export async function getFooterContent(
+  siteId: string,
+  options?: FetchOptions
+): Promise<any> {
+  const endpoint = `/sites?filters[siteId][$eq]=${siteId}&populate=*`;
+  
+  try {
+    const response = await fetchStrapi<StrapiCollectionResponse<StrapiSite>>(
+      endpoint,
+      options
+    );
+
+    if (!response || !response.data || response.data.length === 0) {
+      return null;
+    }
+
+    return response.data[0];
+  } catch (error) {
+    console.error('Error fetching footer content:', error);
+    return null;
+  }
 }
 
 // ============================================================================
