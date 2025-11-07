@@ -37,7 +37,9 @@ export default function HeroSlide({
     return (
     <div className="hero-slide" style={{ 
       color: textColor,
-      ...bgStyle 
+      ...bgStyle,
+      paddingTop: 'calc(6rem + 80px)', // Account for fixed header height
+      marginTop: 0,
     }}>
       <div className="container">
         {badge && (

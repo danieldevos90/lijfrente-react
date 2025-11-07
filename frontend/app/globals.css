@@ -321,11 +321,13 @@ input:focus, select:focus {
 
 /* Hero slide specific styles */
 .hero-slide {
-  min-height: 80vh;
+  min-height: calc(100vh - 80px); /* Full viewport minus header */
   display: flex;
   align-items: center;
-  padding: 6rem 0;
+  padding: 0;
+  padding-bottom: 6rem;
   width: 100%;
+  position: relative;
 }
 .hero-slide .container {
   text-align: left;

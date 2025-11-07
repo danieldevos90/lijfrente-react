@@ -16,7 +16,7 @@ interface HeroSectionProps {
 
 export default function HeroSection(props: HeroSectionProps) {
   return (
-    <section className="full-width">
+    <section className="full-width" style={{ position: 'relative', marginTop: 0 }}>
       <HeroSlide {...props} />
     </section>
   );
