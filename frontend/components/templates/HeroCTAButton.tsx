@@ -1,5 +1,5 @@
 "use client";
-import { useWidget } from '../components/GlobalWidgetProvider';
+import { useWidget } from '../GlobalWidgetProvider';
 
 interface HeroCTAButtonProps {
   ctaLabel?: string;

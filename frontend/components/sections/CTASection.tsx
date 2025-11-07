@@ -32,13 +32,7 @@ export default function CTASection({
             {subtitle}
           </p>
         )}
-        <a 
-          className="btn btn-primary" 
-          href={ctaHref}
-          style={{ fontSize: '18px', padding: '20px 40px', borderRadius: '10rem' }}
-        >
-          {ctaLabel}
-        </a>
+        <CTASectionButton ctaLabel={ctaLabel} ctaHref={ctaHref} />
       </div>
     </Section>
   );
