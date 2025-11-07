@@ -103,18 +103,8 @@ export default function WhyChooseSection({
                         alignItems: 'center',
                         justifyContent: 'center',
                         textAlign: 'center',
-                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                         minHeight: '350px',
-                        cursor: 'pointer',
                         border: 'none',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-8px)';
-                        e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = 'none';
                       }}
                     >
                       <div className="why-choose-card-icon" style={{ 
