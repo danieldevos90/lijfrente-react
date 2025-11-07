@@ -45,7 +45,13 @@ function renderSection(section: StrapiSection, index: number) {
       return (
         <BenefitsCarousel
           key={index}
-          benefits={section.benefits || []}
+          benefits={section.benefits?.map(b => ({
+            iconPath: b.iconPath,
+            title: b.title,
+            desc: b.description,
+            color: b.color || '#fff2b2',
+            textColor: b.textColor || '#5e5515'
+          })) || []}
           title={section.title}
           subtitle={section.subtitle}
           backgroundColor={section.backgroundColor}
@@ -79,7 +85,7 @@ function renderSection(section: StrapiSection, index: number) {
       );
     
     case 'sections.how-it-works-bento':
-      return (
+  return (
         <HowItWorksBento key={index} />
       );
     
