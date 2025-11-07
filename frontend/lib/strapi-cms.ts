@@ -51,19 +51,29 @@ async function fetchStrapi<T>(
     headers.Authorization = `Bearer ${STRAPI_API_TOKEN}`;
   }
 
-  const response = await fetch(url, {
-    headers,
-    cache: options.cache || 'no-store',
-    next: options.next,
-  });
+  try {
+    const response = await fetch(url, {
+      headers,
+      cache: options.cache || 'no-store',
+      next: options.next,
+    });
 
-  if (!response.ok) {
-    throw new Error(
-      `Strapi API error: ${response.status} ${response.statusText}`
-    );
+    if (!response.ok) {
+      // Don't throw on 404, return null instead
+      if (response.status === 404) {
+        return null as T;
+      }
+      throw new Error(
+        `Strapi API error: ${response.status} ${response.statusText}`
+      );
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Strapi fetch error:', error);
+    // Return null instead of throwing to allow graceful fallback
+    return null as T;
   }
-
-  return response.json();
 }
 
 // ============================================================================
@@ -83,12 +93,21 @@ export async function getPageBySlug(
 ): Promise<StrapiPage | null> {
   const endpoint = `/pages?filters[slug][$eq]=${slug}&filters[siteId][$eq]=${siteId}&populate[sections][populate]=*`;
   
-  const response = await fetchStrapi<StrapiCollectionResponse<StrapiPage>>(
-    endpoint,
-    options
-  );
+  try {
+    const response = await fetchStrapi<StrapiCollectionResponse<StrapiPage>>(
+      endpoint,
+      options
+    );
 
-  return response.data[0] || null;
+    if (!response || !response.data) {
+      return null;
+    }
+
+    return response.data[0] || null;
+  } catch (error) {
+    console.error('Error in getPageBySlug:', error);
+    return null;
+  }
 }
 
 /**

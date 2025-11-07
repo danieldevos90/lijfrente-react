@@ -210,13 +210,20 @@ function renderSection(section: StrapiSection, index: number) {
 
 export default async function HomePage() {
   // Fetch page from Strapi - try 'home' first, then fallback to 'home-geldgeregeld'
-  let page = await getPageBySlug('home', SITE_ID);
-  if (!page) {
-    page = await getPageBySlug('home-geldgeregeld', SITE_ID);
+  let page = null;
+  
+  try {
+    page = await getPageBySlug('home', SITE_ID);
+    if (!page) {
+      page = await getPageBySlug('home-geldgeregeld', SITE_ID);
+    }
+  } catch (e) {
+    // Silently fallback - error already logged in getPageBySlug
+    console.warn('Strapi fetch failed, using fallback content');
   }
   
   // Fallback to hardcoded content if Strapi is not available
-  if (!page || !page.attributes.sections) {
+  if (!page || !page.attributes?.sections || !Array.isArray(page.attributes.sections)) {
     return <HomePageClient />;
   }
 
@@ -227,7 +234,14 @@ export default async function HomePage() {
       <TransparentHeader transparent={true} textColor="white" />
       <main>
         <h1 className="sr-only">{title}</h1>
-        {sections?.map((section, index) => renderSection(section, index))}
+        {sections?.map((section, index) => {
+          try {
+            return renderSection(section, index);
+          } catch (e) {
+            console.error(`Error rendering section ${index}:`, e);
+            return null;
+          }
+        })}
       </main>
       <Footer />
     </>
