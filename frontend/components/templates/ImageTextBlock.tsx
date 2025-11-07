@@ -48,12 +48,7 @@ export default function ImageTextBlock({
       textAlign: !imageUrl ? 'center' as const : 'left' as const
     }}>
       {title && (
-        <h2 style={{ 
-          fontSize: 'clamp(1.5rem, 3vw, 2rem)', 
-          margin: '0 0 var(--space-md)', 
-          color: 'var(--color-text)',
-          fontWeight: 600
-        }}>
+        <h2>
           {title}
         </h2>
       )}
