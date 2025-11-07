@@ -19,31 +19,56 @@ import TwoColumnSupport from '../components/TwoColumnSupport';
  * Extract icon path from section data, handling various Strapi data structures
  */
 function extractIconPath(sectionData: any): string | undefined {
+  // Debug: log what we're checking
+  console.log('extractIconPath - sectionData keys:', Object.keys(sectionData || {}));
+  console.log('extractIconPath - icons:', sectionData?.icons);
+  console.log('extractIconPath - iconPath:', sectionData?.iconPath);
+  
   // Try icons array first (can be JSON string or array)
-  if (sectionData.icons) {
+  if (sectionData?.icons) {
     let iconsArray: string[] | null = null;
     
     if (typeof sectionData.icons === 'string') {
+      // Check if it's already a valid path (starts with /)
+      if (sectionData.icons.startsWith('/')) {
+        return sectionData.icons;
+      }
+      
       try {
         iconsArray = JSON.parse(sectionData.icons);
+        console.log('extractIconPath - Parsed JSON icons:', iconsArray);
       } catch (e) {
         // If parsing fails, treat as single icon path
+        console.log('extractIconPath - JSON parse failed, using as single path');
         return sectionData.icons;
       }
     } else if (Array.isArray(sectionData.icons)) {
       iconsArray = sectionData.icons;
+      console.log('extractIconPath - Icons is already an array:', iconsArray);
     }
     
-    if (iconsArray && iconsArray.length > 0 && typeof iconsArray[0] === 'string') {
-      return iconsArray[0];
+    if (iconsArray && iconsArray.length > 0) {
+      const firstIcon = iconsArray[0];
+      if (typeof firstIcon === 'string' && firstIcon) {
+        console.log('extractIconPath - Returning first icon from array:', firstIcon);
+        return firstIcon;
+      }
     }
   }
   
   // Fallback to iconPath
-  if (typeof sectionData.iconPath === 'string' && sectionData.iconPath) {
-    return sectionData.iconPath;
+  if (sectionData?.iconPath) {
+    const iconPath = typeof sectionData.iconPath === 'string' 
+      ? sectionData.iconPath 
+      : String(sectionData.iconPath);
+    
+    if (iconPath && iconPath !== 'null' && iconPath !== 'undefined') {
+      console.log('extractIconPath - Returning iconPath:', iconPath);
+      return iconPath;
+    }
   }
   
+  console.log('extractIconPath - No icon found, returning undefined');
   return undefined;
 }
 
