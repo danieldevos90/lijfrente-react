@@ -4,7 +4,7 @@ import React from 'react';
 interface FeatureSectionProps {
   title: string;
   description: string;
-  buttonText: string;
+  buttonText?: string;
   onButtonClick: () => void;
   imagePath: string;
   imagePosition?: 'left' | 'right';
@@ -71,38 +71,40 @@ export default function FeatureSection({
             }}>
               {description}
             </p>
-            <div className="feature-button-wrapper" style={{ display: 'flex', justifyContent: 'flex-start' }}>
-              <button 
-                className="feature-button"
-                style={{
-                  border: 'none',
-                  backgroundColor: '#000000',
-                  color: 'white',
-                  textAlign: 'center',
-                  borderRadius: '10rem',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  minWidth: '14rem',
-                  padding: '1.5rem 3rem',
-                  fontFamily: 'Public Sans Variable, sans-serif',
-                  fontSize: '18px',
-                  fontWeight: 400,
-                  lineHeight: '1rem',
-                  transition: 'all .28s',
-                  display: 'flex',
-                  cursor: 'pointer',
-                }}
-                onClick={onButtonClick}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#333333';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#000000';
-                }}
-              >
-                {buttonText}
-              </button>
-            </div>
+            {buttonText && (
+              <div className="feature-button-wrapper" style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                <button 
+                  className="feature-button"
+                  style={{
+                    border: 'none',
+                    backgroundColor: '#000000',
+                    color: 'white',
+                    textAlign: 'center',
+                    borderRadius: '10rem',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minWidth: '14rem',
+                    padding: '1.5rem 3rem',
+                    fontFamily: 'Public Sans Variable, sans-serif',
+                    fontSize: '18px',
+                    fontWeight: 400,
+                    lineHeight: '1rem',
+                    transition: 'all .28s',
+                    display: 'flex',
+                    cursor: 'pointer',
+                  }}
+                  onClick={onButtonClick}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#333333';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#000000';
+                  }}
+                >
+                  {buttonText}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
