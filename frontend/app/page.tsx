@@ -65,6 +65,7 @@ function renderSection(section: StrapiSection, index: number) {
           title={section.title}
           description={section.description}
           buttonText={section.buttonText}
+          onButtonClick={() => {}}
           imagePath={section.imagePath}
           imagePosition={section.imagePosition}
           backgroundColor={section.backgroundColor}
