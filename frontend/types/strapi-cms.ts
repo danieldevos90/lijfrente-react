@@ -35,6 +35,7 @@ export interface StrapiServiceItem {
 export interface StrapiTrustBadge {
   icon: string;
   text: string;
+  description?: string;
 }
 
 export interface StrapiBenefitItem {

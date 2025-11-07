@@ -6,6 +6,7 @@ import { CheckCircle, Zap, Lock, FileText } from 'lucide-react';
 interface TrustBadge {
   icon: string;
   text: string;
+  description?: string;
 }
 
 const trustIconMap: Record<string, React.ComponentType<any>> = {
@@ -36,6 +37,7 @@ export default function TrustBadges({ badges, variant = 'default' }: TrustBadges
       {badges.map((badge, index) => {
         const isColored = index % 2 === 0;
         const bgColor = isColored ? '#F8FAFC' : 'white';
+        const textColorMain = isColored ? 'var(--color-text)' : 'var(--color-text)';
         
         return (
           <div
@@ -84,10 +86,22 @@ export default function TrustBadges({ badges, variant = 'default' }: TrustBadges
               fontWeight: 400,
               lineHeight: 1.2,
               marginBottom: '1rem',
-              color: 'var(--color-text)',
+              color: textColorMain,
             }}>
               {badge.text}
             </h3>
+            {badge.description && (
+              <p style={{
+                fontSize: 'clamp(0.9375rem, 2vw, 1.0625rem)',
+                fontWeight: 300,
+                color: textColorMain,
+                lineHeight: 1.7,
+                opacity: 0.85,
+                margin: 0,
+              }}>
+                {badge.description}
+              </p>
+            )}
           </div>
         );
       })}
