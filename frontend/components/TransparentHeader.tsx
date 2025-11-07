@@ -129,7 +129,7 @@ export default function TransparentHeader({
           alignItems: 'center',
         }}>
           {sortedNavItems.map((item) => {
-            const itemData = item.attributes || item;
+            const itemData = (item.attributes || item) as any;
             return (
               <Link 
                 key={item.id}
@@ -276,7 +276,7 @@ export default function TransparentHeader({
         </button>
 
         {sortedNavItems.map((item) => {
-          const itemData = item.attributes || item;
+          const itemData = (item.attributes || item) as any;
           return (
             <Link 
               key={item.id}
