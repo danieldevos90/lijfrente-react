@@ -26,8 +26,7 @@
       "description": "Text color (hex)"
     },
     "iconPath": {
-      "type": "customField",
-      "customField": "plugin::icon-selector.icon-selector",
+      "type": "string",
       "required": true,
       "description": "Icon SVG path"
     },

@@ -32,26 +32,9 @@ export default {
     ],
   },
   bootstrap(app: StrapiApp) {
-    // Register custom icon-selector field type
-    app.addCustomField({
-      name: 'icon-selector',
-      pluginId: 'icon-selector',
-      type: 'string',
-      intlLabel: {
-        id: 'icon-selector.label',
-        defaultMessage: 'Icon Selector',
-      },
-      intlDescription: {
-        id: 'icon-selector.description',
-        defaultMessage: 'Select an icon from the available icons',
-      },
-      components: {
-        Input: async () => {
-          const component = await import('./components/IconSelector');
-          return component.default;
-        },
-      },
-    });
+    // Custom field registration is now handled by the icon-selector plugin
+    // See: src/plugins/icon-selector/admin/src/index.tsx
+    // This bootstrap can be used for additional admin-side configuration if needed
   },
 };
 

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_sectors_benefits",
+  "info": {
+    "name": "benefit",
+    "displayName": "Sector Benefit",
+    "icon": "star",
+    "description": "A benefit specific to this sector"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "iconPath": {
+      "type": "string",
+      "description": "Path to icon SVG (e.g., '/icons/SVG/finance/wallet.svg')"
+    },
+    "color": {
+      "type": "string",
+      "default": "#fff2b2"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#5e5515"
+    }
+  }
+}

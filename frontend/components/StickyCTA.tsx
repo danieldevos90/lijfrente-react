@@ -52,25 +52,10 @@ export default function StickyCTA({ href, label, useDrawer = true }: StickyCTAPr
   return (
     <>
       <button
-        className="btn btn-primary"
+        className="btn btn-black"
         onClick={handleClick}
         style={{
-          border: 'none',
-          backgroundColor: '#000000',
-          color: 'white',
-          textAlign: 'center',
-          borderRadius: '10rem',
-          justifyContent: 'center',
-          alignItems: 'center',
-          minWidth: '14rem',
-          padding: '1.5rem 3rem',
-          fontFamily: 'Public Sans Variable, sans-serif',
-          fontSize: '18px',
-          fontWeight: 400,
-          lineHeight: '1rem',
-          transition: 'all .28s',
           display: 'flex',
-          cursor: 'pointer',
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.backgroundColor = '#333333';

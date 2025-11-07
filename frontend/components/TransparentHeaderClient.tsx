@@ -127,25 +127,10 @@ export default function TransparentHeaderClient({
             );
           })}
           <button 
-            className="btn btn-primary"
+            className="btn btn-black"
             onClick={onCtaClick}
             style={{
-              border: 'none',
-              backgroundColor: '#000000',
-              color: 'white',
-              textAlign: 'center',
-              borderRadius: '10rem',
-              justifyContent: 'center',
-              alignItems: 'center',
-              minWidth: '10rem',
-              padding: '0.75rem 2rem',
-              fontFamily: 'Public Sans Variable, sans-serif',
-              fontSize: '18px',
-              fontWeight: 400,
-              lineHeight: '1rem',
-              transition: 'all .28s',
               display: 'flex',
-              cursor: 'pointer',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#333333';
@@ -275,26 +260,14 @@ export default function TransparentHeaderClient({
           );
         })}
         <button 
-          className="btn btn-primary"
+          className="btn btn-black"
           onClick={() => {
             setIsMobileMenuOpen(false);
             onCtaClick?.();
           }}
           style={{
-            border: 'none',
-            backgroundColor: '#000000',
-            color: 'white',
-            textAlign: 'center',
-            borderRadius: '10rem',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '1rem 2rem',
-            fontFamily: 'Public Sans Variable, sans-serif',
-            fontSize: '18px',
-            fontWeight: 400,
-            marginTop: '1rem',
-            cursor: 'pointer',
             width: '100%',
+            marginTop: '1rem',
           }}
         >
           Aanvragen

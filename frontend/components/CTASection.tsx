@@ -48,31 +48,7 @@ export default function CTASection({
         </p>
         <button
           onClick={onButtonClick}
-          className="cta-button"
-          style={{
-            border: 'none',
-            backgroundColor: 'white',
-            color: '#0f1720',
-            textAlign: 'center',
-            borderRadius: '10rem',
-            justifyContent: 'center',
-            alignItems: 'center',
-            minWidth: '14rem',
-            padding: '1.5rem 3rem',
-            fontFamily: 'Public Sans Variable, sans-serif',
-            fontSize: '18px',
-            fontWeight: 400,
-            lineHeight: '1rem',
-            transition: 'all .28s',
-            display: 'inline-flex',
-            cursor: 'pointer',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#f3f4f6';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'white';
-          }}
+          className="btn btn-white cta-button"
         >
           {buttonText}
         </button>

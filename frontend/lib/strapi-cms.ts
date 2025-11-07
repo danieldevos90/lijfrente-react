@@ -433,3 +433,112 @@ export async function safeFetchStrapi<T>(
   }
 }
 
+// ============================================================================
+// SECTOR PAGE FUNCTIONS
+// ============================================================================
+
+/**
+ * Sector Page Type
+ */
+export interface StrapiSectorPage {
+  id: number;
+  attributes: {
+    siteId: string;
+    sectorSlug: string;
+    sectorName: string;
+    metaDescription?: string;
+    metaKeywords?: string;
+    heroTitle?: string;
+    heroSubtitle?: string;
+    heroImage?: {
+      data?: {
+        attributes?: {
+          url: string;
+          alternativeText?: string;
+        };
+      };
+    };
+    easyLendingTitle?: string;
+    easyLendingContent?: string;
+    easyLendingImage?: {
+      data?: {
+        attributes?: {
+          url: string;
+          alternativeText?: string;
+        };
+      };
+    };
+    easyLendingImagePosition?: 'left' | 'right' | 'top';
+    useCasesTitle?: string;
+    useCasesSubtitle?: string;
+    useCases?: Array<{
+      title: string;
+      description: string;
+      iconPath?: string;
+      color?: string;
+      textColor?: string;
+    }>;
+    benefitsTitle?: string;
+    benefitsSubtitle?: string;
+    benefits?: Array<{
+      title: string;
+      description: string;
+      iconPath?: string;
+      color?: string;
+      textColor?: string;
+    }>;
+    ctaTitle?: string;
+    ctaSubtitle?: string;
+    ctaLabel?: string;
+    ctaHref?: string;
+    publishedAt?: string;
+    createdAt?: string;
+    updatedAt?: string;
+  };
+}
+
+/**
+ * Fetch a sector page by sector slug
+ */
+export async function getSectorPage(
+  sectorSlug: string,
+  siteId: string,
+  options?: FetchOptions
+): Promise<StrapiSectorPage | null> {
+  // Populate all fields including nested components and images
+  const endpoint = `/sector-pages?filters[sectorSlug][$eq]=${sectorSlug}&filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate][image][populate]=*&populate[benefits][populate]=*`;
+  
+  try {
+    const response = await fetchStrapi<StrapiCollectionResponse<StrapiSectorPage>>(
+      endpoint,
+      options
+    );
+
+    if (!response || !response.data || response.data.length === 0) {
+      return null;
+    }
+
+    return response.data[0] || null;
+  } catch (error) {
+    console.error('Error in getSectorPage:', error);
+    return null;
+  }
+}
+
+/**
+ * Fetch all sector pages for a site
+ */
+export async function getAllSectorPages(
+  siteId: string,
+  options?: FetchOptions
+): Promise<StrapiSectorPage[]> {
+  const endpoint = `/sector-pages?filters[siteId][$eq]=${siteId}&populate=*`;
+  
+  const response = await fetchStrapi<StrapiCollectionResponse<StrapiSectorPage>>(
+    endpoint,
+    options
+  );
+
+  return response?.data || [];
+}
+

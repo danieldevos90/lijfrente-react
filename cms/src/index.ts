@@ -7,7 +7,22 @@ export default {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  register({ strapi }: { strapi: Core.Strapi }) {
+    // Register custom field BEFORE schema validation
+    // This must happen synchronously in the register function
+    // The format plugin::icon-selector.icon-selector means plugin='icon-selector', name='icon-selector'
+    try {
+      strapi.customFields.register({
+        name: 'icon-selector',
+        plugin: 'icon-selector',
+        type: 'string',
+      });
+      strapi.log.info('✅ Custom field icon-selector registered in main register function');
+    } catch (error: any) {
+      strapi.log.error('❌ Failed to register icon-selector custom field:', error.message);
+      // Continue anyway - plugin might register it
+    }
+  },
 
   /**
    * An asynchronous bootstrap function that runs before
@@ -49,6 +64,10 @@ export default {
           'api::token-set.token-set.find',
           'api::token-set.token-set.findOne',
           'api::lead.lead.create',
+          'api::sector-page.sector-page.find',
+          'api::sector-page.sector-page.findOne',
+          'api::sector-page.sector-page.create',
+          'api::sector-page.sector-page.update',
         ];
 
         const upsert = async (action: string) => {

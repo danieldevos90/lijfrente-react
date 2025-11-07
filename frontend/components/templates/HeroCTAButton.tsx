@@ -24,10 +24,9 @@ export default function HeroCTAButton({ ctaLabel, ctaHref, variant = 'default' }
         href={ctaHref || '#'}
         onClick={handleClick}
         style={{
-          background: variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-brand)',
-          color: variant === 'gradient' || variant === 'image' ? 'var(--color-brand)' : '#fff',
-          border: variant === 'gradient' || variant === 'image' ? '1px solid #fff' : '1px solid var(--color-brand)',
-          borderRadius: '10rem'
+          background: variant === 'gradient' || variant === 'image' ? '#fff' : undefined,
+          color: variant === 'gradient' || variant === 'image' ? 'var(--color-brand)' : undefined,
+          border: variant === 'gradient' || variant === 'image' ? '1px solid #fff' : undefined,
         }}
       >
         {ctaLabel}

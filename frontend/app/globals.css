@@ -192,10 +192,10 @@ html, body {
 .full-width { width: 100vw; margin-left: calc(-50vw + 50%); }
 
 /* Section backgrounds */
-.section-white { background: #ffffff; }
-.section-gray { background: #f8fafc; }
-.section-blue { background: #f0f9ff; }
-.section-dark { background: #1e293b; color: white; }
+.section-white { background: var(--background-color--background-white); }
+.section-gray { background: var(--background-color--background-alternate); }
+.section-blue { background: var(--background-color--background-tertiary); }
+.section-dark { background: var(--background-color--background-secondary); color: white; }
 
 /* Section spacing */
 .py-12 { padding: 3rem 0; }
@@ -258,11 +258,11 @@ p {
 /* Layout utilities */
 .row { display: flex; gap: var(--space-md); align-items: center; margin: var(--space-md) 0; flex-wrap: wrap; }
 
-/* Buttons - with border radius */
+/* Buttons - Centralized styling with 100px border radius */
 .btn { 
   border: 1px solid var(--color-border); 
-  border-radius: var(--radius-md);
-  padding: 16px 32px; 
+  border-radius: 100px;
+  padding: 12px 24px; 
   background: #fff; 
   color: var(--color-text); 
   cursor: pointer; 
@@ -287,6 +287,41 @@ p {
   background: var(--color-brand-dark); 
   border-color: var(--color-brand-dark);
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Additional button variants */
+button.btn,
+a.btn {
+  border-radius: 100px;
+  padding: 12px 24px;
+}
+
+button.btn-primary,
+a.btn-primary {
+  border-radius: 100px;
+  padding: 12px 24px;
+}
+
+.btn-black {
+  background: #000000;
+  color: #fff;
+  border-color: #000000;
+}
+
+.btn-black:hover {
+  background: #333333;
+  border-color: #333333;
+}
+
+.btn-white {
+  background: #fff;
+  color: #0f1720;
+  border-color: #fff;
+}
+
+.btn-white:hover {
+  background: #f3f4f6;
+  border-color: #f3f4f6;
 }
 
 /* Utility classes */
@@ -1215,4 +1250,17 @@ input:focus, select:focus {
 
 .geldgeregeld-logo svg {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Sector Pages */
+.sector-card-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Sector listing page cards */
+.sectoren-page .sector-card-link:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-color: #457fff;
 }

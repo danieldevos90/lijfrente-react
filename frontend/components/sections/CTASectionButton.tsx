@@ -19,7 +19,6 @@ export default function CTASectionButton({ ctaLabel, ctaHref }: CTASectionButton
       className="btn btn-primary" 
       href={ctaHref || '#'}
       onClick={handleClick}
-      style={{ fontSize: '18px', padding: '20px 40px', borderRadius: '10rem' }}
     >
       {ctaLabel}
     </a>

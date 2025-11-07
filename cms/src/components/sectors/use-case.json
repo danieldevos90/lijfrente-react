@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_sectors_use_cases",
+  "info": {
+    "name": "use-case",
+    "displayName": "Use Case",
+    "icon": "star",
+    "description": "A use case or purpose for financing in a sector"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "iconPath": {
+      "type": "string",
+      "description": "Path to icon SVG (e.g., '/icons/SVG/finance/wallet.svg')"
+    },
+    "color": {
+      "type": "string",
+      "default": "#fff2b2",
+      "description": "Background color for the card"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#5e5515",
+      "description": "Text color for the card"
+    }
+  }
+}

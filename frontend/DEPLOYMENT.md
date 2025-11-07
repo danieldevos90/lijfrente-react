@@ -64,6 +64,9 @@ Set these in Vercel Dashboard (Settings → Environment Variables):
 | `NEXT_PUBLIC_PASSWORD_PROTECTION` | `true` or `false` | Enable/disable password protection |
 | `SITE_PASSWORD` | Your password | The password users must enter |
 | `NEXT_PUBLIC_BASE_URL` | Your domain | Your site's URL |
+| `RESEND_API_KEY` | `re_9XLWRyjd_4bro1ivbtMb8K9GwDSiJL225` | Resend API key for contact form emails |
+| `RESEND_FROM_EMAIL` | `hello@geldgeregeld.nl` | Email address to send from (must be verified in Resend) |
+| `CONTACT_EMAIL` | `info@geldgeregeld.nl` | Email address to receive contact form submissions |
 
 ### Disable Password Protection
 
@@ -95,6 +98,44 @@ Or remove the environment variable entirely.
 **Password not working?**
 - Verify `SITE_PASSWORD` environment variable is set correctly
 - Check for extra spaces in the environment variable value
+
+## Contact Form Setup
+
+The contact form uses Resend for sending emails. Make sure to configure these environment variables in Vercel:
+
+1. **RESEND_API_KEY** - Your Resend API key
+   - Value: `re_9XLWRyjd_4bro1ivbtMb8K9GwDSiJL225`
+   - Required for the contact form to work
+
+2. **RESEND_FROM_EMAIL** - Email address to send from
+   - Value: `hello@geldgeregeld.nl`
+   - Must be verified in your Resend account
+   - Defaults to `hello@geldgeregeld.nl` if not set
+
+3. **CONTACT_EMAIL** - Email address to receive submissions
+   - Value: `info@geldgeregeld.nl` (or your preferred email)
+   - Defaults to `info@geldgeregeld.nl` if not set
+
+### Setting Up Resend in Vercel
+
+1. Go to your Vercel project dashboard
+2. Navigate to **Settings** → **Environment Variables**
+3. Add the following variables:
+   - `RESEND_API_KEY` = `re_9XLWRyjd_4bro1ivbtMb8K9GwDSiJL225`
+   - `RESEND_FROM_EMAIL` = `hello@geldgeregeld.nl`
+   - `CONTACT_EMAIL` = `info@geldgeregeld.nl` (optional)
+4. Make sure to set them for **Production**, **Preview**, and **Development** environments as needed
+5. Redeploy your application for changes to take effect
+
+### Verifying Your Domain in Resend
+
+Before the contact form can send emails, you need to verify `geldgeregeld.nl` in your Resend account:
+
+1. Log in to [Resend](https://resend.com)
+2. Go to **Domains**
+3. Add and verify `geldgeregeld.nl`
+4. Add the required DNS records to your domain
+5. Once verified, emails from `hello@geldgeregeld.nl` will work
 
 ## Additional Vercel Configuration
 

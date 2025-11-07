@@ -1,0 +1,117 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sector_pages",
+  "info": {
+    "name": "sector-page",
+    "displayName": "Sector Page",
+    "description": "Dedicated pages for industry sectors with structured content for SEO"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "siteId": {
+      "type": "string",
+      "required": true,
+      "description": "Multi-site identifier"
+    },
+    "sectorSlug": {
+      "type": "uid",
+      "targetField": "sectorName",
+      "required": true,
+      "description": "URL-friendly sector identifier (e.g., 'horeca', 'retail')"
+    },
+    "sectorName": {
+      "type": "string",
+      "required": true,
+      "description": "Display name of the sector"
+    },
+    "metaDescription": {
+      "type": "text",
+      "description": "SEO meta description"
+    },
+    "metaKeywords": {
+      "type": "string",
+      "description": "SEO keywords"
+    },
+    "heroTitle": {
+      "type": "string",
+      "description": "Main hero title"
+    },
+    "heroSubtitle": {
+      "type": "text",
+      "description": "Hero subtitle/description"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "easyLendingTitle": {
+      "type": "string",
+      "description": "Title for 'Easy Lending' section"
+    },
+    "easyLendingContent": {
+      "type": "richtext",
+      "description": "Content explaining how easy it is to get financing"
+    },
+    "easyLendingImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "easyLendingImagePosition": {
+      "type": "enumeration",
+      "enum": ["left", "right", "top"],
+      "default": "left",
+      "description": "Image position relative to text"
+    },
+    "useCasesTitle": {
+      "type": "string",
+      "description": "Title for use cases section"
+    },
+    "useCasesSubtitle": {
+      "type": "text",
+      "description": "Subtitle for use cases section"
+    },
+    "useCases": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sectors.use-case",
+      "description": "List of use cases/purposes for financing"
+    },
+    "benefitsTitle": {
+      "type": "string",
+      "description": "Title for benefits section"
+    },
+    "benefitsSubtitle": {
+      "type": "text",
+      "description": "Subtitle for benefits section"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sectors.benefit",
+      "description": "Sector-specific benefits"
+    },
+    "ctaTitle": {
+      "type": "string",
+      "description": "CTA section title"
+    },
+    "ctaSubtitle": {
+      "type": "text",
+      "description": "CTA section subtitle"
+    },
+    "ctaLabel": {
+      "type": "string",
+      "default": "Vraag financiering aan"
+    },
+    "ctaHref": {
+      "type": "string",
+      "default": "/lead"
+    }
+  }
+}
+

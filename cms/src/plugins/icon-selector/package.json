@@ -1,0 +1,12 @@
+{
+  "name": "icon-selector",
+  "version": "1.0.0",
+  "description": "Custom icon selector field for Strapi",
+  "strapi": {
+    "name": "icon-selector",
+    "displayName": "Icon Selector",
+    "description": "Custom field type for selecting icons from the icon library",
+    "kind": "plugin"
+  }
+}
+

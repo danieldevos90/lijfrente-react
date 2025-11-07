@@ -1,29 +1,32 @@
 import { StrapiSection } from '@/types/strapi-cms';
+
+// Section components
 import HeroSection from '../components/sections/HeroSection';
 import SubpageHero from '../components/SubpageHero';
 import BenefitsCarousel from '../components/BenefitsCarousel';
 import FeatureSectionWrapper from '../app/FeatureSectionWrapper';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 import HowItWorksBento from '../components/HowItWorksBento';
-import CTASection from '../components/sections/CTASection';
 import ProcessSteps from '../components/ProcessSteps';
 import WhyChooseSection from '../components/WhyChooseSection';
 import ContentSection from '../components/sections/ContentSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import TrustSection from '../components/sections/TrustSection';
+import CTASection from '../components/sections/CTASection';
 import FAQSection from '../components/FAQSection';
 import FeatureShowcase from '../components/sections/FeatureShowcase';
 import TwoColumnSupport from '../components/TwoColumnSupport';
 
+// Contact components
+import ContactOptionsSection from '../components/ContactOptionsSection';
+import ContactForm from '../components/ContactForm';
+import ContactDetailsSection from '../components/sections/ContactDetailsSection';
+
 /**
  * Extract icon path from section data, handling various Strapi data structures
+ * Returns a default icon if none is found
  */
 function extractIconPath(sectionData: any): string | undefined {
-  // Debug: log what we're checking
-  console.log('extractIconPath - sectionData keys:', Object.keys(sectionData || {}));
-  console.log('extractIconPath - icons:', sectionData?.icons);
-  console.log('extractIconPath - iconPath:', sectionData?.iconPath);
-  
   // Try icons array first (can be JSON string or array)
   if (sectionData?.icons) {
     let iconsArray: string[] | null = null;
@@ -34,23 +37,20 @@ function extractIconPath(sectionData: any): string | undefined {
         return sectionData.icons;
       }
       
+      // Try to parse as JSON
       try {
         iconsArray = JSON.parse(sectionData.icons);
-        console.log('extractIconPath - Parsed JSON icons:', iconsArray);
       } catch (e) {
         // If parsing fails, treat as single icon path
-        console.log('extractIconPath - JSON parse failed, using as single path');
         return sectionData.icons;
       }
     } else if (Array.isArray(sectionData.icons)) {
       iconsArray = sectionData.icons;
-      console.log('extractIconPath - Icons is already an array:', iconsArray);
     }
     
     if (iconsArray && iconsArray.length > 0) {
       const firstIcon = iconsArray[0];
       if (typeof firstIcon === 'string' && firstIcon) {
-        console.log('extractIconPath - Returning first icon from array:', firstIcon);
         return firstIcon;
       }
     }
@@ -63,13 +63,12 @@ function extractIconPath(sectionData: any): string | undefined {
       : String(sectionData.iconPath);
     
     if (iconPath && iconPath !== 'null' && iconPath !== 'undefined') {
-      console.log('extractIconPath - Returning iconPath:', iconPath);
       return iconPath;
     }
   }
   
-  console.log('extractIconPath - No icon found, returning undefined');
-  return undefined;
+  // Default icon for subpage heroes (finance-related icon)
+  return '/icons/SVG/finance/wallet.svg';
 }
 
 export function renderSection(section: StrapiSection, index: number) {
@@ -93,16 +92,7 @@ export function renderSection(section: StrapiSection, index: number) {
       const isSubpageHero = sectionData.variant === 'gradient' && !sectionData.backgroundImage;
       
       if (isSubpageHero) {
-        // Debug: log full section data to understand structure
-        console.log('SubpageHero - Full section data:', JSON.stringify(sectionData, null, 2));
-        console.log('SubpageHero - icons type:', typeof sectionData.icons);
-        console.log('SubpageHero - icons value:', sectionData.icons);
-        console.log('SubpageHero - iconPath value:', sectionData.iconPath);
-        
-        // Use helper function to extract icon path
         const iconPath = extractIconPath(sectionData);
-        
-        console.log('SubpageHero - Final resolved iconPath:', iconPath);
         
         return (
           <SubpageHero
@@ -212,6 +202,20 @@ export function renderSection(section: StrapiSection, index: number) {
       );
     
     case 'sections.content-section':
+      // Use ContactDetailsSection for Contactgegevens section
+      if (sectionData.title === 'Contactgegevens' || sectionData.title?.toLowerCase().includes('contactgegevens')) {
+        return (
+          <ContactDetailsSection
+            key={index}
+            title={sectionData.title}
+            content={sectionData.content}
+          />
+        );
+      }
+      // Skip Openingstijden section
+      if (sectionData.title === 'Openingstijden' || sectionData.title?.toLowerCase().includes('openingstijden')) {
+        return null;
+      }
       return (
         <ContentSection
           key={index}
@@ -226,6 +230,42 @@ export function renderSection(section: StrapiSection, index: number) {
       );
     
     case 'sections.services-section':
+      // Use ContactOptionsSection for Contactmogelijkheden section
+      if (sectionData.title === 'Contactmogelijkheden' || sectionData.title?.toLowerCase().includes('contact')) {
+        return (
+          <ContactOptionsSection
+            key={index}
+            title={sectionData.title}
+            subtitle={sectionData.subtitle}
+            options={(sectionData.services || []).map((service: any, idx: number) => {
+              // Pattern: yellow (0), blue (1), white (2), yellow (3), blue (4), white (5)...
+              let color = '#ffffff';
+              let textColor = 'var(--color-text)';
+              
+              if (idx % 3 === 0) {
+                // Yellow
+                color = '#fff2b2';
+                textColor = '#5e5515';
+              } else if (idx % 3 === 1) {
+                // Blue
+                color = '#e4f2ff';
+                textColor = '#0f1720';
+              }
+              // else white (default)
+              
+              return {
+                title: service.title,
+                description: service.description,
+                iconPath: service.icon || service.iconPath,
+                color,
+                textColor,
+                href: service.href
+              };
+            })}
+          />
+        );
+      }
+      // Use regular ServicesSection for other services sections
       return (
         <ServicesSection
           key={index}
@@ -301,6 +341,24 @@ export function renderSection(section: StrapiSection, index: number) {
           leftTitle={sectionData.title}
           leftDescription={sectionData.content}
         />
+      );
+    
+    case 'sections.contact-form':
+      return (
+        <section
+          key={index}
+          style={{
+            background: 'var(--color-bg)',
+            padding: '8rem 2rem',
+          }}
+        >
+          <div style={{
+            maxWidth: '800px',
+            margin: '0 auto',
+          }}>
+            <ContactForm />
+          </div>
+        </section>
       );
     
     default:
