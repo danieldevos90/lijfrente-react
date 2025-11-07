@@ -108,7 +108,13 @@ function renderSection(section: StrapiSection, index: number) {
       return (
         <WhyChooseSection
           key={index}
-          benefits={section.benefits || []}
+          benefits={section.benefits?.map(b => ({
+            title: b.title,
+            description: b.description,
+            iconPath: b.iconPath,
+            color: b.color || '#fff2b2',
+            textColor: b.textColor || '#5e5515'
+          })) || []}
           title={section.title}
           subtitle={section.subtitle}
         />
