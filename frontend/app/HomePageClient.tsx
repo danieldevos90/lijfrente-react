@@ -1,6 +1,8 @@
 "use client";
-import React from 'react';
-import TransparentHeader from '../components/TransparentHeader';
+import React, { useState, useEffect } from 'react';
+import TransparentHeaderClient from '../components/TransparentHeaderClient';
+import { getNavigationItems } from '@/lib/strapi-cms';
+import { StrapiNavigationItem } from '@/types/strapi-cms';
 import Footer from '../components/Footer';
 import HowItWorksBento from '../components/HowItWorksBento';
 import BenefitsCarousel from '../components/BenefitsCarousel';
@@ -9,9 +11,25 @@ import FeatureSection from '../components/FeatureSection';
 import { useWidget } from '../components/GlobalWidgetProvider';
 import { ArrowRight } from 'lucide-react';
 
+const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
+
 // This is the fallback client component with hardcoded content
 export default function HomePageClient() {
   const { openDrawer } = useWidget();
+  const [navItems, setNavItems] = useState<StrapiNavigationItem[]>([]);
+
+  // Fetch navigation from Strapi client-side
+  useEffect(() => {
+    async function fetchNav() {
+      try {
+        const items = await getNavigationItems(SITE_ID);
+        setNavItems(items || []);
+      } catch (error) {
+        console.error('Error fetching navigation:', error);
+      }
+    }
+    fetchNav();
+  }, []);
   
   const testimonials = [
     {
@@ -81,7 +99,12 @@ export default function HomePageClient() {
 
   return (
     <>
-      <TransparentHeader onCtaClick={() => openDrawer('header')} transparent={true} textColor="white" />
+      <TransparentHeaderClient 
+        navItems={navItems}
+        onCtaClick={() => openDrawer('header')} 
+        transparent={true} 
+        textColor="white" 
+      />
       
       {/* Hero Section */}
       <section id="hero" style={{

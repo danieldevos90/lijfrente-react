@@ -174,7 +174,19 @@ export async function getNavigationItems(
       return [];
     }
 
-    return response.data;
+    // Deduplicate navigation items by href (keep first occurrence)
+    const seen = new Set<string>();
+    const deduplicated = response.data.filter((item) => {
+      const itemData = (item.attributes || item) as any;
+      const href = itemData.href;
+      if (seen.has(href)) {
+        return false;
+      }
+      seen.add(href);
+      return true;
+    });
+
+    return deduplicated;
   } catch (error) {
     console.error('Error fetching navigation items:', error);
     return [];
