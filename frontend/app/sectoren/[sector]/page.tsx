@@ -242,7 +242,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
   const fallbackContent = FALLBACK_CONTENT[sector];
 
   // Determine which content to use (Strapi data takes precedence, then fallback)
-  const quoteData = pageData?.quote || fallbackContent?.quote;
+  const quoteData = (pageData as any)?.quote || fallbackContent?.quote;
   const finalUseCases = (useCases && useCases.length > 0) ? useCases : (fallbackContent?.useCases || []);
   const finalBenefits = (benefits && benefits.length > 0) ? benefits : (fallbackContent?.benefits || []);
   const ctaData = pageData?.ctaTitle || pageData?.ctaSubtitle 
