@@ -7,6 +7,8 @@ interface TrustBadge {
   icon: string;
   text: string;
   description?: string;
+  color?: string;
+  textColor?: string;
 }
 
 const trustIconMap: Record<string, React.ComponentType<any>> = {
@@ -36,8 +38,9 @@ export default function TrustBadges({ badges, variant = 'default' }: TrustBadges
     }}>
       {badges.map((badge, index) => {
         const isColored = index % 2 === 0;
-        const bgColor = isColored ? '#F8FAFC' : 'white';
-        const textColorMain = isColored ? 'var(--color-text)' : 'var(--color-text)';
+        const bgColor = isColored && badge.color ? badge.color : 'white';
+        const textColorMain = isColored && badge.textColor ? badge.textColor : 'var(--color-text)';
+        const hasBorder = !isColored || !badge.color; // White cards or cards without color get border
         
         return (
           <div
@@ -53,6 +56,7 @@ export default function TrustBadges({ badges, variant = 'default' }: TrustBadges
               textAlign: 'center',
               transition: 'all 0.3s ease',
               minHeight: '350px',
+              border: hasBorder ? '1px solid rgba(0, 0, 0, 0.05)' : 'none',
             }}
           >
             <div style={{ 

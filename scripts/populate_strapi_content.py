@@ -619,15 +619,22 @@ def create_about_page():
                     "badges": [
                         {
                             "icon": "/icons/SVG/interface/lock.svg",
-                            "text": "SSL Versleuteling"
+                            "text": "SSL Versleuteling",
+                            "description": "Alle gegevens worden versleuteld verzonden via SSL/TLS technologie. Uw privacy en veiligheid staan bij ons voorop.",
+                            "color": "#fff2b2",
+                            "textColor": "#5e5515"
                         },
                         {
                             "icon": "/icons/SVG/interface/shield.svg",
-                            "text": "AVG-Compliant"
+                            "text": "AVG-Compliant",
+                            "description": "Wij voldoen volledig aan de Algemene Verordening Gegevensbescherming. Uw persoonsgegevens worden veilig en conform de wet verwerkt."
                         },
                         {
                             "icon": "/icons/SVG/finance/bank.svg",
-                            "text": "Veilige Banking"
+                            "text": "Veilige Banking",
+                            "description": "Wij werken uitsluitend samen met gerenommeerde financiële instellingen. Uw transacties zijn beveiligd volgens de hoogste bankstandaarden.",
+                            "color": "#aad5fc",
+                            "textColor": "#0f1720"
                         }
                     ]
                 },

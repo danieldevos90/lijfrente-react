@@ -36,6 +36,8 @@ export interface StrapiTrustBadge {
   icon: string;
   text: string;
   description?: string;
+  color?: string;
+  textColor?: string;
 }
 
 export interface StrapiBenefitItem {
