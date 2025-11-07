@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { TextInput, Box, Flex, Select, Option, Typography, Grid, Button } from '@strapi/design-system';
 import { Search } from '@strapi/icons';
-import { useField } from '@strapi/strapi/admin';
 
 interface Icon {
   path: string;
@@ -9,10 +8,18 @@ interface Icon {
   category: string;
 }
 
-const IconSelector = () => {
-  const { value, onChange, name, error } = useField<string>({
-    type: 'string',
-  });
+interface IconSelectorProps {
+  name: string;
+  value: string | null | undefined;
+  onChange: (event: { target: { name: string; value: string } }) => void;
+  error?: string;
+  attribute: {
+    type: string;
+    required?: boolean;
+  };
+}
+
+const IconSelector: React.FC<IconSelectorProps> = ({ name, value, onChange, error, attribute }) => {
 
   const [icons, setIcons] = useState<Icon[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
@@ -70,6 +77,7 @@ const IconSelector = () => {
           }
           placeholder="/icons/SVG/interface/zap.svg"
           error={error}
+          required={attribute.required}
         />
         <Button
           variant="secondary"
