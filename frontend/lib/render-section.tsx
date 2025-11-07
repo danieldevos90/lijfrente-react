@@ -27,6 +27,13 @@ export function renderSection(section: StrapiSection, index: number) {
           ? section.icons[0] 
           : section.iconPath;
         
+        // Debug: log iconPath to see if it's populated
+        if (iconPath) {
+          console.log('SubpageHero iconPath:', iconPath);
+        } else {
+          console.warn('SubpageHero: No iconPath found in section:', section);
+        }
+        
         return (
           <SubpageHero
             key={index}

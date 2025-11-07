@@ -65,6 +65,10 @@ export default function SubpageHero({
                 style={{
                   objectFit: 'contain',
                 }}
+                onError={(e) => {
+                  console.error('Failed to load icon:', iconPath);
+                  e.currentTarget.style.display = 'none';
+                }}
               />
             </div>
           </div>
