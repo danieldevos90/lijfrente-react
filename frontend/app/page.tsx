@@ -184,7 +184,6 @@ function renderSection(section: StrapiSection, index: number) {
         <FeatureShowcase
           key={index}
           title={section.title}
-          subtitle={section.subtitle}
           features={section.features || []}
         />
       );
