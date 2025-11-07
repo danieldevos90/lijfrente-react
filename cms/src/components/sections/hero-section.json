@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_sections_hero_sections",
+  "info": {
+    "displayName": "Hero Section",
+    "icon": "landscape",
+    "description": "Full-screen hero section with title, subtitle and CTAs"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string",
+      "description": "Optional badge text"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "backgroundImage": {
+      "type": "string",
+      "description": "Background image path"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": ["default", "gradient", "image"],
+      "default": "default"
+    },
+    "iconPath": {
+      "type": "string",
+      "description": "Optional icon path"
+    },
+    "icons": {
+      "type": "json",
+      "description": "Array of icon paths for multiple icons"
+    },
+    "primaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button"
+    },
+    "secondaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button"
+    }
+  }
+}
+

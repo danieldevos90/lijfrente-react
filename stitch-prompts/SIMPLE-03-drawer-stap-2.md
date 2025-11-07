@@ -147,3 +147,5 @@ Stap 2 van de drawer. Verzamelt gewenst bedrag en bestedingsdoel.
 - Terug knop nu zichtbaar
 - Voortgang indicator toont 2/3
 
+
+

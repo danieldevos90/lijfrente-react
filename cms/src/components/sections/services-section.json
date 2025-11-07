@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_services_sections",
+  "info": {
+    "displayName": "Services Section",
+    "icon": "briefcase",
+    "description": "Grid of service cards with icons"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "white"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.service-item"
+    }
+  }
+}
+

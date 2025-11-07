@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_testimonials_carousels",
+  "info": {
+    "displayName": "Testimonials Carousel",
+    "icon": "quote",
+    "description": "Carousel of customer testimonials"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Wat onze klanten zeggen"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "white"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.testimonial-item"
+    }
+  }
+}
+

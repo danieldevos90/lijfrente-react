@@ -1,13 +1,60 @@
 {
   "kind": "collectionType",
   "collectionName": "pages",
-  "info": { "name": "page" },
+  "info": { 
+    "name": "page",
+    "displayName": "Page",
+    "description": "Dynamic page builder with section components"
+  },
   "options": { "draftAndPublish": true },
   "attributes": {
-    "siteId": { "type": "string", "required": true },
-    "slug": { "type": "uid", "targetField": "title", "required": true },
-    "title": { "type": "string", "required": true },
-    "body": { "type": "richtext" }
+    "siteId": { 
+      "type": "string", 
+      "required": true,
+      "description": "Multi-site identifier" 
+    },
+    "slug": { 
+      "type": "uid", 
+      "targetField": "title", 
+      "required": true 
+    },
+    "title": { 
+      "type": "string", 
+      "required": true 
+    },
+    "metaDescription": {
+      "type": "text",
+      "description": "SEO meta description"
+    },
+    "metaKeywords": {
+      "type": "string",
+      "description": "SEO keywords"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.hero-section",
+        "sections.benefits-carousel",
+        "sections.feature-section",
+        "sections.testimonials-carousel",
+        "sections.how-it-works-bento",
+        "sections.process-steps",
+        "sections.why-choose-section",
+        "sections.content-section",
+        "sections.services-section",
+        "sections.trust-section",
+        "sections.cta-section",
+        "sections.faq-section",
+        "sections.feature-showcase",
+        "sections.two-column-support",
+        "sections.animated-stats"
+      ],
+      "required": false
+    },
+    "body": { 
+      "type": "richtext",
+      "description": "Legacy rich text content (deprecated, use sections instead)" 
+    }
   }
 }
 

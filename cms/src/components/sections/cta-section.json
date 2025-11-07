@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_sections_cta_sections",
+  "info": {
+    "displayName": "CTA Section",
+    "icon": "cursor",
+    "description": "Call-to-action section with title, subtitle and button"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "ctaHref": {
+      "type": "string",
+      "required": true
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": ["white", "gray", "blue", "dark"],
+      "default": "dark"
+    }
+  }
+}
+

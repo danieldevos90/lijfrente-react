@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_process_steps",
+  "info": {
+    "displayName": "Process Steps",
+    "icon": "layer",
+    "description": "Stacking cards showing process steps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Het proces"
+    },
+    "subtitle": {
+      "type": "text",
+      "default": "Simpel, transparant en snel"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "var(--color-bg)"
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.process-step"
+    }
+  }
+}
+

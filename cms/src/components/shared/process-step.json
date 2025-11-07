@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_process_steps",
+  "info": {
+    "displayName": "Process Step",
+    "icon": "layer",
+    "description": "Single process step with number, title, description and details"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "required": true,
+      "description": "Step number (e.g., '01', '02')"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "details": {
+      "type": "json",
+      "description": "Array of detail strings"
+    },
+    "imagePath": {
+      "type": "string",
+      "description": "Optional image for the step"
+    }
+  }
+}
+

@@ -258,3 +258,5 @@ For more information, see:
 - Component: `frontend/components/sections/HeroSection.tsx`
 - Template: `frontend/components/templates/HeroSlide.tsx`
 
+
+

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_why_choose_sections",
+  "info": {
+    "displayName": "Why Choose Section",
+    "icon": "star",
+    "description": "Grid of reasons why customers should choose your service"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Waarom GeldGeregeld?"
+    },
+    "subtitle": {
+      "type": "text",
+      "default": "Wij maken het verschil met persoonlijke service en jarenlange ervaring"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "var(--color-bg)"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.benefit-item"
+    }
+  }
+}
+

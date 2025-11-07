@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_sections_benefits_carousels",
+  "info": {
+    "displayName": "Benefits Carousel",
+    "icon": "star",
+    "description": "Horizontal scrolling carousel with benefit cards"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Zakelijke lening zonder gedoe"
+    },
+    "subtitle": {
+      "type": "text",
+      "default": "Eenvoudig online aanvragen. Geen opstartkosten. Boetevrij aflossen."
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "var(--color-bg)",
+      "description": "Background color (CSS variable or hex)"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.benefit-item"
+    }
+  }
+}
+

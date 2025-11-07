@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_sections_content_sections",
+  "info": {
+    "displayName": "Content Section",
+    "icon": "file",
+    "description": "Image and text block with optional CTA"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": ["image-left", "image-right"],
+      "default": "image-right"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": ["default", "bordered", "shadow"],
+      "default": "default"
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": ["white", "gray", "blue", "dark"],
+      "default": "gray"
+    },
+    "ctaLabel": {
+      "type": "string"
+    },
+    "ctaHref": {
+      "type": "string"
+    }
+  }
+}
+

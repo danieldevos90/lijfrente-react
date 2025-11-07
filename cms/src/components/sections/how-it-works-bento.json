@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_how_it_works_bentos",
+  "info": {
+    "displayName": "How It Works Bento",
+    "icon": "apps",
+    "description": "Bento grid layout for process steps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Zo werkt het"
+    },
+    "subtitle": {
+      "type": "text",
+      "default": "In 4 eenvoudige stappen naar uw zakelijke financiering"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "var(--color-bg)"
+    },
+    "bentoItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.bento-item"
+    }
+  }
+}
+

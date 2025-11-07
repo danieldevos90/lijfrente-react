@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_service_items",
+  "info": {
+    "displayName": "Service Item",
+    "icon": "briefcase",
+    "description": "Service card with icon, title and description"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "required": true,
+      "description": "Icon path (e.g., /icons/SVG/interface/shield.svg)"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "description": "Optional link"
+    }
+  }
+}
+

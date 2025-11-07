@@ -248,3 +248,5 @@ Only 7 colors total. No gradients, no extra accent colors.
 
 **The drawer approach is more modern, less intrusive, and better for mobile users while maintaining progress automatically.**
 
+
+

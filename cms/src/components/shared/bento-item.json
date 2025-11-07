@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_shared_bento_items",
+  "info": {
+    "displayName": "Bento Item",
+    "icon": "apps",
+    "description": "Bento grid item for How It Works section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "backgroundColor": {
+      "type": "string",
+      "required": true,
+      "description": "Background color (hex)"
+    },
+    "textColor": {
+      "type": "string",
+      "required": true,
+      "description": "Text color (hex)"
+    },
+    "iconPath": {
+      "type": "string",
+      "required": true,
+      "description": "Icon SVG path"
+    },
+    "gridArea": {
+      "type": "string",
+      "required": true,
+      "description": "CSS grid area name"
+    }
+  }
+}
+

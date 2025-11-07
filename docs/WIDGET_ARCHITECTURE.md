@@ -198,3 +198,5 @@ To add the widget to any new page:
 
 That's it! The widget is now available everywhere.
 
+
+

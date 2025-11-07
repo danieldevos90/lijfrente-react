@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_benefit_items",
+  "info": {
+    "displayName": "Benefit Item",
+    "icon": "star",
+    "description": "Benefit card with icon, title, description and colors"
+  },
+  "options": {},
+  "attributes": {
+    "iconPath": {
+      "type": "string",
+      "required": true,
+      "description": "Icon SVG path"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "default": "#fff2b2",
+      "description": "Background color (hex)"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#5e5515",
+      "description": "Text color (hex)"
+    }
+  }
+}
+

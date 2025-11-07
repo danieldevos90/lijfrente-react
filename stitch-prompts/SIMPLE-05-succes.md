@@ -182,3 +182,5 @@ Bevestigingsscherm na succesvolle aanvraag. Kan getoond worden in drawer of als 
 - Gecentreerde layout
 - Vriendelijke, professionele toon
 
+
+

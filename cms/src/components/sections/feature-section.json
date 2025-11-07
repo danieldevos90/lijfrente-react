@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_sections_feature_sections",
+  "info": {
+    "displayName": "Feature Section",
+    "icon": "grid",
+    "description": "Two-column section with image and content"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "imagePath": {
+      "type": "string",
+      "required": true,
+      "description": "Feature image path"
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": ["left", "right"],
+      "default": "right"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "white",
+      "description": "Background color"
+    }
+  }
+}
+

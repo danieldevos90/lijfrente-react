@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_sections_animated_stats",
+  "info": {
+    "displayName": "Animated Stats",
+    "icon": "chart",
+    "description": "Animated statistics cards"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "white"
+    },
+    "stats": {
+      "type": "json",
+      "description": "Array of stat objects with value, label, and prefix/suffix"
+    }
+  }
+}
+

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_trust_sections",
+  "info": {
+    "displayName": "Trust Section",
+    "icon": "shield",
+    "description": "Trust badges section to build credibility"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": ["default", "centered", "compact"],
+      "default": "centered"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "white"
+    },
+    "badges": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.trust-badge"
+    }
+  }
+}
+

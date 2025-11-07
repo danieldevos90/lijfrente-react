@@ -166,3 +166,5 @@ The component automatically:
 - Images scale appropriately
 - Navigation buttons remain accessible
 
+
+

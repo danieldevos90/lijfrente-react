@@ -76,3 +76,5 @@ Same homepage as initial state, but with a fixed sticky call-to-action button vi
 - Consider adding subtle backdrop blur if possible for better readability
 
 
+
+
