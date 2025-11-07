@@ -20,6 +20,13 @@
       "type": "string",
       "description": "Path to icon SVG (e.g., '/icons/SVG/finance/wallet.svg')"
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Image for the use case (takes precedence over iconPath)"
+    },
     "color": {
       "type": "string",
       "default": "#fff2b2",
@@ -29,6 +36,15 @@
       "type": "string",
       "default": "#5e5515",
       "description": "Text color for the card"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "description": "Optional button label for this use case"
+    },
+    "buttonHref": {
+      "type": "string",
+      "default": "/lead",
+      "description": "Optional button link"
     }
   }
 }

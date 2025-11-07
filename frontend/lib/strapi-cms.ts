@@ -52,11 +52,21 @@ async function fetchStrapi<T>(
   }
 
   try {
-    const response = await fetch(url, {
+    // Don't set cache: 'no-store' if revalidate is specified (they conflict)
+    const fetchOptions: RequestInit = {
       headers,
-      cache: options.cache || 'no-store',
       next: options.next,
-    });
+    };
+    
+    // Only set cache if no revalidate is specified
+    if (!options.next?.revalidate) {
+      fetchOptions.cache = options.cache || 'no-store';
+    } else if (options.cache) {
+      // Allow explicit cache override even with revalidate
+      fetchOptions.cache = options.cache;
+    }
+    
+    const response = await fetch(url, fetchOptions);
 
     if (!response.ok) {
       // Don't throw on 404, return null instead
@@ -458,6 +468,8 @@ export interface StrapiSectorPage {
         };
       };
     };
+    quote?: string;
+    quoteAuthor?: string;
     easyLendingTitle?: string;
     easyLendingContent?: string;
     easyLendingImage?: {
@@ -475,8 +487,18 @@ export interface StrapiSectorPage {
       title: string;
       description: string;
       iconPath?: string;
+      image?: {
+        data?: {
+          attributes?: {
+            url: string;
+            alternativeText?: string;
+          };
+        };
+      };
       color?: string;
       textColor?: string;
+      buttonLabel?: string;
+      buttonHref?: string;
     }>;
     benefitsTitle?: string;
     benefitsSubtitle?: string;

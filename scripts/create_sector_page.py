@@ -84,6 +84,8 @@ def create_horeca_sector_page():
             "metaKeywords": "horeca financiering, restaurant lening, café financiering, hotel financiering, horeca bedrijfslening",
             "heroTitle": "Zakelijke financiering voor de horeca",
             "heroSubtitle": "Financiering op maat voor restaurants, cafés en hotels. Snel geregeld, zonder gedoe.",
+            "quote": "Financiering die meegroeit met je horecazaak. Of je nu investeert in nieuwe keukenapparatuur, verbouwingen plant, of seizoensgebonden uitgaven moet overbruggen – wij begrijpen de unieke behoeften van de horecasector en bieden flexibele oplossingen die passen bij jouw bedrijf.",
+            "quoteAuthor": None,
             "easyLendingTitle": "Zo eenvoudig is het om financiering te krijgen",
             "easyLendingContent": "Binnen 24 uur weet je of je in aanmerking komt voor financiering. Geen papierwerk, geen gedoe. Gewoon eenvoudig online aanvragen en snel een antwoord krijgen.\n\nOns proces is speciaal ontwikkeld voor horeca-ondernemers die snel willen handelen. We begrijpen dat in de horeca timing cruciaal is - daarom zorgen we voor snelle beslissingen.\n\nGeen uitgebreide jaarrekeningen nodig. We kijken naar je recente omzetcijfers en begrijpen de seizoensgebonden uitdagingen van de horeca.",
             "easyLendingImagePosition": "left",
@@ -91,46 +93,36 @@ def create_horeca_sector_page():
             "useCasesSubtitle": "Veelzijdige financieringsoplossingen speciaal voor de horeca",
             "useCases": [
                 {
-                    "title": "Restaurant renovatie",
-                    "description": "Financier je restaurantrenovatie zonder gedoe. Van nieuwe keukenapparatuur tot een volledige make-over van je interieur.",
-                    "iconPath": "/icons/SVG/food/cutlery.svg",
+                    "title": "Keukenapparatuur",
+                    "description": "Investeer in professionele keukenapparatuur voor je restaurant of café. Van ovens tot koelinstallaties, wij helpen je de juiste apparatuur te financieren.",
                     "color": "#fff2b2",
-                    "textColor": "#5e5515"
+                    "textColor": "#5e5515",
+                    "buttonLabel": "Vraag offerte aan",
+                    "buttonHref": "/lead"
                 },
                 {
-                    "title": "Nieuwe apparatuur",
-                    "description": "Investeer in nieuwe keukenapparatuur, koelinstallaties of andere essentiële apparatuur voor je horecabedrijf.",
-                    "iconPath": "/icons/SVG/e-commerce/shopping-cart.svg",
+                    "title": "Renovatie & Verbouwing",
+                    "description": "Financier verbouwingen en renovaties voor je horecazaak. Maak je zaak klaar voor de toekomst met flexibele financiering.",
                     "color": "#e4f2ff",
-                    "textColor": "#0f1720"
+                    "textColor": "#0f1720",
+                    "buttonLabel": "Meer informatie",
+                    "buttonHref": "/lead"
                 },
                 {
-                    "title": "Terras uitbreiding",
-                    "description": "Breid je terras uit of investeer in nieuwe buitenmeubels. Maak optimaal gebruik van het seizoen.",
-                    "iconPath": "/icons/SVG/interface/map-pin.svg",
+                    "title": "Terras & Uitbreiding",
+                    "description": "Breid je terras uit of investeer in nieuwe buitenmeubels. Maak optimaal gebruik van het seizoen met flexibele financiering.",
                     "color": "#fff2b2",
-                    "textColor": "#5e5515"
+                    "textColor": "#5e5515",
+                    "buttonLabel": "Vraag offerte aan",
+                    "buttonHref": "/lead"
                 },
                 {
                     "title": "Werkkapitaal",
-                    "description": "Financier je dagelijkse operaties, voorraad of seizoensgebonden pieken in je omzet.",
-                    "iconPath": "/icons/SVG/finance/trend-up.svg",
+                    "description": "Financier je dagelijkse operaties, voorraad of seizoensgebonden pieken in je omzet. Flexibel en snel geregeld.",
                     "color": "#e4f2ff",
-                    "textColor": "#0f1720"
-                },
-                {
-                    "title": "Marketing & promotie",
-                    "description": "Investeer in marketingcampagnes, nieuwe concepten of evenementen om meer gasten te trekken.",
-                    "iconPath": "/icons/SVG/interface/megaphone.svg",
-                    "color": "#fff2b2",
-                    "textColor": "#5e5515"
-                },
-                {
-                    "title": "Opleiding personeel",
-                    "description": "Investeer in de ontwikkeling van je team met trainingen en cursussen voor je medewerkers.",
-                    "iconPath": "/icons/SVG/interface/user-add.svg",
-                    "color": "#e4f2ff",
-                    "textColor": "#0f1720"
+                    "textColor": "#0f1720",
+                    "buttonLabel": "Meer informatie",
+                    "buttonHref": "/lead"
                 }
             ],
             "benefitsTitle": "Waarom kiezen voor onze financiering?",

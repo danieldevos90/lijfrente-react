@@ -228,7 +228,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
           color: (comp as any).color,
           textColor: (comp as any).textColor,
           buttonLabel: (comp as any).buttonLabel,
-          buttonHref: (comp as any).buttonHref,
+          buttonHref: (comp as any).buttonHref || '/lead',
         } as unknown as T;
       }
       return comp;
@@ -238,12 +238,19 @@ export default async function SectorPage({ params }: { params: { sector: string 
   const useCases = normalizeComponents(pageData?.useCases);
   const benefits = normalizeComponents(pageData?.benefits);
 
-  // Get fallback content for this sector
+  // Get fallback content for this sector (only used if Strapi has no data)
   const fallbackContent = FALLBACK_CONTENT[sector];
 
   // Determine which content to use (Strapi data takes precedence, then fallback)
-  const quoteData = (pageData as any)?.quote || fallbackContent?.quote;
+  // Quote: Use Strapi quote if available, otherwise fallback
+  const quoteData = pageData?.quote 
+    ? { quote: pageData.quote, author: pageData.quoteAuthor }
+    : fallbackContent?.quote;
+  
+  // Use Cases: Use Strapi data if available and has items, otherwise fallback
   const finalUseCases = (useCases && useCases.length > 0) ? useCases : (fallbackContent?.useCases || []);
+  
+  // Benefits: Use Strapi data if available and has items, otherwise fallback
   const finalBenefits = (benefits && benefits.length > 0) ? benefits : (fallbackContent?.benefits || []);
   const ctaData = pageData?.ctaTitle || pageData?.ctaSubtitle 
     ? { 

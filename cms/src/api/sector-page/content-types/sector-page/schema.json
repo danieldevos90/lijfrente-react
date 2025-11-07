@@ -49,6 +49,14 @@
       "required": false,
       "allowedTypes": ["images"]
     },
+    "quote": {
+      "type": "text",
+      "description": "Quote text for the quote section"
+    },
+    "quoteAuthor": {
+      "type": "string",
+      "description": "Optional author name for the quote"
+    },
     "easyLendingTitle": {
       "type": "string",
       "description": "Title for 'Easy Lending' section"
