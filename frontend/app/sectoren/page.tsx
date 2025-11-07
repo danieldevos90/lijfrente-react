@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import { buildTitle, buildDescription } from '../../messaging';
+import { buildTitle, buildDescription } from '../messaging';
 import { getAllPages } from '@/lib/strapi-cms';
-import HeaderWithWidget from '../../HeaderWithWidget';
-import Footer from '../../../components/Footer';
+import HeaderWithWidget from '../HeaderWithWidget';
+import Footer from '../../components/Footer';
 import Link from 'next/link';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
