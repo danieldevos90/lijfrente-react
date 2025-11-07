@@ -184,7 +184,12 @@ function renderSection(section: StrapiSection, index: number) {
         <FeatureShowcase
           key={index}
           title={section.title}
-          features={section.features || []}
+          featureCards={section.features?.map((f, idx) => ({
+            id: idx,
+            backgroundImage: { url: '/images/placeholder.jpg' },
+            badgeText: f.title || '',
+            badgeColor: '#457fff'
+          })) || []}
         />
       );
     
@@ -192,8 +197,8 @@ function renderSection(section: StrapiSection, index: number) {
       return (
         <TwoColumnSupport
           key={index}
-          title={section.title}
-          content={section.content}
+          leftTitle={section.title}
+          leftDescription={section.content}
         />
       );
     
