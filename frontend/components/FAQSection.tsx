@@ -27,7 +27,7 @@ export default function FAQSection({
 
   return (
     <section style={{
-      padding: '5rem 0',
+      padding: '8rem 0',
       background: 'rgb(244, 244, 239)',
     }}>
       <div className="container" style={{

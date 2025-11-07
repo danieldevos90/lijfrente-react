@@ -22,16 +22,20 @@ export default function ContentSection({
   variant = 'default',
   background = 'gray'
 }: ContentSectionProps) {
+  const backgroundClass = background === 'gray' ? 'section-gray' : background === 'blue' ? 'section-blue' : background === 'dark' ? 'section-dark' : 'section-white';
+  
   return (
-    <Section background={background} padding="lg">
-      <ImageTextBlock
-        title={title}
-        content={content}
-        layout={layout}
-        ctaLabel={ctaLabel}
-        ctaHref={ctaHref}
-        variant={variant}
-      />
-    </Section>
+    <section className={`full-width ${backgroundClass}`} style={{ padding: '8rem 2rem' }}>
+      <div className="container">
+        <ImageTextBlock
+          title={title}
+          content={content}
+          layout={layout}
+          ctaLabel={ctaLabel}
+          ctaHref={ctaHref}
+          variant={variant}
+        />
+      </div>
+    </section>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import Section from '../ui/Section';
 import TrustBadges from '../templates/TrustBadges';
 
 interface TrustSectionProps {
@@ -16,8 +15,13 @@ interface TrustSectionProps {
 
 export default function TrustSection({ badges, variant = 'centered' }: TrustSectionProps) {
   return (
-    <Section background="white" padding="md">
-      <TrustBadges badges={badges} variant={variant} />
-    </Section>
+    <section style={{
+      background: 'white',
+      padding: '8rem 2rem',
+    }}>
+      <div className="container">
+        <TrustBadges badges={badges} variant={variant} />
+      </div>
+    </section>
   );
 }

@@ -21,8 +21,9 @@ export default function CTASection({
   const textColor = background === 'dark' ? 'text-white' : '';
   
   return (
-    <Section background={background} padding="lg">
-      <div className={`text-center ${textColor}`}>
+    <section className={`full-width section-${background}`} style={{ padding: '8rem 2rem' }}>
+      <div className="container">
+        <div className={`text-center ${textColor}`}>
         <h2 
           className={textColor}
           style={{
@@ -44,7 +45,8 @@ export default function CTASection({
           </p>
         )}
         <CTASectionButton ctaLabel={ctaLabel} ctaHref={ctaHref} />
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }
