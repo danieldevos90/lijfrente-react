@@ -60,6 +60,7 @@ export default function HeroSlide({
               gap: '1.5rem',
               marginBottom: '2rem',
               flexWrap: 'wrap',
+              justifyContent: 'center',
             }}
           >
             {displayIcons.map((icon, index) => (
@@ -108,7 +109,7 @@ export default function HeroSlide({
           </p>
         )}
         {ctaLabel && ctaHref && (
-          <div>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
             <a
               className="btn btn-primary"
               href={ctaHref}

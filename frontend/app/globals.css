@@ -330,7 +330,7 @@ input:focus, select:focus {
   position: relative;
 }
 .hero-slide .container {
-  text-align: left;
+  text-align: center;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -338,13 +338,13 @@ input:focus, select:focus {
 }
 .hero-slide h1 {
   font-size: 64px;
-  margin: 0 0 1.5rem;
+  margin: 0 auto 1.5rem;
   line-height: 1.1;
   font-weight: 700;
   max-width: 800px;
 }
 .hero-slide p {
-  margin: 0 0 2.5rem;
+  margin: 0 auto 2.5rem;
   font-size: 22px;
   opacity: 0.9;
   max-width: 600px;
