@@ -1,16 +1,20 @@
-import { getPageBySlug } from '@/lib/strapi-cms';
 import { StrapiSection } from '@/types/strapi-cms';
-import HeaderWithWidget from './HeaderWithWidget';
-import Footer from '../components/Footer';
-import { renderSection } from '@/lib/render-section';
-import HomePageClient from './HomePageClient';
+import HeroSection from '../components/sections/HeroSection';
+import BenefitsCarousel from '../components/BenefitsCarousel';
+import FeatureSectionWrapper from '../app/FeatureSectionWrapper';
+import TestimonialsCarousel from '../components/TestimonialsCarousel';
+import HowItWorksBento from '../components/HowItWorksBento';
+import CTASection from '../components/sections/CTASection';
+import ProcessSteps from '../components/ProcessSteps';
+import WhyChooseSection from '../components/WhyChooseSection';
+import ContentSection from '../components/sections/ContentSection';
+import ServicesSection from '../components/sections/ServicesSection';
+import TrustSection from '../components/sections/TrustSection';
+import FAQSection from '../components/FAQSection';
+import FeatureShowcase from '../components/sections/FeatureShowcase';
+import TwoColumnSupport from '../components/TwoColumnSupport';
 
-const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
-
-// Mark as dynamic to prevent build-time prerendering issues
-export const dynamic = 'force-dynamic';
-
-function renderSection(section: StrapiSection, index: number) {
+export function renderSection(section: StrapiSection, index: number) {
   switch (section.__component) {
     case 'sections.hero-section':
       return (
@@ -72,7 +76,7 @@ function renderSection(section: StrapiSection, index: number) {
       );
     
     case 'sections.how-it-works-bento':
-  return (
+      return (
         <HowItWorksBento key={index} />
       );
     
@@ -194,47 +198,3 @@ function renderSection(section: StrapiSection, index: number) {
   }
 }
 
-export default async function HomePage() {
-  // Fetch page from Strapi - try 'home' first, then fallback to 'home-geldgeregeld'
-  let page = null;
-  
-  try {
-    page = await getPageBySlug('home', SITE_ID);
-    if (!page) {
-      page = await getPageBySlug('home-geldgeregeld', SITE_ID);
-    }
-  } catch (e) {
-    // Silently fallback - error already logged in getPageBySlug
-    console.warn('Strapi fetch failed, using fallback content');
-  }
-  
-  // Handle both Strapi v4 (attributes) and v5 (flat) response structures
-  const pageData = page?.attributes || page;
-  const sections = pageData?.sections;
-  
-  // Fallback to hardcoded content if Strapi is not available
-  if (!page || !sections || !Array.isArray(sections)) {
-    return <HomePageClient />;
-  }
-
-  const title = pageData?.title || 'GeldGeregeld';
-
-  return (
-    <>
-      <HeaderWithWidget />
-      <main>
-        {sections.map((section: any, index: number) => {
-          try {
-            return renderSection(section, index);
-          } catch (e) {
-            console.error(`Error rendering section ${index}:`, e);
-            return null;
-          }
-        })}
-      </main>
-      <Footer />
-    </>
-  );
-}
-
-// Note: Fallback component moved to HomePageClient.tsx
