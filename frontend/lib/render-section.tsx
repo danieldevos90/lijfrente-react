@@ -177,18 +177,25 @@ export function renderSection(section: StrapiSection, index: number) {
       );
     
     case 'sections.trust-section':
+      // Debug: log full section data
+      console.log('Trust section data:', sectionData);
+      console.log('Badges array:', sectionData.badges);
+      
       return (
         <TrustSection
           key={index}
           badges={sectionData.badges?.map(b => {
             // Handle Strapi v4 nested attributes structure
             const badgeData = (b as any).attributes || b;
+            // Debug: log full badge structure
+            console.log('Full badge object:', b);
+            console.log('Badge data after extraction:', badgeData);
             return {
               icon: badgeData.icon,
               text: badgeData.text,
               description: badgeData.description,
-              color: badgeData.color || '#f9f9f8', // Default light gray background
-              textColor: badgeData.textColor || 'var(--color-text)', // Default text color
+              color: badgeData.color,
+              textColor: badgeData.textColor,
             };
           }) || []}
           variant={sectionData.variant}
