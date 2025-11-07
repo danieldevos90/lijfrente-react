@@ -42,20 +42,26 @@ export default function ImageTextBlock({
   };
 
   const textContent = (
-    <div>
+    <div style={{ 
+      maxWidth: !imageUrl ? '800px' : '100%',
+      margin: !imageUrl ? '0 auto' : '0',
+      textAlign: !imageUrl ? 'center' as const : 'left' as const
+    }}>
       {title && (
         <h2 style={{ 
-          fontSize: '24px', 
+          fontSize: 'clamp(1.5rem, 3vw, 2rem)', 
           margin: '0 0 var(--space-md)', 
-          color: 'var(--color-text)' 
+          color: 'var(--color-text)',
+          fontWeight: 600
         }}>
           {title}
         </h2>
       )}
       <div style={{ 
         whiteSpace: 'pre-wrap', 
-        lineHeight: 1.6, 
+        lineHeight: 1.7, 
         color: 'var(--color-text)',
+        fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
         marginBottom: ctaLabel ? 'var(--space-md)' : '0'
       }}>
         {content}
@@ -92,10 +98,10 @@ export default function ImageTextBlock({
 
   return (
     <div style={containerStyle}>
-      {layout === 'image-left' && imageElement}
+      {layout === 'image-left' && imageUrl && imageElement}
       {textContent}
-      {layout === 'image-right' && imageElement}
-      {layout === 'image-top' && imageElement}
+      {layout === 'image-right' && imageUrl && imageElement}
+      {layout === 'image-top' && imageUrl && imageElement}
     </div>
   );
 }
