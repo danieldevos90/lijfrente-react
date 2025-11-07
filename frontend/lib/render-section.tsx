@@ -25,20 +25,25 @@ export function renderSection(section: StrapiSection, index: number) {
       const isSubpageHero = sectionData.variant === 'gradient' && !sectionData.backgroundImage;
       
       if (isSubpageHero) {
-        // Use first icon from icons array or iconPath for SubpageHero
-        const iconPath = sectionData.icons && sectionData.icons.length > 0 
-          ? sectionData.icons[0] 
-          : sectionData.iconPath;
+        // Parse icons if it's a JSON string (Strapi stores JSON fields as strings)
+        let iconsArray: string[] | null = null;
+        if (sectionData.icons) {
+          if (typeof sectionData.icons === 'string') {
+            try {
+              iconsArray = JSON.parse(sectionData.icons);
+            } catch (e) {
+              // If parsing fails, treat as single icon path
+              iconsArray = [sectionData.icons];
+            }
+          } else if (Array.isArray(sectionData.icons)) {
+            iconsArray = sectionData.icons;
+          }
+        }
         
-        // Debug logging
-        console.log('SubpageHero section data:', {
-          variant: sectionData.variant,
-          backgroundImage: sectionData.backgroundImage,
-          iconPath: sectionData.iconPath,
-          icons: sectionData.icons,
-          resolvedIconPath: iconPath,
-          fullSection: sectionData
-        });
+        // Use first icon from icons array or iconPath for SubpageHero
+        const iconPath = (iconsArray && iconsArray.length > 0 && typeof iconsArray[0] === 'string')
+          ? iconsArray[0]
+          : (typeof sectionData.iconPath === 'string' ? sectionData.iconPath : undefined);
         
         return (
           <SubpageHero
@@ -46,7 +51,7 @@ export function renderSection(section: StrapiSection, index: number) {
             title={sectionData.title || ''}
             subtitle={sectionData.subtitle}
             backgroundColor="#f9f9f8"
-            iconPath={iconPath || undefined}
+            iconPath={iconPath}
           />
         );
       }
@@ -182,8 +187,8 @@ export function renderSection(section: StrapiSection, index: number) {
               icon: badgeData.icon,
               text: badgeData.text,
               description: badgeData.description,
-              color: badgeData.color,
-              textColor: badgeData.textColor,
+              color: badgeData.color || '#f9f9f8', // Default light gray background
+              textColor: badgeData.textColor || 'var(--color-text)', // Default text color
             };
           }) || []}
           variant={sectionData.variant}
