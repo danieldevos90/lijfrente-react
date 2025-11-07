@@ -15,9 +15,52 @@ import FAQSection from '../components/FAQSection';
 import FeatureShowcase from '../components/sections/FeatureShowcase';
 import TwoColumnSupport from '../components/TwoColumnSupport';
 
+/**
+ * Extract icon path from section data, handling various Strapi data structures
+ */
+function extractIconPath(sectionData: any): string | undefined {
+  // Try icons array first (can be JSON string or array)
+  if (sectionData.icons) {
+    let iconsArray: string[] | null = null;
+    
+    if (typeof sectionData.icons === 'string') {
+      try {
+        iconsArray = JSON.parse(sectionData.icons);
+      } catch (e) {
+        // If parsing fails, treat as single icon path
+        return sectionData.icons;
+      }
+    } else if (Array.isArray(sectionData.icons)) {
+      iconsArray = sectionData.icons;
+    }
+    
+    if (iconsArray && iconsArray.length > 0 && typeof iconsArray[0] === 'string') {
+      return iconsArray[0];
+    }
+  }
+  
+  // Fallback to iconPath
+  if (typeof sectionData.iconPath === 'string' && sectionData.iconPath) {
+    return sectionData.iconPath;
+  }
+  
+  return undefined;
+}
+
 export function renderSection(section: StrapiSection, index: number) {
   // Handle Strapi v4 nested attributes structure if needed
-  const sectionData = (section as any).attributes || section;
+  // Sections can be nested: section.attributes or section.data.attributes
+  let sectionData = section as any;
+  if (sectionData.attributes) {
+    sectionData = sectionData.attributes;
+  } else if (sectionData.data?.attributes) {
+    sectionData = sectionData.data.attributes;
+  }
+  
+  // Also check if component type is nested
+  if (!sectionData.__component && (section as any).__component) {
+    sectionData.__component = (section as any).__component;
+  }
   
   switch (sectionData.__component) {
     case 'sections.hero-section':
@@ -25,25 +68,16 @@ export function renderSection(section: StrapiSection, index: number) {
       const isSubpageHero = sectionData.variant === 'gradient' && !sectionData.backgroundImage;
       
       if (isSubpageHero) {
-        // Parse icons if it's a JSON string (Strapi stores JSON fields as strings)
-        let iconsArray: string[] | null = null;
-        if (sectionData.icons) {
-          if (typeof sectionData.icons === 'string') {
-            try {
-              iconsArray = JSON.parse(sectionData.icons);
-            } catch (e) {
-              // If parsing fails, treat as single icon path
-              iconsArray = [sectionData.icons];
-            }
-          } else if (Array.isArray(sectionData.icons)) {
-            iconsArray = sectionData.icons;
-          }
-        }
+        // Debug: log full section data to understand structure
+        console.log('SubpageHero - Full section data:', JSON.stringify(sectionData, null, 2));
+        console.log('SubpageHero - icons type:', typeof sectionData.icons);
+        console.log('SubpageHero - icons value:', sectionData.icons);
+        console.log('SubpageHero - iconPath value:', sectionData.iconPath);
         
-        // Use first icon from icons array or iconPath for SubpageHero
-        const iconPath = (iconsArray && iconsArray.length > 0 && typeof iconsArray[0] === 'string')
-          ? iconsArray[0]
-          : (typeof sectionData.iconPath === 'string' ? sectionData.iconPath : undefined);
+        // Use helper function to extract icon path
+        const iconPath = extractIconPath(sectionData);
+        
+        console.log('SubpageHero - Final resolved iconPath:', iconPath);
         
         return (
           <SubpageHero
