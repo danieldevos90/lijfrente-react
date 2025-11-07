@@ -38,10 +38,9 @@ export default function HeroSlide({
     <div className="hero-slide" style={{ 
       color: textColor,
       ...bgStyle,
-      paddingTop: 'calc(6rem + 80px)', // Account for fixed header height
       marginTop: 0,
     }}>
-      <div className="container">
+      <div className="container" style={{ paddingTop: 'calc(80px + 2rem)' }}>
         {badge && (
           <div className="badge" style={{ 
             background: variant === 'gradient' || variant === 'image' ? 'rgba(255,255,255,0.2)' : '#f5f5f5',

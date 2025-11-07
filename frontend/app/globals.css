@@ -321,7 +321,7 @@ input:focus, select:focus {
 
 /* Hero slide specific styles */
 .hero-slide {
-  min-height: calc(100vh - 80px); /* Full viewport minus header */
+  min-height: 100vh; /* Full viewport height */
   display: flex;
   align-items: center;
   padding: 0;
