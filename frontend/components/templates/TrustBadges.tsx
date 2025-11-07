@@ -37,9 +37,8 @@ export default function TrustBadges({ badges, variant = 'default' }: TrustBadges
       margin: '0 auto',
     }}>
       {badges.map((badge, index) => {
-        const isColored = index % 2 === 0;
-        const bgColor = isColored && badge.color ? badge.color : 'white';
-        const textColorMain = (isColored && badge.textColor) ? badge.textColor : 'var(--color-text)';
+        const bgColor = badge.color || 'white';
+        const textColorMain = badge.textColor || 'var(--color-text)';
         const hasBorder = !badge.color || bgColor === 'white'; // Cards without color get border
         
         return (
