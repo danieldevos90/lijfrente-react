@@ -222,19 +222,23 @@ export default async function HomePage() {
     console.warn('Strapi fetch failed, using fallback content');
   }
   
+  // Handle both Strapi v4 (attributes) and v5 (flat) response structures
+  const pageData = page?.attributes || page;
+  const sections = pageData?.sections;
+  
   // Fallback to hardcoded content if Strapi is not available
-  if (!page || !page.attributes?.sections || !Array.isArray(page.attributes.sections)) {
+  if (!page || !sections || !Array.isArray(sections)) {
     return <HomePageClient />;
   }
 
-  const { title, metaDescription, sections } = page.attributes;
+  const title = pageData?.title || 'GeldGeregeld';
 
   return (
     <>
       <TransparentHeader transparent={true} textColor="white" />
       <main>
         <h1 className="sr-only">{title}</h1>
-        {sections?.map((section, index) => {
+        {sections.map((section: any, index: number) => {
           try {
             return renderSection(section, index);
           } catch (e) {
