@@ -171,7 +171,8 @@ function renderSection(section: StrapiSection, index: number) {
           key={index}
           title={section.title}
           subtitle={section.subtitle}
-          items={section.faqItems?.map(item => ({
+          faqItems={section.faqItems?.map((item, idx) => ({
+            id: `faq-${idx}`,
             question: item.question,
             answer: item.answer
           })) || []}
