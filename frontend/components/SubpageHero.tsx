@@ -23,8 +23,9 @@ export default function SubpageHero({
   backgroundImage,
   iconPath,
 }: SubpageHeroProps) {
-  // Debug: log iconPath
+  // Debug: log what we received
   console.log('SubpageHero received iconPath:', iconPath);
+  console.log('SubpageHero props:', { title, subtitle, iconPath, backgroundColor });
   
   return (
     <section 
