@@ -188,7 +188,7 @@ export interface StrapiFaqSection {
   title?: string;
   subtitle?: string;
   backgroundColor?: string;
-  items: StrapiFaqItem[];
+  faqItems: StrapiFaqItem[];
 }
 
 export interface StrapiFeatureShowcase {
