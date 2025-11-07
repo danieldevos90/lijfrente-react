@@ -29,72 +29,68 @@ export default function TrustBadges({ badges, variant = 'default' }: TrustBadges
   return (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+      gridTemplateColumns: 'repeat(3, 1fr)',
       gap: '2rem',
-      justifyContent: variant === 'centered' ? 'center' : 'flex-start',
-      alignItems: 'stretch',
-      padding: 'var(--space-lg) 0'
+      margin: '0 auto',
     }}>
-      {badges.map((badge, index) => (
-        <div 
-          key={index}
-          style={{
-            background: '#F8FAFC',
-            border: '1px solid var(--color-border)',
-            borderRadius: '0.625rem',
-            padding: '3rem 2.5rem',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            transition: 'all 0.3s ease',
-            minHeight: '200px',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-4px)';
-            e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = 'none';
-          }}
-        >
-          <div style={{ 
-            width: '4rem',
-            height: '4rem',
-            marginBottom: '1.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'var(--color-brand)',
-          }}>
-            {isSvgPath(badge.icon) ? (
-              <Image
-                src={badge.icon}
-                alt={badge.text}
-                width={64}
-                height={64}
-                style={{
-                  objectFit: 'contain',
-                }}
-              />
-            ) : trustIconMap[badge.icon] ? (
-              React.createElement(trustIconMap[badge.icon], { size: 64 })
-            ) : (
-              <span style={{ fontSize: '64px' }}>{badge.icon}</span>
-            )}
+      {badges.map((badge, index) => {
+        const isColored = index % 2 === 0;
+        const bgColor = isColored ? '#F8FAFC' : 'white';
+        
+        return (
+          <div
+            key={index}
+            style={{
+              background: bgColor,
+              borderRadius: '.625rem',
+              padding: '3rem 2.5rem',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              textAlign: 'center',
+              transition: 'all 0.3s ease',
+              minHeight: '350px',
+            }}
+          >
+            <div style={{ 
+              width: '6rem', 
+              height: '6rem', 
+              marginBottom: '2rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              {isSvgPath(badge.icon) ? (
+                <Image 
+                  src={badge.icon} 
+                  alt={badge.text}
+                  width={96}
+                  height={96}
+                  style={{
+                    filter: 'brightness(0) saturate(100%)',
+                    opacity: 1,
+                  }}
+                />
+              ) : trustIconMap[badge.icon] ? (
+                React.createElement(trustIconMap[badge.icon], { size: 96 })
+              ) : (
+                <span style={{ fontSize: '96px' }}>{badge.icon}</span>
+              )}
+            </div>
+            <h3 style={{
+              fontFamily: 'PP Neue Montreal, sans-serif',
+              fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+              fontWeight: 400,
+              lineHeight: 1.2,
+              marginBottom: '1rem',
+              color: 'var(--color-text)',
+            }}>
+              {badge.text}
+            </h3>
           </div>
-          <span style={{ 
-            fontSize: 'clamp(0.9375rem, 2vw, 1.0625rem)',
-            fontWeight: 500,
-            color: 'var(--color-text)',
-            lineHeight: 1.4,
-          }}>
-            {badge.text}
-          </span>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

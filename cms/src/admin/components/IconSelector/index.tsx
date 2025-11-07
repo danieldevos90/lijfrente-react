@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { TextInput, Box, Flex, Select, Option, Typography, Grid, Button } from '@strapi/design-system';
+import { TextInput, Box, Flex, Typography, Grid, Button } from '@strapi/design-system';
 import { Search } from '@strapi/icons';
 
 interface Icon {
@@ -110,17 +110,26 @@ const IconSelector: React.FC<IconSelectorProps> = ({ name, value, onChange, erro
                     startAction={<Search />}
                   />
                 </Box>
-                <Select
-                  value={selectedCategory}
-                  onChange={(val: string) => setSelectedCategory(val)}
-                  style={{ width: '200px' }}
-                >
-                  {categories.map((cat) => (
-                    <Option key={cat} value={cat}>
-                      {cat === 'all' ? 'All Categories' : cat}
-                    </Option>
-                  ))}
-                </Select>
+                <Box style={{ width: '200px' }}>
+                  <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '8px 12px',
+                      borderRadius: '4px',
+                      border: '1px solid #dcdce4',
+                      fontSize: '14px',
+                      fontFamily: 'inherit',
+                    }}
+                  >
+                    {categories.map((cat) => (
+                      <option key={cat} value={cat}>
+                        {cat === 'all' ? 'All Categories' : cat}
+                      </option>
+                    ))}
+                  </select>
+                </Box>
               </Flex>
 
               <Typography variant="pi" textColor="neutral600">
