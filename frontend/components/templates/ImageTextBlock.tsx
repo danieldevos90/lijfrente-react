@@ -48,7 +48,14 @@ export default function ImageTextBlock({
       textAlign: !imageUrl ? 'center' as const : 'left' as const
     }}>
       {title && (
-        <h2>
+        <h2 style={{
+          fontFamily: "'PP Neue Montreal', 'Neue Montreal', sans-serif",
+          fontSize: '36px',
+          fontWeight: 400,
+          lineHeight: 1.08,
+          margin: '0 0 var(--space-md)',
+          color: 'var(--color-text)'
+        }}>
           {title}
         </h2>
       )}
