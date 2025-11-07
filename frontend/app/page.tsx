@@ -4,7 +4,7 @@ import TransparentHeader from '../components/TransparentHeader';
 import Footer from '../components/Footer';
 import HeroSection from '../components/sections/HeroSection';
 import BenefitsCarousel from '../components/BenefitsCarousel';
-import FeatureSection from '../components/FeatureSection';
+import FeatureSectionWrapper from './FeatureSectionWrapper';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 import HowItWorksBento from '../components/HowItWorksBento';
 import CTASection from '../components/sections/CTASection';
@@ -60,12 +60,11 @@ function renderSection(section: StrapiSection, index: number) {
     
     case 'sections.feature-section':
       return (
-        <FeatureSection
+        <FeatureSectionWrapper
           key={index}
           title={section.title}
           description={section.description}
           buttonText={section.buttonText}
-          onButtonClick={() => {}}
           imagePath={section.imagePath}
           imagePosition={section.imagePosition}
           backgroundColor={section.backgroundColor}
