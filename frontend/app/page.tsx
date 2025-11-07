@@ -236,7 +236,6 @@ export default async function HomePage() {
     <>
       <TransparentHeader transparent={true} textColor="white" />
       <main>
-        <h1 className="sr-only">{title}</h1>
         {sections.map((section: any, index: number) => {
           try {
             return renderSection(section, index);
