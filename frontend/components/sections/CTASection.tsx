@@ -34,7 +34,7 @@ export default function CTASection({
         <a 
           className="btn btn-primary" 
           href={ctaHref}
-          style={{ fontSize: '18px', padding: '20px 40px' }}
+          style={{ fontSize: '18px', padding: '20px 40px', borderRadius: '10rem' }}
         >
           {ctaLabel}
         </a>
