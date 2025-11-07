@@ -12,15 +12,15 @@ We use a `siteId` field (string) for multi-site filtering across all content typ
 
 ### 1. **site**
 Site-wide configuration
-- `siteId` (UID/string, unique)
-- `name` (string)
-- `domain` (string)
+   - `siteId` (UID/string, unique)
+   - `name` (string)
+   - `domain` (string)
 
 ### 2. **page** 
 Dynamic page builder with section components
-- `siteId` (string, index)
-- `slug` (UID/string)
-- `title` (string)
+   - `siteId` (string, index)
+   - `slug` (UID/string)
+   - `title` (string)
 - `metaDescription` (text) - SEO
 - `metaKeywords` (string) - SEO
 - `sections` (dynamiczone) - **15 available section components**
@@ -28,17 +28,17 @@ Dynamic page builder with section components
 
 ### 3. **navigationItem**
 Navigation menu items
-- `siteId` (string)
-- `label` (string)
-- `href` (string)
-- `order` (integer)
+   - `siteId` (string)
+   - `label` (string)
+   - `href` (string)
+   - `order` (integer)
 
 ### 4. **tokenSet**
 Design tokens per site
-- `siteId` (string)
-- `colors` (JSON)
-- `typography` (JSON)
-- `components` (JSON)
+   - `siteId` (string)
+   - `colors` (JSON)
+   - `typography` (JSON)
+   - `components` (JSON)
 
 ### 5. **testimonial**
 Customer testimonials

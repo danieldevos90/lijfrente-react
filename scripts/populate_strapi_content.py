@@ -300,8 +300,8 @@ def create_or_update_navigation_item(site_id: str, nav_data: Dict):
 def create_navigation():
     """Create or update navigation items (prevents duplicates)"""
     nav_items = [
-        {"label": "Hoe werkt het", "href": "/hoe-werkt-het", "order": 1},
-        {"label": "Over ons", "href": "/over-ons", "order": 2},
+        {"label": "Over Ons", "href": "/over-ons", "order": 1},
+        {"label": "Hoe werkt het", "href": "/hoe-werkt-het", "order": 2},
         {"label": "Contact", "href": "/contact", "order": 3},
     ]
     
@@ -496,7 +496,8 @@ def create_about_page():
                     "__component": "sections.hero-section",
                     "title": "Zakelijke financiering zoals het zou moeten zijn",
                     "subtitle": "Snel, simpel en transparant. Voor elke ondernemer die vooruit wil.",
-                    "variant": "gradient"
+                    "variant": "gradient",
+                    "iconPath": "/icons/SVG/interface/heart.svg"
                 },
                 {
                     "__component": "sections.content-section",
@@ -794,7 +795,7 @@ def create_contact_page():
                             "href": "mailto:info@geldgeregeld.nl"
                         },
                         {
-                            "icon": "/icons/SVG/interface/map-pin.svg",
+                            "icon": "/icons/SVG/interface/location-pin.svg",
                             "title": "Bezoek ons",
                             "description": "Op afspraak\nHerengracht 282, 1016 BX Amsterdam",
                             "href": "#"

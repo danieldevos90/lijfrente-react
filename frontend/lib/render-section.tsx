@@ -1,5 +1,6 @@
 import { StrapiSection } from '@/types/strapi-cms';
 import HeroSection from '../components/sections/HeroSection';
+import SubpageHero from '../components/SubpageHero';
 import BenefitsCarousel from '../components/BenefitsCarousel';
 import FeatureSectionWrapper from '../app/FeatureSectionWrapper';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
@@ -17,6 +18,27 @@ import TwoColumnSupport from '../components/TwoColumnSupport';
 export function renderSection(section: StrapiSection, index: number) {
   switch (section.__component) {
     case 'sections.hero-section':
+      // Use SubpageHero for subpage heroes (gradient variant without backgroundImage)
+      const isSubpageHero = section.variant === 'gradient' && !section.backgroundImage;
+      
+      if (isSubpageHero) {
+        // Use first icon from icons array or iconPath for SubpageHero
+        const iconPath = section.icons && section.icons.length > 0 
+          ? section.icons[0] 
+          : section.iconPath;
+        
+        return (
+          <SubpageHero
+            key={index}
+            title={section.title || ''}
+            subtitle={section.subtitle}
+            backgroundColor="#f9f9f8"
+            iconPath={iconPath}
+          />
+        );
+      }
+      
+      // Use HeroSection for homepage/full-screen heroes
       return (
         <HeroSection
           key={index}

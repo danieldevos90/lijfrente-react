@@ -28,8 +28,8 @@ export default function SubpageHero({
       className="subpage-hero"
       style={{
         background: backgroundColor,
-        padding: '12rem 2rem 8rem',
-        minHeight: '60vh',
+        padding: 'calc(80px + 4rem) 2rem 4rem',
+        minHeight: '50vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
