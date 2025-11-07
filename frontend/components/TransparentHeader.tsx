@@ -95,7 +95,9 @@ export default function TransparentHeader({
   const sortedNavItems = [...navItems].sort((a, b) => {
     const aData = a.attributes || a;
     const bData = b.attributes || b;
-    return (aData.order || 0) - (bData.order || 0);
+    const aOrder = (aData as any).order ?? 0;
+    const bOrder = (bData as any).order ?? 0;
+    return aOrder - bOrder;
   });
 
   return (
