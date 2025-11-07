@@ -34,14 +34,17 @@ export default function HeroSlide({
 
   const textColor = variant === 'gradient' || variant === 'image' ? '#fff' : 'var(--color-text)';
   const displayIcons = icons || (iconPath ? [iconPath] : []);
+  const isSubpageHero = variant === 'gradient' && !backgroundImage;
 
     return (
     <div className="hero-slide" style={{ 
       color: textColor,
       ...bgStyle,
       marginTop: 0,
-    }}>
-      <div className="container" style={{ paddingTop: 'calc(80px + 2rem)' }}>
+    }} data-subpage={isSubpageHero ? "true" : undefined}>
+      <div className="container" style={{ 
+        paddingTop: 'calc(80px + 2rem)',
+      }}>
         {badge && (
           <div className="badge" style={{ 
             background: variant === 'gradient' || variant === 'image' ? 'rgba(255,255,255,0.2)' : '#f5f5f5',

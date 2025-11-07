@@ -22,7 +22,7 @@ export default function ImageTextBlock({
   variant = 'default'
 }: ImageTextBlockProps) {
   const containerStyle = {
-    display: layout === 'image-top' ? 'block' : 'grid',
+    display: layout === 'image-top' ? 'block' : (!imageUrl && (layout === 'image-left' || layout === 'image-right')) ? 'block' : 'grid',
     gridTemplateColumns: layout === 'image-left' ? '1fr 1.5fr' : layout === 'image-right' ? '1.5fr 1fr' : '1fr',
     gap: 'var(--space-lg)',
     alignItems: 'center',

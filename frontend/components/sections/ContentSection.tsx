@@ -23,7 +23,7 @@ export default function ContentSection({
   background = 'gray'
 }: ContentSectionProps) {
   return (
-    <Section background={background} padding="xl">
+    <Section background={background} padding="lg">
       <ImageTextBlock
         title={title}
         content={content}

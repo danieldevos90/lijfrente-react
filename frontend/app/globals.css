@@ -329,6 +329,24 @@ input:focus, select:focus {
   width: 100%;
   position: relative;
 }
+
+/* Compact hero for subpages (gradient variant without background image) */
+.hero-slide[data-subpage="true"] {
+  min-height: 50vh !important;
+  padding-top: calc(80px + 2rem);
+  padding-bottom: 4rem;
+}
+
+.hero-slide[data-subpage="true"] h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.hero-slide[data-subpage="true"] p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 2rem;
+}
+
 .hero-slide .container {
   text-align: center;
   width: 100%;
