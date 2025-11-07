@@ -25,7 +25,8 @@
       "default": "medium"
     },
     "icon": {
-      "type": "string",
+      "type": "customField",
+      "customField": "plugin::icon-selector.icon-selector",
       "description": "Icon path or name"
     }
   }

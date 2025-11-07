@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { CheckCircle, Zap, Lock, FileText } from 'lucide-react';
 
 interface TrustBadge {
@@ -12,6 +13,11 @@ const trustIconMap: Record<string, React.ComponentType<any>> = {
   '⚡': Zap,
   '🔒': Lock,
   '📋': FileText,
+};
+
+// Check if icon is an SVG path (starts with /icons/ or contains .svg)
+const isSvgPath = (icon: string): boolean => {
+  return icon.startsWith('/icons/') || icon.includes('.svg') || icon.startsWith('/');
 };
 
 interface TrustBadgesProps {
@@ -48,10 +54,21 @@ export default function TrustBadges({ badges, variant = 'default' }: TrustBadges
             display: 'flex',
             alignItems: 'center'
           }}>
-            {trustIconMap[badge.icon] ? 
-              React.createElement(trustIconMap[badge.icon], { size: 20 }) : 
+            {isSvgPath(badge.icon) ? (
+              <Image
+                src={badge.icon}
+                alt={badge.text}
+                width={20}
+                height={20}
+                style={{
+                  objectFit: 'contain',
+                }}
+              />
+            ) : trustIconMap[badge.icon] ? (
+              React.createElement(trustIconMap[badge.icon], { size: 20 })
+            ) : (
               <span style={{ fontSize: '20px' }}>{badge.icon}</span>
-            }
+            )}
           </div>
           <span style={{ 
             fontSize: '14px',

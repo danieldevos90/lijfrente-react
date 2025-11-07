@@ -1,0 +1,2728 @@
+{
+  "icons": [
+    {
+      "path": "/icons/SVG/arrows/arrow-circle-down.svg",
+      "name": "arrow-circle-down",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-circle-down.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-circle-left.svg",
+      "name": "arrow-circle-left",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-circle-left.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-circle-right.svg",
+      "name": "arrow-circle-right",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-circle-right.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-circle-up.svg",
+      "name": "arrow-circle-up",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-circle-up.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-down.svg",
+      "name": "arrow-down",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-down.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-left.svg",
+      "name": "arrow-left",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-left.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-ne.svg",
+      "name": "arrow-ne",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-ne.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-nw.svg",
+      "name": "arrow-nw",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-nw.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-right.svg",
+      "name": "arrow-right",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-right.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-se.svg",
+      "name": "arrow-se",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-se.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-single-down.svg",
+      "name": "arrow-single-down",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-single-down.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-single-left.svg",
+      "name": "arrow-single-left",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-single-left.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-single-right.svg",
+      "name": "arrow-single-right",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-single-right.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-single-up.svg",
+      "name": "arrow-single-up",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-single-up.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-square-down.svg",
+      "name": "arrow-square-down",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-square-down.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-square-left.svg",
+      "name": "arrow-square-left",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-square-left.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-square-right.svg",
+      "name": "arrow-square-right",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-square-right.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-square-up.svg",
+      "name": "arrow-square-up",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-square-up.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-sw.svg",
+      "name": "arrow-sw",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-sw.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/arrow-up.svg",
+      "name": "arrow-up",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/arrow-up.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/chevrons-down.svg",
+      "name": "chevrons-down",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/chevrons-down.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/chevrons-left.svg",
+      "name": "chevrons-left",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/chevrons-left.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/chevrons-right.svg",
+      "name": "chevrons-right",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/chevrons-right.svg"
+    },
+    {
+      "path": "/icons/SVG/arrows/chevrons-up.svg",
+      "name": "chevrons-up",
+      "category": "arrows",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/arrows/chevrons-up.svg"
+    },
+    {
+      "path": "/icons/SVG/currency/dollar.svg",
+      "name": "dollar",
+      "category": "currency",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/currency/dollar.svg"
+    },
+    {
+      "path": "/icons/SVG/currency/euro.svg",
+      "name": "euro",
+      "category": "currency",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/currency/euro.svg"
+    },
+    {
+      "path": "/icons/SVG/currency/franc.svg",
+      "name": "franc",
+      "category": "currency",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/currency/franc.svg"
+    },
+    {
+      "path": "/icons/SVG/currency/pound.svg",
+      "name": "pound",
+      "category": "currency",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/currency/pound.svg"
+    },
+    {
+      "path": "/icons/SVG/currency/ruble.svg",
+      "name": "ruble",
+      "category": "currency",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/currency/ruble.svg"
+    },
+    {
+      "path": "/icons/SVG/currency/rupee.svg",
+      "name": "rupee",
+      "category": "currency",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/currency/rupee.svg"
+    },
+    {
+      "path": "/icons/SVG/currency/won.svg",
+      "name": "won",
+      "category": "currency",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/currency/won.svg"
+    },
+    {
+      "path": "/icons/SVG/currency/yen.svg",
+      "name": "yen",
+      "category": "currency",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/currency/yen.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/bag.svg",
+      "name": "bag",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/bag.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/bag-2.svg",
+      "name": "bag-2",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/bag-2.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/basket.svg",
+      "name": "basket",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/basket.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/box.svg",
+      "name": "box",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/box.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/box-2.svg",
+      "name": "box-2",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/box-2.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/card.svg",
+      "name": "card",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/card.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/card-2.svg",
+      "name": "card-2",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/card-2.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/card-3.svg",
+      "name": "card-3",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/card-3.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/cart-add.svg",
+      "name": "cart-add",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/cart-add.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/cart-delete.svg",
+      "name": "cart-delete",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/cart-delete.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/cart-remove.svg",
+      "name": "cart-remove",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/cart-remove.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/conveyor-belt.svg",
+      "name": "conveyor-belt",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/conveyor-belt.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/factory.svg",
+      "name": "factory",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/factory.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/hand-truck.svg",
+      "name": "hand-truck",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/hand-truck.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/location.svg",
+      "name": "location",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/location.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/offer.svg",
+      "name": "offer",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/offer.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/qr.svg",
+      "name": "qr",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/qr.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/sale.svg",
+      "name": "sale",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/sale.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/shop.svg",
+      "name": "shop",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/shop.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/shopping-cart.svg",
+      "name": "shopping-cart",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/shopping-cart.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/shopping-cart-2.svg",
+      "name": "shopping-cart-2",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/shopping-cart-2.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/shopping-cart-3.svg",
+      "name": "shopping-cart-3",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/shopping-cart-3.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/tag.svg",
+      "name": "tag",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/tag.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/tag-2.svg",
+      "name": "tag-2",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/tag-2.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/truck.svg",
+      "name": "truck",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/truck.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/unbox.svg",
+      "name": "unbox",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/unbox.svg"
+    },
+    {
+      "path": "/icons/SVG/e-commerce/warehouse.svg",
+      "name": "warehouse",
+      "category": "e-commerce",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/e-commerce/warehouse.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/confused-emoji.svg",
+      "name": "confused-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/confused-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/cool-emoji.svg",
+      "name": "cool-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/cool-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/crying-emoji.svg",
+      "name": "crying-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/crying-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/grinning-squinting-emoji.svg",
+      "name": "grinning-squinting-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/grinning-squinting-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/happy-emoji.svg",
+      "name": "happy-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/happy-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/heart-eyes-emoji.svg",
+      "name": "heart-eyes-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/heart-eyes-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/laugh-emoji.svg",
+      "name": "laugh-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/laugh-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/sad-emoji.svg",
+      "name": "sad-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/sad-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/shocked-emoji.svg",
+      "name": "shocked-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/shocked-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/smiling-emoji.svg",
+      "name": "smiling-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/smiling-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/smiling-with-eyes-emoji.svg",
+      "name": "smiling-with-eyes-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/smiling-with-eyes-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/surprised-emoji.svg",
+      "name": "surprised-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/surprised-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/wink-emoji.svg",
+      "name": "wink-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/wink-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/emojis/worried-emoji.svg",
+      "name": "worried-emoji",
+      "category": "emojis",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/emojis/worried-emoji.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file.svg",
+      "name": "file",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-attachment.svg",
+      "name": "file-attachment",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-attachment.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-audio.svg",
+      "name": "file-audio",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-audio.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-code.svg",
+      "name": "file-code",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-code.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-contract.svg",
+      "name": "file-contract",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-contract.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-csv.svg",
+      "name": "file-csv",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-csv.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-figma.svg",
+      "name": "file-figma",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-figma.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-form.svg",
+      "name": "file-form",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-form.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-image.svg",
+      "name": "file-image",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-image.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-image-2.svg",
+      "name": "file-image-2",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-image-2.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-invoice.svg",
+      "name": "file-invoice",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-invoice.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-jpg.svg",
+      "name": "file-jpg",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-jpg.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-list.svg",
+      "name": "file-list",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-list.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-mov.svg",
+      "name": "file-mov",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-mov.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-mp4.svg",
+      "name": "file-mp4",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-mp4.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-notes.svg",
+      "name": "file-notes",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-notes.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-pdf.svg",
+      "name": "file-pdf",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-pdf.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-png.svg",
+      "name": "file-png",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-png.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-spreadsheet.svg",
+      "name": "file-spreadsheet",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-spreadsheet.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-svg.svg",
+      "name": "file-svg",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-svg.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-text.svg",
+      "name": "file-text",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-text.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-vector.svg",
+      "name": "file-vector",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-vector.svg"
+    },
+    {
+      "path": "/icons/SVG/files/file-zip.svg",
+      "name": "file-zip",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/file-zip.svg"
+    },
+    {
+      "path": "/icons/SVG/files/png.svg",
+      "name": "png",
+      "category": "files",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/files/png.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/bank.svg",
+      "name": "bank",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/bank.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/bill.svg",
+      "name": "bill",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/bill.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/cash.svg",
+      "name": "cash",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/cash.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/coin.svg",
+      "name": "coin",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/coin.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/coin-2.svg",
+      "name": "coin-2",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/coin-2.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/dollar.svg",
+      "name": "dollar",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/dollar.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/money-plant.svg",
+      "name": "money-plant",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/money-plant.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/piggy-bank.svg",
+      "name": "piggy-bank",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/piggy-bank.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/safe.svg",
+      "name": "safe",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/safe.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/saving.svg",
+      "name": "saving",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/saving.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/trend-down.svg",
+      "name": "trend-down",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/trend-down.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/trend-down-square.svg",
+      "name": "trend-down-square",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/trend-down-square.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/trend-up.svg",
+      "name": "trend-up",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/trend-up.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/trend-up-square.svg",
+      "name": "trend-up-square",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/trend-up-square.svg"
+    },
+    {
+      "path": "/icons/SVG/finance/wallet.svg",
+      "name": "wallet",
+      "category": "finance",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/finance/wallet.svg"
+    },
+    {
+      "path": "/icons/SVG/food/burger.svg",
+      "name": "burger",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/burger.svg"
+    },
+    {
+      "path": "/icons/SVG/food/cake.svg",
+      "name": "cake",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/cake.svg"
+    },
+    {
+      "path": "/icons/SVG/food/candy.svg",
+      "name": "candy",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/candy.svg"
+    },
+    {
+      "path": "/icons/SVG/food/cutlery.svg",
+      "name": "cutlery",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/cutlery.svg"
+    },
+    {
+      "path": "/icons/SVG/food/dish.svg",
+      "name": "dish",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/dish.svg"
+    },
+    {
+      "path": "/icons/SVG/food/drink.svg",
+      "name": "drink",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/drink.svg"
+    },
+    {
+      "path": "/icons/SVG/food/egg.svg",
+      "name": "egg",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/egg.svg"
+    },
+    {
+      "path": "/icons/SVG/food/fork.svg",
+      "name": "fork",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/fork.svg"
+    },
+    {
+      "path": "/icons/SVG/food/ice-cream.svg",
+      "name": "ice-cream",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/ice-cream.svg"
+    },
+    {
+      "path": "/icons/SVG/food/pizza.svg",
+      "name": "pizza",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/pizza.svg"
+    },
+    {
+      "path": "/icons/SVG/food/pizza-2.svg",
+      "name": "pizza-2",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/pizza-2.svg"
+    },
+    {
+      "path": "/icons/SVG/food/popsicle.svg",
+      "name": "popsicle",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/popsicle.svg"
+    },
+    {
+      "path": "/icons/SVG/food/spoon.svg",
+      "name": "spoon",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/spoon.svg"
+    },
+    {
+      "path": "/icons/SVG/food/water.svg",
+      "name": "water",
+      "category": "food",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/food/water.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/bisexual.svg",
+      "name": "bisexual",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/bisexual.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/femaile.svg",
+      "name": "femaile",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/femaile.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/gay.svg",
+      "name": "gay",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/gay.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/genderless.svg",
+      "name": "genderless",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/genderless.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/hetro.svg",
+      "name": "hetro",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/hetro.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/intersex.svg",
+      "name": "intersex",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/intersex.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/lesbian.svg",
+      "name": "lesbian",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/lesbian.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/male.svg",
+      "name": "male",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/male.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/non-binary-transgender.svg",
+      "name": "non-binary-transgender",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/non-binary-transgender.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/other-gender.svg",
+      "name": "other-gender",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/other-gender.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/transgender.svg",
+      "name": "transgender",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/transgender.svg"
+    },
+    {
+      "path": "/icons/SVG/gender symbols/transgender-2.svg",
+      "name": "transgender-2",
+      "category": "gender symbols",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/gender symbols/transgender-2.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/2-double-tap.svg",
+      "name": "2-double-tap",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/2-double-tap.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/2-scroll-left.svg",
+      "name": "2-scroll-left",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/2-scroll-left.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/2-scroll-right.svg",
+      "name": "2-scroll-right",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/2-scroll-right.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/2-scroll-up.svg",
+      "name": "2-scroll-up",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/2-scroll-up.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/2-scroll-up-1.svg",
+      "name": "2-scroll-up-1",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/2-scroll-up-1.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/2-tap.svg",
+      "name": "2-tap",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/2-tap.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/2-tap-1.svg",
+      "name": "2-tap-1",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/2-tap-1.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/2-touch-hold.svg",
+      "name": "2-touch-hold",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/2-touch-hold.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/3-scroll-down.svg",
+      "name": "3-scroll-down",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/3-scroll-down.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/3-scroll-up.svg",
+      "name": "3-scroll-up",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/3-scroll-up.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/3-tap.svg",
+      "name": "3-tap",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/3-tap.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/3-tap-scroll.svg",
+      "name": "3-tap-scroll",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/3-tap-scroll.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/clap.svg",
+      "name": "clap",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/clap.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/double-tap.svg",
+      "name": "double-tap",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/double-tap.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/folded-hands.svg",
+      "name": "folded-hands",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/folded-hands.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/free-drag.svg",
+      "name": "free-drag",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/free-drag.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/hand.svg",
+      "name": "hand",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/hand.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/horizontal-scroll.svg",
+      "name": "horizontal-scroll",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/horizontal-scroll.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/multi-touch.svg",
+      "name": "multi-touch",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/multi-touch.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/ok.svg",
+      "name": "ok",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/ok.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/page-move.svg",
+      "name": "page-move",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/page-move.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/point-down.svg",
+      "name": "point-down",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/point-down.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/point-left.svg",
+      "name": "point-left",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/point-left.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/point-right.svg",
+      "name": "point-right",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/point-right.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/point-up.svg",
+      "name": "point-up",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/point-up.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/rotate.svg",
+      "name": "rotate",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/rotate.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/scan.svg",
+      "name": "scan",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/scan.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/scan-fingerprint.svg",
+      "name": "scan-fingerprint",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/scan-fingerprint.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/screen-rotate.svg",
+      "name": "screen-rotate",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/screen-rotate.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/scroll-down.svg",
+      "name": "scroll-down",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/scroll-down.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/scroll-left.svg",
+      "name": "scroll-left",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/scroll-left.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/scroll-left-1.svg",
+      "name": "scroll-left-1",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/scroll-left-1.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/scroll-up.svg",
+      "name": "scroll-up",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/scroll-up.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/swipe-left.svg",
+      "name": "swipe-left",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/swipe-left.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/swipe-right.svg",
+      "name": "swipe-right",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/swipe-right.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/tap.svg",
+      "name": "tap",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/tap.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/tap-1.svg",
+      "name": "tap-1",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/tap-1.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/thumbs-down.svg",
+      "name": "thumbs-down",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/thumbs-down.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/thumbs-up.svg",
+      "name": "thumbs-up",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/thumbs-up.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/touch-hold.svg",
+      "name": "touch-hold",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/touch-hold.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/v.svg",
+      "name": "v",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/v.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/vibrate.svg",
+      "name": "vibrate",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/vibrate.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/wave-left.svg",
+      "name": "wave-left",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/wave-left.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/wave-right.svg",
+      "name": "wave-right",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/wave-right.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/zoom-in.svg",
+      "name": "zoom-in",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/zoom-in.svg"
+    },
+    {
+      "path": "/icons/SVG/hand gestures/zoom-out.svg",
+      "name": "zoom-out",
+      "category": "hand gestures",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/hand gestures/zoom-out.svg"
+    },
+    {
+      "path": "/icons/SVG/health/blood.svg",
+      "name": "blood",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/blood.svg"
+    },
+    {
+      "path": "/icons/SVG/health/blood-bag.svg",
+      "name": "blood-bag",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/blood-bag.svg"
+    },
+    {
+      "path": "/icons/SVG/health/bottle.svg",
+      "name": "bottle",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/bottle.svg"
+    },
+    {
+      "path": "/icons/SVG/health/dropper.svg",
+      "name": "dropper",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/dropper.svg"
+    },
+    {
+      "path": "/icons/SVG/health/first-aid.svg",
+      "name": "first-aid",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/first-aid.svg"
+    },
+    {
+      "path": "/icons/SVG/health/firstaid-2.svg",
+      "name": "firstaid-2",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/firstaid-2.svg"
+    },
+    {
+      "path": "/icons/SVG/health/flask.svg",
+      "name": "flask",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/flask.svg"
+    },
+    {
+      "path": "/icons/SVG/health/flask-round.svg",
+      "name": "flask-round",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/flask-round.svg"
+    },
+    {
+      "path": "/icons/SVG/health/heart-beat.svg",
+      "name": "heart-beat",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/heart-beat.svg"
+    },
+    {
+      "path": "/icons/SVG/health/injection.svg",
+      "name": "injection",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/injection.svg"
+    },
+    {
+      "path": "/icons/SVG/health/lungs.svg",
+      "name": "lungs",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/lungs.svg"
+    },
+    {
+      "path": "/icons/SVG/health/medical-logo.svg",
+      "name": "medical-logo",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/medical-logo.svg"
+    },
+    {
+      "path": "/icons/SVG/health/microscope.svg",
+      "name": "microscope",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/microscope.svg"
+    },
+    {
+      "path": "/icons/SVG/health/pills.svg",
+      "name": "pills",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/pills.svg"
+    },
+    {
+      "path": "/icons/SVG/health/stethoscope.svg",
+      "name": "stethoscope",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/stethoscope.svg"
+    },
+    {
+      "path": "/icons/SVG/health/tablet.svg",
+      "name": "tablet",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/tablet.svg"
+    },
+    {
+      "path": "/icons/SVG/health/test-tube.svg",
+      "name": "test-tube",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/test-tube.svg"
+    },
+    {
+      "path": "/icons/SVG/health/tooth.svg",
+      "name": "tooth",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/tooth.svg"
+    },
+    {
+      "path": "/icons/SVG/health/wheelchair.svg",
+      "name": "wheelchair",
+      "category": "health",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/health/wheelchair.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/Info.svg",
+      "name": "Info",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/Info.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/analytics.svg",
+      "name": "analytics",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/analytics.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/arrow.svg",
+      "name": "arrow",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/arrow.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/arrow-down.svg",
+      "name": "arrow-down",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/arrow-down.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/arrow-up.svg",
+      "name": "arrow-up",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/arrow-up.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/at-the-rate.svg",
+      "name": "at-the-rate",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/at-the-rate.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/backward.svg",
+      "name": "backward",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/backward.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/bell.svg",
+      "name": "bell",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/bell.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/bell-2.svg",
+      "name": "bell-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/bell-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/bluetooth.svg",
+      "name": "bluetooth",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/bluetooth.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/bookmark.svg",
+      "name": "bookmark",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/bookmark.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/bulb.svg",
+      "name": "bulb",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/bulb.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/calculator.svg",
+      "name": "calculator",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/calculator.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/calendar.svg",
+      "name": "calendar",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/calendar.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/call.svg",
+      "name": "call",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/call.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/camera.svg",
+      "name": "camera",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/camera.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/caution.svg",
+      "name": "caution",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/caution.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/center-align.svg",
+      "name": "center-align",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/center-align.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/center-align-2.svg",
+      "name": "center-align-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/center-align-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/checklist.svg",
+      "name": "checklist",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/checklist.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/clock.svg",
+      "name": "clock",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/clock.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/cloud.svg",
+      "name": "cloud",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/cloud.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/cloud-down.svg",
+      "name": "cloud-down",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/cloud-down.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/cloud-up.svg",
+      "name": "cloud-up",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/cloud-up.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/cookie.svg",
+      "name": "cookie",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/cookie.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/copy.svg",
+      "name": "copy",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/copy.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/crop.svg",
+      "name": "crop",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/crop.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/cross.svg",
+      "name": "cross",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/cross.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/cut.svg",
+      "name": "cut",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/cut.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/dashboard.svg",
+      "name": "dashboard",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/dashboard.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/dashboard-2.svg",
+      "name": "dashboard-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/dashboard-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/dashboard-3.svg",
+      "name": "dashboard-3",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/dashboard-3.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/dashboard-4.svg",
+      "name": "dashboard-4",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/dashboard-4.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/delete.svg",
+      "name": "delete",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/delete.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/diamond.svg",
+      "name": "diamond",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/diamond.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/doc.svg",
+      "name": "doc",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/doc.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/doc-add.svg",
+      "name": "doc-add",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/doc-add.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/doc-remove.svg",
+      "name": "doc-remove",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/doc-remove.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/download.svg",
+      "name": "download",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/download.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/drawer.svg",
+      "name": "drawer",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/drawer.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/eject.svg",
+      "name": "eject",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/eject.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/eraser.svg",
+      "name": "eraser",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/eraser.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/fast-forward.svg",
+      "name": "fast-forward",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/fast-forward.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/fast-rewind.svg",
+      "name": "fast-rewind",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/fast-rewind.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/filter.svg",
+      "name": "filter",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/filter.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/flag.svg",
+      "name": "flag",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/flag.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/flag-2.svg",
+      "name": "flag-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/flag-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/flip.svg",
+      "name": "flip",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/flip.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/floppy.svg",
+      "name": "floppy",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/floppy.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/folder.svg",
+      "name": "folder",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/folder.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/folder-add.svg",
+      "name": "folder-add",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/folder-add.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/folder-delete.svg",
+      "name": "folder-delete",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/folder-delete.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/folder-empty.svg",
+      "name": "folder-empty",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/folder-empty.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/folder-remove.svg",
+      "name": "folder-remove",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/folder-remove.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/forward.svg",
+      "name": "forward",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/forward.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/gift.svg",
+      "name": "gift",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/gift.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/globe.svg",
+      "name": "globe",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/globe.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/grid.svg",
+      "name": "grid",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/grid.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/grid-2.svg",
+      "name": "grid-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/grid-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/headphone.svg",
+      "name": "headphone",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/headphone.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/heart.svg",
+      "name": "heart",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/heart.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/hide.svg",
+      "name": "hide",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/hide.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/home.svg",
+      "name": "home",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/home.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/home-1.svg",
+      "name": "home-1",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/home-1.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/key.svg",
+      "name": "key",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/key.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/layer.svg",
+      "name": "layer",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/layer.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/left-align.svg",
+      "name": "left-align",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/left-align.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/left-align-2.svg",
+      "name": "left-align-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/left-align-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/link.svg",
+      "name": "link",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/link.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/list.svg",
+      "name": "list",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/list.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/location-pin.svg",
+      "name": "location-pin",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/location-pin.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/lock.svg",
+      "name": "lock",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/lock.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/login.svg",
+      "name": "login",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/login.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/logout.svg",
+      "name": "logout",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/logout.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/magic-wand.svg",
+      "name": "magic-wand",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/magic-wand.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/mail.svg",
+      "name": "mail",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/mail.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/mail-gift.svg",
+      "name": "mail-gift",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/mail-gift.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/mail-open.svg",
+      "name": "mail-open",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/mail-open.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/mail-surprise.svg",
+      "name": "mail-surprise",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/mail-surprise.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/map.svg",
+      "name": "map",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/map.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/maximize.svg",
+      "name": "maximize",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/maximize.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/megaphone.svg",
+      "name": "megaphone",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/megaphone.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/menu.svg",
+      "name": "menu",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/menu.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/menu-2.svg",
+      "name": "menu-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/menu-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/message.svg",
+      "name": "message",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/message.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/message-2.svg",
+      "name": "message-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/message-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/mic.svg",
+      "name": "mic",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/mic.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/mic-2.svg",
+      "name": "mic-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/mic-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/minimize.svg",
+      "name": "minimize",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/minimize.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/move.svg",
+      "name": "move",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/move.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/music.svg",
+      "name": "music",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/music.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/music-2.svg",
+      "name": "music-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/music-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/music-3.svg",
+      "name": "music-3",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/music-3.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/mute.svg",
+      "name": "mute",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/mute.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/navigation.svg",
+      "name": "navigation",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/navigation.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/navigation-2.svg",
+      "name": "navigation-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/navigation-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/note.svg",
+      "name": "note",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/note.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/paint-bucket.svg",
+      "name": "paint-bucket",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/paint-bucket.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/paper-clip.svg",
+      "name": "paper-clip",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/paper-clip.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/paper-clip-2.svg",
+      "name": "paper-clip-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/paper-clip-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/paste.svg",
+      "name": "paste",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/paste.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/pause.svg",
+      "name": "pause",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/pause.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/pen.svg",
+      "name": "pen",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/pen.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/pen-tool.svg",
+      "name": "pen-tool",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/pen-tool.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/pencil.svg",
+      "name": "pencil",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/pencil.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/pencil-2.svg",
+      "name": "pencil-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/pencil-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/pencil-3.svg",
+      "name": "pencil-3",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/pencil-3.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/pencil-ruler.svg",
+      "name": "pencil-ruler",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/pencil-ruler.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/phone.svg",
+      "name": "phone",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/phone.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/phone-setting.svg",
+      "name": "phone-setting",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/phone-setting.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/photo.svg",
+      "name": "photo",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/photo.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/pie.svg",
+      "name": "pie",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/pie.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/pin.svg",
+      "name": "pin",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/pin.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/play.svg",
+      "name": "play",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/play.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/puzzle.svg",
+      "name": "puzzle",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/puzzle.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/puzzle-2.svg",
+      "name": "puzzle-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/puzzle-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/question.svg",
+      "name": "question",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/question.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/question-2.svg",
+      "name": "question-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/question-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/record.svg",
+      "name": "record",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/record.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/rectangle.svg",
+      "name": "rectangle",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/rectangle.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/right-align.svg",
+      "name": "right-align",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/right-align.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/right-align-2.svg",
+      "name": "right-align-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/right-align-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/rss.svg",
+      "name": "rss",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/rss.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/ruler.svg",
+      "name": "ruler",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/ruler.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/scan.svg",
+      "name": "scan",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/scan.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/search.svg",
+      "name": "search",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/search.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/send.svg",
+      "name": "send",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/send.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/send-2.svg",
+      "name": "send-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/send-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/send-3.svg",
+      "name": "send-3",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/send-3.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/server.svg",
+      "name": "server",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/server.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/setting.svg",
+      "name": "setting",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/setting.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/setting-2.svg",
+      "name": "setting-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/setting-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/setting-3.svg",
+      "name": "setting-3",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/setting-3.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/shape.svg",
+      "name": "shape",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/shape.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/shield.svg",
+      "name": "shield",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/shield.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/shield-2.svg",
+      "name": "shield-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/shield-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/shuffle.svg",
+      "name": "shuffle",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/shuffle.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/signal.svg",
+      "name": "signal",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/signal.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/speaker.svg",
+      "name": "speaker",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/speaker.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/square.svg",
+      "name": "square",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/square.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/star.svg",
+      "name": "star",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/star.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/stopwatch.svg",
+      "name": "stopwatch",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/stopwatch.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/suitcase.svg",
+      "name": "suitcase",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/suitcase.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/sun.svg",
+      "name": "sun",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/sun.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/sun-2.svg",
+      "name": "sun-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/sun-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/sun-3.svg",
+      "name": "sun-3",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/sun-3.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/sun-4.svg",
+      "name": "sun-4",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/sun-4.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/switch.svg",
+      "name": "switch",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/switch.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/switch-1.svg",
+      "name": "switch-1",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/switch-1.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/sync.svg",
+      "name": "sync",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/sync.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/tablet.svg",
+      "name": "tablet",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/tablet.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/target.svg",
+      "name": "target",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/target.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/target-2.svg",
+      "name": "target-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/target-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/thumbs-up.svg",
+      "name": "thumbs-up",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/thumbs-up.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/tick.svg",
+      "name": "tick",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/tick.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/tick-2.svg",
+      "name": "tick-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/tick-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/transform.svg",
+      "name": "transform",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/transform.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/tree.svg",
+      "name": "tree",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/tree.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/tree-2.svg",
+      "name": "tree-2",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/tree-2.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/trophy.svg",
+      "name": "trophy",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/trophy.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/unhide.svg",
+      "name": "unhide",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/unhide.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/unlink.svg",
+      "name": "unlink",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/unlink.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/upload.svg",
+      "name": "upload",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/upload.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/user.svg",
+      "name": "user",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/user.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/user-add.svg",
+      "name": "user-add",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/user-add.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/user-caution.svg",
+      "name": "user-caution",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/user-caution.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/user-delete.svg",
+      "name": "user-delete",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/user-delete.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/user-female.svg",
+      "name": "user-female",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/user-female.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/user-male.svg",
+      "name": "user-male",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/user-male.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/user-remove.svg",
+      "name": "user-remove",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/user-remove.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/video-camera.svg",
+      "name": "video-camera",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/video-camera.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/volume-down.svg",
+      "name": "volume-down",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/volume-down.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/volume-up.svg",
+      "name": "volume-up",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/volume-up.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/zap.svg",
+      "name": "zap",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/zap.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/zoom-in.svg",
+      "name": "zoom-in",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/zoom-in.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/zoom-out.svg",
+      "name": "zoom-out",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/zoom-out.svg"
+    },
+    {
+      "path": "/icons/SVG/interface/zoom-out-1.svg",
+      "name": "zoom-out-1",
+      "category": "interface",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/interface/zoom-out-1.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/apple.svg",
+      "name": "apple",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/apple.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/behance.svg",
+      "name": "behance",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/behance.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/codepen.svg",
+      "name": "codepen",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/codepen.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/dribbble.svg",
+      "name": "dribbble",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/dribbble.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/dropbox.svg",
+      "name": "dropbox",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/dropbox.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/facebook.svg",
+      "name": "facebook",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/facebook.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/facebook-2.svg",
+      "name": "facebook-2",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/facebook-2.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/fb-messenger.svg",
+      "name": "fb-messenger",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/fb-messenger.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/google.svg",
+      "name": "google",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/google.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/instagram.svg",
+      "name": "instagram",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/instagram.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/linkedin.svg",
+      "name": "linkedin",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/linkedin.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/paypal.svg",
+      "name": "paypal",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/paypal.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/pinterest.svg",
+      "name": "pinterest",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/pinterest.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/product hunt.svg",
+      "name": "product hunt",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/product hunt.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/skype.svg",
+      "name": "skype",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/skype.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/snapchat.svg",
+      "name": "snapchat",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/snapchat.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/spotify.svg",
+      "name": "spotify",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/spotify.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/tik tok.svg",
+      "name": "tik tok",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/tik tok.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/tumblr.svg",
+      "name": "tumblr",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/tumblr.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/twitch.svg",
+      "name": "twitch",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/twitch.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/twitter.svg",
+      "name": "twitter",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/twitter.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/uber.svg",
+      "name": "uber",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/uber.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/webflow.svg",
+      "name": "webflow",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/webflow.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/whatsapp.svg",
+      "name": "whatsapp",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/whatsapp.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/windows.svg",
+      "name": "windows",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/windows.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/y-combinator.svg",
+      "name": "y-combinator",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/y-combinator.svg"
+    },
+    {
+      "path": "/icons/SVG/logos/youtube.svg",
+      "name": "youtube",
+      "category": "logos",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/logos/youtube.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/automation.svg",
+      "name": "automation",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/automation.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/bot.svg",
+      "name": "bot",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/bot.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/bug.svg",
+      "name": "bug",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/bug.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/bus.svg",
+      "name": "bus",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/bus.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/car.svg",
+      "name": "car",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/car.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/chip.svg",
+      "name": "chip",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/chip.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/coffee-cup-1.svg",
+      "name": "coffee-cup-1",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/coffee-cup-1.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/coffee-cup-2.svg",
+      "name": "coffee-cup-2",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/coffee-cup-2.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/fire.svg",
+      "name": "fire",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/fire.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/hot-air-balloon.svg",
+      "name": "hot-air-balloon",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/hot-air-balloon.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/plane.svg",
+      "name": "plane",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/plane.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/rocket.svg",
+      "name": "rocket",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/rocket.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/satellite.svg",
+      "name": "satellite",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/satellite.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/server.svg",
+      "name": "server",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/server.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/ship.svg",
+      "name": "ship",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/ship.svg"
+    },
+    {
+      "path": "/icons/SVG/misc/trophy.svg",
+      "name": "trophy",
+      "category": "misc",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/misc/trophy.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/anchor.svg",
+      "name": "anchor",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/anchor.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/balloon.svg",
+      "name": "balloon",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/balloon.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/balloon-2.svg",
+      "name": "balloon-2",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/balloon-2.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/camera.svg",
+      "name": "camera",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/camera.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/crown.svg",
+      "name": "crown",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/crown.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/flashlight.svg",
+      "name": "flashlight",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/flashlight.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/frame.svg",
+      "name": "frame",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/frame.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/guitar.svg",
+      "name": "guitar",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/guitar.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/movie-clapper.svg",
+      "name": "movie-clapper",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/movie-clapper.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/paint-brush.svg",
+      "name": "paint-brush",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/paint-brush.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/paint-brush-2.svg",
+      "name": "paint-brush-2",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/paint-brush-2.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/paint-bucket.svg",
+      "name": "paint-bucket",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/paint-bucket.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/paint-roller.svg",
+      "name": "paint-roller",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/paint-roller.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/sofa.svg",
+      "name": "sofa",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/sofa.svg"
+    },
+    {
+      "path": "/icons/SVG/objects/tv.svg",
+      "name": "tv",
+      "category": "objects",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/objects/tv.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/Vector.svg",
+      "name": "Vector",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/Vector.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/cloudy-day.svg",
+      "name": "cloudy-day",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/cloudy-day.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/cloudy-night.svg",
+      "name": "cloudy-night",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/cloudy-night.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/night.svg",
+      "name": "night",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/night.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/rain-heavy.svg",
+      "name": "rain-heavy",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/rain-heavy.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/rain-light.svg",
+      "name": "rain-light",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/rain-light.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/snow.svg",
+      "name": "snow",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/snow.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/snowflake.svg",
+      "name": "snowflake",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/snowflake.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/snowman.svg",
+      "name": "snowman",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/snowman.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/sunny.svg",
+      "name": "sunny",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/sunny.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/thunderstorm.svg",
+      "name": "thunderstorm",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/thunderstorm.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/tornado.svg",
+      "name": "tornado",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/tornado.svg"
+    },
+    {
+      "path": "/icons/SVG/weather/wind.svg",
+      "name": "wind",
+      "category": "weather",
+      "fullPath": "/Users/danieldevos/Documents/ALT F AWESOME/lijfrente-react/frontend/public/icons/SVG/weather/wind.svg"
+    }
+  ],
+  "total": 451,
+  "categories": [
+    "arrows",
+    "currency",
+    "e-commerce",
+    "emojis",
+    "files",
+    "finance",
+    "food",
+    "gender symbols",
+    "hand gestures",
+    "health",
+    "interface",
+    "logos",
+    "misc",
+    "objects",
+    "weather"
+  ]
+}

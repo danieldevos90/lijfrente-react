@@ -8,7 +8,8 @@
   "options": {},
   "attributes": {
     "iconPath": {
-      "type": "string",
+      "type": "customField",
+      "customField": "plugin::icon-selector.icon-selector",
       "required": true,
       "description": "Icon SVG path"
     },

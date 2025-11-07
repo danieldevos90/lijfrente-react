@@ -28,7 +28,8 @@
       "default": "default"
     },
     "iconPath": {
-      "type": "string",
+      "type": "customField",
+      "customField": "plugin::icon-selector.icon-selector",
       "description": "Optional icon path"
     },
     "icons": {
