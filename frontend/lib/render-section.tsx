@@ -16,33 +16,37 @@ import FeatureShowcase from '../components/sections/FeatureShowcase';
 import TwoColumnSupport from '../components/TwoColumnSupport';
 
 export function renderSection(section: StrapiSection, index: number) {
-  switch (section.__component) {
+  // Handle Strapi v4 nested attributes structure if needed
+  const sectionData = (section as any).attributes || section;
+  
+  switch (sectionData.__component) {
     case 'sections.hero-section':
       // Use SubpageHero for subpage heroes (gradient variant without backgroundImage)
-      const isSubpageHero = section.variant === 'gradient' && !section.backgroundImage;
+      const isSubpageHero = sectionData.variant === 'gradient' && !sectionData.backgroundImage;
       
       if (isSubpageHero) {
         // Use first icon from icons array or iconPath for SubpageHero
-        const iconPath = section.icons && section.icons.length > 0 
-          ? section.icons[0] 
-          : section.iconPath;
+        const iconPath = sectionData.icons && sectionData.icons.length > 0 
+          ? sectionData.icons[0] 
+          : sectionData.iconPath;
         
-        // Debug: log to see what we're getting
-        console.log('SubpageHero - section:', { 
-          variant: section.variant, 
-          backgroundImage: section.backgroundImage,
-          iconPath: section.iconPath,
-          icons: section.icons,
-          resolvedIconPath: iconPath
+        // Debug logging
+        console.log('SubpageHero section data:', {
+          variant: sectionData.variant,
+          backgroundImage: sectionData.backgroundImage,
+          iconPath: sectionData.iconPath,
+          icons: sectionData.icons,
+          resolvedIconPath: iconPath,
+          fullSection: sectionData
         });
         
         return (
           <SubpageHero
             key={index}
-            title={section.title || ''}
-            subtitle={section.subtitle}
+            title={sectionData.title || ''}
+            subtitle={sectionData.subtitle}
             backgroundColor="#f9f9f8"
-            iconPath={iconPath}
+            iconPath={iconPath || undefined}
           />
         );
       }
@@ -51,15 +55,15 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <HeroSection
           key={index}
-          badge={section.badge}
-          title={section.title}
-          subtitle={section.subtitle}
-          backgroundImage={section.backgroundImage}
-          variant={section.variant}
-          iconPath={section.iconPath}
-          icons={section.icons}
-          ctaLabel={section.primaryCta?.label}
-          ctaHref={section.primaryCta?.href}
+          badge={sectionData.badge}
+          title={sectionData.title}
+          subtitle={sectionData.subtitle}
+          backgroundImage={sectionData.backgroundImage}
+          variant={sectionData.variant}
+          iconPath={sectionData.iconPath}
+          icons={sectionData.icons}
+          ctaLabel={sectionData.primaryCta?.label}
+          ctaHref={sectionData.primaryCta?.href}
         />
       );
     
@@ -67,16 +71,16 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <BenefitsCarousel
           key={index}
-          benefits={section.benefits?.map(b => ({
+          benefits={sectionData.benefits?.map(b => ({
             iconPath: b.iconPath,
             title: b.title,
             desc: b.description,
             color: b.color || '#fff2b2',
             textColor: b.textColor || '#5e5515'
           })) || []}
-          title={section.title}
-          subtitle={section.subtitle}
-          backgroundColor={section.backgroundColor}
+          title={sectionData.title}
+          subtitle={sectionData.subtitle}
+          backgroundColor={sectionData.backgroundColor}
         />
       );
     
@@ -84,12 +88,12 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <FeatureSectionWrapper
           key={index}
-          title={section.title}
-          description={section.description}
-          buttonText={section.buttonText}
-          imagePath={section.imagePath}
-          imagePosition={section.imagePosition}
-          backgroundColor={section.backgroundColor}
+          title={sectionData.title}
+          description={sectionData.description}
+          buttonText={sectionData.buttonText}
+          imagePath={sectionData.imagePath}
+          imagePosition={sectionData.imagePosition}
+          backgroundColor={sectionData.backgroundColor}
         />
       );
     
@@ -97,7 +101,7 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <TestimonialsCarousel
           key={index}
-          testimonials={section.testimonials?.map(t => ({
+          testimonials={sectionData.testimonials?.map(t => ({
             name: t.name,
             role: t.role,
             text: t.text,
@@ -115,7 +119,7 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <ProcessSteps
           key={index}
-          steps={section.steps?.map(s => ({
+          steps={sectionData.steps?.map(s => ({
             number: s.number,
             title: s.title,
             description: s.description,
@@ -129,15 +133,15 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <WhyChooseSection
           key={index}
-          benefits={section.benefits?.map(b => ({
+          benefits={sectionData.benefits?.map(b => ({
             title: b.title,
             description: b.description,
             iconPath: b.iconPath,
             color: b.color || '#fff2b2',
             textColor: b.textColor || '#5e5515'
           })) || []}
-          title={section.title}
-          subtitle={section.subtitle}
+          title={sectionData.title}
+          subtitle={sectionData.subtitle}
         />
       );
     
@@ -145,13 +149,13 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <ContentSection
           key={index}
-          title={section.title}
-          content={section.content}
-          layout={section.layout}
-          variant={section.variant}
-          background={section.background}
-          ctaLabel={section.ctaLabel}
-          ctaHref={section.ctaHref}
+          title={sectionData.title}
+          content={sectionData.content}
+          layout={sectionData.layout}
+          variant={sectionData.variant}
+          background={sectionData.background}
+          ctaLabel={sectionData.ctaLabel}
+          ctaHref={sectionData.ctaHref}
         />
       );
     
@@ -159,9 +163,9 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <ServicesSection
           key={index}
-          title={section.title}
-          subtitle={section.subtitle}
-          services={section.services || []}
+          title={sectionData.title}
+          subtitle={sectionData.subtitle}
+          services={sectionData.services || []}
         />
       );
     
@@ -169,8 +173,8 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <TrustSection
           key={index}
-          badges={section.badges || []}
-          variant={section.variant}
+          badges={sectionData.badges || []}
+          variant={sectionData.variant}
         />
       );
     
@@ -178,11 +182,11 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <CTASection
           key={index}
-          title={section.title}
-          subtitle={section.subtitle}
-          ctaLabel={section.ctaLabel}
-          ctaHref={section.ctaHref}
-          background={section.background}
+          title={sectionData.title}
+          subtitle={sectionData.subtitle}
+          ctaLabel={sectionData.ctaLabel}
+          ctaHref={sectionData.ctaHref}
+          background={sectionData.background}
         />
       );
     
@@ -190,9 +194,9 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <FAQSection
           key={index}
-          title={section.title}
-          subtitle={section.subtitle}
-          faqItems={section.faqItems?.map((item, idx) => ({
+          title={sectionData.title}
+          subtitle={sectionData.subtitle}
+          faqItems={sectionData.faqItems?.map((item, idx) => ({
             id: `faq-${idx}`,
             question: item.question,
             answer: item.answer
@@ -204,8 +208,8 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <FeatureShowcase
           key={index}
-          title={section.title}
-          featureCards={section.features?.map((f, idx) => ({
+          title={sectionData.title}
+          featureCards={sectionData.features?.map((f, idx) => ({
             id: idx,
             backgroundImage: { url: '/images/placeholder.jpg' },
             badgeText: f.title || '',
@@ -218,13 +222,13 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <TwoColumnSupport
           key={index}
-          leftTitle={section.title}
-          leftDescription={section.content}
+          leftTitle={sectionData.title}
+          leftDescription={sectionData.content}
         />
       );
     
     default:
-      console.warn('Unknown section type:', section.__component);
+      console.warn('Unknown section type:', sectionData.__component);
       return null;
   }
 }
