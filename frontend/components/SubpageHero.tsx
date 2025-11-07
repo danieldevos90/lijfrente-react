@@ -23,6 +23,9 @@ export default function SubpageHero({
   backgroundImage,
   iconPath,
 }: SubpageHeroProps) {
+  // Debug: log iconPath
+  console.log('SubpageHero received iconPath:', iconPath);
+  
   return (
     <section 
       className="subpage-hero"
