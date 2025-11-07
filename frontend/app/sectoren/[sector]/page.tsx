@@ -229,7 +229,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
           textColor: (comp as any).textColor,
           buttonLabel: (comp as any).buttonLabel,
           buttonHref: (comp as any).buttonHref,
-        } as T;
+        } as unknown as T;
       }
       return comp;
     });
