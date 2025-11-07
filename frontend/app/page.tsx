@@ -1,6 +1,6 @@
 import { getPageBySlug } from '@/lib/strapi-cms';
 import { StrapiSection } from '@/types/strapi-cms';
-import TransparentHeader from '../components/TransparentHeader';
+import HeaderWithWidget from './HeaderWithWidget';
 import Footer from '../components/Footer';
 import HeroSection from '../components/sections/HeroSection';
 import BenefitsCarousel from '../components/BenefitsCarousel';
@@ -234,7 +234,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <TransparentHeader transparent={true} textColor="white" />
+      <HeaderWithWidget />
       <main>
         {sections.map((section: any, index: number) => {
           try {

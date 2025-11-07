@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Section from '../ui/Section';
+import CTASectionButton from './CTASectionButton';
 
 interface CTASectionProps {
   title: string;
