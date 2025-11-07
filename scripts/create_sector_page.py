@@ -55,21 +55,26 @@ def create_or_update_sector_page(sector_slug: str, page_data: dict):
     # Create new page
     url = f"{STRAPI_URL}/api/sector-pages"
     try:
+        print(f"📤 POST {url}")
+        print(f"📦 Payload keys: {list(page_data.get('data', {}).keys())}")
         response = requests.post(url, headers=HEADERS, json=page_data, timeout=10)
+        print(f"📥 Response status: {response.status_code}")
+        print(f"📥 Response headers: {dict(response.headers)}")
         if response.status_code == 200:
             print(f"✅ Created sector page: {sector_slug}")
             return response.json()
         else:
             print(f"❌ Failed to create sector page {sector_slug}: {response.status_code}")
-            print(f"Response: {response.text}")
+            print(f"Response: {response.text[:500]}")
             try:
                 error_data = response.json()
-                if 'error' in error_data:
-                    print(f"Error: {error_data['error']}")
+                print(f"Error JSON: {json.dumps(error_data, indent=2)}")
             except:
                 pass
     except Exception as e:
         print(f"❌ Error creating sector page {sector_slug}: {e}")
+        import traceback
+        traceback.print_exc()
     return None
 
 def create_horeca_sector_page():
