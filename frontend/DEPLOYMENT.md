@@ -64,7 +64,7 @@ Set these in Vercel Dashboard (Settings → Environment Variables):
 | `NEXT_PUBLIC_PASSWORD_PROTECTION` | `true` or `false` | Enable/disable password protection |
 | `SITE_PASSWORD` | Your password | The password users must enter |
 | `NEXT_PUBLIC_BASE_URL` | Your domain | Your site's URL |
-| `RESEND_API_KEY` | `re_9XLWRyjd_4bro1ivbtMb8K9GwDSiJL225` | Resend API key for contact form emails |
+| `RESEND_API_KEY` | `your_resend_api_key_here` | Resend API key for contact form emails (get from resend.com) |
 | `RESEND_FROM_EMAIL` | `hello@geldgeregeld.nl` | Email address to send from (must be verified in Resend) |
 | `CONTACT_EMAIL` | `info@geldgeregeld.nl` | Email address to receive contact form submissions |
 
@@ -99,12 +99,24 @@ Or remove the environment variable entirely.
 - Verify `SITE_PASSWORD` environment variable is set correctly
 - Check for extra spaces in the environment variable value
 
+## Security Notes
+
+⚠️ **IMPORTANT: Never commit API keys or secrets to git!**
+
+- All sensitive credentials (API keys, passwords) must be set as environment variables in Vercel
+- The `.env` files are already in `.gitignore` and will not be committed
+- If you accidentally commit a secret, immediately:
+  1. Rotate/regenerate the API key in the service provider
+  2. Remove it from git history using `git filter-branch` or BFG Repo-Cleaner
+  3. Update the environment variable in Vercel with the new key
+
 ## Contact Form Setup
 
 The contact form uses Resend for sending emails. Make sure to configure these environment variables in Vercel:
 
 1. **RESEND_API_KEY** - Your Resend API key
-   - Value: `re_9XLWRyjd_4bro1ivbtMb8K9GwDSiJL225`
+   - Get your API key from [Resend Dashboard](https://resend.com/api-keys)
+   - **Never commit this key to git** - only set it in Vercel environment variables
    - Required for the contact form to work
 
 2. **RESEND_FROM_EMAIL** - Email address to send from
@@ -121,7 +133,7 @@ The contact form uses Resend for sending emails. Make sure to configure these en
 1. Go to your Vercel project dashboard
 2. Navigate to **Settings** → **Environment Variables**
 3. Add the following variables:
-   - `RESEND_API_KEY` = `re_9XLWRyjd_4bro1ivbtMb8K9GwDSiJL225`
+   - `RESEND_API_KEY` = `your_resend_api_key_here` (get from resend.com)
    - `RESEND_FROM_EMAIL` = `hello@geldgeregeld.nl`
    - `CONTACT_EMAIL` = `info@geldgeregeld.nl` (optional)
 4. Make sure to set them for **Production**, **Preview**, and **Development** environments as needed
