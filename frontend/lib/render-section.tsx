@@ -175,7 +175,13 @@ export function renderSection(section: StrapiSection, index: number) {
       return (
         <TrustSection
           key={index}
-          badges={sectionData.badges || []}
+          badges={sectionData.badges?.map(b => ({
+            icon: b.icon,
+            text: b.text,
+            description: b.description,
+            color: b.color,
+            textColor: b.textColor,
+          })) || []}
           variant={sectionData.variant}
         />
       );

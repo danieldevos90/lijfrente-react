@@ -7,6 +7,9 @@ interface TrustSectionProps {
   badges: Array<{
     icon: string;
     text: string;
+    description?: string;
+    color?: string;
+    textColor?: string;
   }>;
   variant?: 'default' | 'centered' | 'compact';
 }
