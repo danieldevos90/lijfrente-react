@@ -62,5 +62,17 @@
   - zakelijke lening rente — `/rente/zakelijke-lening-rente` (prio 0)
 - **Werkkapitaal**: `/werkkapitaal/`
   - werkkapitaal — `/werkkapitaal/werkkapitaal` (prio 1)
+- **Sectoren**: `/sectoren/`
+  - sectoren — `/sectoren` (prio 1)
+  - horeca — `/sectoren/horeca` (prio 1)
+  - retail — `/sectoren/retail` (prio 1)
+  - transport — `/sectoren/transport` (prio 1)
+  - bouw — `/sectoren/bouw` (prio 1)
+  - ecommerce — `/sectoren/ecommerce` (prio 1)
+  - zorg — `/sectoren/zorg` (prio 1)
+  - consultants — `/sectoren/consultants` (prio 1)
+  - schoonmaak — `/sectoren/schoonmaak` (prio 1)
+  - automotive — `/sectoren/automotive` (prio 1)
+  - productie — `/sectoren/productie` (prio 1)
 
 
