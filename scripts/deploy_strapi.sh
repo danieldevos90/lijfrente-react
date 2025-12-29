@@ -9,8 +9,8 @@ echo ""
 echo "Note: You may need to login to Strapi Cloud first if not already authenticated"
 echo ""
 
-# Run deploy command
-npm run deploy
+# Run deploy command with --force to bypass confirmation
+npx strapi deploy --force
 
 echo ""
 echo "✅ Deployment initiated!"
