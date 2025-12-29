@@ -4,4 +4,4 @@
 
 import { factories } from '@strapi/strapi';
 
-export default factories.createCoreController('api::sector-page.sector-page');
+export default factories.createCoreController('api::sector-page.sector-page' as any);
