@@ -14,19 +14,16 @@ import CTASection from '../../../components/sections/CTASection';
 const StickyCTA = dynamic(() => import('../../../components/StickyCTA'), { ssr: false });
 
 async function fetchSite(siteId: string) {
-  const base = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const token = process.env.STRAPI_API_TOKEN;
-  if (!base || !token) return null;
+  // Use API route to proxy Strapi request (server-side only)
   try {
-    const res = await fetch(`${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}`, {
-      headers: { Authorization: `Bearer ${token}` },
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const res = await fetch(`${baseUrl}/api/strapi/sites?siteId=${encodeURIComponent(siteId)}`, {
       next: { revalidate: 60 },
     });
     if (!res.ok) {
-      // Don't try to parse JSON if response is not OK
       return null;
     }
-    const json = await res.json().catch(() => null);
+    const json = await res.json().catch(() => ({ data: null }));
     return json?.data?.[0] ?? null;
   } catch (error) {
     // Silently return null on error - prevent unhandled promise rejection
