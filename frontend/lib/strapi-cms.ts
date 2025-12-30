@@ -45,6 +45,7 @@ async function fetchStrapi<T>(
   options: FetchOptions = {}
 ): Promise<T> {
   const url = `${STRAPI_URL}/api${endpoint}`;
+  const isDev = process.env.NODE_ENV === 'development';
   
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
@@ -52,6 +53,15 @@ async function fetchStrapi<T>(
 
   if (STRAPI_API_TOKEN) {
     headers.Authorization = `Bearer ${STRAPI_API_TOKEN}`;
+  }
+
+  if (isDev) {
+    console.log('[fetchStrapi] DEBUG:', {
+      endpoint,
+      url,
+      hasToken: !!STRAPI_API_TOKEN,
+      tokenLength: STRAPI_API_TOKEN?.length || 0,
+    });
   }
 
   try {
@@ -69,28 +79,72 @@ async function fetchStrapi<T>(
       fetchOptions.cache = options.cache;
     }
     
+    if (isDev) {
+      console.log('[fetchStrapi] Making request to:', url);
+    }
+    
     const response = await fetch(url, fetchOptions);
+
+    if (isDev) {
+      console.log('[fetchStrapi] Response:', {
+        status: response.status,
+        statusText: response.statusText,
+        ok: response.ok,
+      });
+    }
 
     if (!response.ok) {
       // Don't throw on 404 or 401, return null instead for graceful fallback
       if (response.status === 404) {
+        if (isDev) {
+          console.log('[fetchStrapi] 404 - returning null');
+        }
         return null as T;
       }
       
       // Handle 401 errors gracefully - don't throw, just return null
-      // Never log 401 errors to avoid client console noise
       if (response.status === 401) {
-        // Silently return null - no logging at all
+        if (isDev) {
+          const errorText = await response.text().catch(() => 'Could not read error');
+          console.error('[fetchStrapi] 401 ERROR:', {
+            endpoint,
+            url,
+            errorBody: errorText.substring(0, 200),
+            hasToken: !!STRAPI_API_TOKEN,
+            tokenLength: STRAPI_API_TOKEN?.length || 0,
+          });
+        }
         return null as T;
       }
       
       // For other errors, silently return null for graceful fallback
-      // No logging to avoid client console errors
+      if (isDev) {
+        console.warn('[fetchStrapi] Error response:', {
+          status: response.status,
+          statusText: response.statusText,
+          endpoint,
+        });
+      }
       return null as T;
     }
 
-    return response.json();
-  } catch (error) {
+    const data = await response.json();
+    if (isDev) {
+      console.log('[fetchStrapi] Success:', {
+        endpoint,
+        hasData: !!data,
+      });
+    }
+    return data;
+  } catch (error: any) {
+    if (isDev) {
+      console.error('[fetchStrapi] Exception:', {
+        endpoint,
+        errorName: error?.name,
+        errorMessage: error?.message,
+        errorStack: error?.stack?.substring(0, 200),
+      });
+    }
     // Silently return null - no logging to avoid client console errors
     // All errors are handled gracefully with fallback content
     return null as T;

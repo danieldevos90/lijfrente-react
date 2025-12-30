@@ -193,9 +193,26 @@ async function fetchRelatedSectorPages(currentSector: string) {
 
 export default async function SectorPage({ params }: { params: { sector: string } }) {
   const { sector } = params;
+  const isDev = process.env.NODE_ENV === 'development';
+  
+  if (isDev) {
+    console.log('[SectorPage] Starting fetch for sector:', sector, 'siteId:', SITE_ID);
+    console.log('[SectorPage] Environment:', {
+      hasStrapiUrl: !!process.env.NEXT_PUBLIC_STRAPI_URL,
+      hasStrapiToken: !!process.env.STRAPI_API_TOKEN,
+    });
+  }
+  
   const sectorPage = await getSectorPage(sector, SITE_ID, {
     next: { revalidate: 3600 }
   });
+  
+  if (isDev) {
+    console.log('[SectorPage] Result:', {
+      hasSectorPage: !!sectorPage,
+      hasAttributes: !!sectorPage?.attributes,
+    });
+  }
   
   const sectorInfo = SECTOR_INFO[sector];
   
