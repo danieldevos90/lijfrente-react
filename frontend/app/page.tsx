@@ -20,8 +20,7 @@ export default async function HomePage() {
       page = await getPageBySlug('home-geldgeregeld', SITE_ID);
     }
   } catch (e) {
-    // Silently fallback - error already logged in getPageBySlug
-    console.warn('Strapi fetch failed, using fallback content');
+    // Silently fallback - no logging to prevent console errors
   }
   
   // Handle both Strapi v4 (attributes) and v5 (flat) response structures

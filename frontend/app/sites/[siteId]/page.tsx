@@ -18,20 +18,36 @@ async function fetchSite(siteId: string) {
   // In server components, we can use the Strapi API directly with proper error handling
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
   const token = process.env.STRAPI_API_TOKEN;
-  if (!base || !token) return null;
+  
+  // Early return if token is missing - prevents 401 attempts
+  if (!base || !token) {
+    return null;
+  }
+  
   try {
+    // Use AbortController to handle timeouts and prevent hanging requests
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+    
     const res = await fetch(`${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}&populate=*`, {
       headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 60 },
-      // Suppress errors from being exposed
-    });
+      signal: controller.signal,
+    }).finally(() => clearTimeout(timeoutId));
+    
     if (!res.ok) {
+      // Don't log or throw - just return null
       return null;
     }
+    
     const json = await res.json().catch(() => ({ data: null }));
     return json?.data?.[0] ?? null;
-  } catch (error) {
-    // Silently return null on error - prevent unhandled promise rejection
+  } catch (error: any) {
+    // Suppress all errors - including AbortError, network errors, etc.
+    // Don't log anything to prevent console noise
+    if (error.name === 'AbortError') {
+      return null;
+    }
     return null;
   }
 }
