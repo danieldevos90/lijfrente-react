@@ -23,9 +23,7 @@ export default function SubpageHero({
   backgroundImage,
   iconPath,
 }: SubpageHeroProps) {
-  // Debug: log what we received
-  console.log('SubpageHero received iconPath:', iconPath);
-  console.log('SubpageHero props:', { title, subtitle, iconPath, backgroundColor });
+  // Removed debug logs to prevent console noise
   
   return (
     <section 
@@ -69,8 +67,9 @@ export default function SubpageHero({
                 style={{
                   objectFit: 'contain',
                 }}
+                unoptimized={iconPath?.includes('strapiapp.com') || iconPath?.startsWith('http')}
                 onError={(e) => {
-                  console.error('Failed to load icon:', iconPath);
+                  // Silently hide icon on error
                   e.currentTarget.style.display = 'none';
                 }}
               />
