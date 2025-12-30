@@ -2,6 +2,10 @@
  * Strapi CMS API Utilities
  * Helper functions for fetching data from Strapi CMS
  * 
+ * ⚠️ IMPORTANT: These functions are SERVER-ONLY.
+ * Do NOT import or use these functions in client components ("use client").
+ * For client components, use API routes (e.g., /api/strapi/*) instead.
+ * 
  * @see /cms/STRAPI_CMS_GUIDE.md for API documentation
  */
 
@@ -44,6 +48,17 @@ async function fetchStrapi<T>(
   endpoint: string,
   options: FetchOptions = {}
 ): Promise<T> {
+  // Prevent client-side usage - STRAPI_API_TOKEN is not available in browser
+  if (typeof window !== 'undefined') {
+    const isDev = process.env.NODE_ENV === 'development';
+    if (isDev) {
+      console.error('[fetchStrapi] ERROR: Called from client-side! This function is server-only.');
+      console.error('[fetchStrapi] Use API routes (e.g., /api/strapi/*) for client components.');
+    }
+    // Return null instead of making the call
+    return null as T;
+  }
+  
   const url = `${STRAPI_URL}/api${endpoint}`;
   const isDev = process.env.NODE_ENV === 'development';
   
