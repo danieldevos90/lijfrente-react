@@ -1,4 +1,5 @@
 import type { Core } from '@strapi/strapi';
+import { seedSectorPages } from './bootstrap/seed-sector-pages';
 
 export default {
   /**
@@ -97,6 +98,13 @@ export default {
       }
     } catch (e) {
       strapi.log.warn('Failed to ensure Public role permissions');
+    }
+
+    // Seed sector pages
+    try {
+      await seedSectorPages(strapi);
+    } catch (e) {
+      strapi.log.warn('Failed to seed sector pages');
     }
   },
 };
