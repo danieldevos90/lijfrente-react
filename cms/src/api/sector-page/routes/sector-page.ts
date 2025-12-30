@@ -1,5 +1,6 @@
 /**
  * sector-page router
+ * Routes registered for Content API access
  */
 
 import { factories } from '@strapi/strapi';
