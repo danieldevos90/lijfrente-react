@@ -77,16 +77,17 @@ export async function searchUnsplashImages(
 /**
  * Get a random image from Unsplash based on a query
  * @param query - Search query
+ * @param useFullSize - Whether to return full-size image (default: true for use cases)
  * @returns Single Unsplash image URL or null
  */
-export async function getUnsplashImage(query: string): Promise<string | null> {
+export async function getUnsplashImage(query: string, useFullSize: boolean = true): Promise<string | null> {
   try {
     const images = await searchUnsplashImages(query, 1);
     if (images.length === 0) {
       return null;
     }
-    // Return regular size (good balance between quality and file size)
-    return images[0].urls.regular;
+    // Return full size for use cases (high quality), or regular for other uses
+    return useFullSize ? images[0].urls.full : images[0].urls.regular;
   } catch (error) {
     console.warn('[Unsplash] Error getting image for query:', query, error);
     return null;
@@ -97,14 +98,16 @@ export async function getUnsplashImage(query: string): Promise<string | null> {
  * Get multiple Unsplash images for a query
  * @param query - Search query
  * @param count - Number of images to fetch
+ * @param useFullSize - Whether to return full-size images (default: true for use cases)
  * @returns Array of image URLs
  */
 export async function getUnsplashImages(
   query: string,
-  count: number = 3
+  count: number = 3,
+  useFullSize: boolean = true
 ): Promise<string[]> {
   const images = await searchUnsplashImages(query, count);
-  return images.map((img) => img.urls.regular);
+  return images.map((img) => useFullSize ? img.urls.full : img.urls.regular);
 }
 
 /**
@@ -143,13 +146,15 @@ export const SECTOR_UNSPLASH_QUERIES: Record<string, string> = {
  * Get Unsplash image for a specific sector
  * @param sector - Sector slug
  * @param useCase - Optional use case description for more specific search
+ * @param useFullSize - Whether to return full-size image (default: true for use cases)
  * @returns Unsplash image URL or null
  */
 export async function getSectorUnsplashImage(
   sector: string,
-  useCase?: string
+  useCase?: string,
+  useFullSize: boolean = true
 ): Promise<string | null> {
   const baseQuery = SECTOR_UNSPLASH_QUERIES[sector] || sector;
   const query = useCase ? `${baseQuery} ${useCase}` : baseQuery;
-  return getUnsplashImage(query);
+  return getUnsplashImage(query, useFullSize);
 }
