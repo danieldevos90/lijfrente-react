@@ -77,38 +77,22 @@ async function fetchStrapi<T>(
         return null as T;
       }
       
-      // Handle 401 errors gracefully - don't throw, just log and return null
+      // Handle 401 errors gracefully - don't throw, just return null
+      // Never log 401 errors to avoid client console noise
       if (response.status === 401) {
-        const hasToken = !!STRAPI_API_TOKEN;
-        // Only log on server side (where STRAPI_API_TOKEN is available)
-        if (typeof window === 'undefined') {
-          console.warn('Strapi 401 Error (server-side):', {
-            url,
-            hasToken,
-            tokenLength: STRAPI_API_TOKEN?.length || 0,
-            message: hasToken 
-              ? 'The API token may be expired or invalid.'
-              : 'STRAPI_API_TOKEN environment variable is not set.'
-          });
-        }
-        // Return null instead of throwing to allow graceful fallback
+        // Silently return null - no logging at all
         return null as T;
       }
       
-      // For other errors, log but still return null for graceful fallback
-      if (typeof window === 'undefined') {
-        console.warn(`Strapi API error (server-side): ${response.status} ${response.statusText}`);
-      }
+      // For other errors, silently return null for graceful fallback
+      // No logging to avoid client console errors
       return null as T;
     }
 
     return response.json();
   } catch (error) {
-    // Only log on server side to avoid client console errors
-    if (typeof window === 'undefined') {
-      console.warn('Strapi fetch error (server-side):', error);
-    }
-    // Return null instead of throwing to allow graceful fallback
+    // Silently return null - no logging to avoid client console errors
+    // All errors are handled gracefully with fallback content
     return null as T;
   }
 }
@@ -142,7 +126,7 @@ export async function getPageBySlug(
 
     return response.data[0] || null;
   } catch (error) {
-    console.error('Error in getPageBySlug:', error);
+    // Silently return null on error
     return null;
   }
 }
@@ -225,7 +209,7 @@ export async function getNavigationItems(
 
     return deduplicated;
   } catch (error) {
-    console.error('Error fetching navigation items:', error);
+    // Silently return empty array on error
     return [];
   }
 }
@@ -254,7 +238,7 @@ export async function getFooterContent(
 
     return response.data[0];
   } catch (error) {
-    console.error('Error fetching footer content:', error);
+    // Silently return null on error
     return null;
   }
 }
@@ -299,7 +283,7 @@ export async function getTestimonial(
     );
     return response.data;
   } catch (error) {
-    console.error('Error fetching testimonial:', error);
+    // Silently return null on error
     return null;
   }
 }
@@ -462,7 +446,7 @@ export async function safeFetchStrapi<T>(
     const data = await fetchStrapi<T>(endpoint, options);
     return { data, error: null };
   } catch (error) {
-    console.error('Strapi fetch error:', error);
+    // Silently return null on error
     return {
       data: null,
       error: error instanceof Error ? error : new Error('Unknown error'),
@@ -569,7 +553,7 @@ export async function getSectorPage(
 
     return response.data[0] || null;
   } catch (error) {
-    console.error('Error in getSectorPage:', error);
+    // Silently return null on error
     return null;
   }
 }
