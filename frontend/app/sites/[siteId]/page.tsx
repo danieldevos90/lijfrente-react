@@ -25,29 +25,27 @@ async function fetchSite(siteId: string) {
   }
   
   try {
-    // Use AbortController to handle timeouts and prevent hanging requests
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-    
     const res = await fetch(`${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}&populate=*`, {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { 
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
       next: { revalidate: 60 },
-      signal: controller.signal,
-    }).finally(() => clearTimeout(timeoutId));
+    });
+    
+    // Check for auth errors first - return null without attempting to parse
+    if (res.status === 401 || res.status === 403) {
+      return null;
+    }
     
     if (!res.ok) {
-      // Don't log or throw - just return null
       return null;
     }
     
     const json = await res.json().catch(() => ({ data: null }));
     return json?.data?.[0] ?? null;
-  } catch (error: any) {
-    // Suppress all errors - including AbortError, network errors, etc.
-    // Don't log anything to prevent console noise
-    if (error.name === 'AbortError') {
-      return null;
-    }
+  } catch (error) {
+    // Completely suppress all errors
     return null;
   }
 }
