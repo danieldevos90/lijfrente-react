@@ -35,25 +35,42 @@ export default async function HomePage() {
 
   const title = pageData?.title || 'GeldGeregeld';
 
+  // Find the index of the benefits-carousel section
+  const benefitsIndex = sections.findIndex((section: any) => {
+    const sectionData = section.attributes || section;
+    return sectionData.__component === 'sections.benefits-carousel';
+  });
+
   return (
     <>
       <HeaderWithWidget />
       <main>
         {sections.map((section: any, index: number) => {
           try {
-            return renderSection(section, index);
+            const rendered = renderSection(section, index);
+            
+            // Insert SectorsPreviewSection right after benefits-carousel
+            if (index === benefitsIndex && benefitsIndex !== -1) {
+              return (
+                <>
+                  {rendered}
+                  <SectorsPreviewSection
+                    key={`sectors-${index}`}
+                    title="Financiering voor elke sector"
+                    subtitle="Ontdek hoe wij jouw branche specifiek kunnen helpen met zakelijke financiering"
+                    maxItems={6}
+                    showViewAll={true}
+                  />
+                </>
+              );
+            }
+            
+            return rendered;
           } catch (e) {
             console.error(`Error rendering section ${index}:`, e);
             return null;
           }
         })}
-        {/* Sectors Preview Section */}
-        <SectorsPreviewSection
-          title="Financiering voor elke sector"
-          subtitle="Ontdek hoe wij jouw branche specifiek kunnen helpen met zakelijke financiering"
-          maxItems={6}
-          showViewAll={true}
-        />
       </main>
       <Footer />
     </>

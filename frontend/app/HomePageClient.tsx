@@ -214,6 +214,14 @@ export default function HomePageClient() {
       {/* Benefits Carousel Section */}
       <BenefitsCarousel benefits={benefits} />
 
+      {/* Sectors Preview Section */}
+      <SectorsPreviewSection
+        title="Financiering voor elke sector"
+        subtitle="Ontdek hoe wij jouw branche specifiek kunnen helpen met zakelijke financiering"
+        maxItems={6}
+        showViewAll={true}
+      />
+
       {/* Feature Section with Image */}
       <FeatureSection 
         title="Flexibele aflossing op jouw voorwaarden"
@@ -285,14 +293,6 @@ export default function HomePageClient() {
           </button>
     </div>
       </section>
-
-      {/* Sectors Preview Section */}
-      <SectorsPreviewSection
-        title="Financiering voor elke sector"
-        subtitle="Ontdek hoe wij jouw branche specifiek kunnen helpen met zakelijke financiering"
-        maxItems={6}
-        showViewAll={true}
-      />
 
       <Footer />
 
