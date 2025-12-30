@@ -146,7 +146,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                       message.includes('Load failed') ||
                       message.includes('Could not connect') ||
                       message.includes('sites') ||
-                      message.includes('footer')) {
+                      message.includes('footer') ||
+                      message.includes('.svg') ||
+                      message.includes('404')) {
                     if (isDev) {
                       console.warn('[CONSOLE ERROR] Suppressed:', message);
                     }
