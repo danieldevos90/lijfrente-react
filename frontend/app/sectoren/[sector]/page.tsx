@@ -211,6 +211,10 @@ export default async function SectorPage({ params }: { params: { sector: string 
     console.log('[SectorPage] Result:', {
       hasSectorPage: !!sectorPage,
       hasAttributes: !!sectorPage?.attributes,
+      sectorPageKeys: sectorPage ? Object.keys(sectorPage) : [],
+      attributesKeys: sectorPage?.attributes ? Object.keys(sectorPage.attributes) : [],
+      useCases: sectorPage?.attributes?.useCases ? sectorPage.attributes.useCases.length : 0,
+      benefits: sectorPage?.attributes?.benefits ? sectorPage.attributes.benefits.length : 0,
     });
   }
   
@@ -221,7 +225,8 @@ export default async function SectorPage({ params }: { params: { sector: string 
     return notFound();
   }
 
-  const pageData = sectorPage?.attributes;
+  // Handle both Strapi v4 (attributes) and v5 (flat) response structures
+  const pageData = sectorPage?.attributes || sectorPage;
 
   // Normalize component arrays - Strapi might return them as objects or arrays
   const normalizeComponents = <T extends { title: string; description: string }>(
