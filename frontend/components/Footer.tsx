@@ -15,7 +15,10 @@ export default function Footer() {
     async function fetchFooter() {
       try {
         // Use API route instead of direct Strapi call (prevents client-side 401 errors)
-        const response = await fetch(`/api/strapi/footer?siteId=${SITE_ID}`);
+        const response = await fetch(`/api/strapi/footer?siteId=${SITE_ID}`, {
+          // Add timeout to prevent hanging
+          signal: AbortSignal.timeout(5000), // 5 second timeout
+        });
         if (!response.ok) {
           return; // Silently fail
         }
@@ -23,8 +26,9 @@ export default function Footer() {
         // Extract site data from response (same structure as getFooterContent)
         const siteData = json?.data?.[0] || null;
         setFooterData(siteData);
-      } catch (error) {
-        // Silently fail - no console errors
+      } catch (error: any) {
+        // Silently fail - suppress all errors including network errors and timeouts
+        // The error handler in layout.tsx will catch and suppress these
       }
     }
     fetchFooter();
