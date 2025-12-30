@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Linkedin } from 'lucide-react';
 import Logo from './Logo';
-import { getFooterContent } from '@/lib/strapi-cms';
 import { useWidget } from './GlobalWidgetProvider';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
@@ -15,10 +14,17 @@ export default function Footer() {
   useEffect(() => {
     async function fetchFooter() {
       try {
-        const data = await getFooterContent(SITE_ID);
-        setFooterData(data);
+        // Use API route instead of direct Strapi call (prevents client-side 401 errors)
+        const response = await fetch(`/api/strapi/footer?siteId=${SITE_ID}`);
+        if (!response.ok) {
+          return; // Silently fail
+        }
+        const json = await response.json();
+        // Extract site data from response (same structure as getFooterContent)
+        const siteData = json?.data?.[0] || null;
+        setFooterData(siteData);
       } catch (error) {
-        console.error('Error fetching footer:', error);
+        // Silently fail - no console errors
       }
     }
     fetchFooter();
