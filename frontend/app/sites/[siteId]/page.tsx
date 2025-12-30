@@ -16,17 +16,20 @@ const StickyCTA = dynamic(() => import('../../../components/StickyCTA'), { ssr: 
 async function fetchSite(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
   const token = process.env.STRAPI_API_TOKEN;
-  if (!base) return null;
+  if (!base || !token) return null;
   try {
     const res = await fetch(`${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}`, {
-      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+      headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 60 },
     });
-    if (!res.ok) return null;
-    const json = await res.json();
+    if (!res.ok) {
+      // Don't try to parse JSON if response is not OK
+      return null;
+    }
+    const json = await res.json().catch(() => null);
     return json?.data?.[0] ?? null;
   } catch (error) {
-    // Silently return null on error
+    // Silently return null on error - prevent unhandled promise rejection
     return null;
   }
 }
@@ -34,19 +37,22 @@ async function fetchSite(siteId: string) {
 async function fetchPages(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
   const token = process.env.STRAPI_API_TOKEN;
-  if (!base) return [] as any[];
+  if (!base || !token) return [] as any[];
   try {
     const res = await fetch(`${base}/api/pages?filters[siteId][$eq]=${encodeURIComponent(siteId)}&sort=title:asc`, {
-      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+      headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 60 },
     });
-    if (!res.ok) return [];
+    if (!res.ok) {
+      // Don't try to parse JSON if response is not OK
+      return [];
+    }
     const json = await res.json().catch(() => ({ data: [] }));
     const pages = Array.isArray(json?.data) ? json.data : [];
     // Filter out non-lijfrente hubs like BTW to keep focus
     return pages.filter((p: any) => typeof p?.slug === 'string' ? !p.slug.toLowerCase().startsWith('btw') : true);
   } catch (error) {
-    // Silently return empty array on error
+    // Silently return empty array on error - prevent unhandled promise rejection
     return [];
   }
 }
@@ -54,17 +60,20 @@ async function fetchPages(siteId: string) {
 async function fetchNav(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
   const token = process.env.STRAPI_API_TOKEN;
-  if (!base) return [] as any[];
+  if (!base || !token) return [] as any[];
   try {
     const res = await fetch(`${base}/api/navigation-items?filters[siteId][$eq]=${encodeURIComponent(siteId)}&sort=order:asc`, {
-      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+      headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 60 },
     });
-    if (!res.ok) return [];
+    if (!res.ok) {
+      // Don't try to parse JSON if response is not OK
+      return [];
+    }
     const json = await res.json().catch(() => ({ data: [] }));
     return Array.isArray(json?.data) ? json.data : [];
   } catch (error) {
-    // Silently return empty array on error
+    // Silently return empty array on error - prevent unhandled promise rejection
     return [];
   }
 }
@@ -72,31 +81,42 @@ async function fetchNav(siteId: string) {
 async function fetchHome(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
   const token = process.env.STRAPI_API_TOKEN;
-  if (!base) return null;
+  if (!base || !token) return null;
   try {
     const res = await fetch(`${base}/api/pages?filters[siteId][$eq]=${encodeURIComponent(siteId)}&filters[slug][$eq]=home`, {
-      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+      headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 60 },
     });
-    if (!res.ok) return null;
+    if (!res.ok) {
+      // Don't try to parse JSON if response is not OK
+      return null;
+    }
     const json = await res.json().catch(() => ({ data: [] }));
     return Array.isArray(json?.data) ? json.data[0] : null;
   } catch (error) {
-    // Silently return null on error
+    // Silently return null on error - prevent unhandled promise rejection
     return null;
   }
 }
 
 export default async function SitePage({ params }: { params: { siteId: string } }) {
-  const data = await fetchSite(params.siteId);
+  // Use Promise.allSettled to prevent unhandled promise rejections
+  const [siteResult, pagesResult, navResult, homeResult] = await Promise.allSettled([
+    fetchSite(params.siteId),
+    fetchPages(params.siteId),
+    fetchNav(params.siteId),
+    fetchHome(params.siteId),
+  ]);
+  
+  const data = siteResult.status === 'fulfilled' ? siteResult.value : null;
   // Fallback for demo site if no Strapi data
   const siteData = data || { name: 'Zakelijk Lening Project', siteId: params.siteId };
-  const pages = (await fetchPages(params.siteId)).filter((p: any) => (
+  const pages = (pagesResult.status === 'fulfilled' ? pagesResult.value : []).filter((p: any) => (
     ['zakelijke-financiering','corporate-financing','small-business-financing','werkkapitaal','veelgestelde-vragen']
       .includes((p.slug || '').toLowerCase())
   ));
-  const nav = await fetchNav(params.siteId);
-  const home = await fetchHome(params.siteId);
+  const nav = navResult.status === 'fulfilled' ? navResult.value : [];
+  const home = homeResult.status === 'fulfilled' ? homeResult.value : null;
 
   return (
     <div>

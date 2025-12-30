@@ -3,20 +3,23 @@ import type { ReactNode, CSSProperties } from 'react';
 async function fetchNav(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
   const token = process.env.STRAPI_API_TOKEN;
-  if (!base) return [] as any[];
+  if (!base || !token) return [] as any[];
   try {
     const res = await fetch(
       `${base}/api/navigation-items?filters[siteId][$eq]=${encodeURIComponent(siteId)}&sort=order:asc`,
       {
-        headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+        headers: { Authorization: `Bearer ${token}` },
         next: { revalidate: 60 },
       }
     );
-    if (!res.ok) return [];
+    if (!res.ok) {
+      // Don't try to parse JSON if response is not OK
+      return [];
+    }
     const json = await res.json().catch(() => ({ data: [] }));
     return Array.isArray(json?.data) ? json.data : [];
   } catch (error) {
-    // Silently return empty array on error
+    // Silently return empty array on error - prevent unhandled promise rejection
     return [];
   }
 }
@@ -24,20 +27,23 @@ async function fetchNav(siteId: string) {
 async function fetchTokenSet(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
   const token = process.env.STRAPI_API_TOKEN;
-  if (!base) return null;
+  if (!base || !token) return null;
   try {
     const res = await fetch(
       `${base}/api/token-sets?filters[siteId][$eq]=${encodeURIComponent(siteId)}&pagination[pageSize]=1`,
       {
-        headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+        headers: { Authorization: `Bearer ${token}` },
         next: { revalidate: 300 },
       }
     );
-    if (!res.ok) return null;
+    if (!res.ok) {
+      // Don't try to parse JSON if response is not OK
+      return null;
+    }
     const json = await res.json().catch(() => ({ data: [] }));
     return Array.isArray(json?.data) ? json.data[0] : null;
   } catch (error) {
-    // Silently return null on error
+    // Silently return null on error - prevent unhandled promise rejection
     return null;
   }
 }
