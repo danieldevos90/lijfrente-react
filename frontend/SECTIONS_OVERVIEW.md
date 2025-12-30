@@ -66,7 +66,12 @@ These sections are fully implemented and can be used in Strapi pages:
     - Component: `TwoColumnSupport`
     - Two-column layout for support content
 
-15. **`sections.contact-form`** ✅
+15. **`sections.two-blocks-section`** ✅
+    - Component: `TwoBlocksSection`
+    - Two blocks side-by-side with image and description
+    - Each block can have: image, title, description, optional button
+
+16. **`sections.contact-form`** ✅
     - Component: `ContactForm`
     - Contact form section wrapper
 
@@ -124,7 +129,7 @@ These sections are defined in Strapi types but **NOT** handled in `render-sectio
 
 ## 📊 Summary
 
-- **Total sections defined**: 16
-- **Active/Implemented**: 15
+- **Total sections defined**: 17
+- **Active/Implemented**: 16
 - **Unused/Not implemented**: 1 (`sections.animated-stats`)
 

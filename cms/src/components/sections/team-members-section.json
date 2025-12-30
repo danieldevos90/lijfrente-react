@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_team_members_sections",
+  "info": {
+    "displayName": "Team Members Section",
+    "icon": "users",
+    "description": "Display team member profiles in a grid layout"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": ["white", "gray", "blue", "dark"],
+      "default": "white"
+    },
+    "teamMemberIds": {
+      "type": "json"
+    }
+  }
+}

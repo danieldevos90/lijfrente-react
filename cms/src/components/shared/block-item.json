@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_block_items",
+  "info": {
+    "displayName": "Block Item",
+    "icon": "file-image",
+    "description": "Block with image, title, description and optional button"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonHref": {
+      "type": "string"
+    }
+  }
+}

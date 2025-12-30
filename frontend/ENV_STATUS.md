@@ -19,7 +19,8 @@ Run `vercel env ls` to see all environment variables.
 - `RESEND_FROM_EMAIL` ✅ Configured
 - `CONTACT_EMAIL` ✅ Configured
 - `NEXT_PUBLIC_SITE_ID` (if using multi-site)
-- `NEXT_PUBLIC_STRAPI_URL` (for Strapi CMS)
+- `NEXT_PUBLIC_STRAPI_URL` (for Strapi CMS) ⚠️ **MISSING - Add to Vercel**
+- `STRAPI_API_TOKEN` (for Strapi CMS) ⚠️ **MISSING - Add to Vercel**
 
 ### Optional Variables:
 - `NEXT_PUBLIC_PASSWORD_PROTECTION` (for password protection)

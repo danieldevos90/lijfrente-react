@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_two_blocks_sections",
+  "info": {
+    "displayName": "Two Blocks Section",
+    "icon": "layout-grid",
+    "description": "Two blocks side-by-side with image and description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": ["white", "gray", "blue", "dark"],
+      "default": "white"
+    },
+    "blocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.block-item"
+    }
+  }
+}

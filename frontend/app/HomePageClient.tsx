@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import TransparentHeaderClient from '../components/TransparentHeaderClient';
-import { getNavigationItems } from '@/lib/strapi-cms';
 import { StrapiNavigationItem } from '@/types/strapi-cms';
 import Footer from '../components/Footer';
 import HowItWorksBento from '../components/HowItWorksBento';
@@ -18,14 +17,22 @@ export default function HomePageClient() {
   const { openDrawer } = useWidget();
   const [navItems, setNavItems] = useState<StrapiNavigationItem[]>([]);
 
-  // Fetch navigation from Strapi client-side
+  // Fetch navigation from Strapi via API route (server-side proxy)
   useEffect(() => {
     async function fetchNav() {
       try {
-        const items = await getNavigationItems(SITE_ID);
+        const response = await fetch(`/api/strapi/navigation?siteId=${SITE_ID}`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch navigation: ${response.status}`);
+        }
+        const data = await response.json();
+        // Handle Strapi response format
+        const items = data?.data || [];
         setNavItems(items || []);
       } catch (error) {
         console.error('Error fetching navigation:', error);
+        // Fallback to empty array on error
+        setNavItems([]);
       }
     }
     fetchNav();

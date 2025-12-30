@@ -32,6 +32,50 @@ def get_existing_sector_page(sector_slug: str):
         print(f"Error fetching sector page {sector_slug}: {e}")
     return None
 
+def check_content_type_status():
+    """Check if sector-page content type exists and is accessible"""
+    print("🔍 Checking content type status...")
+    
+    # Check if we can GET the endpoint
+    url = f"{STRAPI_URL}/api/sector-pages"
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=10)
+        if response.status_code == 200:
+            print("✅ Content type endpoint exists and is accessible")
+            data = response.json()
+            count = len(data.get('data', []))
+            print(f"   Current entries: {count}")
+            return True
+        else:
+            print(f"⚠️  Content type endpoint returned: {response.status_code}")
+            print(f"   Response: {response.text[:200]}")
+            return False
+    except Exception as e:
+        print(f"❌ Error checking content type: {e}")
+        return False
+
+def check_content_type_status():
+    """Check if sector-page content type exists and is accessible"""
+    print("🔍 Checking content type status...")
+    
+    # Check if we can GET the endpoint
+    url = f"{STRAPI_URL}/api/sector-pages"
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=10)
+        if response.status_code == 200:
+            print("✅ Content type endpoint exists and is accessible")
+            data = response.json()
+            count = len(data.get('data', []))
+            print(f"   Current entries: {count}")
+            return True
+        else:
+            print(f"⚠️  Content type endpoint returned: {response.status_code}")
+            print(f"   Response: {response.text[:200]}")
+            return False
+    except Exception as e:
+        print(f"❌ Error checking content type: {e}")
+        return False
+
 def create_or_update_sector_page(sector_slug: str, page_data: dict):
     """Create or update a sector page"""
     existing = get_existing_sector_page(sector_slug)
@@ -42,20 +86,38 @@ def create_or_update_sector_page(sector_slug: str, page_data: dict):
             # Update existing page
             update_url = f"{STRAPI_URL}/api/sector-pages/{page_id}"
             try:
+                print(f"📤 PUT {update_url}")
                 update_response = requests.put(update_url, headers=HEADERS, json=page_data, timeout=10)
+                print(f"📥 Response status: {update_response.status_code}")
                 if update_response.status_code == 200:
                     print(f"✅ Updated sector page: {sector_slug}")
                     return update_response.json()
                 else:
                     print(f"⚠️ Failed to update sector page {sector_slug}: {update_response.status_code}")
-                    print(f"Response: {update_response.text}")
+                    print(f"Response: {update_response.text[:500]}")
             except Exception as e:
                 print(f"⚠️ Error updating sector page {sector_slug}: {e}")
     
-    # Create new page
+    # Try creating via Content Manager API (admin endpoint)
+    # Sometimes content needs to be created via admin API first
+    admin_url = f"{STRAPI_URL}/api/content-manager/collection-types/api::sector-page.sector-page"
+    try:
+        print(f"📤 POST {admin_url} (Admin API)")
+        admin_response = requests.post(admin_url, headers=HEADERS, json=page_data, timeout=10)
+        print(f"📥 Response status: {admin_response.status_code}")
+        if admin_response.status_code in [200, 201]:
+            print(f"✅ Created sector page via Admin API: {sector_slug}")
+            return admin_response.json()
+        else:
+            print(f"⚠️ Admin API returned: {admin_response.status_code}")
+            print(f"Response: {admin_response.text[:500]}")
+    except Exception as e:
+        print(f"⚠️ Admin API error: {e}")
+    
+    # Create new page via Content API
     url = f"{STRAPI_URL}/api/sector-pages"
     try:
-        print(f"📤 POST {url}")
+        print(f"📤 POST {url} (Content API)")
         print(f"📦 Payload keys: {list(page_data.get('data', {}).keys())}")
         response = requests.post(url, headers=HEADERS, json=page_data, timeout=10)
         print(f"📥 Response status: {response.status_code}")

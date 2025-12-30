@@ -1,0 +1,20 @@
+#!/bin/bash
+# Check Strapi Cloud deployment status
+
+echo "🔍 Checking Strapi Cloud deployment status..."
+echo ""
+echo "The deployment logs URL should be:"
+echo "https://cloud.strapi.io/projects/lijfrente-cms-0576b86ef3/deployments"
+echo ""
+echo "To check deployment status:"
+echo "1. Go to: https://cloud.strapi.io/projects"
+echo "2. Select your project: lijfrente-cms"
+echo "3. Navigate to 'Deployments' section"
+echo "4. Check the latest deployment status"
+echo ""
+echo "Alternatively, you can check via CLI:"
+echo "cd cms"
+echo "npx strapi cloud:info"
+echo ""
+echo "Or check if the API is responding:"
+echo "curl -I https://bright-smile-1f47bc9d67.strapiapp.com/api/sector-pages"

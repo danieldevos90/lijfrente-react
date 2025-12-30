@@ -16,6 +16,7 @@ import CTASection from '../components/sections/CTASection';
 import FAQSection from '../components/FAQSection';
 import FeatureShowcase from '../components/sections/FeatureShowcase';
 import TwoColumnSupport from '../components/TwoColumnSupport';
+import TwoBlocksSection from '../components/sections/TwoBlocksSection';
 
 // Contact components
 import ContactOptionsSection from '../components/ContactOptionsSection';
@@ -340,6 +341,17 @@ export function renderSection(section: StrapiSection, index: number) {
           key={index}
           leftTitle={sectionData.title}
           leftDescription={sectionData.content}
+        />
+      );
+    
+    case 'sections.two-blocks-section':
+      return (
+        <TwoBlocksSection
+          key={index}
+          title={sectionData.title}
+          subtitle={sectionData.subtitle}
+          blocks={sectionData.blocks || []}
+          backgroundColor={sectionData.backgroundColor}
         />
       );
     

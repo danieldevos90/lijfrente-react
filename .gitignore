@@ -33,3 +33,4 @@ frontend/.vercel/
 .cache/
 .ipynb_checkpoints/
 
+.vercel

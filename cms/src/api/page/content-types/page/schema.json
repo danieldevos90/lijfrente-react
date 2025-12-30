@@ -48,7 +48,9 @@
         "sections.faq-section",
         "sections.feature-showcase",
         "sections.two-column-support",
-        "sections.animated-stats"
+        "sections.two-blocks-section",
+        "sections.animated-stats",
+        "sections.team-members-section"
       ],
       "required": false
     },

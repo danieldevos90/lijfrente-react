@@ -20,6 +20,9 @@ import {
 // ============================================================================
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://bright-smile-1f47bc9d67.strapiapp.com';
+// NOTE: STRAPI_API_TOKEN should be set as an environment variable.
+// The fallback token below may be expired. Set STRAPI_API_TOKEN in your .env.local or Vercel environment variables.
+// For client-side calls, use API routes (e.g., /api/strapi/*) that proxy requests server-side.
 const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN || 'a96c4cade5ac4b12d9479f03d1bec6d0719e4f78747522f35e05b29bcba5d3571579ab84e88fd56f5d260ec5550654c61e0dba7625cfce335021d0b361c039e64d4cb24fd2e183c3e646cf5e5e037ccbb85c7ede948db96aed2319e8fdee0bcfea51cd2b97d670f57342a4f79558108f2ed57483892bca68b5cc71f35cdf1717';
 
 interface FetchOptions {
@@ -69,18 +72,42 @@ async function fetchStrapi<T>(
     const response = await fetch(url, fetchOptions);
 
     if (!response.ok) {
-      // Don't throw on 404, return null instead
+      // Don't throw on 404 or 401, return null instead for graceful fallback
       if (response.status === 404) {
         return null as T;
       }
-      throw new Error(
-        `Strapi API error: ${response.status} ${response.statusText}`
-      );
+      
+      // Handle 401 errors gracefully - don't throw, just log and return null
+      if (response.status === 401) {
+        const hasToken = !!STRAPI_API_TOKEN;
+        // Only log on server side (where STRAPI_API_TOKEN is available)
+        if (typeof window === 'undefined') {
+          console.warn('Strapi 401 Error (server-side):', {
+            url,
+            hasToken,
+            tokenLength: STRAPI_API_TOKEN?.length || 0,
+            message: hasToken 
+              ? 'The API token may be expired or invalid.'
+              : 'STRAPI_API_TOKEN environment variable is not set.'
+          });
+        }
+        // Return null instead of throwing to allow graceful fallback
+        return null as T;
+      }
+      
+      // For other errors, log but still return null for graceful fallback
+      if (typeof window === 'undefined') {
+        console.warn(`Strapi API error (server-side): ${response.status} ${response.statusText}`);
+      }
+      return null as T;
     }
 
     return response.json();
   } catch (error) {
-    console.error('Strapi fetch error:', error);
+    // Only log on server side to avoid client console errors
+    if (typeof window === 'undefined') {
+      console.warn('Strapi fetch error (server-side):', error);
+    }
     // Return null instead of throwing to allow graceful fallback
     return null as T;
   }
