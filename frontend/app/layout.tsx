@@ -33,6 +33,39 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="nl">
       <head>
+        {/* Suppress unhandled promise rejections and 401 errors immediately */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                // Suppress unhandled promise rejections for 401 errors
+                window.addEventListener('unhandledrejection', function(event) {
+                  const reason = event.reason;
+                  if (reason && (
+                    reason.message && reason.message.includes('401') ||
+                    reason.status === 401 ||
+                    reason.response && reason.response.status === 401 ||
+                    String(reason).includes('401') ||
+                    String(reason).includes('Unauthorized')
+                  )) {
+                    event.preventDefault();
+                    return false;
+                  }
+                });
+                
+                // Suppress console errors for 401s
+                const originalError = console.error;
+                console.error = function() {
+                  const message = Array.from(arguments).join(' ');
+                  if (message.includes('401') || message.includes('Unauthorized')) {
+                    return;
+                  }
+                  originalError.apply(console, arguments);
+                };
+              })();
+            `,
+          }}
+        />
         {gtmId ? (
           <>
             <script
