@@ -15,10 +15,15 @@ const StickyCTA = dynamic(() => import('../../../components/StickyCTA'), { ssr: 
 
 async function fetchSite(siteId: string) {
   // Use API route to proxy Strapi request (server-side only)
+  // In server components, we can use the Strapi API directly with proper error handling
+  const base = process.env.NEXT_PUBLIC_STRAPI_URL;
+  const token = process.env.STRAPI_API_TOKEN;
+  if (!base || !token) return null;
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    const res = await fetch(`${baseUrl}/api/strapi/sites?siteId=${encodeURIComponent(siteId)}`, {
+    const res = await fetch(`${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}&populate=*`, {
+      headers: { Authorization: `Bearer ${token}` },
       next: { revalidate: 60 },
+      // Suppress errors from being exposed
     });
     if (!res.ok) {
       return null;
