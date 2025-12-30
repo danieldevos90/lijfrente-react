@@ -113,11 +113,12 @@ export async function getUnsplashImages(
 /**
  * Get Unsplash image URL with proper attribution
  * @param image - Unsplash image object
+ * @param useFullSize - Whether to return full-size image (default: true for use cases)
  * @returns Object with image URL and attribution info
  */
-export function getUnsplashImageWithAttribution(image: UnsplashImage) {
+export function getUnsplashImageWithAttribution(image: UnsplashImage, useFullSize: boolean = true) {
   return {
-    url: image.urls.regular,
+    url: useFullSize ? image.urls.full : image.urls.regular,
     attribution: {
       photographer: image.user.name,
       username: image.user.username,
