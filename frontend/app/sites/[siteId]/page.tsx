@@ -103,12 +103,23 @@ async function fetchHome(siteId: string) {
 
 export default async function SitePage({ params }: { params: { siteId: string } }) {
   // Use Promise.allSettled to prevent unhandled promise rejections
-  const [siteResult, pagesResult, navResult, homeResult] = await Promise.allSettled([
-    fetchSite(params.siteId),
-    fetchPages(params.siteId),
-    fetchNav(params.siteId),
-    fetchHome(params.siteId),
-  ]);
+  // Add .catch() to each promise to ensure no rejections escape
+  let siteResult, pagesResult, navResult, homeResult;
+  
+  try {
+    [siteResult, pagesResult, navResult, homeResult] = await Promise.allSettled([
+      fetchSite(params.siteId).catch(() => null),
+      fetchPages(params.siteId).catch(() => []),
+      fetchNav(params.siteId).catch(() => []),
+      fetchHome(params.siteId).catch(() => null),
+    ]);
+  } catch (error) {
+    // If Promise.allSettled itself fails, use defaults
+    siteResult = { status: 'rejected' as const };
+    pagesResult = { status: 'rejected' as const };
+    navResult = { status: 'rejected' as const };
+    homeResult = { status: 'rejected' as const };
+  }
   
   const data = siteResult.status === 'fulfilled' ? siteResult.value : null;
   // Fallback for demo site if no Strapi data
