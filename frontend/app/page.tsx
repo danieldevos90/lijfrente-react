@@ -4,6 +4,7 @@ import HeaderWithWidget from './HeaderWithWidget';
 import Footer from '../components/Footer';
 import { renderSection } from '@/lib/render-section';
 import HomePageClient from './HomePageClient';
+import SectorsPreviewSection from '../components/sections/SectorsPreviewSection';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
@@ -46,6 +47,13 @@ export default async function HomePage() {
             return null;
           }
         })}
+        {/* Sectors Preview Section */}
+        <SectorsPreviewSection
+          title="Financiering voor elke sector"
+          subtitle="Ontdek hoe wij jouw branche specifiek kunnen helpen met zakelijke financiering"
+          maxItems={6}
+          showViewAll={true}
+        />
       </main>
       <Footer />
     </>

@@ -9,6 +9,12 @@ import TestimonialsCarousel from '../components/TestimonialsCarousel';
 import FeatureSection from '../components/FeatureSection';
 import { useWidget } from '../components/GlobalWidgetProvider';
 import { ArrowRight } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import SectorsPreviewSection (server component) as a client component wrapper
+const SectorsPreviewSection = dynamic(() => import('../components/sections/SectorsPreviewSection'), {
+  ssr: true,
+});
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
@@ -279,6 +285,14 @@ export default function HomePageClient() {
           </button>
     </div>
       </section>
+
+      {/* Sectors Preview Section */}
+      <SectorsPreviewSection
+        title="Financiering voor elke sector"
+        subtitle="Ontdek hoe wij jouw branche specifiek kunnen helpen met zakelijke financiering"
+        maxItems={6}
+        showViewAll={true}
+      />
 
       <Footer />
 

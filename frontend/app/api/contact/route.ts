@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only if API key is available
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return null;
+  }
+  return new Resend(apiKey);
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,6 +35,14 @@ export async function POST(request: NextRequest) {
     }
     
     // Send email using Resend
+    const resend = getResend();
+    if (!resend) {
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 503 }
+      );
+    }
+    
     const fromEmail = process.env.RESEND_FROM_EMAIL || 'hello@geldgeregeld.nl';
     const toEmail = process.env.CONTACT_EMAIL || 'info@geldgeregeld.nl';
     
