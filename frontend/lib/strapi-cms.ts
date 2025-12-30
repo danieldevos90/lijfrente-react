@@ -592,8 +592,18 @@ export async function getSectorPage(
   siteId: string,
   options?: FetchOptions
 ): Promise<StrapiSectorPage | null> {
+  const isDev = process.env.NODE_ENV === 'development';
   // Populate all fields including nested components and images
   const endpoint = `/sector-pages?filters[sectorSlug][$eq]=${sectorSlug}&filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate][image][populate]=*&populate[benefits][populate]=*`;
+  
+  if (isDev) {
+    console.log('[getSectorPage] Fetching:', {
+      sectorSlug,
+      siteId,
+      endpoint,
+      hasToken: !!STRAPI_API_TOKEN,
+    });
+  }
   
   try {
     const response = await fetchStrapi<StrapiCollectionResponse<StrapiSectorPage>>(
@@ -601,12 +611,29 @@ export async function getSectorPage(
       options
     );
 
+    if (isDev) {
+      console.log('[getSectorPage] Response:', {
+        hasResponse: !!response,
+        hasData: !!response?.data,
+        dataLength: response?.data?.length || 0,
+      });
+    }
+
     if (!response || !response.data || response.data.length === 0) {
+      if (isDev) {
+        console.log('[getSectorPage] No data found - returning null');
+      }
       return null;
     }
 
+    if (isDev) {
+      console.log('[getSectorPage] ✅ Success - found sector page');
+    }
     return response.data[0] || null;
   } catch (error) {
+    if (isDev) {
+      console.error('[getSectorPage] ❌ Exception:', error);
+    }
     // Silently return null on error
     return null;
   }
