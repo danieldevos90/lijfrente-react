@@ -2,32 +2,44 @@ import type { ReactNode, CSSProperties } from 'react';
 
 async function fetchNav(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const token = process.env.STRAPI_TOKEN;
+  const token = process.env.STRAPI_API_TOKEN;
   if (!base) return [] as any[];
-  const res = await fetch(
-    `${base}/api/navigation-items?filters[siteId][$eq]=${encodeURIComponent(siteId)}&sort=order:asc`,
-    {
-      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
-      next: { revalidate: 60 },
-    }
-  );
-  const json = await res.json().catch(() => ({ data: [] }));
-  return Array.isArray(json?.data) ? json.data : [];
+  try {
+    const res = await fetch(
+      `${base}/api/navigation-items?filters[siteId][$eq]=${encodeURIComponent(siteId)}&sort=order:asc`,
+      {
+        headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+        next: { revalidate: 60 },
+      }
+    );
+    if (!res.ok) return [];
+    const json = await res.json().catch(() => ({ data: [] }));
+    return Array.isArray(json?.data) ? json.data : [];
+  } catch (error) {
+    // Silently return empty array on error
+    return [];
+  }
 }
 
 async function fetchTokenSet(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const token = process.env.STRAPI_TOKEN;
+  const token = process.env.STRAPI_API_TOKEN;
   if (!base) return null;
-  const res = await fetch(
-    `${base}/api/token-sets?filters[siteId][$eq]=${encodeURIComponent(siteId)}&pagination[pageSize]=1`,
-    {
-      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
-      next: { revalidate: 300 },
-    }
-  );
-  const json = await res.json().catch(() => ({ data: [] }));
-  return Array.isArray(json?.data) ? json.data[0] : null;
+  try {
+    const res = await fetch(
+      `${base}/api/token-sets?filters[siteId][$eq]=${encodeURIComponent(siteId)}&pagination[pageSize]=1`,
+      {
+        headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+        next: { revalidate: 300 },
+      }
+    );
+    if (!res.ok) return null;
+    const json = await res.json().catch(() => ({ data: [] }));
+    return Array.isArray(json?.data) ? json.data[0] : null;
+  } catch (error) {
+    // Silently return null on error
+    return null;
+  }
 }
 
 function buildCssVars(tokenSet: any | null): CSSProperties {

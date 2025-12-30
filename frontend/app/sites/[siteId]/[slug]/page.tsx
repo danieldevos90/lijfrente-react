@@ -6,27 +6,39 @@ const StickyCTA = dynamic(() => import('../../../../components/StickyCTA'), { ss
 
 async function fetchPage(siteId: string, slug: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const token = process.env.STRAPI_TOKEN;
+  const token = process.env.STRAPI_API_TOKEN;
   if (!base) return null;
-  const res = await fetch(`${base}/api/pages?filters[siteId][$eq]=${encodeURIComponent(siteId)}&filters[slug][$eq]=${encodeURIComponent(slug)}`, {
-    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
-    next: { revalidate: 60 },
-  });
-  const json = await res.json().catch(() => ({ data: [] }));
-  return Array.isArray(json?.data) ? json.data[0] : null;
+  try {
+    const res = await fetch(`${base}/api/pages?filters[siteId][$eq]=${encodeURIComponent(siteId)}&filters[slug][$eq]=${encodeURIComponent(slug)}`, {
+      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return null;
+    const json = await res.json().catch(() => ({ data: [] }));
+    return Array.isArray(json?.data) ? json.data[0] : null;
+  } catch (error) {
+    // Silently return null on error
+    return null;
+  }
 }
 
 async function fetchPages(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const token = process.env.STRAPI_TOKEN;
+  const token = process.env.STRAPI_API_TOKEN;
   if (!base) return [] as any[];
-  const res = await fetch(`${base}/api/pages?filters[siteId][$eq]=${encodeURIComponent(siteId)}&sort=title:asc&pagination[pageSize]=100`, {
-    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
-    next: { revalidate: 60 },
-  });
-  const json = await res.json().catch(() => ({ data: [] }));
-  const items = Array.isArray(json?.data) ? json.data : [];
-  return items.filter((p: any) => typeof p?.slug === 'string' ? !p.slug.toLowerCase().startsWith('btw') : true);
+  try {
+    const res = await fetch(`${base}/api/pages?filters[siteId][$eq]=${encodeURIComponent(siteId)}&sort=title:asc&pagination[pageSize]=100`, {
+      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return [];
+    const json = await res.json().catch(() => ({ data: [] }));
+    const items = Array.isArray(json?.data) ? json.data : [];
+    return items.filter((p: any) => typeof p?.slug === 'string' ? !p.slug.toLowerCase().startsWith('btw') : true);
+  } catch (error) {
+    // Silently return empty array on error
+    return [];
+  }
 }
 
 export default async function Page({ params }: { params: { siteId: string, slug: string } }) {
