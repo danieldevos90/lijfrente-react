@@ -329,7 +329,7 @@ export async function seedSectorPages(strapi: Core.Strapi): Promise<void> {
     for (const [sectorSlug, sectorInfo] of Object.entries(SECTORS)) {
       try {
         // Check if sector page already exists
-        const existing = await strapi.entityService.findMany('api::sector-page.sector-page', {
+        const existing = await strapi.entityService.findMany('api::sector-page.sector-page' as any, {
           filters: {
             siteId: SITE_ID,
             sectorSlug,
@@ -349,7 +349,7 @@ export async function seedSectorPages(strapi: Core.Strapi): Promise<void> {
         const benefits = generateBenefits(sectorSlug, sectorInfo.name);
 
         // Create sector page
-        await strapi.entityService.create('api::sector-page.sector-page', {
+        await strapi.entityService.create('api::sector-page.sector-page' as any, {
           data: {
             siteId: SITE_ID,
             sectorSlug,
