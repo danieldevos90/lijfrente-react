@@ -10,6 +10,7 @@ import UseCasesSection from '../../../components/sections/UseCasesSection';
 import BenefitsCarousel from '../../../components/BenefitsCarousel';
 import CTASection from '../../../components/sections/CTASection';
 import { getStrapiImageUrl } from '@/lib/strapi-cms';
+import { getSectorUnsplashImage, getUnsplashImage } from '@/lib/unsplash';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
@@ -242,9 +243,9 @@ export default async function SectorPage({ params }: { params: { sector: string 
   }
 
   // Normalize component arrays - Strapi might return them as objects or arrays
-  const normalizeComponents = <T extends { title: string; description: string }>(
+  const normalizeComponents = async <T extends { title: string; description: string }>(
     components: T[] | undefined
-  ): T[] => {
+  ): Promise<T[]> => {
     if (!components) {
       if (isDev) {
         console.log('[SectorPage] normalizeComponents: components is null/undefined');
@@ -276,7 +277,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
       console.log('[SectorPage] normalizeComponents: processing', components.length, 'items');
     }
     
-    return components.map((comp, index) => {
+    const normalizedPromises = components.map(async (comp, index) => {
       // Handle both flat objects and nested Strapi component structure
       if (typeof comp === 'object' && comp !== null) {
         // Extract imageUrl from Strapi nested structure (image.data.attributes.url)
@@ -284,11 +285,19 @@ export default async function SectorPage({ params }: { params: { sector: string 
           ? getStrapiImageUrl((comp as any).image.data.attributes.url)
           : undefined;
         
+        // If no image from Strapi, try to get from Unsplash based on title/description
+        let imageUrl = strapiImageUrl || (comp as any).imageUrl;
+        if (!imageUrl && comp.title) {
+          // Use sector and use case title to find relevant Unsplash image
+          const unsplashImage = await getSectorUnsplashImage(sector, comp.title);
+          imageUrl = unsplashImage || undefined;
+        }
+        
         const normalized = {
           title: comp.title || '',
           description: comp.description || '',
           iconPath: (comp as any).iconPath,
-          imageUrl: strapiImageUrl || (comp as any).imageUrl,
+          imageUrl: imageUrl,
           color: (comp as any).color,
           textColor: (comp as any).textColor,
           buttonLabel: (comp as any).buttonLabel,
@@ -303,10 +312,12 @@ export default async function SectorPage({ params }: { params: { sector: string 
       }
       return comp;
     });
+    
+    return Promise.all(normalizedPromises);
   };
 
-  const useCases = normalizeComponents(pageData?.useCases);
-  const benefits = normalizeComponents(pageData?.benefits);
+  const useCases = await normalizeComponents(pageData?.useCases);
+  const benefits = await normalizeComponents(pageData?.benefits);
   
   if (isDev) {
     console.log('[SectorPage] Normalized:', {

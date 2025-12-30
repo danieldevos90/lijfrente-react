@@ -1,0 +1,150 @@
+/**
+ * Unsplash API Utilities
+ * Helper functions for fetching images from Unsplash
+ */
+
+const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
+const UNSPLASH_API_URL = 'https://api.unsplash.com';
+
+export interface UnsplashImage {
+  id: string;
+  urls: {
+    raw: string;
+    full: string;
+    regular: string;
+    small: string;
+    thumb: string;
+  };
+  alt_description?: string;
+  description?: string;
+  user: {
+    name: string;
+    username: string;
+  };
+  links: {
+    html: string;
+  };
+}
+
+export interface UnsplashSearchResponse {
+  total: number;
+  total_pages: number;
+  results: UnsplashImage[];
+}
+
+/**
+ * Search for images on Unsplash
+ * @param query - Search query (e.g., "restaurant kitchen", "construction site")
+ * @param perPage - Number of results per page (default: 10, max: 30)
+ * @returns Array of Unsplash images
+ */
+export async function searchUnsplashImages(
+  query: string,
+  perPage: number = 10
+): Promise<UnsplashImage[]> {
+  if (!UNSPLASH_ACCESS_KEY) {
+    console.warn('[Unsplash] UNSPLASH_ACCESS_KEY not set. Skipping image fetch.');
+    return [];
+  }
+
+  try {
+    const url = new URL(`${UNSPLASH_API_URL}/search/photos`);
+    url.searchParams.set('query', query);
+    url.searchParams.set('per_page', Math.min(perPage, 30).toString());
+    url.searchParams.set('orientation', 'landscape');
+    url.searchParams.set('content_filter', 'high');
+
+    const response = await fetch(url.toString(), {
+      headers: {
+        'Authorization': `Client-ID ${UNSPLASH_ACCESS_KEY}`,
+      },
+      next: { revalidate: 3600 }, // Cache for 1 hour
+    });
+
+    if (!response.ok) {
+      console.error(`[Unsplash] API error: ${response.status} ${response.statusText}`);
+      return [];
+    }
+
+    const data: UnsplashSearchResponse = await response.json();
+    return data.results || [];
+  } catch (error) {
+    console.error('[Unsplash] Error fetching images:', error);
+    return [];
+  }
+}
+
+/**
+ * Get a random image from Unsplash based on a query
+ * @param query - Search query
+ * @returns Single Unsplash image URL or null
+ */
+export async function getUnsplashImage(query: string): Promise<string | null> {
+  const images = await searchUnsplashImages(query, 1);
+  if (images.length === 0) {
+    return null;
+  }
+  // Return regular size (good balance between quality and file size)
+  return images[0].urls.regular;
+}
+
+/**
+ * Get multiple Unsplash images for a query
+ * @param query - Search query
+ * @param count - Number of images to fetch
+ * @returns Array of image URLs
+ */
+export async function getUnsplashImages(
+  query: string,
+  count: number = 3
+): Promise<string[]> {
+  const images = await searchUnsplashImages(query, count);
+  return images.map((img) => img.urls.regular);
+}
+
+/**
+ * Get Unsplash image URL with proper attribution
+ * @param image - Unsplash image object
+ * @returns Object with image URL and attribution info
+ */
+export function getUnsplashImageWithAttribution(image: UnsplashImage) {
+  return {
+    url: image.urls.regular,
+    attribution: {
+      photographer: image.user.name,
+      username: image.user.username,
+      link: image.links.html,
+    },
+  };
+}
+
+/**
+ * Sector-specific Unsplash search queries
+ */
+export const SECTOR_UNSPLASH_QUERIES: Record<string, string> = {
+  horeca: 'restaurant kitchen professional',
+  retail: 'retail store shop',
+  transport: 'truck logistics delivery',
+  bouw: 'construction building site',
+  ecommerce: 'online shopping warehouse',
+  zorg: 'healthcare medical',
+  consultants: 'business meeting office',
+  schoonmaak: 'cleaning service professional',
+  automotive: 'car repair garage automotive',
+  productie: 'factory manufacturing production',
+};
+
+/**
+ * Get Unsplash image for a specific sector
+ * @param sector - Sector slug
+ * @param useCase - Optional use case description for more specific search
+ * @returns Unsplash image URL or null
+ */
+export async function getSectorUnsplashImage(
+  sector: string,
+  useCase?: string
+): Promise<string | null> {
+  const baseQuery = SECTOR_UNSPLASH_QUERIES[sector] || sector;
+  const query = useCase ? `${baseQuery} ${useCase}` : baseQuery;
+  return getUnsplashImage(query);
+}
