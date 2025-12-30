@@ -193,7 +193,7 @@ def create_or_update_sector_page(sector_slug: str, page_data: dict):
         print(f"  📤 POST {url} (Content API)")
         response = requests.post(url, headers=HEADERS, json=page_data, timeout=30)
         print(f"  📥 Response status: {response.status_code}")
-        if response.status_code == 200:
+        if response.status_code in [200, 201]:
             print(f"  ✅ Created sector page: {sector_slug}")
             return response.json()
         else:
