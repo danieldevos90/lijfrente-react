@@ -73,7 +73,11 @@ async function fetchSite(siteId: string) {
         // Check for auth errors - resolve with null instead of rejecting
         if (res.status === 401 || res.status === 403) {
           if (isDev) {
-            console.error('[fetchSite] Auth error:', res.status, 'Response:', await res.text().catch(() => 'Could not read response'));
+            res.text().then(errorBody => {
+              console.error('[fetchSite] Auth error:', res.status, 'Response:', errorBody);
+            }).catch(() => {
+              console.error('[fetchSite] Auth error:', res.status, 'Response: Could not read response');
+            });
           }
           resolve(null);
           return;
