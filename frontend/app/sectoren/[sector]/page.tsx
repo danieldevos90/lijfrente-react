@@ -229,17 +229,18 @@ export default async function SectorPage({ params }: { params: { sector: string 
 
   // Handle both Strapi v4 (attributes) and v5 (flat) response structures
   const pageData = sectorPage?.attributes || sectorPage;
+  const pageDataAny = pageData as any; // Type assertion for flexible structure
 
   if (isDev) {
     console.log('[SectorPage] Raw pageData:', {
       hasPageData: !!pageData,
       pageDataKeys: pageData ? Object.keys(pageData) : [],
-      useCasesRaw: pageData?.useCases,
-      benefitsRaw: pageData?.benefits,
-      useCasesType: typeof pageData?.useCases,
-      benefitsType: typeof pageData?.benefits,
-      useCasesIsArray: Array.isArray(pageData?.useCases),
-      benefitsIsArray: Array.isArray(pageData?.benefits),
+      useCasesRaw: pageDataAny?.useCases,
+      benefitsRaw: pageDataAny?.benefits,
+      useCasesType: typeof pageDataAny?.useCases,
+      benefitsType: typeof pageDataAny?.benefits,
+      useCasesIsArray: Array.isArray(pageDataAny?.useCases),
+      benefitsIsArray: Array.isArray(pageDataAny?.benefits),
     });
   }
 
@@ -338,8 +339,8 @@ export default async function SectorPage({ params }: { params: { sector: string 
     return Promise.all(normalizedPromises);
   };
 
-  const useCases = await normalizeComponents(pageData?.useCases);
-  const benefits = await normalizeComponents(pageData?.benefits);
+  const useCases = await normalizeComponents(pageDataAny?.useCases);
+  const benefits = await normalizeComponents(pageDataAny?.benefits);
   
   if (isDev) {
     console.log('[SectorPage] Normalized:', {
@@ -353,8 +354,8 @@ export default async function SectorPage({ params }: { params: { sector: string 
 
   // Determine which content to use (Strapi data takes precedence, then fallback)
   // Quote: Use Strapi quote if available, otherwise fallback
-  const quoteData = pageData?.quote 
-    ? { quote: pageData.quote, author: pageData.quoteAuthor }
+  const quoteData = pageDataAny?.quote 
+    ? { quote: pageDataAny.quote, author: pageDataAny.quoteAuthor }
     : fallbackContent?.quote;
   
   // Use Cases: Use Strapi data if available and has items, otherwise fallback
@@ -362,12 +363,12 @@ export default async function SectorPage({ params }: { params: { sector: string 
   
   // Benefits: Use Strapi data if available and has items, otherwise fallback
   const finalBenefits = (benefits && benefits.length > 0) ? benefits : (fallbackContent?.benefits || []);
-  const ctaData = pageData?.ctaTitle || pageData?.ctaSubtitle 
+  const ctaData = pageDataAny?.ctaTitle || pageDataAny?.ctaSubtitle 
     ? { 
-        title: pageData.ctaTitle, 
-        subtitle: pageData.ctaSubtitle, 
-        label: pageData.ctaLabel, 
-        href: pageData.ctaHref 
+        title: pageDataAny.ctaTitle, 
+        subtitle: pageDataAny.ctaSubtitle, 
+        label: pageDataAny.ctaLabel, 
+        href: pageDataAny.ctaHref 
       }
     : fallbackContent?.cta;
 
@@ -377,11 +378,11 @@ export default async function SectorPage({ params }: { params: { sector: string 
       <main>
         {/* Hero Section - Always show SubpageHero */}
         <SubpageHero
-          title={pageData?.heroTitle || `Zakelijke financiering voor ${sectorInfo?.name || sector}`}
-          subtitle={pageData?.heroSubtitle || sectorInfo?.description || ''}
+          title={pageDataAny?.heroTitle || `Zakelijke financiering voor ${sectorInfo?.name || sector}`}
+          subtitle={pageDataAny?.heroSubtitle || sectorInfo?.description || ''}
           backgroundColor="#f9f9f8"
-          iconPath={pageData?.heroImage?.data?.attributes?.url 
-            ? getStrapiImageUrl(pageData.heroImage.data.attributes.url)
+          iconPath={pageDataAny?.heroImage?.data?.attributes?.url 
+            ? getStrapiImageUrl(pageDataAny.heroImage.data.attributes.url)
             : SECTOR_ICONS[sector] || '/icons/SVG/finance/wallet.svg'}
         />
 
@@ -396,8 +397,8 @@ export default async function SectorPage({ params }: { params: { sector: string 
         {/* Use Cases Section */}
         {finalUseCases.length > 0 && (
           <UseCasesSection
-            title={pageData?.useCasesTitle || "Waarvoor kun je de financiering gebruiken?"}
-            subtitle={pageData?.useCasesSubtitle || "Veelzijdige financieringsoplossingen voor jouw sector"}
+            title={pageDataAny?.useCasesTitle || "Waarvoor kun je de financiering gebruiken?"}
+            subtitle={pageDataAny?.useCasesSubtitle || "Veelzijdige financieringsoplossingen voor jouw sector"}
             useCases={finalUseCases}
           />
         )}
@@ -405,15 +406,15 @@ export default async function SectorPage({ params }: { params: { sector: string 
         {/* Benefits Section */}
         {finalBenefits.length > 0 && (
           <BenefitsCarousel
-            benefits={finalBenefits.map((benefit, index) => ({
+            benefits={finalBenefits.map((benefit: any, index) => ({
               iconPath: benefit.iconPath || '/icons/SVG/finance/wallet.svg',
               title: benefit.title,
               desc: benefit.description,
               color: benefit.color || (index % 2 === 0 ? '#fff2b2' : '#e4f2ff'),
               textColor: benefit.textColor || (index % 2 === 0 ? '#5e5515' : '#0f1720')
             }))}
-            title={pageData?.benefitsTitle || "Waarom kiezen voor onze financiering?"}
-            subtitle={pageData?.benefitsSubtitle || "Voordelen speciaal voor jouw sector"}
+            title={pageDataAny?.benefitsTitle || "Waarom kiezen voor onze financiering?"}
+            subtitle={pageDataAny?.benefitsSubtitle || "Voordelen speciaal voor jouw sector"}
           />
         )}
 
@@ -490,11 +491,12 @@ export async function generateMetadata({ params }: { params: { sector: string } 
   });
   const sectorInfo = SECTOR_INFO[sector];
   
-  const pageData = sectorPage?.attributes;
-  const title = pageData?.heroTitle || pageData?.sectorName || `Zakelijke financiering voor ${sectorInfo?.name || sector}`;
-  const description = pageData?.metaDescription || sectorInfo?.description || 
+  const pageData = sectorPage?.attributes || sectorPage;
+  const pageDataAny = pageData as any;
+  const title = pageDataAny?.heroTitle || pageDataAny?.sectorName || `Zakelijke financiering voor ${sectorInfo?.name || sector}`;
+  const description = pageDataAny?.metaDescription || sectorInfo?.description || 
     `Zakelijke financiering speciaal voor ${sectorInfo?.name || sector}. Snel, flexibel en zonder gedoe.`;
-  const keywords = pageData?.metaKeywords || sectorInfo?.keywords?.join(', ') || '';
+  const keywords = pageDataAny?.metaKeywords || sectorInfo?.keywords?.join(', ') || '';
 
   return {
     title: buildTitle(title),
