@@ -18,9 +18,24 @@ async function fetchSite(siteId: string) {
   // In server components, we can use the Strapi API directly with proper error handling
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;
   const token = process.env.STRAPI_API_TOKEN;
+  const isDev = process.env.NODE_ENV === 'development';
+  
+  // Debug logging for local development
+  if (isDev) {
+    console.log('[fetchSite] DEBUG:', {
+      siteId,
+      hasBase: !!base,
+      hasToken: !!token,
+      tokenLength: token?.length || 0,
+      baseUrl: base,
+    });
+  }
   
   // Early return if token is missing - prevents 401 attempts
   if (!base || !token) {
+    if (isDev) {
+      console.warn('[fetchSite] Missing base or token:', { base: !!base, token: !!token });
+    }
     return null;
   }
   
@@ -29,11 +44,20 @@ async function fetchSite(siteId: string) {
   return new Promise<any>((resolve) => {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => {
+      if (isDev) {
+        console.warn('[fetchSite] Timeout after 10 seconds');
+      }
       controller.abort();
       resolve(null); // Resolve with null on timeout
     }, 10000); // 10 second timeout
     
-    fetch(`${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}&populate=*`, {
+    const url = `${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}&populate=*`;
+    
+    if (isDev) {
+      console.log('[fetchSite] Making request to:', url);
+    }
+    
+    fetch(url, {
       headers: { 
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -43,19 +67,43 @@ async function fetchSite(siteId: string) {
     })
       .then((res) => {
         clearTimeout(timeoutId);
+        if (isDev) {
+          console.log('[fetchSite] Response status:', res.status, res.statusText);
+        }
         // Check for auth errors - resolve with null instead of rejecting
-        if (res.status === 401 || res.status === 403 || !res.ok) {
+        if (res.status === 401 || res.status === 403) {
+          if (isDev) {
+            console.error('[fetchSite] Auth error:', res.status, 'Response:', await res.text().catch(() => 'Could not read response'));
+          }
           resolve(null);
           return;
         }
-        return res.json().catch(() => ({ data: null }));
+        if (!res.ok) {
+          if (isDev) {
+            console.warn('[fetchSite] Response not OK:', res.status, res.statusText);
+          }
+          resolve(null);
+          return;
+        }
+        return res.json().catch((err) => {
+          if (isDev) {
+            console.error('[fetchSite] JSON parse error:', err);
+          }
+          return { data: null };
+        });
       })
       .then((json) => {
         clearTimeout(timeoutId);
+        if (isDev) {
+          console.log('[fetchSite] Success, data:', json?.data?.[0] ? 'Found site' : 'No site found');
+        }
         resolve(json?.data?.[0] ?? null);
       })
       .catch((error) => {
         clearTimeout(timeoutId);
+        if (isDev) {
+          console.error('[fetchSite] Fetch error:', error.name, error.message);
+        }
         // All errors resolve to null - never reject
         // This includes AbortError, network errors, etc.
         resolve(null);
