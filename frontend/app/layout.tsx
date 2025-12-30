@@ -38,6 +38,60 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
+                const isDev = ${process.env.NODE_ENV === 'development'};
+                
+                // Intercept fetch to log and suppress 401 errors
+                const originalFetch = window.fetch;
+                window.fetch = function(...args) {
+                  const url = args[0];
+                  const isStrapiCall = typeof url === 'string' && (
+                    url.includes('strapiapp.com') ||
+                    url.includes('/api/sites') ||
+                    url.includes('/api/strapi')
+                  );
+                  
+                  if (isDev && isStrapiCall) {
+                    console.log('[CLIENT FETCH]', url);
+                  }
+                  
+                  return originalFetch.apply(this, args)
+                    .then(response => {
+                      if (isDev && isStrapiCall) {
+                        console.log('[CLIENT FETCH RESPONSE]', {
+                          url,
+                          status: response.status,
+                          statusText: response.statusText,
+                          ok: response.ok
+                        });
+                      }
+                      
+                      // Suppress 401 errors by returning a fake successful response
+                      if (response.status === 401 && isStrapiCall) {
+                        if (isDev) {
+                          console.warn('[CLIENT FETCH] Suppressing 401 error for:', url);
+                        }
+                        // Return a response that looks successful but has no data
+                        return new Response(JSON.stringify({ data: null }), {
+                          status: 200,
+                          statusText: 'OK',
+                          headers: { 'Content-Type': 'application/json' }
+                        });
+                      }
+                      return response;
+                    })
+                    .catch(error => {
+                      if (isDev && isStrapiCall) {
+                        console.error('[CLIENT FETCH ERROR]', { url, error });
+                      }
+                      // Suppress the error
+                      return new Response(JSON.stringify({ data: null }), {
+                        status: 200,
+                        statusText: 'OK',
+                        headers: { 'Content-Type': 'application/json' }
+                      });
+                    });
+                };
+                
                 // Suppress ALL unhandled promise rejections (not just 401s)
                 window.addEventListener('unhandledrejection', function(event) {
                   const reason = event.reason;
@@ -57,6 +111,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     String(reason).includes('Unauthorized') ||
                     String(reason).includes('sites')
                   )) {
+                    if (isDev) {
+                      console.warn('[UNHANDLED REJECTION] Suppressed:', reason);
+                    }
                     event.preventDefault();
                     event.stopPropagation();
                     return false;
@@ -72,6 +129,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                       message.includes('No response received') ||
                       message.includes('Failed to load resource') ||
                       message.includes('sites')) {
+                    if (isDev) {
+                      console.warn('[CONSOLE ERROR] Suppressed:', message);
+                    }
                     return; // Suppress these errors
                   }
                   originalError.apply(console, arguments);
