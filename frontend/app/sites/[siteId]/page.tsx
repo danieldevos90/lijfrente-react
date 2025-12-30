@@ -24,30 +24,31 @@ async function fetchSite(siteId: string) {
     return null;
   }
   
-  try {
-    const res = await fetch(`${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}&populate=*`, {
+  // Wrap in a promise that never rejects to prevent unhandled rejections
+  return new Promise<any>((resolve) => {
+    fetch(`${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}&populate=*`, {
       headers: { 
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
       next: { revalidate: 60 },
-    });
-    
-    // Check for auth errors first - return null without attempting to parse
-    if (res.status === 401 || res.status === 403) {
-      return null;
-    }
-    
-    if (!res.ok) {
-      return null;
-    }
-    
-    const json = await res.json().catch(() => ({ data: null }));
-    return json?.data?.[0] ?? null;
-  } catch (error) {
-    // Completely suppress all errors
-    return null;
-  }
+    })
+      .then((res) => {
+        // Check for auth errors - resolve with null instead of rejecting
+        if (res.status === 401 || res.status === 403 || !res.ok) {
+          resolve(null);
+          return;
+        }
+        return res.json().catch(() => ({ data: null }));
+      })
+      .then((json) => {
+        resolve(json?.data?.[0] ?? null);
+      })
+      .catch(() => {
+        // All errors resolve to null - never reject
+        resolve(null);
+      });
+  });
 }
 
 async function fetchPages(siteId: string) {
