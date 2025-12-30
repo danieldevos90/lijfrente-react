@@ -69,6 +69,8 @@ export default {
           'api::sector-page.sector-page.findOne',
           'api::sector-page.sector-page.create',
           'api::sector-page.sector-page.update',
+          'api::team-member.team-member.find',
+          'api::team-member.team-member.findOne',
         ];
 
         const upsert = async (action: string) => {
