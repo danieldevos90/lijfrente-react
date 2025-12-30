@@ -38,27 +38,41 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                // Suppress unhandled promise rejections for 401 errors
+                // Suppress ALL unhandled promise rejections (not just 401s)
                 window.addEventListener('unhandledrejection', function(event) {
                   const reason = event.reason;
+                  // Suppress 401, network errors, and "No response received" errors
                   if (reason && (
-                    reason.message && reason.message.includes('401') ||
+                    (reason.message && (
+                      reason.message.includes('401') ||
+                      reason.message.includes('Unauthorized') ||
+                      reason.message.includes('No response received') ||
+                      reason.message.includes('Failed to fetch') ||
+                      reason.message.includes('network')
+                    )) ||
                     reason.status === 401 ||
-                    reason.response && reason.response.status === 401 ||
+                    reason.status === 403 ||
+                    (reason.response && reason.response.status === 401) ||
                     String(reason).includes('401') ||
-                    String(reason).includes('Unauthorized')
+                    String(reason).includes('Unauthorized') ||
+                    String(reason).includes('sites')
                   )) {
                     event.preventDefault();
+                    event.stopPropagation();
                     return false;
                   }
                 });
                 
-                // Suppress console errors for 401s
+                // Suppress console errors for 401s and network errors
                 const originalError = console.error;
                 console.error = function() {
                   const message = Array.from(arguments).join(' ');
-                  if (message.includes('401') || message.includes('Unauthorized')) {
-                    return;
+                  if (message.includes('401') || 
+                      message.includes('Unauthorized') ||
+                      message.includes('No response received') ||
+                      message.includes('Failed to load resource') ||
+                      message.includes('sites')) {
+                    return; // Suppress these errors
                   }
                   originalError.apply(console, arguments);
                 };

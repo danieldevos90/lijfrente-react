@@ -25,15 +25,24 @@ async function fetchSite(siteId: string) {
   }
   
   // Wrap in a promise that never rejects to prevent unhandled rejections
+  // Add timeout to prevent "No response received" errors
   return new Promise<any>((resolve) => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => {
+      controller.abort();
+      resolve(null); // Resolve with null on timeout
+    }, 10000); // 10 second timeout
+    
     fetch(`${base}/api/sites?filters[siteId][$eq]=${encodeURIComponent(siteId)}&populate=*`, {
       headers: { 
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
       next: { revalidate: 60 },
+      signal: controller.signal,
     })
       .then((res) => {
+        clearTimeout(timeoutId);
         // Check for auth errors - resolve with null instead of rejecting
         if (res.status === 401 || res.status === 403 || !res.ok) {
           resolve(null);
@@ -42,10 +51,13 @@ async function fetchSite(siteId: string) {
         return res.json().catch(() => ({ data: null }));
       })
       .then((json) => {
+        clearTimeout(timeoutId);
         resolve(json?.data?.[0] ?? null);
       })
-      .catch(() => {
+      .catch((error) => {
+        clearTimeout(timeoutId);
         // All errors resolve to null - never reject
+        // This includes AbortError, network errors, etc.
         resolve(null);
       });
   });
