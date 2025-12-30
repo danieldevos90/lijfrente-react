@@ -15,6 +15,7 @@ import {
   StrapiNavigationItem,
   StrapiTestimonial,
   StrapiTokenSet,
+  StrapiTeamMember,
   StrapiResponse,
   StrapiCollectionResponse,
 } from '@/types/strapi-cms';
@@ -520,6 +521,69 @@ export async function safeFetchStrapi<T>(
       data: null,
       error: error instanceof Error ? error : new Error('Unknown error'),
     };
+  }
+}
+
+// ============================================================================
+// TEAM MEMBER FUNCTIONS
+// ============================================================================
+
+/**
+ * Fetch all team members for a site
+ * 
+ * @example
+ * const teamMembers = await getTeamMembers('geldgeregeld');
+ */
+export async function getTeamMembers(
+  siteId: string,
+  options?: FetchOptions
+): Promise<StrapiTeamMember[]> {
+  const isDev = process.env.NODE_ENV === 'development';
+  const endpoint = `/team-members?filters[siteId][$eq]=${siteId}&populate[image][populate]=*&sort=order:asc`;
+  
+  if (isDev) {
+    console.log('[getTeamMembers] Fetching:', {
+      siteId,
+      endpoint,
+      hasToken: !!STRAPI_API_TOKEN,
+    });
+  }
+  
+  try {
+    const response = await fetchStrapi<StrapiCollectionResponse<StrapiTeamMember>>(
+      endpoint,
+      options
+    );
+
+    if (isDev) {
+      console.log('[getTeamMembers] Response:', {
+        hasResponse: !!response,
+        hasData: !!response?.data,
+        dataLength: response?.data?.length || 0,
+      });
+    }
+
+    if (!response || !response.data) {
+      return [];
+    }
+
+    // Filter out unpublished items
+    const published = response.data.filter((member) => {
+      const memberData = member.attributes || member;
+      const memberAny = memberData as any;
+      if (!memberAny.publishedAt) {
+        return true; // Include if no publishedAt (assume published)
+      }
+      return new Date(memberAny.publishedAt) <= new Date();
+    });
+
+    return published;
+  } catch (error) {
+    if (isDev) {
+      console.error('[getTeamMembers] ❌ Exception:', error);
+    }
+    // Silently return empty array on error
+    return [];
   }
 }
 

@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import { getStrapiImageUrl } from '@/lib/strapi-cms';
 
 interface TeamMember {
   name: string;
@@ -98,14 +99,20 @@ export default function TeamSection({
               }}>
                 {member.imageUrl ? (
                   <Image
-                    src={member.imageUrl}
+                    src={getStrapiImageUrl(member.imageUrl)}
                     alt={member.name}
                     fill
                     style={{
                       objectFit: 'cover',
                     }}
+                    unoptimized={member.imageUrl.includes('strapiapp.com')}
+                    onError={(e) => {
+                      // Hide image on error, show fallback
+                      e.currentTarget.style.display = 'none';
+                    }}
                   />
-                ) : (
+                ) : null}
+                {!member.imageUrl && (
                   <div style={{
                     width: '100%',
                     height: '100%',

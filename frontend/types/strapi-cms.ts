@@ -329,6 +329,30 @@ export interface StrapiLead {
   };
 }
 
+export interface StrapiTeamMember {
+  id: number;
+  attributes: {
+    siteId: string;
+    name: string;
+    role: string;
+    bio: string;
+    email?: string;
+    linkedin?: string;
+    image?: {
+      data?: {
+        attributes?: {
+          url: string;
+          alternativeText?: string;
+        };
+      };
+    };
+    order?: number;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt?: string;
+  };
+}
+
 // ============================================================================
 // API RESPONSE TYPES
 // ============================================================================
