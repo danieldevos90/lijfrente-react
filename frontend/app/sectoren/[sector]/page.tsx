@@ -228,13 +228,55 @@ export default async function SectorPage({ params }: { params: { sector: string 
   // Handle both Strapi v4 (attributes) and v5 (flat) response structures
   const pageData = sectorPage?.attributes || sectorPage;
 
+  if (isDev) {
+    console.log('[SectorPage] Raw pageData:', {
+      hasPageData: !!pageData,
+      pageDataKeys: pageData ? Object.keys(pageData) : [],
+      useCasesRaw: pageData?.useCases,
+      benefitsRaw: pageData?.benefits,
+      useCasesType: typeof pageData?.useCases,
+      benefitsType: typeof pageData?.benefits,
+      useCasesIsArray: Array.isArray(pageData?.useCases),
+      benefitsIsArray: Array.isArray(pageData?.benefits),
+    });
+  }
+
   // Normalize component arrays - Strapi might return them as objects or arrays
   const normalizeComponents = <T extends { title: string; description: string }>(
     components: T[] | undefined
   ): T[] => {
-    if (!components) return [];
-    if (!Array.isArray(components)) return [];
-    return components.map((comp) => {
+    if (!components) {
+      if (isDev) {
+        console.log('[SectorPage] normalizeComponents: components is null/undefined');
+      }
+      return [];
+    }
+    
+    if (!Array.isArray(components)) {
+      if (isDev) {
+        console.log('[SectorPage] normalizeComponents: components is not an array:', typeof components, components);
+      }
+      // Try to convert object to array
+      if (typeof components === 'object' && components !== null) {
+        const obj = components as any;
+        // Check if it's a Strapi component structure
+        if (obj.title || obj.description) {
+          return [obj] as T[];
+        }
+        // Try to extract array from nested structure
+        const data = obj.data || obj;
+        if (Array.isArray(data)) {
+          return data as T[];
+        }
+      }
+      return [];
+    }
+    
+    if (isDev) {
+      console.log('[SectorPage] normalizeComponents: processing', components.length, 'items');
+    }
+    
+    return components.map((comp, index) => {
       // Handle both flat objects and nested Strapi component structure
       if (typeof comp === 'object' && comp !== null) {
         // Extract imageUrl from Strapi nested structure (image.data.attributes.url)
@@ -242,7 +284,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
           ? getStrapiImageUrl((comp as any).image.data.attributes.url)
           : undefined;
         
-        return {
+        const normalized = {
           title: comp.title || '',
           description: comp.description || '',
           iconPath: (comp as any).iconPath,
@@ -251,7 +293,13 @@ export default async function SectorPage({ params }: { params: { sector: string 
           textColor: (comp as any).textColor,
           buttonLabel: (comp as any).buttonLabel,
           buttonHref: (comp as any).buttonHref || '/lead',
-        } as unknown as T;
+        };
+        
+        if (isDev && index === 0) {
+          console.log('[SectorPage] normalizeComponents: first item example:', normalized);
+        }
+        
+        return normalized as unknown as T;
       }
       return comp;
     });
@@ -259,6 +307,13 @@ export default async function SectorPage({ params }: { params: { sector: string 
 
   const useCases = normalizeComponents(pageData?.useCases);
   const benefits = normalizeComponents(pageData?.benefits);
+  
+  if (isDev) {
+    console.log('[SectorPage] Normalized:', {
+      useCasesCount: useCases.length,
+      benefitsCount: benefits.length,
+    });
+  }
 
   // Get fallback content for this sector (only used if Strapi has no data)
   const fallbackContent = FALLBACK_CONTENT[sector];
