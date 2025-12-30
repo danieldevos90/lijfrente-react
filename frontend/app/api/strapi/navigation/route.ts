@@ -17,15 +17,24 @@ export async function GET(request: NextRequest) {
       );
     }
 
+    // Check if token is configured
+    if (!STRAPI_API_TOKEN) {
+      console.error('STRAPI_API_TOKEN is not configured');
+      return NextResponse.json(
+        { 
+          error: 'Server configuration error: STRAPI_API_TOKEN is not set',
+          hint: 'Please configure STRAPI_API_TOKEN environment variable. See STRAPI_TOKEN_SETUP.md for instructions.'
+        },
+        { status: 500 }
+      );
+    }
+
     const url = `${STRAPI_URL}/api/navigation-items?filters[siteId][$eq]=${siteId}&sort=order:asc`;
     
     const headers: HeadersInit = {
       'Content-Type': 'application/json',
+      'Authorization': `Bearer ${STRAPI_API_TOKEN}`,
     };
-
-    if (STRAPI_API_TOKEN) {
-      headers.Authorization = `Bearer ${STRAPI_API_TOKEN}`;
-    }
 
     const response = await fetch(url, {
       headers,
@@ -35,8 +44,21 @@ export async function GET(request: NextRequest) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error('Strapi API error:', response.status, errorText);
+      
+      // Provide helpful error messages
+      if (response.status === 401) {
+        return NextResponse.json(
+          { 
+            error: 'Authentication failed',
+            message: 'Invalid or expired STRAPI_API_TOKEN. Please check your token in Strapi Admin.',
+            hint: 'Go to Strapi Admin → Settings → API Tokens to create/verify your token. See STRAPI_TOKEN_SETUP.md for setup instructions.'
+          },
+          { status: 401 }
+        );
+      }
+      
       return NextResponse.json(
-        { error: `Strapi API error: ${response.status} ${response.statusText}` },
+        { error: `Strapi API error: ${response.status} ${response.statusText}`, details: errorText },
         { status: response.status }
       );
     }
