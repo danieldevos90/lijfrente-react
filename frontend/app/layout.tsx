@@ -3,7 +3,7 @@ import './globals.css';
 import type { ReactNode } from 'react';
 import GlobalWidgetProvider from '../components/GlobalWidgetProvider';
 import PasswordProtection from '../components/PasswordProtection';
-import ErrorHandler from './error-handler';
+import { ErrorHandler } from './error-handler';
 
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
 export const metadata = {
