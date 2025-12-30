@@ -38,23 +38,41 @@ export default async function OverOnsPage() {
     );
   }
 
+  // Find the index of "Ervaren adviseurs met oog voor uw situatie" section
+  const advisorsSectionIndex = sections.findIndex((section: any) => {
+    const sectionData = section.attributes || section;
+    return sectionData.title === 'Ervaren adviseurs met oog voor uw situatie' ||
+           sectionData.title?.toLowerCase().includes('ervaren adviseurs');
+  });
+
   return (
     <>
       <HeaderWithWidget />
       <main>
         {sections.map((section: any, index: number) => {
           try {
-            return renderSection(section, index);
+            const rendered = renderSection(section, index);
+            
+            // Insert TeamSectionServer right after "Ervaren adviseurs" section
+            if (index === advisorsSectionIndex && advisorsSectionIndex !== -1) {
+              return (
+                <>
+                  {rendered}
+                  <TeamSectionServer
+                    key={`team-${index}`}
+                    title="Ons team"
+                    subtitle="Ontmoet de mensen achter GeldGeregeld"
+                  />
+                </>
+              );
+            }
+            
+            return rendered;
           } catch (e) {
             console.error(`Error rendering section ${index}:`, e);
             return null;
           }
         })}
-        {/* Team Section - Strapi driven */}
-        <TeamSectionServer
-          title="Ons team"
-          subtitle="Ontmoet de mensen achter GeldGeregeld"
-        />
       </main>
       <Footer />
     </>
