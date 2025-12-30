@@ -42,9 +42,18 @@ export async function searchUnsplashImages(
   query: string,
   perPage: number = 10
 ): Promise<UnsplashImage[]> {
+  const isDev = process.env.NODE_ENV === 'development';
+  
   if (!UNSPLASH_ACCESS_KEY) {
-    console.warn('[Unsplash] UNSPLASH_ACCESS_KEY not set. Skipping image fetch.');
+    if (isDev) {
+      console.warn('[Unsplash] ⚠️ UNSPLASH_ACCESS_KEY not set. Skipping image fetch.');
+      console.warn('[Unsplash] Add UNSPLASH_ACCESS_KEY to .env.local to enable Unsplash images.');
+    }
     return [];
+  }
+  
+  if (isDev) {
+    console.log('[Unsplash] Searching for:', query);
   }
 
   try {
@@ -67,9 +76,15 @@ export async function searchUnsplashImages(
     }
 
     const data: UnsplashSearchResponse = await response.json();
-    return data.results || [];
+    const results = data.results || [];
+    if (isDev) {
+      console.log('[Unsplash] Found', results.length, 'images for query:', query);
+    }
+    return results;
   } catch (error) {
-    console.error('[Unsplash] Error fetching images:', error);
+    if (isDev) {
+      console.error('[Unsplash] Error fetching images:', error);
+    }
     return [];
   }
 }

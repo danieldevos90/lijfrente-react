@@ -201,6 +201,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
     console.log('[SectorPage] Environment:', {
       hasStrapiUrl: !!process.env.NEXT_PUBLIC_STRAPI_URL,
       hasStrapiToken: !!process.env.STRAPI_API_TOKEN,
+      hasUnsplashKey: !!process.env.UNSPLASH_ACCESS_KEY,
     });
   }
   
@@ -289,18 +290,29 @@ export default async function SectorPage({ params }: { params: { sector: string 
         let imageUrl = strapiImageUrl || (comp as any).imageUrl;
         if (!imageUrl && comp.title) {
           try {
+            if (isDev) {
+              console.log('[SectorPage] Fetching Unsplash image for:', comp.title, 'sector:', sector);
+            }
             // Use sector and use case title to find relevant Unsplash image
             const unsplashImage = await getSectorUnsplashImage(sector, comp.title);
             imageUrl = unsplashImage || undefined;
-            if (isDev && unsplashImage) {
-              console.log('[SectorPage] Got Unsplash image for:', comp.title, unsplashImage);
+            if (isDev) {
+              if (unsplashImage) {
+                console.log('[SectorPage] ✅ Got Unsplash image for:', comp.title, unsplashImage);
+              } else {
+                console.warn('[SectorPage] ❌ No Unsplash image found for:', comp.title);
+              }
             }
           } catch (error) {
-            // Silently fail if Unsplash API is unavailable
+            // Log error if Unsplash API is unavailable
             if (isDev) {
-              console.warn('[SectorPage] Unsplash fetch failed for:', comp.title, error);
+              console.error('[SectorPage] Unsplash fetch failed for:', comp.title, error);
             }
           }
+        } else if (isDev && imageUrl) {
+          console.log('[SectorPage] Using existing image for:', comp.title, imageUrl);
+        } else if (isDev && !comp.title) {
+          console.warn('[SectorPage] No title for use case, cannot fetch Unsplash image');
         }
         
         const normalized = {
