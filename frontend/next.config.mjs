@@ -10,6 +10,11 @@ const nextConfig = {
         hostname: 'bright-smile-1f47bc9d67.strapiapp.com',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
     ],
     // Disable image optimization for Strapi images to avoid 401 errors
     // Strapi images will be served directly without optimization
