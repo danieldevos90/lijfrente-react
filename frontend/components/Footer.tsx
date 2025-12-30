@@ -15,10 +15,16 @@ export default function Footer() {
     async function fetchFooter() {
       try {
         // Use API route instead of direct Strapi call (prevents client-side 401 errors)
+        // Add timeout to prevent hanging requests
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+        
         const response = await fetch(`/api/strapi/footer?siteId=${SITE_ID}`, {
-          // Add timeout to prevent hanging
-          signal: AbortSignal.timeout(5000), // 5 second timeout
+          signal: controller.signal,
         });
+        
+        clearTimeout(timeoutId);
+        
         if (!response.ok) {
           return; // Silently fail
         }
