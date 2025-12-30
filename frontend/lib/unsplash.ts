@@ -80,12 +80,17 @@ export async function searchUnsplashImages(
  * @returns Single Unsplash image URL or null
  */
 export async function getUnsplashImage(query: string): Promise<string | null> {
-  const images = await searchUnsplashImages(query, 1);
-  if (images.length === 0) {
+  try {
+    const images = await searchUnsplashImages(query, 1);
+    if (images.length === 0) {
+      return null;
+    }
+    // Return regular size (good balance between quality and file size)
+    return images[0].urls.regular;
+  } catch (error) {
+    console.warn('[Unsplash] Error getting image for query:', query, error);
     return null;
   }
-  // Return regular size (good balance between quality and file size)
-  return images[0].urls.regular;
 }
 
 /**

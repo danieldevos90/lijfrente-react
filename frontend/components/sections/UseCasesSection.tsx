@@ -74,9 +74,10 @@ export default function UseCasesSection({
             const bgColor = useCase.color || (index % 2 === 0 ? '#fff2b2' : '#e4f2ff');
             const textColorMain = useCase.textColor || (index % 2 === 0 ? '#5e5515' : '#0f1720');
             
-            // Prioritize imageUrl (Strapi) over iconPath
-            const imageSource = useCase.imageUrl || useCase.iconPath;
-            const isImage = useCase.imageUrl || (useCase.iconPath && useCase.iconPath.includes('/images/'));
+            // Prioritize imageUrl (Strapi/Unsplash) over iconPath
+            // Only use iconPath if it's an actual image path, not an SVG icon
+            const imageSource = useCase.imageUrl || (useCase.iconPath && useCase.iconPath.includes('/images/') ? useCase.iconPath : null);
+            const isImage = !!imageSource;
             
             return (
               <div
@@ -111,6 +112,11 @@ export default function UseCasesSection({
                         fill
                         style={{
                           objectFit: 'cover',
+                        }}
+                        unoptimized={imageSource.startsWith('https://images.unsplash.com') || imageSource.startsWith('http')}
+                        onError={(e) => {
+                          // Hide image on error, show fallback
+                          e.currentTarget.style.display = 'none';
                         }}
                       />
                     ) : (

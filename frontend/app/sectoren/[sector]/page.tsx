@@ -288,9 +288,19 @@ export default async function SectorPage({ params }: { params: { sector: string 
         // If no image from Strapi, try to get from Unsplash based on title/description
         let imageUrl = strapiImageUrl || (comp as any).imageUrl;
         if (!imageUrl && comp.title) {
-          // Use sector and use case title to find relevant Unsplash image
-          const unsplashImage = await getSectorUnsplashImage(sector, comp.title);
-          imageUrl = unsplashImage || undefined;
+          try {
+            // Use sector and use case title to find relevant Unsplash image
+            const unsplashImage = await getSectorUnsplashImage(sector, comp.title);
+            imageUrl = unsplashImage || undefined;
+            if (isDev && unsplashImage) {
+              console.log('[SectorPage] Got Unsplash image for:', comp.title, unsplashImage);
+            }
+          } catch (error) {
+            // Silently fail if Unsplash API is unavailable
+            if (isDev) {
+              console.warn('[SectorPage] Unsplash fetch failed for:', comp.title, error);
+            }
+          }
         }
         
         const normalized = {
