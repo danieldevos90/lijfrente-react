@@ -5,6 +5,7 @@ Creates Erik de Vos and Jan Dijkerman profiles
 """
 
 import os
+import sys
 import requests
 import json
 
@@ -92,17 +93,36 @@ def create_or_update_team_member(member_data: dict):
             except Exception as e:
                 print(f"  ❌ Error updating {name}: {e}")
     
-    # Create new member
+    # Try Content Manager API first (for Strapi Cloud)
+    admin_url = f"{STRAPI_URL}/api/content-manager/collection-types/api::team-member.team-member"
+    try:
+        print(f"  📤 Creating via Admin API: {name}")
+        response = requests.post(admin_url, headers=HEADERS, json=strapi_data, timeout=10)
+        if response.status_code in [200, 201]:
+            print(f"  ✅ Created: {name}")
+            return True
+        else:
+            print(f"  ⚠️ Admin API returned: {response.status_code}")
+            if response.status_code != 404:  # 404 means content type doesn't exist
+                print(f"  Response: {response.text[:200]}")
+    except Exception as e:
+        print(f"  ⚠️ Admin API error: {e}")
+    
+    # Try Content API as fallback
     url = f"{STRAPI_URL}/api/team-members"
     try:
-        print(f"  📤 Creating: {name}")
+        print(f"  📤 Creating via Content API: {name}")
         response = requests.post(url, headers=HEADERS, json=strapi_data, timeout=10)
         if response.status_code == 200 or response.status_code == 201:
             print(f"  ✅ Created: {name}")
             return True
         else:
-            print(f"  ⚠️ Failed to create {name}: {response.status_code}")
-            print(f"  Response: {response.text[:200]}")
+            if response.status_code == 405:
+                print(f"  ❌ Content type 'team-member' does not exist in Strapi!")
+                print(f"  Please create it manually in Strapi Admin first.")
+            else:
+                print(f"  ⚠️ Failed to create {name}: {response.status_code}")
+                print(f"  Response: {response.text[:200]}")
     except Exception as e:
         print(f"  ❌ Error creating {name}: {e}")
     
