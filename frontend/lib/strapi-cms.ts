@@ -641,10 +641,27 @@ export async function getSectorPage(
       return null;
     }
 
+    const sectorPage = response.data[0];
+    
     if (isDev) {
       console.log('[getSectorPage] ✅ Success - found sector page');
+      console.log('[getSectorPage] Sector page structure:', {
+        hasId: !!sectorPage?.id,
+        hasAttributes: !!sectorPage?.attributes,
+        attributesKeys: sectorPage?.attributes ? Object.keys(sectorPage.attributes) : [],
+        useCases: sectorPage?.attributes?.useCases,
+        useCasesType: typeof sectorPage?.attributes?.useCases,
+        useCasesIsArray: Array.isArray(sectorPage?.attributes?.useCases),
+        useCasesLength: Array.isArray(sectorPage?.attributes?.useCases) ? sectorPage.attributes.useCases.length : 'N/A',
+        benefits: sectorPage?.attributes?.benefits,
+        benefitsType: typeof sectorPage?.attributes?.benefits,
+        benefitsIsArray: Array.isArray(sectorPage?.attributes?.benefits),
+        benefitsLength: Array.isArray(sectorPage?.attributes?.benefits) ? sectorPage.attributes.benefits.length : 'N/A',
+        rawSectorPage: JSON.stringify(sectorPage, null, 2).substring(0, 1000), // First 1000 chars
+      });
     }
-    return response.data[0] || null;
+    
+    return sectorPage || null;
   } catch (error) {
     if (isDev) {
       console.error('[getSectorPage] ❌ Exception:', error);
