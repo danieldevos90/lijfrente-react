@@ -177,18 +177,61 @@ async function fetchHome(siteId: string) {
 }
 
 export default async function SitePage({ params }: { params: { siteId: string } }) {
+  const isDev = process.env.NODE_ENV === 'development';
+  
+  if (isDev) {
+    console.log('[SitePage] Starting fetch for siteId:', params.siteId);
+    console.log('[SitePage] Environment check:', {
+      hasStrapiUrl: !!process.env.NEXT_PUBLIC_STRAPI_URL,
+      hasStrapiToken: !!process.env.STRAPI_API_TOKEN,
+      nodeEnv: process.env.NODE_ENV,
+    });
+  }
+  
   // Use Promise.allSettled to prevent unhandled promise rejections
   // Add .catch() to each promise to ensure no rejections escape
   let siteResult, pagesResult, navResult, homeResult;
   
   try {
     [siteResult, pagesResult, navResult, homeResult] = await Promise.allSettled([
-      fetchSite(params.siteId).catch(() => null),
-      fetchPages(params.siteId).catch(() => []),
-      fetchNav(params.siteId).catch(() => []),
-      fetchHome(params.siteId).catch(() => null),
+      fetchSite(params.siteId).catch((err) => {
+        if (isDev) {
+          console.error('[SitePage] fetchSite error:', err);
+        }
+        return null;
+      }),
+      fetchPages(params.siteId).catch((err) => {
+        if (isDev) {
+          console.error('[SitePage] fetchPages error:', err);
+        }
+        return [];
+      }),
+      fetchNav(params.siteId).catch((err) => {
+        if (isDev) {
+          console.error('[SitePage] fetchNav error:', err);
+        }
+        return [];
+      }),
+      fetchHome(params.siteId).catch((err) => {
+        if (isDev) {
+          console.error('[SitePage] fetchHome error:', err);
+        }
+        return null;
+      }),
     ]);
+    
+    if (isDev) {
+      console.log('[SitePage] Promise.allSettled results:', {
+        site: siteResult.status,
+        pages: pagesResult.status,
+        nav: navResult.status,
+        home: homeResult.status,
+      });
+    }
   } catch (error) {
+    if (isDev) {
+      console.error('[SitePage] Promise.allSettled error:', error);
+    }
     // If Promise.allSettled itself fails, use defaults
     siteResult = { status: 'rejected' as const };
     pagesResult = { status: 'rejected' as const };
