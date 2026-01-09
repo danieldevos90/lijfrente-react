@@ -10,7 +10,21 @@
   "attributes": {
     "siteId": { "type": "uid", "targetField": "name", "required": true, "unique": true },
     "name": { "type": "string", "required": true },
-    "domain": { "type": "string" }
+    "domain": { "type": "string" },
+    "companyName": { "type": "string" },
+    "address": { "type": "string" },
+    "postalCode": { "type": "string" },
+    "city": { "type": "string" },
+    "country": { "type": "string", "default": "Nederland" },
+    "linkedinUrl": { "type": "string" },
+    "linkedinText": { "type": "string" },
+    "description1": { "type": "text" },
+    "description2": { "type": "text" },
+    "description3": { "type": "text" },
+    "copyright": { "type": "string" },
+    "footerLinks": {
+      "type": "json"
+    }
   }
 }
 
