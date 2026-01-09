@@ -353,6 +353,28 @@ export interface StrapiTeamMember {
   };
 }
 
+export interface StrapiBenefit {
+  id: number;
+  attributes: {
+    siteId: string;
+    slug: string;
+    title: string;
+    description: string;
+    shortDescription?: string;
+    metaDescription?: string;
+    metaKeywords?: string;
+    metaTitle?: string;
+    iconPath?: string;
+    color?: string;
+    textColor?: string;
+    featured?: boolean;
+    order?: number;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt?: string;
+  };
+}
+
 // ============================================================================
 // API RESPONSE TYPES
 // ============================================================================

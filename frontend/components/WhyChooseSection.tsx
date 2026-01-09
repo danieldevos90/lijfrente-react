@@ -17,10 +17,53 @@ interface WhyChooseSectionProps {
 }
 
 export default function WhyChooseSection({ 
-  benefits, 
+  benefits = [], 
   title = "Waarom GeldGeregeld?",
   subtitle = "Wij maken het verschil met persoonlijke service en jarenlange ervaring"
 }: WhyChooseSectionProps) {
+  // If no benefits, show a message or return null
+  if (!benefits || benefits.length === 0) {
+    return (
+      <section id="why-choose" style={{
+        background: 'var(--color-bg)',
+        padding: '8rem 2rem',
+      }}>
+        <div style={{
+          margin: '0 auto',
+          maxWidth: '800px',
+          textAlign: 'center',
+        }}>
+          <h2 style={{
+            fontFamily: 'PP Neue Montreal, sans-serif',
+            fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+            fontWeight: 400,
+            lineHeight: 1.1,
+            marginBottom: '1rem',
+            color: 'var(--color-text)',
+          }}>
+            {title}
+          </h2>
+          <p style={{
+            fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
+            color: 'var(--color-text-muted)',
+            maxWidth: '700px',
+            margin: '0 auto',
+            lineHeight: 1.6,
+          }}>
+            {subtitle}
+          </p>
+          <p style={{
+            marginTop: '2rem',
+            color: 'var(--color-text-muted)',
+            fontStyle: 'italic',
+          }}>
+            Voordelen worden binnenkort toegevoegd.
+          </p>
+        </div>
+      </section>
+    );
+  }
+  
   return (
     <section id="why-choose" style={{
       background: 'var(--color-bg)',
@@ -78,9 +121,11 @@ export default function WhyChooseSection({
           >
             <div className="why-choose-grid" style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(2, 1fr)',
               gap: '2rem',
               margin: '0 auto',
+              maxWidth: '1000px',
+              justifyContent: 'center',
             }}>
               {benefits.map((benefit, index) => {
                 const isColored = index % 2 === 0;

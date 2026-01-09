@@ -12,7 +12,7 @@ from typing import Dict, List, Any
 
 # Configuration
 STRAPI_URL = os.getenv('STRAPI_URL', 'https://bright-smile-1f47bc9d67.strapiapp.com')
-STRAPI_TOKEN = 'a96c4cade5ac4b12d9479f03d1bec6d0719e4f78747522f35e05b29bcba5d3571579ab84e88fd56f5d260ec5550654c61e0dba7625cfce335021d0b361c039e64d4cb24fd2e183c3e646cf5e5e037ccbb85c7ede948db96aed2319e8fdee0bcfea51cd2b97d670f57342a4f79558108f2ed57483892bca68b5cc71f35cdf1717'
+STRAPI_TOKEN = os.getenv('STRAPI_TOKEN') or os.getenv('STRAPI_API_TOKEN') or 'a96c4cade5ac4b12d9479f03d1bec6d0719e4f78747522f35e05b29bcba5d3571579ab84e88fd56f5d260ec5550654c61e0dba7625cfce335021d0b361c039e64d4cb24fd2e183c3e646cf5e5e037ccbb85c7ede948db96aed2319e8fdee0bcfea51cd2b97d670f57342a4f79558108f2ed57483892bca68b5cc71f35cdf1717'
 
 HEADERS = {
     'Authorization': f'Bearer {STRAPI_TOKEN}',
@@ -98,20 +98,25 @@ def get_existing_page(slug: str) -> Dict:
                 return data['data'][0]
     except Exception as e:
         print(f"Error fetching page {slug}: {e}")
-    return None
+    return {}
 
 def create_or_update_page(slug: str, page_data: Dict):
     """Create or update a page - prioritize update over delete/create"""
     existing = get_existing_page(slug)
     if existing:
         # Handle both Strapi v4 (attributes) and v5 (flat) structures
-        page_id = existing.get('id')
+        page_id = existing.get('id') or existing.get('documentId')
         if not page_id and 'attributes' in existing:
-            page_id = existing['attributes'].get('id')
+            page_id = existing['attributes'].get('id') or existing['attributes'].get('documentId')
         
         if page_id:
             # Always try to update existing page first
-            update_url = f"{STRAPI_URL}/api/pages/{page_id}"
+            # Prefer documentId for Strapi v5, fallback to id for v4
+            update_id = existing.get('documentId') or existing.get('id')
+            if not update_id and 'attributes' in existing:
+                update_id = existing['attributes'].get('documentId') or existing['attributes'].get('id')
+            update_id = update_id or page_id
+            update_url = f"{STRAPI_URL}/api/pages/{update_id}"
             try:
                 update_response = requests.put(update_url, headers=HEADERS, json=page_data, timeout=10)
                 if update_response.status_code == 200:
@@ -199,9 +204,9 @@ def update_site_with_footer():
                 update_data = {
                     "data": {
                         "companyName": "GeldGeregeld B.V.",
-                        "address": "Herengracht 282",
-                        "postalCode": "1016 BX",
-                        "city": "Amsterdam",
+                        "address": "Roggestraat 7",
+                        "postalCode": "7311 CA",
+                        "city": "Apeldoorn",
                         "country": "Nederland",
                         "linkedinUrl": "https://linkedin.com",
                         "linkedinText": "Volg ons op LinkedIn",
@@ -780,7 +785,7 @@ def create_contact_page():
                 {
                     "__component": "sections.content-section",
                     "title": "Contactgegevens",
-                    "content": "Bereik ons via telefoon, e-mail of bezoek ons op kantoor. We zijn bereikbaar van maandag tot vrijdag tussen 09:00 en 18:00.",
+                    "content": "Bereik ons via telefoon of e-mail. We zijn bereikbaar van maandag tot vrijdag tussen 09:00 en 18:00.",
                     "layout": "image-left",
                     "background": "white"
                 },
@@ -792,20 +797,14 @@ def create_contact_page():
                         {
                             "icon": "/icons/SVG/interface/phone.svg",
                             "title": "Bel ons",
-                            "description": "Ma-Vr: 09:00 - 18:00\n020-1234567",
-                            "href": "tel:0201234567"
+                            "description": "Ma-Vr: 09:00 - 18:00\n085-0480881",
+                            "href": "tel:0850480881"
                         },
                         {
                             "icon": "/icons/SVG/interface/mail.svg",
                             "title": "E-mail ons",
                             "description": "Reactie binnen 24 uur\ninfo@geldgeregeld.nl",
                             "href": "mailto:info@geldgeregeld.nl"
-                        },
-                        {
-                            "icon": "/icons/SVG/interface/location-pin.svg",
-                            "title": "Bezoek ons",
-                            "description": "Op afspraak\nHerengracht 282, 1016 BX Amsterdam",
-                            "href": "#"
                         }
                     ]
                 },

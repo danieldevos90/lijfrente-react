@@ -4,6 +4,7 @@ import { getAllPages } from '@/lib/strapi-cms';
 import HeaderWithWidget from '../HeaderWithWidget';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
+import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema, buildCanonicalUrl, getBaseUrl } from '@/lib/seo';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
@@ -109,8 +110,21 @@ export default async function SectorenPage() {
     };
   });
 
+  // Generate breadcrumb schema
+  const baseUrl = getBaseUrl();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: baseUrl },
+    { name: 'Sectoren', url: buildCanonicalUrl('/sectoren') },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema, null, 2),
+        }}
+      />
       <HeaderWithWidget />
       <main>
         {/* Hero Section */}
@@ -236,17 +250,14 @@ export default async function SectorenPage() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
+  return generateSEOMetadata({
     title: buildTitle('Zakelijke financiering per sector'),
     description: buildDescription(
       'Ontdek zakelijke financiering op maat voor jouw sector. Van horeca tot retail, transport tot e-commerce. Elke branche heeft zijn eigen oplossing.'
     ),
     keywords: 'zakelijke financiering, sector financiering, horeca financiering, retail financiering, transport financiering',
-    openGraph: {
-      title: 'Zakelijke financiering per sector',
-      description: 'Ontdek zakelijke financiering op maat voor jouw sector.',
-      type: 'website',
-    },
-  };
+    canonicalUrl: buildCanonicalUrl('/sectoren'),
+    ogType: 'website',
+  });
 }
 

@@ -42,17 +42,20 @@ export default function Footer() {
 
   // Fallback data if Strapi is not available
   const footer = footerData?.attributes || footerData || {
-    companyName: 'GeldGeregeld B.V.',
-    address: 'Herengracht 282',
-    postalCode: '1016 BX',
-    city: 'Amsterdam',
+    companyName: 'GeldGeregeld',
+    address: 'Roggestraat 7',
+    postalCode: '7311 CA',
+    city: 'Apeldoorn',
     country: 'Nederland',
+    email: 'info@geldgeregeld.nl',
+    phone: '085-0480881',
+    kvkNumber: '64859525',
     linkedinUrl: 'https://linkedin.com',
     linkedinText: 'Volg ons op LinkedIn',
-    description1: 'GeldGeregeld B.V. is een Nederlandse financiële dienstverlener die ondernemers helpt bij het verkrijgen van passende zakelijke financiering. Wij werken samen met een netwerk van gerenommeerde kredietverstrekkers en bemiddelen tussen ondernemers en financiers.',
+    description1: 'GeldGeregeld is een Nederlandse financiële dienstverlener die ondernemers helpt bij het verkrijgen van passende zakelijke financiering. Wij werken samen met een netwerk van gerenommeerde kredietverstrekkers en bemiddelen tussen ondernemers en financiers.',
     description2: 'Het verstrekken van financiering gebeurt door onze partnercrediteurs onder de voorwaarden die door hen worden gesteld. GeldGeregeld verstrekt zelf geen krediet. Wij helpen bij het vinden van de meest geschikte financiering voor uw onderneming.',
     description3: 'Let op: lenen kost geld. Raadpleeg uw adviseur en vraag indien nodig advies over de voorwaarden en risico\'s. Alle financieringsvormen en voorwaarden zijn afhankelijk van goedkeuring door de crediteur. Restricties zijn van toepassing; zie de voorwaarden van de betreffende crediteur voor details.',
-    copyright: '©2025 GeldGeregeld B.V. Alle rechten voorbehouden.',
+    copyright: '©2025 GeldGeregeld Alle rechten voorbehouden.',
     footerLinks: [
       { label: 'Privacy', href: '/privacy' },
       { label: 'Cookies', href: '/cookies' },
@@ -141,9 +144,9 @@ export default function Footer() {
               lineHeight: '1.6',
               marginBottom: '1.5rem',
             }}>
-              {footer.companyName || 'GeldGeregeld B.V.'}<br />
-              {footer.address || 'Herengracht 282'}<br />
-              {footer.postalCode || '1016 BX'} {footer.city || 'Amsterdam'}<br />
+              {footer.companyName || 'GeldGeregeld'}<br />
+              {footer.address || 'Roggestraat 7'}<br />
+              {footer.postalCode || '7311 CA'} {footer.city || 'Apeldoorn'}<br />
               {footer.country || 'Nederland'}
             </address>
             
@@ -229,7 +232,7 @@ export default function Footer() {
             fontSize: '12px',
             margin: 0,
           }}>
-            {footer.copyright || '©2025 GeldGeregeld B.V. Alle rechten voorbehouden.'}
+            {footer.copyright || '©2025 GeldGeregeld Alle rechten voorbehouden.'}
           </p>
           
           <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>

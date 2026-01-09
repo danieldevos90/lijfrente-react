@@ -187,16 +187,33 @@ export function renderSection(section: StrapiSection, index: number) {
       );
     
     case 'sections.why-choose-section':
+      // Handle benefits - can be array or nested in data
+      let benefitsArray: any[] = [];
+      if (sectionData.benefits) {
+        if (Array.isArray(sectionData.benefits)) {
+          benefitsArray = sectionData.benefits;
+        } else if (sectionData.benefits.data && Array.isArray(sectionData.benefits.data)) {
+          benefitsArray = sectionData.benefits.data;
+        }
+      }
+      
+      // Map benefits, handling both flat and nested structures
+      const mappedBenefits = benefitsArray.map((b: any) => {
+        // Handle Strapi v4 nested attributes structure
+        const benefitData = b.attributes || b;
+        return {
+          title: benefitData.title || '',
+          description: benefitData.description || '',
+          iconPath: benefitData.iconPath || '',
+          color: benefitData.color || '#fff2b2',
+          textColor: benefitData.textColor || '#5e5515'
+        };
+      });
+      
       return (
         <WhyChooseSection
           key={index}
-          benefits={sectionData.benefits?.map(b => ({
-            title: b.title,
-            description: b.description,
-            iconPath: b.iconPath,
-            color: b.color || '#fff2b2',
-            textColor: b.textColor || '#5e5515'
-          })) || []}
+          benefits={mappedBenefits}
           title={sectionData.title}
           subtitle={sectionData.subtitle}
         />
@@ -233,12 +250,36 @@ export function renderSection(section: StrapiSection, index: number) {
     case 'sections.services-section':
       // Use ContactOptionsSection for Contactmogelijkheden section
       if (sectionData.title === 'Contactmogelijkheden' || sectionData.title?.toLowerCase().includes('contact')) {
+        // Get services, handling both direct array and nested data structure
+        let services = sectionData.services || [];
+        if (services && typeof services === 'object' && 'data' in services) {
+          services = services.data || [];
+        }
+        
+        // Fallback to default contact options if services are empty
+        if (!services || services.length === 0) {
+          services = [
+            {
+              icon: "/icons/SVG/interface/phone.svg",
+              title: "Bel ons",
+              description: "Ma-Vr: 09:00 - 18:00\n085-0480881",
+              href: "tel:0850480881"
+            },
+            {
+              icon: "/icons/SVG/interface/mail.svg",
+              title: "E-mail ons",
+              description: "Reactie binnen 24 uur\ninfo@geldgeregeld.nl",
+              href: "mailto:info@geldgeregeld.nl"
+            }
+          ];
+        }
+        
         return (
           <ContactOptionsSection
             key={index}
             title={sectionData.title}
             subtitle={sectionData.subtitle}
-            options={(sectionData.services || []).map((service: any, idx: number) => {
+            options={services.map((service: any, idx: number) => {
               // Pattern: yellow (0), blue (1), white (2), yellow (3), blue (4), white (5)...
               let color = '#ffffff';
               let textColor = 'var(--color-text)';

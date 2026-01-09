@@ -8,6 +8,7 @@ import TeamSectionServer from '../../components/sections/TeamSectionServer';
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
 export const dynamic = 'force-dynamic';
+export const revalidate = 0; // Always fetch fresh data
 
 export default async function OverOnsPage() {
   let page = null;

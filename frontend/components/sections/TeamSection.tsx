@@ -69,6 +69,9 @@ export default function TeamSection({
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
           gap: '3rem',
+          maxWidth: '800px',
+          margin: '0 auto',
+          justifyContent: 'center',
         }}>
           {members.map((member, index) => (
             <div
@@ -99,15 +102,16 @@ export default function TeamSection({
               }}>
                 {member.imageUrl ? (
                   <Image
-                    src={getStrapiImageUrl(member.imageUrl)}
+                    src={member.imageUrl.startsWith('/') || member.imageUrl.startsWith('http') ? member.imageUrl : getStrapiImageUrl(member.imageUrl)}
                     alt={member.name}
                     fill
                     style={{
                       objectFit: 'cover',
                     }}
-                    unoptimized={member.imageUrl.includes('strapiapp.com')}
+                    unoptimized={member.imageUrl.includes('strapiapp.com') || member.imageUrl.includes('http')}
                     onError={(e) => {
                       // Hide image on error, show fallback
+                      console.error(`Failed to load image for ${member.name}:`, member.imageUrl);
                       e.currentTarget.style.display = 'none';
                     }}
                   />

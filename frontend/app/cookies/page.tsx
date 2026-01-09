@@ -3,6 +3,7 @@ import React from 'react';
 import TransparentHeader from '../../components/TransparentHeader';
 import Footer from '../../components/Footer';
 import SubpageHero from '../../components/SubpageHero';
+import ContactInfo from '../../components/ContactInfo';
 
 export default function CookiesPage() {
   const handleCtaClick = () => {
@@ -54,7 +55,7 @@ export default function CookiesPage() {
               color: 'var(--color-text)',
               marginBottom: '1rem',
             }}>
-              GeldGeregeld B.V. (hierna: "GeldGeregeld") maakt gebruik van cookies en vergelijkbare technologieën op www.geldgeregeld.nl. In dit cookiebeleid leggen wij uit welke cookies wij gebruiken en waarvoor.
+              GeldGeregeld (hierna: "GeldGeregeld") maakt gebruik van cookies en vergelijkbare technologieën op www.geldgeregeld.nl. In dit cookiebeleid leggen wij uit welke cookies wij gebruiken en waarvoor.
             </p>
           </section>
 
@@ -466,12 +467,7 @@ export default function CookiesPage() {
               borderRadius: 'var(--radius-lg)',
               border: '1px solid var(--color-border)',
             }}>
-              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: 0 }}>
-                <strong>GeldGeregeld B.V.</strong><br />
-                E-mail: privacy@geldgeregeld.nl<br />
-                Telefoon: 020-1234567<br />
-                Post: Herengracht 282, 1016 BX Amsterdam
-              </p>
+              <ContactInfo showEmail={true} showPhone={true} email="privacy@geldgeregeld.nl" />
             </div>
           </section>
         </div>

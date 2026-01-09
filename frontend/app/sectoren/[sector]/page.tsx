@@ -11,6 +11,7 @@ import BenefitsCarousel from '../../../components/BenefitsCarousel';
 import CTASection from '../../../components/sections/CTASection';
 import { getStrapiImageUrl } from '@/lib/strapi-cms';
 import { getSectorUnsplashImage, getUnsplashImage } from '@/lib/unsplash';
+import { generateMetadata as generateSEOMetadata, generateServiceSchema, generateBreadcrumbSchema, buildCanonicalUrl, getBaseUrl } from '@/lib/seo';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
@@ -372,8 +373,44 @@ export default async function SectorPage({ params }: { params: { sector: string 
       }
     : fallbackContent?.cta;
 
+  // Generate schema markup for sector page
+  const baseUrl = getBaseUrl();
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
+  const sectorName = pageDataAny?.sectorName || sectorInfo?.name || sector;
+  const sectorDescription = pageDataAny?.metaDescription || sectorInfo?.description || '';
+  
+  const serviceSchema = generateServiceSchema({
+    name: `Zakelijke financiering voor ${sectorName}`,
+    description: sectorDescription,
+    provider: {
+      name: siteName,
+      url: baseUrl,
+    },
+    areaServed: 'NL',
+    serviceType: 'FinancialService',
+    url: buildCanonicalUrl(`/sectoren/${sector}`),
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: baseUrl },
+    { name: 'Sectoren', url: `${baseUrl}/sectoren` },
+    { name: sectorName, url: buildCanonicalUrl(`/sectoren/${sector}`) },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema, null, 2),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema, null, 2),
+        }}
+      />
       <HeaderWithWidget />
       <main>
         {/* Hero Section - Always show SubpageHero */}
@@ -497,17 +534,15 @@ export async function generateMetadata({ params }: { params: { sector: string } 
   const description = pageDataAny?.metaDescription || sectorInfo?.description || 
     `Zakelijke financiering speciaal voor ${sectorInfo?.name || sector}. Snel, flexibel en zonder gedoe.`;
   const keywords = pageDataAny?.metaKeywords || sectorInfo?.keywords?.join(', ') || '';
+  const canonicalUrl = buildCanonicalUrl(`/sectoren/${sector}`);
 
-  return {
+  return generateSEOMetadata({
     title: buildTitle(title),
     description: buildDescription(description),
     keywords: keywords,
-    openGraph: {
-      title: title,
-      description: description,
-      type: 'website',
-    },
-  };
+    canonicalUrl: canonicalUrl,
+    ogType: 'website',
+  });
 }
 
 // Generate static params for common sectors

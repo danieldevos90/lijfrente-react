@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "benefits",
+  "info": {
+    "singularName": "benefit",
+    "pluralName": "benefits",
+    "displayName": "Benefit",
+    "description": "SEO-optimized benefit content with metadata"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "siteId": {
+      "type": "string",
+      "required": true,
+      "description": "Multi-site identifier"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "description": "URL-friendly identifier for SEO"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "Benefit title"
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "description": "Detailed benefit description"
+    },
+    "shortDescription": {
+      "type": "string",
+      "description": "Short description for cards/previews"
+    },
+    "metaDescription": {
+      "type": "text",
+      "description": "SEO meta description (150-160 characters recommended)"
+    },
+    "metaKeywords": {
+      "type": "string",
+      "description": "SEO keywords (comma-separated)"
+    },
+    "metaTitle": {
+      "type": "string",
+      "description": "Custom SEO title (if different from title)"
+    },
+    "iconPath": {
+      "type": "string",
+      "description": "Path to icon SVG (e.g., '/icons/SVG/finance/wallet.svg')"
+    },
+    "color": {
+      "type": "string",
+      "default": "#fff2b2",
+      "description": "Background color (hex)"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#5e5515",
+      "description": "Text color (hex)"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Featured benefit (shown prominently)"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "description": "Display order"
+    }
+  }
+}

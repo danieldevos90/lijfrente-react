@@ -345,7 +345,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
               </div>
               
               <div className="field-group">
-                <label>Jaaromzet (ongeveer)</label>
+                <label>Jaarlijkse geschatte omzet</label>
                 <select
                   value={formData.revenue}
                   onChange={(e) => updateFormData('revenue', e.target.value)}
@@ -358,6 +358,9 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
                   <option value="500k-1m">€ 500.000 - € 1.000.000</option>
                   <option value="1m+">€ 1.000.000+</option>
                 </select>
+                <p className="field-disclaimer" style={{ marginTop: '0.5rem', fontSize: '14px', color: '#64748B' }}>
+                  Let op: De jaarlijkse omzet moet minimaal € 100.000 zijn.
+                </p>
               </div>
             </div>
           </div>

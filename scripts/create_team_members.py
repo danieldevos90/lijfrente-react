@@ -8,6 +8,29 @@ import os
 import sys
 import requests
 import json
+from pathlib import Path
+
+# Try to load .env files from multiple locations
+def load_env_file(env_path):
+    """Manually parse .env file"""
+    env_vars = {}
+    if env_path.exists():
+        with open(env_path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    key, value = line.split('=', 1)
+                    env_vars[key.strip()] = value.strip()
+    return env_vars
+
+# Load from frontend/.env.local (for API token)
+frontend_env_path = Path(__file__).parent.parent / 'frontend' / '.env.local'
+frontend_env_vars = load_env_file(frontend_env_path)
+
+# Set environment variables from .env file
+for key, value in frontend_env_vars.items():
+    if key not in os.environ:
+        os.environ[key] = value
 
 STRAPI_URL = os.getenv('STRAPI_URL', 'https://bright-smile-1f47bc9d67.strapiapp.com')
 STRAPI_TOKEN = os.getenv('STRAPI_TOKEN', os.getenv('STRAPI_API_TOKEN', ''))
@@ -27,18 +50,18 @@ HEADERS = {
 TEAM_MEMBERS = [
     {
         'name': 'Erik de Vos',
-        'role': 'Oprichter & CEO',
+        'role': 'mede-oprichter/consultant',
         'bio': 'Met meer dan 15 jaar ervaring in de financiële sector heeft Erik een diepgaand begrip van de uitdagingen waar MKB-ondernemers mee te maken hebben. Zijn visie is om zakelijke financiering toegankelijk, transparant en snel te maken voor elke ondernemer.',
-        'email': 'erik@geldgeregeld.nl',
-        'linkedin': 'https://linkedin.com/in/erikdevos',
+        'email': 'info@geldgeregeld.nl',
+        'linkedin': 'https://www.linkedin.com/in/erik-de-vos-425ab120/',
         'order': 1,
     },
     {
         'name': 'Jan Dijkerman',
-        'role': 'Mede-oprichter & CFO',
+        'role': 'mede-oprichter/consultant',
         'bio': 'Jan brengt uitgebreide expertise in risicomanagement en financiële analyse. Zijn focus ligt op het ontwikkelen van innovatieve financieringsoplossingen die perfect aansluiten bij de behoeften van moderne ondernemers.',
-        'email': 'jan@geldgeregeld.nl',
-        'linkedin': 'https://linkedin.com/in/jandijkerman',
+        'email': 'info@geldgeregeld.nl',
+        'linkedin': 'https://www.linkedin.com/in/jan-dijkerman-b3a771393/',
         'order': 2,
     },
 ]

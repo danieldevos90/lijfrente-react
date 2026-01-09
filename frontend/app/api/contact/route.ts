@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { getSiteContactInfo } from '@/lib/get-site-contact-info';
 
 // Initialize Resend only if API key is available
 const getResend = () => {
@@ -43,8 +44,10 @@ export async function POST(request: NextRequest) {
       );
     }
     
+    // Get contact email from Strapi
+    const contactInfo = await getSiteContactInfo();
     const fromEmail = process.env.RESEND_FROM_EMAIL || 'hello@geldgeregeld.nl';
-    const toEmail = process.env.CONTACT_EMAIL || 'info@geldgeregeld.nl';
+    const toEmail = process.env.CONTACT_EMAIL || contactInfo.email;
     
     try {
       const { data, error } = await resend.emails.send({

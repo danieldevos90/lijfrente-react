@@ -79,7 +79,7 @@ export default function ContactOptionsSection({
           >
             <div className="contact-options-grid" style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(2, 1fr)',
               gap: '2rem',
               margin: '0 auto',
             }}>

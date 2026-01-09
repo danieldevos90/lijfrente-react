@@ -3,6 +3,8 @@ import React from 'react';
 import TransparentHeader from '../../components/TransparentHeader';
 import Footer from '../../components/Footer';
 import SubpageHero from '../../components/SubpageHero';
+import ContactInfo from '../../components/ContactInfo';
+import PrivacyEmail from '../../components/PrivacyEmail';
 
 export default function PrivacyPage() {
   const handleCtaClick = () => {
@@ -46,7 +48,7 @@ export default function PrivacyPage() {
               color: 'var(--color-text)',
               marginBottom: '1rem',
             }}>
-              GeldGeregeld B.V. (hierna: "GeldGeregeld", "wij" of "ons") hecht veel waarde aan de bescherming van uw persoonsgegevens. In dit privacybeleid leggen wij uit welke persoonsgegevens wij verzamelen, waarom wij deze verzamelen, hoe wij deze gebruiken en met wie wij deze delen.
+              GeldGeregeld (hierna: "GeldGeregeld", "wij" of "ons") hecht veel waarde aan de bescherming van uw persoonsgegevens. In dit privacybeleid leggen wij uit welke persoonsgegevens wij verzamelen, waarom wij deze verzamelen, hoe wij deze gebruiken en met wie wij deze delen.
             </p>
             <p style={{
               fontSize: '1.0625rem',
@@ -74,7 +76,7 @@ export default function PrivacyPage() {
               color: 'var(--color-text)',
               marginBottom: '1rem',
             }}>
-              GeldGeregeld B.V. is de verwerkingsverantwoordelijke voor de verwerking van uw persoonsgegevens:
+              GeldGeregeld is de verwerkingsverantwoordelijke voor de verwerking van uw persoonsgegevens:
             </p>
             <div style={{
               background: 'white',
@@ -83,13 +85,9 @@ export default function PrivacyPage() {
               marginBottom: '1rem',
               border: '1px solid var(--color-border)',
             }}>
-              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: 0 }}>
-                <strong>GeldGeregeld B.V.</strong><br />
-                Herengracht 282<br />
-                1016 BX Amsterdam<br />
-                Nederland<br />
-                KVK-nummer: [nummer invoegen]<br />
-                E-mail: privacy@geldgeregeld.nl
+              <ContactInfo showKvk={true} showEmail={true} showPhone={true} email="privacy@geldgeregeld.nl" />
+              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: '1rem 0 0 0' }}>
+                Website: www.geldgeregeld.nl
               </p>
             </div>
           </section>
@@ -153,9 +151,11 @@ export default function PrivacyPage() {
               paddingLeft: '1.5rem',
               marginBottom: '1rem',
             }}>
-              <li>Gebruiksgegevens: pagina's die u bezoekt, klikgedrag, tijd op de website</li>
-              <li>Technische gegevens: IP-adres, browsertype, apparaattype, besturingssysteem</li>
-              <li>Cookies en vergelijkbare technologieën (zie ons <a href="/cookies" style={{ color: 'var(--color-charcoal)', textDecoration: 'underline' }}>Cookiebeleid</a>)</li>
+              <li>Gebruiksgegevens: pagina's die u bezoekt, klikgedrag, tijd op de website, scrollgedrag</li>
+              <li>Technische gegevens: IP-adres (geanonimiseerd), browsertype, apparaattype, besturingssysteem, schermresolutie</li>
+              <li>Verkeersgegevens: verwijzende websites, zoektermen, campagne-informatie</li>
+              <li>Cookies en vergelijkbare technologieën: analytische cookies, functionele cookies (zie ons <a href="/cookies" style={{ color: 'var(--color-charcoal)', textDecoration: 'underline' }}>Cookiebeleid</a>)</li>
+              <li>Google Analytics: wij gebruiken Google Analytics 4 (GA4) voor website-analyse. Uw IP-adres wordt geanonimiseerd voordat verzending naar Google.</li>
             </ul>
           </section>
 
@@ -250,7 +250,8 @@ export default function PrivacyPage() {
               marginBottom: '1rem',
             }}>
               <li><strong>Financieringspartners:</strong> Alleen met uw toestemming, om uw aanvraag te beoordelen</li>
-              <li><strong>Dienstverleners:</strong> IT-dienstverleners, marketing- en analysebureaus (onder strikte contractuele afspraken)</li>
+              <li><strong>Dienstverleners:</strong> IT-dienstverleners, hosting providers, e-mailservice providers (Resend), marketing- en analysebureaus (onder strikte contractuele afspraken)</li>
+              <li><strong>Google Analytics:</strong> Wij gebruiken Google Analytics 4 voor website-analyse. Google verwerkt gegevens volgens hun privacybeleid. U kunt zich afmelden via cookie-instellingen.</li>
               <li><strong>Overheidsinstanties:</strong> Wanneer wij hiertoe wettelijk verplicht zijn</li>
             </ul>
             <p style={{
@@ -334,7 +335,7 @@ export default function PrivacyPage() {
               color: 'var(--color-text)',
               marginBottom: '1rem',
             }}>
-              U kunt uw rechten uitoefenen door contact met ons op te nemen via privacy@geldgeregeld.nl. Wij reageren binnen 1 maand op uw verzoek.
+              U kunt uw rechten uitoefenen door contact met ons op te nemen via <PrivacyEmail />. Wij reageren binnen 1 maand op uw verzoek.
             </p>
           </section>
 
@@ -406,7 +407,7 @@ export default function PrivacyPage() {
               color: 'var(--color-text)',
               marginBottom: '1rem',
             }}>
-              Indien u niet tevreden bent met de manier waarop wij met uw persoonsgegevens omgaan, kunt u contact met ons opnemen via privacy@geldgeregeld.nl. U heeft ook het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens (AP):
+              Indien u niet tevreden bent met de manier waarop wij met uw persoonsgegevens omgaan, kunt u contact met ons opnemen via <PrivacyEmail />. U heeft ook het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens (AP):
             </p>
             <div style={{
               background: 'white',
@@ -448,12 +449,7 @@ export default function PrivacyPage() {
               padding: '1.5rem',
               borderRadius: '8px',
             }}>
-              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: 0 }}>
-                <strong>GeldGeregeld B.V.</strong><br />
-                E-mail: privacy@geldgeregeld.nl<br />
-                Telefoon: 020-1234567<br />
-                Post: Herengracht 282, 1016 BX Amsterdam
-              </p>
+              <ContactInfo showKvk={true} showEmail={true} showPhone={true} email="privacy@geldgeregeld.nl" />
             </div>
           </section>
         </div>

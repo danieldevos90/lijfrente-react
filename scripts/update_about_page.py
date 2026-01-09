@@ -11,7 +11,7 @@ from typing import Dict, Any
 
 # Configuration
 STRAPI_URL = os.getenv('STRAPI_URL', 'https://bright-smile-1f47bc9d67.strapiapp.com')
-STRAPI_TOKEN = 'a96c4cade5ac4b12d9479f03d1bec6d0719e4f78747522f35e05b29bcba5d3571579ab84e88fd56f5d260ec5550654c61e0dba7625cfce335021d0b361c039e64d4cb24fd2e183c3e646cf5e5e037ccbb85c7ede948db96aed2319e8fdee0bcfea51cd2b97d670f57342a4f79558108f2ed57483892bca68b5cc71f35cdf1717'
+STRAPI_TOKEN = os.getenv('STRAPI_TOKEN') or os.getenv('STRAPI_API_TOKEN', 'd99769076f02a2ce82aa21def32e0b23934127c16a95be87bc3d6909591b0e2be386a303de606e849b00e1c46a4d3f2a6a0bc9911f6511e80f5189f8d6d1d22a755015e3b8f0898007070a11366dfdc2570b3b568667be318f570a93f6ab7daef8ca2c5180c5a5f45794714b364aac4191c09a2bd138bbb837ca0061947e28ad')
 
 HEADERS = {
     'Authorization': f'Bearer {STRAPI_TOKEN}',
@@ -144,7 +144,7 @@ def create_about_page():
     sections = [
         {
             "__component": "sections.hero-section",
-            "title": "Zakelijke Financieringen – Erik de Vos/Jan Dijkerman",
+            "title": "Specialist in zakelijke financieringen",
             "subtitle": "Financiële ruimte voor groei",
             "variant": "gradient",
             "iconPath": "/icons/SVG/finance/wallet.svg"
@@ -152,7 +152,7 @@ def create_about_page():
         {
             "__component": "sections.content-section",
             "title": "Ervaren adviseurs met oog voor uw situatie",
-            "content": "Ondernemers hebben behoefte aan duidelijkheid, maatwerk en een adviseur die meedenkt. Met jarenlange ervaring als onafhankelijk hypotheekadviseur richt Erik de Vos zich nu volledig op zakelijke financieringen. Hij helpt bedrijven bij het verkrijgen van passende financieringsoplossingen die aansluiten op hun ambities en situatie.\n\nErik verdiept zich in uw onderneming, denkt mee en begeleidt het hele traject van aanvraag tot afronding. Samen met Jan Dijkerman zorgen zij ervoor dat u altijd het best passende financieringsvoorstel krijgt.",
+            "content": "Ondernemers hebben behoefte aan duidelijkheid, maatwerk en een adviseur die meedenkt. Met meer dan 25+ jaar ervaring als onafhankelijk hypotheekadviseur richten wij ons nu mede op zakelijke financieringen. Wij helpen bedrijven bij het verkrijgen van passende financieringsoplossingen die aansluiten op hun ambities en situatie.\n\nWij verdiepen ons in uw onderneming, denken mee en begeleiden het hele traject van aanvraag tot afronding. Samen zorgen wij ervoor dat u altijd het best passende financieringsvoorstel krijgt.",
             "layout": "image-left",
             "background": "white"
         }
@@ -170,34 +170,34 @@ def create_about_page():
     
     sections.append({
         "__component": "sections.why-choose-section",
-        "title": "Waarom kiezen voor Erik de Vos en Jan Dijkerman?",
+        "title": "Waarom kiezen voor geldgeregeld.nl",
         "subtitle": "De voordelen van samenwerken met ervaren adviseurs",
         "benefits": [
             {
                 "iconPath": "/icons/SVG/interface/zap.svg",
                 "title": "Ervaring in complexe financiële trajecten",
-                "description": "Meer dan tien jaar ervaring in financiële advisering vormt de basis voor deskundig advies op maat.",
+                "description": "25 jaar ervaring in financiële advisering vormt de basis voor deskundig advies op maat.",
                 "color": "#fff2b2",
                 "textColor": "#5e5515"
             },
             {
                 "iconPath": "/icons/SVG/interface/message.svg",
                 "title": "Heldere communicatie in begrijpelijke taal",
-                "description": "Financiële vraagstukken kunnen complex zijn. Erik vertaalt ze naar duidelijke oplossingen waar ondernemers direct mee verder kunnen.",
+                "description": "Financiële vraagstukken kunnen complex zijn. Wij vertalen ze naar duidelijke oplossingen waar ondernemers direct mee verder kunnen.",
                 "color": "#e4f2ff",
                 "textColor": "#0f1720"
             },
             {
                 "iconPath": "/icons/SVG/interface/shield.svg",
                 "title": "Onafhankelijk en transparant advies",
-                "description": "Als zelfstandig adviseur kijkt Erik naar alle beschikbare financieringsmogelijkheden, zodat de ondernemer altijd het best passende voorstel krijgt.",
+                "description": "Als zelfstandig adviseur kijken wij naar alle beschikbare financieringsmogelijkheden, zodat ondernemers altijd het best passende voorstel krijgen.",
                 "color": "#bbe7be",
                 "textColor": "#114e0b"
             },
             {
                 "iconPath": "/icons/SVG/interface/user-add.svg",
                 "title": "Persoonlijke betrokkenheid",
-                "description": "Elke ondernemer en elk bedrijf is uniek. Erik verdiept zich in de onderneming, denkt mee en begeleidt het hele traject van aanvraag tot afronding.",
+                "description": "Elke ondernemer en elk bedrijf is uniek. Wij verdiepen ons in uw onderneming, denken mee en begeleiden het hele traject van aanvraag tot afronding.",
                 "color": "#d7d0ff",
                 "textColor": "#3b0b5e"
             }
@@ -208,8 +208,8 @@ def create_about_page():
         "data": {
             "siteId": SITE_ID,
             "slug": "over-ons",
-            "title": "Over Ons - Zakelijke Financieringen",
-            "metaDescription": "Ontmoet Erik de Vos en Jan Dijkerman, ervaren adviseurs in zakelijke financieringen. Heldere communicatie, onafhankelijk advies en persoonlijke betrokkenheid.",
+            "title": "Specialist in zakelijke financieringen",
+            "metaDescription": "Specialist in zakelijke financieringen. Wij helpen ondernemers met passende financieringsoplossingen die aansluiten op hun ambities en situatie.",
             "metaKeywords": "zakelijke financiering, erik de vos, jan dijkerman, bedrijfslening, mkb financiering",
             "sections": sections
         }

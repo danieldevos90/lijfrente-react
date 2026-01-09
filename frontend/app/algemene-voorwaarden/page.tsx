@@ -3,6 +3,8 @@ import React from 'react';
 import TransparentHeader from '../../components/TransparentHeader';
 import Footer from '../../components/Footer';
 import SubpageHero from '../../components/SubpageHero';
+import ContactInfo from '../../components/ContactInfo';
+import KvkNumber from '../../components/KvkNumber';
 
 export default function TermsPage() {
   const handleCtaClick = () => {
@@ -55,7 +57,7 @@ export default function TermsPage() {
               paddingLeft: '1.5rem',
               marginBottom: '1rem',
             }}>
-              <li><strong>GeldGeregeld:</strong> GeldGeregeld B.V., gevestigd te Amsterdam, KVK-nummer [nummer], de aanbieder van bemiddelingsdiensten</li>
+              <li><strong>GeldGeregeld:</strong> GeldGeregeld, gevestigd te Amsterdam, KVK-nummer <KvkNumber />, de aanbieder van bemiddelingsdiensten</li>
               <li><strong>Klant:</strong> De natuurlijke persoon of rechtspersoon die gebruik maakt of wil maken van de diensten van GeldGeregeld</li>
               <li><strong>Diensten:</strong> Alle diensten die door GeldGeregeld worden aangeboden, inclusief maar niet beperkt tot bemiddeling bij zakelijke financiering</li>
               <li><strong>Financier:</strong> De derde partij die de daadwerkelijke financiering verstrekt</li>
@@ -503,15 +505,7 @@ export default function TermsPage() {
               borderRadius: 'var(--radius-lg)',
               border: '1px solid var(--color-border)',
             }}>
-              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: 0 }}>
-                <strong>GeldGeregeld B.V.</strong><br />
-                Herengracht 282<br />
-                1016 BX Amsterdam<br />
-                Nederland<br />
-                <br />
-                E-mail: info@geldgeregeld.nl<br />
-                Telefoon: 020-1234567
-              </p>
+              <ContactInfo showEmail={true} showPhone={true} />
             </div>
           </section>
         </div>

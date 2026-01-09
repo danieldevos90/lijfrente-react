@@ -70,8 +70,19 @@ export default function TransparentHeaderClient({
   const isSolid = !transparent || isScrolled;
   const textColor = isTransparent ? initialTextColor : 'var(--color-text)';
 
-  // Sort nav items by order
-  const sortedNavItems = [...navItems].sort((a, b) => {
+  // Deduplicate nav items by href (keep first occurrence), then sort by order
+  const seenHrefs = new Set<string>();
+  const uniqueNavItems = navItems.filter((item) => {
+    const itemData = item.attributes || item;
+    const href = (itemData as any).href || '';
+    if (seenHrefs.has(href)) {
+      return false; // Skip duplicate
+    }
+    seenHrefs.add(href);
+    return true;
+  });
+  
+  const sortedNavItems = uniqueNavItems.sort((a, b) => {
     const aData = a.attributes || a;
     const bData = b.attributes || b;
     const aOrder = (aData as any).order ?? 0;

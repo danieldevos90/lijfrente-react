@@ -3,6 +3,7 @@ import React from 'react';
 import TransparentHeader from '../../components/TransparentHeader';
 import Footer from '../../components/Footer';
 import SubpageHero from '../../components/SubpageHero';
+import ContactInfo from '../../components/ContactInfo';
 
 export default function DisclaimerPage() {
   const handleCtaClick = () => {
@@ -46,7 +47,7 @@ export default function DisclaimerPage() {
               color: 'var(--color-text)',
               marginBottom: '1rem',
             }}>
-              GeldGeregeld B.V. (hierna: "GeldGeregeld") streeft ernaar om via deze website accurate, volledige en actuele informatie te verstrekken. Desondanks kunnen er onjuistheden of onvolledigheden in de informatie voorkomen. GeldGeregeld aanvaardt geen aansprakelijkheid voor schade die voortvloeit uit het gebruik van de informatie op deze website.
+              GeldGeregeld (hierna: "GeldGeregeld") streeft ernaar om via deze website accurate, volledige en actuele informatie te verstrekken. Desondanks kunnen er onjuistheden of onvolledigheden in de informatie voorkomen. GeldGeregeld aanvaardt geen aansprakelijkheid voor schade die voortvloeit uit het gebruik van de informatie op deze website.
             </p>
           </section>
 
@@ -400,15 +401,7 @@ export default function DisclaimerPage() {
               borderRadius: 'var(--radius-lg)',
               border: '1px solid var(--color-border)',
             }}>
-              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: 0 }}>
-                <strong>GeldGeregeld B.V.</strong><br />
-                Herengracht 282<br />
-                1016 BX Amsterdam<br />
-                Nederland<br />
-                <br />
-                E-mail: info@geldgeregeld.nl<br />
-                Telefoon: 020-1234567
-              </p>
+              <ContactInfo showEmail={true} showPhone={true} />
             </div>
           </section>
         </div>

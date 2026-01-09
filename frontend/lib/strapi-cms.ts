@@ -567,15 +567,35 @@ export async function getTeamMembers(
       return [];
     }
 
-    // Filter out unpublished items
+    // Filter out unpublished items and ensure we have valid data
     const published = response.data.filter((member) => {
       const memberData = member.attributes || member;
       const memberAny = memberData as any;
-      if (!memberAny.publishedAt) {
-        return true; // Include if no publishedAt (assume published)
+      
+      // Check if published
+      if (memberAny.publishedAt) {
+        const isPublished = new Date(memberAny.publishedAt) <= new Date();
+        if (!isPublished) {
+          return false;
+        }
       }
-      return new Date(memberAny.publishedAt) <= new Date();
+      
+      // Ensure we have at least a name
+      if (!memberAny.name) {
+        return false;
+      }
+      
+      return true;
     });
+
+    if (isDev) {
+      console.log('[getTeamMembers] Published members:', published.length);
+      published.forEach((member: any) => {
+        const memberData = member.attributes || member;
+        const image = memberData.image;
+        console.log(`  - ${memberData.name}: hasImage=${!!image?.url}, email=${memberData.email || 'none'}, linkedin=${memberData.linkedin || 'none'}`);
+      });
+    }
 
     return published;
   } catch (error) {

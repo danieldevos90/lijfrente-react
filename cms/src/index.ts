@@ -71,6 +71,8 @@ export default {
           'api::sector-page.sector-page.update',
           'api::team-member.team-member.find',
           'api::team-member.team-member.findOne',
+          'api::benefit.benefit.find',
+          'api::benefit.benefit.findOne',
         ];
 
         const upsert = async (action: string) => {

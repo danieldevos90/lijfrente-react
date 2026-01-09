@@ -1,30 +1,21 @@
 import './tokens.css';
 import './globals.css';
 import type { ReactNode } from 'react';
+import type { Metadata } from 'next';
 import GlobalWidgetProvider from '../components/GlobalWidgetProvider';
-import PasswordProtection from '../components/PasswordProtection';
+import CookieBanner from '../components/CookieBanner';
 import { ErrorHandler } from './error-handler';
+import SchemaMarkup from '../components/SEO/SchemaMarkup';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
-export const metadata = {
-  title: SITE_NAME + ' - Zakelijke Financiering',
+export const metadata: Metadata = generateSEOMetadata({
+  title: `${SITE_NAME} - Zakelijke Financiering`,
   description: 'Snel en simpel zakelijke financiering regelen – binnen 24 uur reactie en transparante voorwaarden',
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#457fff' },
-    ],
-  },
-  manifest: '/site.webmanifest',
-};
+  keywords: 'zakelijke financiering, zakelijke lening, bedrijfsfinanciering, snel geld lenen, zakelijk krediet',
+  canonicalUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://geldgeregeld.nl',
+  siteName: SITE_NAME,
+});
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
@@ -33,6 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="nl">
       <head>
+        <SchemaMarkup />
         {/* Suppress unhandled promise rejections and 401 errors immediately */}
         <script
           dangerouslySetInnerHTML={{
@@ -160,6 +152,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             `,
           }}
         />
+        {/* GA4 Analytics - Will be loaded by CookieBanner component after consent */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Initialize dataLayer for GA4
+              // GA4 script will be loaded by CookieBanner after user consent
+              window.dataLayer = window.dataLayer || [];
+            `,
+          }}
+        />
         {gtmId ? (
           <>
             <script
@@ -186,11 +188,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </noscript>
         ) : null}
         <ErrorHandler />
-        <PasswordProtection>
         <GlobalWidgetProvider>
           {children}
+          <CookieBanner />
         </GlobalWidgetProvider>
-        </PasswordProtection>
       </body>
     </html>
   );
