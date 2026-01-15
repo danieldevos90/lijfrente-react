@@ -151,6 +151,7 @@ export default function TwoBlocksSection({
                 flex: 1,
                 display: 'flex',
                 flexDirection: 'column',
+                textAlign: 'center',
               }}>
                 <h3 style={{
                   fontFamily: '"PP Neue Montreal", sans-serif',

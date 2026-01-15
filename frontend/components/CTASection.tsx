@@ -40,7 +40,7 @@ export default function CTASection({
         </h2>
         <p style={{
           fontSize: '1.25rem',
-          color: 'rgba(255, 255, 255, 0.7)',
+          color: 'var(--overlay-white-7)',
           marginBottom: '3rem',
           lineHeight: 1.6,
         }}>
@@ -48,14 +48,14 @@ export default function CTASection({
         </p>
         <button
           onClick={onButtonClick}
-          className="btn btn-white cta-button"
+          className="btn btn-secondary cta-button"
         >
           {buttonText}
         </button>
 
         <p style={{
           fontSize: '0.9375rem',
-          color: 'rgba(255, 255, 255, 0.5)',
+          color: 'var(--overlay-white-5)',
           marginTop: '2rem',
         }}>
           {subText}

@@ -39,7 +39,8 @@ export default function ColumnLayout({
             padding: 'var(--space-lg)',
             border: '1px solid var(--color-border)',
             borderRadius: 'var(--radius-md)',
-            background: '#fff'
+            background: 'var(--color-white)',
+            textAlign: 'center'
           }}
         >
           {col.badge && (

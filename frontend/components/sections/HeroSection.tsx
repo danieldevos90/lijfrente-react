@@ -16,9 +16,14 @@ interface HeroSectionProps {
 
 export default function HeroSection(props: HeroSectionProps) {
   const isSubpageHero = props.variant === 'gradient' && !props.backgroundImage;
+  const isHomepageHero = props.variant === 'image';
   
   return (
-    <section className="full-width" style={{ position: 'relative', marginTop: 0, marginBottom: isSubpageHero ? 0 : undefined }}>
+    <section 
+      id={isHomepageHero ? "hero" : undefined}
+      className="full-width" 
+      style={{ position: 'relative', marginTop: 0, marginBottom: isSubpageHero ? 0 : undefined }}
+    >
       <HeroSlide {...props} />
     </section>
   );

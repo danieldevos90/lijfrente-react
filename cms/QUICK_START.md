@@ -120,7 +120,7 @@ http://localhost:1337/api/pages?filters[slug][$eq]=home&populate[sections][popul
 
 ### Colors
 Standard palette with matching text colors:
-- Yellow: `#fff2b2` / `#5e5515`
+- Yellow: `#fff2b2` / `#1e2021`
 - Green: `#bbe7be` / `#114e0b`
 - Blue: `#aad5fc` / `#0f1720`
 - Purple: `#d7d0ff` / `#3b0b5e`

@@ -348,13 +348,13 @@ export default function CookiesPage() {
               <li>Uw browserinstellingen aan te passen om cookies te weigeren</li>
             </ul>
             <div style={{
-              background: '#fcf8d8',
-              border: '1px solid #5e5515',
+              background: 'var(--color-warning)',
+              border: '1px solid var(--color-warning-dark)',
               padding: '1.5rem',
               borderRadius: '8px',
               marginBottom: '1rem',
             }}>
-              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: 0, color: '#5e5515' }}>
+              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: 0, color: 'var(--color-warning-dark)' }}>
                 <strong>Let op:</strong> Als u cookies uitschakelt, is het mogelijk dat bepaalde delen van de website niet goed werken.
               </p>
             </div>

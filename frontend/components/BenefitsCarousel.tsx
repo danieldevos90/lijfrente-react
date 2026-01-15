@@ -88,7 +88,7 @@ export default function BenefitsCarousel({
           }}>
             {benefits.map((item, index) => {
               const isColored = index % 2 === 0;
-              const bgColor = isColored ? item.color : 'white';
+              const bgColor = isColored ? item.color : 'var(--color-white)';
               const textColorMain = isColored ? item.textColor : 'var(--color-text)';
               
               return (

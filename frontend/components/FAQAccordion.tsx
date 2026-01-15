@@ -21,8 +21,8 @@ interface FAQAccordionProps {
  */
 export default function FAQAccordion({ 
   items,
-  defaultBackground = 'white',
-  activeBackground = 'rgb(228, 242, 255)',
+  defaultBackground = 'var(--color-white)',
+  activeBackground = 'var(--color-sky500)',
   maxWidth = '900px'
 }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -50,8 +50,8 @@ export default function FAQAccordion({
               borderRadius: '12px',
               overflow: 'hidden',
               transition: 'all 0.3s ease',
-              border: '1px solid rgba(0, 0, 0, 0.05)',
-              boxShadow: openIndex === index ? '0 4px 12px rgba(0, 0, 0, 0.08)' : '0 1px 3px rgba(0, 0, 0, 0.05)',
+              border: '1px solid var(--overlay-black-05)',
+              boxShadow: openIndex === index ? '0 4px 12px var(--overlay-black-08)' : 'var(--shadow-sm)',
             }}
           >
             {/* Question Header */}
@@ -79,7 +79,7 @@ export default function FAQAccordion({
                 fontFamily: "'Neue Montreal', sans-serif",
                 fontSize: '18px',
                 fontWeight: 500,
-                color: '#0f1720',
+                color: '#1e2021',
                 flex: 1,
                 lineHeight: 1.4,
               }}>
@@ -95,7 +95,7 @@ export default function FAQAccordion({
                 transition: 'transform 0.3s ease',
                 transform: openIndex === index ? 'rotate(45deg)' : 'rotate(0deg)',
               }}>
-                <Plus size={24} color="#0f1720" strokeWidth={2} />
+                <Plus size={24} color="#1e2021" strokeWidth={2} />
               </div>
             </button>
 

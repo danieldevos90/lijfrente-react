@@ -32,7 +32,7 @@ SECTOR_CONTENT = {
                 'description': 'Financier professionele gereedschappen, diagnoseapparatuur en werkplaatsinstallaties. Van liftinstallaties tot computergestuurde systemen – investeer in de toekomst van je garage.',
                 'iconPath': '/icons/SVG/interface/tool.svg',
                 'color': '#fff2b2',
-                'textColor': '#5e5515',
+                'textColor': '#1e2021',
                 'buttonLabel': 'Vraag offerte aan',
                 'buttonHref': '/lead'
             },
@@ -70,7 +70,7 @@ SECTOR_CONTENT = {
                 'description': 'Binnen 24 uur weet je of je financiering is goedgekeurd. Geen lange wachttijden, geen ingewikkelde procedures. Perfect voor automotive bedrijven die snel moeten handelen.',
                 'iconPath': '/icons/SVG/interface/zap.svg',
                 'color': '#fff2b2',
-                'textColor': '#5e5515'
+                'textColor': '#1e2021'
             },
             {
                 'title': 'Flexibel aflossen',
@@ -107,7 +107,7 @@ SECTOR_CONTENT = {
                 'description': 'Investeer in professionele keukenapparatuur voor je restaurant of café. Van ovens tot koelinstallaties, wij helpen je de juiste apparatuur te financieren.',
                 'iconPath': '/icons/SVG/food/cutlery.svg',
                 'color': '#fff2b2',
-                'textColor': '#5e5515',
+                'textColor': '#1e2021',
                 'buttonLabel': 'Vraag offerte aan',
                 'buttonHref': '/lead'
             },
@@ -145,7 +145,7 @@ SECTOR_CONTENT = {
                 'description': 'Binnen 24 uur weet je of je financiering is goedgekeurd. Perfect voor horecazaken die snel moeten handelen.',
                 'iconPath': '/icons/SVG/interface/zap.svg',
                 'color': '#fff2b2',
-                'textColor': '#5e5515'
+                'textColor': '#1e2021'
             },
             {
                 'title': 'Flexibele aflossing',
@@ -182,7 +182,7 @@ SECTOR_CONTENT = {
                 'description': 'Financier verbouwingen en modernisering van je winkel. Maak je retailzaak aantrekkelijker voor klanten met flexibele financiering.',
                 'iconPath': '/icons/SVG/interface/home.svg',
                 'color': '#fff2b2',
-                'textColor': '#5e5515',
+                'textColor': '#1e2021',
                 'buttonLabel': 'Vraag offerte aan',
                 'buttonHref': '/lead'
             },
@@ -220,7 +220,7 @@ SECTOR_CONTENT = {
                 'description': 'Binnen 24 uur weet je of je financiering is goedgekeurd. Perfect voor retailbedrijven die snel moeten handelen.',
                 'iconPath': '/icons/SVG/interface/zap.svg',
                 'color': '#fff2b2',
-                'textColor': '#5e5515'
+                'textColor': '#1e2021'
             },
             {
                 'title': 'Flexibel aflossen',

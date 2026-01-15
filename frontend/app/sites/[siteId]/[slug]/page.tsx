@@ -104,7 +104,7 @@ export default async function Page({ params }: { params: { siteId: string, slug:
       )}
       <div className="row" style={{ marginTop: 24 }}>
         <a className="btn btn-primary" href={`/sites/${params.siteId}/lead`}>Vraag financiering aan</a>
-        <a className="btn" href={`/sites/${params.siteId}`}>Terug</a>
+        <a className="btn btn-secondary" href={`/sites/${params.siteId}`}>Terug</a>
       </div>
       {related?.length > 0 && (
         <div style={{ marginTop: 24 }}>

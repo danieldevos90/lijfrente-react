@@ -37,6 +37,20 @@
     "featured": {
       "type": "boolean",
       "default": false
+    },
+    "sector": {
+      "type": "string",
+      "description": "Sector slug (e.g., 'horeca', 'retail', 'transport') - optional for sector-specific testimonials"
+    },
+    "role": {
+      "type": "string",
+      "description": "Job title or role of the testimonial author"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     }
   }
 }

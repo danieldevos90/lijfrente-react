@@ -238,7 +238,7 @@ export default function LeadForm({ siteId }: { siteId: string }) {
       </div>
 
       <div className="row">
-        <button className="btn" type="button" onClick={async () => {
+        <button className="btn btn-secondary" type="button" onClick={async () => {
           if (typeof window !== 'undefined') {
             (window as any).dataLayer.push({ event: 'psd2_connect_start' });
           }
@@ -260,7 +260,7 @@ export default function LeadForm({ siteId }: { siteId: string }) {
 
       <div className="row">
         <button className="btn btn-primary" type="submit" disabled={loading}>{loading ? "Versturen…" : "Bereken aanbod"}</button>
-        <a className="btn" href="/">Annuleren</a>
+        <a className="btn btn-secondary" href="/">Annuleren</a>
       </div>
       <p className="muted">We vragen alleen wat nodig is om je aanbod te berekenen.</p>
     </form>

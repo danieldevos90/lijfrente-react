@@ -16,9 +16,9 @@ export default function CTASection({
   ctaHref,
   background = 'dark' 
 }: CTASectionProps) {
-  const backgroundColor = background === 'dark' ? '#0f1720' : background === 'gray' ? 'var(--color-bg)' : background === 'blue' ? '#e4f2ff' : '#fff';
-  const textColor = background === 'dark' ? '#fff' : 'var(--color-text)';
-  const textColorMuted = background === 'dark' ? 'rgba(255, 255, 255, 0.75)' : 'var(--color-text-muted)';
+  const backgroundColor = background === 'dark' ? 'var(--color-charcoal)' : background === 'gray' ? 'var(--color-bg)' : background === 'blue' ? 'var(--color-sky500)' : 'var(--color-white)';
+  const textColor = background === 'dark' ? 'var(--color-white)' : 'var(--color-text)';
+  const textColorMuted = background === 'dark' ? 'var(--overlay-white-75)' : 'var(--color-text-muted)';
   
   return (
     <section style={{ 
@@ -60,7 +60,12 @@ export default function CTASection({
         <div style={{ textAlign: 'center' }}>
           <a 
             href={ctaHref}
-            className="btn btn-primary"
+            className={background === 'dark' ? "btn btn-secondary" : "btn btn-primary"}
+            style={background === 'dark' ? {
+              background: 'var(--color-white)',
+              color: 'var(--color-charcoal)',
+              borderColor: 'var(--color-white)'
+            } : undefined}
           >
             {ctaLabel}
           </a>

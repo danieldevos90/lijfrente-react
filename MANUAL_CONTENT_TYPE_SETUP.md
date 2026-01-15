@@ -19,7 +19,7 @@ Add these fields:
 - **description** (Long text, Required)
 - **iconPath** (Text, Optional)
 - **color** (Text, Optional, Default: `#fff2b2`)
-- **textColor** (Text, Optional, Default: `#5e5515`)
+- **textColor** (Text, Optional, Default: `#1e2021`)
 
 Click **Finish**
 
@@ -36,7 +36,7 @@ Add these fields:
 - **description** (Long text, Required)
 - **iconPath** (Text, Optional)
 - **color** (Text, Optional, Default: `#fff2b2`)
-- **textColor** (Text, Optional, Default: `#5e5515`)
+- **textColor** (Text, Optional, Default: `#1e2021`)
 
 Click **Finish**
 

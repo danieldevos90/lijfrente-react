@@ -12,6 +12,9 @@ import CTASection from '../../../components/sections/CTASection';
 import { getStrapiImageUrl } from '@/lib/strapi-cms';
 import { getSectorUnsplashImage, getUnsplashImage } from '@/lib/unsplash';
 import { generateMetadata as generateSEOMetadata, generateServiceSchema, generateBreadcrumbSchema, buildCanonicalUrl, getBaseUrl } from '@/lib/seo';
+import TestimonialsCarousel from '../../../components/TestimonialsCarousel';
+import { getSectorTestimonials, convertToCarouselFormat } from '@/lib/sector-testimonials';
+import { getSectorTestimonials as getStrapiSectorTestimonials } from '@/lib/strapi-cms';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
@@ -27,6 +30,14 @@ const SECTOR_ICONS: Record<string, string> = {
   schoonmaak: '/icons/SVG/interface/magic-wand.svg',
   automotive: '/icons/SVG/e-commerce/truck.svg',
   productie: '/icons/SVG/e-commerce/factory.svg',
+  zzp: '/icons/SVG/interface/user.svg',
+  starters: '/icons/SVG/interface/rocket.svg',
+  franchise: '/icons/SVG/interface/grid.svg',
+  medisch: '/icons/SVG/health/stethoscope.svg',
+  tandarts: '/icons/SVG/health/stethoscope.svg',
+  groothandel: '/icons/SVG/e-commerce/shop.svg',
+  schoonheid: '/icons/SVG/interface/magic-wand.svg',
+  kasstroom: '/icons/SVG/finance/wallet.svg',
 };
 
 // Common Dutch sectors for SEO fallback
@@ -34,52 +45,92 @@ const SECTOR_INFO: Record<string, { name: string; description: string; keywords:
   horeca: {
     name: 'Horeca',
     description: 'Zakelijke financiering speciaal voor de horeca. Van restaurants tot cafés en hotels.',
-    keywords: ['horeca financiering', 'restaurant lening', 'café financiering', 'hotel financiering']
+    keywords: ['horeca financiering', 'restaurant lening', 'café financiering', 'hotel financiering', 'horeca krediet', 'horeca ondernemer financiering', 'horeca lening zonder bkr']
   },
   retail: {
     name: 'Retail',
     description: 'Financiering voor retailbedrijven. Van webshops tot fysieke winkels.',
-    keywords: ['retail financiering', 'winkel financiering', 'webshop lening', 'retail lening']
+    keywords: ['retail financiering', 'winkel financiering', 'webshop lening', 'retail lening', 'retail krediet', 'winkelier financiering', 'retail ondernemer lening']
   },
   transport: {
     name: 'Transport & Logistiek',
     description: 'Zakelijke lening voor transport- en logistiekbedrijven.',
-    keywords: ['transport financiering', 'logistiek lening', 'vrachtwagen financiering', 'transportbedrijf lening']
+    keywords: ['transport financiering', 'logistiek lening', 'vrachtwagen financiering', 'transportbedrijf lening', 'transport krediet', 'logistiek krediet', 'vrachtwagen lening']
   },
   bouw: {
     name: 'Bouw & Installatie',
     description: 'Financiering voor bouwbedrijven en installateurs.',
-    keywords: ['bouw financiering', 'installatie lening', 'bouwbedrijf financiering', 'aannemer lening']
+    keywords: ['bouw financiering', 'installatie lening', 'bouwbedrijf financiering', 'aannemer lening', 'bouw krediet', 'installateur financiering', 'bouwondernemer lening']
   },
   ecommerce: {
     name: 'E-commerce',
     description: 'Zakelijke financiering voor online ondernemers en webshops.',
-    keywords: ['e-commerce financiering', 'webshop lening', 'online ondernemer financiering', 'e-commerce lening']
+    keywords: ['e-commerce financiering', 'webshop lening', 'online ondernemer financiering', 'e-commerce lening', 'webshop krediet', 'online winkel financiering', 'e-commerce krediet']
   },
   zorg: {
     name: 'Zorg & Welzijn',
     description: 'Financiering voor zorginstellingen en welzijnsorganisaties.',
-    keywords: ['zorg financiering', 'welzijn lening', 'zorginstelling financiering', 'zorgondernemer lening']
+    keywords: ['zorg financiering', 'welzijn lening', 'zorginstelling financiering', 'zorgondernemer lening', 'zorg krediet', 'welzijnsorganisatie financiering', 'zorgondernemer krediet']
   },
   consultants: {
     name: 'Advies & Consultancy',
     description: 'Financiering voor adviesbureaus en consultants.',
-    keywords: ['consultancy financiering', 'adviesbureau lening', 'consultant financiering', 'advies lening']
+    keywords: ['consultancy financiering', 'adviesbureau lening', 'consultant financiering', 'advies lening', 'consultancy krediet', 'adviesbureau krediet', 'consultant krediet']
   },
   schoonmaak: {
     name: 'Schoonmaak',
     description: 'Zakelijke financiering voor schoonmaakbedrijven.',
-    keywords: ['schoonmaak financiering', 'schoonmaakbedrijf lening', 'schoonmaak lening']
+    keywords: ['schoonmaak financiering', 'schoonmaakbedrijf lening', 'schoonmaak lening', 'schoonmaak krediet', 'schoonmaakbedrijf krediet', 'reinigingsbedrijf financiering']
   },
   automotive: {
     name: 'Automotive',
     description: 'Financiering voor automotive bedrijven en garages.',
-    keywords: ['automotive financiering', 'garage lening', 'autobedrijf financiering', 'automotive lening']
+    keywords: ['automotive financiering', 'garage lening', 'autobedrijf financiering', 'automotive lening', 'garage krediet', 'autobedrijf krediet', 'autowerkplaats financiering']
   },
   productie: {
     name: 'Productie & Industrie',
     description: 'Zakelijke lening voor productiebedrijven en industriële ondernemingen.',
-    keywords: ['productie financiering', 'industrie lening', 'productiebedrijf financiering', 'industrieel lening']
+    keywords: ['productie financiering', 'industrie lening', 'productiebedrijf financiering', 'industrieel lening', 'productie krediet', 'industrie krediet', 'maakindustrie financiering']
+  },
+  zzp: {
+    name: 'ZZP',
+    description: 'Zakelijke financiering voor zelfstandigen zonder personeel. Flexibele lening voor ZZP\'ers.',
+    keywords: ['zzp lening', 'zzp financiering', 'zzp krediet', 'zelfstandige lening', 'zzp ondernemer financiering', 'zzp lening zonder bkr']
+  },
+  starters: {
+    name: 'Starters & Startups',
+    description: 'Financiering voor startende ondernemers en startups. Snel geregeld zonder jarenlange historie.',
+    keywords: ['starterslening', 'startup financiering', 'startende ondernemer lening', 'nieuwe onderneming financiering', 'starters krediet']
+  },
+  franchise: {
+    name: 'Franchise',
+    description: 'Zakelijke financiering voor franchisenemers. Investeer in je franchise zonder gedoe.',
+    keywords: ['franchise lening', 'franchise financiering', 'franchisenemer lening', 'franchise krediet', 'franchise ondernemer financiering']
+  },
+  medisch: {
+    name: 'Medische Praktijken',
+    description: 'Financiering voor medische praktijken en artsen. Speciaal voor de zorgsector.',
+    keywords: ['medische praktijk lening', 'arts financiering', 'praktijk financiering', 'medisch centrum lening', 'huisarts financiering']
+  },
+  tandarts: {
+    name: 'Tandartspraktijken',
+    description: 'Zakelijke financiering voor tandartspraktijken. Investeer in apparatuur en verbouwingen.',
+    keywords: ['tandartspraktijk lening', 'tandarts financiering', 'tandarts krediet', 'tandartspraktijk krediet', 'tandheelkunde financiering']
+  },
+  groothandel: {
+    name: 'Groothandel',
+    description: 'Financiering voor groothandels en distributiebedrijven. Werkkapitaal voor voorraad en groei.',
+    keywords: ['groothandel financiering', 'groothandel lening', 'wholesale financiering', 'distributie financiering', 'groothandel krediet']
+  },
+  schoonheid: {
+    name: 'Schoonheidsindustrie',
+    description: 'Zakelijke financiering voor kappers, schoonheidssalons en wellnesscentra.',
+    keywords: ['kapper lening', 'schoonheidssalon financiering', 'schoonheidsindustrie lening', 'kapperszaak financiering', 'beauty salon lening']
+  },
+  kasstroom: {
+    name: 'Kasstroom & Werkkapitaal',
+    description: 'Werkkapitaalfinanciering voor bedrijven. Overbrug betalingsachterstanden en investeer in groei.',
+    keywords: ['kasstroom lening', 'werkkapitaal financiering', 'liquiditeitsfinanciering', 'werkkapitaal krediet', 'cashflow financiering']
   },
 };
 
@@ -99,8 +150,8 @@ const FALLBACK_CONTENT: Record<string, {
         title: 'Keukenapparatuur',
         description: 'Investeer in professionele keukenapparatuur voor je restaurant of café. Van ovens tot koelinstallaties, wij helpen je de juiste apparatuur te financieren.',
         imageUrl: '/images/pexels-tima-miroshnichenko-6693637.jpg',
-        color: '#fff2b2',
-        textColor: '#5e5515',
+        color: 'var(--color-sun)',
+        textColor: 'var(--color-warning-dark)',
         buttonLabel: 'Vraag offerte aan',
         buttonHref: '/lead'
       },
@@ -108,8 +159,8 @@ const FALLBACK_CONTENT: Record<string, {
         title: 'Renovatie & Verbouwing',
         description: 'Financier verbouwingen en renovaties voor je horecazaak. Maak je zaak klaar voor de toekomst met flexibele financiering.',
         imageUrl: '/images/pexels-ketut-subiyanto-4559683.jpg',
-        color: '#e4f2ff',
-        textColor: '#0f1720',
+        color: 'var(--color-sky500)',
+        textColor: 'var(--color-text)',
         buttonLabel: 'Meer informatie',
         buttonHref: '/lead'
       },
@@ -117,8 +168,8 @@ const FALLBACK_CONTENT: Record<string, {
         title: 'Voorraad & Inventaris',
         description: 'Bekostig je voorraad en inventaris zonder zorgen. Investeer in kwaliteit zonder grote voorinvestering.',
         imageUrl: '/images/pexels-amina-filkins-5414025.jpg',
-        color: '#fff2b2',
-        textColor: '#5e5515',
+        color: 'var(--color-sun)',
+        textColor: 'var(--color-warning-dark)',
         buttonLabel: 'Bekijk mogelijkheden',
         buttonHref: '/lead'
       },
@@ -126,8 +177,8 @@ const FALLBACK_CONTENT: Record<string, {
         title: 'Seizoensgebonden uitgaven',
         description: 'Overbrug rustige periodes met flexibele financiering. Perfect voor de horeca met wisselende inkomsten.',
         imageUrl: '/images/pexels-ketut-subiyanto-4473496.jpg',
-        color: '#e4f2ff',
-        textColor: '#0f1720',
+        color: 'var(--color-sky500)',
+        textColor: 'var(--color-text)',
         buttonLabel: 'Vraag financiering aan',
         buttonHref: '/lead'
       }
@@ -137,29 +188,29 @@ const FALLBACK_CONTENT: Record<string, {
         title: 'Snelle goedkeuring',
         description: 'Binnen 24 uur weet je of je financiering is goedgekeurd.',
         iconPath: '/icons/SVG/interface/tick.svg',
-        color: '#fff2b2',
-        textColor: '#5e5515'
+        color: 'var(--color-sun)',
+        textColor: 'var(--color-warning-dark)'
       },
       {
         title: 'Flexibele aflossing',
         description: 'Pas je aflossingen aan op je seizoensgebonden inkomsten.',
         iconPath: '/icons/SVG/finance/wallet.svg',
-        color: '#e4f2ff',
-        textColor: '#0f1720'
+        color: 'var(--color-sky500)',
+        textColor: 'var(--color-text)'
       },
       {
         title: 'Geen onderpand nodig',
         description: 'Voor bedragen tot €250.000 heb je geen onderpand nodig.',
         iconPath: '/icons/SVG/interface/shield.svg',
-        color: '#fff2b2',
-        textColor: '#5e5515'
+        color: 'var(--color-sun)',
+        textColor: 'var(--color-warning-dark)'
       },
       {
         title: 'Specifiek voor horeca',
         description: 'Wij begrijpen de unieke behoeften van de horecasector.',
         iconPath: '/icons/SVG/food/cutlery.svg',
-        color: '#e4f2ff',
-        textColor: '#0f1720'
+        color: 'var(--color-sky500)',
+        textColor: 'var(--color-text)'
       }
     ],
     cta: {
@@ -397,6 +448,44 @@ export default async function SectorPage({ params }: { params: { sector: string 
     { name: sectorName, url: buildCanonicalUrl(`/sectoren/${sector}`) },
   ]);
 
+  // Fetch sector-specific testimonials from Strapi, fallback to static testimonials
+  let sectorTestimonials = [];
+  try {
+    const strapiTestimonials = await getStrapiSectorTestimonials(SITE_ID, sector, {
+      next: { revalidate: 3600 }
+    });
+    
+    if (strapiTestimonials.length > 0) {
+      // Convert Strapi testimonials to carousel format
+      sectorTestimonials = strapiTestimonials.map(t => {
+        const attrs = t.attributes || (t as any);
+        const imageUrl = (attrs.image as any)?.data?.attributes?.url 
+          ? getStrapiImageUrl((attrs.image as any).data.attributes.url)
+          : '/images/pexels-ketut-subiyanto-4559683.jpg';
+        
+        return {
+          name: attrs.name,
+          role: attrs.role || attrs.company || '',
+          text: attrs.text,
+          image: imageUrl,
+          company: attrs.company,
+          rating: attrs.rating || 5
+        };
+      });
+    } else {
+      // Fallback to static testimonials
+      const staticTestimonials = getSectorTestimonials(sector);
+      sectorTestimonials = convertToCarouselFormat(staticTestimonials);
+    }
+  } catch (error) {
+    // Fallback to static testimonials on error
+    if (isDev) {
+      console.error('[SectorPage] Error fetching testimonials:', error);
+    }
+    const staticTestimonials = getSectorTestimonials(sector);
+    sectorTestimonials = convertToCarouselFormat(staticTestimonials);
+  }
+
   return (
     <>
       <script
@@ -417,7 +506,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
         <SubpageHero
           title={pageDataAny?.heroTitle || `Zakelijke financiering voor ${sectorInfo?.name || sector}`}
           subtitle={pageDataAny?.heroSubtitle || sectorInfo?.description || ''}
-          backgroundColor="#f9f9f8"
+          backgroundColor="var(--color-bg)"
           iconPath={pageDataAny?.heroImage?.data?.attributes?.url 
             ? getStrapiImageUrl(pageDataAny.heroImage.data.attributes.url)
             : SECTOR_ICONS[sector] || '/icons/SVG/finance/wallet.svg'}
@@ -447,11 +536,21 @@ export default async function SectorPage({ params }: { params: { sector: string 
               iconPath: benefit.iconPath || '/icons/SVG/finance/wallet.svg',
               title: benefit.title,
               desc: benefit.description,
-              color: benefit.color || (index % 2 === 0 ? '#fff2b2' : '#e4f2ff'),
-              textColor: benefit.textColor || (index % 2 === 0 ? '#5e5515' : '#0f1720')
+              color: benefit.color || (index % 2 === 0 ? 'var(--color-sun)' : 'var(--color-sky500)'),
+              textColor: benefit.textColor || (index % 2 === 0 ? 'var(--color-warning-dark)' : 'var(--color-text)')
             }))}
             title={pageDataAny?.benefitsTitle || "Waarom kiezen voor onze financiering?"}
             subtitle={pageDataAny?.benefitsSubtitle || "Voordelen speciaal voor jouw sector"}
+          />
+        )}
+
+        {/* Testimonials Section */}
+        {sectorTestimonials.length > 0 && (
+          <TestimonialsCarousel
+            title={`Wat ${sectorInfo?.name || sector} ondernemers zeggen`}
+            subtitle={`Meer dan 500 tevreden ondernemers uit de ${sectorInfo?.name?.toLowerCase() || sector} sector gingen je voor`}
+            testimonials={sectorTestimonials}
+            backgroundColor="var(--color-bg-slate)"
           />
         )}
 
@@ -464,6 +563,56 @@ export default async function SectorPage({ params }: { params: { sector: string 
             ctaHref={ctaData.href || "/lead"}
           />
         )}
+
+        {/* How It Works Section for Sector */}
+        <section style={{
+          background: 'var(--color-bg-slate)',
+          padding: '6rem 2rem',
+        }}>
+          <div style={{
+            maxWidth: '800px',
+            margin: '0 auto',
+            textAlign: 'center',
+          }}>
+            <h2 style={{
+              fontFamily: 'PP Neue Montreal, sans-serif',
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontWeight: 400,
+              lineHeight: 1.1,
+              marginBottom: '1.5rem',
+              color: 'var(--color-text)',
+            }}>
+              Hoe werkt het voor {sectorInfo?.name || sector}?
+            </h2>
+            <p style={{
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              color: 'var(--color-text-muted)',
+              lineHeight: 1.7,
+              marginBottom: '2.5rem',
+              maxWidth: '600px',
+              margin: '0 auto 2.5rem',
+            }}>
+              Het aanvraagproces is hetzelfde voor alle sectoren: simpel, snel en transparant. Ontdek hoe het werkt in 4 eenvoudige stappen.
+            </p>
+            <a
+              href="/hoe-werkt-het"
+              style={{
+                display: 'inline-block',
+                padding: '1rem 2.5rem',
+                background: 'var(--color-primary)',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontSize: '1.125rem',
+                fontWeight: '600',
+                transition: 'all 0.3s ease',
+              }}
+              aria-label={`Bekijk hoe het aanvraagproces werkt voor ${sectorInfo?.name || sector}`}
+            >
+              Bekijk hoe het werkt
+            </a>
+          </div>
+        </section>
 
         {/* Related sectors section */}
         <RelatedSectors currentSector={sector} />
@@ -479,7 +628,7 @@ async function RelatedSectors({ currentSector }: { currentSector: string }) {
   if (relatedPages.length === 0) return null;
 
   return (
-    <section style={{ padding: '4rem 2rem', background: '#f9f9f8', marginTop: '4rem' }}>
+    <section style={{ padding: '4rem 2rem', background: 'var(--color-bg)', marginTop: '4rem' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <h2 style={{ marginBottom: '2rem', fontSize: '2rem' }}>Andere sectoren</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
@@ -500,7 +649,7 @@ async function RelatedSectors({ currentSector }: { currentSector: string }) {
                   borderRadius: '8px',
                   textDecoration: 'none',
                   color: 'inherit',
-                  border: '1px solid #e0e0e0',
+                  border: '1px solid var(--color-border)',
                   transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                 }}
               >
@@ -508,7 +657,7 @@ async function RelatedSectors({ currentSector }: { currentSector: string }) {
                   {pageData?.sectorName || sectorInfo?.name || sectorSlug}
                 </h3>
                 {(pageData?.metaDescription || sectorInfo?.description) && (
-                  <p style={{ margin: 0, color: '#666', fontSize: '0.9rem' }}>
+                  <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
                     {pageData?.metaDescription || sectorInfo?.description}
                   </p>
                 )}
@@ -530,14 +679,21 @@ export async function generateMetadata({ params }: { params: { sector: string } 
   
   const pageData = sectorPage?.attributes || sectorPage;
   const pageDataAny = pageData as any;
-  const title = pageDataAny?.heroTitle || pageDataAny?.sectorName || `Zakelijke financiering voor ${sectorInfo?.name || sector}`;
+  const sectorName = sectorInfo?.name || sector;
+  
+  // SEO-optimized title: Primary keyword + value prop (following competitor patterns)
+  // Format: "[Sector] Financiering - Value Prop" (e.g., "Horeca Financiering - Binnen 24 uur geregeld")
+  const seoTitle = pageDataAny?.metaTitle || 
+    pageDataAny?.heroTitle || 
+    `${sectorName} Financiering - Binnen 24 uur geregeld`;
+  
   const description = pageDataAny?.metaDescription || sectorInfo?.description || 
-    `Zakelijke financiering speciaal voor ${sectorInfo?.name || sector}. Snel, flexibel en zonder gedoe.`;
+    `Zakelijke financiering speciaal voor ${sectorName}. Snel, flexibel en zonder gedoe. Binnen 24 uur reactie.`;
   const keywords = pageDataAny?.metaKeywords || sectorInfo?.keywords?.join(', ') || '';
   const canonicalUrl = buildCanonicalUrl(`/sectoren/${sector}`);
 
   return generateSEOMetadata({
-    title: buildTitle(title),
+    title: buildTitle(seoTitle),
     description: buildDescription(description),
     keywords: keywords,
     canonicalUrl: canonicalUrl,

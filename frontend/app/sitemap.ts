@@ -151,6 +151,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'schoonmaak',
       'automotive',
       'productie',
+      'zzp',
+      'starters',
+      'franchise',
+      'medisch',
+      'tandarts',
+      'groothandel',
+      'schoonheid',
+      'kasstroom',
     ];
 
     predefinedSectors.forEach((sector) => {
@@ -181,6 +189,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'schoonmaak',
       'automotive',
       'productie',
+      'zzp',
+      'starters',
+      'franchise',
+      'medisch',
+      'tandarts',
+      'groothandel',
+      'schoonheid',
+      'kasstroom',
     ];
 
     sectorPages = predefinedSectors.map((sector) => ({

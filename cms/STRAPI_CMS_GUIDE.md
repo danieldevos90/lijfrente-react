@@ -438,12 +438,12 @@ Use consistent icon paths:
 
 ### 2. Color Palette
 Use the standard color palette:
-- Yellow: `#fff2b2` with text `#5e5515`
+- Yellow: `#fff2b2` with text `#1e2021`
 - Green: `#bbe7be` with text `#114e0b`
 - Blue: `#aad5fc` with text `#0f1720`
 - Purple: `#d7d0ff` with text `#3b0b5e`
 - Pink: `#f8e4e4` with text `#3b0b0b`
-- Cream: `#fcf8d8` with text `#5e5515`
+- Cream: `#fcf8d8` with text `#1e2021`
 
 ### 3. Image Guidelines
 - Use descriptive alternative text for accessibility

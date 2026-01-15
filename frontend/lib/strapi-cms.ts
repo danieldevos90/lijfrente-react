@@ -16,6 +16,7 @@ import {
   StrapiTestimonial,
   StrapiTokenSet,
   StrapiTeamMember,
+  StrapiBenefit,
   StrapiResponse,
   StrapiCollectionResponse,
 } from '@/types/strapi-cms';
@@ -172,7 +173,8 @@ async function fetchStrapi<T>(
 // ============================================================================
 
 /**
- * Fetch a page by slug with all sections populated
+ * Fetch a page by slug with all sections populated deeply
+ * Uses deep population to fetch all nested components, images, and relations
  * 
  * @example
  * const page = await getPageBySlug('home', 'geldgeregeld');
@@ -182,7 +184,8 @@ export async function getPageBySlug(
   siteId: string,
   options?: FetchOptions
 ): Promise<StrapiPage | null> {
-  const endpoint = `/pages?filters[slug][$eq]=${slug}&filters[siteId][$eq]=${siteId}&populate[sections][populate]=*`;
+  // Deep population: populate sections dynamic zone and all nested components/relations
+  const endpoint = `/pages?filters[slug][$eq]=${slug}&filters[siteId][$eq]=${siteId}&populate[sections][populate]=*&populate=*`;
   
   try {
     const response = await fetchStrapi<StrapiCollectionResponse<StrapiPage>>(
@@ -202,7 +205,8 @@ export async function getPageBySlug(
 }
 
 /**
- * Fetch all pages for a site
+ * Fetch all pages for a site with deep population
+ * Populates all sections, nested components, images, and relations
  * 
  * @example
  * const pages = await getAllPages('geldgeregeld');
@@ -211,14 +215,15 @@ export async function getAllPages(
   siteId: string,
   options?: FetchOptions
 ): Promise<StrapiPage[]> {
-  const endpoint = `/pages?filters[siteId][$eq]=${siteId}&populate[sections][populate]=*`;
+  // Deep population: populate sections dynamic zone and all nested data
+  const endpoint = `/pages?filters[siteId][$eq]=${siteId}&populate[sections][populate]=*&populate=*`;
   
   const response = await fetchStrapi<StrapiCollectionResponse<StrapiPage>>(
     endpoint,
     options
   );
 
-  return response.data;
+  return response?.data || [];
 }
 
 /**
@@ -245,6 +250,7 @@ export async function getPageSlugs(
 
 /**
  * Fetch navigation items for a site
+ * Navigation items are public and don't require authentication
  * 
  * @example
  * const navItems = await getNavigationItems('geldgeregeld');
@@ -254,20 +260,75 @@ export async function getNavigationItems(
   options?: FetchOptions
 ): Promise<StrapiNavigationItem[]> {
   const endpoint = `/navigation-items?filters[siteId][$eq]=${siteId}&sort=order:asc`;
+  const url = `${STRAPI_URL}/api${endpoint}`;
+  const isDev = process.env.NODE_ENV === 'development';
   
   try {
-    const response = await fetchStrapi<StrapiCollectionResponse<StrapiNavigationItem>>(
-      endpoint,
-      options
-    );
+    // Navigation items are public - fetch without authentication
+    const headers: HeadersInit = {
+      'Content-Type': 'application/json',
+    };
+    
+    const fetchOptions: RequestInit = {
+      headers,
+      next: options?.next,
+    };
+    
+    if (!options?.next?.revalidate) {
+      fetchOptions.cache = options?.cache || 'no-store';
+    } else if (options?.cache) {
+      fetchOptions.cache = options.cache;
+    }
+    
+    if (isDev) {
+      console.log('[getNavigationItems] Fetching public navigation:', url);
+    }
+    
+    const response = await fetch(url, fetchOptions);
 
-    if (!response || !response.data) {
+    if (isDev) {
+      console.log('[getNavigationItems] Response:', {
+        status: response.status,
+        statusText: response.statusText,
+        ok: response.ok,
+      });
+    }
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        if (isDev) {
+          console.log('[getNavigationItems] 404 - returning empty array');
+        }
+        return [];
+      }
+      
+      if (isDev) {
+        const errorText = await response.text().catch(() => 'Could not read error');
+        console.error('[getNavigationItems] Error response:', {
+          status: response.status,
+          statusText: response.statusText,
+          body: errorText.substring(0, 200),
+        });
+      }
+      return [];
+    }
+
+    const data = await response.json();
+    
+    if (isDev) {
+      console.log('[getNavigationItems] Success:', {
+        hasData: !!data,
+        dataCount: data?.data?.length || 0,
+      });
+    }
+    
+    if (!data || !data.data) {
       return [];
     }
 
     // Deduplicate navigation items by href (keep first occurrence)
     const seen = new Set<string>();
-    const deduplicated = response.data.filter((item) => {
+    const deduplicated = data.data.filter((item: StrapiNavigationItem) => {
       const itemData = (item.attributes || item) as any;
       const href = itemData.href;
       if (seen.has(href)) {
@@ -278,8 +339,14 @@ export async function getNavigationItems(
     });
 
     return deduplicated;
-  } catch (error) {
-    // Silently return empty array on error
+  } catch (error: any) {
+    if (isDev) {
+      console.error('[getNavigationItems] Exception:', {
+        endpoint,
+        errorName: error?.name,
+        errorMessage: error?.message,
+      });
+    }
     return [];
   }
 }
@@ -318,7 +385,8 @@ export async function getFooterContent(
 // ============================================================================
 
 /**
- * Fetch testimonials for a site
+ * Fetch testimonials for a site with deep population
+ * Populates images and all nested relations
  * 
  * @example
  * const testimonials = await getTestimonials('geldgeregeld');
@@ -327,34 +395,64 @@ export async function getTestimonials(
   siteId: string,
   options?: FetchOptions
 ): Promise<StrapiTestimonial[]> {
-  const endpoint = `/testimonials?filters[siteId][$eq]=${siteId}&populate=*`;
+  // Deep population: populate images and all nested relations
+  const endpoint = `/testimonials?filters[siteId][$eq]=${siteId}&populate[image][populate]=*&populate=*`;
   
   const response = await fetchStrapi<StrapiCollectionResponse<StrapiTestimonial>>(
     endpoint,
     options
   );
 
-  return response.data;
+  return response?.data || [];
 }
 
 /**
- * Fetch a single testimonial by ID
+ * Fetch a single testimonial by ID with deep population
+ * Populates images and all nested relations
  */
 export async function getTestimonial(
   id: number,
   options?: FetchOptions
 ): Promise<StrapiTestimonial | null> {
-  const endpoint = `/testimonials/${id}?populate=*`;
+  // Deep population: populate images and all nested relations
+  const endpoint = `/testimonials/${id}?populate[image][populate]=*&populate=*`;
   
   try {
     const response = await fetchStrapi<StrapiResponse<StrapiTestimonial>>(
       endpoint,
       options
     );
-    return response.data;
+    return response?.data || null;
   } catch (error) {
     // Silently return null on error
     return null;
+  }
+}
+
+/**
+ * Fetch testimonials for a specific sector with deep population
+ * Populates images and all nested relations
+ * 
+ * @example
+ * const testimonials = await getSectorTestimonials('geldgeregeld', 'horeca');
+ */
+export async function getSectorTestimonials(
+  siteId: string,
+  sector: string,
+  options?: FetchOptions
+): Promise<StrapiTestimonial[]> {
+  // Deep population: populate images and all nested relations
+  const endpoint = `/testimonials?filters[siteId][$eq]=${siteId}&filters[sector][$eq]=${sector}&populate[image][populate]=*&populate=*&sort=createdAt:desc`;
+  
+  try {
+    const response = await fetchStrapi<StrapiCollectionResponse<StrapiTestimonial>>(
+      endpoint,
+      options
+    );
+    return response?.data || [];
+  } catch (error) {
+    console.error('Error fetching sector testimonials:', error);
+    return [];
   }
 }
 
@@ -363,7 +461,8 @@ export async function getTestimonial(
 // ============================================================================
 
 /**
- * Fetch site configuration
+ * Fetch site configuration with deep population
+ * Populates all site fields including footer links and nested data
  * 
  * @example
  * const site = await getSiteConfig('geldgeregeld');
@@ -372,14 +471,15 @@ export async function getSiteConfig(
   siteId: string,
   options?: FetchOptions
 ): Promise<StrapiSite | null> {
-  const endpoint = `/sites?filters[siteId][$eq]=${siteId}`;
+  // Deep population: populate all site fields and relations
+  const endpoint = `/sites?filters[siteId][$eq]=${siteId}&populate=*`;
   
   const response = await fetchStrapi<StrapiCollectionResponse<StrapiSite>>(
     endpoint,
     options
   );
 
-  return response.data[0] || null;
+  return response?.data?.[0] || null;
 }
 
 // ============================================================================
@@ -387,7 +487,8 @@ export async function getSiteConfig(
 // ============================================================================
 
 /**
- * Fetch design tokens for a site
+ * Fetch design tokens for a site with deep population
+ * Populates all token fields including nested objects
  * 
  * @example
  * const tokens = await getTokenSet('geldgeregeld');
@@ -396,14 +497,15 @@ export async function getTokenSet(
   siteId: string,
   options?: FetchOptions
 ): Promise<StrapiTokenSet | null> {
-  const endpoint = `/token-sets?filters[siteId][$eq]=${siteId}`;
+  // Deep population: populate all token fields
+  const endpoint = `/token-sets?filters[siteId][$eq]=${siteId}&populate=*`;
   
   const response = await fetchStrapi<StrapiCollectionResponse<StrapiTokenSet>>(
     endpoint,
     options
   );
 
-  return response.data[0] || null;
+  return response?.data?.[0] || null;
 }
 
 // ============================================================================
@@ -539,7 +641,8 @@ export async function getTeamMembers(
   options?: FetchOptions
 ): Promise<StrapiTeamMember[]> {
   const isDev = process.env.NODE_ENV === 'development';
-  const endpoint = `/team-members?filters[siteId][$eq]=${siteId}&populate[image][populate]=*&sort=order:asc`;
+  // Deep population: populate images and all nested relations
+  const endpoint = `/team-members?filters[siteId][$eq]=${siteId}&populate[image][populate]=*&populate=*&sort=order:asc`;
   
   if (isDev) {
     console.log('[getTeamMembers] Fetching:', {
@@ -605,6 +708,83 @@ export async function getTeamMembers(
     // Silently return empty array on error
     return [];
   }
+}
+
+// ============================================================================
+// BENEFIT FUNCTIONS
+// ============================================================================
+
+/**
+ * Fetch all benefits for a site with deep population
+ * Populates all benefit fields and relations
+ * 
+ * @example
+ * const benefits = await getBenefits('geldgeregeld');
+ */
+export async function getBenefits(
+  siteId: string,
+  options?: FetchOptions
+): Promise<StrapiBenefit[]> {
+  // Deep population: populate all benefit fields
+  const endpoint = `/benefits?filters[siteId][$eq]=${siteId}&populate=*&sort=order:asc`;
+  
+  const response = await fetchStrapi<StrapiCollectionResponse<StrapiBenefit>>(
+    endpoint,
+    options
+  );
+
+  return response?.data || [];
+}
+
+/**
+ * Fetch a single benefit by slug with deep population
+ * 
+ * @example
+ * const benefit = await getBenefitBySlug('snelle-goedkeuring', 'geldgeregeld');
+ */
+export async function getBenefitBySlug(
+  slug: string,
+  siteId: string,
+  options?: FetchOptions
+): Promise<StrapiBenefit | null> {
+  // Deep population: populate all benefit fields
+  const endpoint = `/benefits?filters[slug][$eq]=${slug}&filters[siteId][$eq]=${siteId}&populate=*`;
+  
+  try {
+    const response = await fetchStrapi<StrapiCollectionResponse<StrapiBenefit>>(
+      endpoint,
+      options
+    );
+
+    if (!response || !response.data || response.data.length === 0) {
+      return null;
+    }
+
+    return response.data[0] || null;
+  } catch (error) {
+    return null;
+  }
+}
+
+/**
+ * Fetch featured benefits for a site
+ * 
+ * @example
+ * const featuredBenefits = await getFeaturedBenefits('geldgeregeld');
+ */
+export async function getFeaturedBenefits(
+  siteId: string,
+  options?: FetchOptions
+): Promise<StrapiBenefit[]> {
+  // Deep population: populate all benefit fields, filter by featured
+  const endpoint = `/benefits?filters[siteId][$eq]=${siteId}&filters[featured][$eq]=true&populate=*&sort=order:asc`;
+  
+  const response = await fetchStrapi<StrapiCollectionResponse<StrapiBenefit>>(
+    endpoint,
+    options
+  );
+
+  return response?.data || [];
 }
 
 // ============================================================================
@@ -692,9 +872,9 @@ export async function getSectorPage(
   options?: FetchOptions
 ): Promise<StrapiSectorPage | null> {
   const isDev = process.env.NODE_ENV === 'development';
-  // Populate all fields including nested components and images
+  // Deep population: populate all images, nested components, and relations
   // Note: useCases and benefits are component arrays, populate them deeply
-  const endpoint = `/sector-pages?filters[sectorSlug][$eq]=${sectorSlug}&filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate]=*&populate[benefits][populate]=*`;
+  const endpoint = `/sector-pages?filters[sectorSlug][$eq]=${sectorSlug}&filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate]=*&populate[benefits][populate]=*&populate=*`;
   
   if (isDev) {
     console.log('[getSectorPage] Fetching:', {
@@ -757,13 +937,15 @@ export async function getSectorPage(
 }
 
 /**
- * Fetch all sector pages for a site
+ * Fetch all sector pages for a site with deep population
+ * Populates all images, nested components, and relations
  */
 export async function getAllSectorPages(
   siteId: string,
   options?: FetchOptions
 ): Promise<StrapiSectorPage[]> {
-  const endpoint = `/sector-pages?filters[siteId][$eq]=${siteId}&populate=*`;
+  // Deep population: populate all images, nested components, and relations
+  const endpoint = `/sector-pages?filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate]=*&populate[benefits][populate]=*&populate=*`;
   
   const response = await fetchStrapi<StrapiCollectionResponse<StrapiSectorPage>>(
     endpoint,

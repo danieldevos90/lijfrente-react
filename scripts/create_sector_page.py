@@ -163,7 +163,7 @@ def create_horeca_sector_page():
                     "title": "Keukenapparatuur",
                     "description": "Investeer in professionele keukenapparatuur voor je restaurant of café. Van ovens tot koelinstallaties, wij helpen je de juiste apparatuur te financieren.",
                     "color": "#fff2b2",
-                    "textColor": "#5e5515",
+                    "textColor": "#1e2021",
                     "buttonLabel": "Vraag offerte aan",
                     "buttonHref": "/lead"
                 },
@@ -179,7 +179,7 @@ def create_horeca_sector_page():
                     "title": "Terras & Uitbreiding",
                     "description": "Breid je terras uit of investeer in nieuwe buitenmeubels. Maak optimaal gebruik van het seizoen met flexibele financiering.",
                     "color": "#fff2b2",
-                    "textColor": "#5e5515",
+                    "textColor": "#1e2021",
                     "buttonLabel": "Vraag offerte aan",
                     "buttonHref": "/lead"
                 },
@@ -200,7 +200,7 @@ def create_horeca_sector_page():
                     "description": "Binnen 24 uur inzicht in je financieringsmogelijkheden. Geen weken wachten zoals bij traditionele banken.",
                     "iconPath": "/icons/SVG/interface/zap.svg",
                     "color": "#fff2b2",
-                    "textColor": "#5e5515"
+                    "textColor": "#1e2021"
                 },
                 {
                     "title": "Flexibel aflossen",
@@ -214,7 +214,7 @@ def create_horeca_sector_page():
                     "description": "Transparante voorwaarden en kosten. Geen verrassingen achteraf. Boetevrij vervroegd aflossen mogelijk.",
                     "iconPath": "/icons/SVG/interface/shield.svg",
                     "color": "#fff2b2",
-                    "textColor": "#5e5515"
+                    "textColor": "#1e2021"
                 },
                 {
                     "title": "Horeca-specialisten",

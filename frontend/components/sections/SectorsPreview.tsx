@@ -71,29 +71,37 @@ export default function SectorsPreview({
   };
 
   return (
-    <section style={{
-      background: backgroundColor,
-      padding: '8rem 0',
-      position: 'relative',
-    }}>
-      <div style={{ margin: '0 auto', padding: '0 2rem', maxWidth: '1400px' }}>
-        {/* Header */}
+    <section 
+      aria-labelledby="sectors-preview-title"
+      style={{
+        background: backgroundColor,
+        padding: '8rem 0',
+        position: 'relative',
+      }}
+    >
+      {/* Header */}
+      <div style={{ 
+        margin: '0 auto', 
+        padding: '0 2rem', 
+        maxWidth: '1400px',
+        marginBottom: '5rem',
+      }}>
         <div style={{ 
           textAlign: 'center', 
-          marginBottom: '5rem', 
-          paddingLeft: '2rem', 
-          paddingRight: '2rem', 
           maxWidth: '800px', 
-          margin: '0 auto 5rem' 
+          margin: '0 auto' 
         }}>
-          <h2 style={{
-            fontFamily: 'PP Neue Montreal, sans-serif',
-            fontSize: 'clamp(2rem, 5vw, 3.75rem)',
-            fontWeight: 400,
-            lineHeight: 1.1,
-            marginBottom: '1rem',
-            color: 'var(--color-text)',
-          }}>
+          <h2 
+            id="sectors-preview-title"
+            style={{
+              fontFamily: 'PP Neue Montreal, sans-serif',
+              fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+              fontWeight: 400,
+              lineHeight: 1.1,
+              marginBottom: '1rem',
+              color: 'var(--color-text)',
+            }}
+          >
             {title}
           </h2>
           {subtitle && (
@@ -108,110 +116,150 @@ export default function SectorsPreview({
             </p>
           )}
         </div>
+      </div>
 
-        {/* Sectors Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-          gap: '2rem',
-          marginBottom: showViewAll ? '4rem' : '0',
-        }}>
-          {displayedSectors.map((sector, index) => {
-            const imageUrl = getImageUrl(sector);
-            const iconPath = sector.iconPath || getSectorIcon(sector.slug);
-            
-            return (
-              <Link
-                key={sector.slug}
-                href={`/sectoren/${sector.slug}`}
-                style={{
-                  display: 'block',
-                  background: 'white',
-                  borderRadius: '.625rem',
-                  overflow: 'hidden',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  border: '1px solid #e2e8f0',
-                  transition: 'all 0.3s ease',
-                  position: 'relative',
-                }}
-                className="sector-preview-card"
-              >
-                {/* Image or Icon */}
-                <div style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: '200px',
-                  background: 'linear-gradient(135deg, #f9f9f8 0%, #ffffff 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                  {imageUrl ? (
-                    <Image
-                      src={imageUrl}
-                      alt={sector.name}
-                      fill
+      {/* Sectors Carousel - Full Width */}
+      <div 
+        className="sectors-scroll-container-outer"
+        style={{
+          position: 'relative',
+          width: '100%',
+        }}
+      >
+        <div 
+          className="sectors-scroll-container"
+          style={{
+            position: 'relative',
+            overflow: 'auto',
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            width: '100%',
+          }}
+        >
+          <nav aria-label="Sectoren overzicht" style={{
+            display: 'flex',
+            gap: '1rem',
+            paddingBottom: '1rem',
+            paddingLeft: '2rem',
+            paddingRight: '2rem',
+          }}>
+              {displayedSectors.map((sector, index) => {
+                const imageUrl = getImageUrl(sector);
+                const iconPath = sector.iconPath || getSectorIcon(sector.slug);
+                
+                return (
+                  <div
+                    key={sector.slug}
+                    className="sector-card-wrapper"
+                    style={{
+                      minWidth: '320px',
+                      maxWidth: '320px',
+                      flex: '0 0 auto',
+                      scrollSnapAlign: 'center',
+                    }}
+                  >
+                    <Link
+                      href={`/sectoren/${sector.slug}`}
+                      aria-label={`Bekijk financiering voor ${sector.name}`}
                       style={{
-                        objectFit: 'cover',
+                        display: 'block',
+                        background: 'white',
+                        borderRadius: '.625rem',
+                        overflow: 'hidden',
+                        textDecoration: 'none',
+                        color: 'inherit',
+                        border: '1px solid var(--color-border)',
+                        transition: 'all 0.3s ease',
+                        position: 'relative',
+                        height: '100%',
                       }}
-                      unoptimized={imageUrl.includes('strapiapp.com')}
-                    />
-                  ) : (
-                    <Image
-                      src={iconPath}
-                      alt={sector.name}
-                      width={80}
-                      height={80}
-                      style={{
-                        objectFit: 'contain',
-                        opacity: 0.8,
-                      }}
-                    />
-                  )}
-                </div>
+                      className="sector-preview-card"
+                    >
+                      {/* Image or Icon */}
+                      <div style={{
+                        position: 'relative',
+                        width: '100%',
+                        height: '200px',
+                        background: 'linear-gradient(135deg, var(--color-bg) 0%, var(--color-white) 100%)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}>
+                        {imageUrl ? (
+                          <Image
+                            src={imageUrl}
+                            alt={sector.name}
+                            fill
+                            style={{
+                              objectFit: 'cover',
+                            }}
+                            unoptimized={imageUrl.includes('strapiapp.com')}
+                          />
+                        ) : (
+                          <Image
+                            src={iconPath}
+                            alt={sector.name}
+                            width={80}
+                            height={80}
+                            style={{
+                              objectFit: 'contain',
+                              opacity: 0.8,
+                            }}
+                          />
+                        )}
+                      </div>
 
-                {/* Content */}
-                <div style={{
-                  padding: '2rem',
-                }}>
-                  <h3 style={{
-                    fontFamily: 'PP Neue Montreal, sans-serif',
-                    fontSize: 'clamp(1.5rem, 3vw, 1.75rem)',
-                    fontWeight: 400,
-                    lineHeight: 1.2,
-                    marginBottom: '1rem',
-                    color: 'var(--color-text)',
-                  }}>
-                    {sector.name}
-                  </h3>
-                  <p style={{
-                    fontSize: 'clamp(0.9375rem, 1.5vw, 1rem)',
-                    lineHeight: 1.6,
-                    color: 'var(--color-text-muted)',
-                    marginBottom: '1.5rem',
-                  }}>
-                    {sector.description}
-                  </p>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    color: '#457fff',
-                    fontWeight: '600',
-                    fontSize: '0.9375rem',
-                  }}>
-                    Lees meer
-                    <span style={{ marginLeft: '0.5rem' }}>→</span>
+                      {/* Content */}
+                      <div style={{
+                        padding: '2rem',
+                        textAlign: 'center',
+                      }}>
+                        <h3 style={{
+                          fontFamily: 'PP Neue Montreal, sans-serif',
+                          fontSize: 'clamp(1.5rem, 3vw, 1.75rem)',
+                          fontWeight: 400,
+                          lineHeight: 1.2,
+                          marginBottom: '1rem',
+                          color: 'var(--color-text)',
+                        }}>
+                          {sector.name}
+                        </h3>
+                        <p style={{
+                          fontSize: 'clamp(0.9375rem, 1.5vw, 1rem)',
+                          lineHeight: 1.6,
+                          color: 'var(--color-text-muted)',
+                          marginBottom: '1.5rem',
+                        }}>
+                          {sector.description}
+                        </p>
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'var(--color-primary)',
+                          fontWeight: '600',
+                          fontSize: '0.9375rem',
+                        }}>
+                          Lees meer
+                          <span style={{ marginLeft: '0.5rem' }}>→</span>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                </div>
-              </Link>
-            );
-          })}
+                );
+              })}
+            </nav>
+          </div>
         </div>
 
         {/* View All Link */}
         {showViewAll && sectors.length > maxItems && (
           <div style={{
+            margin: '0 auto',
+            padding: '0 2rem',
+            maxWidth: '1400px',
             textAlign: 'center',
             marginTop: '3rem',
           }}>
@@ -229,18 +277,67 @@ export default function SectorsPreview({
             </Link>
           </div>
         )}
-      </div>
 
       <style jsx>{`
+        .sectors-scroll-container::-webkit-scrollbar {
+          display: none;
+        }
+
         .sector-preview-card:hover {
           transform: translateY(-4px);
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-          border-color: #457fff;
+          border-color: var(--color-primary);
         }
 
-        @media (max-width: 768px) {
-          .sector-preview-card {
-            min-width: 100%;
+        @media (max-width: 640px) {
+          .sectors-scroll-container-outer {
+            margin: 0 !important;
+            overflow: visible !important;
+          }
+          
+          .sectors-scroll-container {
+            padding-left: calc(10vw) !important;
+            padding-right: calc(10vw) !important;
+            padding-bottom: 1rem !important;
+            scroll-padding: calc(10vw) !important;
+          }
+          
+          .sectors-scroll-container nav {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            gap: 1rem !important;
+          }
+          
+          .sector-card-wrapper {
+            min-width: 80vw !important;
+            max-width: 80vw !important;
+            scroll-snap-align: center !important;
+          }
+        }
+
+        @media (max-width: 768px) and (min-width: 641px) {
+          .sectors-scroll-container-outer {
+            margin: 0 !important;
+            overflow: visible !important;
+          }
+          
+          .sectors-scroll-container {
+            padding-left: calc(12.5vw) !important;
+            padding-right: calc(12.5vw) !important;
+            padding-bottom: 1rem !important;
+            scroll-padding: calc(12.5vw) !important;
+          }
+          
+          .sectors-scroll-container nav {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            gap: 1rem !important;
+          }
+          
+          .sector-card-wrapper {
+            min-width: 75vw !important;
+            max-width: 75vw !important;
+            scroll-snap-align: center !important;
           }
         }
       `}</style>

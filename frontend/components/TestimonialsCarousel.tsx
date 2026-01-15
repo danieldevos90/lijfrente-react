@@ -7,6 +7,8 @@ interface Testimonial {
   role: string;
   text: string;
   image: string;
+  company?: string;
+  rating?: number;
 }
 
 interface TestimonialsCarouselProps {
@@ -20,7 +22,7 @@ export default function TestimonialsCarousel({
   title = "Wat MKB-ondernemers zeggen",
   subtitle = "Meer dan 500 tevreden ondernemers gingen je voor",
   testimonials,
-  backgroundColor = '#f8fafc',
+  backgroundColor = 'var(--color-bg-slate)',
 }: TestimonialsCarouselProps) {
   const testimonialsScrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -62,6 +64,27 @@ export default function TestimonialsCarousel({
     }
   };
 
+  // Generate structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": testimonials.map((testimonial, index) => ({
+      "@type": "Review",
+      "position": index + 1,
+      "author": {
+        "@type": "Person",
+        "name": testimonial.name,
+        "jobTitle": testimonial.role,
+      },
+      "reviewBody": testimonial.text,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": testimonial.rating || 5,
+        "bestRating": 5
+      }
+    }))
+  };
+
   return (
     <section id="testimonials" style={{
       background: backgroundColor,
@@ -69,6 +92,12 @@ export default function TestimonialsCarousel({
       position: 'relative',
       overflow: 'hidden',
     }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData, null, 2),
+        }}
+      />
       <div style={{ margin: '0 auto', overflow: 'visible' }}>
         <div className="testimonials-header" style={{ 
           textAlign: 'center', 
@@ -131,10 +160,10 @@ export default function TestimonialsCarousel({
                   key={index}
                   className="testimonial-card-wrapper"
                   style={{
-                    background: 'white',
+                    background: 'var(--color-white)',
                     padding: '1rem',
                     borderRadius: '12px',
-                    border: '1px solid #e2e8f0',
+                    border: '1px solid var(--color-border-slate)',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                     display: 'flex',
                     flexDirection: 'column',
@@ -163,18 +192,39 @@ export default function TestimonialsCarousel({
                     marginBottom: '0.75rem',
                     gap: '0.625rem'
                   }}>
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      style={{
-                        width: '36px',
-                        height: '36px',
-                        borderRadius: '50%',
-                        objectFit: 'cover',
-                        border: '2px solid #f1f5f9',
-                        flexShrink: 0
-                      }}
-                    />
+                    {testimonial.image ? (
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        style={{
+                          width: '36px',
+                          height: '36px',
+                          borderRadius: '50%',
+                          objectFit: 'cover',
+                          border: '2px solid var(--color-border-light)',
+                          flexShrink: 0
+                        }}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          width: '36px',
+                          height: '36px',
+                          borderRadius: '50%',
+                          backgroundColor: 'var(--color-slate-200)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'var(--color-slate-500)',
+                          fontSize: '0.875rem',
+                          fontWeight: 600,
+                          flexShrink: 0,
+                          border: '2px solid var(--color-border-light)'
+                        }}
+                      >
+                        {testimonial.name.charAt(0).toUpperCase()}
+                      </div>
+                    )}
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ 
                         fontWeight: 600, 
@@ -200,14 +250,29 @@ export default function TestimonialsCarousel({
                   </div>
 
                   {/* Star Rating */}
-                  <div style={{ 
-                    marginBottom: '0.625rem',
-                    color: '#fbbf24',
-                    fontSize: '0.875rem',
-                    letterSpacing: '0.5px'
-                  }}>
-                    {'★★★★★'}
-                  </div>
+                  {testimonial.rating && (
+                    <div style={{ 
+                      marginBottom: '0.625rem',
+                      color: 'var(--color-warning-yellow)',
+                      fontSize: '0.875rem',
+                      letterSpacing: '0.5px'
+                    }}>
+                      {'★'.repeat(testimonial.rating)}
+                      <span style={{ color: 'var(--color-gray-200)' }}>
+                        {'★'.repeat(5 - testimonial.rating)}
+                      </span>
+                    </div>
+                  )}
+                  {!testimonial.rating && (
+                    <div style={{ 
+                      marginBottom: '0.625rem',
+                      color: 'var(--color-warning-yellow)',
+                      fontSize: '0.875rem',
+                      letterSpacing: '0.5px'
+                    }}>
+                      {'★★★★★'}
+                    </div>
+                  )}
 
                   {/* Testimonial Text */}
                   <p style={{ 
@@ -231,7 +296,7 @@ export default function TestimonialsCarousel({
                     bottom: '0.25rem',
                     right: '0.25rem',
                     fontSize: '2rem',
-                    color: '#f8fafc',
+                    color: 'var(--color-bg-slate)',
                     fontFamily: 'Georgia, serif',
                     lineHeight: 1,
                     pointerEvents: 'none'
@@ -262,18 +327,18 @@ export default function TestimonialsCarousel({
                 height: '48px',
                 borderRadius: '50%',
                 border: 'none',
-                background: '#000000',
-                color: 'white',
+                background: 'var(--color-charcoal)',
+                color: 'var(--color-white)',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
                 boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#333333';
+                e.currentTarget.style.background = 'var(--color-charcoal-hover)';
                 e.currentTarget.style.transform = 'scale(1.05)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#000000';
+                e.currentTarget.style.background = 'var(--color-charcoal)';
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
@@ -291,18 +356,18 @@ export default function TestimonialsCarousel({
                 height: '48px',
                 borderRadius: '50%',
                 border: 'none',
-                background: '#000000',
-                color: 'white',
+                background: 'var(--color-charcoal)',
+                color: 'var(--color-white)',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
                 boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#333333';
+                e.currentTarget.style.background = 'var(--color-charcoal-hover)';
                 e.currentTarget.style.transform = 'scale(1.05)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#000000';
+                e.currentTarget.style.background = 'var(--color-charcoal)';
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >

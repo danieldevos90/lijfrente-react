@@ -78,7 +78,8 @@ export function buildCanonicalUrl(path: string): string {
 export function generateMetadata(config: SEOConfig): Metadata {
   const baseUrl = getBaseUrl();
   const canonicalUrl = config.canonicalUrl || baseUrl;
-  const ogImage = config.ogImage || `${baseUrl}/og-image.jpg`;
+  // Default to a professional hero image if og-image.jpg doesn't exist
+  const ogImage = config.ogImage || `${baseUrl}/images/hero/getty-images-4QKnhtJ37ls-unsplash.jpg`;
   const siteName = config.siteName || process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
 
   return {

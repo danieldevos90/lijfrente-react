@@ -97,7 +97,7 @@ export default function TeamSection({
                 borderRadius: '50%',
                 overflow: 'hidden',
                 marginBottom: '2rem',
-                border: '4px solid #f9f9f8',
+                border: '4px solid var(--color-bg)',
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
               }}>
                 {member.imageUrl ? (
@@ -120,7 +120,7 @@ export default function TeamSection({
                   <div style={{
                     width: '100%',
                     height: '100%',
-                    background: 'linear-gradient(135deg, #457fff 0%, #0f1720 100%)',
+                    background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-charcoal) 100%)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -148,7 +148,7 @@ export default function TeamSection({
               {/* Role */}
               <p style={{
                 fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
-                color: '#457fff',
+                color: 'var(--color-primary)',
                 fontWeight: '600',
                 marginBottom: '1.5rem',
               }}>
@@ -184,14 +184,14 @@ export default function TeamSection({
                         width: '40px',
                         height: '40px',
                         borderRadius: '50%',
-                        background: '#f9f9f8',
+                        background: 'var(--color-bg)',
                         color: 'var(--color-text)',
                         textDecoration: 'none',
                         transition: 'all 0.3s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = '#457fff';
-                        e.currentTarget.style.color = 'white';
+                        e.currentTarget.style.background = 'var(--color-primary)';
+                        e.currentTarget.style.color = 'var(--color-white)';
                         e.currentTarget.style.transform = 'translateY(-2px)';
                       }}
                       onMouseLeave={(e) => {
@@ -219,14 +219,14 @@ export default function TeamSection({
                         width: '40px',
                         height: '40px',
                         borderRadius: '50%',
-                        background: '#f9f9f8',
+                        background: 'var(--color-bg)',
                         color: 'var(--color-text)',
                         textDecoration: 'none',
                         transition: 'all 0.3s ease',
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.background = '#0077b5';
-                        e.currentTarget.style.color = 'white';
+                        e.currentTarget.style.color = 'var(--color-white)';
                         e.currentTarget.style.transform = 'translateY(-2px)';
                       }}
                       onMouseLeave={(e) => {

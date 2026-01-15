@@ -1,3 +1,4 @@
+import React from 'react';
 import { getPageBySlug } from '@/lib/strapi-cms';
 import { StrapiSection } from '@/types/strapi-cms';
 import HeaderWithWidget from './HeaderWithWidget';
@@ -15,11 +16,14 @@ const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = getBaseUrl();
   return generateSEOMetadata({
-    title: buildTitle('Zakelijke Financiering - Snel en Simpel'),
+    // SEO-optimized title: Primary keyword + value prop + brand (under 60 chars)
+    title: buildTitle('Zakelijke Financiering - Binnen 24 uur geregeld'),
     description: buildDescription('Snel en simpel zakelijke financiering regelen – binnen 24 uur reactie en transparante voorwaarden. Geen papierwerk, flexibele voorwaarden.'),
     keywords: 'zakelijke financiering, zakelijke lening, bedrijfsfinanciering, snel geld lenen, zakelijk krediet, bedrijfslening',
     canonicalUrl: buildCanonicalUrl('/'),
+    ogImage: `${baseUrl}/images/hero/getty-images-4QKnhtJ37ls-unsplash.jpg`, // Professional business image for social preview
     ogType: 'website',
   });
 }
@@ -90,7 +94,7 @@ export default async function HomePage() {
             // Insert SectorsPreviewSection right after benefits-carousel
             if (index === benefitsIndex && benefitsIndex !== -1) {
               return (
-                <>
+                <React.Fragment key={`section-wrapper-${index}`}>
                   {rendered}
                   <SectorsPreviewSection
                     key={`sectors-${index}`}
@@ -99,7 +103,7 @@ export default async function HomePage() {
                     maxItems={6}
                     showViewAll={true}
                   />
-                </>
+                </React.Fragment>
               );
             }
             

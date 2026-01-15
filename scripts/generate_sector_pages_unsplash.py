@@ -486,7 +486,7 @@ def generate_use_cases(sector_slug: str, sector_name: str, images: Optional[List
     ])
     
     colors = ['#fff2b2', '#e4f2ff', '#fff2b2', '#e4f2ff']
-    text_colors = ['#5e5515', '#0f1720', '#5e5515', '#0f1720']
+    text_colors = ['#1e2021', '#1e2021', '#1e2021', '#1e2021']
     
     use_cases = []
     for i, template in enumerate(templates):
@@ -513,7 +513,7 @@ def generate_benefits(sector_slug: str, sector_name: str) -> List[Dict]:
             'description': 'Binnen 24 uur inzicht in je financieringsmogelijkheden. Geen weken wachten zoals bij traditionele banken.',
             'iconPath': '/icons/SVG/interface/zap.svg',
             'color': '#fff2b2',
-            'textColor': '#5e5515'
+            'textColor': '#1e2021'
         },
         {
             'title': 'Flexibel aflossen',
@@ -527,7 +527,7 @@ def generate_benefits(sector_slug: str, sector_name: str) -> List[Dict]:
             'description': 'Transparante voorwaarden en kosten. Geen verrassingen achteraf. Boetevrij vervroegd aflossen mogelijk.',
             'iconPath': '/icons/SVG/interface/shield.svg',
             'color': '#fff2b2',
-            'textColor': '#5e5515'
+            'textColor': '#1e2021'
         },
         {
             'title': f'Specifiek voor {sector_name.lower()}',

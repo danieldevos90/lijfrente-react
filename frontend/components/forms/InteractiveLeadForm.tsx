@@ -358,7 +358,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
                   <option value="500k-1m">€ 500.000 - € 1.000.000</option>
                   <option value="1m+">€ 1.000.000+</option>
                 </select>
-                <p className="field-disclaimer" style={{ marginTop: '0.5rem', fontSize: '14px', color: '#64748B' }}>
+                <p className="field-disclaimer" style={{ marginTop: '0.5rem', fontSize: '14px', color: 'var(--color-text-muted)' }}>
                   Let op: De jaarlijkse omzet moet minimaal € 100.000 zijn.
                 </p>
               </div>
@@ -537,9 +537,10 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
           ) : (
             <button
               type="button"
-              className="btn btn-primary submit-btn"
+              className="btn btn-primary"
               onClick={handleSubmit}
               disabled={isSubmitting}
+              style={{ fontSize: '18px', padding: '1.25rem 2.5rem' }}
             >
               {isSubmitting ? 'Verzenden...' : 'Aanvraag versturen'}
               <Check size={20} />

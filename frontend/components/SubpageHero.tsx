@@ -19,7 +19,7 @@ export default function SubpageHero({
   ctaText,
   ctaHref,
   onCtaClick,
-  backgroundColor = '#f5f5f5',
+  backgroundColor = 'var(--color-bg-light)',
   backgroundImage,
   iconPath,
 }: SubpageHeroProps) {

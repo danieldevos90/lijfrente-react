@@ -46,7 +46,7 @@ Since the API script is encountering 405 errors (likely due to Strapi Cloud depl
 1. **Keukenapparatuur**
    - Description: `Investeer in professionele keukenapparatuur voor je restaurant of café. Van ovens tot koelinstallaties, wij helpen je de juiste apparatuur te financieren.`
    - Color: `#fff2b2`
-   - Text Color: `#5e5515`
+   - Text Color: `#1e2021`
    - Button Label: `Vraag offerte aan`
    - Button Href: `/lead`
 
@@ -60,7 +60,7 @@ Since the API script is encountering 405 errors (likely due to Strapi Cloud depl
 3. **Terras & Uitbreiding**
    - Description: `Breid je terras uit of investeer in nieuwe buitenmeubels. Maak optimaal gebruik van het seizoen met flexibele financiering.`
    - Color: `#fff2b2`
-   - Text Color: `#5e5515`
+   - Text Color: `#1e2021`
    - Button Label: `Vraag offerte aan`
    - Button Href: `/lead`
 
@@ -81,7 +81,7 @@ Since the API script is encountering 405 errors (likely due to Strapi Cloud depl
    - Description: `Binnen 24 uur inzicht in je financieringsmogelijkheden. Geen weken wachten zoals bij traditionele banken.`
    - Icon Path: `/icons/SVG/interface/zap.svg`
    - Color: `#fff2b2`
-   - Text Color: `#5e5515`
+   - Text Color: `#1e2021`
 
 2. **Flexibel aflossen**
    - Description: `Pas je aflossingen aan op basis van je seizoensgebonden omzet. Meer aflossen in goede maanden, minder in rustige periodes.`
@@ -93,7 +93,7 @@ Since the API script is encountering 405 errors (likely due to Strapi Cloud depl
    - Description: `Transparante voorwaarden en kosten. Geen verrassingen achteraf. Boetevrij vervroegd aflossen mogelijk.`
    - Icon Path: `/icons/SVG/interface/shield.svg`
    - Color: `#fff2b2`
-   - Text Color: `#5e5515`
+   - Text Color: `#1e2021`
 
 4. **Horeca-specialisten**
    - Description: `We begrijpen de uitdagingen van de horeca. Ons team heeft ervaring met restaurants, cafés en hotels.`

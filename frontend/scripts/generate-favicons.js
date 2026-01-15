@@ -26,7 +26,7 @@ async function generateFavicons() {
       await sharp(faviconSvg)
         .resize(size, size, {
           fit: 'contain',
-          background: { r: 69, g: 127, b: 255, alpha: 1 }
+          background: { r: 255, g: 255, b: 255, alpha: 1 }
         })
         .png()
         .toFile(path.join(publicDir, name));

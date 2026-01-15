@@ -84,21 +84,20 @@ export default function CookieBanner() {
     // Check if script already exists
     const existingScript = document.querySelector(`script[src*="${GA4_ID}"]`);
     if (existingScript) {
-      // Script already loaded, just update consent
+      // Script already loaded, just update consent and send page view
       if ((window as any).gtag) {
         (window as any).gtag('consent', 'update', {
           analytics_storage: 'granted',
           ad_storage: preferences.marketing ? 'granted' : 'denied',
         });
+        // Send current page view
+        (window as any).gtag('config', GA4_ID, {
+          page_path: typeof window !== 'undefined' ? window.location.pathname + window.location.search : '/',
+          page_title: typeof document !== 'undefined' ? document.title : '',
+        });
       }
       return;
     }
-    
-    // Load gtag script
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
-    document.head.appendChild(script1);
 
     // Initialize gtag (if not already initialized)
     (window as any).dataLayer = (window as any).dataLayer || [];
@@ -110,11 +109,23 @@ export default function CookieBanner() {
       gtag('js', new Date());
     }
 
-    // Configure GA4 with privacy settings
+    // Get current page info
+    const pagePath = typeof window !== 'undefined' ? window.location.pathname + window.location.search : '/';
+    const pageTitle = typeof document !== 'undefined' ? document.title : '';
+
+    // Load gtag script
+    const script1 = document.createElement('script');
+    script1.async = true;
+    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
+    
+    // Configure GA4 with privacy settings and initial page view
+    // This will be queued in dataLayer and processed when script loads
     (window as any).gtag('config', GA4_ID, {
       anonymize_ip: true,
       allow_google_signals: false,
       allow_ad_personalization_signals: false,
+      page_path: pagePath,
+      page_title: pageTitle,
     });
 
     // Set consent
@@ -122,6 +133,21 @@ export default function CookieBanner() {
       analytics_storage: 'granted',
       ad_storage: preferences.marketing ? 'granted' : 'denied',
     });
+
+    // Append script to DOM (this triggers the load)
+    document.head.appendChild(script1);
+
+    // Send explicit page_view event after script loads (as backup)
+    script1.onload = () => {
+      if ((window as any).gtag) {
+        // The config call above should already send the page view,
+        // but send an explicit event as well to ensure it's tracked
+        (window as any).gtag('event', 'page_view', {
+          page_path: pagePath,
+          page_title: pageTitle,
+        });
+      }
+    };
   };
 
   const acceptAll = () => {
@@ -191,20 +217,20 @@ export default function CookieBanner() {
             </div>
             <div className="cookie-banner-actions">
               <button 
-                className="cookie-btn cookie-btn-secondary"
+                className="btn btn-secondary"
                 onClick={() => setShowSettings(true)}
               >
                 <Settings size={16} />
                 Instellingen
               </button>
               <button 
-                className="cookie-btn cookie-btn-secondary"
+                className="btn btn-secondary"
                 onClick={rejectAll}
               >
                 Weigeren
               </button>
               <button 
-                className="cookie-btn cookie-btn-primary"
+                className="btn btn-primary"
                 onClick={acceptAll}
               >
                 Accepteren
@@ -276,13 +302,13 @@ export default function CookieBanner() {
 
             <div className="cookie-settings-actions">
               <button 
-                className="cookie-btn cookie-btn-secondary"
+                className="btn btn-secondary"
                 onClick={rejectAll}
               >
                 Alles weigeren
               </button>
               <button 
-                className="cookie-btn cookie-btn-primary"
+                className="btn btn-primary"
                 onClick={saveCustomPreferences}
               >
                 Instellingen opslaan

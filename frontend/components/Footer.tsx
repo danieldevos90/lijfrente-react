@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Linkedin } from 'lucide-react';
 import Logo from './Logo';
 import { useWidget } from './GlobalWidgetProvider';
 
@@ -67,58 +66,16 @@ export default function Footer() {
 
   return (
     <footer style={{
-      background: '#0f1720',
-      color: 'white',
+      background: 'var(--color-bg-secondary)',
+      color: 'var(--color-white)',
       padding: '3rem 0 2rem',
-      borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+      borderTop: '1px solid var(--overlay-white-05)',
     }}>
       <div style={{
         margin: '0 auto',
         padding: '0 2rem',
       }}>
-        {/* Top Section - LinkedIn Link */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'flex-start',
-          alignItems: 'flex-start',
-          marginBottom: '2rem',
-          flexWrap: 'wrap',
-          gap: '1rem',
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <a 
-              href={footer.linkedinUrl || 'https://linkedin.com'} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                color: 'rgba(255, 255, 255, 0.6)',
-                textDecoration: 'none',
-                fontSize: '13px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'rgba(255, 255, 255, 0.6)';
-              }}
-            >
-              <Linkedin size={16} />
-              <span>{footer.linkedinText || 'Volg ons op LinkedIn'}</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div style={{
-          width: '100%',
-          height: '1px',
-          background: 'rgba(255, 255, 255, 0.1)',
-          margin: '2rem 0',
-        }} />
+        {/* LinkedIn section hidden */}
 
         {/* Main Content Grid */}
         <div className="footer-main-grid" style={{
@@ -129,11 +86,14 @@ export default function Footer() {
         }}>
           {/* Left Column - Address */}
           <div>
+            <div style={{ marginBottom: '2rem' }}>
+              <Logo size={36} textColor="white" />
+            </div>
             <h4 style={{
               fontSize: '13px',
               fontWeight: 600,
               marginBottom: '0.75rem',
-              color: 'rgba(255, 255, 255, 0.9)',
+              color: 'var(--overlay-white-9)',
             }}>
               Adres
             </h4>
@@ -151,31 +111,8 @@ export default function Footer() {
             </address>
             
             <button 
+              className="btn btn-secondary"
               onClick={() => openDrawer('footer')}
-              style={{
-                border: 'none',
-                backgroundColor: 'white',
-                color: '#0f1720',
-                textAlign: 'center',
-                borderRadius: '10rem',
-                justifyContent: 'center',
-                alignItems: 'center',
-                minWidth: '12rem',
-                padding: '0.75rem 2rem',
-                fontFamily: 'Public Sans Variable, sans-serif',
-                fontSize: '18px',
-                fontWeight: 400,
-                lineHeight: '1rem',
-                transition: 'all .28s',
-                display: 'flex',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#f3f4f6';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'white';
-              }}
             >
               Neem contact op
             </button>
@@ -185,7 +122,7 @@ export default function Footer() {
           <div>
             {footer.description1 && (
               <p style={{
-                color: 'rgba(255, 255, 255, 0.6)',
+                color: 'var(--overlay-white-6)',
                 fontSize: '12px',
                 lineHeight: '1.7',
                 marginBottom: '1rem',
@@ -196,7 +133,7 @@ export default function Footer() {
             
             {footer.description2 && (
               <p style={{
-                color: 'rgba(255, 255, 255, 0.6)',
+                color: 'var(--overlay-white-6)',
                 fontSize: '12px',
                 lineHeight: '1.7',
                 marginBottom: '1rem',
@@ -207,7 +144,7 @@ export default function Footer() {
 
             {footer.description3 && (
               <p style={{
-                color: 'rgba(255, 255, 255, 0.6)',
+                color: 'var(--overlay-white-6)',
                 fontSize: '12px',
                 lineHeight: '1.7',
               }}>
@@ -219,7 +156,7 @@ export default function Footer() {
 
         {/* Bottom Bar - Copyright */}
         <div style={{
-          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+          borderTop: '1px solid var(--overlay-white-1)',
           paddingTop: '1.5rem',
           display: 'flex',
           justifyContent: 'space-between',
@@ -228,7 +165,7 @@ export default function Footer() {
           gap: '1rem',
         }}>
           <p style={{
-            color: 'rgba(255, 255, 255, 0.5)',
+            color: 'var(--overlay-white-5)',
             fontSize: '12px',
             margin: 0,
           }}>
@@ -247,7 +184,7 @@ export default function Footer() {
                 key={index}
                 href={link.href} 
                 style={{
-                  color: 'rgba(255, 255, 255, 0.5)',
+                  color: 'var(--overlay-white-5)',
                   textDecoration: 'none',
                   fontSize: '12px',
                   transition: 'color 0.2s',

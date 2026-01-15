@@ -445,7 +445,7 @@ export default function PrivacyPage() {
               Heeft u vragen over dit privacybeleid of over de verwerking van uw persoonsgegevens? Neem dan contact met ons op:
             </p>
             <div style={{
-              background: '#f9f9f8',
+              background: 'var(--color-bg)',
               padding: '1.5rem',
               borderRadius: '8px',
             }}>

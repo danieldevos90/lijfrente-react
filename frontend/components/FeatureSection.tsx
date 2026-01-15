@@ -1,11 +1,13 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 
 interface FeatureSectionProps {
   title: string;
   description: string;
   buttonText?: string;
-  onButtonClick: () => void;
+  onButtonClick?: () => void;
+  buttonHref?: string;
   imagePath: string;
   imagePosition?: 'left' | 'right';
   backgroundColor?: string;
@@ -16,6 +18,7 @@ export default function FeatureSection({
   description,
   buttonText,
   onButtonClick,
+  buttonHref,
   imagePath,
   imagePosition = 'left',
   backgroundColor = 'white',
@@ -73,36 +76,70 @@ export default function FeatureSection({
             </p>
             {buttonText && (
               <div className="feature-button-wrapper" style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                <button 
-                  className="feature-button"
-                  style={{
-                    border: 'none',
-                    backgroundColor: '#000000',
-                    color: 'white',
-                    textAlign: 'center',
-                    borderRadius: '10rem',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    minWidth: '14rem',
-                    padding: '1.5rem 3rem',
-                    fontFamily: 'Public Sans Variable, sans-serif',
-                    fontSize: '18px',
-                    fontWeight: 400,
-                    lineHeight: '1rem',
-                    transition: 'all .28s',
-                    display: 'flex',
-                    cursor: 'pointer',
-                  }}
-                  onClick={onButtonClick}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#333333';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#000000';
-                  }}
-                >
-                  {buttonText}
-                </button>
+                {buttonHref ? (
+                  <Link 
+                    href={buttonHref}
+                    className="feature-button"
+                    style={{
+                      border: 'none',
+                      backgroundColor: 'var(--color-charcoal)',
+                      color: 'var(--color-white)',
+                      textAlign: 'center',
+                      borderRadius: '10rem',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      minWidth: '14rem',
+                      padding: '1.5rem 3rem',
+                      fontFamily: 'Public Sans Variable, sans-serif',
+                      fontSize: '18px',
+                      fontWeight: 400,
+                      lineHeight: '1rem',
+                      transition: 'all .28s',
+                      display: 'flex',
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--color-charcoal-hover)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
+                    }}
+                  >
+                    {buttonText}
+                  </Link>
+                ) : (
+                  <button 
+                    className="feature-button"
+                    style={{
+                      border: 'none',
+                      backgroundColor: 'var(--color-charcoal)',
+                      color: 'var(--color-white)',
+                      textAlign: 'center',
+                      borderRadius: '10rem',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      minWidth: '14rem',
+                      padding: '1.5rem 3rem',
+                      fontFamily: 'Public Sans Variable, sans-serif',
+                      fontSize: '18px',
+                      fontWeight: 400,
+                      lineHeight: '1rem',
+                      transition: 'all .28s',
+                      display: 'flex',
+                      cursor: 'pointer',
+                    }}
+                    onClick={onButtonClick}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--color-charcoal-hover)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
+                    }}
+                  >
+                    {buttonText}
+                  </button>
+                )}
               </div>
             )}
           </div>

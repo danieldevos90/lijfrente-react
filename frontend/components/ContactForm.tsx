@@ -90,7 +90,7 @@ export default function ContactForm() {
       <div style={{
         padding: '3rem 2rem',
         textAlign: 'center',
-        background: 'white',
+        background: 'var(--color-white)',
         borderRadius: '1.5rem',
         boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
       }}>
@@ -103,7 +103,7 @@ export default function ContactForm() {
             width: '64px',
             height: '64px',
             borderRadius: '50%',
-            background: '#10b981',
+            background: 'var(--color-success-emerald)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -183,7 +183,7 @@ export default function ContactForm() {
               style={{
                 width: '100%',
                 padding: '0.75rem 1rem',
-                border: `2px solid ${errors.name ? '#ef4444' : '#e5e7eb'}`,
+                border: `2px solid ${errors.name ? 'var(--color-error-red)' : 'var(--color-border-gray)'}`,
                 borderRadius: '0.75rem',
                 fontSize: '16px',
                 transition: 'border-color 0.2s ease',
@@ -194,12 +194,12 @@ export default function ContactForm() {
                 e.target.style.outline = 'none';
               }}
               onBlur={(e) => {
-                e.target.style.borderColor = errors.name ? '#ef4444' : '#e5e7eb';
+                e.target.style.borderColor = errors.name ? 'var(--color-error-red)' : 'var(--color-border-gray)';
               }}
             />
             {errors.name && (
               <p style={{
-                color: '#ef4444',
+                color: 'var(--color-error-red)',
                 fontSize: '14px',
                 marginTop: '0.25rem',
                 margin: 0,
@@ -226,7 +226,7 @@ export default function ContactForm() {
               style={{
                 width: '100%',
                 padding: '0.75rem 1rem',
-                border: `2px solid ${errors.email ? '#ef4444' : '#e5e7eb'}`,
+                border: `2px solid ${errors.email ? 'var(--color-error-red)' : 'var(--color-border-gray)'}`,
                 borderRadius: '0.75rem',
                 fontSize: '16px',
                 transition: 'border-color 0.2s ease',
@@ -237,12 +237,12 @@ export default function ContactForm() {
                 e.target.style.outline = 'none';
               }}
               onBlur={(e) => {
-                e.target.style.borderColor = errors.email ? '#ef4444' : '#e5e7eb';
+                e.target.style.borderColor = errors.email ? 'var(--color-error-red)' : 'var(--color-border-gray)';
               }}
             />
             {errors.email && (
               <p style={{
-                color: '#ef4444',
+                color: 'var(--color-error-red)',
                 fontSize: '14px',
                 marginTop: '0.25rem',
                 margin: 0,
@@ -270,7 +270,7 @@ export default function ContactForm() {
             style={{
               width: '100%',
               padding: '0.75rem 1rem',
-              border: '2px solid #e5e7eb',
+              border: '2px solid var(--color-border-gray)',
               borderRadius: '0.75rem',
               fontSize: '16px',
               transition: 'border-color 0.2s ease',
@@ -281,7 +281,7 @@ export default function ContactForm() {
               e.target.style.outline = 'none';
             }}
             onBlur={(e) => {
-              e.target.style.borderColor = '#e5e7eb';
+              e.target.style.borderColor = 'var(--color-border-gray)';
             }}
           />
         </div>
@@ -303,7 +303,7 @@ export default function ContactForm() {
             style={{
               width: '100%',
               padding: '0.75rem 1rem',
-              border: `2px solid ${errors.subject ? '#ef4444' : '#e5e7eb'}`,
+              border: `2px solid ${errors.subject ? 'var(--color-error-red)' : 'var(--color-border-gray)'}`,
               borderRadius: '0.75rem',
               fontSize: '16px',
               transition: 'border-color 0.2s ease',
@@ -314,7 +314,7 @@ export default function ContactForm() {
               e.target.style.outline = 'none';
             }}
             onBlur={(e) => {
-              e.target.style.borderColor = errors.subject ? '#ef4444' : '#e5e7eb';
+              e.target.style.borderColor = errors.subject ? 'var(--color-error-red)' : 'var(--color-border-gray)';
             }}
           />
           {errors.subject && (
@@ -346,7 +346,7 @@ export default function ContactForm() {
             style={{
               width: '100%',
               padding: '0.75rem 1rem',
-              border: `2px solid ${errors.message ? '#ef4444' : '#e5e7eb'}`,
+              border: `2px solid ${errors.message ? 'var(--color-error-red)' : 'var(--color-border-gray)'}`,
               borderRadius: '0.75rem',
               fontSize: '16px',
               transition: 'border-color 0.2s ease',
@@ -358,7 +358,7 @@ export default function ContactForm() {
               e.target.style.outline = 'none';
             }}
             onBlur={(e) => {
-              e.target.style.borderColor = errors.message ? '#ef4444' : '#e5e7eb';
+              e.target.style.borderColor = errors.message ? 'var(--color-error-red)' : 'var(--color-border-gray)';
             }}
           />
           {errors.message && (
@@ -378,7 +378,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           style={{
             border: 'none',
-            backgroundColor: isSubmitting ? '#9ca3af' : 'var(--color-brand)',
+            backgroundColor: isSubmitting ? 'var(--color-gray-400)' : 'var(--color-charcoal)',
             color: 'white',
             textAlign: 'center',
             borderRadius: '10rem',
@@ -398,12 +398,12 @@ export default function ContactForm() {
           }}
           onMouseEnter={(e) => {
             if (!isSubmitting) {
-              e.currentTarget.style.backgroundColor = 'var(--color-brand-dark)';
+              e.currentTarget.style.backgroundColor = 'var(--color-charcoal-hover)';
             }
           }}
           onMouseLeave={(e) => {
             if (!isSubmitting) {
-              e.currentTarget.style.backgroundColor = 'var(--color-brand)';
+              e.currentTarget.style.backgroundColor = 'var(--color-charcoal)';
             }
           }}
         >

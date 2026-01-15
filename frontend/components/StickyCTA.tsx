@@ -52,16 +52,10 @@ export default function StickyCTA({ href, label, useDrawer = true }: StickyCTAPr
   return (
     <>
       <button
-        className="btn btn-black"
+        className="btn btn-primary"
         onClick={handleClick}
         style={{
           display: 'flex',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = '#333333';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = '#000000';
         }}
       >
         {label || 'Vraag financiering aan'}

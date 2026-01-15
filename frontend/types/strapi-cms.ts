@@ -291,13 +291,17 @@ export interface StrapiTestimonial {
   attributes: {
     siteId: string;
     name: string;
-    role: string;
+    company: string;
+    role?: string;
     text: string;
-    image: {
+    rating?: number;
+    featured?: boolean;
+    sector?: string;
+    image?: {
       data: {
         attributes: {
           url: string;
-          alternativeText: string;
+          alternativeText?: string;
         };
       };
     };

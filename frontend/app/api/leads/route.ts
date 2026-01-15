@@ -189,7 +189,7 @@ async function sendEmailNotification(leadData: any) {
     ` : ''}
     
     <hr>
-    <p style="color: #666; font-size: 12px;">
+    <p style="color: #6c737a; font-size: 12px;">
       <strong>Metadata:</strong><br>
       Verzonden op: ${new Date().toLocaleString('nl-NL')}<br>
       Bron: ${leadData.source || 'interactive_form'}<br>

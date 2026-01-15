@@ -389,7 +389,7 @@ def create_homepage():
                             "title": "Binnen 24 uur",
                             "description": "Aanvraag binnen 2 minuten. Aanbod binnen 24 uur. Sneller dan traditionele banken.",
                             "color": "#fff2b2",
-                            "textColor": "#5e5515"
+                            "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/shield.svg",
@@ -424,7 +424,7 @@ def create_homepage():
                             "title": "Zonder onderpand",
                             "description": "Geen zakelijke zekerheden vereist. Ook als de bank je heeft afgewezen.",
                             "color": "#fcf8d8",
-                            "textColor": "#5e5515"
+                            "textColor": "#1e2021"
                         }
                     ]
                 },
@@ -444,22 +444,25 @@ def create_homepage():
                     "backgroundColor": "var(--color-bg)",
                     "testimonials": [
                         {
-                            "name": "Sarah van der Berg",
-                            "role": "Eigenaar Café de Hoek",
+                            "name": "Erik van der Berg",
+                            "role": "Café eigenaar",
                             "text": "Met GeldGeregeld kon ik eindelijk mijn terras uitbreiden. De aanvraag was verrassend eenvoudig en binnen een dag had ik een offerte.",
-                            "image": "/images/pexels-ketut-subiyanto-4559683.jpg"
+                            "image": "/images/Erik.jpeg",
+                            "rating": 5
                         },
                         {
-                            "name": "Mark Jansen",
-                            "role": "Directeur Transport BV",
+                            "name": "Jan Jansen",
+                            "role": "Transport ondernemer",
                             "text": "Geen gedoe met ingewikkelde formulieren. Gewoon duidelijke uitleg en snelle service. Precies wat we als MKB nodig hebben.",
-                            "image": "/images/pexels-yankrukov-4458386.jpg"
+                            "image": "/images/Jan.jpeg",
+                            "rating": 4
                         },
                         {
                             "name": "Lisa Vermeulen",
-                            "role": "Oprichter Webshop Groen",
+                            "role": "Oprichter Webshop",
                             "text": "Ik was eerst sceptisch, maar GeldGeregeld heeft mijn verwachtingen overtroffen. Persoonlijk contact en transparante voorwaarden.",
-                            "image": "/images/pexels-amina-filkins-5414025.jpg"
+                            "image": "/images/pexels-amina-filkins-5414025.jpg",
+                            "rating": 5
                         }
                     ]
                 },
@@ -521,42 +524,42 @@ def create_about_page():
                             "title": "Razendsnel",
                             "description": "Binnen 24 uur reactie op uw aanvraag. Geen weken wachten zoals bij traditionele banken. Aanvraag gedaan in 2 minuten, geld op uw rekening binnen 1-2 werkdagen.",
                             "color": "#fff2b2",
-                            "textColor": "#5e5515"
+                            "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/shield.svg",
                             "title": "100% Transparant",
                             "description": "Geen verborgen kosten of verrassingen. Wat u ziet is wat u krijgt. Heldere voorwaarden, eerlijke tarieven en boetevrij vervroegd aflossen mogelijk.",
                             "color": "#bbe7be",
-                            "textColor": "#114e0b"
+                            "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/user-add.svg",
                             "title": "Voor Elke Ondernemer",
                             "description": "Of u nu net bent begonnen of al jaren actief bent – wij hebben de juiste financieringsoplossing. Van ZZP tot MKB, van €5.000 tot €500.000.",
                             "color": "#f8e4e4",
-                            "textColor": "#3b0b0b"
+                            "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/lock.svg",
                             "title": "Veilig & Vertrouwd",
                             "description": "Uw gegevens zijn bij ons in goede handen. We werken volgens de hoogste veiligheidsstandaarden en zijn volledig AVG-compliant.",
                             "color": "#d7d0ff",
-                            "textColor": "#3b0b5e"
+                            "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/tablet.svg",
                             "title": "Eenvoudig Online",
                             "description": "Alles 100% online geregeld. Geen onnodig papierwerk, geen fysieke afspraken. Aanvraag doen waar en wanneer het u uitkomt.",
                             "color": "#aad5fc",
-                            "textColor": "#0f1720"
+                            "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/message.svg",
                             "title": "Persoonlijke Service",
                             "description": "Een vast contactpersoon die begrijpt waar uw bedrijf voor staat. Bereikbaar via telefoon, e-mail of chat. Persoonlijk advies op maat.",
                             "color": "#fcf8d8",
-                            "textColor": "#5e5515"
+                            "textColor": "#1e2021"
                         }
                     ]
                 },
@@ -627,7 +630,7 @@ def create_about_page():
                             "text": "SSL Versleuteling",
                             "description": "Alle gegevens worden versleuteld verzonden via SSL/TLS technologie. Uw privacy en veiligheid staan bij ons voorop.",
                             "color": "#fff2b2",
-                            "textColor": "#5e5515"
+                            "textColor": "#1e2021"
                         },
                         {
                             "icon": "/icons/SVG/interface/shield.svg",
@@ -733,7 +736,7 @@ def create_hoe_werkt_het_page():
                             "title": "Snel proces",
                             "description": "Van aanvraag tot uitbetaling in enkele dagen. Geen lange wachttijden of eindeloze procedures.",
                             "color": "#fff2b2",
-                            "textColor": "#5e5515"
+                            "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/user-add.svg",

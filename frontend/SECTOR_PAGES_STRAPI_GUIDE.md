@@ -64,7 +64,7 @@ npm run develop
   - Description (e.g., "Financier je restaurantrenovatie zonder gedoe")
   - Icon Path (e.g., `/icons/SVG/finance/wallet.svg`)
   - Color (hex, e.g., `#fff2b2`)
-  - Text Color (hex, e.g., `#5e5515`)
+  - Text Color (hex, e.g., `#1e2021`)
 
 #### Benefits Section
 - **Benefits Title**: Title for benefits
@@ -98,7 +98,7 @@ npm run develop
       "description": "Financier je restaurantrenovatie zonder gedoe",
       "iconPath": "/icons/SVG/finance/wallet.svg",
       "color": "#fff2b2",
-      "textColor": "#5e5515"
+      "textColor": "#1e2021"
     },
     {
       "title": "Nieuwe apparatuur",

@@ -3,6 +3,7 @@ import HeaderWithWidget from '../HeaderWithWidget';
 import Footer from '../../components/Footer';
 import { renderSection } from '@/lib/render-section';
 import SubpageHero from '../../components/SubpageHero';
+import ContactDetailsSection from '../../components/sections/ContactDetailsSection';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
@@ -21,14 +22,19 @@ export default async function ContactPage() {
   const sections = pageData?.sections;
 
   if (!page || !sections || !Array.isArray(sections)) {
+    // Fallback: Show contact page with default content
     return (
       <>
         <HeaderWithWidget />
         <main>
           <SubpageHero
             title="Contact"
-            subtitle="Laden..."
+            subtitle="Heeft u vragen of wilt u meer weten over onze diensten? We helpen u graag verder."
             backgroundColor="var(--color-bg)"
+          />
+          <ContactDetailsSection 
+            title="Contactgegevens"
+            content="Bereik ons via telefoon of e-mail. We zijn bereikbaar van maandag tot vrijdag tussen 09:00 en 18:00."
           />
         </main>
         <Footer />

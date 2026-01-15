@@ -271,7 +271,7 @@ function generateUseCases(sectorSlug: string): Array<{
 
   const baseUseCases = useCasesMap[sectorSlug] || [];
   const colors = ['#fff2b2', '#e4f2ff', '#fff2b2', '#e4f2ff'];
-  const textColors = ['#5e5515', '#0f1720', '#5e5515', '#0f1720'];
+  const textColors = ['#1e2021', '#1e2021', '#1e2021', '#1e2021'];
 
   return baseUseCases.map((useCase, index) => ({
     ...useCase,
@@ -296,7 +296,7 @@ function generateBenefits(sectorSlug: string, sectorName: string): Array<{
       description: 'Binnen 24 uur inzicht in je financieringsmogelijkheden. Geen weken wachten zoals bij traditionele banken.',
       iconPath: '/icons/SVG/interface/zap.svg',
       color: '#fff2b2',
-      textColor: '#5e5515',
+      textColor: '#1e2021',
     },
     {
       title: 'Flexibel aflossen',
@@ -310,7 +310,7 @@ function generateBenefits(sectorSlug: string, sectorName: string): Array<{
       description: 'Transparante voorwaarden en kosten. Geen verrassingen achteraf. Boetevrij vervroegd aflossen mogelijk.',
       iconPath: '/icons/SVG/interface/shield.svg',
       color: '#fff2b2',
-      textColor: '#5e5515',
+      textColor: '#1e2021',
     },
     {
       title: `Specifiek voor ${sectorName.toLowerCase()}`,

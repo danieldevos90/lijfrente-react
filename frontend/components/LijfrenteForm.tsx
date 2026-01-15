@@ -69,7 +69,7 @@ export default function LijfrenteForm({ siteId }: { siteId: string }) {
 
   return (
     <div>
-      <div style={{ marginBottom: 12, padding: 12, background: '#fff', border: '1px solid var(--color-border)', borderRadius: 10 }}>
+      <div style={{ marginBottom: 12, padding: 12, background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: 10 }}>
         <h1 style={{ marginTop: 0 }}>Persoonlijke lijfrente‑indicatie</h1>
         <p className="muted">{variant === 'A' ? 'Binnen 1 minuut een richtbedrag. Niet‑bindend. Je ontvangt daarna vrijblijvend een aanbod.' : 'Ontvang direct een persoonlijke indicatie. Geen verplichtingen en snel een aanbod.'}</p>
         <div className="row" style={{ gap: 12, alignItems: 'center' }}>
@@ -91,7 +91,7 @@ export default function LijfrenteForm({ siteId }: { siteId: string }) {
         <label>Geslacht</label>
         <div className="row" style={{ gap: 8 }}>
           {(["M","F","X"] as const).map(g => (
-            <button key={g} type="button" className={`btn ${gender === g ? 'btn-primary' : ''}`} onClick={() => setGender(g)}>{g}</button>
+            <button key={g} type="button" className={`btn ${gender === g ? 'btn-primary' : 'btn-secondary'}`} onClick={() => setGender(g)}>{g}</button>
           ))}
         </div>
       </div>
@@ -130,11 +130,11 @@ export default function LijfrenteForm({ siteId }: { siteId: string }) {
 
       <div className="row" style={{ marginTop: 12 }}>
         <button className="btn btn-primary" type="button" onClick={onCalculate} disabled={!isValid}>{variant === 'A' ? 'Bereken indicatie' : 'Bekijk jouw indicatie'}</button>
-        <a className="btn" href={`/sites/${siteId}`}>Annuleren</a>
+        <a className="btn btn-secondary" href={`/sites/${siteId}`}>Annuleren</a>
       </div>
 
       {indicatie && (
-        <div style={{ marginTop: 16, padding: 12, background: '#fff', border: '1px solid var(--color-border)', borderRadius: 10 }}>
+        <div style={{ marginTop: 16, padding: 12, background: 'var(--color-white)', border: '1px solid var(--color-border)', borderRadius: 10 }}>
           <h3 style={{ marginTop: 0 }}>Jouw indicatie</h3>
           <p className="muted">Richtbedrag {freq}: <strong>{indicatie}</strong> (niet‑bindend)</p>
           <p className="muted">Op basis van eenvoudige aannames. Voor een definitief, persoonlijk aanbod hebben we nog een paar bedrijfsgegevens nodig.</p>

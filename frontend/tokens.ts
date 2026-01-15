@@ -1,10 +1,10 @@
 export const tokens = {
   colors: {
-    brand: '#000000',
-    brandDark: '#1a1a1a',
+    brand: '#00c800',        // Bright green from Figma
+    brandDark: '#1e2021',    // Dark green from Figma
     text: '#0F172A',
     muted: '#64748B',
-    bg: '#FFFFFF',
+    bg: '#fafafa',           // Very light gray from Figma
     border: '#E2E8F0'
   },
   radii: {

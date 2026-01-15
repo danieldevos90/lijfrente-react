@@ -2,21 +2,21 @@
 // Centralized design system for consistent styling
 
 export const theme = {
-  // Brand Colors
+  // Brand Colors - From Figma Designs
   colors: {
-    primary: '#10b981',        // Emerald green - fresh, growth, money
-    primaryDark: '#059669',    // Darker emerald
-    primaryLight: '#34d399',   // Light emerald
+    primary: '#00c800',        // Bright green from Figma
+    primaryDark: '#1e2021',    // Dark green from Figma
+    primaryLight: '#d3ffdd',   // Light green/mint from Figma
     
-    secondary: '#06b6d4',      // Cyan - trust, clarity
-    secondaryDark: '#0891b2',
-    secondaryLight: '#22d3ee',
+    secondary: '#DCE6D5',      // Light green/mint
+    secondaryDark: '#570000',  // Dark red/maroon from Figma
+    secondaryLight: '#d3ffdd', // Light green/mint
     
-    // Neutrals
+    // Neutrals - From Figma Designs
     white: '#ffffff',
-    black: '#111827',
-    gray50: '#f9fafb',
-    gray100: '#f3f4f6',
+    black: '#1e2021',
+    gray50: '#fafafa',         // Very light gray from Figma
+    gray100: '#eeeeee',       // Light gray from Figma
     gray200: '#e5e7eb',
     gray300: '#d1d5db',
     gray400: '#9ca3af',
@@ -24,20 +24,20 @@ export const theme = {
     gray600: '#4b5563',
     gray700: '#374151',
     gray800: '#1f2937',
-    gray900: '#111827',
+    gray900: '#1e2021',
     
-    // Semantic Colors
-    success: '#10b981',
+    // Semantic Colors - From Figma Designs
+    success: '#00c800',        // Bright green from Figma
     warning: '#f59e0b',
-    error: '#ef4444',
+    error: '#ff0000',          // Red from Figma
     info: '#06b6d4',
     
-    // UI Colors
-    text: '#111827',
+    // UI Colors - From Figma Designs
+    text: '#1e2021',
     textMuted: '#6b7280',
     border: '#e5e7eb',
-    background: '#ffffff',
-    backgroundAlt: '#f9fafb',
+    background: '#fafafa',     // Very light gray from Figma
+    backgroundAlt: '#eeeeee',  // Light gray from Figma
   },
   
   // Typography
@@ -119,7 +119,7 @@ export const theme = {
 // CSS Custom Properties Generator
 export function generateCSSVariables() {
   return `
-    /* Colors */
+    /* Colors - From Figma Designs */
     --color-primary: ${theme.colors.primary};
     --color-primary-dark: ${theme.colors.primaryDark};
     --color-primary-light: ${theme.colors.primaryLight};

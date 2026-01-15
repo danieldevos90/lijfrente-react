@@ -1,19 +1,24 @@
 import './tokens.css';
 import './globals.css';
 import type { ReactNode } from 'react';
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import GlobalWidgetProvider from '../components/GlobalWidgetProvider';
 import CookieBanner from '../components/CookieBanner';
+import PageViewTracker from '../components/PageViewTracker';
 import { ErrorHandler } from './error-handler';
 import SchemaMarkup from '../components/SEO/SchemaMarkup';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://geldgeregeld.nl';
 export const metadata: Metadata = generateSEOMetadata({
-  title: `${SITE_NAME} - Zakelijke Financiering`,
+  // SEO-optimized default title: Primary keyword + value prop + brand
+  title: `Zakelijke Financiering - Binnen 24 uur geregeld | ${SITE_NAME}`,
   description: 'Snel en simpel zakelijke financiering regelen – binnen 24 uur reactie en transparante voorwaarden',
   keywords: 'zakelijke financiering, zakelijke lening, bedrijfsfinanciering, snel geld lenen, zakelijk krediet',
-  canonicalUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://geldgeregeld.nl',
+  canonicalUrl: BASE_URL,
+  ogImage: `${BASE_URL}/images/hero/getty-images-4QKnhtJ37ls-unsplash.jpg`, // Using hero image as OG image
   siteName: SITE_NAME,
 });
 
@@ -191,6 +196,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <GlobalWidgetProvider>
           {children}
           <CookieBanner />
+          <Suspense fallback={null}>
+            <PageViewTracker />
+          </Suspense>
         </GlobalWidgetProvider>
       </body>
     </html>

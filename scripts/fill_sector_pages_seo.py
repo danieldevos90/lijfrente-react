@@ -144,7 +144,7 @@ def get_benefits(sector_name: str):
             'description': f'Binnen 24 uur weet je of je financiering is goedgekeurd. Geen lange wachttijden, geen ingewikkelde procedures. Perfect voor {sector_name.lower()} bedrijven die snel moeten handelen.',
             'iconPath': '/icons/SVG/interface/zap.svg',
             'color': '#fff2b2',
-            'textColor': '#5e5515'
+            'textColor': '#1e2021'
         },
         {
             'title': 'Flexibel aflossen',
@@ -221,7 +221,7 @@ def update_sector_page(sector_slug: str, sector_info: dict):
     
     # Format use cases with colors
     colors = ['#fff2b2', '#e4f2ff', '#d7d0ff', '#bbe7be']
-    text_colors = ['#5e5515', '#0f1720', '#3b0b5e', '#114e0b']
+    text_colors = ['#1e2021', '#1e2021', '#1e2021', '#1e2021']
     icon_paths = [
         '/icons/SVG/interface/tool.svg',
         '/icons/SVG/e-commerce/package.svg',

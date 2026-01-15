@@ -4,10 +4,38 @@ import Footer from '../../components/Footer';
 import { renderSection } from '@/lib/render-section';
 import SubpageHero from '../../components/SubpageHero';
 import SectorsPreviewSection from '../../components/sections/SectorsPreviewSection';
+import type { Metadata } from 'next';
+import { generateMetadata as generateSEOMetadata, buildCanonicalUrl } from '@/lib/seo';
+import { buildTitle, buildDescription } from '../messaging';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(): Promise<Metadata> {
+  let page = null;
+  
+  try {
+    page = await getPageBySlug('hoe-werkt-het', SITE_ID);
+  } catch (e) {
+    console.warn('Strapi fetch failed for hoe-werkt-het metadata');
+  }
+  
+  const pageData = page?.attributes || page;
+  // SEO-optimized: Primary keyword + value prop
+  const title = pageData?.metaTitle || pageData?.title || 'Zakelijke Financiering Aanvragen - Hoe Werkt Het';
+  const description = pageData?.metaDescription || 'Van aanvraag tot uitbetaling in 4 eenvoudige stappen. Wij maken zakelijke financiering toegankelijk, transparant en snel. Binnen 24 uur reactie.';
+  const keywords = pageData?.metaKeywords || 'hoe werkt het, aanvraagproces, zakelijke lening proces, financiering aanvragen';
+  const canonicalUrl = buildCanonicalUrl('/hoe-werkt-het');
+
+  return generateSEOMetadata({
+    title: buildTitle(title),
+    description: buildDescription(description),
+    keywords: keywords,
+    canonicalUrl: canonicalUrl,
+    ogType: 'website',
+  });
+}
 
 export default async function HoeWerktHetPage() {
   let page = null;
@@ -37,11 +65,24 @@ export default async function HoeWerktHetPage() {
     );
   }
 
+  // Separate CTA sections from other sections
+  const regularSections: any[] = [];
+  const ctaSections: any[] = [];
+
+  sections.forEach((section: any, index: number) => {
+    const sectionData = section.attributes || section;
+    if (sectionData.__component === 'sections.cta-section') {
+      ctaSections.push({ section, index });
+    } else {
+      regularSections.push({ section, index });
+    }
+  });
+
   return (
     <>
       <HeaderWithWidget />
       <main>
-        {sections.map((section: any, index: number) => {
+        {regularSections.map(({ section, index }) => {
           try {
             return renderSection(section, index);
           } catch (e) {
@@ -49,13 +90,22 @@ export default async function HoeWerktHetPage() {
             return null;
           }
         })}
-        {/* Sectors Preview Section */}
+        {/* Sectors Preview Section - before CTA */}
         <SectorsPreviewSection
-          title="Financiering voor elke sector"
-          subtitle="Ontdek hoe wij jouw branche specifiek kunnen helpen met zakelijke financiering"
+          title="Hoe werkt het voor jouw sector?"
+          subtitle="Ontdek hoe het aanvraagproces werkt voor jouw specifieke branche. Elke sector heeft zijn eigen behoeften en wij passen ons proces daarop aan."
           maxItems={6}
           showViewAll={true}
         />
+        {/* Render all CTA sections at the end */}
+        {ctaSections.map(({ section, index }) => {
+          try {
+            return renderSection(section, index);
+          } catch (e) {
+            console.error(`Error rendering CTA section ${index}:`, e);
+            return null;
+          }
+        })}
       </main>
       <Footer />
     </>

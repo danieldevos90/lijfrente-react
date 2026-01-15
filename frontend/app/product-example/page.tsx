@@ -53,7 +53,7 @@ export default function ProductPage() {
               fontSize: '36px',
               fontWeight: 500,
               marginBottom: '1.5rem',
-              color: '#0f1720',
+              color: '#1e2021',
             }}>
               Kenmerken
             </h2>
@@ -133,7 +133,7 @@ export default function ProductPage() {
         {/* FAQ Section with custom background */}
         <section style={{
           padding: '5rem 0',
-          background: 'rgb(244, 244, 239)',
+          background: 'var(--color-cultured)',
         }}>
           <div className="container" style={{
             maxWidth: '900px',
@@ -149,7 +149,7 @@ export default function ProductPage() {
                 fontSize: '36px',
                 fontWeight: 500,
                 marginBottom: '1rem',
-                color: '#0f1720',
+                color: '#1e2021',
               }}>
                 Veelgestelde vragen
               </h2>
@@ -165,8 +165,8 @@ export default function ProductPage() {
             {/* Using FAQAccordion component */}
             <FAQAccordion 
               items={productFAQs}
-              defaultBackground="white"
-              activeBackground="rgb(228, 242, 255)"
+              defaultBackground="var(--color-white)"
+              activeBackground="var(--color-sky500)"
             />
           </div>
         </section>
@@ -187,7 +187,7 @@ export default function ProductPage() {
               fontSize: '36px',
               fontWeight: 500,
               marginBottom: '1.5rem',
-              color: '#0f1720',
+              color: '#1e2021',
             }}>
               Klaar om te starten?
             </h2>
@@ -201,8 +201,8 @@ export default function ProductPage() {
             <button 
               className="btn btn-primary"
               style={{
-                border: '1px solid #0f1720',
-                backgroundColor: '#0f1720',
+                border: '1px solid #1e2021',
+                backgroundColor: '#1e2021',
                 color: 'white',
                 textAlign: 'center',
                 borderRadius: '.25rem',

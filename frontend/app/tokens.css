@@ -2,27 +2,36 @@
 
 :root {
   /* Background Colors */
-  --color-bg: #f9f9f8;
-  --color-bg-alt: #f4f4ef;
+  --color-bg: #fafafa;
+  --color-bg-alt: #eeeeee;
   --color-bg-white: #fff;
-  --color-bg-secondary: #0f1720;
-  --color-bg-tertiary: #e4f2ff;
-  --color-bg-success: #cef5ca;
-  --color-bg-error: #f8e4e4;
+  --color-bg-secondary: #1e2021;
+  --color-bg-tertiary: #d3ffdd;
+  --color-bg-success: #d3ffdd;
+  --color-bg-error: #ff0000;
   --color-bg-warning: #fcf8d8;
+  --color-bg-light: #f5f5f5;
+  --color-bg-slate: #f8fafc;
+  --color-bg-gray-light: #f3f4f6;
+  --color-bg-gray-very-light: #f9fafb;
+  --color-bg-red-light: #fef2f2;
+  --color-bg-slate-dark: #1e293b;
   
-  /* Brand Colors */
-  --color-primary: #457fff;
-  --color-primary-dark: #2d62ff;
-  --color-brand: #457fff;
-  --color-mint: #bbe7be;
-  --color-pink-light: #d7d0ff;
+  /* Brand Colors - From Figma Designs */
+  --color-primary: #00c800;
+  --color-primary-dark: #1e2021;
+  --color-primary-light: #d3ffdd;
+  --color-brand: #00c800;
+  --color-mint: #d3ffdd;
+  --color-pink-light: #DCE6D5;
   --color-sky: #aad5fc;
   --color-sky500: #e4f2ff;
   --color-sun: #fff2b2;
   
   /* Neutral Colors */
-  --color-charcoal: #0f1720;
+  --color-charcoal: #1e2021;
+  --color-charcoal-dark: #1a1a1a;
+  --color-charcoal-hover: #2a2c2d;
   --color-charcoal100: #e9eaea;
   --color-charcoal200: #b5b8bc;
   --color-charcoal400: #6c737a;
@@ -32,29 +41,87 @@
   --color-cultured600: #ddddd7;
   --color-white: #fff;
   
-  /* System Colors */
-  --color-success: #cef5ca;
-  --color-success-dark: #114e0b;
-  --color-error: #f8e4e4;
-  --color-error-dark: #3b0b0b;
+  /* Gray Scale Extended */
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  
+  /* Slate Colors */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-500: #64748b;
+  --color-slate-800: #1e293b;
+  
+  /* System Colors - From Figma Designs */
+  --color-success: #00c800;
+  --color-success-emerald: #10b981;
+  --color-success-emerald-dark: #059669;
+  --color-success-dark: #1e2021;
+  --color-success-light: #d3ffdd;
+  --color-error: #ff0000;
+  --color-error-red: #ef4444;
+  --color-error-dark: #570000;
+  --color-error-light: #fef2f2;
+  --color-error-border: #fecaca;
   --color-warning: #fcf8d8;
-  --color-warning-dark: #5e5515;
-  --color-focus: #2d62ff;
+  --color-warning-amber: #f59e0b;
+  --color-warning-yellow: #fbbf24;
+  --color-warning-dark: #1e2021;
+  --color-focus: #00c800;
   
   /* Text Colors */
-  --color-text: #0f1720;
+  --color-text: #1e2021;
   --color-text-muted: #6c737a;
   --color-text-light: #b5b8bc;
   
   /* Border Colors */
   --color-border: #6c737a;
   --color-border-alt: #555c64;
-  --color-border-primary: #457fff;
+  --color-border-primary: #00c800;
+  --color-border-gray: #e5e7eb;
+  --color-border-slate: #e2e8f0;
+  --color-border-light: #f1f5f9;
+  
+  /* RGB/RGBA Color Tokens */
+  --color-rgb-cultured: 244, 244, 239;
+  --color-rgb-sky500: 228, 242, 255;
+  --color-rgb-white: 255, 255, 255;
+  --color-rgb-black: 0, 0, 0;
+  --color-rgb-charcoal: 30, 32, 33;
+  --color-rgb-slate-dark: 15, 23, 42;
+  
+  /* RGBA Overlay Tokens */
+  --overlay-black-05: rgba(0, 0, 0, 0.05);
+  --overlay-black-08: rgba(0, 0, 0, 0.08);
+  --overlay-black-1: rgba(0, 0, 0, 0.1);
+  --overlay-black-2: rgba(0, 0, 0, 0.2);
+  --overlay-black-3: rgba(0, 0, 0, 0.3);
+  --overlay-black-4: rgba(0, 0, 0, 0.4);
+  --overlay-black-5: rgba(0, 0, 0, 0.5);
+  --overlay-black-8: rgba(0, 0, 0, 0.8);
+  --overlay-white-05: rgba(255, 255, 255, 0.05);
+  --overlay-white-1: rgba(255, 255, 255, 0.1);
+  --overlay-white-15: rgba(255, 255, 255, 0.15);
+  --overlay-white-2: rgba(255, 255, 255, 0.2);
+  --overlay-white-3: rgba(255, 255, 255, 0.3);
+  --overlay-white-5: rgba(255, 255, 255, 0.5);
+  --overlay-white-6: rgba(255, 255, 255, 0.6);
+  --overlay-white-7: rgba(255, 255, 255, 0.7);
+  --overlay-white-75: rgba(255, 255, 255, 0.75);
+  --overlay-white-9: rgba(255, 255, 255, 0.9);
+  --overlay-white-98: rgba(255, 255, 255, 0.98);
+  --overlay-slate-5: rgba(15, 23, 32, 0.5);
 
   /* Legacy support */
-  --color-primary-light: #aad5fc;
-  --color-secondary: #bbe7be;
-  --color-secondary-dark: #114e0b;
+  --color-secondary: #DCE6D5;
+  --color-secondary-dark: #570000;
   --color-muted: #6c737a;
 
   /* Spacing */

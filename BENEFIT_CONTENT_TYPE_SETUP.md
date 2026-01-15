@@ -18,7 +18,7 @@ The Benefit content type provides SEO-optimized benefit entries that can be used
 - **metaTitle** (string, optional): Custom SEO title (if different from title)
 - **iconPath** (string, optional): Path to icon SVG
 - **color** (string, default: #fff2b2): Background color (hex)
-- **textColor** (string, default: #5e5515): Text color (hex)
+- **textColor** (string, default: #1e2021): Text color (hex)
 - **featured** (boolean, default: false): Featured benefit (shown prominently)
 - **order** (integer, default: 0): Display order
 

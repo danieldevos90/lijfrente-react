@@ -28,7 +28,7 @@ export default function FAQSection({
   return (
     <section style={{
       padding: '8rem 0',
-      background: 'rgb(244, 244, 239)',
+      background: 'var(--color-cultured)',
     }}>
       <div className="container" style={{
         maxWidth: '900px',
@@ -72,11 +72,11 @@ export default function FAQSection({
             <div 
               key={item.id || index}
               style={{
-                background: openIndex === index ? 'rgb(228, 242, 255)' : 'white',
+                background: openIndex === index ? 'var(--color-sky500)' : 'var(--color-white)',
                 borderRadius: '12px',
                 overflow: 'hidden',
                 transition: 'all 0.3s ease',
-                border: '1px solid rgba(0, 0, 0, 0.05)',
+                border: '1px solid var(--overlay-black-05)',
               }}
             >
               {/* Question Header */}
@@ -102,7 +102,7 @@ export default function FAQSection({
                   fontFamily: "'Neue Montreal', sans-serif",
                   fontSize: '18px',
                   fontWeight: 500,
-                  color: '#0f1720',
+                  color: '#1e2021',
                   flex: 1,
                   lineHeight: 1.4,
                 }}>
@@ -118,7 +118,7 @@ export default function FAQSection({
                   transition: 'transform 0.3s ease',
                   transform: openIndex === index ? 'rotate(45deg)' : 'rotate(0deg)',
                 }}>
-                  <Plus size={24} color="#0f1720" strokeWidth={2} />
+                  <Plus size={24} color="#1e2021" strokeWidth={2} />
                 </div>
               </button>
 

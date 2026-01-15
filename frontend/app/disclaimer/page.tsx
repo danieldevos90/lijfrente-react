@@ -70,13 +70,13 @@ export default function DisclaimerPage() {
               De informatie op deze website is uitsluitend bedoeld voor algemene informatiedoeleinden en vormt geen financieel advies. GeldGeregeld is geen financieel adviseur en geeft geen advies over financiële producten. Voor professioneel financieel advies dient u een gecertificeerde adviseur te raadplegen.
             </p>
             <div style={{
-              background: '#fcf8d8',
-              border: '1px solid #5e5515',
+              background: 'var(--color-warning)',
+              border: '1px solid var(--color-warning-dark)',
               padding: '1.5rem',
               borderRadius: 'var(--radius-lg)',
               marginBottom: '1rem',
             }}>
-              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: 0, color: '#5e5515' }}>
+              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, margin: 0, color: 'var(--color-warning-dark)' }}>
                 <strong>⚠️ Let op:</strong> Lenen kost geld. Een krediet of financiering dient u alleen aan te gaan als u zeker weet dat u aan uw betalingsverplichtingen kunt voldoen. Raadpleeg altijd uw eigen adviseur voordat u een financiële beslissing neemt.
               </p>
             </div>

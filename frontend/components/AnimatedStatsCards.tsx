@@ -105,7 +105,7 @@ export default function AnimatedStatsCards() {
             <div style={{
               fontSize: '7rem',
               fontWeight: 400,
-              color: '#0f1720',
+              color: '#1e2021',
               marginBottom: '0.5rem',
               fontFamily: 'PP Neue Montreal, sans-serif',
               lineHeight: 1,
@@ -115,7 +115,7 @@ export default function AnimatedStatsCards() {
             <div style={{
               fontSize: '2.5rem',
               fontWeight: 300,
-              color: '#0f1720',
+              color: '#1e2021',
               marginBottom: '2rem',
               fontFamily: 'PP Neue Montreal, sans-serif',
             }}>
@@ -158,7 +158,7 @@ export default function AnimatedStatsCards() {
             <div style={{
               fontSize: '7rem',
               fontWeight: 400,
-              color: '#0f1720',
+              color: '#1e2021',
               marginBottom: '0.5rem',
               fontFamily: 'PP Neue Montreal, sans-serif',
               lineHeight: 1,
@@ -168,7 +168,7 @@ export default function AnimatedStatsCards() {
             <div style={{
               fontSize: '2.5rem',
               fontWeight: 300,
-              color: '#0f1720',
+              color: '#1e2021',
               marginBottom: '2rem',
               fontFamily: 'PP Neue Montreal, sans-serif',
             }}>
@@ -211,7 +211,7 @@ export default function AnimatedStatsCards() {
             <div style={{
               fontSize: '7rem',
               fontWeight: 400,
-              color: '#0f1720',
+              color: '#1e2021',
               marginBottom: '0.5rem',
               fontFamily: 'PP Neue Montreal, sans-serif',
               lineHeight: 1,
@@ -221,7 +221,7 @@ export default function AnimatedStatsCards() {
             <div style={{
               fontSize: '2.5rem',
               fontWeight: 300,
-              color: '#0f1720',
+              color: '#1e2021',
               marginBottom: '2rem',
               fontFamily: 'PP Neue Montreal, sans-serif',
             }}>

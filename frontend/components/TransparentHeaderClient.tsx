@@ -97,12 +97,12 @@ export default function TransparentHeaderClient({
       left: 0,
       right: 0,
       zIndex: 100,
-      background: isSolid ? 'rgba(255, 255, 255, 0.98)' : 'rgba(0, 0, 0, 0)',
+      background: isSolid ? 'var(--overlay-white-98)' : 'rgba(0, 0, 0, 0)',
       backdropFilter: isSolid ? 'blur(10px)' : 'none',
-      borderBottom: isSolid ? '1px solid rgba(0, 0, 0, 0.1)' : 'none',
+      borderBottom: isSolid ? '1px solid var(--overlay-black-1)' : 'none',
       padding: '1rem 0',
       transition: 'all 0.3s ease, transform 0.3s ease, backdrop-filter 0.3s ease',
-      boxShadow: isSolid ? '0 2px 10px rgba(0, 0, 0, 0.05)' : 'none',
+      boxShadow: isSolid ? 'var(--shadow-sm)' : 'none',
       transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
     }}>
       <div className="container" style={{
@@ -138,16 +138,10 @@ export default function TransparentHeaderClient({
             );
           })}
           <button 
-            className="btn btn-black"
+            className="btn btn-primary"
             onClick={onCtaClick}
             style={{
               display: 'flex',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#333333';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#000000';
             }}
           >
             Aanvragen
@@ -263,7 +257,7 @@ export default function TransparentHeaderClient({
                 fontWeight: 500,
                 fontSize: '18px',
                 padding: '0.75rem 0',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                borderBottom: '1px solid var(--overlay-black-1)',
               }}
             >
               {itemData.label}
@@ -271,7 +265,7 @@ export default function TransparentHeaderClient({
           );
         })}
         <button 
-          className="btn btn-black"
+          className="btn btn-primary"
           onClick={() => {
             setIsMobileMenuOpen(false);
             onCtaClick?.();

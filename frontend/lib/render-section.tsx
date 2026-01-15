@@ -6,6 +6,7 @@ import SubpageHero from '../components/SubpageHero';
 import BenefitsCarousel from '../components/BenefitsCarousel';
 import FeatureSectionWrapper from '../app/FeatureSectionWrapper';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
+import TestimonialsGrid from '../components/TestimonialsGrid';
 import HowItWorksBento from '../components/HowItWorksBento';
 import ProcessSteps from '../components/ProcessSteps';
 import WhyChooseSection from '../components/WhyChooseSection';
@@ -22,6 +23,20 @@ import TwoBlocksSection from '../components/sections/TwoBlocksSection';
 import ContactOptionsSection from '../components/ContactOptionsSection';
 import ContactForm from '../components/ContactForm';
 import ContactDetailsSection from '../components/sections/ContactDetailsSection';
+
+/**
+ * Normalize color values - replace deprecated colors with standard tokens
+ * Replaces #5e5515 and #114e0b with #1e2021 (charcoal)
+ */
+function normalizeColor(color: string | undefined | null): string {
+  if (!color) return '';
+  const normalized = color.trim();
+  // Replace deprecated colors with charcoal
+  if (normalized === '#5e5515' || normalized === '#114e0b' || normalized.toLowerCase() === '#5e5515' || normalized.toLowerCase() === '#114e0b') {
+    return '#1e2021';
+  }
+  return normalized;
+}
 
 /**
  * Extract icon path from section data, handling various Strapi data structures
@@ -100,7 +115,7 @@ export function renderSection(section: StrapiSection, index: number) {
             key={index}
             title={sectionData.title || ''}
             subtitle={sectionData.subtitle}
-            backgroundColor="#f9f9f8"
+            backgroundColor="var(--color-bg)"
             iconPath={iconPath}
           />
         );
@@ -130,8 +145,8 @@ export function renderSection(section: StrapiSection, index: number) {
             iconPath: b.iconPath,
             title: b.title,
             desc: b.description,
-            color: b.color || '#fff2b2',
-            textColor: b.textColor || '#5e5515'
+            color: normalizeColor(b.color) || 'var(--color-sun)',
+            textColor: normalizeColor(b.textColor) || 'var(--color-warning-dark)'
           })) || []}
           title={sectionData.title}
           subtitle={sectionData.subtitle}
@@ -153,15 +168,190 @@ export function renderSection(section: StrapiSection, index: number) {
       );
     
     case 'sections.testimonials-carousel':
+      // Use TestimonialsGrid for homepage to show 6 testimonials in a grid
+      // Remove company names and make roles generic
+      
+      // Debug: Log section data
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[render-section] Testimonials section data:', {
+          hasTestimonials: !!sectionData.testimonials,
+          testimonialsCount: sectionData.testimonials?.length || 0,
+          testimonials: sectionData.testimonials
+        });
+      }
+      
+      const makeRoleGeneric = (role: string, company?: string): string => {
+        const roleLower = (role || '').toLowerCase();
+        const companyLower = (company || '').toLowerCase();
+        const combinedText = `${role} ${company}`.toLowerCase();
+        
+        // Priority: Check company name first (most reliable indicator)
+        // Then check combined text, then role
+        
+        // Café / Cafe
+        if (companyLower.includes('café') || companyLower.includes('cafe') || combinedText.includes('café') || combinedText.includes('cafe')) {
+          return 'Café eigenaar';
+        }
+        
+        // Restaurant
+        if (companyLower.includes('restaurant') || combinedText.includes('restaurant')) {
+          return 'Restaurant eigenaar';
+        }
+        
+        // Hotel
+        if (companyLower.includes('hotel') || combinedText.includes('hotel')) {
+          return 'Hotel eigenaar';
+        }
+        
+        // Webshop / Web shop
+        if (companyLower.includes('webshop') || companyLower.includes('web shop') || combinedText.includes('webshop')) {
+          return 'Oprichter Webshop';
+        }
+        
+        // Transport / Logistiek
+        if (companyLower.includes('transport') || companyLower.includes('logistiek') || combinedText.includes('transport') || combinedText.includes('logistiek')) {
+          return 'Transport ondernemer';
+        }
+        
+        // Winkel / Retail
+        if (companyLower.includes('winkel') || companyLower.includes('retail') || companyLower.includes('modezaak') || combinedText.includes('winkel') || combinedText.includes('retail')) {
+          return 'Winkelier';
+        }
+        
+        // Bouw / Aannemer
+        if (companyLower.includes('bouw') || companyLower.includes('aannemer') || companyLower.includes('installatie') || combinedText.includes('bouw') || combinedText.includes('aannemer')) {
+          return 'Bouwondernemer';
+        }
+        
+        // Zorg / Zorginstelling
+        if (companyLower.includes('zorg') || companyLower.includes('zorginstelling') || companyLower.includes('welzijn') || combinedText.includes('zorg')) {
+          return 'Zorgondernemer';
+        }
+        
+        // Advies / Consultancy
+        if (companyLower.includes('advies') || companyLower.includes('consultancy') || companyLower.includes('consultant') || combinedText.includes('advies') || combinedText.includes('consultancy')) {
+          return 'Adviseur';
+        }
+        
+        // Schoonmaak
+        if (companyLower.includes('schoonmaak') || companyLower.includes('reiniging') || combinedText.includes('schoonmaak')) {
+          return 'Schoonmaakondernemer';
+        }
+        
+        // Garage / Automotive
+        if (companyLower.includes('garage') || companyLower.includes('automotive') || companyLower.includes('auto') || combinedText.includes('garage') || combinedText.includes('automotive')) {
+          return 'Garage eigenaar';
+        }
+        
+        // Productie / Industrie
+        if (companyLower.includes('productie') || companyLower.includes('industrie') || companyLower.includes('fabriek') || combinedText.includes('productie') || combinedText.includes('industrie')) {
+          return 'Productie ondernemer';
+        }
+        
+        // Groothandel
+        if (companyLower.includes('groothandel') || companyLower.includes('wholesale') || combinedText.includes('groothandel')) {
+          return 'Groothandelaar';
+        }
+        
+        // Franchise
+        if (companyLower.includes('franchise') || combinedText.includes('franchise')) {
+          return 'Franchisenemer';
+        }
+        
+        // Default: use role if it's already generic, otherwise make generic
+        if (roleLower.includes('eigenaar')) {
+          return 'Ondernemer';
+        }
+        if (roleLower.includes('oprichter')) {
+          return 'Oprichter Webshop';
+        }
+        if (roleLower.includes('directeur')) {
+          return 'Ondernemer';
+        }
+        if (roleLower.includes('manager')) {
+          return 'Ondernemer';
+        }
+        
+        return role || 'Ondernemer';
+      };
+      
+      // Rating mapping for homepage testimonials
+      const testimonialRatings: Record<string, number> = {
+        'Erik van der Berg': 5,
+        'Jan Jansen': 4,
+        'Lisa Vermeulen': 5
+      };
+      
+      // Handle testimonials - they might be in different structures
+      const testimonialsArray = sectionData.testimonials || [];
+      
+      // Debug logging
+      console.log('[render-section] Processing testimonials:', {
+        testimonialsArrayLength: testimonialsArray.length,
+        firstTestimonial: testimonialsArray[0],
+        sectionDataKeys: Object.keys(sectionData)
+      });
+      
+      const testimonials = testimonialsArray.map((t: any) => {
+        // Handle different testimonial structures
+        const testimonial = t.attributes || t;
+        return {
+          name: testimonial.name || t.name,
+          role: makeRoleGeneric(testimonial.role || t.role || '', testimonial.company || t.company || ''),
+          text: testimonial.text || t.text,
+          image: testimonial.image || t.image,
+          // Don't include company name - keep it generic
+          company: undefined,
+          rating: testimonial.rating || t.rating || testimonialRatings[testimonial.name || t.name] || 5
+        };
+      });
+      
+      // Remove duplicates based on name (case-insensitive)
+      const uniqueTestimonials = testimonials.filter((t, index, self) => 
+        index === self.findIndex((tt) => tt.name.toLowerCase() === t.name.toLowerCase())
+      );
+      
+      // Ensure we have testimonials to display
+      if (uniqueTestimonials.length === 0) {
+        console.warn('[render-section] No testimonials found in section data', {
+          sectionData,
+          testimonialsArray: sectionData.testimonials,
+          testimonialsLength: sectionData.testimonials?.length
+        });
+        // Don't return null - render empty state or fallback
+        // Return null only in production to avoid breaking the page
+        if (process.env.NODE_ENV === 'production') {
+          return null;
+        }
+        // In development, show a placeholder
+        return (
+          <div key={index} style={{ padding: '2rem', textAlign: 'center', background: 'var(--color-bg-slate)' }}>
+            <p>No testimonials found. Check Strapi data.</p>
+          </div>
+        );
+      }
+      
+      // For homepage, duplicate testimonials to fill 6 slots if needed
+      let displayTestimonials = [...uniqueTestimonials];
+      if (displayTestimonials.length < 6) {
+        // Duplicate testimonials to reach 6
+        while (displayTestimonials.length < 6) {
+          displayTestimonials = [...displayTestimonials, ...uniqueTestimonials];
+        }
+        // Take only first 6
+        displayTestimonials = displayTestimonials.slice(0, 6);
+      } else if (displayTestimonials.length > 6) {
+        // If more than 6, take first 6
+        displayTestimonials = displayTestimonials.slice(0, 6);
+      }
+      
       return (
-        <TestimonialsCarousel
+        <TestimonialsGrid
           key={index}
-          testimonials={sectionData.testimonials?.map(t => ({
-            name: t.name,
-            role: t.role,
-            text: t.text,
-            image: t.image
-          })) || []}
+          testimonials={displayTestimonials}
+          title={sectionData.title}
+          subtitle={sectionData.subtitle}
+          backgroundColor={sectionData.backgroundColor}
         />
       );
     
@@ -205,8 +395,8 @@ export function renderSection(section: StrapiSection, index: number) {
           title: benefitData.title || '',
           description: benefitData.description || '',
           iconPath: benefitData.iconPath || '',
-          color: benefitData.color || '#fff2b2',
-          textColor: benefitData.textColor || '#5e5515'
+          color: normalizeColor(benefitData.color) || 'var(--color-sun)',
+          textColor: normalizeColor(benefitData.textColor) || 'var(--color-warning-dark)'
         };
       });
       
@@ -281,17 +471,17 @@ export function renderSection(section: StrapiSection, index: number) {
             subtitle={sectionData.subtitle}
             options={services.map((service: any, idx: number) => {
               // Pattern: yellow (0), blue (1), white (2), yellow (3), blue (4), white (5)...
-              let color = '#ffffff';
+              let color = 'var(--color-white)';
               let textColor = 'var(--color-text)';
               
               if (idx % 3 === 0) {
                 // Yellow
-                color = '#fff2b2';
-                textColor = '#5e5515';
+                color = 'var(--color-sun)';
+                textColor = 'var(--color-warning-dark)';
               } else if (idx % 3 === 1) {
                 // Blue
-                color = '#e4f2ff';
-                textColor = '#0f1720';
+                color = 'var(--color-sky500)';
+                textColor = 'var(--color-text)';
               }
               // else white (default)
               
@@ -328,8 +518,8 @@ export function renderSection(section: StrapiSection, index: number) {
               icon: badgeData.icon,
               text: badgeData.text,
               description: badgeData.description,
-              color: badgeData.color,
-              textColor: badgeData.textColor,
+              color: normalizeColor(badgeData.color),
+              textColor: normalizeColor(badgeData.textColor),
             };
           }) || []}
           variant={sectionData.variant}
@@ -371,7 +561,7 @@ export function renderSection(section: StrapiSection, index: number) {
             id: idx,
             backgroundImage: { url: '/images/placeholder.jpg' },
             badgeText: f.title || '',
-            badgeColor: '#457fff'
+            badgeColor: 'var(--color-primary)'
           })) || []}
         />
       );

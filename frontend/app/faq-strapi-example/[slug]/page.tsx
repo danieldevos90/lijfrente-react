@@ -56,7 +56,7 @@ export default async function DynamicFAQPage({
       <main>
         {/* Hero Section */}
         <section style={{
-          background: 'linear-gradient(135deg, #0f1720 0%, #1e293b 100%)',
+          background: 'linear-gradient(135deg, #1e2021 0%, #1e293b 100%)',
           color: 'white',
           padding: '8rem 0 4rem',
           textAlign: 'center',
@@ -105,7 +105,7 @@ export default async function DynamicFAQPage({
           <section style={{
             padding: '5rem 0',
             textAlign: 'center',
-            background: 'rgb(244, 244, 239)',
+            background: 'var(--color-cultured)',
           }}>
             <div className="container">
               <p style={{
@@ -135,8 +135,8 @@ export default async function DynamicFAQPage({
                 href={page.attributes.primaryCtaHref}
                 className="btn btn-primary"
                 style={{
-                  border: '1px solid #0f1720',
-                  backgroundColor: '#0f1720',
+                  border: '1px solid #1e2021',
+                  backgroundColor: '#1e2021',
                   color: 'white',
                   textAlign: 'center',
                   borderRadius: '.25rem',

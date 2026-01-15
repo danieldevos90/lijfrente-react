@@ -70,7 +70,7 @@ def create_use_case_component():
                 },
                 "textColor": {
                     "type": "string",
-                    "default": "#5e5515"
+                    "default": "#1e2021"
                 }
             }
         }
@@ -114,7 +114,7 @@ def create_benefit_component():
                 },
                 "textColor": {
                     "type": "string",
-                    "default": "#5e5515"
+                    "default": "#1e2021"
                 }
             }
         }

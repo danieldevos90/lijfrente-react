@@ -34,7 +34,7 @@
     },
     "textColor": {
       "type": "string",
-      "default": "#5e5515",
+      "default": "#1e2021",
       "description": "Text color for the card"
     },
     "buttonLabel": {

@@ -71,8 +71,8 @@ export default function UseCasesSection({
         }}>
           {useCases.map((useCase, index) => {
             const isImageLeft = index % 2 === 0; // Alternate: even = left, odd = right
-            const bgColor = useCase.color || (index % 2 === 0 ? '#fff2b2' : '#e4f2ff');
-            const textColorMain = useCase.textColor || (index % 2 === 0 ? '#5e5515' : '#0f1720');
+            const bgColor = useCase.color || (index % 2 === 0 ? 'var(--color-sun)' : 'var(--color-sky500)');
+            const textColorMain = useCase.textColor || '#1e2021';
             
             // Prioritize imageUrl (Strapi/Unsplash) over iconPath
             // Only use iconPath if it's an actual image path, not an SVG icon

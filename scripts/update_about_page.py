@@ -178,28 +178,28 @@ def create_about_page():
                 "title": "Ervaring in complexe financiële trajecten",
                 "description": "25 jaar ervaring in financiële advisering vormt de basis voor deskundig advies op maat.",
                 "color": "#fff2b2",
-                "textColor": "#5e5515"
+                "textColor": "#1e2021"
             },
             {
                 "iconPath": "/icons/SVG/interface/message.svg",
                 "title": "Heldere communicatie in begrijpelijke taal",
                 "description": "Financiële vraagstukken kunnen complex zijn. Wij vertalen ze naar duidelijke oplossingen waar ondernemers direct mee verder kunnen.",
                 "color": "#e4f2ff",
-                "textColor": "#0f1720"
+                "textColor": "#1e2021"
             },
             {
                 "iconPath": "/icons/SVG/interface/shield.svg",
                 "title": "Onafhankelijk en transparant advies",
                 "description": "Als zelfstandig adviseur kijken wij naar alle beschikbare financieringsmogelijkheden, zodat ondernemers altijd het best passende voorstel krijgen.",
                 "color": "#bbe7be",
-                "textColor": "#114e0b"
+                "textColor": "#1e2021"
             },
             {
                 "iconPath": "/icons/SVG/interface/user-add.svg",
                 "title": "Persoonlijke betrokkenheid",
                 "description": "Elke ondernemer en elk bedrijf is uniek. Wij verdiepen ons in uw onderneming, denken mee en begeleiden het hele traject van aanvraag tot afronding.",
                 "color": "#d7d0ff",
-                "textColor": "#3b0b5e"
+                "textColor": "#1e2021"
             }
         ]
     })

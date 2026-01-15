@@ -121,11 +121,13 @@ export default function WhyChooseSection({
           >
             <div className="why-choose-grid" style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
+              gridTemplateColumns: 'repeat(3, 1fr)',
               gap: '2rem',
               margin: '0 auto',
-              maxWidth: '1000px',
+              maxWidth: '1400px',
+              width: '100%',
               justifyContent: 'center',
+              alignItems: 'stretch',
             }}>
               {benefits.map((benefit, index) => {
                 const isColored = index % 2 === 0;
@@ -136,6 +138,10 @@ export default function WhyChooseSection({
                   <div
                     key={index}
                     className="why-choose-card-wrapper"
+                    style={{
+                      display: 'flex',
+                      height: '100%',
+                    }}
                   >
                     <div
                       className="why-choose-card"
@@ -148,8 +154,10 @@ export default function WhyChooseSection({
                         alignItems: 'center',
                         justifyContent: 'center',
                         textAlign: 'center',
+                        height: '100%',
                         minHeight: '350px',
                         border: 'none',
+                        width: '100%',
                       }}
                     >
                       <div className="why-choose-card-icon" style={{ 
@@ -232,13 +240,24 @@ export default function WhyChooseSection({
           margin: 0;
         }
 
+        @media (max-width: 1200px) {
+          .why-choose-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+            max-width: 1400px !important;
+            width: 100% !important;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .why-choose-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 1.5rem !important;
+          }
+        }
+
         @media (max-width: 1024px) {
           .why-choose-card {
             min-height: 280px !important;
-          }
-          
-          .why-choose-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
           }
         }
 

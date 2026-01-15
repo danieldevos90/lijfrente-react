@@ -2,7 +2,7 @@
 .interactive-lead-form {
   max-width: 800px;
   margin: 0 auto;
-  background: #fff;
+  background: var(--color-white);
   border-radius: var(--radius-lg);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -11,7 +11,7 @@
 /* Progress Header */
 .form-header {
   background: linear-gradient(135deg, var(--color-brand), var(--color-brand-dark));
-  color: white;
+  color: var(--color-white);
   padding: 2rem 2rem 1.5rem;
   text-align: center;
 }
@@ -19,7 +19,7 @@
 .progress-bar {
   width: 100%;
   height: 8px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--overlay-white-2);
   border-radius: 4px;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -27,7 +27,7 @@
 
 .progress-fill {
   height: 100%;
-  background: white;
+  background: var(--color-white);
   border-radius: 4px;
   transition: width 0.3s ease;
 }
@@ -44,7 +44,7 @@
 
 .step-current {
   font-size: 28px;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .step-total {
@@ -83,15 +83,15 @@
 .amount-option {
   position: relative;
   padding: 1.25rem 0.75rem;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--color-border-gray);
   border-radius: var(--radius-md);
-  background: white;
+  background: var(--color-white);
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
   font-size: 16px;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-gray-700);
 }
 
 .amount-option:hover {
@@ -103,19 +103,19 @@
 .amount-option.selected {
   border-color: var(--color-brand);
   background: var(--color-brand);
-  color: white;
+  color: var(--color-white);
 }
 
 .amount-option.popular {
-  border-color: #f59e0b;
+  border-color: var(--color-warning-amber);
 }
 
 .popular-badge {
   position: absolute;
   top: -8px;
   right: -8px;
-  background: #f59e0b;
-  color: white;
+  background: var(--color-warning-amber);
+  color: var(--color-white);
   padding: 4px 8px;
   border-radius: var(--radius-sm);
   font-size: 12px;
@@ -156,7 +156,7 @@
   padding: 2rem 1rem;
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: white;
+  background: var(--color-white);
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: 600;
@@ -170,7 +170,7 @@
 .business-option.selected {
   border-color: var(--color-brand);
   background: var(--color-brand);
-  color: white;
+  color: var(--color-white);
 }
 
 .business-size h3 {
@@ -196,7 +196,7 @@
   padding: 1.5rem;
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: white;
+  background: var(--color-white);
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: left;
@@ -210,7 +210,7 @@
 .purpose-option.selected {
   border-color: var(--color-brand);
   background: var(--color-brand);
-  color: white;
+  color: var(--color-white);
 }
 
 .purpose-label {
@@ -282,11 +282,11 @@
 
 .field-group input.error,
 .field-group select.error {
-  border-color: #ef4444;
+  border-color: var(--color-error-red);
 }
 
 .field-error {
-  color: #ef4444;
+  color: var(--color-error-red);
   font-size: 14px;
   margin-top: 0.25rem;
 }
@@ -329,7 +329,7 @@
 .summary-section {
   margin-top: 2rem;
   padding: 1.5rem;
-  background: #f8fafc;
+  background: var(--color-bg-slate);
   border-radius: var(--radius-md);
 }
 
@@ -346,7 +346,7 @@
 
 .summary-item {
   padding: 0.75rem;
-  background: white;
+  background: var(--color-white);
   border-radius: var(--radius-sm);
   font-size: 14px;
 }
@@ -354,7 +354,7 @@
 /* Form Footer */
 .form-footer {
   padding: 2rem;
-  background: #f8fafc;
+  background: var(--color-bg-slate);
   border-top: 1px solid var(--color-border);
 }
 
@@ -370,22 +370,26 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  border: none;
-  border-radius: var(--radius-md);
+  border-radius: 100px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .btn-primary {
-  background: var(--color-brand);
-  color: white;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  border: 1px solid var(--color-charcoal);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .btn-primary:hover {
-  background: var(--color-brand-dark);
+  background: var(--color-charcoal-hover);
+  border-color: var(--color-charcoal-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 .btn-primary:disabled {
@@ -395,24 +399,15 @@
 }
 
 .btn-secondary {
-  background: white;
+  background: var(--color-white);
   color: var(--color-text);
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
 }
 
 .btn-secondary:hover {
   border-color: var(--color-brand);
-  color: var(--color-brand);
-}
-
-.submit-btn {
-  background: #10b981;
-  font-size: 18px;
-  padding: 1.25rem 2.5rem;
-}
-
-.submit-btn:hover {
-  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* Trust Indicators */
@@ -439,12 +434,12 @@
 
 /* Error Messages */
 .error-message {
-  color: #ef4444;
+  color: var(--color-error-red);
   font-size: 14px;
   margin-top: 1rem;
   padding: 0.75rem;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
+  background: var(--color-error-light);
+  border: 1px solid var(--color-error-border);
   border-radius: var(--radius-sm);
 }
 

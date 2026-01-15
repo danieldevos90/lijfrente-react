@@ -87,7 +87,7 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
               type="submit"
               style={{
                 ...styles.button,
-                backgroundColor: isHovered ? '#333333' : '#000000',
+                backgroundColor: isHovered ? '#2a2c2d' : '#1e2021',
               }}
               disabled={!password}
               onMouseEnter={() => setIsHovered(true)}
@@ -139,7 +139,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontWeight: '400',
     lineHeight: '1.1',
     margin: '0 0 1rem',
-    color: '#0f1720',
+    color: '#1e2021',
     fontFamily: 'PP Neue Montreal, sans-serif',
   },
   subtitle: {
@@ -165,11 +165,11 @@ const styles: { [key: string]: React.CSSProperties } = {
     outline: 'none',
     transition: 'border-color 0.2s ease',
     backgroundColor: '#ffffff',
-    color: '#0f1720',
+    color: '#1e2021',
   },
   button: {
     border: 'none',
-    backgroundColor: '#000000',
+    backgroundColor: '#1e2021',
     color: 'white',
     textAlign: 'center',
     borderRadius: '10rem',

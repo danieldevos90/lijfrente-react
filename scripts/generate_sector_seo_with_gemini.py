@@ -220,7 +220,7 @@ def update_sector_page(sector_slug: str, sector_info: dict, ai_content: dict):
     # Prepare use cases with colors and buttons
     use_cases = []
     colors = ['#fff2b2', '#e4f2ff', '#d7d0ff', '#bbe7be']
-    text_colors = ['#5e5515', '#0f1720', '#3b0b5e', '#114e0b']
+    text_colors = ['#1e2021', '#1e2021', '#1e2021', '#1e2021']
     icons = [
         '/icons/SVG/interface/tool.svg',
         '/icons/SVG/e-commerce/package.svg',

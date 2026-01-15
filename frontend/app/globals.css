@@ -77,6 +77,23 @@
   font-display: swap;
 }
 
+/* Google Sans Font Faces */
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/GoogleSans-VariableFont_GRAD,opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/GoogleSans-Italic-VariableFont_GRAD,opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Import Inter from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -86,7 +103,7 @@
   --background-color--background-alternate: #f4f4ef;
   --background-color--background-error: #f8e4e4;
   --background-color--background-primary: #f9f9f8;
-  --background-color--background-secondary: #0f1720;
+  --background-color--background-secondary: #1e2021;
   --background-color--background-success: #cef5ca;
   --background-color--background-tertiary: #e4f2ff;
   --background-color--background-warning: #fcf8d8;
@@ -101,7 +118,7 @@
   --base-color-brand--sun: #fff2b2;
   
   /* Neutral Colors */
-  --base-color-neutral--charcoal: #0f1720;
+  --base-color-neutral--charcoal: #1e2021;
   --base-color-neutral--charcoal100: #e9eaea;
   --base-color-neutral--charcoal200: #b5b8bc;
   --base-color-neutral--charcoal400: #6c737a;
@@ -116,9 +133,9 @@
   --base-color-system--error-red-dark: #3b0b0b;
   --base-color-system--focus-state: #2d62ff;
   --base-color-system--success-green: #cef5ca;
-  --base-color-system--success-green-dark: #114e0b;
+  --base-color-system--success-green-dark: #1e2021;
   --base-color-system--warning-yellow: #fcf8d8;
-  --base-color-system--warning-yellow-dark: #5e5515;
+  --base-color-system--warning-yellow-dark: #1e2021;
   
   /* Border Colors */
   --border-color--border-alternate: #555c64;
@@ -128,8 +145,8 @@
   /* Simplified Aliases for Components */
   --color-primary: #457fff;
   --color-primary-dark: #2d62ff;
-  --color-charcoal: #0f1720;
-  --color-text: #0f1720;
+  --color-charcoal: #1e2021;
+  --color-text: #1e2021;
   --color-text-muted: #6c737a;
   --color-white: #fff;
   --color-bg: #f9f9f8;
@@ -146,7 +163,7 @@
   --color-gray-700: #6c737a;
   
   /* Brand Colors (for legacy compatibility) */
-  --color-brand: #000000;
+  --color-brand: #1e2021;
   --color-brand-dark: #1a1a1a;
   --color-muted: #6c737a;
   
@@ -181,7 +198,7 @@
 html, body { 
   margin: 0; 
   padding: 0; 
-  background: #f9f9f8;
+  background: var(--color-bg);
   color: var(--color-text); 
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6; 
@@ -211,8 +228,8 @@ html, body {
   align-items: center; 
   justify-content: space-between; 
   padding: var(--space-lg) 0; 
-  background: #1e293b;
-  color: white;
+  background: var(--color-slate-800);
+  color: var(--color-white);
 }
 
 /* Utility nav/brand classes for other pages */
@@ -263,7 +280,7 @@ p {
   border: 1px solid var(--color-border); 
   border-radius: 100px;
   padding: 12px 24px; 
-  background: #fff; 
+  background: var(--color-white); 
   color: var(--color-text); 
   cursor: pointer; 
   text-decoration: none; 
@@ -271,27 +288,50 @@ p {
   font-size: 16px;
   transition: all 0.2s ease;
   display: inline-block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
+
+/* Secondary button (default) - white background with border */
+.btn-secondary,
+.btn {
+  background: var(--color-white); 
+  color: var(--color-text); 
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover,
 .btn:hover { 
   border-color: var(--color-brand); 
   transform: translateY(-2px); 
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+/* Primary button - dark background */
 .btn-primary { 
-  background: var(--color-brand); 
-  color: #fff; 
-  border-color: var(--color-brand);
+  background: var(--color-charcoal); 
+  color: var(--color-white); 
+  border-color: var(--color-charcoal);
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+
 .btn-primary:hover { 
-  background: var(--color-brand-dark); 
-  border-color: var(--color-brand-dark);
+  background: var(--color-charcoal-hover); 
+  border-color: var(--color-charcoal-hover);
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* Additional button variants */
 button.btn,
-a.btn {
+a.btn,
+button.btn-secondary,
+a.btn-secondary {
   border-radius: 100px;
   padding: 12px 24px;
 }
@@ -302,26 +342,27 @@ a.btn-primary {
   padding: 12px 24px;
 }
 
+/* Legacy aliases for backward compatibility */
 .btn-black {
-  background: #000000;
+  background: #1e2021;
   color: #fff;
-  border-color: #000000;
+  border-color: #1e2021;
 }
 
 .btn-black:hover {
-  background: #333333;
-  border-color: #333333;
+  background: #2a2c2d;
+  border-color: #2a2c2d;
 }
 
 .btn-white {
-  background: #fff;
-  color: #0f1720;
+  background: var(--color-white);
+  color: var(--color-charcoal);
   border-color: #fff;
 }
 
 .btn-white:hover {
-  background: #f3f4f6;
-  border-color: #f3f4f6;
+  background: var(--color-gray-100);
+  border-color: var(--color-gray-100);
 }
 
 /* Utility classes */
@@ -358,11 +399,12 @@ input:focus, select:focus {
 .hero-slide {
   min-height: 100vh; /* Full viewport height */
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   padding: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 8rem;
   width: 100%;
   position: relative;
+  overflow: hidden; /* Ensure background images don't overflow */
 }
 
 /* Compact hero for subpages (gradient variant without background image) */
@@ -388,17 +430,19 @@ input:focus, select:focus {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
+  padding-bottom: 4rem; /* Push content lower */
 }
 .hero-slide h1 {
-  font-size: 64px;
+  font-size: 48px;
   margin: 0 auto 1.5rem;
+  margin-top: 2rem; /* Additional top margin to push title lower */
   line-height: 1.1;
   font-weight: 700;
   max-width: 800px;
 }
 .hero-slide p {
   margin: 0 auto 2.5rem;
-  font-size: 22px;
+  font-size: 18px;
   opacity: 0.9;
   max-width: 600px;
   line-height: 1.5;
@@ -412,8 +456,6 @@ input:focus, select:focus {
   margin-bottom: 1.5rem;
 }
 .hero-slide .btn-primary {
-  font-size: 18px;
-  padding: 20px 40px;
   font-weight: 600;
 }
 
@@ -428,8 +470,9 @@ input:focus, select:focus {
   border: 1px solid var(--color-border); 
   border-radius: var(--radius-md);
   padding: var(--space-lg); 
-  background: #fff; 
+  background: var(--color-white); 
   transition: all 0.2s ease;
+  text-align: center;
 }
 .card:hover {
   transform: translateY(-4px);
@@ -443,9 +486,9 @@ input:focus, select:focus {
   border-radius: var(--radius-sm);
   font-size: 14px; 
   font-weight: 600;
-  background: #f5f5f5; 
+  background: var(--color-bg-light); 
   color: var(--color-brand); 
-  border: 1px solid #e5e5e5; 
+  border: 1px solid var(--color-border-gray); 
 }
 
 /* Lead Page Styles */
@@ -455,7 +498,7 @@ input:focus, select:focus {
 
 .lead-hero {
   background: linear-gradient(135deg, var(--color-brand), var(--color-brand-dark));
-  color: white;
+  color: var(--color-white);
   padding: 4rem 0;
   text-align: center;
 }
@@ -496,12 +539,12 @@ input:focus, select:focus {
 
 .form-section {
   padding: 4rem 0;
-  background: #f8fafc;
+  background: var(--color-bg-slate);
 }
 
 .trust-section {
   padding: 4rem 0;
-  background: white;
+  background: var(--color-white);
 }
 
 .trust-section h2 {
@@ -542,6 +585,10 @@ input:focus, select:focus {
   .nav { gap: var(--space-md); }
   .btn { padding: 12px 24px; font-size: 14px; }
   
+  .hero-slide h1 {
+    font-size: 33px !important;
+  }
+  
   .hero-content h1 {
     font-size: 36px;
   }
@@ -581,8 +628,8 @@ input:focus, select:focus {
 }
 
 .thank-you-hero {
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: white;
+  background: linear-gradient(135deg, var(--color-success-emerald), var(--color-success-emerald-dark));
+  color: var(--color-white);
   padding: 6rem 0;
   text-align: center;
 }
@@ -613,7 +660,7 @@ input:focus, select:focus {
 
 .next-steps {
   padding: 4rem 0;
-  background: white;
+  background: var(--color-white);
 }
 
 .next-steps h2 {
@@ -642,7 +689,7 @@ input:focus, select:focus {
   width: 40px;
   height: 40px;
   background: var(--color-brand);
-  color: white;
+  color: var(--color-white);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -666,7 +713,7 @@ input:focus, select:focus {
 
 .contact-info {
   padding: 4rem 0;
-  background: #f8fafc;
+  background: var(--color-bg-slate);
 }
 
 .contact-info h2 {
@@ -685,7 +732,7 @@ input:focus, select:focus {
 .contact-item {
   text-align: center;
   padding: 2rem;
-  background: white;
+  background: var(--color-white);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
 }
@@ -715,7 +762,7 @@ input:focus, select:focus {
 
 .resources {
   padding: 4rem 0;
-  background: white;
+  background: var(--color-white);
 }
 
 .resources h2 {
@@ -757,13 +804,13 @@ input:focus, select:focus {
 
 .resource-item li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--color-border-light);
   color: var(--color-text);
 }
 
 .resource-item li:before {
   content: '✓';
-  color: #10b981;
+  color: var(--color-success-emerald);
   font-weight: bold;
   margin-right: 0.5rem;
 }
@@ -824,7 +871,7 @@ input:focus, select:focus {
 }
 
 .modal-container {
-  background: white;
+  background: var(--color-white);
   border-radius: var(--radius-lg);
   max-width: 600px;
   width: 100%;
@@ -840,7 +887,7 @@ input:focus, select:focus {
   align-items: center;
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--color-border);
-  background: #f8fafc;
+  background: var(--color-bg-slate);
 }
 
 .modal-header h2 {
@@ -942,7 +989,7 @@ input:focus, select:focus {
 
 /* Success Modal Styles */
 .success-modal {
-  background: white;
+  background: var(--color-white);
   border-radius: var(--radius-lg);
   max-width: 500px;
   width: 100%;
@@ -963,7 +1010,7 @@ input:focus, select:focus {
 }
 
 .success-close:hover {
-  background: white;
+  background: var(--color-white);
 }
 
 .success-content {
@@ -975,7 +1022,7 @@ input:focus, select:focus {
   width: 80px;
   height: 80px;
   background: #10b981;
-  color: white;
+  color: var(--color-white);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1020,7 +1067,7 @@ input:focus, select:focus {
   align-items: center;
   gap: 1rem;
   padding: 0.75rem;
-  background: #f8fafc;
+  background: var(--color-bg-slate);
   border-radius: var(--radius-sm);
 }
 
@@ -1028,7 +1075,7 @@ input:focus, select:focus {
   width: 24px;
   height: 24px;
   background: var(--color-brand);
-  color: white;
+  color: var(--color-white);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1060,7 +1107,7 @@ input:focus, select:focus {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  background: #f8fafc;
+  background: var(--color-bg-slate);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   text-decoration: none;
@@ -1072,7 +1119,7 @@ input:focus, select:focus {
 
 .contact-option:hover {
   background: var(--color-brand);
-  color: white;
+  color: var(--color-white);
   border-color: var(--color-brand);
 }
 
@@ -1129,7 +1176,7 @@ input:focus, select:focus {
   font-size: 52px;
   margin: 0 0 1.5rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--color-charcoal);
   line-height: 1.1;
 }
 
@@ -1153,11 +1200,11 @@ input:focus, select:focus {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: white;
+  background: var(--color-white);
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   font-size: 16px;
-  color: #374151;
+  color: var(--color-gray-700);
   font-weight: 500;
 }
 
@@ -1165,7 +1212,7 @@ input:focus, select:focus {
   width: 32px;
   height: 32px;
   background: #10b981;
-  color: white;
+  color: var(--color-white);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1176,7 +1223,7 @@ input:focus, select:focus {
 
 .info-section {
   padding: 4rem 0;
-  background: white;
+  background: var(--color-white);
 }
 
 .info-grid {
@@ -1189,9 +1236,9 @@ input:focus, select:focus {
 
 .info-card {
   padding: 2rem;
-  background: #f9fafb;
+  background: var(--color-bg-gray-very-light);
   border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-border-gray);
   text-align: center;
 }
 
@@ -1199,7 +1246,7 @@ input:focus, select:focus {
   font-size: 20px;
   margin: 0 0 1rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--color-charcoal);
 }
 
 .info-card p {
@@ -1262,5 +1309,5 @@ input:focus, select:focus {
 .sectoren-page .sector-card-link:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  border-color: #457fff;
+  border-color: var(--color-primary);
 }
