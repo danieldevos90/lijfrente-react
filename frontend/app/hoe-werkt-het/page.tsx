@@ -50,14 +50,47 @@ export default async function HoeWerktHetPage() {
   const sections = pageData?.sections;
 
   if (!page || !sections || !Array.isArray(sections)) {
+    // Fallback: Show hoe-werkt-het page with default content
     return (
       <>
         <HeaderWithWidget />
         <main>
           <SubpageHero
             title="Hoe werkt het?"
-            subtitle="Laden..."
+            subtitle="Van aanvraag tot uitbetaling in 4 eenvoudige stappen. Wij maken zakelijke financiering toegankelijk, transparant en snel."
             backgroundColor="#f9f9f8"
+          />
+          
+          {/* Process Steps Section */}
+          <section style={{ padding: '4rem 2rem', background: 'var(--color-bg)' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+              <h2 style={{ textAlign: 'center', marginBottom: '3rem', fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 400 }}>
+                Het aanvraagproces
+              </h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+                {[
+                  { step: '1', title: 'Aanvraag indienen', desc: 'Vul het online formulier in met uw bedrijfsgegevens en financieringswensen.' },
+                  { step: '2', title: 'Persoonlijk advies', desc: 'Een adviseur neemt contact met u op om uw situatie te bespreken.' },
+                  { step: '3', title: 'Offerte ontvangen', desc: 'U ontvangt een passend voorstel met duidelijke voorwaarden.' },
+                  { step: '4', title: 'Financiering geregeld', desc: 'Na goedkeuring wordt het bedrag snel uitbetaald.' },
+                ].map((item) => (
+                  <div key={item.step} style={{ padding: '2rem', background: 'white', borderRadius: '1rem', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--color-brand)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', fontWeight: 600, marginBottom: '1rem' }}>
+                      {item.step}
+                    </div>
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>{item.title}</h3>
+                    <p style={{ color: 'var(--color-text-muted)', lineHeight: 1.6 }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <SectorsPreviewSection
+            title="Hoe werkt het voor jouw sector?"
+            subtitle="Ontdek hoe het aanvraagproces werkt voor jouw specifieke branche."
+            maxItems={6}
+            showViewAll={true}
           />
         </main>
         <Footer />

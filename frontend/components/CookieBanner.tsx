@@ -60,94 +60,37 @@ export default function CookieBanner() {
   const applyCookiePreferences = (prefs: CookiePreferences) => {
     // Always load necessary cookies (they're required for site functionality)
     
-    // Load GA4 only if analytics is enabled
-    if (prefs.analytics && typeof window !== 'undefined') {
-      loadGA4();
-    } else {
-      // Disable GA4 if user rejected analytics
-      if (typeof window !== 'undefined') {
-        (window as any).gtag = function() {
-          // Disable gtag calls
-        };
-      }
+    // Update GA4 consent based on user preferences
+    // GA4 is loaded in layout.tsx with consent mode, we just update the consent state
+    if (typeof window !== 'undefined') {
+      updateGA4Consent(prefs.analytics, prefs.marketing);
     }
-
-    // Marketing cookies would be loaded here if needed
-    // Currently we don't use marketing cookies, but the structure is ready
   };
 
-  const loadGA4 = () => {
+  const updateGA4Consent = (analyticsGranted: boolean, marketingGranted: boolean) => {
     if (typeof window === 'undefined') return;
     
-    const GA4_ID = 'G-1VMPEWNNT0';
+    const gtag = (window as any).gtag;
+    if (!gtag) return;
     
-    // Check if script already exists
-    const existingScript = document.querySelector(`script[src*="${GA4_ID}"]`);
-    if (existingScript) {
-      // Script already loaded, just update consent and send page view
-      if ((window as any).gtag) {
-        (window as any).gtag('consent', 'update', {
-          analytics_storage: 'granted',
-          ad_storage: preferences.marketing ? 'granted' : 'denied',
-        });
-        // Send current page view
-        (window as any).gtag('config', GA4_ID, {
-          page_path: typeof window !== 'undefined' ? window.location.pathname + window.location.search : '/',
-          page_title: typeof document !== 'undefined' ? document.title : '',
-        });
-      }
-      return;
-    }
-
-    // Initialize gtag (if not already initialized)
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    if (!(window as any).gtag) {
-      const gtag = (...args: any[]) => {
-        (window as any).dataLayer.push(args);
-      };
-      (window as any).gtag = gtag;
-      gtag('js', new Date());
-    }
-
-    // Get current page info
-    const pagePath = typeof window !== 'undefined' ? window.location.pathname + window.location.search : '/';
-    const pageTitle = typeof document !== 'undefined' ? document.title : '';
-
-    // Load gtag script
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
+    // Update consent state - GA4 is already loaded in layout.tsx with consent mode
+    gtag('consent', 'update', {
+      analytics_storage: analyticsGranted ? 'granted' : 'denied',
+      ad_storage: marketingGranted ? 'granted' : 'denied',
+      ad_user_data: marketingGranted ? 'granted' : 'denied',
+      ad_personalization: marketingGranted ? 'granted' : 'denied',
+    });
     
-    // Configure GA4 with privacy settings and initial page view
-    // This will be queued in dataLayer and processed when script loads
-    (window as any).gtag('config', GA4_ID, {
-      anonymize_ip: true,
-      allow_google_signals: false,
-      allow_ad_personalization_signals: false,
-      page_path: pagePath,
-      page_title: pageTitle,
-    });
-
-    // Set consent
-    (window as any).gtag('consent', 'update', {
-      analytics_storage: 'granted',
-      ad_storage: preferences.marketing ? 'granted' : 'denied',
-    });
-
-    // Append script to DOM (this triggers the load)
-    document.head.appendChild(script1);
-
-    // Send explicit page_view event after script loads (as backup)
-    script1.onload = () => {
-      if ((window as any).gtag) {
-        // The config call above should already send the page view,
-        // but send an explicit event as well to ensure it's tracked
-        (window as any).gtag('event', 'page_view', {
-          page_path: pagePath,
-          page_title: pageTitle,
-        });
-      }
-    };
+    // If analytics is granted, send a page view to ensure tracking starts
+    if (analyticsGranted) {
+      const pagePath = window.location.pathname + window.location.search;
+      const pageTitle = document.title;
+      
+      gtag('event', 'page_view', {
+        page_path: pagePath,
+        page_title: pageTitle,
+      });
+    }
   };
 
   const acceptAll = () => {

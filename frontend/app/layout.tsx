@@ -157,16 +157,38 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             `,
           }}
         />
-        {/* GA4 Analytics - Will be loaded by CookieBanner component after consent */}
+        {/* GA4 Analytics with Consent Mode - Loads immediately but respects consent */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               // Initialize dataLayer for GA4
-              // GA4 script will be loaded by CookieBanner after user consent
               window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              
+              // Set default consent to denied (GDPR compliant)
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                wait_for_update: 500
+              });
+              
+              // Enable cookieless pings for basic analytics
+              gtag('set', 'url_passthrough', true);
+              gtag('set', 'ads_data_redaction', true);
+              
+              gtag('js', new Date());
+              gtag('config', 'G-1VMPEWNNT0', {
+                anonymize_ip: true,
+                allow_google_signals: false,
+                send_page_view: true
+              });
             `,
           }}
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VMPEWNNT0"></script>
         {gtmId ? (
           <>
             <script
