@@ -68,9 +68,12 @@ async function fetchStrapi<T>(
     'Content-Type': 'application/json',
   };
 
-  if (STRAPI_API_TOKEN) {
-    headers.Authorization = `Bearer ${STRAPI_API_TOKEN}`;
-  }
+  // NOTE: Strapi endpoints are now PUBLIC for read operations (find, findOne).
+  // DO NOT send Authorization header as it may cause 401 errors with invalid/expired tokens.
+  // Only send token if explicitly needed for write operations (which are not used in this codebase).
+  // if (STRAPI_API_TOKEN) {
+  //   headers.Authorization = `Bearer ${STRAPI_API_TOKEN}`;
+  // }
 
   if (isDev) {
     console.log('[fetchStrapi] DEBUG:', {
@@ -185,7 +188,8 @@ export async function getPageBySlug(
   options?: FetchOptions
 ): Promise<StrapiPage | null> {
   // Deep population: populate sections dynamic zone and all nested components/relations
-  const endpoint = `/pages?filters[slug][$eq]=${slug}&filters[siteId][$eq]=${siteId}&populate[sections][populate]=*&populate=*`;
+  // Note: Don't use both populate[sections][populate]=* AND populate=* - they conflict
+  const endpoint = `/pages?filters[slug][$eq]=${slug}&filters[siteId][$eq]=${siteId}&populate[sections][populate]=*`;
   
   try {
     const response = await fetchStrapi<StrapiCollectionResponse<StrapiPage>>(
@@ -216,7 +220,7 @@ export async function getAllPages(
   options?: FetchOptions
 ): Promise<StrapiPage[]> {
   // Deep population: populate sections dynamic zone and all nested data
-  const endpoint = `/pages?filters[siteId][$eq]=${siteId}&populate[sections][populate]=*&populate=*`;
+  const endpoint = `/pages?filters[siteId][$eq]=${siteId}&populate[sections][populate]=*`;
   
   const response = await fetchStrapi<StrapiCollectionResponse<StrapiPage>>(
     endpoint,
@@ -396,7 +400,7 @@ export async function getTestimonials(
   options?: FetchOptions
 ): Promise<StrapiTestimonial[]> {
   // Deep population: populate images and all nested relations
-  const endpoint = `/testimonials?filters[siteId][$eq]=${siteId}&populate[image][populate]=*&populate=*`;
+  const endpoint = `/testimonials?filters[siteId][$eq]=${siteId}&populate[image][populate]=*`;
   
   const response = await fetchStrapi<StrapiCollectionResponse<StrapiTestimonial>>(
     endpoint,
@@ -415,7 +419,7 @@ export async function getTestimonial(
   options?: FetchOptions
 ): Promise<StrapiTestimonial | null> {
   // Deep population: populate images and all nested relations
-  const endpoint = `/testimonials/${id}?populate[image][populate]=*&populate=*`;
+  const endpoint = `/testimonials/${id}?populate[image][populate]=*`;
   
   try {
     const response = await fetchStrapi<StrapiResponse<StrapiTestimonial>>(
@@ -442,7 +446,7 @@ export async function getSectorTestimonials(
   options?: FetchOptions
 ): Promise<StrapiTestimonial[]> {
   // Deep population: populate images and all nested relations
-  const endpoint = `/testimonials?filters[siteId][$eq]=${siteId}&filters[sector][$eq]=${sector}&populate[image][populate]=*&populate=*&sort=createdAt:desc`;
+  const endpoint = `/testimonials?filters[siteId][$eq]=${siteId}&filters[sector][$eq]=${sector}&populate[image][populate]=*&sort=createdAt:desc`;
   
   try {
     const response = await fetchStrapi<StrapiCollectionResponse<StrapiTestimonial>>(
@@ -642,7 +646,7 @@ export async function getTeamMembers(
 ): Promise<StrapiTeamMember[]> {
   const isDev = process.env.NODE_ENV === 'development';
   // Deep population: populate images and all nested relations
-  const endpoint = `/team-members?filters[siteId][$eq]=${siteId}&populate[image][populate]=*&populate=*&sort=order:asc`;
+  const endpoint = `/team-members?filters[siteId][$eq]=${siteId}&populate[image][populate]=*&sort=order:asc`;
   
   if (isDev) {
     console.log('[getTeamMembers] Fetching:', {
@@ -874,7 +878,7 @@ export async function getSectorPage(
   const isDev = process.env.NODE_ENV === 'development';
   // Deep population: populate all images, nested components, and relations
   // Note: useCases and benefits are component arrays, populate them deeply
-  const endpoint = `/sector-pages?filters[sectorSlug][$eq]=${sectorSlug}&filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate]=*&populate[benefits][populate]=*&populate=*`;
+  const endpoint = `/sector-pages?filters[sectorSlug][$eq]=${sectorSlug}&filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate]=*&populate[benefits][populate]=*`;
   
   if (isDev) {
     console.log('[getSectorPage] Fetching:', {
@@ -945,7 +949,7 @@ export async function getAllSectorPages(
   options?: FetchOptions
 ): Promise<StrapiSectorPage[]> {
   // Deep population: populate all images, nested components, and relations
-  const endpoint = `/sector-pages?filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate]=*&populate[benefits][populate]=*&populate=*`;
+  const endpoint = `/sector-pages?filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate]=*&populate[benefits][populate]=*`;
   
   const response = await fetchStrapi<StrapiCollectionResponse<StrapiSectorPage>>(
     endpoint,
