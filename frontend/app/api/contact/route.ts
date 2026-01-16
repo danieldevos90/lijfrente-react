@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { getSiteContactInfo } from '@/lib/get-site-contact-info';
 
 // Initialize Resend only if API key is available
+// Note: Trim to handle any whitespace/newline issues from env vars
 const getResend = () => {
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = process.env.RESEND_API_KEY?.trim();
   if (!apiKey) {
     return null;
   }
@@ -44,10 +44,12 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Get contact email from Strapi
-    const contactInfo = await getSiteContactInfo();
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'hello@geldgeregeld.nl';
-    const toEmail = process.env.CONTACT_EMAIL || contactInfo.email;
+    // IMPORTANT: The domain must be verified in Resend at https://resend.com/domains
+    // Go to https://resend.com/domains and add geldgeregeld.nl, then add the required DNS records
+    const fromEmail = (process.env.RESEND_FROM_EMAIL || 'noreply@geldgeregeld.nl').trim();
+    
+    // Always send to info@geldgeregeld.nl as the primary business email
+    const toEmail = (process.env.CONTACT_EMAIL || 'info@geldgeregeld.nl').trim();
     
     try {
       const { data, error } = await resend.emails.send({

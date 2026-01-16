@@ -1,7 +1,6 @@
 import { StrapiResponse, StrapiAttributes, Page, PageAttributes } from '@/types/strapi';
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
-const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 
 interface FetchOptions extends RequestInit {
   params?: Record<string, string>;
@@ -9,6 +8,8 @@ interface FetchOptions extends RequestInit {
 
 /**
  * Generic Strapi fetch helper
+ * NOTE: All CMS endpoints are public, no auth token needed for read operations.
+ * Only leads endpoint requires authentication for write operations.
  */
 async function strapiRequest<T>(
   endpoint: string,
@@ -24,15 +25,11 @@ async function strapiRequest<T>(
     });
   }
 
-  // Add auth token if available
+  // No auth token needed - all CMS endpoints are public
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
     ...fetchOptions.headers,
   };
-
-  if (STRAPI_TOKEN) {
-    headers['Authorization'] = `Bearer ${STRAPI_TOKEN}`;
-  }
 
   const response = await fetch(url.toString(), {
     ...fetchOptions,

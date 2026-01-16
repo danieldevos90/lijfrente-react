@@ -26,10 +26,8 @@ import {
 // ============================================================================
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://bright-smile-1f47bc9d67.strapiapp.com';
-// NOTE: STRAPI_API_TOKEN should be set as an environment variable.
-// The fallback token below may be expired. Set STRAPI_API_TOKEN in your .env.local or Vercel environment variables.
-// For client-side calls, use API routes (e.g., /api/strapi/*) that proxy requests server-side.
-const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN || 'a96c4cade5ac4b12d9479f03d1bec6d0719e4f78747522f35e05b29bcba5d3571579ab84e88fd56f5d260ec5550654c61e0dba7625cfce335021d0b361c039e64d4cb24fd2e183c3e646cf5e5e037ccbb85c7ede948db96aed2319e8fdee0bcfea51cd2b97d670f57342a4f79558108f2ed57483892bca68b5cc71f35cdf1717';
+// NOTE: All CMS endpoints are PUBLIC for read operations - no authentication token needed.
+// Only the leads endpoint needs public create enabled in Strapi (which is already configured).
 
 interface FetchOptions {
   cache?: RequestCache;
@@ -50,7 +48,7 @@ async function fetchStrapi<T>(
   endpoint: string,
   options: FetchOptions = {}
 ): Promise<T> {
-  // Prevent client-side usage - STRAPI_API_TOKEN is not available in browser
+  // Prevent client-side usage - server environment variables are not available in browser
   if (typeof window !== 'undefined') {
     const isDev = process.env.NODE_ENV === 'development';
     if (isDev) {
@@ -68,19 +66,12 @@ async function fetchStrapi<T>(
     'Content-Type': 'application/json',
   };
 
-  // NOTE: Strapi endpoints are now PUBLIC for read operations (find, findOne).
-  // DO NOT send Authorization header as it may cause 401 errors with invalid/expired tokens.
-  // Only send token if explicitly needed for write operations (which are not used in this codebase).
-  // if (STRAPI_API_TOKEN) {
-  //   headers.Authorization = `Bearer ${STRAPI_API_TOKEN}`;
-  // }
+  // NOTE: Strapi endpoints are PUBLIC for read operations - no auth needed.
 
   if (isDev) {
     console.log('[fetchStrapi] DEBUG:', {
       endpoint,
       url,
-      hasToken: !!STRAPI_API_TOKEN,
-      tokenLength: STRAPI_API_TOKEN?.length || 0,
     });
   }
 
@@ -130,8 +121,6 @@ async function fetchStrapi<T>(
             endpoint,
             url,
             errorBody: errorText.substring(0, 200),
-            hasToken: !!STRAPI_API_TOKEN,
-            tokenLength: STRAPI_API_TOKEN?.length || 0,
           });
         }
         return null as T;
@@ -649,11 +638,7 @@ export async function getTeamMembers(
   const endpoint = `/team-members?filters[siteId][$eq]=${siteId}&populate[image][populate]=*&sort=order:asc`;
   
   if (isDev) {
-    console.log('[getTeamMembers] Fetching:', {
-      siteId,
-      endpoint,
-      hasToken: !!STRAPI_API_TOKEN,
-    });
+    console.log('[getTeamMembers] Fetching:', { siteId, endpoint });
   }
   
   try {
@@ -881,12 +866,7 @@ export async function getSectorPage(
   const endpoint = `/sector-pages?filters[sectorSlug][$eq]=${sectorSlug}&filters[siteId][$eq]=${siteId}&populate[heroImage][populate]=*&populate[easyLendingImage][populate]=*&populate[useCases][populate]=*&populate[benefits][populate]=*`;
   
   if (isDev) {
-    console.log('[getSectorPage] Fetching:', {
-      sectorSlug,
-      siteId,
-      endpoint,
-      hasToken: !!STRAPI_API_TOKEN,
-    });
+    console.log('[getSectorPage] Fetching:', { sectorSlug, siteId, endpoint });
   }
   
   try {

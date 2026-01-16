@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 // Initialize Resend only if API key is available
+// Note: Trim to handle any whitespace/newline issues from env vars
 const getResend = () => {
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = process.env.RESEND_API_KEY?.trim();
   if (!apiKey) {
     return null;
   }
@@ -57,7 +58,37 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Format the lead data for Strapi and email
+    // Map purpose to Strapi use_of_funds enum
+    const purposeToUseOfFunds: Record<string, string> = {
+      'werkkapitaal': 'werkkapitaal',
+      'uitbreiding': 'voorraden_en_crediteuren',
+      'inventaris': 'inventaris_en_software',
+      'vastgoed': 'bedrijfspand_financieren',
+      'voorraad': 'voorraden_en_crediteuren',
+      'overbrugging': 'werkkapitaal',
+      'personeel': 'meer_personeel',
+      'voertuigen': 'voertuigen_en_machines',
+      'machines': 'voertuigen_en_machines',
+      'software': 'inventaris_en_software',
+      'overname': 'overnamefinanciering',
+      'herfinanciering': 'herfinanciering',
+      'factoring': 'factoring',
+    };
+    
+    // Map revenue string to number
+    const revenueToNumber = (revenue: string): number => {
+      const revenueMap: Record<string, number> = {
+        '0-50k': 25000,
+        '50k-100k': 75000,
+        '100k-250k': 175000,
+        '250k-500k': 375000,
+        '500k-1m': 750000,
+        '1m+': 1500000,
+      };
+      return revenueMap[revenue] || 100000;
+    };
+
+    // Format the lead data for email notifications (full data)
     const leadData = {
       // Basic info
       amount: normalizedData.amount,
@@ -94,27 +125,42 @@ export async function POST(request: NextRequest) {
       ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip')
     };
     
-    // Send to Strapi CMS
-    const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
-    const strapiToken = process.env.STRAPI_TOKEN;
+    // Format data for Strapi (matching the schema)
+    const strapiLeadData = {
+      siteId: 'geldgeregeld',
+      amount_requested_eur: parseFloat(normalizedData.amount) || 50000,
+      expected_revenue_next_12m_eur: revenueToNumber(normalizedData.revenue),
+      kvk_number: normalizedData.kvkNumber || undefined,
+      company_name: normalizedData.companyName || `${normalizedData.firstName} ${normalizedData.lastName}`,
+      use_of_funds: purposeToUseOfFunds[normalizedData.purpose] || 'overig',
+      email: normalizedData.email,
+    };
     
-    if (strapiUrl && strapiToken) {
+    // Send to Strapi CMS (trim to handle any whitespace/newline issues)
+    const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL?.trim();
+    
+    if (strapiUrl) {
       try {
+        console.log('Submitting lead to Strapi:', { url: `${strapiUrl}/api/leads`, data: strapiLeadData });
+        
+        // Leads endpoint has public create enabled in Strapi - no auth token needed
         const strapiResponse = await fetch(`${strapiUrl}/api/leads`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${strapiToken}`
-          },
-          body: JSON.stringify({ data: leadData })
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ data: strapiLeadData })
         });
         
         if (!strapiResponse.ok) {
-          console.error('Strapi submission failed:', await strapiResponse.text());
+          const errorText = await strapiResponse.text();
+          console.error('Strapi lead submission failed:', strapiResponse.status, errorText);
+        } else {
+          console.log('Strapi lead submission successful');
         }
       } catch (error) {
         console.error('Error submitting to Strapi:', error);
       }
+    } else {
+      console.warn('Strapi URL not configured');
     }
     
     // Send email notification (you can integrate with your email service)
@@ -150,15 +196,17 @@ export async function POST(request: NextRequest) {
 async function sendEmailNotification(leadData: any) {
   const resend = getResend();
   if (!resend) {
-    console.warn('Resend not configured, skipping email notification');
+    console.warn('Resend not configured (RESEND_API_KEY missing), skipping email notification');
     return;
   }
+  console.log('Sending lead notification email via Resend...');
 
-  // Get contact email from Strapi
-  const { getSiteContactInfo } = await import('@/lib/get-site-contact-info');
-  const contactInfo = await getSiteContactInfo();
-  const fromEmail = process.env.RESEND_FROM_EMAIL || 'hello@geldgeregeld.nl';
-  const toEmails = [contactInfo.email, 'jan.dijkerman@icloud.com'];
+  // IMPORTANT: The domain must be verified in Resend at https://resend.com/domains
+  // Go to https://resend.com/domains and add geldgeregeld.nl, then add the required DNS records
+  const fromEmail = (process.env.RESEND_FROM_EMAIL || 'noreply@geldgeregeld.nl').trim();
+  
+  // Always send to info@geldgeregeld.nl as the primary business email
+  const toEmails = ['info@geldgeregeld.nl', 'jan.dijkerman@icloud.com'];
   
   const emailSubject = `Nieuwe financieringsaanvraag: ${leadData.companyName || 'Onbekend bedrijf'}`;
   
