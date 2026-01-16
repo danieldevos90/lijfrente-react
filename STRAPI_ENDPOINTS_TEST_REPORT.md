@@ -1,133 +1,115 @@
 # Strapi Endpoints Test Report
 
-**Date:** 2025-01-11  
+**Date:** 2026-01-16  
 **Strapi URL:** https://bright-smile-1f47bc9d67.strapiapp.com  
 **Site ID:** geldgeregeld
 
 ## Test Results Summary
 
-### ✅ Working Endpoints
+### ✅ All Core Endpoints Working (Public Access)
 
-1. **Testimonials** ✅
-   - All testimonials: 21 items available
-   - Filtered by siteId: 21 items available
-   - **Status:** Public access works, no auth needed
-   - **Issue:** Missing `role` and `sector` fields
+| Endpoint | Status | Items | Description |
+|----------|--------|-------|-------------|
+| `/api/pages` | ✅ SUCCESS | 7 | Page content with dynamic sections |
+| `/api/navigation-items` | ✅ SUCCESS | 3 | Navigation menu items |
+| `/api/testimonials` | ✅ SUCCESS | 21 | Customer testimonials |
+| `/api/sites` | ✅ SUCCESS | 1 | Site configuration |
+| `/api/team-members` | ✅ SUCCESS | 6 | Team member profiles |
+| `/api/benefits` | ✅ SUCCESS | 2 | Benefit highlights |
+| `/api/sector-pages` | ✅ SUCCESS | 18 | Industry-specific landing pages |
+| `/api/token-sets` | 🔒 PROTECTED | - | Design tokens (requires auth) |
+| `/api/leads` | 🔒 PROTECTED | - | Lead submissions (requires auth) |
 
-2. **Navigation** ✅
-   - Navigation items: 3 items available
-   - **Status:** Working correctly
+### Data Summary
 
-3. **Pages** ✅
-   - Homepage: Available
-   - About page: Available
-   - **Status:** Working correctly
+#### Pages (7)
+- `/home` - Homepage with 6 sections
+- `/over-ons` - About page with 3 sections
+- `/hoe-werkt-het` - How it works with 4 sections
+- `/faq` - FAQ page with 3 sections
+- `/contact` - Contact page with 5 sections
+- `/algemene-voorwaarden` - Terms & conditions
 
-### ⚠️ Issues Found
+#### Navigation Items (3)
+- Hoe werkt het → `/hoe-werkt-het`
+- Over Ons → `/over-ons`
+- Contact → `/contact`
 
-1. **Testimonials Missing Fields**
-   - ❌ `role` field: Not present or empty
-   - ❌ `sector` field: Not present or empty
-   - ❌ `image` field: Not populated
-   - **Impact:** Frontend falls back to showing company name instead of role
-   - **Fix Needed:** Update testimonials via API to add role field
+#### Sector Pages (18)
+Automotive, Bouw, Consultants, E-commerce, Franchise, Groothandel, Horeca, Kasstroom, Medisch, Productie, Retail, Schoonheid, Schoonmaak, Starters, Tandarts, Transport, Zorg, ZZP
 
-2. **Sector Filtering**
-   - ❌ Sector filter returns 400 error: "Invalid key sector"
-   - **Impact:** Cannot filter testimonials by sector
-   - **Fix Needed:** Either add sector field to testimonials or remove sector filtering
+#### Team Members (6)
+- Erik de Vos - mede-oprichter/consultant
+- Jan Dijkerman - mede-oprichter/consultant
+- (Note: Some duplicates exist in Strapi)
 
-3. **Sector Pages**
-   - ⚠️ No sector pages found in Strapi
-   - **Status:** Frontend uses fallback static pages (working as designed)
+#### Site Configuration
+- Domain: geldgeregeld.nl
+- Phone: 085-0480881
+- Email: info@geldgeregeld.nl
+- Full contact info available
 
-4. **Footer**
-   - ❌ Footer endpoint returns 404
-   - **Status:** May not be implemented in Strapi yet
+## ✅ Security Status
 
-## Frontend Data Flow Analysis
+### Protected Endpoints (Correct Configuration)
+- ✅ `/api/leads` - Protected (requires authentication)
+- ✅ `/api/token-sets` - Protected (requires authentication)
 
-### Homepage (`HomePageClient.tsx`)
-- **Current:** Uses static testimonials from `SECTOR_TESTIMONIALS`
-- **Strapi Integration:** Not currently fetching from Strapi
-- **Recommendation:** Could fetch from Strapi and merge with static fallback
+## ⚠️ Minor Issues
 
-### Sector Pages (`sectoren/[sector]/page.tsx`)
-- **Current:** Tries to fetch from Strapi first, falls back to static
-- **Status:** Working correctly with fallback
-- **Issue:** Sector filtering doesn't work (returns empty array, uses fallback)
+### 1. **Duplicate Data**
+- Team members and testimonials have some duplicates in Strapi
+- Consider cleaning up duplicate entries
 
-### Testimonials Display
-- **Role Display:** Uses `attrs.role || attrs.company || ''` (line 468)
-- **Impact:** Since role is missing, shows company name
-- **Fix:** Need to populate role field in Strapi
+### 2. **Token Sets Not Configured**
+- No design tokens configured for this site
+- This is optional but available if needed for theming
 
-## Data Structure Comparison
+### 3. **API Token Expired**
+- The STRAPI_API_TOKEN in `.env.local` is expired
+- Currently using public access (which works for all read operations)
+- **Fix:** Generate a new token in Strapi Admin → Settings → API Tokens if write access is needed
 
-### Strapi Testimonial Structure
-```json
-{
-  "id": 176,
-  "documentId": "il3meamn6f88lqjlkitewvqw",
-  "name": "Sarah van der Berg",
-  "company": "Café de Hoek",
-  "text": "...",
-  "rating": 5,
-  "siteId": "geldgeregeld",
-  "featured": true,
-  "role": null,        // ❌ Missing
-  "sector": null,     // ❌ Missing
-  "image": null       // ❌ Missing
-}
+## Frontend Integration Notes
+
+All endpoints are configured for public read access, which means:
+- ✅ Frontend can fetch data without authentication
+- ✅ No API token required for read operations
+- ⚠️ Token is still required for write operations (lead submissions)
+
+The frontend's `strapi-cms.ts` functions should work correctly with public access.
+
+## Test Commands
+
+```bash
+# Run endpoint test
+python3 scripts/test_all_strapi_endpoints.py
+
+# Get detailed sample data
+python3 scripts/get_strapi_sample_data.py
+
+# Quick curl test
+curl "https://bright-smile-1f47bc9d67.strapiapp.com/api/pages?filters[siteId][\$eq]=geldgeregeld"
 ```
 
-### Frontend Expected Structure
-```typescript
-{
-  name: string;
-  role: string;        // Currently falls back to company
-  text: string;
-  image: string;
-  company?: string;
-  rating?: number;
-}
+## Endpoint URLs
+
+```
+Base URL: https://bright-smile-1f47bc9d67.strapiapp.com/api
+
+Pages:           /pages?filters[siteId][$eq]=geldgeregeld&populate=sections
+Navigation:      /navigation-items?filters[siteId][$eq]=geldgeregeld&sort=order:asc
+Testimonials:    /testimonials?filters[siteId][$eq]=geldgeregeld
+Sites:           /sites?filters[siteId][$eq]=geldgeregeld
+Token Sets:      /token-sets?filters[siteId][$eq]=geldgeregeld
+Team Members:    /team-members?filters[siteId][$eq]=geldgeregeld&populate=image
+Benefits:        /benefits?filters[siteId][$eq]=geldgeregeld
+Sector Pages:    /sector-pages?filters[siteId][$eq]=geldgeregeld
 ```
 
 ## Recommendations
 
-### High Priority
-1. **Update Testimonials with Role Field**
-   - Run `scripts/update_testimonial_roles.py` with valid API token
-   - This will populate role field based on company name
-
-2. **Fix Sector Filtering**
-   - Either populate sector field in testimonials
-   - Or remove sector filtering from `getSectorTestimonials` function
-
-### Medium Priority
-3. **Add Images to Testimonials**
-   - Upload profile images to Strapi
-   - Link images to testimonials
-
-4. **Homepage Strapi Integration**
-   - Consider fetching testimonials from Strapi for homepage
-   - Merge with static testimonials as fallback
-
-### Low Priority
-5. **Footer Implementation**
-   - Create footer content type in Strapi if needed
-   - Or document that footer is static
-
-## Test Script
-
-Run the test script anytime to verify endpoints:
-```bash
-python3 scripts/test_strapi_endpoints.py
-```
-
-## Next Steps
-
-1. Get valid Strapi API token with write permissions
-2. Run `scripts/update_testimonial_roles.py` to populate role fields
-3. Verify testimonials display correctly with roles instead of company names
-4. Consider adding sector field to testimonials if sector filtering is needed
+1. ~~**Fix Leads Security**~~ ✅ DONE - Leads endpoint is now protected
+2. **Clean Up Duplicates** - Remove duplicate team members and testimonials in Strapi
+3. **Regenerate API Token** - Create new token if write operations are needed
+4. **Consider Token Sets** - Configure design tokens if custom theming is needed
