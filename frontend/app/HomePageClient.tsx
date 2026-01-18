@@ -6,12 +6,13 @@ import Footer from '../components/Footer';
 import HowItWorksBento from '../components/HowItWorksBento';
 import BenefitsCarousel from '../components/BenefitsCarousel';
 import TestimonialsGrid from '../components/TestimonialsGrid';
-import { SECTOR_TESTIMONIALS, convertToCarouselFormat } from '@/lib/sector-testimonials';
+// Removed static testimonials import - using only Strapi data
 import FeatureSection from '../components/FeatureSection';
 import { useWidget } from '../components/GlobalWidgetProvider';
 import { ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { getHeroSubtitleVariant, getHeroButtonVariant } from '@/lib/hero-ab-tests';
+import { getStrapiImageUrl } from '@/lib/strapi-cms';
 
 // Dynamically import SectorsPreviewSection (server component) as a client component wrapper
 const SectorsPreviewSection = dynamic(() => import('../components/sections/SectorsPreviewSection'), {
@@ -161,53 +162,92 @@ export default function HomePageClient() {
   }>>([]);
 
   useEffect(() => {
-    // Collect all testimonials from all sectors
-    const allTestimonials: Array<{
-      name: string;
-      role: string;
-      text: string;
-      image: string;
-      company?: string;
-      rating?: number;
-    }> = [];
-
-    // Flatten all sector testimonials
-    Object.values(SECTOR_TESTIMONIALS).forEach(sectorTestimonials => {
-      const converted = convertToCarouselFormat(sectorTestimonials);
-      allTestimonials.push(...converted);
-    });
-
-    // Debug: Log total testimonials collected
-    console.log('[HomePage] Total testimonials collected:', allTestimonials.length);
-
-    // If we don't have enough testimonials, duplicate some to reach 6
-    let testimonialsToUse = [...allTestimonials];
-    if (testimonialsToUse.length < 6) {
-      // Duplicate testimonials to reach at least 6
-      while (testimonialsToUse.length < 6) {
-        testimonialsToUse = [...testimonialsToUse, ...allTestimonials];
+    // Try to fetch testimonials from Strapi first
+    const fetchStrapiTestimonials = async () => {
+      try {
+        const response = await fetch(`/api/strapi/testimonials?siteId=${SITE_ID}`);
+        if (response.ok) {
+          const data = await response.json();
+          const strapiTestimonials = data.testimonials || [];
+          
+          if (strapiTestimonials.length > 0) {
+            // Convert Strapi testimonials to carousel format
+            const converted = strapiTestimonials.map((t: any) => {
+              const attrs = t.attributes || t;
+              // Try to get image URL from Strapi
+              let imageUrl = '/images/pexels-ketut-subiyanto-4559683.jpg'; // Default fallback
+              
+              if (attrs.image) {
+                const imgData = attrs.image;
+                // Handle various Strapi image response formats
+                if (imgData?.data) {
+                  // Nested data structure
+                  const nestedData = imgData.data;
+                  if (Array.isArray(nestedData) && nestedData.length > 0) {
+                    imageUrl = getStrapiImageUrl(nestedData[0].attributes?.url || nestedData[0].url);
+                  } else if (nestedData?.attributes?.url) {
+                    imageUrl = getStrapiImageUrl(nestedData.attributes.url);
+                  } else if (nestedData?.url) {
+                    imageUrl = getStrapiImageUrl(nestedData.url);
+                  }
+                } else if (imgData?.attributes?.url) {
+                  imageUrl = getStrapiImageUrl(imgData.attributes.url);
+                } else if (imgData?.url) {
+                  imageUrl = getStrapiImageUrl(imgData.url);
+                } else if (typeof imgData === 'string') {
+                  imageUrl = imgData;
+                }
+              }
+              
+              return {
+                name: attrs.name,
+                role: attrs.role || attrs.company || '',
+                text: attrs.text,
+                image: imageUrl,
+                company: attrs.company,
+                rating: attrs.rating || 5
+              };
+            });
+            
+            // Remove duplicates
+            const uniqueTestimonials = converted.filter((testimonial: any, index: number, self: any[]) => 
+              index === self.findIndex((t: any) => 
+                t.name.toLowerCase() === testimonial.name.toLowerCase() &&
+                t.text.toLowerCase() === testimonial.text.toLowerCase()
+              )
+            );
+            
+            // Shuffle and select
+            const shuffled = [...uniqueTestimonials];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            
+            // Show up to 6 testimonials from Strapi (or all if less than 6)
+            const selected = shuffled.slice(0, Math.min(6, shuffled.length));
+            
+            console.log('[HomePage] Using Strapi testimonials:', selected.length);
+            setRandomTestimonials(selected);
+            return;
+          } else {
+            console.log('[HomePage] No Strapi testimonials found');
+            setRandomTestimonials([]);
+            return;
+          }
+        } else {
+          console.log('[HomePage] Strapi API response not OK:', response.status);
+          setRandomTestimonials([]);
+          return;
+        }
+      } catch (error) {
+        console.error('[HomePage] Strapi fetch failed:', error);
+        setRandomTestimonials([]);
+        return;
       }
-    }
-
-    // Shuffle array using Fisher-Yates algorithm
-    const shuffled = [...testimonialsToUse];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-
-    // Take first 6 testimonials
-    const selected = shuffled.slice(0, 6);
-    console.log('[HomePage] Total available:', allTestimonials.length);
-    console.log('[HomePage] Selected testimonials:', selected.length);
-    console.log('[HomePage] Selected names:', selected.map(t => t.name));
+    };
     
-    // Ensure we always have 6
-    if (selected.length < 6) {
-      console.warn('[HomePage] Only', selected.length, 'testimonials selected, expected 6');
-    }
-    
-    setRandomTestimonials(selected);
+    fetchStrapiTestimonials();
   }, []);
 
   const benefits = [

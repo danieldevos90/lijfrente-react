@@ -5,6 +5,7 @@ import HeaderWithWidget from './HeaderWithWidget';
 import Footer from '../components/Footer';
 import { renderSection } from '@/lib/render-section';
 import HomePageClient from './HomePageClient';
+import TestimonialsFromAPI from './components/TestimonialsFromAPI';
 import SectorsPreviewSection from '../components/sections/SectorsPreviewSection';
 import type { Metadata } from 'next';
 import { generateMetadata as generateSEOMetadata, generateFinancialProductSchema, buildCanonicalUrl, getBaseUrl } from '@/lib/seo';
@@ -89,6 +90,12 @@ export default async function HomePage() {
       <main>
         {sections.map((section: any, index: number) => {
           try {
+            const sectionData = section.attributes || section;
+            // Skip testimonials-carousel sections - HomePageClient will handle them via API
+            if (sectionData.__component === 'sections.testimonials-carousel') {
+              return null;
+            }
+            
             const rendered = renderSection(section, index);
             
             // Insert SectorsPreviewSection right after benefits-carousel
@@ -113,6 +120,8 @@ export default async function HomePage() {
             return null;
           }
         })}
+        {/* Always render testimonials from API, not from Strapi page sections */}
+        <TestimonialsFromAPI />
       </main>
       <Footer />
     </>

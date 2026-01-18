@@ -283,7 +283,14 @@ export function renderSection(section: StrapiSection, index: number) {
       };
       
       // Handle testimonials - they might be in different structures
+      // If testimonials are in section data, use them; otherwise return null to let HomePageClient handle it
       const testimonialsArray = sectionData.testimonials || [];
+      
+      // If no testimonials in section data, return null so HomePageClient can fetch from API
+      if (testimonialsArray.length === 0) {
+        console.log('[render-section] No testimonials in section data, skipping - HomePageClient will handle');
+        return null;
+      }
       
       // Debug logging
       console.log('[render-section] Processing testimonials:', {
@@ -306,9 +313,12 @@ export function renderSection(section: StrapiSection, index: number) {
         };
       });
       
-      // Remove duplicates based on name (case-insensitive)
+      // Remove duplicates based on name and text (case-insensitive)
       const uniqueTestimonials = testimonials.filter((t, index, self) => 
-        index === self.findIndex((tt) => tt.name.toLowerCase() === t.name.toLowerCase())
+        index === self.findIndex((tt) => 
+          tt.name.toLowerCase() === t.name.toLowerCase() &&
+          tt.text.toLowerCase() === t.text.toLowerCase()
+        )
       );
       
       // Ensure we have testimonials to display
@@ -331,16 +341,10 @@ export function renderSection(section: StrapiSection, index: number) {
         );
       }
       
-      // For homepage, duplicate testimonials to fill 6 slots if needed
+      // Use unique testimonials only - don't duplicate
+      // Show up to 6 unique testimonials (or all if less than 6)
       let displayTestimonials = [...uniqueTestimonials];
-      if (displayTestimonials.length < 6) {
-        // Duplicate testimonials to reach 6
-        while (displayTestimonials.length < 6) {
-          displayTestimonials = [...displayTestimonials, ...uniqueTestimonials];
-        }
-        // Take only first 6
-        displayTestimonials = displayTestimonials.slice(0, 6);
-      } else if (displayTestimonials.length > 6) {
+      if (displayTestimonials.length > 6) {
         // If more than 6, take first 6
         displayTestimonials = displayTestimonials.slice(0, 6);
       }
