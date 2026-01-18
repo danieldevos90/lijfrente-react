@@ -59,6 +59,12 @@ export default async function HomePage() {
     return sectionData.__component === 'sections.benefits-carousel';
   });
 
+  // Find the index of the how-it-works-bento section
+  const howItWorksIndex = sections.findIndex((section: any) => {
+    const sectionData = section.attributes || section;
+    return sectionData.__component === 'sections.how-it-works-bento';
+  });
+
   // Generate FinancialProduct schema for homepage
   const baseUrl = getBaseUrl();
   const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
@@ -114,14 +120,22 @@ export default async function HomePage() {
               );
             }
             
+            // Insert TestimonialsFromAPI right after how-it-works-bento section
+            if (index === howItWorksIndex && howItWorksIndex !== -1) {
+              return (
+                <React.Fragment key={`section-wrapper-${index}`}>
+                  {rendered}
+                  <TestimonialsFromAPI key={`testimonials-${index}`} />
+                </React.Fragment>
+              );
+            }
+            
             return rendered;
           } catch (e) {
             console.error(`Error rendering section ${index}:`, e);
             return null;
           }
         })}
-        {/* Always render testimonials from API, not from Strapi page sections */}
-        <TestimonialsFromAPI />
       </main>
       <Footer />
     </>

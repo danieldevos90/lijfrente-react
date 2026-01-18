@@ -132,10 +132,10 @@ TESTIMONIALS = [
     }
 ]
 
-def fetch_unsplash_image(query):
-    """Fetch a single image from Unsplash"""
+def fetch_unsplash_image(query, page=1):
+    """Fetch a single unique image from Unsplash with pagination for uniqueness"""
     url = 'https://api.unsplash.com/search/photos'
-    params = {'query': query, 'per_page': 1, 'orientation': 'portrait'}
+    params = {'query': query, 'per_page': 1, 'orientation': 'portrait', 'page': page}
     try:
         response = requests.get(url, headers=UNSPLASH_HEADERS, params=params, timeout=10)
         if response.status_code == 200:
@@ -274,10 +274,10 @@ for i, testimonial in enumerate(TESTIMONIALS):
     
     print(f"[{i+1}/{len(TESTIMONIALS)}] {name} ({gender})")
     
-    # Fetch and upload image
+    # Fetch unique image for each person using pagination (page = i+1 for uniqueness)
     query = f"professional {gender} portrait business headshot"
-    print(f"  📥 Fetching {gender}'s image from Unsplash...")
-    image_url = fetch_unsplash_image(query)
+    print(f"  📥 Fetching unique {gender}'s image from Unsplash (page {i+1})...")
+    image_url = fetch_unsplash_image(query, page=i+1)
     
     if not image_url:
         print(f"  ❌ Failed to fetch image")
