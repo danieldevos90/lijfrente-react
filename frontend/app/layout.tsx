@@ -2,16 +2,34 @@ import './tokens.css';
 import './globals.css';
 import type { ReactNode } from 'react';
 import { Suspense } from 'react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import GlobalWidgetProvider from '../components/GlobalWidgetProvider';
 import CookieBanner from '../components/CookieBanner';
 import PageViewTracker from '../components/PageViewTracker';
 import { ErrorHandler } from './error-handler';
 import SchemaMarkup from '../components/SEO/SchemaMarkup';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+import SkipToContent from '../components/SkipToContent';
+
+// Optimized font loading with next/font (vercel-react-best-practices: bundle-defer-third-party)
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://geldgeregeld.nl';
+
+// Viewport export for Next.js 14+ (nextjs-app-router-patterns)
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#1a365d',
+};
+
 export const metadata: Metadata = generateSEOMetadata({
   // SEO-optimized default title: Primary keyword + value prop + brand
   title: `Zakelijke Financiering - Binnen 24 uur geregeld | ${SITE_NAME}`,
@@ -27,9 +45,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
   const plausibleApiHost = process.env.NEXT_PUBLIC_PLAUSIBLE_API_HOST || 'https://plausible.io';
   return (
-    <html lang="nl">
+    <html lang="nl" className={inter.variable} suppressHydrationWarning>
       <head>
         <SchemaMarkup />
+        
+        {/* Preload critical resources for better LCP (web-performance-optimization) */}
+        <link
+          rel="preload"
+          href="/images/hero/getty-images-nMg-6GrzKQ8-unsplash.jpg"
+          as="image"
+          type="image/jpeg"
+        />
+        
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        
         {/* Suppress unhandled promise rejections and 401 errors immediately */}
         <script
           dangerouslySetInnerHTML={{
@@ -157,16 +188,52 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             `,
           }}
         />
-        {/* GA4 Analytics with Consent Mode - Loads immediately but respects consent */}
-        <script
+        {/* 
+          GA4 Analytics with Consent Mode (vercel-react-best-practices: bundle-defer-third-party)
+          Using next/script with afterInteractive strategy for better Core Web Vitals
+        */}
+      </head>
+      <body className={inter.className}>
+        {/* Skip to content link for keyboard accessibility (fixing-accessibility) */}
+        <SkipToContent />
+        
+        {gtmId ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+              title="Google Tag Manager"
+            />
+          </noscript>
+        ) : null}
+        <ErrorHandler />
+        <GlobalWidgetProvider>
+          <div id="main-content" tabIndex={-1}>
+            {children}
+          </div>
+          <CookieBanner />
+          <Suspense fallback={null}>
+            <PageViewTracker />
+          </Suspense>
+        </GlobalWidgetProvider>
+        
+        {/* 
+          Analytics scripts using next/script for optimal loading
+          (vercel-react-best-practices: bundle-defer-third-party)
+        */}
+        
+        {/* GA4 Consent Mode initialization - runs immediately to set up consent */}
+        <Script
+          id="ga4-consent-init"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              // Initialize dataLayer for GA4
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               window.gtag = gtag;
               
-              // Set default consent to denied (GDPR compliant)
               gtag('consent', 'default', {
                 analytics_storage: 'denied',
                 ad_storage: 'denied',
@@ -175,10 +242,25 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 wait_for_update: 500
               });
               
-              // Enable cookieless pings for basic analytics
               gtag('set', 'url_passthrough', true);
               gtag('set', 'ads_data_redaction', true);
-              
+            `,
+          }}
+        />
+        
+        {/* GA4 script - loads after page is interactive */}
+        <Script
+          id="ga4-gtag"
+          src="https://www.googletagmanager.com/gtag/js?id=G-1VMPEWNNT0"
+          strategy="afterInteractive"
+        />
+        
+        {/* GA4 config - runs after gtag.js loads */}
+        <Script
+          id="ga4-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
               gtag('js', new Date());
               gtag('config', 'G-1VMPEWNNT0', {
                 anonymize_ip: true,
@@ -188,40 +270,34 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             `,
           }}
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VMPEWNNT0"></script>
-        {gtmId ? (
+        
+        {/* GTM - loads after page is interactive */}
+        {gtmId && (
           <>
-            <script
+            <Script
+              id="gtm-init"
+              strategy="afterInteractive"
               dangerouslySetInnerHTML={{
                 __html: `window.dataLayer=window.dataLayer||[];window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});`,
               }}
             />
-            <script async src={`https://www.googletagmanager.com/gtm.js?id=${gtmId}`}></script>
-          </>
-        ) : null}
-        {plausibleDomain ? (
-          <script defer data-domain={plausibleDomain} src={`${plausibleApiHost}/js/script.js`}></script>
-        ) : null}
-      </head>
-      <body>
-        {gtmId ? (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
+            <Script
+              id="gtm-script"
+              src={`https://www.googletagmanager.com/gtm.js?id=${gtmId}`}
+              strategy="afterInteractive"
             />
-          </noscript>
-        ) : null}
-        <ErrorHandler />
-        <GlobalWidgetProvider>
-          {children}
-          <CookieBanner />
-          <Suspense fallback={null}>
-            <PageViewTracker />
-          </Suspense>
-        </GlobalWidgetProvider>
+          </>
+        )}
+        
+        {/* Plausible - loads after page is interactive (lazyOnload for even better perf) */}
+        {plausibleDomain && (
+          <Script
+            id="plausible"
+            src={`${plausibleApiHost}/js/script.js`}
+            strategy="lazyOnload"
+            data-domain={plausibleDomain}
+          />
+        )}
       </body>
     </html>
   );

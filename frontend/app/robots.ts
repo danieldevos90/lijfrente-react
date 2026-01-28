@@ -1,8 +1,13 @@
 import { MetadataRoute } from 'next';
-import { getBaseUrl } from '@/lib/seo';
 
+/**
+ * Robots.txt configuration (seo-audit: crawlability)
+ * 
+ * Controls search engine crawling behavior.
+ * Generates robots.txt at build time.
+ */
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = getBaseUrl();
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://geldgeregeld.nl';
   
   return {
     rules: [
@@ -11,20 +16,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/password/',
-          '/_next/',
           '/admin/',
-          '/bedankt',
-        ],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: [
-          '/api/',
-          '/password/',
           '/_next/',
-          '/admin/',
+          '/password/',
+          '/sites/',
+          '/*.json$',
         ],
       },
     ],

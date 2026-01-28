@@ -1311,3 +1311,80 @@ input:focus, select:focus {
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   border-color: var(--color-primary);
 }
+
+/* ==========================================================================
+   Accessibility Focus Styles (fixing-accessibility skill)
+   ========================================================================== */
+
+/* Ensure focus is always visible for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-primary, #1a365d);
+  outline-offset: 2px;
+}
+
+/* Remove default outline for mouse users, keep for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus styles for interactive elements */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--color-primary, #1a365d);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(26, 54, 93, 0.15);
+  border-radius: 4px;
+}
+
+/* Focus styles for buttons */
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary, #1a365d);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(26, 54, 93, 0.2);
+}
+
+.btn-primary:focus-visible {
+  outline-color: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Focus styles for form inputs */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary, #1a365d);
+  outline-offset: 0;
+  border-color: var(--color-primary, #1a365d);
+  box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+}
+
+/* Focus styles for cards and interactive containers */
+.sector-card-link:focus-visible,
+[class*="card"]:focus-visible {
+  outline: 2px solid var(--color-primary, #1a365d);
+  outline-offset: 2px;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Skip link focus state (already styled inline, but adding here for consistency) */
+.skip-to-content:focus {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+/* Reduced motion preferences (web-performance-optimization) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
