@@ -6,6 +6,16 @@
 const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
 const UNSPLASH_API_URL = 'https://api.unsplash.com';
 
+const DUTCH_BIAS_TOKEN = 'Netherlands';
+
+function withDutchBias(query: string): string {
+  const q = (query || '').trim();
+  if (!q) return DUTCH_BIAS_TOKEN;
+  // Avoid double-appending when callers already include it.
+  if (q.toLowerCase().includes(DUTCH_BIAS_TOKEN.toLowerCase())) return q;
+  return `${q} ${DUTCH_BIAS_TOKEN}`.trim();
+}
+
 export interface UnsplashImage {
   id: string;
   urls: {
@@ -291,6 +301,9 @@ export async function getSectorUnsplashImage(
     }
   }
   
+  // Bias all results to NL to avoid non-Dutch imagery.
+  query = withDutchBias(query);
+
   // Fetch multiple images and pick a good one (first result is usually best)
   // But we can improve by fetching more and selecting
   return getUnsplashImage(query, useFullSize);
