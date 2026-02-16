@@ -1,5 +1,42 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { getSiteContactInfo } from '@/lib/get-site-contact-info';
+
+type RateState = { count: number; resetAt: number };
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const RATE_LIMIT_MAX = 5; // best-effort (serverless warm state only)
+const rateLimitState = new Map<string, RateState>();
+
+function getClientIp(request: NextRequest): string {
+  const xff = request.headers.get('x-forwarded-for') || '';
+  const first = xff.split(',')[0]?.trim();
+  return first || request.headers.get('x-real-ip') || 'unknown';
+}
+
+function getCookieFromHeader(cookieHeader: string | null, name: string): string | null {
+  if (!cookieHeader) return null;
+  const parts = cookieHeader.split(';').map((p) => p.trim());
+  const kv = parts.find((p) => p.startsWith(name + '='));
+  if (!kv) return null;
+  const v = kv.split('=').slice(1).join('=');
+  try {
+    return decodeURIComponent(v);
+  } catch {
+    return v;
+  }
+}
+
+function isRateLimited(key: string): boolean {
+  const now = Date.now();
+  const existing = rateLimitState.get(key);
+  if (!existing || existing.resetAt <= now) {
+    rateLimitState.set(key, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  existing.count += 1;
+  rateLimitState.set(key, existing);
+  return existing.count > RATE_LIMIT_MAX;
+}
 
 // Initialize Resend only if API key is available
 // Note: Trim to handle any whitespace/newline issues from env vars
@@ -13,7 +50,26 @@ const getResend = () => {
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = getClientIp(request);
+    const sessionId = getCookieFromHeader(request.headers.get('cookie'), 'gg_session_id');
+    const limiterKey = `${ip}:${sessionId || request.headers.get('user-agent') || 'ua'}`;
+    if (isRateLimited(limiterKey)) {
+      return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+    }
+
     const formData = await request.json();
+    const attribution = formData?.attribution;
+    const partner =
+      formData?.partner ||
+      attribution?.last?.partner ||
+      attribution?.first?.partner ||
+      undefined;
+
+    // Honeypot field: if present, treat as bot and short-circuit with success
+    // (avoid giving bots an oracle, and avoid spamming inbox/CRM).
+    if (typeof formData?.website === 'string' && formData.website.trim().length > 0) {
+      return NextResponse.json({ success: true, message: 'OK' }, { status: 200 });
+    }
     
     // Normalize form data - handle both DrawerWidget format (Dutch) and InteractiveLeadForm format (English)
     const normalizedData = {
@@ -48,12 +104,13 @@ export async function POST(request: NextRequest) {
     
     // Validate required fields (at minimum we need email and company name or name)
     const hasEmail = !!normalizedData.email;
+    const hasPhone = !!normalizedData.phone;
     const hasCompanyOrName = !!(normalizedData.companyName || (normalizedData.firstName && normalizedData.lastName));
     
-    if (!hasEmail || !hasCompanyOrName) {
+    if ((!hasEmail && !hasPhone) || !hasCompanyOrName) {
       return NextResponse.json(
         { error: 'Missing required fields', 
-          details: !hasEmail ? 'Email is required' : 'Company name or full name is required' },
+          details: (!hasEmail && !hasPhone) ? 'Email or phone is required' : 'Company name or full name is required' },
         { status: 400 }
       );
     }
@@ -117,12 +174,18 @@ export async function POST(request: NextRequest) {
       // Additional info
       existingFinancing: normalizedData.existingFinancing,
       additionalInfo: normalizedData.additionalInfo,
+
+      // Attribution (non-PII): utm/gclid/partner + landing/referrer
+      partner: partner,
+      attribution: attribution || undefined,
       
       // Metadata
       submittedAt: new Date().toISOString(),
       source: formData.source || 'interactive_form',
       userAgent: request.headers.get('user-agent'),
-      ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip')
+      ip: ip,
+      referer: request.headers.get('referer') || undefined,
+      country: request.headers.get('x-vercel-ip-country') || request.headers.get('cf-ipcountry') || undefined,
     };
     
     // Format data for Strapi (matching the schema)
@@ -133,7 +196,7 @@ export async function POST(request: NextRequest) {
       kvk_number: normalizedData.kvkNumber || undefined,
       company_name: normalizedData.companyName || `${normalizedData.firstName} ${normalizedData.lastName}`,
       use_of_funds: purposeToUseOfFunds[normalizedData.purpose] || 'overig',
-      email: normalizedData.email,
+      email: normalizedData.email || undefined,
     };
     
     // Send to Strapi CMS (trim to handle any whitespace/newline issues)
@@ -175,7 +238,9 @@ export async function POST(request: NextRequest) {
       email: leadData.email,
       amount: leadData.amount,
       company: leadData.companyName,
-      purpose: leadData.purpose
+      purpose: leadData.purpose,
+      source: leadData.source,
+      partner: leadData.partner,
     });
     
     return NextResponse.json({ 
@@ -200,6 +265,57 @@ async function sendEmailNotification(leadData: any) {
     return;
   }
   console.log('Sending lead notification email via Resend...');
+
+  const attr = leadData?.attribution;
+  const first = attr?.first;
+  const last = attr?.last;
+  const partner = leadData?.partner || last?.partner || first?.partner;
+
+  const formatTouchHtml = (label: string, touch: any) => {
+    if (!touch) return '';
+    const parts: string[] = [];
+    if (touch.path) parts.push(`<strong>${label} pagina:</strong> ${touch.path}`);
+    if (touch.referrer) parts.push(`<strong>${label} referrer:</strong> ${touch.referrer}`);
+    const utm = [
+      touch.utm_source && `utm_source=${touch.utm_source}`,
+      touch.utm_medium && `utm_medium=${touch.utm_medium}`,
+      touch.utm_campaign && `utm_campaign=${touch.utm_campaign}`,
+      touch.utm_term && `utm_term=${touch.utm_term}`,
+      touch.utm_content && `utm_content=${touch.utm_content}`,
+    ].filter(Boolean);
+    if (utm.length) parts.push(`<strong>${label} UTM:</strong> ${utm.join(' · ')}`);
+    const clicks = [
+      touch.gclid && `gclid=${touch.gclid}`,
+      touch.msclkid && `msclkid=${touch.msclkid}`,
+      touch.fbclid && `fbclid=${touch.fbclid}`,
+      touch.partner && `partner=${touch.partner}`,
+    ].filter(Boolean);
+    if (clicks.length) parts.push(`<strong>${label} click:</strong> ${clicks.join(' · ')}`);
+    return parts.map((p) => `<p>${p}</p>`).join('');
+  };
+
+  const formatTouchText = (label: string, touch: any) => {
+    if (!touch) return '';
+    const lines: string[] = [];
+    if (touch.path) lines.push(`${label} pagina: ${touch.path}`);
+    if (touch.referrer) lines.push(`${label} referrer: ${touch.referrer}`);
+    const utm = [
+      touch.utm_source && `utm_source=${touch.utm_source}`,
+      touch.utm_medium && `utm_medium=${touch.utm_medium}`,
+      touch.utm_campaign && `utm_campaign=${touch.utm_campaign}`,
+      touch.utm_term && `utm_term=${touch.utm_term}`,
+      touch.utm_content && `utm_content=${touch.utm_content}`,
+    ].filter(Boolean);
+    if (utm.length) lines.push(`${label} UTM: ${utm.join(' · ')}`);
+    const clicks = [
+      touch.gclid && `gclid=${touch.gclid}`,
+      touch.msclkid && `msclkid=${touch.msclkid}`,
+      touch.fbclid && `fbclid=${touch.fbclid}`,
+      touch.partner && `partner=${touch.partner}`,
+    ].filter(Boolean);
+    if (clicks.length) lines.push(`${label} click: ${clicks.join(' · ')}`);
+    return lines.join('\n');
+  };
 
   // IMPORTANT: The domain must be verified in Resend at https://resend.com/domains
   // Go to https://resend.com/domains and add geldgeregeld.nl, then add the required DNS records
@@ -235,12 +351,18 @@ async function sendEmailNotification(leadData: any) {
     <h3>Aanvullende informatie</h3>
     <p>${leadData.additionalInfo.replace(/\n/g, '<br>')}</p>
     ` : ''}
+
+    <h3>Attributie</h3>
+    ${partner ? `<p><strong>Partner:</strong> ${partner}</p>` : '<p><em>Geen partner/tag</em></p>'}
+    ${formatTouchHtml('First touch', first)}
+    ${formatTouchHtml('Last touch', last)}
     
     <hr>
     <p style="color: #6c737a; font-size: 12px;">
       <strong>Metadata:</strong><br>
       Verzonden op: ${new Date().toLocaleString('nl-NL')}<br>
       Bron: ${leadData.source || 'interactive_form'}<br>
+      ${leadData.country ? `Land: ${leadData.country}<br>` : ''}
       ${leadData.ip ? `IP-adres: ${leadData.ip}` : ''}
     </p>
   `;
@@ -269,9 +391,16 @@ ${leadData.existingFinancing ? `Bestaande financiering: ${leadData.existingFinan
 ${leadData.additionalInfo ? `Aanvullende informatie:\n${leadData.additionalInfo}` : ''}
 
 ---
+ATTRIBUTIE
+Partner: ${partner || '-'}
+${formatTouchText('First touch', first)}
+${first ? '\n' : ''}${formatTouchText('Last touch', last)}
+
+---
 Metadata:
 Verzonden op: ${new Date().toLocaleString('nl-NL')}
 Bron: ${leadData.source || 'interactive_form'}
+${leadData.country ? `Land: ${leadData.country}` : ''}
 ${leadData.ip ? `IP-adres: ${leadData.ip}` : ''}
   `;
 
@@ -290,6 +419,29 @@ ${leadData.ip ? `IP-adres: ${leadData.ip}` : ''}
 
     await Promise.all(emailPromises);
     console.log('Lead notification emails sent successfully');
+
+    // Send a short confirmation email to the lead (best-effort).
+    const leadEmail = String(leadData?.email || '').trim();
+    if (leadEmail && leadEmail.includes('@')) {
+      const contact = await getSiteContactInfo().catch(() => null);
+      const businessPhone = String(contact?.phone || '085-0480881');
+      const businessEmail = String(contact?.email || 'info@geldgeregeld.nl');
+      const telHref = 'tel:' + businessPhone.replace(/[^0-9+]/g, '');
+
+      await resend.emails.send({
+        from: fromEmail,
+        to: [leadEmail],
+        subject: 'We hebben je aanvraag ontvangen (GeldGeregeld)',
+        html: `
+          <h2>Bedankt voor je aanvraag</h2>
+          <p>We hebben je aanvraag ontvangen en nemen doorgaans binnen 24 uur contact met je op.</p>
+          <p><strong>Sneller schakelen?</strong> Bel ons op <a href="${telHref}">${businessPhone}</a> of mail naar <a href="mailto:${businessEmail}">${businessEmail}</a>.</p>
+          <hr/>
+          <p style="color:#6c737a;font-size:12px">Dit is een automatische bevestiging. Je hoeft niet te reageren.</p>
+        `,
+        text: `Bedankt voor je aanvraag. We nemen binnen 24 uur contact met je op. Sneller schakelen? Bel ${businessPhone} of mail ${businessEmail}.`,
+      });
+    }
   } catch (error) {
     console.error('Error sending lead notification emails:', error);
     throw error;

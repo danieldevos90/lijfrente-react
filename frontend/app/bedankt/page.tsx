@@ -3,15 +3,27 @@ import HeaderWithWidget from '../HeaderWithWidget';
 import Footer from '../../components/Footer';
 import CTASection from '../../components/sections/CTASection';
 import type { Metadata } from 'next';
+import { getSiteContactInfo } from '@/lib/get-site-contact-info';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Bedankt voor uw aanvraag | GeldGeregeld',
   description: 'Uw financieringsaanvraag is ontvangen. We nemen binnen 24 uur contact met u op.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default async function ThankYouPage() {
+  const contact = await getSiteContactInfo().catch(() => null);
+  const phone = String(contact?.phone || '085-0480881');
+  const email = String(contact?.email || 'info@geldgeregeld.nl');
+  const phoneHref = `tel:${phone.replace(/[^0-9+]/g, '')}`;
+  const docsMailto = `mailto:${email}?subject=${encodeURIComponent('Documenten voor financieringsaanvraag')}&body=${encodeURIComponent(
+    'Hi,\n\nHierbij stuur ik documenten voor mijn financieringsaanvraag.\n\nBedrijfsnaam:\nKvK:\nTelefoon:\n\nDank!'
+  )}`;
   return (
     <>
       <HeaderWithWidget />
@@ -72,6 +84,15 @@ export default async function ThankYouPage() {
             >
               Uw financieringsaanvraag is succesvol ontvangen. We nemen binnen 24 uur contact met u op.
             </p>
+
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '2rem' }}>
+              <a className="btn btn-primary" href={phoneHref}>
+                Bel direct: {phone}
+              </a>
+              <a className="btn btn-secondary" href={`mailto:${email}`}>
+                Mail: {email}
+              </a>
+            </div>
           </div>
         </section>
 
@@ -373,7 +394,7 @@ export default async function ThankYouPage() {
                   Bel ons
                 </h3>
                 <a 
-                  href="tel:0851305000"
+                  href={phoneHref}
                   style={{
                     display: 'block',
                     fontSize: '1.25rem',
@@ -383,7 +404,7 @@ export default async function ThankYouPage() {
                     marginBottom: '0.5rem',
                   }}
                 >
-                  085 - 130 5000
+                  {phone}
                 </a>
                 <span 
                   style={{
@@ -432,7 +453,7 @@ export default async function ThankYouPage() {
                   E-mail ons
                 </h3>
                 <a 
-                  href="mailto:info@geldgeregeld.nl"
+                  href={`mailto:${email}`}
                   style={{
                     display: 'block',
                     fontSize: '1.125rem',
@@ -442,7 +463,7 @@ export default async function ThankYouPage() {
                     marginBottom: '0.5rem',
                   }}
                 >
-                  info@geldgeregeld.nl
+                  {email}
                 </a>
                 <span 
                   style={{
@@ -508,6 +529,63 @@ export default async function ThankYouPage() {
                   }}
                 >
                   Afspraak maken
+                </a>
+              </div>
+
+              {/* Upload docs */}
+              <div
+                style={{
+                  background: 'var(--color-white)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '2rem',
+                  textAlign: 'center',
+                  border: '1px solid var(--color-border)',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                <div
+                  style={{
+                    width: '60px',
+                    height: '60px',
+                    background: 'var(--base-color-brand--pink-light)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 1.25rem',
+                  }}
+                >
+                  <FileText size={28} color="var(--color-charcoal)" />
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'PP Neue Montreal, Neue Montreal, sans-serif',
+                    fontSize: '1.25rem',
+                    fontWeight: 500,
+                    color: 'var(--color-text)',
+                    marginBottom: '0.75rem',
+                  }}
+                >
+                  Documenten sturen
+                </h3>
+                <p
+                  style={{
+                    fontSize: '0.95rem',
+                    color: 'var(--color-text-muted)',
+                    marginBottom: '1rem',
+                  }}
+                >
+                  Stuur alvast jaarcijfers, bankafschriften of KvK-uittreksel mee. Dat versnelt je voorstel.
+                </p>
+                <a
+                  href={docsMailto}
+                  className="btn btn-secondary"
+                  style={{
+                    fontSize: '0.875rem',
+                    padding: '0.75rem 1.5rem',
+                  }}
+                >
+                  Mail documenten
                 </a>
               </div>
             </div>

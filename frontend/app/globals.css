@@ -275,6 +275,101 @@ p {
 /* Layout utilities */
 .row { display: flex; gap: var(--space-md); align-items: center; margin: var(--space-md) 0; flex-wrap: wrap; }
 
+/* QuickLeadForm action buttons: keep primary/secondary aligned even with long text */
+.quick-lead-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.quick-lead-actions .btn {
+  width: 100%;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.quick-lead-actions__full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+  .quick-lead-actions {
+    grid-template-columns: 1fr;
+  }
+  .quick-lead-actions__full {
+    grid-column: auto;
+  }
+}
+
+/* QuickLeadForm stepper (replace "Stap 1/2" buttons) */
+.quick-lead-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.quick-lead-stepper__step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  border-radius: 9999px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.quick-lead-stepper__step:hover {
+  border-color: var(--color-charcoal);
+}
+
+.quick-lead-stepper__step:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.quick-lead-stepper__dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.quick-lead-stepper__label {
+  font-size: 13px;
+}
+
+.quick-lead-stepper__step.is-active {
+  border-color: var(--color-charcoal);
+}
+
+.quick-lead-stepper__step.is-active .quick-lead-stepper__dot {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  border-color: var(--color-charcoal);
+}
+
+.quick-lead-stepper__line {
+  flex: 1;
+  height: 2px;
+  background: var(--color-border);
+  border-radius: 9999px;
+}
+
+.quick-lead-stepper__line.is-active {
+  background: var(--color-charcoal);
+}
+
 /* Buttons - Centralized styling with 100px border radius */
 .btn { 
   border: 1px solid var(--color-border); 
@@ -372,16 +467,31 @@ a.btn-primary {
 
 /* Form elements - with border radius */
 label { display: block; font-weight: 600; margin-bottom: 6px; }
-input, select { 
-  width: 100%; 
-  padding: 12px 16px; 
-  border: 1px solid var(--color-border); 
+
+/* Only apply "full width input" styling to text-like inputs. */
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="reset"]),
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-size: 16px;
 }
-input:focus, select:focus { 
-  outline: 2px solid var(--color-brand); 
-  border-color: var(--color-brand); 
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="reset"]):focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+/* Prevent radio/checkbox inputs from inheriting text-input layout. */
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+  accent-color: var(--color-brand);
 }
 
 /* Hero section - full width and larger */
@@ -866,7 +976,7 @@ input:focus, select:focus {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 1rem;
+  padding: 0;
   backdrop-filter: blur(6px);
 }
 
@@ -877,6 +987,7 @@ input:focus, select:focus {
   width: 100%;
   max-height: 90vh;
   overflow: hidden;
+  margin: 1rem;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
   animation: modalSlideIn 0.3s ease-out;
 }
@@ -916,6 +1027,10 @@ input:focus, select:focus {
   max-height: calc(90vh - 80px);
   overflow-y: auto;
   padding: 0;
+}
+
+.modal-content--padded {
+  padding: 2rem;
 }
 
 /* Override form styles for modal */
@@ -959,11 +1074,12 @@ input:focus, select:focus {
 /* Responsive modal */
 @media (max-width: 768px) {
   .modal-overlay {
-    padding: 0.5rem;
+    padding: 0;
   }
   
   .modal-container {
     max-height: 95vh;
+    margin: 0.5rem;
   }
   
   .modal-header {
@@ -984,6 +1100,10 @@ input:focus, select:focus {
   
   .modal-content .form-footer {
     padding: 1rem 1.5rem;
+  }
+
+  .modal-content--padded {
+    padding: 1.25rem;
   }
 }
 

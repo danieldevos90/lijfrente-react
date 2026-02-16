@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { trackCTAClick } from '@/lib/analytics';
 
 interface CTASectionProps {
   title: string;
@@ -7,6 +8,8 @@ interface CTASectionProps {
   ctaLabel: string;
   ctaHref: string;
   background?: 'white' | 'gray' | 'blue' | 'dark';
+  trustBullets?: string[];
+  trackingLocation?: string;
 }
 
 export default function CTASection({ 
@@ -14,7 +17,9 @@ export default function CTASection({
   subtitle, 
   ctaLabel, 
   ctaHref,
-  background = 'dark' 
+  background = 'dark',
+  trustBullets = [],
+  trackingLocation = 'cta_section'
 }: CTASectionProps) {
   const backgroundColor = background === 'dark' ? 'var(--color-charcoal)' : background === 'gray' ? 'var(--color-bg)' : background === 'blue' ? 'var(--color-sky500)' : 'var(--color-white)';
   const textColor = background === 'dark' ? 'var(--color-white)' : 'var(--color-text)';
@@ -57,6 +62,28 @@ export default function CTASection({
           </p>
         )}
         </div>
+        {trustBullets.length > 0 && (
+          <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
+            {trustBullets.map((t) => (
+              <span
+                key={t}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.5rem 0.9rem',
+                  borderRadius: '999px',
+                  border: `1px solid ${background === 'dark' ? 'rgba(255,255,255,0.25)' : 'var(--color-border)'}`,
+                  color: textColorMuted,
+                  fontSize: '0.95rem',
+                }}
+              >
+                <span aria-hidden="true">✓</span>
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
         <div style={{ textAlign: 'center' }}>
           <a 
             href={ctaHref}
@@ -66,6 +93,9 @@ export default function CTASection({
               color: 'var(--color-charcoal)',
               borderColor: 'var(--color-white)'
             } : undefined}
+            onClick={() => {
+              trackCTAClick(ctaLabel, trackingLocation, { href: ctaHref });
+            }}
           >
             {ctaLabel}
           </a>

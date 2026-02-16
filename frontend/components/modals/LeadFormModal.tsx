@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import InteractiveLeadForm from '../forms/InteractiveLeadForm';
+import QuickLeadForm from '../forms/QuickLeadForm';
 import SuccessModal from './SuccessModal';
 
 interface LeadFormModalProps {
@@ -70,8 +70,8 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
           </div>
 
           {/* Modal Content */}
-          <div className="modal-content">
-            <InteractiveLeadForm 
+          <div className="modal-content modal-content--padded">
+            <QuickLeadForm
               onSuccess={handleFormSuccess}
               isModal={true}
             />

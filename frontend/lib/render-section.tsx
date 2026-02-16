@@ -282,14 +282,11 @@ export function renderSection(section: StrapiSection, index: number) {
         'Lisa Vermeulen': 5
       };
       
-      // Handle testimonials - they might be in different structures
-      // If testimonials are in section data, use them; otherwise return null to let HomePageClient handle it
+      // Handle testimonials - they might be in different structures.
       const testimonialsArray = sectionData.testimonials || [];
       
-      // If no testimonials in section data, return null so HomePageClient can fetch from API
       if (testimonialsArray.length === 0) {
-        console.log('[render-section] No testimonials in section data, skipping - HomePageClient will handle');
-        return null;
+        throw new Error('[render-section] Testimonials section has no testimonials (no fallback enabled).');
       }
       
       // Debug logging
@@ -323,22 +320,7 @@ export function renderSection(section: StrapiSection, index: number) {
       
       // Ensure we have testimonials to display
       if (uniqueTestimonials.length === 0) {
-        console.warn('[render-section] No testimonials found in section data', {
-          sectionData,
-          testimonialsArray: sectionData.testimonials,
-          testimonialsLength: sectionData.testimonials?.length
-        });
-        // Don't return null - render empty state or fallback
-        // Return null only in production to avoid breaking the page
-        if (process.env.NODE_ENV === 'production') {
-          return null;
-        }
-        // In development, show a placeholder
-        return (
-          <div key={index} style={{ padding: '2rem', textAlign: 'center', background: 'var(--color-bg-slate)' }}>
-            <p>No testimonials found. Check Strapi data.</p>
-          </div>
-        );
+        throw new Error('[render-section] Testimonials section contains no valid testimonials (no fallback enabled).');
       }
       
       // Use unique testimonials only - don't duplicate

@@ -3,14 +3,20 @@ import { getStrapiImageUrl } from '@/lib/strapi-cms';
 
 export const dynamic = 'force-dynamic';
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://bright-smile-1f47bc9d67.strapiapp.com';
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || '';
+if (!STRAPI_URL) {
+  throw new Error('[API /api/strapi/testimonials] NEXT_PUBLIC_STRAPI_URL is required (no fallback enabled).');
+}
 
 export async function GET(request: NextRequest) {
   const isDev = process.env.NODE_ENV === 'development';
   
   try {
     const { searchParams } = new URL(request.url);
-    const siteId = searchParams.get('siteId') || 'geldgeregeld';
+    const siteId = searchParams.get('siteId');
+    if (!siteId) {
+      return NextResponse.json({ testimonials: [] }, { status: 400 });
+    }
 
     if (isDev) {
       console.log('[API /api/strapi/testimonials] Request:', {

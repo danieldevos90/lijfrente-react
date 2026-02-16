@@ -158,29 +158,6 @@ export default function BenefitsCarousel({
                       {item.desc}
                     </p>
                   </div>
-                  
-                  {/* Mobile: Text below card */}
-                  <div className="benefit-card-content-mobile" style={{ display: 'none' }}>
-                    <h3 style={{
-                      fontFamily: 'PP Neue Montreal, sans-serif',
-                      fontSize: '1.5rem',
-                      fontWeight: 400,
-                      lineHeight: 1.2,
-                      marginBottom: '0.75rem',
-                      color: 'var(--color-text)',
-                      marginTop: '1.5rem',
-                    }}>
-                      {item.title}
-                    </h3>
-                    <p style={{
-                      fontSize: '1rem',
-                      fontWeight: 300,
-                      color: 'var(--color-text-muted)',
-                      lineHeight: 1.6,
-                    }}>
-                      {item.desc}
-                    </p>
-                  </div>
                 </div>
               );
             })}
@@ -235,33 +212,15 @@ export default function BenefitsCarousel({
             margin-bottom: 0 !important;
           }
           
-          /* Hide text inside card on mobile */
-          .benefit-card-title,
-          .benefit-card-text {
-            display: none !important;
-          }
-          
-          /* Show only icon centered in card */
-          .benefit-card {
-            justify-content: center !important;
-          }
-          
           .benefit-card-icon {
             width: 7rem !important;
             height: 7rem !important;
-            margin-bottom: 0 !important;
+            margin-bottom: 1.5rem !important;
           }
           
           .benefit-card-icon img {
             width: 112px !important;
             height: 112px !important;
-          }
-          
-          /* Show text below card on mobile */
-          .benefit-card-content-mobile {
-            display: block !important;
-            text-align: center;
-            padding: 0 0.5rem;
           }
         }
 
@@ -306,33 +265,15 @@ export default function BenefitsCarousel({
             margin-bottom: 0 !important;
           }
           
-          /* Hide text inside card on tablet */
-          .benefit-card-title,
-          .benefit-card-text {
-            display: none !important;
-          }
-          
-          /* Show only icon centered in card */
-          .benefit-card {
-            justify-content: center !important;
-          }
-          
           .benefit-card-icon {
             width: 7rem !important;
             height: 7rem !important;
-            margin-bottom: 0 !important;
+            margin-bottom: 1.5rem !important;
           }
           
           .benefit-card-icon img {
             width: 112px !important;
             height: 112px !important;
-          }
-          
-          /* Show text below card on tablet */
-          .benefit-card-content-mobile {
-            display: block !important;
-            text-align: center;
-            padding: 0 1rem;
           }
         }
       `}</style>

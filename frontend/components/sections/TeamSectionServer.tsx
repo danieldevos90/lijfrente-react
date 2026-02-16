@@ -9,26 +9,6 @@ interface TeamSectionServerProps {
   backgroundColor?: string;
 }
 
-// Fallback team members data (used if Strapi is unavailable)
-const FALLBACK_TEAM_MEMBERS = [
-  {
-    name: 'Erik de Vos',
-    role: 'Oprichter & CEO',
-    bio: 'Met meer dan 15 jaar ervaring in de financiële sector heeft Erik een diepgaand begrip van de uitdagingen waar MKB-ondernemers mee te maken hebben. Zijn visie is om zakelijke financiering toegankelijk, transparant en snel te maken voor elke ondernemer.',
-    email: 'info@geldgeregeld.nl',
-    linkedin: 'https://www.linkedin.com/in/erik-de-vos-425ab120/',
-    imageUrl: '/images/Erik.jpeg',
-  },
-  {
-    name: 'Jan Dijkerman',
-    role: 'Mede-oprichter & Consultant',
-    bio: 'Jan brengt uitgebreide expertise in risicomanagement en financiële analyse. Zijn focus ligt op het ontwikkelen van innovatieve financieringsoplossingen die perfect aansluiten bij de behoeften van moderne ondernemers.',
-    email: 'info@geldgeregeld.nl',
-    linkedin: 'https://www.linkedin.com/in/jan-dijkerman-b3a771393/',
-    imageUrl: '/images/Jan.jpeg',
-  },
-];
-
 export default async function TeamSectionServer({
   title,
   subtitle,
@@ -36,23 +16,13 @@ export default async function TeamSectionServer({
 }: TeamSectionServerProps) {
   const isDev = process.env.NODE_ENV === 'development';
   
-  // Fetch team members from Strapi
-  let teamMembers = [];
-  let useFallback = false;
-  
-  try {
-    teamMembers = await getTeamMembers(SITE_ID, {
-      next: { revalidate: 60 } // Cache for 1 minute (reduced for faster updates)
-    });
-    
-    if (isDev) {
-      console.log('[TeamSectionServer] Fetched team members:', teamMembers.length);
-    }
-  } catch (error) {
-    if (isDev) {
-      console.warn('[TeamSectionServer] Failed to fetch from Strapi, using fallback:', error);
-    }
-    useFallback = true;
+  // Fetch team members from Strapi (no fallback).
+  const teamMembers = await getTeamMembers(SITE_ID, {
+    next: { revalidate: 60 }, // Cache for 1 minute (reduced for faster updates)
+  });
+
+  if (isDev) {
+    console.log('[TeamSectionServer] Fetched team members:', teamMembers.length);
   }
 
   // Transform Strapi data to component format
@@ -170,19 +140,15 @@ export default async function TeamSectionServer({
         const mData = m.attributes || m;
         return mData.name === b.name;
       });
-      const aOrder = aMember ? ((aMember.attributes || aMember).order || 0) : 999;
-      const bOrder = bMember ? ((bMember.attributes || bMember).order || 0) : 999;
+      const aOrder = aMember ? (((aMember.attributes || aMember) as any).order || 0) : 999;
+      const bOrder = bMember ? (((bMember.attributes || bMember) as any).order || 0) : 999;
       return aOrder - bOrder;
     });
   }
   
-  // Use fallback if no members from Strapi
+  // No fallback: require Strapi data.
   if (members.length === 0) {
-    if (isDev) {
-      console.log('[TeamSectionServer] No members from Strapi, using fallback data');
-      console.log('[TeamSectionServer] Team members fetched:', teamMembers.length);
-    }
-    members = FALLBACK_TEAM_MEMBERS;
+    throw new Error('[TeamSectionServer] No team members returned from Strapi (no fallback enabled).');
   } else if (isDev) {
     console.log('[TeamSectionServer] Successfully transformed', members.length, 'members from Strapi');
   }

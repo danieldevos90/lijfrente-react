@@ -3,10 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
-export default function PrivacyEmail({ 
-  fallback = 'privacy@geldgeregeld.nl' 
-}: { fallback?: string }) {
-  const [email, setEmail] = useState(fallback);
+export default function PrivacyEmail() {
+  const [email, setEmail] = useState<string>('');
 
   useEffect(() => {
     async function fetchEmail() {
@@ -34,11 +32,11 @@ export default function PrivacyEmail({
           setEmail(footer.email);
         }
       } catch (error: any) {
-        // Silently fail, use fallback
+        // No fallback: leave empty to surface misconfiguration.
       }
     }
     fetchEmail();
   }, []);
 
-  return <>{email}</>;
+  return <>{email || ''}</>;
 }

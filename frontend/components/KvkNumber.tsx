@@ -3,10 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
-export default function KvkNumber({ 
-  fallback = '64859525' 
-}: { fallback?: string }) {
-  const [kvk, setKvk] = useState(fallback);
+export default function KvkNumber() {
+  const [kvk, setKvk] = useState<string>('');
 
   useEffect(() => {
     async function fetchKvk() {
@@ -31,11 +29,11 @@ export default function KvkNumber({
           setKvk(footer.kvkNumber);
         }
       } catch (error: any) {
-        // Silently fail, use fallback
+        // No fallback: leave empty to surface misconfiguration.
       }
     }
     fetchKvk();
   }, []);
 
-  return <>{kvk}</>;
+  return <>{kvk || ''}</>;
 }

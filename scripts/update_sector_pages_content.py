@@ -11,7 +11,10 @@ import json
 import time
 
 STRAPI_URL = os.getenv('STRAPI_URL', 'https://bright-smile-1f47bc9d67.strapiapp.com')
-STRAPI_TOKEN = os.getenv('STRAPI_TOKEN', 'b16b5a26631fb6e94de7fe8ac5e5fbaaeb97b28cb27a5497a151c0be226fe27ebe5e3341500f8539b14a60a82811f9b53536bea775e8e2649d3d8e6e92547712b1a226b6dfe579a47af90cbb1a65af8e7103c8fb3e0b9321f61fdf00e398d04c8a8068a152273b35a0fc4880803107f9e90f602c761951f557cd9a33b1cec0ac')
+STRAPI_TOKEN = os.getenv('STRAPI_TOKEN') or os.getenv('STRAPI_API_TOKEN')
+if not STRAPI_TOKEN:
+    print("❌ Missing STRAPI_TOKEN (or STRAPI_API_TOKEN). Refusing to run without an explicit token.", file=sys.stderr)
+    sys.exit(1)
 SITE_ID = os.getenv('SITE_ID', 'geldgeregeld')
 
 HEADERS = {

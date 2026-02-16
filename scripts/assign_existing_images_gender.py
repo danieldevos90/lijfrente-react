@@ -31,8 +31,12 @@ for key, value in env_vars.items():
         os.environ[key] = value
 
 STRAPI_URL = os.getenv('STRAPI_URL', 'https://bright-smile-1f47bc9d67.strapiapp.com')
-STRAPI_TOKEN = os.getenv('STRAPI_TOKEN') or os.getenv('STRAPI_API_TOKEN') or '1499a841b37da011f959fc8f3e851febfa89de2c83918ce8e071cd7ec1aaa33745f4223db320bf4035a9f7f4ac3e19fdd8c833b8ab8852c9e71cd85ecdc25cabbdd714107536850a9d02e15f322732905300068c59182b64edc83298cb043d184bf05f44a3d7245558dd9e4ea9f40a1577cc0a7a2c74963c6e4471575151a165'
+STRAPI_TOKEN = os.getenv('STRAPI_TOKEN') or os.getenv('STRAPI_API_TOKEN')
 SITE_ID = os.getenv('SITE_ID', 'geldgeregeld')
+
+if not STRAPI_TOKEN:
+    print("❌ Missing STRAPI_TOKEN (or STRAPI_API_TOKEN). Refusing to run without an explicit token.", file=sys.stderr)
+    sys.exit(1)
 
 HEADERS = {
     'Authorization': f'Bearer {STRAPI_TOKEN}',

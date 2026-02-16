@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { buildTitle, buildDescription } from '../messaging';
-import { getAllPages } from '@/lib/strapi-cms';
+import { getAllSectorPages } from '@/lib/strapi-cms';
 import HeaderWithWidget from '../HeaderWithWidget';
 import Footer from '../../components/Footer';
 import SubpageHero from '../../components/SubpageHero';
@@ -8,11 +8,12 @@ import CTASection from '../../components/sections/CTASection';
 import Link from 'next/link';
 import Image from 'next/image';
 import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema, buildCanonicalUrl, getBaseUrl } from '@/lib/seo';
+import { getSectorIcon } from '@/lib/sector-icons';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
 // Common Dutch sectors for SEO
-const SECTOR_INFO: Record<string, { name: string; description: string; keywords: string[] }> = {
+/* const SECTOR_INFO: Record<string, { name: string; description: string; keywords: string[] }> = {
   horeca: {
     name: 'Horeca',
     description: 'Zakelijke financiering speciaal voor de horeca. Van restaurants tot cafés en hotels.',
@@ -103,55 +104,33 @@ const SECTOR_INFO: Record<string, { name: string; description: string; keywords:
     description: 'Werkkapitaalfinanciering voor bedrijven. Overbrug betalingsachterstanden en investeer in groei.',
     keywords: ['kasstroom lening', 'werkkapitaal financiering', 'liquiditeitsfinanciering', 'werkkapitaal krediet', 'cashflow financiering']
   },
-};
+}; */
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 async function fetchSectorPages() {
-  try {
-    const allPages = await getAllPages(SITE_ID, {
-      next: { revalidate: 3600 }
-    });
-    
-    // Filter for sector pages
-    const sectorPages = allPages.filter((page: any) => {
-      const pageData = page.attributes || page;
-      const slug = pageData?.slug || '';
-      return slug.startsWith('sector-');
-    });
-    
-    return sectorPages;
-  } catch (error) {
-    console.error('Error fetching sector pages:', error);
-    return [];
-  }
+  const sectorPages = await getAllSectorPages(SITE_ID, {
+    next: { revalidate: 3600 },
+  });
+  return sectorPages || [];
 }
 
 export default async function SectorenPage() {
   const sectorPages = await fetchSectorPages();
-  
-  // Create a map of existing sector pages
-  const existingSectors = new Map<string, any>();
-  sectorPages.forEach((page: any) => {
-    const pageData = page.attributes || page;
-    const slug = pageData?.slug || '';
-    const sectorSlug = slug.replace('sector-', '');
-    existingSectors.set(sectorSlug, pageData);
-  });
 
-  // Combine Strapi pages with predefined sector info
-  const allSectors = Object.keys(SECTOR_INFO).map((sectorSlug) => {
-    const sectorInfo = SECTOR_INFO[sectorSlug];
-    const strapiPage = existingSectors.get(sectorSlug);
-    
-    return {
-      slug: sectorSlug,
-      name: strapiPage?.title || sectorInfo.name,
-      description: strapiPage?.metaDescription || sectorInfo.description,
-      keywords: strapiPage?.metaKeywords || sectorInfo.keywords.join(', '),
-      hasContent: !!strapiPage,
-    };
-  });
+  // No fallback: show only sectors that exist in Strapi.
+  const allSectors = (sectorPages || [])
+    .map((page: any) => {
+      const pageData = page.attributes || page;
+      const slug = pageData?.sectorSlug;
+      if (!slug) return null;
+      return {
+        slug,
+        name: pageData?.sectorName || slug,
+        description: pageData?.metaDescription || '',
+      };
+    })
+    .filter(Boolean) as Array<{ slug: string; name: string; description: string }>;
 
   // Generate breadcrumb schema
   const baseUrl = getBaseUrl();
@@ -191,31 +170,6 @@ export default async function SectorenPage() {
               gap: '2rem',
             }}>
               {allSectors.map((sector) => {
-                // Sector icon mapping
-                const getSectorIcon = (slug: string): string => {
-                  const iconMap: Record<string, string> = {
-                    horeca: '/icons/SVG/food/cutlery.svg',
-                    retail: '/icons/SVG/e-commerce/shop.svg',
-                    transport: '/icons/SVG/e-commerce/truck.svg',
-                    bouw: '/icons/SVG/interface/home.svg',
-                    ecommerce: '/icons/SVG/e-commerce/shopping-cart.svg',
-                    zorg: '/icons/SVG/health/stethoscope.svg',
-                    consultants: '/icons/SVG/interface/bulb.svg',
-                    schoonmaak: '/icons/SVG/interface/magic-wand.svg',
-                    automotive: '/icons/SVG/e-commerce/truck.svg',
-                    productie: '/icons/SVG/e-commerce/factory.svg',
-                    zzp: '/icons/SVG/interface/user.svg',
-                    starters: '/icons/SVG/interface/rocket.svg',
-                    franchise: '/icons/SVG/interface/grid.svg',
-                    medisch: '/icons/SVG/health/stethoscope.svg',
-                    tandarts: '/icons/SVG/health/stethoscope.svg',
-                    groothandel: '/icons/SVG/e-commerce/shop.svg',
-                    schoonheid: '/icons/SVG/interface/magic-wand.svg',
-                    kasstroom: '/icons/SVG/finance/wallet.svg',
-                  };
-                  return iconMap[slug] || '/icons/SVG/finance/wallet.svg';
-                };
-
                 const iconPath = getSectorIcon(sector.slug);
 
                 return (
@@ -245,22 +199,6 @@ export default async function SectorenPage() {
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}>
-                      {sector.hasContent && (
-                        <span style={{
-                          position: 'absolute',
-                          top: '1rem',
-                          right: '1rem',
-                          background: 'var(--color-primary)',
-                          color: 'var(--color-white)',
-                          padding: '0.25rem 0.75rem',
-                          borderRadius: '20px',
-                          fontSize: '0.75rem',
-                          fontWeight: '600',
-                          zIndex: 1,
-                        }}>
-                          Beschikbaar
-                        </span>
-                      )}
                       <Image
                         src={iconPath}
                         alt={sector.name}

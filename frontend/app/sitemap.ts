@@ -1,4 +1,7 @@
 import { MetadataRoute } from 'next';
+import { getAllSectorPages } from '@/lib/strapi-cms';
+import { getBaseUrl } from '@/lib/seo';
+import { USE_CASE_SLUGS } from '@/lib/use-cases';
 
 /**
  * Sitemap generation (seo-audit: crawlability)
@@ -6,9 +9,10 @@ import { MetadataRoute } from 'next';
  * Generates sitemap.xml at build time for search engine indexing.
  * Includes all important pages with proper priority and change frequency.
  */
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://geldgeregeld.nl';
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = getBaseUrl();
   const currentDate = new Date().toISOString();
+  const siteId = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
   
   // Static pages with their priorities
   const staticPages: MetadataRoute.Sitemap = [
@@ -38,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/sectoren`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/financiering`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -74,8 +84,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
   
-  // TODO: Dynamically fetch sector pages from Strapi and add them here
-  // This would require a server-side fetch to get all sector slugs
-  
-  return staticPages;
+  // Programmatic SEO: include all sector/market pages.
+  // No fallback: sitemap sector URLs must come from Strapi.
+  const sectorPages = await getAllSectorPages(siteId, { next: { revalidate: 3600 } });
+  const uniqueSectorSlugs = Array.from(
+    new Set(
+      (sectorPages || [])
+        .map((p: any) => {
+          const a = p?.attributes || p;
+          const raw = (a?.sectorSlug || a?.slug || '').toString();
+          if (!raw) return '';
+          return raw.startsWith('sector-') ? raw.replace(/^sector-/, '') : raw;
+        })
+        .filter(Boolean)
+    )
+  );
+
+  const sectorUrls: MetadataRoute.Sitemap = uniqueSectorSlugs.map((slug) => ({
+    url: `${baseUrl}/sectoren/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  const sectorUseCaseUrls: MetadataRoute.Sitemap = uniqueSectorSlugs.flatMap((sector) =>
+    USE_CASE_SLUGS.map((useCase) => ({
+      url: `${baseUrl}/sectoren/${sector}/${useCase}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    }))
+  );
+
+  const useCaseHubUrls: MetadataRoute.Sitemap = USE_CASE_SLUGS.map((useCase) => ({
+    url: `${baseUrl}/financiering/${useCase}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
+
+  // Intentionally exclude conversion and internal routes from sitemap:
+  // - /lead (form)
+  // - /bedankt (thank you)
+  // - /password, /admin, /api
+  return [...staticPages, ...sectorUrls, ...sectorUseCaseUrls, ...useCaseHubUrls];
 }

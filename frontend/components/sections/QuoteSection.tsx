@@ -28,7 +28,10 @@ export default function QuoteSection({
           position: 'relative',
         }}>
           {/* Quote mark decoration */}
-          <div style={{
+          <div
+            className="quote-mark"
+            aria-hidden="true"
+            style={{
             fontSize: 'clamp(4rem, 10vw, 8rem)',
             lineHeight: 1,
             color: 'var(--color-brand)',
@@ -36,9 +39,8 @@ export default function QuoteSection({
             fontFamily: 'Georgia, serif',
             marginBottom: '-2rem',
             userSelect: 'none',
-          }}>
-            "
-          </div>
+          }}
+          />
           
           {/* Quote text */}
           <blockquote style={{
@@ -71,6 +73,11 @@ export default function QuoteSection({
       </div>
 
       <style jsx>{`
+        .quote-mark::before {
+          content: '"';
+          display: block;
+        }
+
         @media (max-width: 768px) {
           blockquote {
             padding: 0 1rem !important;

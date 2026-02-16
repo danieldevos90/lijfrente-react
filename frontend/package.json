@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "echo 'no linter configured'"
+    "lint": "echo 'no linter configured'",
+    "export:sectors-csv": "node scripts/export-sector-pages-csv.js"
   },
   "dependencies": {
     "clsx": "2.1.1",

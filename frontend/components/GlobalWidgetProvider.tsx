@@ -1,6 +1,7 @@
 "use client";
-import React, { useState, createContext, useContext, ReactNode } from 'react';
+import React, { useEffect, useState, createContext, useContext, ReactNode } from 'react';
 import dynamic from 'next/dynamic';
+import { captureAttribution } from '@/lib/attribution';
 
 /**
  * Lazy load DrawerWidget for better initial page load performance
@@ -69,6 +70,11 @@ export default function GlobalWidgetProvider({ children }: { children: ReactNode
   // Track if drawer has been opened at least once (for preloading)
   const [hasBeenOpened, setHasBeenOpened] = useState(false);
 
+  // Capture attribution as early as possible on the client.
+  useEffect(() => {
+    captureAttribution();
+  }, []);
+
   const openDrawer = (source: string) => {
     setIsDrawerOpen(true);
     setHasBeenOpened(true);
@@ -94,6 +100,37 @@ export default function GlobalWidgetProvider({ children }: { children: ReactNode
       });
     }
   };
+
+  // Deep links: open drawer on home when ?drawer=lead (or ?openDrawer=1).
+  // Used for /lead redirects and ad landing pages.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const url = new URL(window.location.href);
+    const drawer = url.searchParams.get('drawer');
+    const openDrawerParam = url.searchParams.get('openDrawer');
+    const shouldOpen =
+      drawer === 'lead' ||
+      drawer === '1' ||
+      drawer === 'open' ||
+      openDrawerParam === '1' ||
+      openDrawerParam === 'true';
+
+    if (!shouldOpen) return;
+
+    openDrawer('deeplink');
+
+    // Remove only the drawer-open param to avoid reopening on refresh/back,
+    // but keep the rest (amount/purpose/sector) for prefill.
+    try {
+      url.searchParams.delete('drawer');
+      url.searchParams.delete('openDrawer');
+      window.history.replaceState({}, '', url.toString());
+    } catch {
+      // ignore
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <WidgetContext.Provider value={{ openDrawer, closeDrawer, isOpen: isDrawerOpen }}>

@@ -12,6 +12,7 @@ import { ErrorHandler } from './error-handler';
 import SchemaMarkup from '../components/SEO/SchemaMarkup';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 import SkipToContent from '../components/SkipToContent';
+import ExitIntentLeadCapture from '../components/ExitIntentLeadCapture';
 
 // Optimized font loading with next/font (vercel-react-best-practices: bundle-defer-third-party)
 const inter = Inter({
@@ -214,6 +215,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {children}
           </div>
           <CookieBanner />
+          <ExitIntentLeadCapture />
           <Suspense fallback={null}>
             <PageViewTracker />
           </Suspense>

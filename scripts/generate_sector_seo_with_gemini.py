@@ -16,9 +16,16 @@ GEMINI_MODEL = "gemini-2.5-flash"
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1/models/{GEMINI_MODEL}:generateContent"
 
 STRAPI_URL = os.getenv('STRAPI_URL', 'https://bright-smile-1f47bc9d67.strapiapp.com')
-STRAPI_TOKEN = os.getenv('STRAPI_TOKEN', 'b16b5a26631fb6e94de7fe8ac5e5fbaaeb97b28cb27a5497a151c0be226fe27ebe5e3341500f8539b14a60a82811f9b53536bea775e8e2649d3d8e6e92547712b1a226b6dfe579a47af90cbb1a65af8e7103c8fb3e0b9321f61fdf00e398d04c8a8068a152273b35a0fc4880803107f9e90f602c761951f557cd9a33b1cec0ac')
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyCZh9VBAsN79xpreicedUHUlQvAlbv8Xi4')
+STRAPI_TOKEN = os.getenv('STRAPI_TOKEN') or os.getenv('STRAPI_API_TOKEN')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 SITE_ID = os.getenv('SITE_ID', 'geldgeregeld')
+
+if not STRAPI_TOKEN:
+    print("❌ Missing STRAPI_TOKEN (or STRAPI_API_TOKEN). Refusing to run without an explicit token.", file=sys.stderr)
+    sys.exit(1)
+if not GEMINI_API_KEY:
+    print("❌ Missing GEMINI_API_KEY. Refusing to run without an explicit key.", file=sys.stderr)
+    sys.exit(1)
 
 HEADERS = {
     'Authorization': f'Bearer {STRAPI_TOKEN}',

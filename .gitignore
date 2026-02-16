@@ -28,9 +28,44 @@ node_modules/
 frontend/node_modules/
 frontend/.next/
 frontend/.vercel/
+frontend/exports/
 
 # Misc
 .cache/
 .ipynb_checkpoints/
 
 .vercel
+
+# Local agent / IDE tooling
+.adal/
+.agent/
+.agents/
+.augment/
+.claude/
+.cline/
+.codebuddy/
+.commandcode/
+.continue/
+.crush/
+.cursor/
+.factory/
+.goose/
+.iflow/
+.junie/
+.kilocode/
+.kiro/
+.kode/
+.mcpjam/
+.mux/
+.neovate/
+.openhands/
+.pi/
+.pochi/
+.qoder/
+.qwen/
+.roo/
+.trae/
+.vibe/
+.windsurf/
+.zencoder/
+skills/

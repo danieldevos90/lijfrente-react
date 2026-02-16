@@ -25,7 +25,10 @@ import {
 // CONFIGURATION
 // ============================================================================
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://bright-smile-1f47bc9d67.strapiapp.com';
+const STRAPI_URL = (process.env.NEXT_PUBLIC_STRAPI_URL || '').trim();
+if (!STRAPI_URL) {
+  throw new Error('[strapi-cms] NEXT_PUBLIC_STRAPI_URL is required (no fallback enabled).');
+}
 // NOTE: All CMS endpoints are PUBLIC for read operations - no authentication token needed.
 // Only the leads endpoint needs public create enabled in Strapi (which is already configured).
 

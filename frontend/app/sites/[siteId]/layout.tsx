@@ -1,4 +1,13 @@
 import type { ReactNode, CSSProperties } from 'react';
+import type { Metadata } from 'next';
+
+// This is an internal multi-site surface. Keep it crawlable for diagnostics, but not indexable.
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 async function fetchNav(siteId: string) {
   const base = process.env.NEXT_PUBLIC_STRAPI_URL;

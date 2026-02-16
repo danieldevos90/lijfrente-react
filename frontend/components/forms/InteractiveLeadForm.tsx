@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, Check, Building, Euro, Target, User, Phone, Mail, MapPin, Shield, Zap, PhoneCall } from 'lucide-react';
+import { trackFormEvent, trackLeadGeneration, trackEvent } from '@/lib/analytics';
+import { getLeadAttribution } from '@/lib/attribution';
 
 interface FormData {
   // Step 1: Financing Amount
@@ -68,6 +70,16 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Partial<FormData>>({});
+  // Honeypot field (bots tend to fill hidden inputs).
+  const [website, setWebsite] = useState('');
+  const [partner, setPartner] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const url = new URL(window.location.href);
+    const p = url.searchParams.get('partner') || url.searchParams.get('affiliate') || url.searchParams.get('ref');
+    setPartner(p || undefined);
+  }, []);
 
   const updateFormData = (field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -126,22 +138,34 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
     setIsSubmitting(true);
     
     try {
-      // Track form submission
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'form_submit', {
-          event_category: 'Lead Generation',
-          event_label: 'Interactive Form Complete'
-        });
-      }
+      trackFormEvent('submit', 'interactive_lead', { step: currentStep });
+      const attribution = getLeadAttribution();
+      const last = attribution?.last;
       
       // Submit to your backend/CRM
       const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          source: 'interactive_form',
+          attribution: attribution || undefined,
+          website: website || undefined,
+          partner: partner || undefined,
+        })
       });
       
       if (response.ok) {
+        trackFormEvent('complete', 'interactive_lead');
+        trackEvent('form_submit', { event_category: 'Form', form_id: 'interactive_lead' });
+        trackLeadGeneration('interactive_form', {
+          form_id: 'interactive_lead',
+          purpose: formData.purpose,
+          partner: partner,
+          utm_source: last?.utm_source,
+          utm_campaign: last?.utm_campaign,
+          gclid: last?.gclid ? '1' : undefined,
+        });
         if (isModal && onSuccess) {
           // Call success callback for modal
           onSuccess();
@@ -495,6 +519,18 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
 
   return (
     <div className="interactive-lead-form">
+      {/* Honeypot - keep in DOM but off-screen */}
+      <div style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }} aria-hidden="true">
+        <label>
+          Website
+          <input
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+        </label>
+      </div>
       {/* Progress Header */}
       <div className="form-header">
         <div className="progress-bar">

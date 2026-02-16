@@ -1,90 +1,95 @@
+import Image from 'next/image';
+
 /**
- * Loading UI for Next.js App Router streaming (nextjs-app-router-patterns)
- * 
- * This component is shown while the page is loading.
- * It enables streaming and progressive rendering.
+ * Loading UI for Next.js App Router streaming.
+ *
+ * Keep this lightweight: a centered brand mark + subtle dot bounce,
+ * instead of a full skeleton grid that can feel "template-y".
  */
 export default function Loading() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '100vh',
-        backgroundColor: 'var(--color-bg-primary, #ffffff)',
-      }}
-      role="status"
-      aria-label="Pagina wordt geladen"
-    >
-      {/* Skeleton loader for hero section */}
-      <div
-        style={{
-          width: '100%',
-          maxWidth: '1200px',
-          padding: '2rem',
-        }}
-      >
-        {/* Header skeleton */}
-        <div
-          style={{
-            height: '64px',
-            backgroundColor: 'var(--color-bg-secondary, #f5f5f5)',
-            borderRadius: '8px',
-            marginBottom: '2rem',
-            animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-          }}
-        />
-        
-        {/* Hero skeleton */}
-        <div
-          style={{
-            height: '400px',
-            backgroundColor: 'var(--color-bg-secondary, #f5f5f5)',
-            borderRadius: '16px',
-            marginBottom: '2rem',
-            animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-          }}
-        />
-        
-        {/* Content skeleton */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '1.5rem',
-          }}
-        >
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              style={{
-                height: '200px',
-                backgroundColor: 'var(--color-bg-secondary, #f5f5f5)',
-                borderRadius: '12px',
-                animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                animationDelay: `${i * 0.1}s`,
-              }}
-            />
-          ))}
-        </div>
+    <div className="app-loader" role="status" aria-live="polite" aria-label="Pagina wordt geladen">
+      <div className="app-loader__mark" aria-hidden="true">
+        <Image src="/logomark.svg" alt="" width={56} height={56} priority />
       </div>
-      
+
+      <div className="app-loader__dots" aria-hidden="true">
+        <span className="app-loader__dot app-loader__dot--1" />
+        <span className="app-loader__dot app-loader__dot--2" />
+        <span className="app-loader__dot app-loader__dot--3" />
+      </div>
+
+      <span className="sr-only">Pagina wordt geladen</span>
+
       <style>{`
-        @keyframes pulse {
-          0%, 100% {
+        .app-loader {
+          min-height: 100svh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.9rem;
+          padding: 2.5rem 1.25rem;
+          background: var(--color-bg, #ffffff);
+          color: var(--color-text, #1e2021);
+        }
+
+        .app-loader__mark {
+          opacity: 0.95;
+          transform: translateZ(0);
+          filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.08));
+        }
+
+        .app-loader__dots {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.55rem;
+          height: 12px;
+        }
+
+        .app-loader__dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 9999px;
+          background: currentColor;
+          opacity: 0.65;
+          animation: app-loader-bounce 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+          will-change: transform, opacity;
+        }
+
+        .app-loader__dot--2 {
+          animation-delay: 0.12s;
+        }
+
+        .app-loader__dot--3 {
+          animation-delay: 0.24s;
+        }
+
+        @keyframes app-loader-bounce {
+          0%,
+          80%,
+          100% {
+            transform: translateY(0);
+            opacity: 0.55;
+          }
+          40% {
+            transform: translateY(-7px);
             opacity: 1;
           }
-          50% {
-            opacity: 0.5;
-          }
         }
-        
-        @media (max-width: 768px) {
-          div[style*="grid-template-columns"] {
-            grid-template-columns: 1fr !important;
-          }
+
+        /* Minimal screen-reader-only utility (kept local to this component) */
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border-width: 0;
         }
       `}</style>
     </div>

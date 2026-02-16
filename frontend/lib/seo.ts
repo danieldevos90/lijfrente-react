@@ -48,17 +48,20 @@ export function getBaseUrl(): string {
   
   // Prioritize NEXT_PUBLIC_BASE_URL, then use production domain as default
   // Don't use VERCEL_URL for production sitemaps (it's a preview URL)
-  let baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://geldgeregeld.nl';
+  let baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://geldgeregeld.nl').trim();
   
   // Only use VERCEL_URL in development/preview environments
   if (!process.env.NEXT_PUBLIC_BASE_URL && process.env.NODE_ENV === 'development') {
-    baseUrl = process.env.VERCEL_URL || baseUrl;
+    baseUrl = (process.env.VERCEL_URL || baseUrl).trim();
   }
   
   // Ensure URL has protocol (https://)
   if (!baseUrl.startsWith('http://') && !baseUrl.startsWith('https://')) {
     baseUrl = `https://${baseUrl}`;
   }
+
+  // Normalize to avoid accidental whitespace and trailing slashes in canonicals/sitemaps/robots.
+  baseUrl = baseUrl.trim().replace(/\/+$/, '');
   
   return baseUrl;
 }

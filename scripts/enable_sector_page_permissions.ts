@@ -7,7 +7,11 @@
 import fetch from 'node-fetch';
 
 const STRAPI_URL = process.env.STRAPI_URL || 'https://bright-smile-1f47bc9d67.strapiapp.com';
-const STRAPI_ADMIN_TOKEN = process.env.STRAPI_ADMIN_TOKEN || process.env.STRAPI_TOKEN || 'a96c4cade5ac4b12d9479f03d1bec6d0719e4f78747522f35e05b29bcba5d3571579ab84e88fd56f5d260ec5550654c61e0dba7625cfce335021d0b361c039e64d4cb24fd2e183c3e646cf5e5e037ccbb85c7ede948db96aed2319e8fdee0bcfea51cd2b97d670f57342a4f79558108f2ed57483892bca68b5cc71f35cdf1717';
+const STRAPI_ADMIN_TOKEN = process.env.STRAPI_ADMIN_TOKEN || process.env.STRAPI_TOKEN;
+
+if (!STRAPI_ADMIN_TOKEN) {
+  throw new Error('Missing STRAPI_ADMIN_TOKEN (or STRAPI_TOKEN). Refusing to run without an explicit admin token.');
+}
 
 interface Permission {
   action: string;

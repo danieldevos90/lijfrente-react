@@ -1,5 +1,15 @@
 import InteractiveLeadForm from "../../../../components/forms/InteractiveLeadForm";
 import "../../../../components/forms/InteractiveLeadForm.css";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Offerte aanvragen',
+  description: 'Vraag vrijblijvend een offerte aan. Binnen 24 uur weet u waar u aan toe bent.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function SiteLeadPage({ params }: { params: { siteId: string } }) {
   return (
