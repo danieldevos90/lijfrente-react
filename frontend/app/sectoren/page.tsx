@@ -176,6 +176,7 @@ export default async function SectorenPage() {
                   <Link
                     key={sector.slug}
                     href={`/sectoren/${sector.slug}`}
+                    aria-label={`Lees meer over ${sector.name} financiering`}
                     style={{
                       display: 'block',
                       background: 'white',

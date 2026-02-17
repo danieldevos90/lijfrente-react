@@ -110,12 +110,9 @@ export default function Footer() {
               {footer.country || 'Nederland'}
             </address>
             
-            <button 
-              className="btn btn-secondary"
-              onClick={() => openDrawer('footer')}
-            >
+            <Link className="btn btn-secondary" href="/contact">
               Neem contact op
-            </button>
+            </Link>
           </div>
 
           {/* Right Column - Legal Text */}

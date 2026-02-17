@@ -42,6 +42,7 @@ npm run develop
 - **Sector Name**: `Horeca` (Display name)
 
 #### SEO Fields
+- **Meta Title**: SEO title for the page (used for the `<title>` tag)
 - **Meta Description**: SEO description for the page
 - **Meta Keywords**: Comma-separated keywords
 
@@ -84,6 +85,7 @@ npm run develop
   "siteId": "geldgeregeld",
   "sectorSlug": "horeca",
   "sectorName": "Horeca",
+  "metaTitle": "Horeca financiering - Binnen 24 uur duidelijkheid",
   "metaDescription": "Zakelijke financiering speciaal voor restaurants, cafés en hotels. Snel, flexibel en zonder gedoe.",
   "metaKeywords": "horeca financiering, restaurant lening, café financiering",
   "heroTitle": "Zakelijke financiering voor de horeca",

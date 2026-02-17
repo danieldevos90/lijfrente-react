@@ -12,6 +12,11 @@ interface HeroCTAButtonProps {
   enableABTesting?: boolean; // Enable A/B testing for CTA text
 }
 
+function sanitizeHref(href: string | undefined, fallback: string) {
+  const trimmed = (href || '').trim();
+  return trimmed && trimmed !== '#' ? trimmed : fallback;
+}
+
 export default function HeroCTAButton({ 
   ctaLabel, 
   ctaHref, 
@@ -21,6 +26,7 @@ export default function HeroCTAButton({
   const { openDrawer } = useWidget();
   const [displayLabel, setDisplayLabel] = useState(ctaLabel || '');
   const [variantId, setVariantId] = useState<string | null>(null);
+  const resolvedHref = sanitizeHref(ctaHref, '/lead');
   
   // A/B test CTA label if enabled and on homepage (variant === 'image')
   useEffect(() => {
@@ -71,7 +77,7 @@ export default function HeroCTAButton({
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <a
         className="btn btn-primary"
-        href={ctaHref || '#'}
+        href={resolvedHref}
         onClick={handleClick}
         style={{
           background: variant === 'gradient' || variant === 'image' ? 'var(--color-white)' : 'var(--color-charcoal)',

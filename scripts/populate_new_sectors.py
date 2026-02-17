@@ -169,7 +169,7 @@ NEW_SECTORS = {
             {
                 'title': 'Geen jarenlange historie nodig',
                 'description': 'Ook zonder jarenlange historie kun je bij ons terecht. We kijken naar je potentieel.',
-                'iconPath': '/icons/SVG/interface/rocket.svg',
+                'iconPath': '/icons/SVG/misc/rocket.svg',
                 'color': '#e4f2ff',
                 'textColor': '#0f1720'
             },

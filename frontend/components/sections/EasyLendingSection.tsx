@@ -12,6 +12,11 @@ interface EasyLendingSectionProps {
   ctaHref?: string;
 }
 
+function sanitizeHref(href: string | undefined, fallback: string) {
+  const trimmed = (href || '').trim();
+  return trimmed && trimmed !== '#' ? trimmed : fallback;
+}
+
 export default function EasyLendingSection({
   title,
   content,
@@ -30,6 +35,8 @@ export default function EasyLendingSection({
     .replace(/&gt;/g, '>') // Replace &gt; with >
     .replace(/&quot;/g, '"') // Replace &quot; with "
     .trim();
+
+  const resolvedCtaHref = ctaHref ? sanitizeHref(ctaHref, '/lead') : undefined;
 
   const isImageLeft = imagePosition === 'left';
   const isImageRight = imagePosition === 'right';
@@ -104,11 +111,11 @@ export default function EasyLendingSection({
             }}>
               {plainContent}
             </div>
-            {ctaLabel && ctaHref && (
+            {ctaLabel && resolvedCtaHref && (
               <div style={{ marginTop: '2rem' }}>
                 <a 
                   className="btn btn-primary" 
-                  href={ctaHref}
+                  href={resolvedCtaHref}
                 >
                   {ctaLabel}
                 </a>

@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 interface Sector {
   slug: string;
@@ -36,8 +37,33 @@ export default function SectorsPreview({
   showViewAll = true,
   viewAllHref = '/sectoren'
 }: SectorsPreviewProps) {
-  // Limit sectors to maxItems
-  const displayedSectors = sectors.slice(0, maxItems);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
+  // Keep SSR + hydration deterministic; randomize after mount on the homepage only.
+  const [displayedSectors, setDisplayedSectors] = React.useState<Sector[]>(
+    () => sectors.slice(0, maxItems)
+  );
+
+  React.useEffect(() => {
+    if (!Array.isArray(sectors) || sectors.length === 0) {
+      setDisplayedSectors([]);
+      return;
+    }
+
+    if (!isHomePage) {
+      setDisplayedSectors(sectors.slice(0, maxItems));
+      return;
+    }
+
+    // Shuffle sectors so the homepage selection/order changes each visit/refresh.
+    const shuffled = [...sectors];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    setDisplayedSectors(shuffled.slice(0, maxItems));
+  }, [sectors, maxItems, isHomePage]);
 
   // Sector icon mapping fallback
   const getSectorIcon = (slug: string): string => {
@@ -145,7 +171,7 @@ export default function SectorsPreview({
             paddingLeft: '2rem',
             paddingRight: '2rem',
           }}>
-              {displayedSectors.map((sector, index) => {
+              {displayedSectors.map((sector) => {
                 const imageUrl = getImageUrl(sector);
                 const iconPath = sector.iconPath || getSectorIcon(sector.slug);
                 

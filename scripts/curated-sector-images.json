@@ -1,0 +1,161 @@
+{
+  "transport": {
+    "tags": ["transport", "logistiek", "mkb", "business"],
+    "heroImageUrl": "https://plus.unsplash.com/premium_photo-1661935334659-a4f95e515c3b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGJ1c2luZXNzJTIwdHJhbnNwb3J0fGVufDB8fDB8fHww",
+    "easyLendingImageUrl": "https://images.unsplash.com/photo-1768389533475-edc8b2bb9c7d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fGJ1c2luZXNzJTIwdHJhbnNwb3J0fGVufDB8fDB8fHww",
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1768930744322-06994cb65a3b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YnVzaW5lc3MlMjB2YW58ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1663040001568-f07cab70d71f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YnVzaW5lc3MlMjBsb2dpc3RpY3N8ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1661407783160-b6f950068f2a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1c2luZXNzJTIwbG9naXN0aWNzfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1740914994657-f1cdffdc418e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJ1c2luZXNzJTIwbG9naXN0aWNzfGVufDB8fDB8fHww"
+    ]
+  },
+  "ecommerce": {
+    "tags": ["ecommerce", "webshop", "fulfilment", "mkb"],
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1449247666642-264389f5f5b1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGVjb21tZXJjZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1682088436727-0b27d5d230c7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZHJvcHNoaXBwaW5nfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWNvbW1lcmNlfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZWNvbW1lcmNlfGVufDB8fDB8fHww"
+    ]
+  },
+  "tandarts": {
+    "tags": ["tandarts", "praktijk", "zorg", "mkb"],
+    "heroImageUrl": "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzaW5lc3MlMjBkZW50aXN0fGVufDB8fDB8fHww",
+    "easyLendingImageUrl": "https://plus.unsplash.com/premium_photo-1673547484848-795746333d8f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBkZW50aXN0fGVufDB8fDB8fHww",
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1681939278218-a755fb2bf2d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJ1c2luZXNzJTIwZGVudGlzdHxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1629909613638-0e4a1fad8f81?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGJ1c2luZXNzJTIwZGVudGlzdHxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1673547484848-795746333d8f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBkZW50aXN0fGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzaW5lc3MlMjBkZW50aXN0fGVufDB8fDB8fHww"
+    ]
+  },
+  "starters": {
+    "tags": ["startup", "starter", "ondernemer", "mkb"],
+    "heroImageUrl": "https://plus.unsplash.com/premium_photo-1675710884833-68119e98c6f7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjBmb3VuZGVyfGVufDB8fDB8fHww",
+    "easyLendingImageUrl": "https://plus.unsplash.com/premium_photo-1741378216050-8ac3c441a407?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEwfHxidXNpbmVzcyUyMGZvdW5kZXJ8ZW58MHx8MHx8fDA%3D"
+  },
+  "schoonheid": {
+    "tags": ["schoonheid", "beauty", "salon", "mkb"],
+    "heroImageUrl": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJ1c2luZXNzJTIwYmVhdXR5JTIwc2Fsb258ZW58MHx8MHx8fDA%3D",
+    "easyLendingImageUrl": "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJ1c2luZXNzJTIwYmVhdXR5JTIwc2Fsb258ZW58MHx8MHx8fDA%3D",
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1626379501846-0df4067b8bb9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJ1c2luZXNzJTIwYmVhdXR5JTIwc2Fsb258ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1629397662600-50ad523ef4fb?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJ1c2luZXNzJTIwYmVhdXR5JTIwc2Fsb258ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJ1c2luZXNzJTIwYmVhdXR5JTIwc2Fsb258ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJ1c2luZXNzJTIwYmVhdXR5JTIwc2Fsb258ZW58MHx8MHx8fDA%3D"
+    ]
+  },
+  "automotive": {
+    "tags": ["automotive", "garage", "werkplaats", "mkb"],
+    "heroImageUrl": "https://plus.unsplash.com/premium_photo-1667520550378-b10d85a3c209?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBhdXRvfGVufDB8fDB8fHww",
+    "easyLendingImageUrl": "https://plus.unsplash.com/premium_photo-1661286685648-e438a6569361?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJ1c2luZXNzJTIwYXV0b3xlbnwwfHwwfHx8MA%3D%3D",
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1671698966586-ffaef517a655?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGJ1c2luZXNzJTIwYXV0b3xlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1685091955352-4bb8796aef12?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FyJTIwZGVhbGVyfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1656685299734-52a0bb4425aa?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNhciUyMGRlYWxlcnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1667520550378-b10d85a3c209?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBhdXRvfGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1661286685648-e438a6569361?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJ1c2luZXNzJTIwYXV0b3xlbnwwfHwwfHx8MA%3D%3D"
+    ]
+  },
+  "schoonmaak": {
+    "tags": ["schoonmaak", "cleaning", "dienstverlening", "mkb"],
+    "heroImageUrl": "https://plus.unsplash.com/premium_photo-1683141112334-d7d404f6e716?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YnVzaW5lc3MlMjBjbGVhbnxlbnwwfHwwfHx8MA%3D%3D",
+    "easyLendingImageUrl": "https://plus.unsplash.com/premium_photo-1679775635956-fec267067733?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1c2luZXNzJTIwY2xlYW58ZW58MHx8MHx8fDA%3D",
+    "useCaseImageUrls": [
+      "https://plus.unsplash.com/premium_photo-1661664656984-8ab1243a7f61?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGJ1c2luZXNzJTIwY2xlYW58ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1661480071510-3c5752c567fb?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM5fHxidXNpbmVzcyUyMGNsZWFufGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1683141112334-d7d404f6e716?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YnVzaW5lc3MlMjBjbGVhbnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1679775635956-fec267067733?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1c2luZXNzJTIwY2xlYW58ZW58MHx8MHx8fDA%3D"
+    ]
+  },
+  "bouw": {
+    "tags": ["bouw", "constructie", "installatie", "mkb"],
+    "heroImageUrl": "https://plus.unsplash.com/premium_photo-1664302030671-c783ffc42f08?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBjb25zdHJ1Y3Rpb258ZW58MHx8MHx8fDA%3D",
+    "easyLendingImageUrl": "https://images.unsplash.com/photo-1545186070-de624ed19875?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1c2luZXNzJTIwY29uc3RydWN0aW9ufGVufDB8fDB8fHww",
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1545235152-15097d84049e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fGJ1c2luZXNzJTIwY29uc3RydWN0aW9ufGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1664302030671-c783ffc42f08?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBjb25zdHJ1Y3Rpb258ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1545186070-de624ed19875?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1c2luZXNzJTIwY29uc3RydWN0aW9ufGVufDB8fDB8fHww"
+    ]
+  },
+  "retail": {
+    "tags": ["retail", "winkel", "omnichannel", "mkb"],
+    "heroImageUrl": "https://plus.unsplash.com/premium_photo-1770559488131-e37d29ab4ae0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjByZXRhaWx8ZW58MHx8MHx8fDA%3D",
+    "easyLendingImageUrl": "https://images.unsplash.com/photo-1768930744322-06994cb65a3b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YnVzaW5lc3MlMjB2YW58ZW58MHx8MHx8fDA%3D",
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1742836531256-87aa58fd35a9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGJ1c2luZXNzJTIwcmV0YWlsfGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1706561439997-a821316dbbd2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGJ1c2luZXNzJTIwdmFufGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1770559488131-e37d29ab4ae0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjByZXRhaWx8ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1723618974852-7cd10b797283?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJ1c2luZXNzJTIwcmV0YWlsfGVufDB8fDB8fHww"
+    ]
+  },
+  "zorg": {
+    "tags": ["zorg", "welzijn", "healthcare", "mkb"],
+    "heroImageUrl": "https://plus.unsplash.com/premium_photo-1681966822220-58c68b162819?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjBoZWFsdGhjYXJlfGVufDB8fDB8fHww",
+    "easyLendingImageUrl": "https://images.unsplash.com/photo-1597765221336-1f65bb4c4fee?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YnVzaW5lc3MlMjBoZWFsdGhjYXJlfGVufDB8fDB8fHww",
+    "useCaseImageUrls": [
+      "https://plus.unsplash.com/premium_photo-1682129143429-ef8da59239d3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGJ1c2luZXNzJTIwaGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1664476403784-4e16617199bc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fGJ1c2luZXNzJTIwaGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1661691712620-552db80bb268?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njl8fGJ1c2luZXNzJTIwaGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1664478104303-9cba2654e526?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTB8fGJ1c2luZXNzJTIwaGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D"
+    ]
+  },
+  "medisch": {
+    "tags": ["medisch", "praktijk", "healthcare", "mkb"],
+    "heroImageUrl": "https://plus.unsplash.com/premium_photo-1681966822220-58c68b162819?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjBtZWRpY2FsfGVufDB8fDB8fHww",
+    "easyLendingImageUrl": "https://images.unsplash.com/photo-1612888262725-6b300edf916c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJ1c2luZXNzJTIwbWVkaWNhbHxlbnwwfHwwfHx8MA%3D%3D",
+    "useCaseImageUrls": [
+      "https://plus.unsplash.com/premium_photo-1661777473888-db5833f5cd0e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGJ1c2luZXNzJTIwbWVkaWNhbHxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1664304180276-4ef02afe2b5e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA0fHxidXNpbmVzcyUyMG1lZGljYWx8ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1681966822220-58c68b162819?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjBtZWRpY2FsfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1612888262725-6b300edf916c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJ1c2luZXNzJTIwbWVkaWNhbHxlbnwwfHwwfHx8MA%3D%3D"
+    ]
+  },
+  "horeca": {
+    "tags": ["horeca", "bar", "cafe", "mkb"],
+    "heroImageUrl": "https://plus.unsplash.com/premium_photo-1661730016638-9b6c8862f80d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBiYXJ8ZW58MHx8MHx8fDA%3D",
+    "easyLendingImageUrl": "https://plus.unsplash.com/premium_photo-1722859432188-fd3765b9a858?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxidXNpbmVzcyUyMGJhcnxlbnwwfHwwfHx8MA%3D%3D",
+    "useCaseImageUrls": [
+      "https://plus.unsplash.com/premium_photo-1661434463094-cb19a28f0a47?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI4fHxidXNpbmVzcyUyMGJhcnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1661730016638-9b6c8862f80d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBiYXJ8ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1722859432188-fd3765b9a858?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxidXNpbmVzcyUyMGJhcnxlbnwwfHwwfHx8MA%3D%3D"
+    ]
+  },
+  "consultants": {
+    "tags": ["consultants", "consultancy", "advies", "kantoor", "business"],
+    "useCaseImageUrls": [
+      "https://plus.unsplash.com/premium_photo-1681487775145-fa203ab4aa91?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbnN1bHRhbmN5fGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1664476927999-350cbaa284a5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE1fHxjb25zdWx0YW5jeXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29uc3VsdGFuY3l8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbnN1bHRhbmN5fGVufDB8fDB8fHww"
+    ]
+  },
+  "zzp": {
+    "tags": ["zzp", "zelfstandige", "freelancer", "dienstverlening", "mkb"],
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1758599879792-d6d5d4e3289c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA2fHxzZWxmJTIwbGVhcm5pbmd8ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1664910821711-adc98c498c66?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxzZWxmJTIwbGVhcm5pbmd8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1758876019338-c190822f6ca0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2VsZiUyMGVtcGxveWVlfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1764173039747-a5cfde065d89?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHNlbGYlMjBsZWFybmluZ3xlbnwwfHwwfHx8MA%3D%3D"
+    ]
+  },
+  "groothandel": {
+    "tags": ["groothandel", "warehouse", "distributie", "logistiek", "mkb"],
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1633959592096-9d9a339b99fa?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHdhcmVob3VzZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1661809792135-71b20e0fca24?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHdhcmVob3VzZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FyZWhvdXNlfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1672552226380-486fe900b322?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdhcmVob3VzZXxlbnwwfHwwfHx8MA%3D%3D"
+    ]
+  },
+  "productie": {
+    "tags": ["productie", "industrie", "maakindustrie", "fabriek", "mkb"],
+    "useCaseImageUrls": [
+      "https://images.unsplash.com/photo-1503147658877-b6636154a299?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2R1Y3Rpb258ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1682144873944-ac733dbe7828?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fHByb2R1Y3Rpb258ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1647427060118-4911c9821b82?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjaGluZXN8ZW58MHx8MHx8fDA%3D",
+      "https://plus.unsplash.com/premium_photo-1682147442955-480ce746916f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fG1hY2hpbmVzfGVufDB8fDB8fHww"
+    ]
+  }
+}

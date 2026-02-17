@@ -11,6 +11,11 @@ interface ImageTextBlockProps {
   variant?: 'default' | 'bordered' | 'shadow';
 }
 
+function sanitizeHref(href: string | undefined, fallback: string) {
+  const trimmed = (href || '').trim();
+  return trimmed && trimmed !== '#' ? trimmed : fallback;
+}
+
 export default function ImageTextBlock({
   title,
   content,
@@ -21,6 +26,8 @@ export default function ImageTextBlock({
   ctaHref,
   variant = 'default'
 }: ImageTextBlockProps) {
+  const resolvedCtaHref = ctaHref ? sanitizeHref(ctaHref, '/lead') : undefined;
+
   const containerStyle = {
     display: layout === 'image-top' ? 'block' : (!imageUrl && (layout === 'image-left' || layout === 'image-right')) ? 'block' : 'grid',
     gridTemplateColumns: layout === 'image-left' ? '1fr 1.5fr' : layout === 'image-right' ? '1.5fr 1fr' : '1fr',
@@ -68,9 +75,9 @@ export default function ImageTextBlock({
       }}>
         {content}
       </div>
-      {ctaLabel && ctaHref && (
+      {ctaLabel && resolvedCtaHref && (
         <div className="row" style={{ marginTop: 'var(--space-md)' }}>
-          <a className="btn btn-primary" href={ctaHref}>
+          <a className="btn btn-primary" href={resolvedCtaHref}>
             {ctaLabel}
           </a>
         </div>

@@ -17,7 +17,16 @@ const SECTORS: Record<string, SectorInfo> = {
   horeca: {
     name: 'Horeca',
     description: 'Zakelijke financiering speciaal voor de horeca. Van restaurants tot cafés en hotels.',
-    keywords: ['horeca financiering', 'restaurant lening', 'café financiering', 'hotel financiering'],
+    keywords: [
+      'horeca financiering',
+      'zakelijke lening horeca',
+      'horeca lening',
+      'lening voor horeca',
+      'financieringsmogelijkheden horeca',
+      'restaurant lening',
+      'café financiering',
+      'hotel financiering',
+    ],
   },
   retail: {
     name: 'Retail',
@@ -64,7 +73,66 @@ const SECTORS: Record<string, SectorInfo> = {
     description: 'Zakelijke lening voor productiebedrijven en industriële ondernemingen.',
     keywords: ['productie financiering', 'industrie lening', 'productiebedrijf financiering'],
   },
+  zzp: {
+    name: 'ZZP',
+    description: "Zakelijke financiering voor zelfstandigen zonder personeel. Flexibele lening voor ZZP'ers.",
+    keywords: ['zzp lening', 'zzp financiering', 'zzp krediet', 'zelfstandige lening'],
+  },
+  starters: {
+    name: 'Starters & Startups',
+    description: 'Financiering voor startende ondernemers en startups. Snel geregeld zonder jarenlange historie.',
+    keywords: ['starterslening', 'startup financiering', 'startende ondernemer lening', 'starters krediet'],
+  },
+  franchise: {
+    name: 'Franchise',
+    description: 'Zakelijke financiering voor franchisenemers. Investeer in je franchise zonder gedoe.',
+    keywords: ['franchise lening', 'franchise financiering', 'franchisenemer lening', 'franchise krediet'],
+  },
+  medisch: {
+    name: 'Medische Praktijken',
+    description: 'Financiering voor medische praktijken en artsen. Speciaal voor de zorgsector.',
+    keywords: ['medische praktijk lening', 'arts financiering', 'praktijk financiering', 'huisarts financiering'],
+  },
+  tandarts: {
+    name: 'Tandartspraktijken',
+    description: 'Zakelijke financiering voor tandartspraktijken. Investeer in apparatuur en verbouwingen.',
+    keywords: ['tandartspraktijk lening', 'tandarts financiering', 'tandarts krediet', 'tandheelkunde financiering'],
+  },
+  groothandel: {
+    name: 'Groothandel',
+    description: 'Financiering voor groothandels en distributiebedrijven. Werkkapitaal voor voorraad en groei.',
+    keywords: ['groothandel financiering', 'groothandel lening', 'distributie financiering', 'groothandel krediet'],
+  },
+  schoonheid: {
+    name: 'Schoonheidsindustrie',
+    description: 'Zakelijke financiering voor kappers, schoonheidssalons en wellnesscentra.',
+    keywords: ['kapper lening', 'schoonheidssalon financiering', 'kapperszaak financiering', 'beauty salon lening'],
+  },
+  kasstroom: {
+    name: 'Kasstroom & Werkkapitaal',
+    description: 'Werkkapitaalfinanciering voor bedrijven. Overbrug betalingsachterstanden en investeer in groei.',
+    keywords: ['kasstroom lening', 'werkkapitaal financiering', 'werkkapitaal krediet', 'cashflow financiering'],
+  },
 };
+
+function buildMetaTitle(sectorName: string): string {
+  // Keep it short; the frontend appends the brand and truncates at ~60 chars.
+  return `${sectorName} financiering - Binnen 24 uur duidelijkheid`;
+}
+
+function buildMetaDescription(sectorSlug: string, sectorName: string, baseDescription: string): string {
+  if (sectorSlug === 'horeca') {
+    return (
+      'Horeca financiering en zakelijke lening horeca voor restaurant, café of hotel. ' +
+      'Voor werkkapitaal, verbouwing, inventaris of voorraad. Binnen 24 uur duidelijkheid.'
+    );
+  }
+  return baseDescription;
+}
+
+function buildMetaKeywords(keywords: string[]): string {
+  return (keywords || []).filter(Boolean).join(', ');
+}
 
 function generateQuote(sectorSlug: string, sectorName: string): string {
   return `Financiering die meegroeit met je ${sectorName.toLowerCase()}bedrijf. Of je nu investeert, groeit, of uitdagingen moet overbruggen – wij begrijpen de unieke behoeften van de ${sectorName.toLowerCase()}sector en bieden flexibele oplossingen die passen bij jouw bedrijf.`;
@@ -338,7 +406,25 @@ export async function seedSectorPages(strapi: Core.Strapi): Promise<void> {
         });
 
         if (existing && existing.length > 0) {
-          strapi.log.info(`  ⏭️  Sector page ${sectorSlug} already exists, skipping`);
+          // Idempotent: fill in missing SEO fields on existing entries without overwriting custom copy.
+          const current = (existing[0] || {}) as any;
+          const patch: Record<string, any> = {};
+          const currentMetaTitle = String(current?.metaTitle || '').trim();
+          const currentMetaDescription = String(current?.metaDescription || '').trim();
+          const currentMetaKeywords = String(current?.metaKeywords || '').trim();
+
+          if (!currentMetaTitle) patch.metaTitle = buildMetaTitle(sectorInfo.name);
+          if (!currentMetaDescription) {
+            patch.metaDescription = buildMetaDescription(sectorSlug, sectorInfo.name, sectorInfo.description);
+          }
+          if (!currentMetaKeywords) patch.metaKeywords = buildMetaKeywords(sectorInfo.keywords);
+
+          if (Object.keys(patch).length > 0) {
+            await strapi.entityService.update('api::sector-page.sector-page' as any, current.id, { data: patch });
+            strapi.log.info(`  🛠️  Updated missing SEO fields for ${sectorSlug}`);
+          } else {
+            strapi.log.info(`  ⏭️  Sector page ${sectorSlug} already exists, no SEO updates needed`);
+          }
           continue;
         }
 
@@ -348,14 +434,19 @@ export async function seedSectorPages(strapi: Core.Strapi): Promise<void> {
         const useCases = generateUseCases(sectorSlug);
         const benefits = generateBenefits(sectorSlug, sectorInfo.name);
 
+        const metaTitle = buildMetaTitle(sectorInfo.name);
+        const metaDescription = buildMetaDescription(sectorSlug, sectorInfo.name, sectorInfo.description);
+        const metaKeywords = buildMetaKeywords(sectorInfo.keywords);
+
         // Create sector page
         await strapi.entityService.create('api::sector-page.sector-page' as any, {
           data: {
             siteId: SITE_ID,
             sectorSlug,
             sectorName: sectorInfo.name,
-            metaDescription: sectorInfo.description,
-            metaKeywords: sectorInfo.keywords.join(', '),
+            metaTitle,
+            metaDescription,
+            metaKeywords,
             heroTitle: `Zakelijke financiering voor ${sectorInfo.name.toLowerCase()}`,
             heroSubtitle: sectorInfo.description,
             quote,

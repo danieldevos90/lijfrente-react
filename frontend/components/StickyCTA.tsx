@@ -30,7 +30,7 @@ export default function StickyCTA({ href, label, useDrawer = true }: StickyCTAPr
         (window as any).dataLayer = (window as any).dataLayer || [];
         (window as any).dataLayer.push({ 
           event: 'cta_sticky_click', 
-          href: href || '#'
+          href: (href || '/lead')
         });
       }
     }

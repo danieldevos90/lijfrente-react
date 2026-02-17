@@ -1,0 +1,116 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Arial;}}
+\fs24
+\b Google Ads API - Design Documentation (Keyword Ideas Tool)\b0\par
+\par
+\b Document owner:\b0 ALT-F-AWESOME / Geldgeregeld.nl\par
+\b Date:\b0 2026-02-16\par
+\b Version:\b0 1.0\par
+\par
+\b 1. Purpose and scope\b0\par
+This document describes the design of an internal tool that uses the Google Ads API KeywordPlanIdeaService to generate keyword ideas (including long-tail keyword candidates) and associated historical metrics. The output is used to support SEO content planning and paid search campaign planning.\par
+\par
+\b In scope:\b0\par
+- Generate keyword ideas from seed keywords and/or a seed URL\par
+- Apply simple filters (e.g., max average monthly searches) to focus on long-tail candidates\par
+- Export results to CSV for internal review\par
+\par
+\b Out of scope:\b0\par
+- Automatic campaign creation or bid changes\par
+- Storing or processing personally identifiable information (PII)\par
+- User-facing public API\par
+\par
+\b 2. High-level architecture\b0\par
+The tool is implemented as a Node.js script executed by internal operators on a developer machine or CI runner. It calls the Google Ads API over HTTPS and writes results to a local CSV file.\par
+\par
+\b Components:\b0\par
+- Operator: runs the script with seeds and optional filters\par
+- Node.js script: constructs request and calls Google Ads API\par
+- Google Ads API: KeywordPlanIdeaService (GenerateKeywordIdeas)\par
+\par
+\b 3. Intended users\b0\par
+Internal marketing/SEO operators and engineering staff. There is no public end-user access.\par
+\par
+\b 4. Key use cases\b0\par
+\b 4.1 Generate long-tail keyword candidates\b0\par
+Input: a list of seed keywords (e.g., "lijfrente zzp") and/or a relevant landing page URL.\par
+Output: keyword ideas with historical metrics. The operator filters by average monthly searches (e.g., <= 200) to surface long-tail queries.\par
+\par
+\b 4.2 Account sanity check\b0\par
+The tool can list accessible customers (customers:listAccessibleCustomers) to verify account access before generating keyword ideas.\par
+\par
+\b 5. Data flow\b0\par
+\b Inputs:\b0\par
+- Seed keywords and/or seed URL (operator-supplied)\par
+- Targeting: language constant and geo target constants\par
+- Google Ads customer id and optional login customer id (manager account)\par
+\par
+\b Processing:\b0\par
+1) Authenticate to Google Ads API (see Section 6)\par
+2) Call customers:listAccessibleCustomers (optional)\par
+3) Call GenerateKeywordIdeas with selected seeds and targeting\par
+4) Extract keyword idea text and metrics from response\par
+5) Apply optional numeric filters on avgMonthlySearches to emphasize long-tail candidates\par
+6) Write results to a CSV file for internal analysis\par
+\par
+\b Outputs:\b0\par
+- CSV with keyword ideas and metrics (avgMonthlySearches, competition, bid estimates)\par
+- Console logs for operational visibility (counts, errors)\par
+\par
+\b 6. Authentication and authorization\b0\par
+The tool uses a service account with Domain-Wide Delegation (DWD) and impersonates a Google Workspace user who has access to the relevant Google Ads accounts.\par
+\par
+\b Auth method:\b0\par
+- OAuth2 service account JWT flow with subject impersonation (DWD)\par
+- Scope: https://www.googleapis.com/auth/adwords\par
+\par
+\b Authorization model:\b0\par
+- The impersonated Workspace user must have access to the Google Ads customer account(s)\par
+- For access to client accounts under a manager account, the tool can set the login-customer-id header\par
+\par
+\b Secrets:\b0\par
+- Google Ads API developer token is provided via environment variables (not hardcoded)\par
+- Service account JSON key is stored as a secret on the operator machine or in a secret manager (not committed to source control)\par
+\par
+\b 7. Security and compliance\b0\par
+\b 7.1 Sensitive data handling\b0\par
+- No PII is collected, transmitted, or stored.\par
+- The tool requests only keyword planning data and metrics.\par
+\par
+\b 7.2 Credential storage\b0\par
+- Credentials are provided at runtime via environment variables or secret storage.\par
+- Secrets are excluded from version control.\par
+\par
+\b 7.3 Access control\b0\par
+- Tool execution is restricted to internal operators.\par
+- Least privilege: only adwords scope required to call the keyword planning endpoints.\par
+\par
+\b 8. Error handling and monitoring\b0\par
+- HTTP errors are surfaced to the operator with relevant response snippets.\par
+- The tool is designed to fail fast on missing configuration.\par
+\par
+\b 9. Rate limits and usage controls\b0\par
+- The tool requests a bounded page size and supports limiting output.\par
+- Operators run the tool on demand; it is not a high-frequency background job.\par
+\par
+\b 10. Testing\b0\par
+- Manual smoke testing by listing accessible customers and running a small keyword idea request.\par
+- Validation that generated CSV output is parseable and contains expected fields.\par
+\par
+\b 11. Deployment and operations\b0\par
+- Run locally using Node.js (>=18).\par
+- Configuration is provided via .env.local on the operator machine.\par
+\par
+\b 12. Change management\b0\par
+- Changes to request parameters (language/geo/network) are reviewed by engineering.\par
+- Credential rotation is handled separately from code changes.\par
+\par
+\b Appendix A: Configuration fields (examples)\b0\par
+(Do not include real secrets in submissions.)\par
+- GOOGLE_ADS_DEVELOPER_TOKEN="..." \par
+- GOOGLE_ADS_CUSTOMER_ID="..." \par
+- GOOGLE_ADS_LOGIN_CUSTOMER_ID="..." (optional) \par
+- GOOGLE_ADS_IMPERSONATED_EMAIL="daniel@altfawesome.com" \par
+\par
+}
+

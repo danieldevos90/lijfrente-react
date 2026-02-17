@@ -28,6 +28,10 @@
       "required": true,
       "description": "Display name of the sector"
     },
+    "metaTitle": {
+      "type": "string",
+      "description": "SEO meta title (used for the <title> tag)"
+    },
     "metaDescription": {
       "type": "text",
       "description": "SEO meta description"

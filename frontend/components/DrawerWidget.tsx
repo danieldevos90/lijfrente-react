@@ -14,6 +14,12 @@ interface DrawerWidgetProps {
 export default function DrawerWidget({ isOpen, onClose }: DrawerWidgetProps) {
   const [step, setStep] = useState<1 | 2>(1);
 
+  // Reset progress UI on open; the form may still restore its own step from draft storage.
+  useEffect(() => {
+    if (!isOpen) return;
+    setStep(1);
+  }, [isOpen]);
+
   // Close on ESC for usability.
   useEffect(() => {
     if (!isOpen) return;
@@ -60,7 +66,9 @@ export default function DrawerWidget({ isOpen, onClose }: DrawerWidgetProps) {
           <QuickLeadForm
             isModal={true}
             defaultSource="drawer"
-            onSuccess={onClose}
+            // Keep the drawer open so the user can see the completion state.
+            // QuickLeadForm will render its own "Bedankt" view when successful.
+            onSuccess={() => setStep(2)}
             onStepChange={(s) => setStep(s)}
           />
         </div>

@@ -64,6 +64,9 @@ export default function WhyChooseSection({
     );
   }
   
+  const desktopCols = Math.min(Math.max(benefits.length, 1), 4);
+  const tabletCols = Math.min(desktopCols, 2);
+
   return (
     <section id="why-choose" style={{
       background: 'var(--color-bg)',
@@ -121,13 +124,21 @@ export default function WhyChooseSection({
           >
             <div className="why-choose-grid" style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              // Desktop: match columns to content (3 items -> 3 cols, 4 items -> 4 cols).
+              gridTemplateColumns: `repeat(${desktopCols}, minmax(0, 1fr))`,
               gap: '2rem',
               margin: '0 auto',
               maxWidth: '1400px',
               width: '100%',
               justifyContent: 'center',
               alignItems: 'stretch',
+              ...((
+                {
+                  // Used by the style-jsx breakpoints below.
+                  ['--why-choose-cols-desktop' as any]: String(desktopCols),
+                  ['--why-choose-cols-tablet' as any]: String(tabletCols),
+                } as React.CSSProperties
+              )),
             }}>
               {benefits.map((benefit, index) => {
                 const isColored = index % 2 === 0;
@@ -242,7 +253,7 @@ export default function WhyChooseSection({
 
         @media (max-width: 1200px) {
           .why-choose-grid {
-            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-columns: repeat(var(--why-choose-cols-desktop), minmax(0, 1fr)) !important;
             max-width: 1400px !important;
             width: 100% !important;
           }
@@ -250,7 +261,7 @@ export default function WhyChooseSection({
 
         @media (max-width: 1024px) {
           .why-choose-grid {
-            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-columns: repeat(var(--why-choose-cols-tablet), minmax(0, 1fr)) !important;
             gap: 1.5rem !important;
           }
         }

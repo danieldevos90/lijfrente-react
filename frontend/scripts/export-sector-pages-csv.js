@@ -108,6 +108,26 @@ function getMediaUrl(strapiUrl, maybeUrl) {
   return `${base}${u.startsWith("/") ? "" : "/"}${u}`;
 }
 
+function getMediaUrlFromField(strapiUrl, field) {
+  // Strapi v4 media: { data: { attributes: { url } } }
+  const v4 = field?.data?.attributes?.url;
+  if (v4) return getMediaUrl(strapiUrl, v4);
+
+  // Strapi v5 media: { url, formats: { large: { url } } }
+  const v5Direct = field?.url;
+  const v5Large = field?.formats?.large?.url;
+  const v5Medium = field?.formats?.medium?.url;
+  const v5Small = field?.formats?.small?.url;
+  // Prefer the original file URL first; derivatives can occasionally 404 on the CDN.
+  const v5Any = v5Direct || v5Large || v5Medium || v5Small;
+  if (v5Any) return getMediaUrl(strapiUrl, v5Any);
+
+  // Sometimes media can be a string URL.
+  if (typeof field === "string") return getMediaUrl(strapiUrl, field);
+
+  return "";
+}
+
 async function fetchJson(url, token) {
   const headers = { "Content-Type": "application/json" };
   if (token) headers.Authorization = `Bearer ${token}`;
@@ -169,7 +189,7 @@ function flattenUseCases(sectorPages, strapiUrl) {
     const useCases = Array.isArray(p.useCases) ? p.useCases : [];
     for (let i = 0; i < useCases.length; i++) {
       const uc = useCases[i] || {};
-      const imageUrl = getMediaUrl(strapiUrl, uc?.image?.data?.attributes?.url);
+      const imageUrl = getMediaUrlFromField(strapiUrl, uc?.image);
       rows.push({
         siteId: p.siteId || "",
         sectorSlug: p.sectorSlug || "",

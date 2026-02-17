@@ -10,7 +10,8 @@ export const SECTOR_ICON_MAP: Record<string, string> = {
   automotive: "/icons/SVG/e-commerce/truck.svg",
   productie: "/icons/SVG/e-commerce/factory.svg",
   zzp: "/icons/SVG/interface/user.svg",
-  starters: "/icons/SVG/interface/rocket.svg",
+  // The rocket icon lives in /misc (not /interface).
+  starters: "/icons/SVG/misc/rocket.svg",
   franchise: "/icons/SVG/interface/grid.svg",
   medisch: "/icons/SVG/health/stethoscope.svg",
   tandarts: "/icons/SVG/health/stethoscope.svg",

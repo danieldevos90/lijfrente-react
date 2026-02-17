@@ -8,10 +8,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "echo 'no linter configured'",
-    "export:sectors-csv": "node scripts/export-sector-pages-csv.js"
+    "export:sectors-csv": "node scripts/export-sector-pages-csv.js",
+    "googleads:keyword-ideas": "node scripts/google-ads-keyword-ideas.js"
   },
   "dependencies": {
+    "@google-cloud/secret-manager": "^6.1.1",
     "clsx": "2.1.1",
+    "dotenv": "^17.3.1",
+    "google-auth-library": "^10.5.0",
     "lucide-react": "^0.541.0",
     "next": "14.2.5",
     "react": "18.3.1",

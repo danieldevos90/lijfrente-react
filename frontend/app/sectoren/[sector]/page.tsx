@@ -10,12 +10,13 @@ import UseCasesSection from '../../../components/sections/UseCasesSection';
 import BenefitsCarousel from '../../../components/BenefitsCarousel';
 import CTASection from '../../../components/sections/CTASection';
 import { getStrapiImageUrl } from '@/lib/strapi-cms';
-import { getSectorUnsplashImage, getUnsplashImage } from '@/lib/unsplash';
+import { getSectorUnsplashImage } from '@/lib/unsplash';
 import { generateMetadata as generateSEOMetadata, generateServiceSchema, generateBreadcrumbSchema, generateFAQPageSchema, buildCanonicalUrl, getBaseUrl } from '@/lib/seo';
 import DirectAnswerSection from '../../../components/sections/DirectAnswerSection';
 import FAQSection, { type FAQItem } from '../../../components/sections/FAQSection';
 import { USE_CASE_SLUGS, getUseCase } from '@/lib/use-cases';
 import { getSectorIcon } from '@/lib/sector-icons';
+import { SECTOR_INFO } from '@/lib/sectors';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
@@ -50,8 +51,16 @@ function getSectorFaqs(sectorSlug: string, sectorName: string): FAQItem[] {
   // Add 2 sector-flavored questions to reduce template similarity.
   const sectorSpecific: Record<string, FAQItem[]> = {
     horeca: [
-      { question: 'Kan ik keukenapparatuur of een verbouwing financieren?', answer: 'Ja. Investeringen zoals keukenapparatuur, terras, verbouwing of inventaris vallen vaak onder de meest voorkomende use-cases in de horeca.' },
-      { question: 'Hoe ga ik om met seizoenspieken in de horeca?', answer: 'Met financiering kun je rustige periodes overbruggen en voorraad/personeel opvangen. Kies een aflossingsstructuur die past bij je piekmaanden.' },
+      {
+        question: 'Wat is horeca financiering (en wanneer past een horeca lening)?',
+        answer:
+          'Horeca financiering is zakelijke financiering voor restaurants, cafes en hotels. Het kan passen bij investeringen (inventaris/verbouwing) of werkkapitaal om seizoensschommelingen op te vangen.',
+      },
+      {
+        question: 'Kan ik een zakelijke lening voor horeca gebruiken voor verbouwing, inventaris of voorraad?',
+        answer:
+          'Vaak wel. Veel horeca ondernemers financieren keukenapparatuur, terras/verbouwing, inventaris en voorraad. Je kiest een oplossing die past bij je omzet en cashflow.',
+      },
     ],
     ecommerce: [
       { question: 'Kan ik voorraad en marketing voor mijn webshop financieren?', answer: 'Ja. Veel e-commerce ondernemers gebruiken financiering voor voorraadinkoop en marketing om groei te versnellen.' },
@@ -77,6 +86,26 @@ function getSectorFaqs(sectorSlug: string, sectorName: string): FAQItem[] {
   ];
 
   return [...common, ...extras].slice(0, 6);
+}
+
+function getSectorSeoIntro(
+  sectorSlug: string,
+  sectorName: string
+): { title: string; body: string; bullets: string[] } | null {
+  if (sectorSlug !== 'horeca') return null;
+
+  // Intent-matching copy for the exact queries we see in Search Console.
+  // Keep it short to avoid "template bloat" while increasing topical clarity.
+  return {
+    title: 'Horeca financiering: mogelijkheden voor restaurants, cafes en hotels',
+    body:
+      'Zoek je horeca financiering, financieringsmogelijkheden voor horeca of een zakelijke lening horeca? Dit draait meestal om 3 dingen: investeren in inventaris/verbouwing, werkkapitaal voor rustige periodes, of voorraad/personeel tijdens piekmaanden. Je krijgt een voorstel dat past bij je situatie en cashflow.',
+    bullets: [
+      'Werkkapitaal om seizoenspieken op te vangen',
+      'Investeren in verbouwing, keukenapparatuur of inventaris',
+      'Voorraad en personeelskosten beter spreiden',
+    ],
+  };
 }
 
 // Common Dutch sectors for SEO fallback
@@ -278,10 +307,26 @@ export default async function SectorPage({ params }: { params: { sector: string 
     const normalizedPromises = components.map(async (comp, index) => {
       // Handle both flat objects and nested Strapi component structure
       if (typeof comp === 'object' && comp !== null) {
-        // Extract imageUrl from Strapi nested structure (image.data.attributes.url)
-        const strapiImageUrl = (comp as any).image?.data?.attributes?.url
-          ? getStrapiImageUrl((comp as any).image.data.attributes.url)
-          : undefined;
+        const extractMediaUrl = (media: any): string | undefined => {
+          if (!media) return undefined;
+          // Strapi v4: { data: { attributes: { url } } }
+          const v4 = media?.data?.attributes?.url;
+          if (typeof v4 === 'string' && v4) return getStrapiImageUrl(v4);
+          // Strapi v5: { url, formats: { large: { url } } }
+          // Prefer the original file URL first; derivatives can occasionally 404 on the CDN.
+          const v5Any =
+            media?.url ||
+            media?.formats?.large?.url ||
+            media?.formats?.medium?.url ||
+            media?.formats?.small?.url;
+          if (typeof v5Any === 'string' && v5Any) return getStrapiImageUrl(v5Any);
+          // Sometimes a string URL is stored directly
+          if (typeof media === 'string' && media) return getStrapiImageUrl(media);
+          return undefined;
+        };
+
+        // Extract imageUrl from Strapi (v4 or v5 media shapes).
+        const strapiImageUrl = extractMediaUrl((comp as any).image);
         
         // If no image from Strapi, try to get from Unsplash based on title/description
         let imageUrl = strapiImageUrl || (comp as any).imageUrl;
@@ -367,6 +412,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
   const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld';
   const sectorName = pageDataAny?.sectorName || sector;
   const sectorDescription = pageDataAny?.metaDescription || '';
+  const isHoreca = sector === 'horeca';
   
   const serviceSchema = generateServiceSchema({
     name: `Zakelijke financiering voor ${sectorName}`,
@@ -391,6 +437,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
 
   // Deep link to /lead with prefill to reduce friction.
   const leadHref = `/lead?source=sector_page&sector=${encodeURIComponent(sector)}&purpose=werkkapitaal&amount=50000`;
+  const seoIntro = getSectorSeoIntro(sector, sectorName);
 
   return (
     <>
@@ -419,14 +466,21 @@ export default async function SectorPage({ params }: { params: { sector: string 
           title={pageDataAny?.heroTitle}
           subtitle={pageDataAny?.heroSubtitle}
           backgroundColor="var(--color-bg)"
-          iconPath={pageDataAny?.heroImage?.data?.attributes?.url
-            ? getStrapiImageUrl(pageDataAny.heroImage.data.attributes.url)
-            : getSectorIcon(sector)}
+          // Always use the vector sector icon in the hero (never a photo heroImage).
+          iconPath={getSectorIcon(sector)}
         />
 
         <DirectAnswerSection
-          title={`Zakelijke financiering voor ${sectorName}: wat is het en wanneer is het slim?`}
-          answer={`Als ${sectorName.toLowerCase()} ondernemer kan financiering helpen om werkkapitaal te overbruggen, te investeren in groei of kosten te spreiden. Je krijgt een transparant voorstel en kiest een oplossing die past bij je cashflow.`}
+          title={
+            isHoreca
+              ? 'Horeca financiering: wanneer past het bij je bedrijf?'
+              : `Zakelijke financiering voor ${sectorName}: wat is het en wanneer is het slim?`
+          }
+          answer={
+            isHoreca
+              ? 'Horeca financiering (zakelijke lening horeca) kan helpen om werkkapitaal te overbruggen, te investeren in inventaris/verbouwing of kosten te spreiden. Je krijgt een transparant voorstel en kiest een oplossing die past bij je omzet en cashflow.'
+              : `Als ${sectorName.toLowerCase()} ondernemer kan financiering helpen om werkkapitaal te overbruggen, te investeren in groei of kosten te spreiden. Je krijgt een transparant voorstel en kiest een oplossing die past bij je cashflow.`
+          }
           bullets={[
             { label: 'Doel', value: 'Werkkapitaal, groei, investeringen' },
             { label: 'Snelheid', value: 'Aanvraag online, snel duidelijkheid' },
@@ -434,6 +488,30 @@ export default async function SectorPage({ params }: { params: { sector: string 
           ]}
           primaryHref={leadHref}
         />
+
+        {seoIntro && (
+          <section style={{ background: 'var(--color-bg)', padding: '4rem 2rem 2rem' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+              <h2 style={{ margin: 0, fontSize: '2rem' }}>{seoIntro.title}</h2>
+              <p
+                style={{
+                  marginTop: '1rem',
+                  maxWidth: '90ch',
+                  color: 'var(--color-text-muted)',
+                  lineHeight: 1.7,
+                  fontSize: '1.125rem',
+                }}
+              >
+                {seoIntro.body}
+              </p>
+              <ul style={{ marginTop: '1rem', lineHeight: 1.8, color: 'var(--color-text)' }}>
+                {seoIntro.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* Use-case deep links for stronger pSEO architecture */}
         <section style={{ background: 'var(--color-bg)', padding: '5rem 2rem' }}>
@@ -487,7 +565,15 @@ export default async function SectorPage({ params }: { params: { sector: string 
                     }}
                   >
                     <h3 style={{ margin: 0, fontSize: '1.25rem' }}>{cfg.label}</h3>
-                    <p style={{ margin: '0.75rem 0 0', color: 'var(--color-text-muted)', lineHeight: 1.7 }}>
+                    <p
+                      style={{
+                        margin: '0.75rem 0 0',
+                        color: 'var(--color-text-muted)',
+                        lineHeight: 1.7,
+                        // Make the description visually subordinate to the title.
+                        fontSize: '0.95rem',
+                      }}
+                    >
                       {cfg.heroSubtitleTemplate(sectorName)}
                     </p>
                   </a>
@@ -584,17 +670,7 @@ export default async function SectorPage({ params }: { params: { sector: string 
             </p>
             <a
               href="/hoe-werkt-het"
-              style={{
-                display: 'inline-block',
-                padding: '1rem 2.5rem',
-                background: 'var(--color-primary)',
-                color: 'white',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontSize: '1.125rem',
-                fontWeight: '600',
-                transition: 'all 0.3s ease',
-              }}
+              className="btn btn-primary"
               aria-label={`Bekijk hoe het aanvraagproces werkt voor ${sectorName}`}
             >
               Bekijk hoe het werkt
@@ -665,27 +741,55 @@ export async function generateMetadata({ params }: { params: { sector: string } 
     next: { revalidate: 3600 }
   });
 
+  const sectorInfo = SECTOR_INFO[sector];
+  const canonicalUrl = buildCanonicalUrl(`/sectoren/${sector}`);
+
+  // If the CMS is missing content, we still want stable metadata (avoid 500s during crawling).
   if (!sectorPage) {
-    throw new Error(`[SectorPage] Missing Strapi sector-page for "${sector}" (no fallback enabled).`);
+    const name = sectorInfo?.name || sector;
+    const title = `${name} financiering - Binnen 24 uur duidelijkheid`;
+    const description =
+      sectorInfo?.description ||
+      `Zakelijke financiering voor ${name}. Binnen 24 uur duidelijkheid, transparante voorwaarden en flexibel aflossen.`;
+    const keywords = (sectorInfo?.keywords || []).join(', ');
+
+    return generateSEOMetadata({
+      title: buildTitle(title),
+      description: buildDescription(description),
+      keywords,
+      canonicalUrl,
+      ogType: 'website',
+    });
   }
 
   const pageData = sectorPage?.attributes || sectorPage;
   const pageDataAny = pageData as any;
   
-  // SEO-optimized title: Primary keyword + value prop (following competitor patterns)
-  // Format: "[Sector] Financiering - Value Prop" (e.g., "Horeca Financiering - Binnen 24 uur geregeld")
-  const seoTitle = pageDataAny?.metaTitle || pageDataAny?.heroTitle;
-  if (!seoTitle) {
-    throw new Error(`[SectorPage] Missing metaTitle/heroTitle in Strapi for "${sector}" (no fallback enabled).`);
-  }
+  const sectorName = pageDataAny?.sectorName || sectorInfo?.name || sector;
 
-  const description = pageDataAny?.metaDescription;
-  if (!description) {
-    throw new Error(`[SectorPage] Missing metaDescription in Strapi for "${sector}" (no fallback enabled).`);
-  }
+  // Prefer Strapi meta fields, but enforce an intent-matching format when editors leave it too generic.
+  const rawTitle: string =
+    pageDataAny?.metaTitle ||
+    pageDataAny?.heroTitle ||
+    `${sectorName} financiering - Binnen 24 uur duidelijkheid`;
 
-  const keywords = pageDataAny?.metaKeywords || '';
-  const canonicalUrl = buildCanonicalUrl(`/sectoren/${sector}`);
+  const titleLower = rawTitle.toLowerCase();
+  const wants = sectorName.toLowerCase();
+  const hasSector = titleLower.includes(wants);
+  const hasFinancingWord = titleLower.includes('financier');
+  const seoTitle =
+    hasSector && hasFinancingWord
+      ? rawTitle
+      : `${sectorName} financiering - Binnen 24 uur duidelijkheid`;
+
+  const description: string =
+    pageDataAny?.metaDescription ||
+    sectorInfo?.description ||
+    `Zakelijke financiering voor ${sectorName}. Binnen 24 uur duidelijkheid, transparante voorwaarden en flexibel aflossen.`;
+
+  const keywords: string =
+    pageDataAny?.metaKeywords ||
+    (sectorInfo?.keywords ? sectorInfo.keywords.join(', ') : '');
 
   return generateSEOMetadata({
     title: buildTitle(seoTitle),

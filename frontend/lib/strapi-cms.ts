@@ -792,6 +792,7 @@ export interface StrapiSectorPage {
     siteId: string;
     sectorSlug: string;
     sectorName: string;
+    metaTitle?: string;
     metaDescription?: string;
     metaKeywords?: string;
     heroTitle?: string;

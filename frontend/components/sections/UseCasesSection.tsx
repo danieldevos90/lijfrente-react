@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
 
 interface UseCase {
@@ -26,6 +26,12 @@ export default function UseCasesSection({
   useCases,
   backgroundColor = 'var(--color-bg)'
 }: UseCasesSectionProps) {
+  const [errored, setErrored] = useState<Record<number, true>>({});
+
+  const markErrored = (index: number) => {
+    setErrored((prev) => (prev[index] ? prev : { ...prev, [index]: true }));
+  };
+
   return (
     <section style={{
       background: backgroundColor,
@@ -78,6 +84,7 @@ export default function UseCasesSection({
             // Only use iconPath if it's an actual image path, not an SVG icon
             const imageSource = useCase.imageUrl || (useCase.iconPath && useCase.iconPath.includes('/images/') ? useCase.iconPath : null);
             const isImage = !!imageSource;
+            const showImage = !!imageSource && !errored[index];
             
             return (
               <div
@@ -105,7 +112,7 @@ export default function UseCasesSection({
                     overflow: 'hidden',
                     background: bgColor,
                   }}>
-                    {imageSource ? (
+                    {showImage ? (
                       <Image
                         src={imageSource}
                         alt={useCase.title}
@@ -115,8 +122,9 @@ export default function UseCasesSection({
                         }}
                         unoptimized={imageSource.startsWith('https://images.unsplash.com') || imageSource.startsWith('http')}
                         onError={(e) => {
-                          // Hide image on error, show fallback
-                          e.currentTarget.style.display = 'none';
+                          // Next/Image hides errors in a way that can leave an empty box.
+                          // Track per-card errors and show our fallback UI instead.
+                          markErrored(index);
                         }}
                       />
                     ) : (
@@ -152,8 +160,9 @@ export default function UseCasesSection({
                     {useCase.title}
                   </h3>
                   <p style={{
-                    fontSize: 'clamp(1.125rem, 1.75vw, 1.25rem)',
-                    lineHeight: 1.8,
+                    // Keep description clearly subordinate to the title.
+                    fontSize: 'clamp(1rem, 1.35vw, 1.125rem)',
+                    lineHeight: 1.75,
                     color: 'var(--color-text)',
                     marginBottom: useCase.buttonLabel ? '2.5rem' : '0',
                     opacity: 0.85,

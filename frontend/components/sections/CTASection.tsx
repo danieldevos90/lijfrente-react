@@ -6,10 +6,15 @@ interface CTASectionProps {
   title: string;
   subtitle?: string;
   ctaLabel: string;
-  ctaHref: string;
+  ctaHref?: string;
   background?: 'white' | 'gray' | 'blue' | 'dark';
   trustBullets?: string[];
   trackingLocation?: string;
+}
+
+function sanitizeHref(href: string | undefined, fallback: string) {
+  const trimmed = (href || '').trim();
+  return trimmed && trimmed !== '#' ? trimmed : fallback;
 }
 
 export default function CTASection({ 
@@ -24,6 +29,7 @@ export default function CTASection({
   const backgroundColor = background === 'dark' ? 'var(--color-charcoal)' : background === 'gray' ? 'var(--color-bg)' : background === 'blue' ? 'var(--color-sky500)' : 'var(--color-white)';
   const textColor = background === 'dark' ? 'var(--color-white)' : 'var(--color-text)';
   const textColorMuted = background === 'dark' ? 'var(--overlay-white-75)' : 'var(--color-text-muted)';
+  const resolvedHref = sanitizeHref(ctaHref, '/lead');
   
   return (
     <section style={{ 
@@ -86,7 +92,7 @@ export default function CTASection({
         )}
         <div style={{ textAlign: 'center' }}>
           <a 
-            href={ctaHref}
+            href={resolvedHref}
             className={background === 'dark' ? "btn btn-secondary" : "btn btn-primary"}
             style={background === 'dark' ? {
               background: 'var(--color-white)',
@@ -94,7 +100,7 @@ export default function CTASection({
               borderColor: 'var(--color-white)'
             } : undefined}
             onClick={() => {
-              trackCTAClick(ctaLabel, trackingLocation, { href: ctaHref });
+              trackCTAClick(ctaLabel, trackingLocation, { href: resolvedHref });
             }}
           >
             {ctaLabel}
