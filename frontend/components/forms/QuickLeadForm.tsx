@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import { Shield, Zap } from "lucide-react";
 import { trackFormEvent, trackLeadGeneration, trackEvent } from "@/lib/analytics";
 import { getABTestVariant, trackABTestConversion } from "@/lib/ab-test";
 import { getLeadAttribution } from "@/lib/attribution";
@@ -9,6 +10,8 @@ type QuickLeadData = {
   amount: string;
   amountCustom: string;
   purpose: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
   companyName: string;
@@ -32,6 +35,7 @@ const PURPOSE_OPTIONS: Array<{ value: string; label: string }> = [
 ];
 
 const AMOUNT_OPTIONS: Array<{ value: string; label: string; popular?: boolean }> = [
+  { value: "10000", label: "€ 10.000" },
   { value: "25000", label: "€ 25.000" },
   { value: "50000", label: "€ 50.000", popular: true },
   { value: "100000", label: "€ 100.000" },
@@ -126,6 +130,8 @@ export default function QuickLeadForm({
     amount: "",
     amountCustom: "",
     purpose: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     companyName: "",
@@ -242,12 +248,15 @@ export default function QuickLeadForm({
   const amountEUR = normalizeAmountEUR(data);
 
   function setField<K extends keyof QuickLeadData>(key: K, value: QuickLeadData[K]) {
+    setSubmitError(null);
     setData((prev) => ({ ...prev, [key]: value }));
   }
 
   function validateStep1(): string | null {
     if (!amountEUR) return "Kies een bedrag.";
     if (!data.purpose) return "Kies waarvoor je de financiering gebruikt.";
+    if (!data.firstName || data.firstName.trim().length < 2) return "Vul je naam in.";
+    if (!data.lastName || data.lastName.trim().length < 2) return "Vul je achternaam in.";
     if (!data.companyName || data.companyName.trim().length < 2) return "Vul je bedrijfsnaam in.";
     if (contactVariant === "phone_first") {
       if (!data.phone || data.phone.trim().length < 6) return "Vul een telefoonnummer in.";
@@ -297,6 +306,8 @@ export default function QuickLeadForm({
         contact_variant: contactVariant,
         amount: amountEUR,
         purpose: data.purpose,
+        firstName: data.firstName.trim() || undefined,
+        lastName: data.lastName.trim() || undefined,
         companyName: data.companyName.trim(),
         kvkNumber: data.kvkNumber.trim() || undefined,
         revenue: data.revenue || undefined,
@@ -384,7 +395,7 @@ export default function QuickLeadForm({
   }
 
   return (
-    <div>
+    <div className={isModal ? "quick-lead-form quick-lead-form--in-drawer" : "quick-lead-form"}>
       {/* Honeypot - keep in DOM but off-screen */}
       <div style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }} aria-hidden="true">
         <label>
@@ -397,26 +408,16 @@ export default function QuickLeadForm({
           />
         </label>
       </div>
-      {!isModal && (
-        <div style={{ marginBottom: "1.25rem" }}>
-          <p className="muted" style={{ margin: 0 }}>
-            Binnen 2 minuten aangevraagd • Aanbod binnen 24 uur • Geen gedoe met de bank
-          </p>
-        </div>
-      )}
-
       <div className="quick-lead-stepper" aria-label="Stappen">
         <button
           type="button"
           className={`quick-lead-stepper__step ${step === 1 ? "is-active" : ""}`}
           onClick={() => setStep(1)}
         >
-          <span className="quick-lead-stepper__dot" aria-hidden="true">
-            1
-          </span>
+          <span className="quick-lead-stepper__dot">1</span>
           <span className="quick-lead-stepper__label">Basis</span>
         </button>
-        <div className={`quick-lead-stepper__line ${step === 2 ? "is-active" : ""}`} aria-hidden="true" />
+        <span className={`quick-lead-stepper__line ${step === 2 ? "is-active" : ""}`} aria-hidden="true" />
         <button
           type="button"
           className={`quick-lead-stepper__step ${step === 2 ? "is-active" : ""}`}
@@ -430,24 +431,22 @@ export default function QuickLeadForm({
             setStep(2);
           }}
         >
-          <span className="quick-lead-stepper__dot" aria-hidden="true">
-            2
-          </span>
+          <span className="quick-lead-stepper__dot">2</span>
           <span className="quick-lead-stepper__label">Aanvulling</span>
         </button>
       </div>
 
       {step === 1 ? (
         <>
-          <div style={{ display: "grid", gap: "1rem" }}>
+          <div style={{ display: "grid", gap: "1.35rem" }}>
             <div>
-              <label style={{ display: "block", marginBottom: 6 }}>Hoeveel financiering heb je nodig?</label>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "0.75rem" }}>
+              <label style={{ display: "block", marginBottom: 4 }}>Hoeveel financiering heb je nodig?</label>
+              <div className="quick-lead-amount-pills">
                 {AMOUNT_OPTIONS.map((opt) => (
                   <button
                     key={opt.value}
                     type="button"
-                    className={data.amount === opt.value ? "btn btn-primary" : "btn btn-secondary"}
+                    className={`quick-lead-amount-pill ${opt.value === "custom" ? "quick-lead-amount-pill--wide" : ""} ${data.amount === opt.value ? "btn btn-primary" : "btn btn-secondary"}`}
                     onClick={() => setField("amount", opt.value)}
                     style={opt.popular ? { borderColor: "var(--color-brand)" } : undefined}
                   >
@@ -469,7 +468,7 @@ export default function QuickLeadForm({
             </div>
 
             <div>
-              <label style={{ display: "block", marginBottom: 6 }}>Waarvoor gebruik je de financiering?</label>
+              <label style={{ display: "block", marginBottom: 4 }}>Waarvoor gebruik je de financiering?</label>
               <select value={data.purpose} onChange={(e) => setField("purpose", e.target.value)} style={{ width: "100%" }}>
                 <option value="" disabled>
                   Maak een keuze
@@ -482,8 +481,31 @@ export default function QuickLeadForm({
               </select>
             </div>
 
+            <div className="quick-lead-form__row-two" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+              <div>
+                <label style={{ display: "block", marginBottom: 4 }}>Naam</label>
+                <input
+                  placeholder="Jan"
+                  value={data.firstName}
+                  onChange={(e) => setField("firstName", e.target.value)}
+                  style={{ width: "100%" }}
+                  autoComplete="given-name"
+                />
+              </div>
+              <div>
+                <label style={{ display: "block", marginBottom: 4 }}>Achternaam</label>
+                <input
+                  placeholder="Jansen"
+                  value={data.lastName}
+                  onChange={(e) => setField("lastName", e.target.value)}
+                  style={{ width: "100%" }}
+                  autoComplete="family-name"
+                />
+              </div>
+            </div>
+
             <div>
-              <label style={{ display: "block", marginBottom: 6 }}>Bedrijfsnaam</label>
+              <label style={{ display: "block", marginBottom: 4 }}>Bedrijfsnaam</label>
               <input
                 placeholder="Bijv. Bakkerij Jansen"
                 value={data.companyName}
@@ -492,11 +514,11 @@ export default function QuickLeadForm({
               />
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "0.75rem" }}>
+            <div className="quick-lead-form__row-fit" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "0.75rem" }}>
               {contactVariant === "phone_first" ? (
                 <>
                   <div>
-                    <label style={{ display: "block", marginBottom: 6 }}>Telefoon</label>
+                    <label style={{ display: "block", marginBottom: 4 }}>Telefoon</label>
                     <input
                       placeholder="06…"
                       inputMode="tel"
@@ -507,7 +529,7 @@ export default function QuickLeadForm({
                     <span className="muted">Voorkeur: telefonisch contact</span>
                   </div>
                   <div>
-                    <label style={{ display: "block", marginBottom: 6 }}>E-mail (optioneel)</label>
+                    <label style={{ display: "block", marginBottom: 4 }}>E-mail (optioneel)</label>
                     <input
                       placeholder="jij@bedrijf.nl"
                       inputMode="email"
@@ -520,7 +542,7 @@ export default function QuickLeadForm({
               ) : (
                 <>
                   <div>
-                    <label style={{ display: "block", marginBottom: 6 }}>E-mail</label>
+                    <label style={{ display: "block", marginBottom: 4 }}>E-mail</label>
                     <input
                       placeholder="jij@bedrijf.nl"
                       inputMode="email"
@@ -531,7 +553,7 @@ export default function QuickLeadForm({
                     <span className="muted">We sturen alleen updates over je aanvraag</span>
                   </div>
                   <div>
-                    <label style={{ display: "block", marginBottom: 6 }}>Telefoon (optioneel)</label>
+                    <label style={{ display: "block", marginBottom: 4 }}>Telefoon (optioneel)</label>
                     <input
                       placeholder="06…"
                       inputMode="tel"
@@ -545,7 +567,7 @@ export default function QuickLeadForm({
             </div>
           </div>
 
-          {submitError && <p className="muted" style={{ marginTop: "0.75rem" }}>{submitError}</p>}
+          {submitError && <p className="quick-lead-error" style={{ marginTop: "0.75rem" }}>{submitError}</p>}
 
           <div className="quick-lead-actions">
             <button
@@ -565,13 +587,25 @@ export default function QuickLeadForm({
               Volgende
             </button>
           </div>
+          {isModal && (
+            <div className="quick-lead-usps">
+              <span className="quick-lead-usp-pill">
+                <Shield size={14} aria-hidden />
+                Veilig en vertrouwd
+              </span>
+              <span className="quick-lead-usp-pill">
+                <Zap size={14} aria-hidden />
+                Binnen 24 uur reactie
+              </span>
+            </div>
+          )}
         </>
       ) : (
         <>
-          <div style={{ display: "grid", gap: "1rem" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "0.75rem" }}>
+          <div style={{ display: "grid", gap: "1.35rem" }}>
+            <div className="quick-lead-form__row-fit" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "0.75rem" }}>
               <div>
-                <label style={{ display: "block", marginBottom: 6 }}>KvK (optioneel)</label>
+                <label style={{ display: "block", marginBottom: 4 }}>KvK (optioneel)</label>
                 <input
                   placeholder="12345678"
                   inputMode="numeric"
@@ -581,7 +615,7 @@ export default function QuickLeadForm({
                 />
               </div>
               <div>
-                <label style={{ display: "block", marginBottom: 6 }}>Omzet</label>
+                <label style={{ display: "block", marginBottom: 4 }}>Omzet</label>
                 <select value={data.revenue} onChange={(e) => setField("revenue", e.target.value)} style={{ width: "100%" }}>
                   <option value="">Kies omzetrange</option>
                   {REVENUE_OPTIONS.map((o) => (
@@ -594,7 +628,7 @@ export default function QuickLeadForm({
             </div>
 
             <div>
-              <label style={{ display: "block", marginBottom: 6 }}>Wanneer heb je het geld nodig?</label>
+              <label style={{ display: "block", marginBottom: 4 }}>Wanneer heb je het geld nodig?</label>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "0.5rem" }}>
                 {URGENCY_OPTIONS.map((o) => (
                   <label
@@ -616,7 +650,7 @@ export default function QuickLeadForm({
             </div>
 
             <div>
-              <label style={{ display: "block", marginBottom: 6 }}>Extra info (optioneel)</label>
+              <label style={{ display: "block", marginBottom: 4 }}>Extra info (optioneel)</label>
               <textarea
                 placeholder="Bijv. waar je het voor gebruikt, situatie, voorkeuren…"
                 value={data.additionalInfo}
@@ -626,7 +660,7 @@ export default function QuickLeadForm({
             </div>
           </div>
 
-          {submitError && <p className="muted" style={{ marginTop: "0.75rem" }}>{submitError}</p>}
+          {submitError && <p className="quick-lead-error" style={{ marginTop: "0.75rem" }}>{submitError}</p>}
 
           <div className="quick-lead-actions">
             <button

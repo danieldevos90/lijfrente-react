@@ -14,8 +14,12 @@ STRAPI_TOKEN=<api-token-met-read>
 ```
 
 Deploy naar Vercel (CLI):
+
+- **From repo root** (`vercel` or `vercel --prod`): set **Root Directory** to `frontend` in [Vercel Dashboard](https://vercel.com) → Project → Settings → General. Otherwise you’ll see “No Next.js version detected”.
+- **From frontend folder**: `cd frontend && vercel` (no Root Directory change needed).
+
 ```bash
-vercel
+cd frontend && vercel --prod
 ```
 
 
