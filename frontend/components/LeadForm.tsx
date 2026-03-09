@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { z } from "zod";
+import { trackLeadGeneration, createTrackingEventId } from "@/lib/analytics";
 
 const useOfFundsOptions = [
   { value: "werkkapitaal", label: "Werkkapitaal" },
@@ -114,6 +115,7 @@ export default function LeadForm({ siteId }: { siteId: string }) {
         });
       }
       setLoading(true);
+      const metaEventId = createTrackingEventId("lead");
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -125,6 +127,7 @@ export default function LeadForm({ siteId }: { siteId: string }) {
           company_name: parsed.company_name || undefined,
           use_of_funds: parsed.use_of_funds,
           email: parsed.email || undefined,
+          meta_event_id: metaEventId,
         }),
       });
       const okRes = res.ok;
@@ -145,6 +148,11 @@ export default function LeadForm({ siteId }: { siteId: string }) {
           (window as any).dataLayer.push({ event: 'lead_created', id_present: Boolean(json?.id || json?.data?.id) });
         }
       } catch {}
+      trackLeadGeneration("lead_form", {
+        form_id: "finance_lead",
+        purpose: form.use_of_funds,
+        meta_event_id: metaEventId,
+      });
       setOk("Bedankt! We sturen je aanbod spoedig.");
     } catch (e: any) {
       if (e?.issues) {

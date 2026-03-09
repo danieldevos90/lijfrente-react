@@ -273,6 +273,11 @@ export default function CookiesPage() {
                     <td style={{ padding: '1rem', fontSize: '0.9375rem' }}>Sessiebeveiliging</td>
                     <td style={{ padding: '1rem', fontSize: '0.9375rem' }}>Sessie</td>
                   </tr>
+                  <tr>
+                    <td style={{ padding: '1rem', borderTop: '1px solid var(--color-border)', fontSize: '0.9375rem' }}>_fbp / _fbc</td>
+                    <td style={{ padding: '1rem', borderTop: '1px solid var(--color-border)', fontSize: '0.9375rem' }}>Meta Pixel advertentie-attributie en conversiemeting (alleen bij marketing-toestemming)</td>
+                    <td style={{ padding: '1rem', borderTop: '1px solid var(--color-border)', fontSize: '0.9375rem' }}>90 dagen</td>
+                  </tr>
                 </tbody>
               </table>
             </div>

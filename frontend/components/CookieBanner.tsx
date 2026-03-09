@@ -71,25 +71,36 @@ export default function CookieBanner() {
     if (typeof window === 'undefined') return;
     
     const gtag = (window as any).gtag;
-    if (!gtag) return;
+    const pagePath = window.location.pathname + window.location.search;
+    const pageTitle = document.title;
     
-    // Update consent state - GA4 is already loaded in layout.tsx with consent mode
-    gtag('consent', 'update', {
-      analytics_storage: analyticsGranted ? 'granted' : 'denied',
-      ad_storage: marketingGranted ? 'granted' : 'denied',
-      ad_user_data: marketingGranted ? 'granted' : 'denied',
-      ad_personalization: marketingGranted ? 'granted' : 'denied',
-    });
-    
-    // If analytics is granted, send a page view to ensure tracking starts
-    if (analyticsGranted) {
-      const pagePath = window.location.pathname + window.location.search;
-      const pageTitle = document.title;
-      
-      gtag('event', 'page_view', {
-        page_path: pagePath,
-        page_title: pageTitle,
+    if (typeof gtag === 'function') {
+      // Update consent state - GA4 is already loaded in layout.tsx with consent mode
+      gtag('consent', 'update', {
+        analytics_storage: analyticsGranted ? 'granted' : 'denied',
+        ad_storage: marketingGranted ? 'granted' : 'denied',
+        ad_user_data: marketingGranted ? 'granted' : 'denied',
+        ad_personalization: marketingGranted ? 'granted' : 'denied',
       });
+
+      // If analytics is granted, send a page view to ensure tracking starts
+      if (analyticsGranted) {
+        gtag('event', 'page_view', {
+          page_path: pagePath,
+          page_title: pageTitle,
+        });
+      }
+    }
+
+    const fbq = (window as any).fbq;
+    if (typeof fbq === 'function') {
+      fbq('consent', marketingGranted ? 'grant' : 'revoke');
+      if (marketingGranted) {
+        fbq('track', 'PageView', {
+          page_path: window.location.pathname + window.location.search,
+          content_name: pageTitle || 'GeldGeregeld',
+        });
+      }
     }
   };
 
@@ -229,14 +240,13 @@ export default function CookieBanner() {
               <div className="cookie-setting-item">
                 <div className="cookie-setting-info">
                   <h4>Marketing cookies</h4>
-                  <p>Deze cookies worden gebruikt om relevante advertenties te tonen (momenteel niet actief).</p>
+                  <p>Deze cookies worden gebruikt voor Meta Pixel en advertentie-attributie.</p>
                 </div>
                 <label className="cookie-setting-toggle">
                   <input
                     type="checkbox"
                     checked={preferences.marketing}
                     onChange={(e) => setPreferences({ ...preferences, marketing: e.target.checked })}
-                    disabled
                   />
                   <span className="toggle-slider"></span>
                 </label>

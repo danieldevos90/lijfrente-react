@@ -8,6 +8,7 @@ import Script from 'next/script';
 import GlobalWidgetProvider from '../components/GlobalWidgetProvider';
 import CookieBanner from '../components/CookieBanner';
 import PageViewTracker from '../components/PageViewTracker';
+import ContactClickTracker from '../components/ContactClickTracker';
 import { ErrorHandler } from './error-handler';
 import SchemaMarkup from '../components/SEO/SchemaMarkup';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
@@ -43,6 +44,10 @@ export const metadata: Metadata = generateSEOMetadata({
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+  const metaPixelIds = (process.env.NEXT_PUBLIC_META_PIXEL_IDS || '')
+    .split(',')
+    .map((value) => value.trim())
+    .filter(Boolean);
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
   const plausibleApiHost = process.env.NEXT_PUBLIC_PLAUSIBLE_API_HOST || 'https://plausible.io';
   return (
@@ -61,6 +66,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
         
         {/* Suppress unhandled promise rejections and 401 errors immediately */}
         <script
@@ -219,6 +226,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Suspense fallback={null}>
             <PageViewTracker />
           </Suspense>
+          <ContactClickTracker />
         </GlobalWidgetProvider>
         
         {/* 
@@ -249,6 +257,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             `,
           }}
         />
+
+        {metaPixelIds.length > 0 && (
+          <Script
+            id="meta-pixel-init"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('consent', 'revoke');
+                ${metaPixelIds.map((pixelId) => `fbq('init', '${pixelId}');`).join('\n')}
+              `,
+            }}
+          />
+        )}
         
         {/* GA4 script - loads after page is interactive */}
         <Script

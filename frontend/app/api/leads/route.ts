@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { createHash } from 'crypto';
 import { getSiteContactInfo } from '@/lib/get-site-contact-info';
 
 type RateState = { count: number; resetAt: number };
@@ -24,6 +25,105 @@ function getCookieFromHeader(cookieHeader: string | null, name: string): string 
   } catch {
     return v;
   }
+}
+
+function normalizeAndHashEmail(email: string | undefined): string | undefined {
+  const normalized = String(email || '').trim().toLowerCase();
+  if (!normalized || !normalized.includes('@')) return undefined;
+  return createHash('sha256').update(normalized).digest('hex');
+}
+
+function normalizeAndHashPhone(phone: string | undefined): string | undefined {
+  const normalized = String(phone || '').replace(/[^\d]/g, '');
+  if (!normalized) return undefined;
+  return createHash('sha256').update(normalized).digest('hex');
+}
+
+function normalizeAndHashExternalId(id: string | undefined): string | undefined {
+  const normalized = String(id || '').trim();
+  if (!normalized) return undefined;
+  return createHash('sha256').update(normalized).digest('hex');
+}
+
+function getMetaPixelIds(): string[] {
+  const value = process.env.META_PIXEL_IDS || process.env.NEXT_PUBLIC_META_PIXEL_IDS || '';
+  return value
+    .split(',')
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+}
+
+async function sendMetaConversionsLeadEvent(
+  request: NextRequest,
+  payload: {
+    eventId?: string;
+    eventName?: string;
+    email?: string;
+    phone?: string;
+    amount?: string;
+    source?: string;
+    ip: string;
+    attribution?: any;
+  }
+): Promise<void> {
+  const accessToken = process.env.META_PIXEL?.trim();
+  const pixelIds = getMetaPixelIds();
+  if (!accessToken || pixelIds.length === 0) return;
+
+  const fbp = getCookieFromHeader(request.headers.get('cookie'), '_fbp') || undefined;
+  const cookieFbc = getCookieFromHeader(request.headers.get('cookie'), '_fbc') || undefined;
+  const fbclid = payload.attribution?.last?.fbclid || payload.attribution?.first?.fbclid || undefined;
+  const sessionId = getCookieFromHeader(request.headers.get('cookie'), 'gg_session_id') || undefined;
+  const fbc = cookieFbc || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : undefined);
+  const userAgent = request.headers.get('user-agent') || undefined;
+  const referer = request.headers.get('referer') || process.env.NEXT_PUBLIC_BASE_URL || undefined;
+
+  const value = Number(payload.amount);
+  const eventTime = Math.floor(Date.now() / 1000);
+  const eventId = payload.eventId || `lead_${Date.now()}`;
+  const eventName = payload.eventName || 'Lead';
+
+  const body = {
+    data: [
+      {
+        event_name: eventName,
+        event_time: eventTime,
+        event_id: eventId,
+        action_source: 'website',
+        event_source_url: referer,
+        user_data: {
+          em: normalizeAndHashEmail(payload.email),
+          ph: normalizeAndHashPhone(payload.phone),
+          client_ip_address: payload.ip !== 'unknown' ? payload.ip : undefined,
+          client_user_agent: userAgent,
+          fbp,
+          fbc,
+          external_id: normalizeAndHashExternalId(sessionId || undefined),
+        },
+        custom_data: {
+          currency: 'EUR',
+          value: Number.isFinite(value) ? value : undefined,
+          content_name: payload.source || 'lead_submission',
+        },
+      },
+    ],
+    ...(process.env.META_TEST_EVENT_CODE ? { test_event_code: process.env.META_TEST_EVENT_CODE } : {}),
+  };
+
+  await Promise.all(
+    pixelIds.map(async (pixelId) => {
+      const response = await fetch(`https://graph.facebook.com/v25.0/${pixelId}/events?access_token=${encodeURIComponent(accessToken)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text().catch(() => '');
+        console.error(`Meta CAPI lead event failed for pixel ${pixelId}:`, response.status, errorText);
+      }
+    })
+  );
 }
 
 function isRateLimited(key: string): boolean {
@@ -241,6 +341,17 @@ export async function POST(request: NextRequest) {
       purpose: leadData.purpose,
       source: leadData.source,
       partner: leadData.partner,
+    });
+
+    await sendMetaConversionsLeadEvent(request, {
+      eventId: String(formData?.meta_event_id || ''),
+      eventName: 'Lead',
+      email: normalizedData.email || undefined,
+      phone: normalizedData.phone || undefined,
+      amount: normalizedData.amount || undefined,
+      source: String(formData?.source || 'interactive_form'),
+      ip,
+      attribution,
     });
     
     return NextResponse.json({ 

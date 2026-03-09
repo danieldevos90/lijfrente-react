@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, Check, Building, Euro, Target, User, Phone, Mail, MapPin, Shield, Zap, PhoneCall } from 'lucide-react';
-import { trackFormEvent, trackLeadGeneration, trackEvent } from '@/lib/analytics';
+import { trackFormEvent, trackLeadGeneration, trackEvent, createTrackingEventId } from '@/lib/analytics';
 import { getLeadAttribution } from '@/lib/attribution';
 
 interface FormData {
@@ -141,6 +141,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
       trackFormEvent('submit', 'interactive_lead', { step: currentStep });
       const attribution = getLeadAttribution();
       const last = attribution?.last;
+      const metaEventId = createTrackingEventId('lead');
       
       // Submit to your backend/CRM
       const response = await fetch('/api/leads', {
@@ -149,6 +150,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
         body: JSON.stringify({
           ...formData,
           source: 'interactive_form',
+          meta_event_id: metaEventId,
           attribution: attribution || undefined,
           website: website || undefined,
           partner: partner || undefined,
@@ -162,6 +164,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
           form_id: 'interactive_lead',
           purpose: formData.purpose,
           partner: partner,
+          meta_event_id: metaEventId,
           utm_source: last?.utm_source,
           utm_campaign: last?.utm_campaign,
           gclid: last?.gclid ? '1' : undefined,

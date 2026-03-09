@@ -8,6 +8,38 @@ declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
     dataLayer?: any[];
+    fbq?: (...args: any[]) => void;
+    _fbq?: (...args: any[]) => void;
+  }
+}
+
+type CookieConsentPreferences = {
+  necessary?: boolean;
+  analytics?: boolean;
+  marketing?: boolean;
+};
+
+const COOKIE_CONSENT_KEY = 'cookie_consent_preferences';
+const META_CONTENT_NAME = 'GeldGeregeld';
+
+export function createTrackingEventId(prefix: string): string {
+  const randomPart = Math.random().toString(36).slice(2, 10);
+  return `${prefix}_${Date.now()}_${randomPart}`;
+}
+
+function getCookieConsentPreferences(): CookieConsentPreferences | null {
+  if (typeof window === 'undefined') return null;
+
+  const consentCookie = document.cookie
+    .split('; ')
+    .find((row) => row.startsWith(`${COOKIE_CONSENT_KEY}=`));
+
+  if (!consentCookie) return null;
+
+  try {
+    return JSON.parse(decodeURIComponent(consentCookie.split('=')[1]));
+  } catch {
+    return null;
   }
 }
 
@@ -15,20 +47,29 @@ declare global {
  * Check if analytics consent has been given
  */
 export function hasAnalyticsConsent(): boolean {
-  if (typeof window === 'undefined') return false;
-  
-  const consentCookie = document.cookie
-    .split('; ')
-    .find(row => row.startsWith('cookie_consent_preferences='));
-  
-  if (!consentCookie) return false;
-  
-  try {
-    const consentData = JSON.parse(decodeURIComponent(consentCookie.split('=')[1]));
-    return consentData.analytics === true;
-  } catch {
-    return false;
-  }
+  return getCookieConsentPreferences()?.analytics === true;
+}
+
+/**
+ * Check if marketing consent has been given
+ */
+export function hasMarketingConsent(): boolean {
+  return getCookieConsentPreferences()?.marketing === true;
+}
+
+function hasMetaPixelLoaded(): boolean {
+  return typeof window !== 'undefined' && typeof window.fbq === 'function';
+}
+
+function trackMetaEvent(
+  eventName: string,
+  params?: Record<string, unknown>,
+  options?: Record<string, unknown>
+) {
+  if (typeof window === 'undefined') return;
+  if (!hasMarketingConsent()) return;
+  if (!hasMetaPixelLoaded()) return;
+  window.fbq?.('track', eventName, params || {}, options || {});
 }
 
 /**
@@ -55,12 +96,15 @@ export function trackEvent(
  */
 export function trackPageView(path: string, title?: string) {
   if (typeof window === 'undefined') return;
-  if (!hasAnalyticsConsent()) return;
-  if (!window.gtag) return;
-
-  window.gtag('config', 'G-1VMPEWNNT0', {
+  if (hasAnalyticsConsent() && window.gtag) {
+    window.gtag('config', 'G-1VMPEWNNT0', {
+      page_path: path,
+      page_title: title,
+    });
+  }
+  trackMetaEvent('PageView', {
     page_path: path,
-    page_title: title,
+    content_name: title || META_CONTENT_NAME,
   });
 }
 
@@ -118,11 +162,24 @@ export function trackLeadGeneration(
   source: string,
   additionalParams?: Record<string, any>
 ) {
+  const metaEventId =
+    typeof additionalParams?.meta_event_id === 'string' ? additionalParams.meta_event_id : undefined;
+
   trackEvent('generate_lead', {
     event_category: 'Lead Generation',
     lead_source: source,
     ...additionalParams,
   });
+  trackMetaEvent(
+    'Lead',
+    {
+      content_name: source || META_CONTENT_NAME,
+      source,
+      ...additionalParams,
+      meta_event_id: undefined,
+    },
+    metaEventId ? { eventID: metaEventId } : undefined
+  );
 }
 
 /**
@@ -199,6 +256,29 @@ export function trackExternalLink(
     event_category: 'Outbound',
     link_url: url,
     link_text: linkText,
+    ...additionalParams,
+  });
+}
+
+/**
+ * Track email/phone contact interactions
+ */
+export function trackContactClick(
+  channel: 'phone' | 'email',
+  destination: string,
+  additionalParams?: Record<string, unknown>
+) {
+  trackEvent('contact_click', {
+    event_category: 'Conversion',
+    contact_channel: channel,
+    contact_destination: destination,
+    ...additionalParams,
+  });
+
+  trackMetaEvent('Contact', {
+    content_name: channel,
+    status: 'clicked',
+    destination,
     ...additionalParams,
   });
 }

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { Shield, Zap } from "lucide-react";
-import { trackFormEvent, trackLeadGeneration, trackEvent } from "@/lib/analytics";
+import { trackFormEvent, trackLeadGeneration, trackEvent, createTrackingEventId } from "@/lib/analytics";
 import { getABTestVariant, trackABTestConversion } from "@/lib/ab-test";
 import { getLeadAttribution } from "@/lib/attribution";
 
@@ -299,6 +299,7 @@ export default function QuickLeadForm({
     try {
       const attribution = getLeadAttribution();
       const last = attribution?.last;
+      const metaEventId = createTrackingEventId("lead");
       const payload = {
         source: context.source || "direct",
         sector: context.sector || undefined,
@@ -315,6 +316,7 @@ export default function QuickLeadForm({
         email: data.email.trim() || undefined,
         phone: data.phone.trim() || undefined,
         additionalInfo: data.additionalInfo.trim() || undefined,
+        meta_event_id: metaEventId,
         attribution: attribution || undefined,
         website: website || undefined,
       };
@@ -343,6 +345,7 @@ export default function QuickLeadForm({
         sector: context.sector,
         purpose: data.purpose,
         partner: context.partner,
+        meta_event_id: metaEventId,
         utm_source: last?.utm_source,
         utm_campaign: last?.utm_campaign,
         gclid: last?.gclid ? "1" : undefined,
