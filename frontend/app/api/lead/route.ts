@@ -38,6 +38,7 @@ async function sendMetaLeadEvent(req: NextRequest, body: any) {
   const accessToken = process.env.META_PIXEL?.trim();
   const pixelIds = getMetaPixelIds();
   if (!accessToken || pixelIds.length === 0) return;
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.geldgeregeld.nl').trim();
 
   const eventId = String(body?.meta_event_id || `lead_${Date.now()}`);
   const email = body?.email ? normalizeAndHashEmail(String(body.email)) : undefined;
@@ -56,14 +57,14 @@ async function sendMetaLeadEvent(req: NextRequest, body: any) {
         event_time: Math.floor(Date.now() / 1000),
         event_id: eventId,
         action_source: 'website',
-        event_source_url: req.headers.get('referer') || process.env.NEXT_PUBLIC_BASE_URL || undefined,
+        event_source_url: req.headers.get('referer') || baseUrl,
         user_data: {
           em: email,
           external_id: normalizeAndHashExternalId(sessionId || undefined),
           fbp,
           fbc,
           client_ip_address: ip,
-          client_user_agent: req.headers.get('user-agent') || undefined,
+          client_user_agent: req.headers.get('user-agent') || 'server-side-unknown',
         },
         custom_data: {
           currency: 'EUR',

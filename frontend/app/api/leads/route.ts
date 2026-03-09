@@ -69,14 +69,15 @@ async function sendMetaConversionsLeadEvent(
   const accessToken = process.env.META_PIXEL?.trim();
   const pixelIds = getMetaPixelIds();
   if (!accessToken || pixelIds.length === 0) return;
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.geldgeregeld.nl').trim();
 
   const fbp = getCookieFromHeader(request.headers.get('cookie'), '_fbp') || undefined;
   const cookieFbc = getCookieFromHeader(request.headers.get('cookie'), '_fbc') || undefined;
   const fbclid = payload.attribution?.last?.fbclid || payload.attribution?.first?.fbclid || undefined;
   const sessionId = getCookieFromHeader(request.headers.get('cookie'), 'gg_session_id') || undefined;
   const fbc = cookieFbc || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : undefined);
-  const userAgent = request.headers.get('user-agent') || undefined;
-  const referer = request.headers.get('referer') || process.env.NEXT_PUBLIC_BASE_URL || undefined;
+  const userAgent = request.headers.get('user-agent') || 'server-side-unknown';
+  const referer = request.headers.get('referer') || baseUrl;
 
   const value = Number(payload.amount);
   const eventTime = Math.floor(Date.now() / 1000);
