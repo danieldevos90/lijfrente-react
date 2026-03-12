@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 import { useWidget } from './GlobalWidgetProvider';
+import FinanceDisclosure from './FinanceDisclosure';
 
 const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'geldgeregeld';
 
@@ -149,6 +150,36 @@ export default function Footer() {
               </p>
             )}
           </div>
+        </div>
+
+        {/* Financieringsdisclosure (Google Ads) + AFM Kredietwaarschuwing */}
+        <div style={{ marginBottom: '1.5rem' }}>
+          <FinanceDisclosure />
+        </div>
+        <div style={{
+          marginBottom: '1.5rem',
+          textAlign: 'center',
+        }}>
+          <a
+            href="https://www.afm.nl/nl-nl/sector/themas/dienstverlening-aan-consumenten/informatieverstrekking/kredietwaarschuwing"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AFM Kredietwaarschuwing - Let op! Geld lenen kost geld"
+            style={{ display: 'inline-block' }}
+          >
+            <img
+              src="https://www.afm.nl/~/profmedia/images/wetten-regels/kredietwaarschuwing/on-offline-reclame/balk_afm5-jpg.jpg"
+              alt="Let op! Geld lenen kost geld - AFM Kredietwaarschuwing"
+              width={468}
+              height={212}
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                display: 'block',
+                margin: '0 auto',
+              }}
+            />
+          </a>
         </div>
 
         {/* Bottom Bar - Copyright */}
