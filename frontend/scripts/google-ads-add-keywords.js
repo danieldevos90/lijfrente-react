@@ -16,13 +16,9 @@ const fs = require("node:fs/promises");
 const { SecretManagerServiceClient } = require("@google-cloud/secret-manager");
 const { JWT } = require("google-auth-library");
 
-// Keywords per ad group. "geld lenen" nu mogelijk i.v.m. disclosures op site.
+// Keywords per ad group. "geld lenen" blijft geblokkeerd door Google - alleen financiering-varianten.
 const KEYWORDS_BY_AD_GROUP = {
   Werkkapitaal: [
-    { text: "geld lenen voor bedrijf", matchType: "PHRASE" },
-    { text: "geld lenen voor onderneming", matchType: "PHRASE" },
-    { text: "geld lenen voor ondernemer", matchType: "PHRASE" },
-    { text: "zakelijk geld lenen", matchType: "PHRASE" },
     { text: "financiering voor bedrijf", matchType: "PHRASE" },
     { text: "financiering voor onderneming", matchType: "PHRASE" },
     { text: "financiering voor ondernemer", matchType: "PHRASE" },
@@ -35,8 +31,6 @@ const KEYWORDS_BY_AD_GROUP = {
     { text: "werkkapitaal aanvragen", matchType: "PHRASE" },
   ],
   "Horeca & ZZP": [
-    { text: "geld lenen voor horeca", matchType: "PHRASE" },
-    { text: "geld lenen voor zzp", matchType: "PHRASE" },
     { text: "financiering voor horeca", matchType: "PHRASE" },
     { text: "financiering voor zzp", matchType: "PHRASE" },
     { text: "financiering voor retail", matchType: "PHRASE" },
