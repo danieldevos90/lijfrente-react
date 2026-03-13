@@ -360,7 +360,7 @@ export async function POST(request: NextRequest) {
       lastName: normalizedData.lastName || undefined,
       phone: normalizedData.phone || undefined,
       business_type: normalizedData.businessType || undefined,
-      business_age_years: normalizedData.businessAge || undefined,
+      business_age_years: ({ '0_2': 'y0_2', '2_5': 'y2_5', '5_10': 'y5_10', '10_plus': 'y10_plus' } as Record<string, string>)[normalizedData.businessAge] || normalizedData.businessAge || undefined,
       is_profitable: normalizedData.isProfitable === 'ja' ? true : normalizedData.isProfitable === 'nee' ? false : undefined,
       has_existing_financing: normalizedData.existingFinancing || undefined,
       urgency: normalizedData.urgency || undefined,

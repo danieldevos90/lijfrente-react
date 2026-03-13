@@ -41,7 +41,7 @@
     },
     "business_age_years": {
       "type": "enumeration",
-      "enum": ["0_2", "2_5", "5_10", "10_plus"]
+      "enum": ["y0_2", "y2_5", "y5_10", "y10_plus"]
     },
     "is_profitable": { "type": "boolean" },
     "has_existing_financing": {

@@ -81,6 +81,10 @@ const AGE_LABELS: Record<string, string> = {
   '2_5': '2-5 jaar',
   '5_10': '5-10 jaar',
   '10_plus': '10+ jaar',
+  'y0_2': '0-2 jaar',
+  'y2_5': '2-5 jaar',
+  'y5_10': '5-10 jaar',
+  'y10_plus': '10+ jaar',
 };
 
 const URGENCY_LABELS: Record<string, string> = {
