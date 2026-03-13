@@ -59,6 +59,19 @@
     },
     "source": { "type": "string" },
     "sector": { "type": "string" },
-    "partner": { "type": "string" }
+    "partner": { "type": "string" },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "nieuw",
+        "in_behandeling",
+        "meer_info_nodig",
+        "contact_opnemen",
+        "afgekeurd",
+        "afgehandeld"
+      ],
+      "default": "nieuw"
+    },
+    "notes": { "type": "text" }
   }
 }

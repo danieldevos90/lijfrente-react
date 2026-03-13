@@ -346,8 +346,9 @@ export async function POST(request: NextRequest) {
       country: request.headers.get('x-vercel-ip-country') || request.headers.get('cf-ipcountry') || undefined,
     };
     
-    // Format data for Strapi (matching the expanded schema)
-    const strapiLeadData = {
+    // All possible lead fields — the deployed Strapi schema may only contain a
+    // subset. We build the full object, then strip any keys Strapi rejects.
+    const strapiLeadData: Record<string, unknown> = {
       siteId: 'geldgeregeld',
       amount_requested_eur: parseFloat(normalizedData.amount) || 50000,
       expected_revenue_next_12m_eur: revenueToNumber(normalizedData.revenue),
@@ -368,26 +369,49 @@ export async function POST(request: NextRequest) {
       sector: formData.sector || undefined,
       partner: partner || undefined,
     };
+
+    // Remove keys with undefined values so Strapi doesn't see them at all
+    for (const key of Object.keys(strapiLeadData)) {
+      if (strapiLeadData[key] === undefined) delete strapiLeadData[key];
+    }
     
-    // Send to Strapi CMS (trim to handle any whitespace/newline issues)
+    // Send to Strapi CMS
     const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL?.trim();
     
     if (strapiUrl) {
-      try {
-        console.log('Submitting lead to Strapi:', { url: `${strapiUrl}/api/leads`, data: strapiLeadData });
-        
-        // Leads endpoint has public create enabled in Strapi - no auth token needed
-        const strapiResponse = await fetch(`${strapiUrl}/api/leads`, {
+      const submitToStrapi = async (payload: Record<string, unknown>): Promise<boolean> => {
+        const res = await fetch(`${strapiUrl}/api/leads`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ data: strapiLeadData })
+          body: JSON.stringify({ data: payload }),
         });
-        
-        if (!strapiResponse.ok) {
-          const errorText = await strapiResponse.text();
-          console.error('Strapi lead submission failed:', strapiResponse.status, errorText);
-        } else {
+        if (res.ok) return true;
+        const errorText = await res.text();
+        // Strapi v5 returns "Invalid key <name>" when a field doesn't exist
+        const match = errorText.match(/"Invalid key (\w+)"/);
+        if (match) {
+          const badKey = match[1];
+          console.warn(`Strapi rejected key "${badKey}", retrying without it`);
+          delete payload[badKey];
+          return false;
+        }
+        console.error('Strapi lead submission failed:', res.status, errorText);
+        return true; // non-retryable error, stop loop
+      };
+
+      try {
+        console.log('Submitting lead to Strapi:', { url: `${strapiUrl}/api/leads`, fields: Object.keys(strapiLeadData) });
+        const payload = { ...strapiLeadData };
+        let done = false;
+        let attempts = 0;
+        while (!done && attempts < 10) {
+          attempts++;
+          done = await submitToStrapi(payload);
+        }
+        if (done) {
           console.log('Strapi lead submission successful');
+        } else {
+          console.error('Strapi lead submission failed after stripping invalid keys');
         }
       } catch (error) {
         console.error('Error submitting to Strapi:', error);
