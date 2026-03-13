@@ -211,7 +211,7 @@ export async function POST(request: NextRequest) {
       kvkNumber: formData.kvkNumber || formData.kvkNummer || '',
       businessType: formData.businessType || '',
       businessSize: formData.businessSize || '',
-      businessActivities: formData.bedrijfsactiviteiten || '',
+      businessActivities: formData.bedrijfsactiviteiten || formData.businessActivities || '',
       
       // Financial info
       amount: formData.amount === 'custom' ? formData.amountRange : (formData.amount || formData.gewenstBedrag || ''),
@@ -268,17 +268,22 @@ export async function POST(request: NextRequest) {
     // Map monthly revenue string to annualized number for Strapi
     const revenueToNumber = (revenue: string): number => {
       const revenueMap: Record<string, number> = {
-        // New monthly ranges (annualized: monthly * 12)
+        // Annual ranges
+        '0-100k': 50000,
+        '100k-250k': 175000,
+        '250k-500k': 375000,
+        '500k-1m': 750000,
+        '1m-3m': 2000000,
+        '3m+': 4000000,
+        // Legacy monthly ranges (backward compat)
         '0-10k': 60000,
         '10k-25k': 210000,
         '25k-50k': 450000,
         '50k-100k': 900000,
-        '100k-250k': 2100000,
+        // '100k-250k' already covered above
         '250k+': 3600000,
-        // Legacy annual ranges (backward compat, non-overlapping keys only)
+        // Legacy annual ranges
         '0-50k': 25000,
-        '250k-500k': 375000,
-        '500k-1m': 750000,
         '1m+': 1500000,
       };
       return revenueMap[revenue] || 100000;
@@ -291,7 +296,7 @@ export async function POST(request: NextRequest) {
       if (age === '2_5' || age === '5_10' || age === '10_plus') score++;
       if (normalizedData.isProfitable === 'ja') score++;
       const rev = normalizedData.revenue;
-      if (rev && rev !== '0-10k' && rev !== '0-50k') score++;
+      if (rev && rev !== '0-100k' && rev !== '0-10k' && rev !== '0-50k') score++;
       const amt = parseFloat(normalizedData.amount) || 0;
       if (amt >= 10000 && amt <= 2500000) score++;
       return score >= 3 ? 'warm' : 'koud';
@@ -368,6 +373,7 @@ export async function POST(request: NextRequest) {
       source: formData.source || 'interactive_form',
       sector: formData.sector || undefined,
       partner: partner || undefined,
+      business_activities: normalizedData.businessActivities || undefined,
     };
 
     // Remove keys with undefined values so Strapi doesn't see them at all
@@ -542,7 +548,7 @@ async function sendEmailNotification(leadData: any) {
       <tr><td style="padding:2px 0;"><strong>Lead kwaliteit</strong> ${leadData.leadQuality}</td></tr>
       <tr><td style="padding:2px 0;"><span style="color:${leadData.isProfitable === 'ja' ? '#00c800' : '#6c737a'};font-weight:500;">${leadData.isProfitable === 'ja' ? '✓' : '✗'}</span> Winstgevend</td></tr>
       <tr><td style="padding:2px 0;"><span style="color:${leadData.businessAge && leadData.businessAge !== '0_2' ? '#00c800' : '#6c737a'};font-weight:500;">${leadData.businessAge && leadData.businessAge !== '0_2' ? '✓' : '✗'}</span> Bestaand bedrijf (${businessAgeLabels[leadData.businessAge] || '?'})</td></tr>
-      <tr><td style="padding:2px 0;"><span style="color:${leadData.revenue && leadData.revenue !== '0-10k' && leadData.revenue !== '0-50k' ? '#00c800' : '#6c737a'};font-weight:500;">${leadData.revenue && leadData.revenue !== '0-10k' && leadData.revenue !== '0-50k' ? '✓' : '✗'}</span> Omzet past</td></tr>
+      <tr><td style="padding:2px 0;"><span style="color:${leadData.revenue && leadData.revenue !== '0-100k' && leadData.revenue !== '0-10k' && leadData.revenue !== '0-50k' ? '#00c800' : '#6c737a'};font-weight:500;">${leadData.revenue && leadData.revenue !== '0-100k' && leadData.revenue !== '0-10k' && leadData.revenue !== '0-50k' ? '✓' : '✗'}</span> Omzet past</td></tr>
       <tr><td style="padding:2px 0;"><span style="color:${(parseFloat(leadData.amount) || 0) >= 10000 && (parseFloat(leadData.amount) || 0) <= 2500000 ? '#00c800' : '#6c737a'};font-weight:500;">${(parseFloat(leadData.amount) || 0) >= 10000 && (parseFloat(leadData.amount) || 0) <= 2500000 ? '✓' : '✗'}</span> Bedrag in range</td></tr>
     </table>
     
@@ -556,9 +562,10 @@ async function sendEmailNotification(leadData: any) {
     <p style="margin:0 0 16px;"><strong>KvK nummer:</strong> ${leadData.kvkNumber || 'Niet opgegeven'}</p>
     <p style="margin:0 0 16px;"><strong>Rechtsvorm:</strong> ${leadData.businessType || 'Niet opgegeven'}</p>
     <p style="margin:0 0 16px;"><strong>Bedrijfsgrootte:</strong> ${leadData.businessSize || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>Bedrijfsactiviteiten:</strong> ${leadData.businessActivities || 'Niet opgegeven'}</p>
     <p style="margin:0 0 16px;"><strong>Leeftijd bedrijf:</strong> ${businessAgeLabels[leadData.businessAge] || 'Niet opgegeven'}</p>
     <p style="margin:0 0 16px;"><strong>Winstgevend:</strong> ${leadData.isProfitable || 'Niet opgegeven'}</p>
-    <p style="margin:0 0 16px;"><strong>Maandelijkse omzet:</strong> ${leadData.revenue || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>Verwachte jaaromzet 2026:</strong> ${leadData.revenue || 'Niet opgegeven'}</p>
     
     <h3 style="margin:0 0 8px;font-size:16px;color:#1e2021;">Financiering</h3>
     <p style="margin:0 0 16px;"><strong>Gewenst bedrag:</strong> €${leadData.amount || 'Niet opgegeven'}</p>
@@ -603,9 +610,10 @@ Bedrijfsnaam: ${leadData.companyName || 'Niet opgegeven'}
 KvK nummer: ${leadData.kvkNumber || 'Niet opgegeven'}
 Rechtsvorm: ${leadData.businessType || 'Niet opgegeven'}
 Bedrijfsgrootte: ${leadData.businessSize || 'Niet opgegeven'}
+Bedrijfsactiviteiten: ${leadData.businessActivities || 'Niet opgegeven'}
 Leeftijd bedrijf: ${businessAgeLabels[leadData.businessAge] || 'Niet opgegeven'}
 Winstgevend: ${leadData.isProfitable || 'Niet opgegeven'}
-Maandelijkse omzet: ${leadData.revenue || 'Niet opgegeven'}
+Verwachte jaaromzet 2026: ${leadData.revenue || 'Niet opgegeven'}
 
 FINANCIERING
 Gewenst bedrag: €${leadData.amount || 'Niet opgegeven'}

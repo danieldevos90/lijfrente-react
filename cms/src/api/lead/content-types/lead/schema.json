@@ -72,6 +72,7 @@
       ],
       "default": "nieuw"
     },
-    "notes": { "type": "text" }
+    "notes": { "type": "text" },
+    "business_activities": { "type": "text" }
   }
 }

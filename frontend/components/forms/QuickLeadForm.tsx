@@ -22,6 +22,7 @@ type QuickLeadData = {
   businessType: string;
   businessAge: string;
   isProfitable: string;
+  businessActivities: string;
 };
 
 const PURPOSE_OPTIONS: Array<{ value: string; label: string }> = [
@@ -52,12 +53,12 @@ const AMOUNT_OPTIONS: Array<{ value: string; label: string; popular?: boolean }>
 ];
 
 const REVENUE_OPTIONS: Array<{ value: string; label: string }> = [
-  { value: "0-10k", label: "< €10.000 / maand" },
-  { value: "10k-25k", label: "€10.000 - €25.000 / maand" },
-  { value: "25k-50k", label: "€25.000 - €50.000 / maand" },
-  { value: "50k-100k", label: "€50.000 - €100.000 / maand" },
-  { value: "100k-250k", label: "€100.000 - €250.000 / maand" },
-  { value: "250k+", label: "€250.000+ / maand" },
+  { value: "0-100k", label: "< €100.000" },
+  { value: "100k-250k", label: "€100.000 - €250.000" },
+  { value: "250k-500k", label: "€250.000 - €500.000" },
+  { value: "500k-1m", label: "€500.000 - €1.000.000" },
+  { value: "1m-3m", label: "€1.000.000 - €3.000.000" },
+  { value: "3m+", label: "€3.000.000+" },
 ];
 
 const URGENCY_OPTIONS: Array<{ value: string; label: string }> = [
@@ -149,6 +150,7 @@ export default function QuickLeadForm({
     businessType: "",
     businessAge: "",
     isProfitable: "",
+    businessActivities: "",
   });
 
   const [context, setContext] = useState<{ sector?: string; source?: string; partner?: string }>({});
@@ -276,7 +278,8 @@ export default function QuickLeadForm({
   function validateStep2(): string | null {
     const kvk = (data.kvkNumber || "").replace(/\D/g, "");
     if (kvk.length !== 8) return "Vul een geldig KvK-nummer in (8 cijfers).";
-    if (!data.revenue) return "Kies je omzetrange.";
+    if (!data.revenue) return "Kies je verwachte jaaromzet.";
+    if (!data.businessActivities || data.businessActivities.trim().length < 3) return "Beschrijf je bedrijfsactiviteiten.";
     if (!data.urgency) return "Kies wanneer je het geld nodig hebt.";
     return null;
   }
@@ -325,6 +328,7 @@ export default function QuickLeadForm({
         businessType: data.businessType || undefined,
         businessAge: data.businessAge || undefined,
         isProfitable: data.isProfitable || undefined,
+        bedrijfsactiviteiten: data.businessActivities.trim() || undefined,
         meta_event_id: metaEventId,
         attribution: attribution || undefined,
         website: website || undefined,
@@ -632,9 +636,9 @@ export default function QuickLeadForm({
                 />
               </div>
               <div>
-                <label style={{ display: "block", marginBottom: 4 }}>Maandelijkse omzet</label>
+                <label style={{ display: "block", marginBottom: 4 }}>Verwachte jaaromzet 2026</label>
                 <select value={data.revenue} onChange={(e) => setField("revenue", e.target.value)} style={{ width: "100%" }}>
-                  <option value="">Kies omzetrange</option>
+                  <option value="">Kies jaaromzet</option>
                   {REVENUE_OPTIONS.map((o) => (
                     <option key={o.value} value={o.value}>
                       {o.label}
@@ -642,6 +646,17 @@ export default function QuickLeadForm({
                   ))}
                 </select>
               </div>
+            </div>
+
+            <div>
+              <label style={{ display: "block", marginBottom: 4 }}>Bedrijfsactiviteiten *</label>
+              <textarea
+                placeholder="Beschrijf kort wat je bedrijf doet..."
+                value={data.businessActivities}
+                onChange={(e) => setField("businessActivities", e.target.value)}
+                rows={2}
+                style={{ width: "100%", resize: "vertical" }}
+              />
             </div>
 
             <div className="quick-lead-form__row-fit" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "0.75rem" }}>

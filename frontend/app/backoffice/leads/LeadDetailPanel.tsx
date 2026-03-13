@@ -21,6 +21,7 @@ type Lead = {
   lead_quality?: string;
   status?: string;
   notes?: string;
+  business_activities?: string;
   source?: string;
   partner?: string;
   sector?: string;
@@ -188,7 +189,7 @@ export function LeadDetailPanel({ lead, onClose, onUpdate, onSendEmail, onDelete
           <h3 className="bo-panel-section-title">Financiering</h3>
           <div className="bo-detail-grid">
             <DetailRow label="Gevraagd bedrag" value={formatCurrency(lead.amount_requested_eur)} highlight />
-            <DetailRow label="Omzet (12 mnd)" value={formatCurrency(lead.expected_revenue_next_12m_eur)} />
+            <DetailRow label="Verwachte jaaromzet 2026" value={formatCurrency(lead.expected_revenue_next_12m_eur)} />
             <DetailRow label="Doel" value={USE_OF_FUNDS_LABELS[lead.use_of_funds] || lead.use_of_funds} />
             {lead.urgency && <DetailRow label="Urgentie" value={URGENCY_LABELS[lead.urgency] || lead.urgency} />}
           </div>
@@ -200,6 +201,7 @@ export function LeadDetailPanel({ lead, onClose, onUpdate, onSendEmail, onDelete
             {lead.business_type && <DetailRow label="Rechtsvorm" value={BUSINESS_TYPE_LABELS[lead.business_type] || lead.business_type} />}
             {lead.business_age_years && <DetailRow label="Leeftijd" value={AGE_LABELS[lead.business_age_years] || lead.business_age_years} />}
             {lead.is_profitable !== undefined && <DetailRow label="Winstgevend" value={lead.is_profitable ? 'Ja' : 'Nee'} />}
+            {lead.business_activities && <DetailRow label="Bedrijfsactiviteiten" value={lead.business_activities} />}
             {lead.lead_quality && <DetailRow label="Lead kwaliteit" value={lead.lead_quality} />}
             {lead.source && <DetailRow label="Bron" value={lead.source} />}
             {lead.partner && <DetailRow label="Partner" value={lead.partner} />}

@@ -23,6 +23,7 @@ interface FormData {
   revenue: string;
   businessAge: string;
   isProfitable: string;
+  businessActivities: string;
   
   // Step 5: Contact Info
   firstName: string;
@@ -47,6 +48,7 @@ const initialFormData: FormData = {
   revenue: '',
   businessAge: '',
   isProfitable: '',
+  businessActivities: '',
   firstName: '',
   lastName: '',
   email: '',
@@ -113,6 +115,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
       case 4:
         if (!formData.companyName) newErrors.companyName = 'Bedrijfsnaam is verplicht';
         if (!formData.kvkNumber) newErrors.kvkNumber = 'KvK nummer is verplicht';
+        if (!formData.businessActivities || formData.businessActivities.trim().length < 3) newErrors.businessActivities = 'Beschrijf uw bedrijfsactiviteiten';
         break;
       case 5:
         if (!formData.firstName) newErrors.firstName = 'Voornaam is verplicht';
@@ -155,6 +158,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
           ...formData,
           businessAge: formData.businessAge || undefined,
           isProfitable: formData.isProfitable || undefined,
+          bedrijfsactiviteiten: formData.businessActivities || undefined,
           source: 'interactive_form',
           meta_event_id: metaEventId,
           attribution: attribution || undefined,
@@ -385,22 +389,30 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
               </div>
               
               <div className="field-group">
-                <label>Maandelijkse omzet</label>
+                <label>Verwachte jaaromzet 2026</label>
                 <select
                   value={formData.revenue}
                   onChange={(e) => updateFormData('revenue', e.target.value)}
                 >
-                  <option value="">Selecteer maandomzet</option>
-                  <option value="0-10k">&lt; € 10.000 / maand</option>
-                  <option value="10k-25k">€ 10.000 - € 25.000 / maand</option>
-                  <option value="25k-50k">€ 25.000 - € 50.000 / maand</option>
-                  <option value="50k-100k">€ 50.000 - € 100.000 / maand</option>
-                  <option value="100k-250k">€ 100.000 - € 250.000 / maand</option>
-                  <option value="250k+">€ 250.000+ / maand</option>
+                  <option value="">Selecteer jaaromzet</option>
+                  <option value="0-100k">&lt; € 100.000</option>
+                  <option value="100k-250k">€ 100.000 - € 250.000</option>
+                  <option value="250k-500k">€ 250.000 - € 500.000</option>
+                  <option value="500k-1m">€ 500.000 - € 1.000.000</option>
+                  <option value="1m-3m">€ 1.000.000 - € 3.000.000</option>
+                  <option value="3m+">€ 3.000.000+</option>
                 </select>
-                <p className="field-disclaimer" style={{ marginTop: '0.5rem', fontSize: '14px', color: 'var(--color-text-muted)' }}>
-                  Uw kredietlimiet is circa 0,5 tot 2 keer de gemiddelde maandomzet.
-                </p>
+              </div>
+              
+              <div className="field-group">
+                <label>Bedrijfsactiviteiten *</label>
+                <textarea
+                  placeholder="Beschrijf kort wat uw bedrijf doet..."
+                  value={formData.businessActivities}
+                  onChange={(e) => updateFormData('businessActivities', e.target.value)}
+                  rows={2}
+                  style={{ resize: 'vertical' }}
+                />
               </div>
               
               <div className="field-group">
