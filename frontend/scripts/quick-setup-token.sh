@@ -3,7 +3,7 @@
 
 set -e
 
-STRAPI_URL="https://bright-smile-1f47bc9d67.strapiapp.com"
+STRAPI_URL="https://cms.geldgeregeld.nl"
 ENV_FILE=".env.local"
 TOKEN="${1:-}"
 

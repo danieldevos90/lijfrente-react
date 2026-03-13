@@ -7,7 +7,7 @@ The 401 error occurs because the Strapi API token is missing or invalid. Here's 
 ### Option 1: Quick Setup (Recommended)
 
 1. **Get your token from Strapi Admin:**
-   - Visit: https://bright-smile-1f47bc9d67.strapiapp.com/admin
+   - Visit: https://cms.geldgeregeld.nl/admin
    - Go to: **Settings → API Tokens**
    - Click **Create new API Token**
    - Name: `Frontend API Token`
@@ -67,7 +67,7 @@ After adding the token, test it:
 ```bash
 cd frontend
 curl -H "Authorization: Bearer $(grep STRAPI_API_TOKEN .env.local | cut -d '=' -f2)" \
-  "https://bright-smile-1f47bc9d67.strapiapp.com/api/pages?pagination[pageSize]=1"
+  "https://cms.geldgeregeld.nl/api/pages?pagination[pageSize]=1"
 ```
 
 Should return HTTP 200.

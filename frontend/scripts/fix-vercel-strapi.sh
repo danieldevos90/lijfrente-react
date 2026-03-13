@@ -4,7 +4,7 @@
 
 set -e
 
-STRAPI_URL="https://bright-smile-1f47bc9d67.strapiapp.com"
+STRAPI_URL="https://cms.geldgeregeld.nl"
 
 echo "🔧 Fixing Strapi 401 Error on Vercel"
 echo "===================================="

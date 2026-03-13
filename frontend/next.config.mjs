@@ -7,14 +7,20 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'bright-smile-1f47bc9d67.strapiapp.com',
+        hostname: 'cms.geldgeregeld.nl',
         pathname: '/uploads/**',
       },
-      // Strapi Cloud serves transformed images from a separate media CDN host.
+      // Strapi Cloud media CDN (uploads may still be served from here)
       {
         protocol: 'https',
         hostname: 'bright-smile-1f47bc9d67.media.strapiapp.com',
         pathname: '/**',
+      },
+      // Legacy: keep old domain during transition
+      {
+        protocol: 'https',
+        hostname: 'bright-smile-1f47bc9d67.strapiapp.com',
+        pathname: '/uploads/**',
       },
       {
         protocol: 'https',

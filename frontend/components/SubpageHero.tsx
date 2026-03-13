@@ -67,7 +67,7 @@ export default function SubpageHero({
                 style={{
                   objectFit: 'contain',
                 }}
-                unoptimized={iconPath?.includes('strapiapp.com') || iconPath?.startsWith('http')}
+                unoptimized={iconPath?.includes('strapiapp.com') || iconPath?.includes('cms.geldgeregeld.nl') || iconPath?.startsWith('http')}
                 onError={(e) => {
                   // Silently hide icon on error
                   e.currentTarget.style.display = 'none';

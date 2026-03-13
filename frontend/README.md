@@ -9,7 +9,7 @@ npm run dev
 
 Env vars:
 ```
-NEXT_PUBLIC_STRAPI_URL=https://<strapi-cloud-project>.strapiapp.com
+NEXT_PUBLIC_STRAPI_URL=https://cms.geldgeregeld.nl
 STRAPI_TOKEN=<api-token-met-read>
 ```
 

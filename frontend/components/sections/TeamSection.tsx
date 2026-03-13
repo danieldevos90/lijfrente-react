@@ -108,7 +108,7 @@ export default function TeamSection({
                     style={{
                       objectFit: 'cover',
                     }}
-                    unoptimized={member.imageUrl.includes('strapiapp.com') || member.imageUrl.includes('http')}
+                    unoptimized={member.imageUrl.includes('strapiapp.com') || member.imageUrl.includes('cms.geldgeregeld.nl') || member.imageUrl.includes('http')}
                     onError={(e) => {
                       // Hide image on error, show fallback
                       console.error(`Failed to load image for ${member.name}:`, member.imageUrl);

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://bright-smile-1f47bc9d67.strapiapp.com';
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://cms.geldgeregeld.nl';
 
 export async function GET(request: NextRequest) {
   const isDev = process.env.NODE_ENV === 'development';

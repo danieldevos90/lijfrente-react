@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
     echo "Usage: ./add-token.sh <your-strapi-token>"
     echo ""
     echo "To get a token:"
-    echo "1. Visit: https://bright-smile-1f47bc9d67.strapiapp.com/admin"
+    echo "1. Visit: https://cms.geldgeregeld.nl/admin"
     echo "2. Go to: Settings → API Tokens"
     echo "3. Create a new token and copy it"
     exit 1

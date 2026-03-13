@@ -10,7 +10,7 @@ The 401 error on Vercel is because `STRAPI_API_TOKEN` is missing from Vercel env
 cd frontend
 
 # Get your token from Strapi Admin first:
-# 1. Visit: https://bright-smile-1f47bc9d67.strapiapp.com/admin
+# 1. Visit: https://cms.geldgeregeld.nl/admin
 # 2. Go to: Settings → API Tokens
 # 3. Create a new token and copy it
 
@@ -36,7 +36,7 @@ vercel env add STRAPI_API_TOKEN
 
 # Add NEXT_PUBLIC_STRAPI_URL (if not already set)
 vercel env add NEXT_PUBLIC_STRAPI_URL
-# Value: https://bright-smile-1f47bc9d67.strapiapp.com
+# Value: https://cms.geldgeregeld.nl
 # Select: Production, Preview, Development
 ```
 
@@ -54,7 +54,7 @@ vercel env add NEXT_PUBLIC_STRAPI_URL
 3. **Add NEXT_PUBLIC_STRAPI_URL (if missing):**
    - Click **Add New**
    - Name: `NEXT_PUBLIC_STRAPI_URL`
-   - Value: `https://bright-smile-1f47bc9d67.strapiapp.com`
+   - Value: `https://cms.geldgeregeld.nl`
    - Environments: ✅ Production, ✅ Preview, ✅ Development
    - Click **Save**
 
@@ -65,7 +65,7 @@ vercel env add NEXT_PUBLIC_STRAPI_URL
 
 ## Get Your Strapi Token
 
-1. Visit: https://bright-smile-1f47bc9d67.strapiapp.com/admin
+1. Visit: https://cms.geldgeregeld.nl/admin
 2. Navigate to: **Settings → API Tokens**
 3. Click **Create new API Token**
 4. Fill in:
@@ -106,6 +106,6 @@ vercel env ls | grep STRAPI
 - ✅ Check Vercel logs for the actual error
 
 ### Token not working?
-- ✅ Test token locally first: `curl -H "Authorization: Bearer <token>" https://bright-smile-1f47bc9d67.strapiapp.com/api/pages`
+- ✅ Test token locally first: `curl -H "Authorization: Bearer <token>" https://cms.geldgeregeld.nl/api/pages`
 - ✅ Verify token type is correct (Read-only minimum)
 - ✅ Check Strapi admin to see if token is active

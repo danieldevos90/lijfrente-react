@@ -64,6 +64,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         
         {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://cms.geldgeregeld.nl" />
+        <link rel="preconnect" href="https://cms.geldgeregeld.nl" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
@@ -82,6 +84,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   const url = args[0];
                   const isStrapiCall = typeof url === 'string' && (
                     url.includes('strapiapp.com') ||
+                    url.includes('cms.geldgeregeld.nl') ||
                     url.includes('/api/sites') ||
                     url.includes('/api/strapi')
                   );

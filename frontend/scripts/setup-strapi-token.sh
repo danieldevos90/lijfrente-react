@@ -3,7 +3,7 @@
 
 set -e
 
-STRAPI_URL="${NEXT_PUBLIC_STRAPI_URL:-https://bright-smile-1f47bc9d67.strapiapp.com}"
+STRAPI_URL="${NEXT_PUBLIC_STRAPI_URL:-https://cms.geldgeregeld.nl}"
 ENV_FILE=".env.local"
 
 echo "🔐 Strapi API Token Setup"

@@ -10,7 +10,7 @@ import subprocess
 import requests
 from pathlib import Path
 
-STRAPI_URL = os.getenv('NEXT_PUBLIC_STRAPI_URL', 'https://bright-smile-1f47bc9d67.strapiapp.com')
+STRAPI_URL = os.getenv('NEXT_PUBLIC_STRAPI_URL', 'https://cms.geldgeregeld.nl')
 ENV_FILE = Path('.env.local')
 
 def test_token(token: str) -> bool:

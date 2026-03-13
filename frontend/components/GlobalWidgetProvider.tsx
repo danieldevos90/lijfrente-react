@@ -105,6 +105,7 @@ export default function GlobalWidgetProvider({ children }: { children: ReactNode
   // Used for /lead redirects and ad landing pages.
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (window.location.pathname.startsWith('/backoffice')) return;
 
     const url = new URL(window.location.href);
     const drawer = url.searchParams.get('drawer');

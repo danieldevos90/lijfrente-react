@@ -5,11 +5,11 @@ import LeadFormModal from "./modals/LeadFormModal";
 import { useWidget } from "./GlobalWidgetProvider";
 
 function shouldEnableOnPath(pathname: string): boolean {
-  // Avoid showing on conversion pages or in admin-like areas.
   if (pathname.startsWith("/lead")) return false;
   if (pathname.startsWith("/bedankt")) return false;
   if (pathname.startsWith("/password")) return false;
   if (pathname.startsWith("/admin")) return false;
+  if (pathname.startsWith("/backoffice")) return false;
   return true;
 }
 

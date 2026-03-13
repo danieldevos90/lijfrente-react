@@ -90,7 +90,7 @@ export default function SectorsPreview({
       if (imageUrl.startsWith('http')) {
         return imageUrl;
       }
-      const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://bright-smile-1f47bc9d67.strapiapp.com';
+      const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://cms.geldgeregeld.nl';
       return `${baseUrl}${imageUrl.startsWith('/') ? '' : '/'}${imageUrl}`;
     }
     return null;
@@ -221,7 +221,7 @@ export default function SectorsPreview({
                             style={{
                               objectFit: 'cover',
                             }}
-                            unoptimized={imageUrl.includes('strapiapp.com')}
+                            unoptimized={imageUrl.includes('strapiapp.com') || imageUrl.includes('cms.geldgeregeld.nl')}
                           />
                         ) : (
                           <Image
