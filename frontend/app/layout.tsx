@@ -295,6 +295,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 allow_google_signals: false,
                 send_page_view: true
               });
+              ${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ? `gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}');` : ''}
             `,
           }}
         />

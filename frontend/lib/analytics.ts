@@ -157,6 +157,7 @@ export function trackCTAClick(
 
 /**
  * Track lead generation events
+ * Fires: GA4 generate_lead, Meta Lead, Google Ads conversion (if configured)
  */
 export function trackLeadGeneration(
   source: string,
@@ -180,6 +181,21 @@ export function trackLeadGeneration(
     },
     metaEventId ? { eventID: metaEventId } : undefined
   );
+
+  // Google Ads conversion (when NEXT_PUBLIC_GOOGLE_ADS_ID + conversion label are set)
+  if (typeof window !== 'undefined' && hasMarketingConsent() && window.gtag) {
+    const gadsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim();
+    const gadsLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL?.trim();
+    if (gadsId && gadsLabel) {
+      const value = typeof additionalParams?.amount === 'number' ? additionalParams.amount : undefined;
+      window.gtag('event', 'conversion', {
+        send_to: `${gadsId}/${gadsLabel}`,
+        value,
+        currency: 'EUR',
+        transaction_id: metaEventId || `lead_${Date.now()}`,
+      });
+    }
+  }
 }
 
 /**

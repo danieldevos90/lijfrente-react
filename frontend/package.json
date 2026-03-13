@@ -9,7 +9,14 @@
     "start": "next start",
     "lint": "echo 'no linter configured'",
     "export:sectors-csv": "node scripts/export-sector-pages-csv.js",
-    "googleads:keyword-ideas": "node scripts/google-ads-keyword-ideas.js"
+    "googleads:keyword-ideas": "node scripts/google-ads-keyword-ideas.js",
+    "googleads:create-campaigns": "node scripts/google-ads-create-campaigns.js",
+    "googleads:update-geldgeregeld": "node scripts/google-ads-update-to-geldgeregeld.js",
+    "googleads:enable-campaigns": "node scripts/google-ads-enable-campaigns.js",
+    "googleads:setup-conversion": "node scripts/google-ads-setup-conversion.js",
+    "googleads:add-negative-keywords": "node scripts/google-ads-add-negative-keywords.js",
+    "googleads:remove-factoring": "node scripts/google-ads-remove-factoring.js",
+    "googleads:add-keywords": "node scripts/google-ads-add-keywords.js"
   },
   "dependencies": {
     "@google-cloud/secret-manager": "^6.1.1",

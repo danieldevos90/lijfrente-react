@@ -258,18 +258,14 @@ export default function QuickLeadForm({
     if (!data.firstName || data.firstName.trim().length < 2) return "Vul je naam in.";
     if (!data.lastName || data.lastName.trim().length < 2) return "Vul je achternaam in.";
     if (!data.companyName || data.companyName.trim().length < 2) return "Vul je bedrijfsnaam in.";
-    if (contactVariant === "phone_first") {
-      if (!data.phone || data.phone.trim().length < 6) return "Vul een telefoonnummer in.";
-      // Email optional in this variant.
-    } else {
-      if (!data.email || !data.email.includes("@")) return "Vul een geldig e-mailadres in.";
-    }
-    // Always require at least one contact method (fallback safety).
-    if (!data.email && !data.phone) return "Vul e-mail of telefoon in.";
+    if (!data.email || !data.email.includes("@")) return "Vul een geldig e-mailadres in.";
+    if (!data.phone || data.phone.trim().length < 6) return "Vul een telefoonnummer in.";
     return null;
   }
 
   function validateStep2(): string | null {
+    const kvk = (data.kvkNumber || "").replace(/\D/g, "");
+    if (kvk.length !== 8) return "Vul een geldig KvK-nummer in (8 cijfers).";
     if (!data.revenue) return "Kies je omzetrange.";
     if (!data.urgency) return "Kies wanneer je het geld nodig hebt.";
     return null;
@@ -532,7 +528,7 @@ export default function QuickLeadForm({
                     <span className="muted">Voorkeur: telefonisch contact</span>
                   </div>
                   <div>
-                    <label style={{ display: "block", marginBottom: 4 }}>E-mail (optioneel)</label>
+                    <label style={{ display: "block", marginBottom: 4 }}>E-mail</label>
                     <input
                       placeholder="jij@bedrijf.nl"
                       inputMode="email"
@@ -556,7 +552,7 @@ export default function QuickLeadForm({
                     <span className="muted">We sturen alleen updates over je aanvraag</span>
                   </div>
                   <div>
-                    <label style={{ display: "block", marginBottom: 4 }}>Telefoon (optioneel)</label>
+                    <label style={{ display: "block", marginBottom: 4 }}>Telefoon</label>
                     <input
                       placeholder="06…"
                       inputMode="tel"
@@ -608,7 +604,7 @@ export default function QuickLeadForm({
           <div style={{ display: "grid", gap: "1.35rem" }}>
             <div className="quick-lead-form__row-fit" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "0.75rem" }}>
               <div>
-                <label style={{ display: "block", marginBottom: 4 }}>KvK (optioneel)</label>
+                <label style={{ display: "block", marginBottom: 4 }}>KvK-nummer</label>
                 <input
                   placeholder="12345678"
                   inputMode="numeric"
