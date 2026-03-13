@@ -13,9 +13,52 @@
     "expected_revenue_next_12m_eur": { "type": "decimal", "required": true },
     "kvk_number": { "type": "string" },
     "company_name": { "type": "string" },
-    "use_of_funds": { "type": "enumeration", "enum": ["werkkapitaal","voorraden_en_crediteuren","meer_personeel","voertuigen_en_machines","inventaris_en_software","bedrijfspand_financieren","herfinanciering","overnamefinanciering","factoring","overig"], "required": true },
-    "email": { "type": "email" }
+    "use_of_funds": {
+      "type": "enumeration",
+      "enum": [
+        "werkkapitaal",
+        "voorraden_en_crediteuren",
+        "meer_personeel",
+        "voertuigen_en_machines",
+        "inventaris_en_software",
+        "bedrijfspand_financieren",
+        "herfinanciering",
+        "overnamefinanciering",
+        "factoring",
+        "tweede_rang",
+        "vastgoed_krediet",
+        "overig"
+      ],
+      "required": true
+    },
+    "email": { "type": "email" },
+    "firstName": { "type": "string" },
+    "lastName": { "type": "string" },
+    "phone": { "type": "string" },
+    "business_type": {
+      "type": "enumeration",
+      "enum": ["eenmanszaak", "bv", "vof", "maatschap", "stichting"]
+    },
+    "business_age_years": {
+      "type": "enumeration",
+      "enum": ["0_2", "2_5", "5_10", "10_plus"]
+    },
+    "is_profitable": { "type": "boolean" },
+    "has_existing_financing": {
+      "type": "enumeration",
+      "enum": ["nee", "beperkt", "meerdere"]
+    },
+    "urgency": {
+      "type": "enumeration",
+      "enum": ["direct", "kort", "maand", "kwartaal"]
+    },
+    "lead_quality": {
+      "type": "enumeration",
+      "enum": ["warm", "koud", "onbekend"],
+      "default": "onbekend"
+    },
+    "source": { "type": "string" },
+    "sector": { "type": "string" },
+    "partner": { "type": "string" }
   }
 }
-
-

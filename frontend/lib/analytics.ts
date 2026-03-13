@@ -157,7 +157,7 @@ export function trackCTAClick(
 
 /**
  * Track lead generation events
- * Fires: GA4 generate_lead, Meta Lead, Google Ads conversion (if configured)
+ * Fires: GA4 generate_lead, Meta Lead (+ QualifiedLead for warm), Google Ads conversion
  */
 export function trackLeadGeneration(
   source: string,
@@ -165,10 +165,12 @@ export function trackLeadGeneration(
 ) {
   const metaEventId =
     typeof additionalParams?.meta_event_id === 'string' ? additionalParams.meta_event_id : undefined;
+  const leadQuality = additionalParams?.lead_quality as string | undefined;
 
   trackEvent('generate_lead', {
     event_category: 'Lead Generation',
     lead_source: source,
+    lead_quality: leadQuality,
     ...additionalParams,
   });
   trackMetaEvent(
@@ -176,11 +178,27 @@ export function trackLeadGeneration(
     {
       content_name: source || META_CONTENT_NAME,
       source,
+      lead_quality: leadQuality || 'onbekend',
       ...additionalParams,
       meta_event_id: undefined,
     },
     metaEventId ? { eventID: metaEventId } : undefined
   );
+
+  // Fire QualifiedLead for warm leads so Meta can optimize on this custom event
+  if (leadQuality === 'warm') {
+    trackMetaEvent(
+      'QualifiedLead',
+      {
+        content_name: source || META_CONTENT_NAME,
+        source,
+        lead_quality: 'warm',
+        ...additionalParams,
+        meta_event_id: undefined,
+      },
+      metaEventId ? { eventID: `${metaEventId}_qualified` } : undefined
+    );
+  }
 
   // Google Ads conversion (when NEXT_PUBLIC_GOOGLE_ADS_ID + conversion label are set)
   if (typeof window !== 'undefined' && hasMarketingConsent() && window.gtag) {

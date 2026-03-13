@@ -21,6 +21,8 @@ interface FormData {
   companyName: string;
   kvkNumber: string;
   revenue: string;
+  businessAge: string;
+  isProfitable: string;
   
   // Step 5: Contact Info
   firstName: string;
@@ -43,6 +45,8 @@ const initialFormData: FormData = {
   companyName: '',
   kvkNumber: '',
   revenue: '',
+  businessAge: '',
+  isProfitable: '',
   firstName: '',
   lastName: '',
   email: '',
@@ -149,6 +153,8 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
+          businessAge: formData.businessAge || undefined,
+          isProfitable: formData.isProfitable || undefined,
           source: 'interactive_form',
           meta_event_id: metaEventId,
           attribution: attribution || undefined,
@@ -158,22 +164,24 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
       });
       
       if (response.ok) {
-        trackFormEvent('complete', 'interactive_lead');
-        trackEvent('form_submit', { event_category: 'Form', form_id: 'interactive_lead' });
+        const resJson = await response.json().catch(() => ({}));
+        const returnedQuality = resJson?.leadQuality || 'onbekend';
+
+        trackFormEvent('complete', 'interactive_lead', { lead_quality: returnedQuality });
+        trackEvent('form_submit', { event_category: 'Form', form_id: 'interactive_lead', lead_quality: returnedQuality });
         trackLeadGeneration('interactive_form', {
           form_id: 'interactive_lead',
           purpose: formData.purpose,
           partner: partner,
+          lead_quality: returnedQuality,
           meta_event_id: metaEventId,
           utm_source: last?.utm_source,
           utm_campaign: last?.utm_campaign,
           gclid: last?.gclid ? '1' : undefined,
         });
         if (isModal && onSuccess) {
-          // Call success callback for modal
           onSuccess();
         } else {
-          // Redirect to thank you page
           window.location.href = '/bedankt';
         }
       }
@@ -199,6 +207,8 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
                 { value: '100000', label: '€ 100.000', popular: false },
                 { value: '250000', label: '€ 250.000', popular: false },
                 { value: '500000', label: '€ 500.000', popular: false },
+                { value: '1000000', label: '€ 1.000.000', popular: false },
+                { value: '2500000', label: '€ 2.500.000', popular: false },
                 { value: 'custom', label: 'Ander bedrag', popular: false }
               ].map((option) => (
                 <button
@@ -296,8 +306,11 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
                 { value: 'werkkapitaal', label: 'Werkkapitaal', desc: 'Voor dagelijkse bedrijfsvoering' },
                 { value: 'uitbreiding', label: 'Uitbreiding', desc: 'Groei en nieuwe investeringen' },
                 { value: 'inventaris', label: 'Inventaris', desc: 'Machines en apparatuur' },
-                { value: 'vastgoed', label: 'Vastgoed', desc: 'Pand aankoop of verbouwing' },
+                { value: 'vastgoed_krediet', label: 'Vastgoed krediet', desc: 'Zakelijk vastgoed financieren' },
+                { value: 'overname', label: 'Overname', desc: 'Bedrijfsovername financieren' },
+                { value: 'tweede_rang', label: '2e rang financiering', desc: 'Aanvullend op bestaande lening' },
                 { value: 'voorraad', label: 'Voorraad', desc: 'Inkoop van goederen' },
+                { value: 'herfinanciering', label: 'Herfinanciering', desc: 'Bestaande lening herfinancieren' },
                 { value: 'overbrugging', label: 'Overbrugging', desc: 'Tijdelijke cashflow' }
               ].map((option) => (
                 <button
@@ -372,22 +385,58 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
               </div>
               
               <div className="field-group">
-                <label>Jaarlijkse geschatte omzet</label>
+                <label>Maandelijkse omzet</label>
                 <select
                   value={formData.revenue}
                   onChange={(e) => updateFormData('revenue', e.target.value)}
                 >
-                  <option value="">Selecteer omzet</option>
-                  <option value="0-50k">€ 0 - € 50.000</option>
-                  <option value="50k-100k">€ 50.000 - € 100.000</option>
-                  <option value="100k-250k">€ 100.000 - € 250.000</option>
-                  <option value="250k-500k">€ 250.000 - € 500.000</option>
-                  <option value="500k-1m">€ 500.000 - € 1.000.000</option>
-                  <option value="1m+">€ 1.000.000+</option>
+                  <option value="">Selecteer maandomzet</option>
+                  <option value="0-10k">&lt; € 10.000 / maand</option>
+                  <option value="10k-25k">€ 10.000 - € 25.000 / maand</option>
+                  <option value="25k-50k">€ 25.000 - € 50.000 / maand</option>
+                  <option value="50k-100k">€ 50.000 - € 100.000 / maand</option>
+                  <option value="100k-250k">€ 100.000 - € 250.000 / maand</option>
+                  <option value="250k+">€ 250.000+ / maand</option>
                 </select>
                 <p className="field-disclaimer" style={{ marginTop: '0.5rem', fontSize: '14px', color: 'var(--color-text-muted)' }}>
-                  Let op: De jaarlijkse omzet moet minimaal € 100.000 zijn.
+                  Uw kredietlimiet is circa 0,5 tot 2 keer de gemiddelde maandomzet.
                 </p>
+              </div>
+              
+              <div className="field-group">
+                <label>Hoe lang bestaat uw bedrijf?</label>
+                <select
+                  value={formData.businessAge}
+                  onChange={(e) => updateFormData('businessAge', e.target.value)}
+                >
+                  <option value="">Selecteer</option>
+                  <option value="0_2">0 - 2 jaar</option>
+                  <option value="2_5">2 - 5 jaar</option>
+                  <option value="5_10">5 - 10 jaar</option>
+                  <option value="10_plus">10+ jaar</option>
+                </select>
+              </div>
+
+              <div className="field-group">
+                <label>Is uw bedrijf winstgevend?</label>
+                <div className="radio-group">
+                  {[
+                    { value: 'ja', label: 'Ja' },
+                    { value: 'nee', label: 'Nee' },
+                    { value: 'onbekend', label: 'Weet ik niet' }
+                  ].map((option) => (
+                    <label key={option.value} className="radio-option">
+                      <input
+                        type="radio"
+                        name="isProfitable"
+                        value={option.value}
+                        checked={formData.isProfitable === option.value}
+                        onChange={(e) => updateFormData('isProfitable', e.target.value)}
+                      />
+                      <span>{option.label}</span>
+                    </label>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

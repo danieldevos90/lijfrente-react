@@ -62,6 +62,7 @@ async function sendMetaConversionsLeadEvent(
     phone?: string;
     amount?: string;
     source?: string;
+    leadQuality?: 'warm' | 'koud';
     ip: string;
     attribution?: any;
   }
@@ -79,35 +80,59 @@ async function sendMetaConversionsLeadEvent(
   const userAgent = request.headers.get('user-agent') || 'server-side-unknown';
   const referer = request.headers.get('referer') || baseUrl;
 
-  const value = Number(payload.amount);
+  const rawValue = Number(payload.amount);
   const eventTime = Math.floor(Date.now() / 1000);
   const eventId = payload.eventId || `lead_${Date.now()}`;
   const eventName = payload.eventName || 'Lead';
+  const isWarm = payload.leadQuality === 'warm';
+
+  const userData = {
+    em: normalizeAndHashEmail(payload.email),
+    ph: normalizeAndHashPhone(payload.phone),
+    client_ip_address: payload.ip !== 'unknown' ? payload.ip : undefined,
+    client_user_agent: userAgent,
+    fbp,
+    fbc,
+    external_id: normalizeAndHashExternalId(sessionId || undefined),
+  };
+
+  const events: Array<Record<string, any>> = [
+    {
+      event_name: eventName,
+      event_time: eventTime,
+      event_id: eventId,
+      action_source: 'website',
+      event_source_url: referer,
+      user_data: userData,
+      custom_data: {
+        currency: 'EUR',
+        value: Number.isFinite(rawValue) ? rawValue : undefined,
+        content_name: payload.source || 'lead_submission',
+        lead_quality: payload.leadQuality || 'onbekend',
+      },
+    },
+  ];
+
+  // Fire a second QualifiedLead event for warm leads so Meta can optimize campaigns on it
+  if (isWarm) {
+    events.push({
+      event_name: 'QualifiedLead',
+      event_time: eventTime,
+      event_id: `${eventId}_qualified`,
+      action_source: 'website',
+      event_source_url: referer,
+      user_data: userData,
+      custom_data: {
+        currency: 'EUR',
+        value: Number.isFinite(rawValue) ? rawValue : undefined,
+        content_name: payload.source || 'lead_submission',
+        lead_quality: 'warm',
+      },
+    });
+  }
 
   const body = {
-    data: [
-      {
-        event_name: eventName,
-        event_time: eventTime,
-        event_id: eventId,
-        action_source: 'website',
-        event_source_url: referer,
-        user_data: {
-          em: normalizeAndHashEmail(payload.email),
-          ph: normalizeAndHashPhone(payload.phone),
-          client_ip_address: payload.ip !== 'unknown' ? payload.ip : undefined,
-          client_user_agent: userAgent,
-          fbp,
-          fbc,
-          external_id: normalizeAndHashExternalId(sessionId || undefined),
-        },
-        custom_data: {
-          currency: 'EUR',
-          value: Number.isFinite(value) ? value : undefined,
-          content_name: payload.source || 'lead_submission',
-        },
-      },
-    ],
+    data: events,
     ...(process.env.META_TEST_EVENT_CODE ? { test_event_code: process.env.META_TEST_EVENT_CODE } : {}),
   };
 
@@ -193,13 +218,17 @@ export async function POST(request: NextRequest) {
       urgency: formData.urgency || '',
       revenue: formData.revenue || '',
       
+      // Qualifying fields (Floryn criteria)
+      businessAge: formData.businessAge || '',
+      isProfitable: formData.isProfitable || '',
+      existingFinancing: formData.existingFinancing || '',
+      
       // Address info (from DrawerWidget)
       address: formData.adres || formData.address || '',
       postalCode: formData.postcode || formData.postalCode || '',
       city: formData.woonplaats || formData.city || '',
       
       // Additional info
-      existingFinancing: formData.existingFinancing || '',
       additionalInfo: formData.additionalInfo || '',
     };
     
@@ -222,6 +251,8 @@ export async function POST(request: NextRequest) {
       'uitbreiding': 'voorraden_en_crediteuren',
       'inventaris': 'inventaris_en_software',
       'vastgoed': 'bedrijfspand_financieren',
+      'vastgoed_krediet': 'vastgoed_krediet',
+      'tweede_rang': 'tweede_rang',
       'voorraad': 'voorraden_en_crediteuren',
       'overbrugging': 'werkkapitaal',
       'personeel': 'meer_personeel',
@@ -233,18 +264,38 @@ export async function POST(request: NextRequest) {
       'factoring': 'factoring',
     };
     
-    // Map revenue string to number
+    // Map monthly revenue string to annualized number for Strapi
     const revenueToNumber = (revenue: string): number => {
       const revenueMap: Record<string, number> = {
+        // New monthly ranges (annualized: monthly * 12)
+        '0-10k': 60000,
+        '10k-25k': 210000,
+        '25k-50k': 450000,
+        '50k-100k': 900000,
+        '100k-250k': 2100000,
+        '250k+': 3600000,
+        // Legacy annual ranges (backward compat, non-overlapping keys only)
         '0-50k': 25000,
-        '50k-100k': 75000,
-        '100k-250k': 175000,
         '250k-500k': 375000,
         '500k-1m': 750000,
         '1m+': 1500000,
       };
       return revenueMap[revenue] || 100000;
     };
+
+    // Compute lead quality based on Floryn qualifying criteria
+    const computeLeadQuality = (): 'warm' | 'koud' => {
+      let score = 0;
+      const age = normalizedData.businessAge;
+      if (age === '2_5' || age === '5_10' || age === '10_plus') score++;
+      if (normalizedData.isProfitable === 'ja') score++;
+      const rev = normalizedData.revenue;
+      if (rev && rev !== '0-10k' && rev !== '0-50k') score++;
+      const amt = parseFloat(normalizedData.amount) || 0;
+      if (amt >= 10000 && amt <= 2500000) score++;
+      return score >= 3 ? 'warm' : 'koud';
+    };
+    const leadQuality = computeLeadQuality();
 
     // Format the lead data for email notifications (full data)
     const leadData = {
@@ -261,6 +312,12 @@ export async function POST(request: NextRequest) {
       revenue: normalizedData.revenue,
       businessActivities: normalizedData.businessActivities,
       
+      // Qualifying fields
+      businessAge: normalizedData.businessAge,
+      isProfitable: normalizedData.isProfitable,
+      existingFinancing: normalizedData.existingFinancing,
+      leadQuality,
+      
       // Contact info
       firstName: normalizedData.firstName,
       lastName: normalizedData.lastName,
@@ -273,7 +330,6 @@ export async function POST(request: NextRequest) {
       city: normalizedData.city,
       
       // Additional info
-      existingFinancing: normalizedData.existingFinancing,
       additionalInfo: normalizedData.additionalInfo,
 
       // Attribution (non-PII): utm/gclid/partner + landing/referrer
@@ -289,7 +345,7 @@ export async function POST(request: NextRequest) {
       country: request.headers.get('x-vercel-ip-country') || request.headers.get('cf-ipcountry') || undefined,
     };
     
-    // Format data for Strapi (matching the schema)
+    // Format data for Strapi (matching the expanded schema)
     const strapiLeadData = {
       siteId: 'geldgeregeld',
       amount_requested_eur: parseFloat(normalizedData.amount) || 50000,
@@ -298,6 +354,18 @@ export async function POST(request: NextRequest) {
       company_name: normalizedData.companyName || `${normalizedData.firstName} ${normalizedData.lastName}`,
       use_of_funds: purposeToUseOfFunds[normalizedData.purpose] || 'overig',
       email: normalizedData.email || undefined,
+      firstName: normalizedData.firstName || undefined,
+      lastName: normalizedData.lastName || undefined,
+      phone: normalizedData.phone || undefined,
+      business_type: normalizedData.businessType || undefined,
+      business_age_years: normalizedData.businessAge || undefined,
+      is_profitable: normalizedData.isProfitable === 'ja' ? true : normalizedData.isProfitable === 'nee' ? false : undefined,
+      has_existing_financing: normalizedData.existingFinancing || undefined,
+      urgency: normalizedData.urgency || undefined,
+      lead_quality: leadQuality,
+      source: formData.source || 'interactive_form',
+      sector: formData.sector || undefined,
+      partner: partner || undefined,
     };
     
     // Send to Strapi CMS (trim to handle any whitespace/newline issues)
@@ -351,6 +419,7 @@ export async function POST(request: NextRequest) {
       phone: normalizedData.phone || undefined,
       amount: normalizedData.amount || undefined,
       source: String(formData?.source || 'interactive_form'),
+      leadQuality,
       ip,
       attribution,
     });
@@ -358,7 +427,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ 
       success: true, 
       message: 'Lead submitted successfully',
-      leadId: `lead_${Date.now()}`
+      leadId: `lead_${Date.now()}`,
+      leadQuality,
     });
     
   } catch (error) {
@@ -436,10 +506,21 @@ async function sendEmailNotification(leadData: any) {
   // Always send to info@geldgeregeld.nl as the primary business email
   const toEmails = ['info@geldgeregeld.nl', 'jan.dijkerman@icloud.com'];
   
-  const emailSubject = `Nieuwe financieringsaanvraag: ${leadData.companyName || 'Onbekend bedrijf'}`;
+  const qualityTag = leadData.leadQuality === 'warm' ? '[WARM]' : '[KOUD]';
+  const emailSubject = `${qualityTag} Financieringsaanvraag: ${leadData.companyName || 'Onbekend bedrijf'} · €${leadData.amount || '?'}`;
+
+  const businessAgeLabels: Record<string, string> = { '0_2': '0-2 jaar', '2_5': '2-5 jaar', '5_10': '5-10 jaar', '10_plus': '10+ jaar' };
   
   const emailHtml = `
-    <h2>Nieuwe financieringsaanvraag ontvangen</h2>
+    <h2>${qualityTag} Nieuwe financieringsaanvraag ontvangen</h2>
+
+    <div style="background: ${leadData.leadQuality === 'warm' ? '#e8f5e9' : '#fff3e0'}; border-left: 4px solid ${leadData.leadQuality === 'warm' ? '#4caf50' : '#ff9800'}; padding: 12px 16px; margin-bottom: 20px; border-radius: 4px;">
+      <strong>Lead kwaliteit: ${leadData.leadQuality.toUpperCase()}</strong><br>
+      ${leadData.isProfitable === 'ja' ? '✅' : '❌'} Winstgevend ·
+      ${leadData.businessAge && leadData.businessAge !== '0_2' ? '✅' : '❌'} Bestaand bedrijf (${businessAgeLabels[leadData.businessAge] || '?'}) ·
+      ${leadData.revenue && leadData.revenue !== '0-10k' && leadData.revenue !== '0-50k' ? '✅' : '❌'} Omzet past ·
+      ${(parseFloat(leadData.amount) || 0) >= 10000 && (parseFloat(leadData.amount) || 0) <= 2500000 ? '✅' : '❌'} Bedrag in range
+    </div>
     
     <h3>Contactgegevens</h3>
     <p><strong>Naam:</strong> ${leadData.firstName || ''} ${leadData.lastName || ''}</p>
@@ -449,9 +530,11 @@ async function sendEmailNotification(leadData: any) {
     <h3>Bedrijfsgegevens</h3>
     <p><strong>Bedrijfsnaam:</strong> ${leadData.companyName || 'Niet opgegeven'}</p>
     <p><strong>KvK nummer:</strong> ${leadData.kvkNumber || 'Niet opgegeven'}</p>
-    <p><strong>Bedrijfstype:</strong> ${leadData.businessType || 'Niet opgegeven'}</p>
+    <p><strong>Rechtsvorm:</strong> ${leadData.businessType || 'Niet opgegeven'}</p>
     <p><strong>Bedrijfsgrootte:</strong> ${leadData.businessSize || 'Niet opgegeven'}</p>
-    <p><strong>Omzet:</strong> ${leadData.revenue || 'Niet opgegeven'}</p>
+    <p><strong>Leeftijd bedrijf:</strong> ${businessAgeLabels[leadData.businessAge] || 'Niet opgegeven'}</p>
+    <p><strong>Winstgevend:</strong> ${leadData.isProfitable || 'Niet opgegeven'}</p>
+    <p><strong>Maandelijkse omzet:</strong> ${leadData.revenue || 'Niet opgegeven'}</p>
     
     <h3>Financiering</h3>
     <p><strong>Gewenst bedrag:</strong> €${leadData.amount || 'Niet opgegeven'}</p>
@@ -480,7 +563,10 @@ async function sendEmailNotification(leadData: any) {
   `;
   
   const emailText = `
-Nieuwe financieringsaanvraag ontvangen
+${qualityTag} Nieuwe financieringsaanvraag ontvangen
+
+LEAD KWALITEIT: ${leadData.leadQuality.toUpperCase()}
+Winstgevend: ${leadData.isProfitable || '?'} | Bedrijfsleeftijd: ${businessAgeLabels[leadData.businessAge] || '?'} | Omzet: ${leadData.revenue || '?'}
 
 CONTACTGEGEVENS
 Naam: ${leadData.firstName || ''} ${leadData.lastName || ''}
@@ -490,9 +576,11 @@ Telefoon: ${leadData.phone || 'Niet opgegeven'}
 BEDRIJFSGEGEVENS
 Bedrijfsnaam: ${leadData.companyName || 'Niet opgegeven'}
 KvK nummer: ${leadData.kvkNumber || 'Niet opgegeven'}
-Bedrijfstype: ${leadData.businessType || 'Niet opgegeven'}
+Rechtsvorm: ${leadData.businessType || 'Niet opgegeven'}
 Bedrijfsgrootte: ${leadData.businessSize || 'Niet opgegeven'}
-Omzet: ${leadData.revenue || 'Niet opgegeven'}
+Leeftijd bedrijf: ${businessAgeLabels[leadData.businessAge] || 'Niet opgegeven'}
+Winstgevend: ${leadData.isProfitable || 'Niet opgegeven'}
+Maandelijkse omzet: ${leadData.revenue || 'Niet opgegeven'}
 
 FINANCIERING
 Gewenst bedrag: €${leadData.amount || 'Niet opgegeven'}

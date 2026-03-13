@@ -19,6 +19,9 @@ type QuickLeadData = {
   revenue: string;
   urgency: string;
   additionalInfo: string;
+  businessType: string;
+  businessAge: string;
+  isProfitable: string;
 };
 
 const PURPOSE_OPTIONS: Array<{ value: string; label: string }> = [
@@ -27,8 +30,10 @@ const PURPOSE_OPTIONS: Array<{ value: string; label: string }> = [
   { value: "inventaris", label: "Inventaris / apparatuur" },
   { value: "voorraad", label: "Voorraad" },
   { value: "vastgoed", label: "Vastgoed / verbouwing" },
+  { value: "vastgoed_krediet", label: "Zakelijk vastgoed krediet" },
   { value: "overbrugging", label: "Overbrugging / cashflow" },
   { value: "overname", label: "Overname" },
+  { value: "tweede_rang", label: "2e rang financiering" },
   { value: "herfinanciering", label: "Herfinanciering" },
   { value: "factoring", label: "Factoring" },
   { value: "overig", label: "Overig" },
@@ -41,16 +46,18 @@ const AMOUNT_OPTIONS: Array<{ value: string; label: string; popular?: boolean }>
   { value: "100000", label: "€ 100.000" },
   { value: "250000", label: "€ 250.000" },
   { value: "500000", label: "€ 500.000" },
+  { value: "1000000", label: "€ 1.000.000" },
+  { value: "2500000", label: "€ 2.500.000" },
   { value: "custom", label: "Ander bedrag" },
 ];
 
 const REVENUE_OPTIONS: Array<{ value: string; label: string }> = [
-  { value: "0-50k", label: "0 - 50k" },
-  { value: "50k-100k", label: "50k - 100k" },
-  { value: "100k-250k", label: "100k - 250k" },
-  { value: "250k-500k", label: "250k - 500k" },
-  { value: "500k-1m", label: "500k - 1m" },
-  { value: "1m+", label: "1m+" },
+  { value: "0-10k", label: "< €10.000 / maand" },
+  { value: "10k-25k", label: "€10.000 - €25.000 / maand" },
+  { value: "25k-50k", label: "€25.000 - €50.000 / maand" },
+  { value: "50k-100k", label: "€50.000 - €100.000 / maand" },
+  { value: "100k-250k", label: "€100.000 - €250.000 / maand" },
+  { value: "250k+", label: "€250.000+ / maand" },
 ];
 
 const URGENCY_OPTIONS: Array<{ value: string; label: string }> = [
@@ -139,6 +146,9 @@ export default function QuickLeadForm({
     revenue: "",
     urgency: "",
     additionalInfo: "",
+    businessType: "",
+    businessAge: "",
+    isProfitable: "",
   });
 
   const [context, setContext] = useState<{ sector?: string; source?: string; partner?: string }>({});
@@ -312,6 +322,9 @@ export default function QuickLeadForm({
         email: data.email.trim() || undefined,
         phone: data.phone.trim() || undefined,
         additionalInfo: data.additionalInfo.trim() || undefined,
+        businessType: data.businessType || undefined,
+        businessAge: data.businessAge || undefined,
+        isProfitable: data.isProfitable || undefined,
         meta_event_id: metaEventId,
         attribution: attribution || undefined,
         website: website || undefined,
@@ -328,19 +341,24 @@ export default function QuickLeadForm({
         throw new Error(txt || "Submit failed");
       }
 
+      const resJson = await res.json().catch(() => ({}));
+      const returnedQuality = resJson?.leadQuality || "onbekend";
+
       setOk(true);
       trackFormEvent("complete", "quick_lead", {
         submit_from_step: extra.submitFromStep,
         sector: context.sector,
         purpose: data.purpose,
         contact_variant: contactVariant,
+        lead_quality: returnedQuality,
       });
-      trackEvent("form_submit", { event_category: "Form", form_id: "quick_lead" });
+      trackEvent("form_submit", { event_category: "Form", form_id: "quick_lead", lead_quality: returnedQuality });
       trackLeadGeneration(context.source || "direct", {
         form_id: "quick_lead",
         sector: context.sector,
         purpose: data.purpose,
         partner: context.partner,
+        lead_quality: returnedQuality,
         meta_event_id: metaEventId,
         utm_source: last?.utm_source,
         utm_campaign: last?.utm_campaign,
@@ -614,7 +632,7 @@ export default function QuickLeadForm({
                 />
               </div>
               <div>
-                <label style={{ display: "block", marginBottom: 4 }}>Omzet</label>
+                <label style={{ display: "block", marginBottom: 4 }}>Maandelijkse omzet</label>
                 <select value={data.revenue} onChange={(e) => setField("revenue", e.target.value)} style={{ width: "100%" }}>
                   <option value="">Kies omzetrange</option>
                   {REVENUE_OPTIONS.map((o) => (
@@ -623,6 +641,52 @@ export default function QuickLeadForm({
                     </option>
                   ))}
                 </select>
+              </div>
+            </div>
+
+            <div className="quick-lead-form__row-fit" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "0.75rem" }}>
+              <div>
+                <label style={{ display: "block", marginBottom: 4 }}>Rechtsvorm</label>
+                <select value={data.businessType} onChange={(e) => setField("businessType", e.target.value)} style={{ width: "100%" }}>
+                  <option value="">Kies rechtsvorm</option>
+                  <option value="eenmanszaak">Eenmanszaak</option>
+                  <option value="bv">BV / NV</option>
+                  <option value="vof">VOF / Maatschap</option>
+                  <option value="stichting">Stichting / Vereniging</option>
+                </select>
+              </div>
+              <div>
+                <label style={{ display: "block", marginBottom: 4 }}>Hoe lang bestaat het bedrijf?</label>
+                <select value={data.businessAge} onChange={(e) => setField("businessAge", e.target.value)} style={{ width: "100%" }}>
+                  <option value="">Kies</option>
+                  <option value="0_2">0 - 2 jaar</option>
+                  <option value="2_5">2 - 5 jaar</option>
+                  <option value="5_10">5 - 10 jaar</option>
+                  <option value="10_plus">10+ jaar</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label style={{ display: "block", marginBottom: 4 }}>Is het bedrijf winstgevend?</label>
+              <div style={{ display: "flex", gap: "1rem" }}>
+                {[
+                  { value: "ja", label: "Ja" },
+                  { value: "nee", label: "Nee" },
+                  { value: "onbekend", label: "Weet ik niet" },
+                ].map((o) => (
+                  <label key={o.value} style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: 0 }}>
+                    <input
+                      type="radio"
+                      name="isProfitable"
+                      value={o.value}
+                      checked={data.isProfitable === o.value}
+                      onChange={(e) => setField("isProfitable", e.target.value)}
+                      style={{ width: "auto" }}
+                    />
+                    <span>{o.label}</span>
+                  </label>
+                ))}
               </div>
             </div>
 
@@ -654,7 +718,7 @@ export default function QuickLeadForm({
                 placeholder="Bijv. waar je het voor gebruikt, situatie, voorkeuren…"
                 value={data.additionalInfo}
                 onChange={(e) => setField("additionalInfo", e.target.value)}
-                style={{ width: "100%", minHeight: 110 }}
+                style={{ width: "100%", minHeight: 80 }}
               />
             </div>
           </div>

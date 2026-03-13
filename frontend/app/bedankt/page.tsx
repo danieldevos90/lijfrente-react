@@ -666,11 +666,39 @@ export default async function ThankYouPage() {
                 <p 
                   style={{
                     color: 'var(--color-text-muted)',
-                    marginBottom: '1.5rem',
+                    marginBottom: '1rem',
                     lineHeight: 1.6,
                   }}
                 >
                   Zorg dat u deze documenten bij de hand heeft voor ons gesprek
+                </p>
+                <p style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Alle aanvragen
+                </p>
+                <ul 
+                  style={{
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: '0 0 1.25rem 0',
+                  }}
+                >
+                  <li 
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem',
+                      padding: '0.75rem 0',
+                      borderBottom: '1px solid var(--color-border)',
+                      color: 'var(--color-text)',
+                      fontSize: '0.95rem',
+                    }}
+                  >
+                    <Check size={18} color="var(--color-primary)" strokeWidth={3} />
+                    Bankafschriften afgelopen 12 maanden (PSD2 of PDF)
+                  </li>
+                </ul>
+                <p style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Vanaf €250.000
                 </p>
                 <ul 
                   style={{
@@ -691,7 +719,7 @@ export default async function ThankYouPage() {
                     }}
                   >
                     <Check size={18} color="var(--color-primary)" strokeWidth={3} />
-                    Laatste jaarstukken
+                    Kolommenbalans lopend boekjaar
                   </li>
                   <li 
                     style={{
@@ -705,21 +733,7 @@ export default async function ThankYouPage() {
                     }}
                   >
                     <Check size={18} color="var(--color-primary)" strokeWidth={3} />
-                    Recente bankafschriften
-                  </li>
-                  <li 
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.75rem',
-                      padding: '0.75rem 0',
-                      borderBottom: '1px solid var(--color-border)',
-                      color: 'var(--color-text)',
-                      fontSize: '0.95rem',
-                    }}
-                  >
-                    <Check size={18} color="var(--color-primary)" strokeWidth={3} />
-                    KvK uittreksel
+                    Jaarcijfers voorgaand boekjaar
                   </li>
                   <li 
                     style={{
@@ -732,7 +746,7 @@ export default async function ThankYouPage() {
                     }}
                   >
                     <Check size={18} color="var(--color-primary)" strokeWidth={3} />
-                    BTW aangiftes (laatste kwartaal)
+                    Debiteuren- &amp; crediteurenoverzicht incl. ouderdomsanalyse
                   </li>
                 </ul>
               </div>
@@ -812,10 +826,10 @@ export default async function ThankYouPage() {
 
         {/* CTA Section */}
         <CTASection
-          title="Meer weten over zakelijke financiering?"
-          subtitle="Ontdek hoe wij ondernemers helpen met passende financieringsoplossingen."
-          ctaLabel="Bekijk onze diensten"
-          ctaHref="/hoe-werkt-het"
+          title="Versneld uw aanvraag met een PSD2-koppeling"
+          subtitle="Koppel uw zakelijke bankrekening veilig via PSD2 en ontvang sneller een aanbod. Geen handmatig uploaden van bankafschriften."
+          ctaLabel="Meer over PSD2"
+          ctaHref="/faq"
           background="dark"
         />
       </main>

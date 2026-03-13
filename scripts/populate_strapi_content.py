@@ -368,14 +368,14 @@ def create_homepage():
         "data": {
             "siteId": SITE_ID,
             "slug": "home",
-            "title": "GeldGeregeld - Zakelijke Financiering Binnen 24 Uur",
-            "metaDescription": "Zakelijke lening zonder gedoe. Aanvraag binnen 2 minuten, aanbod binnen 24 uur. Flexibel aflossen, geen opstartkosten.",
-            "metaKeywords": "zakelijke lening, bedrijfslening, mkb financiering, snelle lening, flexibel aflossen",
+            "title": "GeldGeregeld - Zakelijke Financiering tot €2.500.000",
+            "metaDescription": "Zakelijke financiering van €10.000 tot €2.500.000. Wij vergelijken en regelen de beste financiering voor uw bedrijf. Aanbod binnen 24 uur.",
+            "metaKeywords": "zakelijke financiering, zakelijk krediet, bedrijfslening, mkb financiering, werkkapitaal, financiering vergelijken, financiering aanvragen",
             "sections": [
                 {
                     "__component": "sections.hero-section",
-                    "title": "Zakelijke financiering binnen 24 uur. Geen gedoe met de bank.",
-                    "subtitle": "Van €5.000 tot €500.000. Flexibel aflossen. Binnen 2 minuten aangevraagd.",
+                    "title": "Wij regelen uw zakelijke financiering. Tot €2.500.000.",
+                    "subtitle": "Eén aanvraag, de beste match. Wij vergelijken en regelen de financiering die past bij uw bedrijf. Aanbod binnen 24 uur.",
                     "backgroundImage": "/images/pexels-ketut-subiyanto-4473496.jpg",
                     "variant": "image",
                     "primaryCta": {
@@ -385,49 +385,49 @@ def create_homepage():
                 },
                 {
                     "__component": "sections.benefits-carousel",
-                    "title": "Zakelijke lening zonder gedoe",
-                    "subtitle": "Eenvoudig online aanvragen. Geen opstartkosten. Boetevrij aflossen.",
+                    "title": "Waarom ondernemers voor GeldGeregeld kiezen",
+                    "subtitle": "Wij nemen het zoekwerk uit handen en regelen de financiering die bij u past.",
                     "backgroundColor": "var(--color-bg)",
                     "benefits": [
                         {
                             "iconPath": "/icons/SVG/interface/zap.svg",
-                            "title": "Binnen 24 uur",
-                            "description": "Aanvraag binnen 2 minuten. Aanbod binnen 24 uur. Sneller dan traditionele banken.",
+                            "title": "Aanbod binnen 24 uur",
+                            "description": "Doe uw aanvraag in 2 minuten. Wij matchen u met de juiste financier en komen binnen 24 uur met een concreet voorstel.",
                             "color": "#fff2b2",
                             "textColor": "#1e2021"
                         },
                         {
-                            "iconPath": "/icons/SVG/interface/shield.svg",
-                            "title": "Geen verborgen kosten",
-                            "description": "Transparante voorwaarden. Boetevrij vervroegd aflossen. Geen opstartkosten.",
-                            "color": "#bbe7be",
-                            "textColor": "#114e0b"
-                        },
-                        {
-                            "iconPath": "/icons/SVG/interface/clock.svg",
-                            "title": "Flexibel aflossen",
-                            "description": "Flexibele looptijd van 3 tot 36 maanden. Pas aan op basis van je cashflow.",
-                            "color": "#aad5fc",
-                            "textColor": "#0f1720"
-                        },
-                        {
                             "iconPath": "/icons/SVG/finance/trend-up.svg",
-                            "title": "Tot €500.000",
-                            "description": "Van kleine investeringen tot grote groeiplannen. Financiering op maat.",
+                            "title": "Van €10.000 tot €2.500.000",
+                            "description": "Of u nu een kleine impuls of een grote investering zoekt — wij vinden de financiering die past bij uw omzet en ambitie.",
                             "color": "#d7d0ff",
                             "textColor": "#3b0b5e"
                         },
                         {
+                            "iconPath": "/icons/SVG/interface/clock.svg",
+                            "title": "Flexibele voorwaarden",
+                            "description": "Wij selecteren partners met soepele aflossingsvoorwaarden. Vervroegd aflossen, heropnemen of aanpassen aan uw cashflow — het kan.",
+                            "color": "#aad5fc",
+                            "textColor": "#0f1720"
+                        },
+                        {
+                            "iconPath": "/icons/SVG/interface/shield.svg",
+                            "title": "Scherpe rente, geen verrassingen",
+                            "description": "Wij onderhandelen namens u. U krijgt vooraf een helder overzicht van rente, kosten en voorwaarden. Geen kleine lettertjes.",
+                            "color": "#bbe7be",
+                            "textColor": "#114e0b"
+                        },
+                        {
                             "iconPath": "/icons/SVG/interface/user-add.svg",
-                            "title": "Persoonlijk advies",
-                            "description": "Vaste contactpersoon via telefoon, e-mail of chat. Geen wachtlijnen.",
+                            "title": "Al een lening? Wij regelen extra",
+                            "description": "Heeft u al financiering maar zoekt u meer? Wij vinden aanvullende oplossingen, ook als uw huisbank nee zegt.",
                             "color": "#f8e4e4",
                             "textColor": "#3b0b0b"
                         },
                         {
-                            "iconPath": "/icons/SVG/interface/trophy.svg",
-                            "title": "Zonder onderpand",
-                            "description": "Geen zakelijke zekerheden vereist. Ook als de bank je heeft afgewezen.",
+                            "iconPath": "/icons/SVG/finance/bank.svg",
+                            "title": "Vastgoed financiering",
+                            "description": "Zakelijk vastgoed kopen of herfinancieren? Wij koppelen u aan de juiste vastgoedfinancier met de beste condities.",
                             "color": "#fcf8d8",
                             "textColor": "#1e2021"
                         }
@@ -435,8 +435,8 @@ def create_homepage():
                 },
                 {
                     "__component": "sections.feature-section",
-                    "title": "Flexibele aflossing op jouw voorwaarden",
-                    "description": "Kies zelf wanneer je aflost. Geen vaste maandlasten, maar flexibiliteit die past bij jouw cashflow. Boetevrij vervroegd aflossen mogelijk wanneer het jou uitkomt.",
+                    "title": "Uw financiering, onze expertise",
+                    "description": "Wij kennen de markt en weten welke financiers bij uw situatie passen. U focust op ondernemen, wij regelen de rest. Persoonlijk advies, scherpe voorwaarden en altijd een helder overzicht.",
                     "buttonText": "Meer informatie",
                     "imagePath": "/images/pexels-tima-miroshnichenko-5198239.jpg",
                     "imagePosition": "left",
@@ -452,22 +452,19 @@ def create_homepage():
                             "name": "Erik van der Berg",
                             "role": "Café eigenaar",
                             "text": "Met GeldGeregeld kon ik eindelijk mijn terras uitbreiden. De aanvraag was verrassend eenvoudig en binnen een dag had ik een offerte.",
-                            "image": "/images/Erik.jpeg",
-                            "rating": 5
+                            "image": "/images/Erik.jpeg"
                         },
                         {
                             "name": "Jan Jansen",
                             "role": "Transport ondernemer",
                             "text": "Geen gedoe met ingewikkelde formulieren. Gewoon duidelijke uitleg en snelle service. Precies wat we als MKB nodig hebben.",
-                            "image": "/images/Jan.jpeg",
-                            "rating": 4
+                            "image": "/images/Jan.jpeg"
                         },
                         {
                             "name": "Lisa Vermeulen",
                             "role": "Oprichter Webshop",
                             "text": "Ik was eerst sceptisch, maar GeldGeregeld heeft mijn verwachtingen overtroffen. Persoonlijk contact en transparante voorwaarden.",
-                            "image": "/images/pexels-amina-filkins-5414025.jpg",
-                            "rating": 5
+                            "image": "/images/pexels-amina-filkins-5414025.jpg"
                         }
                     ]
                 },
@@ -515,7 +512,7 @@ def create_about_page():
                 {
                     "__component": "sections.content-section",
                     "title": "Onze missie",
-                    "content": "Bij GeldGeregeld geloven we dat elke ondernemer toegang moet hebben tot eerlijke, snelle en transparante financiering. Geen verborgen kosten, geen eindeloze wachttijden, geen onduidelijke voorwaarden.\n\nWe maken zakelijke financiering toegankelijk voor iedereen – van ZZP'er tot gevestigd MKB-bedrijf. Met onze moderne aanpak krijgt u binnen 24 uur reactie, zodat u zich kunt focussen op wat echt belangrijk is: uw bedrijf laten groeien.",
+                    "content": "GeldGeregeld is er voor ondernemers die geen tijd willen verspillen aan het vergelijken van financiers. Wij kennen de markt, weten welke partijen bij uw situatie passen en regelen het van aanvraag tot aanbod.\n\nAls onafhankelijk bemiddelaar werken wij samen met gerenommeerde financieringspartners. Wij onderhandelen namens u over de beste voorwaarden, zodat u zich kunt focussen op wat echt belangrijk is: uw bedrijf laten groeien.",
                     "layout": "image-left",
                     "background": "white"
                 },
@@ -527,42 +524,42 @@ def create_about_page():
                         {
                             "iconPath": "/icons/SVG/interface/zap.svg",
                             "title": "Razendsnel",
-                            "description": "Binnen 24 uur reactie op uw aanvraag. Geen weken wachten zoals bij traditionele banken. Aanvraag gedaan in 2 minuten, geld op uw rekening binnen 1-2 werkdagen.",
+                            "description": "Binnen 24 uur een voorstel op maat. Geen weken wachten op de bank. Wij kennen de snelste routes naar de juiste financiering.",
                             "color": "#fff2b2",
                             "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/shield.svg",
                             "title": "100% Transparant",
-                            "description": "Geen verborgen kosten of verrassingen. Wat u ziet is wat u krijgt. Heldere voorwaarden, eerlijke tarieven en boetevrij vervroegd aflossen mogelijk.",
+                            "description": "U weet vooraf precies wat het kost. Wij leggen alle voorwaarden helder uit en adviseren u eerlijk over de beste optie voor uw situatie.",
                             "color": "#bbe7be",
                             "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/user-add.svg",
-                            "title": "Voor Elke Ondernemer",
-                            "description": "Of u nu net bent begonnen of al jaren actief bent – wij hebben de juiste financieringsoplossing. Van ZZP tot MKB, van €5.000 tot €500.000.",
+                            "title": "Onafhankelijk Advies",
+                            "description": "Wij werken niet voor één financier maar voor u. Als onafhankelijk bemiddelaar zoeken wij de financiering die écht bij uw bedrijf past.",
                             "color": "#f8e4e4",
                             "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/lock.svg",
                             "title": "Veilig & Vertrouwd",
-                            "description": "Uw gegevens zijn bij ons in goede handen. We werken volgens de hoogste veiligheidsstandaarden en zijn volledig AVG-compliant.",
+                            "description": "Uw gegevens zijn bij ons in goede handen. Wij delen ze alleen met de financier die u zelf kiest. Volledig AVG-compliant.",
                             "color": "#d7d0ff",
                             "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/tablet.svg",
                             "title": "Eenvoudig Online",
-                            "description": "Alles 100% online geregeld. Geen onnodig papierwerk, geen fysieke afspraken. Aanvraag doen waar en wanneer het u uitkomt.",
+                            "description": "Aanvraag in 2 minuten. Geen onnodig papierwerk, geen fysieke afspraken. Wij doen het zware werk op de achtergrond.",
                             "color": "#aad5fc",
                             "textColor": "#1e2021"
                         },
                         {
                             "iconPath": "/icons/SVG/interface/message.svg",
-                            "title": "Persoonlijke Service",
-                            "description": "Een vast contactpersoon die begrijpt waar uw bedrijf voor staat. Bereikbaar via telefoon, e-mail of chat. Persoonlijk advies op maat.",
+                            "title": "Persoonlijke Begeleiding",
+                            "description": "Een vast contactpersoon die uw situatie begrijpt. Bereikbaar via telefoon of e-mail. Wij begeleiden u van aanvraag tot uitbetaling.",
                             "color": "#fcf8d8",
                             "textColor": "#1e2021"
                         }
@@ -860,28 +857,44 @@ def create_faq_page():
                     "subtitle": "Vind snel antwoord op uw vraag",
                     "faqItems": [
                         {
-                            "question": "Hoe lang duurt het voordat ik een beslissing krijg?",
-                            "answer": "In de meeste gevallen ontvangt u binnen 24 uur een eerste reactie op uw aanvraag. De complete beoordeling en beslissing duurt gemiddeld 2-3 werkdagen, afhankelijk van de volledigheid van uw aanvraag en de beschikbaarheid van aanvullende informatie."
+                            "question": "Hoeveel financiering kan ik krijgen?",
+                            "answer": "Via GeldGeregeld kunt u financiering aanvragen van €10.000 tot €2.500.000. Het exacte bedrag hangt af van uw bedrijfssituatie, omzet en het type financiering. Wij zoeken de financier die het beste aansluit bij uw wensen."
                         },
                         {
-                            "question": "Wat zijn de voorwaarden voor een zakelijke lening?",
-                            "answer": "De voorwaarden variëren per type lening en uw specifieke situatie. Over het algemeen kijken we naar uw bedrijfsresultaten van de afgelopen jaren, uw kredietwaardigheid, en het doel van de financiering. We werken graag samen met ondernemers die al minimaal 1 jaar actief zijn."
+                            "question": "Hoe werkt het aanvraagproces?",
+                            "answer": "U vult in 2 minuten ons online formulier in. Wij beoordelen uw aanvraag, selecteren de meest geschikte financieringspartner en komen binnen 24 uur terug met een concreet voorstel. U beslist zelf of u verdergaat — geheel vrijblijvend."
                         },
                         {
-                            "question": "Kan ik een lening aanvragen als ik een startende ondernemer ben?",
-                            "answer": "Ja, ook startende ondernemers kunnen bij ons terecht. Voor starters hebben we speciale programma's en voorwaarden. We kijken dan bijvoorbeeld naar uw businessplan, eventuele persoonlijke zekerheden, en uw ervaring in de branche. Het is belangrijk dat u een goed doordacht plan heeft."
+                            "question": "Welke documenten heb ik nodig?",
+                            "answer": "Voor de eerste beoordeling zijn bankafschriften van de afgelopen 12 maanden voldoende. U kunt deze eenvoudig en veilig delen via een PSD2-koppeling of als PDF. Bij hogere bedragen kunnen aanvullende stukken nodig zijn, zoals jaarcijfers. Wij vertellen u precies wat er nodig is."
                         },
                         {
-                            "question": "Welke documenten heb ik nodig voor mijn aanvraag?",
-                            "answer": "Voor een complete aanvraag hebben we doorgaans nodig: uw laatste jaarrekening, BTW-aangiftes van het afgelopen jaar, een recent bankoverzicht, en een kopie van uw identiteitsbewijs. Afhankelijk van uw situatie kunnen er aanvullende documenten nodig zijn."
+                            "question": "Kost het mij iets om een aanvraag te doen?",
+                            "answer": "Nee, een aanvraag via GeldGeregeld is altijd vrijblijvend en kosteloos. U betaalt pas rente en kosten wanneer u daadwerkelijk een financiering afsluit. Wij geven u vooraf een volledig overzicht van alle kosten, zodat u precies weet waar u aan toe bent."
                         },
                         {
-                            "question": "Zijn er kosten verbonden aan het aanvragen?",
-                            "answer": "Nee, het aanvragen van een offerte is volledig kosteloos en vrijblijvend. U betaalt alleen als u daadwerkelijk een lening afsluit. Alle kosten en voorwaarden worden vooraf helder met u gecommuniceerd, zodat u precies weet waar u aan toe bent."
+                            "question": "Wat als ik al een lening heb bij de bank?",
+                            "answer": "Dat is geen probleem. Wij kunnen ook aanvullende financiering regelen naast uw bestaande lening, zelfs als uw huisbank geen extra ruimte biedt. Dit heet ook wel 2e rang financiering."
+                        },
+                        {
+                            "question": "Kan ik ook vastgoed financieren?",
+                            "answer": "Ja, wij bemiddelen ook in zakelijke vastgoedfinancieringen. Of u nu een bedrijfspand wilt kopen of herfinancieren — wij koppelen u aan een gespecialiseerde vastgoedfinancier met passende voorwaarden."
                         },
                         {
                             "question": "Kan ik vervroegd aflossen?",
-                            "answer": "Ja, vervroegd aflossen is mogelijk. Afhankelijk van het type lening en de afspraken kunnen hier kosten aan verbonden zijn. We adviseren u graag over de mogelijkheden en eventuele kosten van vervroegd aflossen bij uw specifieke lening."
+                            "answer": "Bij de meeste financieringen die wij bemiddelen is vervroegd aflossen mogelijk. De exacte voorwaarden verschillen per financier. Wij zorgen ervoor dat u vooraf weet wat de mogelijkheden zijn."
+                        },
+                        {
+                            "question": "Hoe weet ik dat mijn gegevens veilig zijn?",
+                            "answer": "Uw gegevens worden versleuteld verzonden en wij zijn volledig AVG-compliant. Als u bankgegevens deelt via PSD2, verloopt dit via een beveiligde verbinding die voldoet aan Europese regelgeving. Wij delen uw gegevens alleen met de financieringspartner waarmee u verder wilt."
+                        },
+                        {
+                            "question": "Wordt mijn aanvraag bij meerdere partijen neergelegd?",
+                            "answer": "Nee, wij gaan zorgvuldig met uw aanvraag om. Wij matchen u met de financier die het beste past. Uw gegevens worden alleen gedeeld met de partij waar u akkoord voor geeft."
+                        },
+                        {
+                            "question": "Wat als mijn aanvraag wordt afgewezen?",
+                            "answer": "Wij kijken altijd of er een alternatief mogelijk is. Omdat wij samenwerken met verschillende financiers, hebben wij vaak meer opties dan wanneer u rechtstreeks bij één partij aanklopt. Komt u niet in aanmerking, dan leggen wij eerlijk uit waarom."
                         }
                     ]
                 },

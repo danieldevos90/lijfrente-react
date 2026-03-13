@@ -95,8 +95,8 @@ export default async function HomePage({
       url: baseUrl,
     },
     amountRange: {
-      min: 1000,
-      max: 250000,
+      min: 10000,
+      max: 2500000,
       currency: 'EUR',
     },
     url: buildCanonicalUrl('/'),

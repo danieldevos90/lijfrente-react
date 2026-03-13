@@ -8,7 +8,7 @@ import HeroSection from '../../../components/sections/HeroSection';
 import TrustSection from '../../../components/sections/TrustSection';
 import ContentSection from '../../../components/sections/ContentSection';
 import ServicesSection from '../../../components/sections/ServicesSection';
-import TestimonialsSection from '../../../components/sections/TestimonialsSection';
+
 import CTASection from '../../../components/sections/CTASection';
 
 const StickyCTA = dynamic(() => import('../../../components/StickyCTA'), { ssr: false });
@@ -320,25 +320,6 @@ export default async function SitePage({ params }: { params: { siteId: string } 
             title: "Ik wil investeren", 
             description: "Investeren in de toekomst van je bedrijf",
             href: `/sites/${params.siteId}/investeren`
-          }
-        ]}
-      />
-
-      {/* Testimonials Section */}
-      <TestimonialsSection
-        title="Bekijk wat anderen zeggen"
-        testimonials={[
-          {
-            name: "Petra Jongkind",
-            company: "Eco Film B.V.",
-            text: "Supersnelle service en heldere communicatie. Binnen een dag wisten we waar we aan toe waren.",
-            rating: 5
-          },
-          {
-            name: "Simone Brandt",
-            company: "Creative Solutions",
-            text: "Eindelijk een financieringspartner die begrijpt wat ondernemers nodig hebben. Aanrader!",
-            rating: 5
           }
         ]}
       />

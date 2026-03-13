@@ -47,39 +47,30 @@ export const CTA_BUTTON_TEST: ABTest = {
 
 /**
  * Hero Title A/B Test
- * Based on competitor analysis and SEO best practices:
- * - Focus on speed: "binnen 24 uur"
- * - Focus on simplicity: "geen gedoe"
- * - Focus on benefits: "snel", "eenvoudig"
- * - Include keywords: "zakelijke financiering"
+ * GeldGeregeld tone: broker/intermediary value, "wij regelen", matching
  */
 export const HERO_TITLE_TEST: ABTest = {
   testId: 'hero_title',
   testName: 'Hero Title Text',
   variants: [
     {
-      id: 'speed_focus',
-      name: 'Zakelijke financiering binnen 24 uur. Geen gedoe met de bank.',
+      id: 'regelen',
+      name: 'Wij regelen uw zakelijke financiering. Tot €2.500.000.',
+      weight: 2,
+    },
+    {
+      id: 'match',
+      name: 'De juiste financiering voor uw bedrijf. Wij regelen het.',
       weight: 1,
     },
     {
-      id: 'simplicity_focus',
-      name: 'Zakelijke financiering zonder gedoe. Binnen 24 uur geregeld.',
+      id: 'vergelijken',
+      name: 'Zakelijke financiering tot €2.500.000. Wij zoeken de beste match.',
       weight: 1,
     },
     {
-      id: 'benefit_focus',
-      name: 'Snel, eenvoudig en flexibel. Zakelijke financiering binnen 24 uur.',
-      weight: 1,
-    },
-    {
-      id: 'direct_focus',
-      name: 'Direct zakelijke financiering. Binnen 24 uur geld op je rekening.',
-      weight: 1,
-    },
-    {
-      id: 'trust_focus',
-      name: 'Zakelijke financiering die werkt. Sneller dan de bank, zonder gedoe.',
+      id: 'eenvoudig',
+      name: 'Zakelijke financiering geregeld. Snel, persoonlijk en tot €2.500.000.',
       weight: 1,
     },
   ],
@@ -147,22 +138,17 @@ export const HERO_SUBTITLE_TEST: ABTest = {
   variants: [
     {
       id: 'default',
-      name: 'Eenvoudig online aanvragen. Geen opstartkosten. Boetevrij aflossen.',
-      weight: 1,
+      name: 'Eén aanvraag, de beste match. Wij vergelijken en regelen de financiering die past bij uw bedrijf.',
+      weight: 2,
     },
     {
       id: 'speed_focus',
-      name: 'Binnen 2 minuten aangevraagd. Aanbod binnen 24 uur.',
+      name: 'Aanvraag in 2 minuten. Binnen 24 uur een voorstel op maat. Vrijblijvend en kosteloos.',
       weight: 1,
     },
     {
-      id: 'benefit_focus',
-      name: 'Sneller dan de bank. Transparant en flexibel.',
-      weight: 1,
-    },
-    {
-      id: 'trust_focus',
-      name: 'Geen gedoe met papierwerk. Heldere voorwaarden.',
+      id: 'personal',
+      name: 'Persoonlijk advies, scherpe voorwaarden. Van €10.000 tot €2.500.000.',
       weight: 1,
     },
   ],

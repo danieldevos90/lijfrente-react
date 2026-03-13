@@ -1,29 +1,29 @@
 export const messaging = {
-  heroTitle: 'Zakelijke financiering zonder gedoe — snel geregeld, helder en flexibel.',
-  heroSub: 'Van aanvraag tot uitbetaling in 24 uur.',
+  heroTitle: 'Wij regelen uw zakelijke financiering. Tot €2.500.000.',
+  heroSub: 'Eén aanvraag, de beste match. Wij vergelijken en regelen de financiering die past bij uw bedrijf.',
   usp: [
-    'Direct geregeld',
-    'Binnen 24 uur inzicht',
-    'Supersnelle aanvraag',
+    'Wij regelen het voor u',
+    'Binnen 24 uur een voorstel',
+    'Eén aanvraag, beste match',
     'Geen papieren gedoe',
-    'Snel, simpel en online',
+    'Persoonlijk advies op maat',
     'In enkele klikken aangevraagd',
-    'Financiering zonder papierwerk',
+    'Vrijblijvend en kosteloos',
   ],
   trust: [
     '100% transparant',
     'Heldere voorwaarden, geen verrassingen',
-    'Gecertificeerd en betrouwbaar',
+    'Uw gegevens veilig bij ons',
   ],
   flex: [
     'Op maat voor jouw onderneming',
-    'Altijd boetevrij aflossen',
-    'Jij bepaalt de looptijd',
+    'Flexibele aflossingsmogelijkheden',
+    'Jij kiest de voorwaarden',
     'Financiering die met je meebeweegt',
   ],
   ctaLabel: 'Vraag financiering aan',
   seoBrandName: process.env.NEXT_PUBLIC_SITE_NAME || 'GeldGeregeld',
-  seoMeta: 'Binnen 24 uur inzicht. Helder, flexibel en zonder papierwerk.',
+  seoMeta: 'Wij vergelijken en regelen de beste zakelijke financiering voor uw bedrijf. Binnen 24 uur een voorstel.',
 };
 
 /**

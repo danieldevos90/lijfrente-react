@@ -10,6 +10,8 @@ const useOfFundsOptions = [
   { value: "voertuigen_en_machines", label: "Voertuigen en machines" },
   { value: "inventaris_en_software", label: "Inventaris en software" },
   { value: "bedrijfspand_financieren", label: "Een bedrijfspand financieren" },
+  { value: "vastgoed_krediet", label: "Zakelijk vastgoed krediet" },
+  { value: "tweede_rang", label: "2e rang financiering" },
   { value: "herfinanciering", label: "Herfinanciering (geen hypotheek)" },
   { value: "overnamefinanciering", label: "Overnamefinanciering" },
   { value: "factoring", label: "Factoring" },
@@ -192,7 +194,7 @@ export default function LeadForm({ siteId }: { siteId: string }) {
 
       <div className="row" style={{ flexDirection: "column", alignItems: "stretch" }}>
         <label>Hoeveel financiering heeft jouw klant nodig?</label>
-        <input name="amount_requested_eur" placeholder="€" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} />
+        <input name="amount_requested_eur" placeholder="€ 10.000 – € 2.500.000" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} />
         {errors.amount_requested_eur && <span className="muted">{errors.amount_requested_eur}</span>}
       </div>
 

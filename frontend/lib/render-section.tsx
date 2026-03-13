@@ -168,17 +168,8 @@ export function renderSection(section: StrapiSection, index: number) {
       );
     
     case 'sections.testimonials-carousel':
-      // Use TestimonialsGrid for homepage to show 6 testimonials in a grid
-      // Remove company names and make roles generic
-      
-      // Debug: Log section data
-      if (process.env.NODE_ENV === 'development') {
-        console.log('[render-section] Testimonials section data:', {
-          hasTestimonials: !!sectionData.testimonials,
-          testimonialsCount: sectionData.testimonials?.length || 0,
-          testimonials: sectionData.testimonials
-        });
-      }
+      // Testimonials are hidden site-wide (no verified reviews available yet)
+      return null;
       
       const makeRoleGeneric = (role: string, company?: string): string => {
         const roleLower = (role || '').toLowerCase();
