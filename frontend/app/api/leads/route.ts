@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { createHash } from 'crypto';
 import { getSiteContactInfo } from '@/lib/get-site-contact-info';
+import { buildConfirmationEmailHtml, buildInternalEmailHtml } from '@/lib/email-templates';
 
 type RateState = { count: number; resetAt: number };
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
@@ -473,7 +474,7 @@ async function sendEmailNotification(leadData: any) {
       touch.partner && `partner=${touch.partner}`,
     ].filter(Boolean);
     if (clicks.length) parts.push(`<strong>${label} click:</strong> ${clicks.join(' · ')}`);
-    return parts.map((p) => `<p>${p}</p>`).join('');
+    return parts.map((p) => `<p style="margin:0 0 16px;">${p}</p>`).join('');
   };
 
   const formatTouchText = (label: string, touch: any) => {
@@ -506,54 +507,53 @@ async function sendEmailNotification(leadData: any) {
   // Always send to info@geldgeregeld.nl as the primary business email
   const toEmails = ['info@geldgeregeld.nl', 'jan.dijkerman@icloud.com'];
   
-  const qualityTag = leadData.leadQuality === 'warm' ? '[WARM]' : '[KOUD]';
-  const emailSubject = `${qualityTag} Financieringsaanvraag: ${leadData.companyName || 'Onbekend bedrijf'} · €${leadData.amount || '?'}`;
+  const emailSubject = `Financieringsaanvraag: ${leadData.companyName || 'Onbekend bedrijf'} · €${leadData.amount || '?'}`;
 
   const businessAgeLabels: Record<string, string> = { '0_2': '0-2 jaar', '2_5': '2-5 jaar', '5_10': '5-10 jaar', '10_plus': '10+ jaar' };
   
-  const emailHtml = `
-    <h2>${qualityTag} Nieuwe financieringsaanvraag ontvangen</h2>
+  const leadBodyHtml = `
+    <h2 style="margin:0 0 20px;font-size:20px;color:#1e2021;">Nieuwe financieringsaanvraag ontvangen</h2>
 
-    <div style="background: ${leadData.leadQuality === 'warm' ? '#e8f5e9' : '#fff3e0'}; border-left: 4px solid ${leadData.leadQuality === 'warm' ? '#4caf50' : '#ff9800'}; padding: 12px 16px; margin-bottom: 20px; border-radius: 4px;">
-      <strong>Lead kwaliteit: ${leadData.leadQuality.toUpperCase()}</strong><br>
-      ${leadData.isProfitable === 'ja' ? '✅' : '❌'} Winstgevend ·
-      ${leadData.businessAge && leadData.businessAge !== '0_2' ? '✅' : '❌'} Bestaand bedrijf (${businessAgeLabels[leadData.businessAge] || '?'}) ·
-      ${leadData.revenue && leadData.revenue !== '0-10k' && leadData.revenue !== '0-50k' ? '✅' : '❌'} Omzet past ·
-      ${(parseFloat(leadData.amount) || 0) >= 10000 && (parseFloat(leadData.amount) || 0) <= 2500000 ? '✅' : '❌'} Bedrag in range
-    </div>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px;font-size:14px;color:#1e2021;line-height:1.6;">
+      <tr><td style="padding:2px 0;"><strong>Lead kwaliteit</strong> ${leadData.leadQuality}</td></tr>
+      <tr><td style="padding:2px 0;"><span style="color:${leadData.isProfitable === 'ja' ? '#00c800' : '#6c737a'};font-weight:500;">${leadData.isProfitable === 'ja' ? '✓' : '✗'}</span> Winstgevend</td></tr>
+      <tr><td style="padding:2px 0;"><span style="color:${leadData.businessAge && leadData.businessAge !== '0_2' ? '#00c800' : '#6c737a'};font-weight:500;">${leadData.businessAge && leadData.businessAge !== '0_2' ? '✓' : '✗'}</span> Bestaand bedrijf (${businessAgeLabels[leadData.businessAge] || '?'})</td></tr>
+      <tr><td style="padding:2px 0;"><span style="color:${leadData.revenue && leadData.revenue !== '0-10k' && leadData.revenue !== '0-50k' ? '#00c800' : '#6c737a'};font-weight:500;">${leadData.revenue && leadData.revenue !== '0-10k' && leadData.revenue !== '0-50k' ? '✓' : '✗'}</span> Omzet past</td></tr>
+      <tr><td style="padding:2px 0;"><span style="color:${(parseFloat(leadData.amount) || 0) >= 10000 && (parseFloat(leadData.amount) || 0) <= 2500000 ? '#00c800' : '#6c737a'};font-weight:500;">${(parseFloat(leadData.amount) || 0) >= 10000 && (parseFloat(leadData.amount) || 0) <= 2500000 ? '✓' : '✗'}</span> Bedrag in range</td></tr>
+    </table>
     
-    <h3>Contactgegevens</h3>
-    <p><strong>Naam:</strong> ${leadData.firstName || ''} ${leadData.lastName || ''}</p>
-    <p><strong>E-mail:</strong> ${leadData.email || 'Niet opgegeven'}</p>
-    <p><strong>Telefoon:</strong> ${leadData.phone || 'Niet opgegeven'}</p>
+    <h3 style="margin:0 0 8px;font-size:16px;color:#1e2021;">Contactgegevens</h3>
+    <p style="margin:0 0 16px;"><strong>Naam:</strong> ${leadData.firstName || ''} ${leadData.lastName || ''}</p>
+    <p style="margin:0 0 16px;"><strong>E-mail:</strong> <a href="mailto:${leadData.email || ''}" style="color:#00c800;text-decoration:underline;">${leadData.email || 'Niet opgegeven'}</a></p>
+    <p style="margin:0 0 16px;"><strong>Telefoon:</strong> ${leadData.phone || 'Niet opgegeven'}</p>
     
-    <h3>Bedrijfsgegevens</h3>
-    <p><strong>Bedrijfsnaam:</strong> ${leadData.companyName || 'Niet opgegeven'}</p>
-    <p><strong>KvK nummer:</strong> ${leadData.kvkNumber || 'Niet opgegeven'}</p>
-    <p><strong>Rechtsvorm:</strong> ${leadData.businessType || 'Niet opgegeven'}</p>
-    <p><strong>Bedrijfsgrootte:</strong> ${leadData.businessSize || 'Niet opgegeven'}</p>
-    <p><strong>Leeftijd bedrijf:</strong> ${businessAgeLabels[leadData.businessAge] || 'Niet opgegeven'}</p>
-    <p><strong>Winstgevend:</strong> ${leadData.isProfitable || 'Niet opgegeven'}</p>
-    <p><strong>Maandelijkse omzet:</strong> ${leadData.revenue || 'Niet opgegeven'}</p>
+    <h3 style="margin:0 0 8px;font-size:16px;color:#1e2021;">Bedrijfsgegevens</h3>
+    <p style="margin:0 0 16px;"><strong>Bedrijfsnaam:</strong> ${leadData.companyName || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>KvK nummer:</strong> ${leadData.kvkNumber || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>Rechtsvorm:</strong> ${leadData.businessType || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>Bedrijfsgrootte:</strong> ${leadData.businessSize || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>Leeftijd bedrijf:</strong> ${businessAgeLabels[leadData.businessAge] || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>Winstgevend:</strong> ${leadData.isProfitable || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>Maandelijkse omzet:</strong> ${leadData.revenue || 'Niet opgegeven'}</p>
     
-    <h3>Financiering</h3>
-    <p><strong>Gewenst bedrag:</strong> €${leadData.amount || 'Niet opgegeven'}</p>
-    <p><strong>Bestedingsdoel:</strong> ${leadData.purpose || 'Niet opgegeven'}</p>
-    <p><strong>Urgentie:</strong> ${leadData.urgency || 'Niet opgegeven'}</p>
-    ${leadData.existingFinancing ? `<p><strong>Bestaande financiering:</strong> ${leadData.existingFinancing}</p>` : ''}
+    <h3 style="margin:0 0 8px;font-size:16px;color:#1e2021;">Financiering</h3>
+    <p style="margin:0 0 16px;"><strong>Gewenst bedrag:</strong> €${leadData.amount || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>Bestedingsdoel:</strong> ${leadData.purpose || 'Niet opgegeven'}</p>
+    <p style="margin:0 0 16px;"><strong>Urgentie:</strong> ${leadData.urgency || 'Niet opgegeven'}</p>
+    ${leadData.existingFinancing ? `<p style="margin:0 0 16px;"><strong>Bestaande financiering:</strong> ${leadData.existingFinancing}</p>` : ''}
     
     ${leadData.additionalInfo ? `
-    <h3>Aanvullende informatie</h3>
-    <p>${leadData.additionalInfo.replace(/\n/g, '<br>')}</p>
+    <h3 style="margin:0 0 8px;font-size:16px;color:#1e2021;">Aanvullende informatie</h3>
+    <p style="margin:0 0 16px;">${leadData.additionalInfo.replace(/\n/g, '<br>')}</p>
     ` : ''}
 
-    <h3>Attributie</h3>
-    ${partner ? `<p><strong>Partner:</strong> ${partner}</p>` : '<p><em>Geen partner/tag</em></p>'}
+    <h3 style="margin:0 0 8px;font-size:16px;color:#1e2021;">Attributie</h3>
+    ${partner ? `<p style="margin:0 0 16px;"><strong>Partner:</strong> ${partner}</p>` : '<p style="margin:0 0 16px;"><em>Geen partner/tag</em></p>'}
     ${formatTouchHtml('First touch', first)}
     ${formatTouchHtml('Last touch', last)}
     
-    <hr>
-    <p style="color: #6c737a; font-size: 12px;">
+    <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
+    <p style="margin:0;color:#6c737a;font-size:12px;">
       <strong>Metadata:</strong><br>
       Verzonden op: ${new Date().toLocaleString('nl-NL')}<br>
       Bron: ${leadData.source || 'interactive_form'}<br>
@@ -561,9 +561,10 @@ async function sendEmailNotification(leadData: any) {
       ${leadData.ip ? `IP-adres: ${leadData.ip}` : ''}
     </p>
   `;
+  const emailHtml = buildInternalEmailHtml({ body: leadBodyHtml });
   
   const emailText = `
-${qualityTag} Nieuwe financieringsaanvraag ontvangen
+Nieuwe financieringsaanvraag ontvangen
 
 LEAD KWALITEIT: ${leadData.leadQuality.toUpperCase()}
 Winstgevend: ${leadData.isProfitable || '?'} | Bedrijfsleeftijd: ${businessAgeLabels[leadData.businessAge] || '?'} | Omzet: ${leadData.revenue || '?'}
@@ -627,18 +628,22 @@ ${leadData.ip ? `IP-adres: ${leadData.ip}` : ''}
       const businessPhone = String(contact?.phone || '085-0480881');
       const businessEmail = String(contact?.email || 'info@geldgeregeld.nl');
       const telHref = 'tel:' + businessPhone.replace(/[^0-9+]/g, '');
+      const firstName = String(leadData?.firstName || '').trim();
+
+      const html = buildConfirmationEmailHtml({
+        greeting: firstName ? `Beste ${firstName},` : 'Beste,',
+        body: `
+          <p style="margin:0 0 16px;">We hebben je aanvraag ontvangen en nemen doorgaans binnen 24 uur contact met je op.</p>
+          <p style="margin:0 0 16px;"><strong>Sneller schakelen?</strong> Bel ons op <a href="${telHref}" style="color:#00c800;text-decoration:underline;">${businessPhone}</a> of mail naar <a href="mailto:${businessEmail}" style="color:#00c800;text-decoration:underline;">${businessEmail}</a>.</p>
+        `,
+        footerNote: 'Dit is een automatische bevestiging. Je hoeft niet te reageren.',
+      });
 
       await resend.emails.send({
         from: fromEmail,
         to: [leadEmail],
         subject: 'We hebben je aanvraag ontvangen (GeldGeregeld)',
-        html: `
-          <h2>Bedankt voor je aanvraag</h2>
-          <p>We hebben je aanvraag ontvangen en nemen doorgaans binnen 24 uur contact met je op.</p>
-          <p><strong>Sneller schakelen?</strong> Bel ons op <a href="${telHref}">${businessPhone}</a> of mail naar <a href="mailto:${businessEmail}">${businessEmail}</a>.</p>
-          <hr/>
-          <p style="color:#6c737a;font-size:12px">Dit is een automatische bevestiging. Je hoeft niet te reageren.</p>
-        `,
+        html,
         text: `Bedankt voor je aanvraag. We nemen binnen 24 uur contact met je op. Sneller schakelen? Bel ${businessPhone} of mail ${businessEmail}.`,
       });
     }

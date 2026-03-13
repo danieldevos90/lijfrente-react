@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { buildConfirmationEmailHtml, buildInternalEmailHtml } from '@/lib/email-templates';
 
 // Initialize Resend only if API key is available
 // Note: Trim to handle any whitespace/newline issues from env vars
@@ -52,21 +53,22 @@ export async function POST(request: NextRequest) {
     const toEmail = (process.env.CONTACT_EMAIL || 'info@geldgeregeld.nl').trim();
     
     try {
+      const contactBodyHtml = `
+        <h2 style="margin:0 0 20px;font-size:20px;color:#1e2021;">Nieuw contactformulier bericht</h2>
+        <p style="margin:0 0 16px;"><strong>Van:</strong> ${formData.name}</p>
+        <p style="margin:0 0 16px;"><strong>E-mail:</strong> <a href="mailto:${formData.email}" style="color:#00c800;text-decoration:underline;">${formData.email}</a></p>
+        ${formData.phone ? `<p style="margin:0 0 16px;"><strong>Telefoon:</strong> ${formData.phone}</p>` : ''}
+        <p style="margin:0 0 16px;"><strong>Onderwerp:</strong> ${formData.subject}</p>
+        <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
+        <p style="margin:0 0 8px;"><strong>Bericht:</strong></p>
+        <p style="margin:0;">${formData.message.replace(/\n/g, '<br>')}</p>
+      `;
       const { data, error } = await resend.emails.send({
         from: fromEmail,
         to: [toEmail],
         replyTo: formData.email,
         subject: `Contactformulier: ${formData.subject}`,
-        html: `
-          <h2>Nieuw contactformulier bericht</h2>
-          <p><strong>Van:</strong> ${formData.name}</p>
-          <p><strong>E-mail:</strong> ${formData.email}</p>
-          ${formData.phone ? `<p><strong>Telefoon:</strong> ${formData.phone}</p>` : ''}
-          <p><strong>Onderwerp:</strong> ${formData.subject}</p>
-          <hr>
-          <p><strong>Bericht:</strong></p>
-          <p>${formData.message.replace(/\n/g, '<br>')}</p>
-        `,
+        html: buildInternalEmailHtml({ body: contactBodyHtml }),
         text: `
 Nieuw contactformulier bericht
 
@@ -90,16 +92,16 @@ ${formData.message}
 
       // Optionally send a confirmation email to the user
       try {
+        const html = buildConfirmationEmailHtml({
+          greeting: `Beste ${formData.name},`,
+          body: '<p style="margin:0 0 16px;">We hebben uw bericht ontvangen en nemen zo spoedig mogelijk contact met u op.</p>',
+          footerNote: 'Dit is een automatische bevestiging. U hoeft niet te reageren.',
+        });
         await resend.emails.send({
           from: fromEmail,
           to: [formData.email],
           subject: 'Bedankt voor uw bericht - GeldGeregeld',
-          html: `
-            <h2>Bedankt voor uw bericht</h2>
-            <p>Beste ${formData.name},</p>
-            <p>We hebben uw bericht ontvangen en nemen zo spoedig mogelijk contact met u op.</p>
-            <p>Met vriendelijke groet,<br>Het team van GeldGeregeld</p>
-          `,
+          html,
           text: `
 Bedankt voor uw bericht
 

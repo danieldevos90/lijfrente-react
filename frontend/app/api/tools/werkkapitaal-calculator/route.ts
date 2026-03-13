@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { getSiteContactInfo } from "@/lib/get-site-contact-info";
 import { getBaseUrl } from "@/lib/seo";
+import { buildConfirmationEmailHtml } from "@/lib/email-templates";
 
 type RateState = { count: number; resetAt: number };
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
@@ -115,68 +116,30 @@ export async function POST(request: NextRequest) {
     const attribution = body?.attribution;
 
     // User email (soft lead magnet + CTA)
+    const html = buildConfirmationEmailHtml({
+      body: `
+        <p style="margin:0 0 16px;">Dit is een snelle indicatie op basis van je inputs. Wil je een exact voorstel? Start dan je aanvraag.</p>
+        <ul style="margin:0 0 16px;padding-left:20px;">
+          <li style="margin-bottom:6px;"><strong>Cashflow-gap:</strong> ${gapDays} dagen</li>
+          <li style="margin-bottom:6px;"><strong>Aanbevolen buffer:</strong> ${formatEUR(recommended)}</li>
+          <li style="margin-bottom:6px;"><strong>Sugg. aanvraagbedrag:</strong> ${formatEUR(suggestedAmount)}</li>
+        </ul>
+        <p style="margin:0 0 16px;">Sneller schakelen? Bel <a href="${telHref}" style="color:#00c800;text-decoration:underline;">${businessPhone}</a> of mail <a href="mailto:${businessEmail}" style="color:#00c800;text-decoration:underline;">${businessEmail}</a>.</p>
+      `,
+      cta: { text: "Start aanvraag (prefill)", href: leadUrl },
+      footerNote: `Tool: ${toolUrl}`,
+      baseUrl,
+    });
+
     await resend.emails.send({
       from: fromEmail,
       to: [email],
       replyTo: businessEmail,
       subject: "Je werkkapitaal indicatie (GeldGeregeld)",
-      html: `
-        <h2>Je werkkapitaal indicatie</h2>
-        <p>Dit is een snelle indicatie op basis van je inputs. Wil je een exact voorstel? Start dan je aanvraag.</p>
-        <ul>
-          <li><strong>Cashflow-gap:</strong> ${gapDays} dagen</li>
-          <li><strong>Aanbevolen buffer:</strong> ${formatEUR(recommended)}</li>
-          <li><strong>Sugg. aanvraagbedrag:</strong> ${formatEUR(suggestedAmount)}</li>
-        </ul>
-        <p><a href="${leadUrl}">Start aanvraag (prefill)</a></p>
-        <p style="color:#6c737a;font-size:12px">Tool: <a href="${toolUrl}">${toolUrl}</a></p>
-        <hr/>
-        <p>Sneller schakelen? Bel <a href="${telHref}">${businessPhone}</a> of mail <a href="mailto:${businessEmail}">${businessEmail}</a>.</p>
-      `,
+      html,
       text: `Je werkkapitaal indicatie\n\nCashflow-gap: ${gapDays} dagen\nAanbevolen: ${formatEUR(
         recommended
       )}\nSugg. aanvraagbedrag: ${formatEUR(suggestedAmount)}\n\nStart aanvraag (prefill): ${leadUrl}\n\nTool: ${toolUrl}\n\nSneller schakelen? Bel ${businessPhone} of mail ${businessEmail}.`,
-    });
-
-    // Internal notification (so the team can follow up if desired)
-    const internalTo = ["info@geldgeregeld.nl", "jan.dijkerman@icloud.com"];
-    await resend.emails.send({
-      from: fromEmail,
-      to: internalTo,
-      replyTo: email,
-      subject: `Lead magnet: werkkapitaal calculator (${companyName || email})`,
-      html: `
-        <h2>Nieuwe tool-aanvraag: Werkkapitaal calculator</h2>
-        <p><strong>Email:</strong> ${email}</p>
-        ${companyName ? `<p><strong>Bedrijfsnaam:</strong> ${companyName}</p>` : ""}
-        <h3>Inputs</h3>
-        <ul>
-          <li>Maandelijkse kosten: ${formatEUR(monthlyCostsEUR)}</li>
-          <li>DSO (klant betaalt): ${String(body?.dsoDays || "-")} dagen</li>
-          <li>DPO (jij betaalt): ${String(body?.dpoDays || "-")} dagen</li>
-          <li>Buffer: ${String(body?.bufferPct || "-")}%</li>
-        </ul>
-        <h3>Resultaat</h3>
-        <ul>
-          <li>Cashflow-gap: ${gapDays} dagen</li>
-          <li>Aanbevolen: ${formatEUR(recommended)}</li>
-          <li>Sugg. aanvraagbedrag: ${formatEUR(suggestedAmount)}</li>
-        </ul>
-        <p><a href="${leadUrl}">Open prefill drawer</a></p>
-        <h3>Attributie</h3>
-        <pre style="background:#f6f8fa;padding:12px;border-radius:8px;overflow:auto">${JSON.stringify(
-          { ip, source: body?.source, attribution },
-          null,
-          2
-        )}</pre>
-      `,
-      text: `Nieuwe tool-aanvraag: Werkkapitaal calculator\nEmail: ${email}\nBedrijfsnaam: ${companyName || "-"}\n\nInputs: maandelijkse kosten ${formatEUR(
-        monthlyCostsEUR
-      )}, DSO ${String(body?.dsoDays || "-")}, DPO ${String(body?.dpoDays || "-")}, buffer ${String(
-        body?.bufferPct || "-"
-      )}%\nResultaat: gap ${gapDays} dagen, aanbevolen ${formatEUR(recommended)}, sugg. aanvraag ${formatEUR(
-        suggestedAmount
-      )}\n\nPrefill: ${leadUrl}\nAttributie: ${JSON.stringify({ ip, source: body?.source, attribution })}`,
     });
 
     return NextResponse.json({ success: true }, { status: 200 });

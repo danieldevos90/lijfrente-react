@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { getBaseUrl } from "@/lib/seo";
+import { buildConfirmationEmailHtml } from "@/lib/email-templates";
 
 export const runtime = "nodejs";
 
@@ -32,16 +33,21 @@ export async function POST(req: NextRequest) {
     const resumeUrl = `${baseUrl}/lead?draft=${encodeURIComponent(draft)}&source=resume_link`;
     const fromEmail = (process.env.RESEND_FROM_EMAIL || "noreply@geldgeregeld.nl").trim();
 
+    const html = buildConfirmationEmailHtml({
+      body: `
+        <p style="margin:0 0 16px;">Je kunt je aanvraag later afmaken via deze link:</p>
+        <p style="margin:0 0 16px;"><a href="${resumeUrl}" style="color:#00c800;text-decoration:underline;word-break:break-all;">${resumeUrl}</a></p>
+      `,
+      cta: { text: "Verder met aanvraag", href: resumeUrl },
+      footerNote: "Let op: deel deze link niet. Hij bevat je ingevulde gegevens (zonder e-mail/telefoon).",
+      baseUrl,
+    });
+
     await resend.emails.send({
       from: fromEmail,
       to: [email],
       subject: "Je aanvraaglink (GeldGeregeld)",
-      html: `
-        <h2>Verder gaan met je aanvraag</h2>
-        <p>Je kunt je aanvraag later afmaken via deze link:</p>
-        <p><a href="${resumeUrl}">${resumeUrl}</a></p>
-        <p style="color:#6c737a;font-size:12px">Let op: deel deze link niet. Hij bevat je ingevulde gegevens (zonder e-mail/telefoon).</p>
-      `,
+      html,
       text: `Verder gaan met je aanvraag: ${resumeUrl}`,
     });
 
