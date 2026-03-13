@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const BACKOFFICE_PASSWORD =
-  process.env.BACKOFFICE_PASSWORD || process.env.SITE_PASSWORD || 'geldgeregeld2026';
+  (process.env.BACKOFFICE_PASSWORD || process.env.SITE_PASSWORD || 'geldgeregeld2026').trim();
 
 export async function POST(request: NextRequest) {
   try {

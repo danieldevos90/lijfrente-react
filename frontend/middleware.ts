@@ -8,7 +8,7 @@ export function middleware(req: NextRequest) {
   if (url.pathname.startsWith('/backoffice/') && url.pathname !== '/backoffice') {
     const pw = req.cookies.get('bo-auth')?.value;
     const expected =
-      process.env.BACKOFFICE_PASSWORD || process.env.SITE_PASSWORD || 'geldgeregeld2026';
+      (process.env.BACKOFFICE_PASSWORD || process.env.SITE_PASSWORD || 'geldgeregeld2026').trim();
     if (pw !== expected) {
       const login = url.clone();
       login.pathname = '/backoffice';
