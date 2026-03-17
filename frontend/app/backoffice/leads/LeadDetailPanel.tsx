@@ -25,6 +25,9 @@ type Lead = {
   source?: string;
   partner?: string;
   sector?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
   createdAt: string;
 };
 
@@ -207,6 +210,17 @@ export function LeadDetailPanel({ lead, onClose, onUpdate, onSendEmail, onDelete
             {lead.partner && <DetailRow label="Partner" value={lead.partner} />}
           </div>
         </div>
+
+        {(lead.utm_source || lead.utm_medium || lead.utm_campaign) && (
+          <div className="bo-panel-section">
+            <h3 className="bo-panel-section-title">Kanaal / Campagne</h3>
+            <div className="bo-detail-grid">
+              {lead.utm_source && <DetailRow label="Kanaal (utm_source)" value={lead.utm_source} />}
+              {lead.utm_medium && <DetailRow label="Medium (utm_medium)" value={lead.utm_medium} />}
+              {lead.utm_campaign && <DetailRow label="Campagne (utm_campaign)" value={lead.utm_campaign} />}
+            </div>
+          </div>
+        )}
 
         {/* Notes */}
         <div className="bo-panel-section">

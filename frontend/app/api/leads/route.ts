@@ -353,6 +353,7 @@ export async function POST(request: NextRequest) {
     
     // All possible lead fields — the deployed Strapi schema may only contain a
     // subset. We build the full object, then strip any keys Strapi rejects.
+    const lastTouch = attribution?.last || attribution?.first;
     const strapiLeadData: Record<string, unknown> = {
       siteId: 'geldgeregeld',
       amount_requested_eur: parseFloat(normalizedData.amount) || 50000,
@@ -373,6 +374,9 @@ export async function POST(request: NextRequest) {
       source: formData.source || 'interactive_form',
       sector: formData.sector || undefined,
       partner: partner || undefined,
+      utm_source: lastTouch?.utm_source || undefined,
+      utm_medium: lastTouch?.utm_medium || undefined,
+      utm_campaign: lastTouch?.utm_campaign || undefined,
       business_activities: normalizedData.businessActivities || undefined,
     };
 

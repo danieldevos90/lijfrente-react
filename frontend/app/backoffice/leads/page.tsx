@@ -27,6 +27,9 @@ type Lead = {
   source?: string;
   partner?: string;
   sector?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
   createdAt: string;
 };
 
@@ -74,6 +77,25 @@ function formatCurrency(n: number) {
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+const SOURCE_LABELS: Record<string, string> = {
+  lead_page: 'Leadpagina',
+  sector_page: 'Sectorpagina',
+  drawer: 'Drawer',
+  interactive_form: 'Interactief formulier',
+  quick_form: 'Snel formulier',
+  tool_werkkapitaal_calculator: 'Werkkapitaal tool',
+};
+
+function formatChannel(lead: Lead): string {
+  const parts: string[] = [];
+  if (lead.utm_source) parts.push(lead.utm_source);
+  if (lead.utm_campaign) parts.push(lead.utm_campaign);
+  if (parts.length) return parts.join(' / ');
+  if (lead.partner) return `Partner: ${lead.partner}`;
+  if (lead.source) return SOURCE_LABELS[lead.source] || lead.source;
+  return '—';
 }
 
 function Badge({ label, bg, color }: { label: string; bg: string; color: string }) {
@@ -204,6 +226,7 @@ export default function LeadsPage() {
                 <th>E-mail</th>
                 <th>Bedrag</th>
                 <th>Doel</th>
+                <th>Kanaal</th>
                 <th>Kwaliteit</th>
                 <th>Status</th>
                 <th></th>
@@ -229,6 +252,7 @@ export default function LeadsPage() {
                     <td className="bo-cell-email">{lead.email || '—'}</td>
                     <td className="bo-cell-amount">{formatCurrency(lead.amount_requested_eur)}</td>
                     <td>{USE_OF_FUNDS_LABELS[lead.use_of_funds] || lead.use_of_funds}</td>
+                    <td className="bo-cell-channel" title={formatChannel(lead)}>{formatChannel(lead)}</td>
                     <td>{qc ? <Badge label={quality} bg={qc.bg} color={qc.color} /> : quality}</td>
                     <td><Badge label={STATUS_LABELS[status] || status} bg={sc.bg} color={sc.color} /></td>
                     <td>
@@ -416,6 +440,7 @@ export default function LeadsPage() {
         .bo-cell-sub { font-size: 0.8125rem; color: var(--color-text-muted, #6c737a); }
         .bo-cell-email { color: var(--color-charcoal400, #6c737a); }
         .bo-cell-amount { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+        .bo-cell-channel { max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.8125rem; color: var(--color-text-muted, #6c737a); }
 
         /* States */
         .bo-loading, .bo-empty {

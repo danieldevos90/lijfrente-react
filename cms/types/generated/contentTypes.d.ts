@@ -373,6 +373,47 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBenefitBenefit extends Struct.CollectionTypeSchema {
+  collectionName: 'benefits';
+  info: {
+    description: 'SEO-optimized benefit content with metadata';
+    displayName: 'Benefit';
+    pluralName: 'benefits';
+    singularName: 'benefit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    color: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#fff2b2'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    iconPath: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::benefit.benefit'
+    > &
+      Schema.Attribute.Private;
+    metaDescription: Schema.Attribute.Text;
+    metaKeywords: Schema.Attribute.String;
+    metaTitle: Schema.Attribute.String;
+    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.String;
+    siteId: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    textColor: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#1e2021'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiLeadLead extends Struct.CollectionTypeSchema {
   collectionName: 'leads';
   info: {
@@ -385,6 +426,13 @@ export interface ApiLeadLead extends Struct.CollectionTypeSchema {
   };
   attributes: {
     amount_requested_eur: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    business_activities: Schema.Attribute.Text;
+    business_age_years: Schema.Attribute.Enumeration<
+      ['y0_2', 'y2_5', 'y5_10', 'y10_plus']
+    >;
+    business_type: Schema.Attribute.Enumeration<
+      ['eenmanszaak', 'bv', 'vof', 'maatschap', 'stichting']
+    >;
     company_name: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -392,15 +440,42 @@ export interface ApiLeadLead extends Struct.CollectionTypeSchema {
     email: Schema.Attribute.Email;
     expected_revenue_next_12m_eur: Schema.Attribute.Decimal &
       Schema.Attribute.Required;
+    firstName: Schema.Attribute.String;
+    has_existing_financing: Schema.Attribute.Enumeration<
+      ['nee', 'beperkt', 'meerdere']
+    >;
+    is_profitable: Schema.Attribute.Boolean;
     kvk_number: Schema.Attribute.String;
+    lastName: Schema.Attribute.String;
+    lead_quality: Schema.Attribute.Enumeration<['warm', 'koud', 'onbekend']> &
+      Schema.Attribute.DefaultTo<'onbekend'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::lead.lead'> &
       Schema.Attribute.Private;
+    notes: Schema.Attribute.Text;
+    partner: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    sector: Schema.Attribute.String;
     siteId: Schema.Attribute.String & Schema.Attribute.Required;
+    source: Schema.Attribute.String;
+    status: Schema.Attribute.Enumeration<
+      [
+        'nieuw',
+        'in_behandeling',
+        'meer_info_nodig',
+        'contact_opnemen',
+        'afgekeurd',
+        'afgehandeld',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'nieuw'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    urgency: Schema.Attribute.Enumeration<
+      ['direct', 'kort', 'maand', 'kwartaal']
+    >;
     use_of_funds: Schema.Attribute.Enumeration<
       [
         'werkkapitaal',
@@ -412,10 +487,15 @@ export interface ApiLeadLead extends Struct.CollectionTypeSchema {
         'herfinanciering',
         'overnamefinanciering',
         'factoring',
+        'tweede_rang',
+        'vastgoed_krediet',
         'overig',
       ]
     > &
       Schema.Attribute.Required;
+    utm_campaign: Schema.Attribute.String;
+    utm_medium: Schema.Attribute.String;
+    utm_source: Schema.Attribute.String;
   };
 }
 
@@ -454,6 +534,7 @@ export interface ApiNavigationItemNavigationItem
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
+    description: 'Dynamic page builder with section components';
     displayName: 'Page';
     pluralName: 'pages';
     singularName: 'page';
@@ -469,15 +550,95 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
+    metaDescription: Schema.Attribute.Text;
+    metaKeywords: Schema.Attribute.String;
     primaryCtaHref: Schema.Attribute.String;
     primaryCtaLabel: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'sections.hero-section',
+        'sections.benefits-carousel',
+        'sections.feature-section',
+        'sections.testimonials-carousel',
+        'sections.how-it-works-bento',
+        'sections.process-steps',
+        'sections.why-choose-section',
+        'sections.content-section',
+        'sections.services-section',
+        'sections.trust-section',
+        'sections.cta-section',
+        'sections.faq-section',
+        'sections.feature-showcase',
+        'sections.two-column-support',
+        'sections.two-blocks-section',
+        'sections.animated-stats',
+        'sections.team-members-section',
+      ]
+    >;
     siteId: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSectorPageSectorPage extends Struct.CollectionTypeSchema {
+  collectionName: 'sector_pages';
+  info: {
+    description: 'Dedicated pages for industry sectors with structured content for SEO';
+    displayName: 'Sector Page';
+    pluralName: 'sector-pages';
+    singularName: 'sector-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    benefits: Schema.Attribute.Component<'sectors.benefit', true>;
+    benefitsSubtitle: Schema.Attribute.Text;
+    benefitsTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaHref: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/lead'>;
+    ctaLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Vraag financiering aan'>;
+    ctaSubtitle: Schema.Attribute.Text;
+    ctaTitle: Schema.Attribute.String;
+    easyLendingContent: Schema.Attribute.RichText;
+    easyLendingImage: Schema.Attribute.Media<'images'>;
+    easyLendingImagePosition: Schema.Attribute.Enumeration<
+      ['left', 'right', 'top']
+    > &
+      Schema.Attribute.DefaultTo<'left'>;
+    easyLendingTitle: Schema.Attribute.String;
+    heroImage: Schema.Attribute.Media<'images'>;
+    heroSubtitle: Schema.Attribute.Text;
+    heroTitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sector-page.sector-page'
+    > &
+      Schema.Attribute.Private;
+    metaDescription: Schema.Attribute.Text;
+    metaKeywords: Schema.Attribute.String;
+    metaTitle: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    quote: Schema.Attribute.Text;
+    quoteAuthor: Schema.Attribute.String;
+    sectorName: Schema.Attribute.String & Schema.Attribute.Required;
+    sectorSlug: Schema.Attribute.UID<'sectorName'> & Schema.Attribute.Required;
+    siteId: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    useCases: Schema.Attribute.Component<'sectors.use-case', true>;
+    useCasesSubtitle: Schema.Attribute.Text;
+    useCasesTitle: Schema.Attribute.String;
   };
 }
 
@@ -492,18 +653,116 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    address: Schema.Attribute.String;
+    city: Schema.Attribute.String;
+    companyName: Schema.Attribute.String;
+    copyright: Schema.Attribute.String;
+    country: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Nederland'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description1: Schema.Attribute.Text;
+    description2: Schema.Attribute.Text;
+    description3: Schema.Attribute.Text;
     domain: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    footerLinks: Schema.Attribute.JSON;
+    kvkNumber: Schema.Attribute.String;
+    linkedinText: Schema.Attribute.String;
+    linkedinUrl: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::site.site'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    phone: Schema.Attribute.String;
+    postalCode: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     siteId: Schema.Attribute.UID<'name'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
+  collectionName: 'team_members';
+  info: {
+    description: 'Team member profiles for About Us page';
+    displayName: 'Team Member';
+    pluralName: 'team-members';
+    singularName: 'team-member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bio: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images'>;
+    linkedin: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-member.team-member'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+    siteId: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
+  collectionName: 'testimonials';
+  info: {
+    description: 'Customer testimonials and reviews';
+    displayName: 'Testimonial';
+    pluralName: 'testimonials';
+    singularName: 'testimonial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    rating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<5>;
+    role: Schema.Attribute.String;
+    sector: Schema.Attribute.String;
+    siteId: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1050,10 +1309,14 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::benefit.benefit': ApiBenefitBenefit;
       'api::lead.lead': ApiLeadLead;
       'api::navigation-item.navigation-item': ApiNavigationItemNavigationItem;
       'api::page.page': ApiPagePage;
+      'api::sector-page.sector-page': ApiSectorPageSectorPage;
       'api::site.site': ApiSiteSite;
+      'api::team-member.team-member': ApiTeamMemberTeamMember;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::token-set.token-set': ApiTokenSetTokenSet;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

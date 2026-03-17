@@ -18,6 +18,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           '/api/',
           '/admin/',
+          '/backoffice/',
           '/_next/',
           '/password/',
           '/bedankt',
