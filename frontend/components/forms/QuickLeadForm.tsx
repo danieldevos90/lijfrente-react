@@ -279,6 +279,7 @@ export default function QuickLeadForm({
     const kvk = (data.kvkNumber || "").replace(/\D/g, "");
     if (kvk.length !== 8) return "Vul een geldig KvK-nummer in (8 cijfers).";
     if (!data.revenue) return "Kies je verwachte jaaromzet.";
+    if (data.revenue === "0-100k") return "De minimale jaaromzet is € 100.000. Kom je niet in aanmerking voor deze financiering.";
     if (!data.businessActivities || data.businessActivities.trim().length < 3) return "Beschrijf je bedrijfsactiviteiten.";
     if (!data.urgency) return "Kies wanneer je het geld nodig hebt.";
     return null;

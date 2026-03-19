@@ -91,9 +91,18 @@ async function sendMetaLeadEvent(req: NextRequest, body: any) {
   );
 }
 
+const MIN_REVENUE_EUR = 100000;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    const revenue = Number(body?.expected_revenue_next_12m_eur);
+    if (Number.isFinite(revenue) && revenue < MIN_REVENUE_EUR) {
+      return new Response(
+        JSON.stringify({ ok: false, error: 'De minimale jaaromzet is € 100.000. Kom je niet in aanmerking voor deze financiering.' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
     const base = process.env.NEXT_PUBLIC_STRAPI_URL?.trim();
     if (!base) {
       console.error('Lead submission misconfigured: NEXT_PUBLIC_STRAPI_URL not set');

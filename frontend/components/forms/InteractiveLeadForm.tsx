@@ -115,6 +115,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
       case 4:
         if (!formData.companyName) newErrors.companyName = 'Bedrijfsnaam is verplicht';
         if (!formData.kvkNumber) newErrors.kvkNumber = 'KvK nummer is verplicht';
+        if (formData.revenue === '0-100k') newErrors.revenue = 'De minimale jaaromzet is € 100.000. Kom je niet in aanmerking voor deze financiering.';
         if (!formData.businessActivities || formData.businessActivities.trim().length < 3) newErrors.businessActivities = 'Beschrijf uw bedrijfsactiviteiten';
         break;
       case 5:
@@ -393,6 +394,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
                 <select
                   value={formData.revenue}
                   onChange={(e) => updateFormData('revenue', e.target.value)}
+                  className={errors.revenue ? 'error' : ''}
                 >
                   <option value="">Selecteer jaaromzet</option>
                   <option value="0-100k">&lt; € 100.000</option>
@@ -402,6 +404,7 @@ export default function InteractiveLeadForm({ onSuccess, isModal = false }: Inte
                   <option value="1m-3m">€ 1.000.000 - € 3.000.000</option>
                   <option value="3m+">€ 3.000.000+</option>
                 </select>
+                {errors.revenue && <span className="field-error">{errors.revenue}</span>}
               </div>
               
               <div className="field-group">

@@ -245,6 +245,15 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Minimale jaaromzet: € 100.000
+    const REVENUE_BELOW_MIN = ['0-100k', '0-50k', '0-10k'];
+    if (normalizedData.revenue && REVENUE_BELOW_MIN.includes(normalizedData.revenue)) {
+      return NextResponse.json(
+        { error: 'De minimale jaaromzet is € 100.000. Kom je niet in aanmerking voor deze financiering.' },
+        { status: 400 }
+      );
+    }
     
     // Map purpose to Strapi use_of_funds enum
     const purposeToUseOfFunds: Record<string, string> = {

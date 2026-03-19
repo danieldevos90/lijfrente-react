@@ -29,6 +29,12 @@ const schema = z.object({
 }).refine((data) => data.kvk_number || (data.company_name && data.company_name.length > 1), {
   message: "KvK of bedrijfsnaam is vereist",
   path: ["company_name"],
+}).refine((data) => {
+  const n = Number(String(data.expected_revenue_next_12m_eur).replace(/[^0-9.]/g, ""));
+  return !Number.isFinite(n) || n >= 100000;
+}, {
+  message: "De minimale jaaromzet is € 100.000.",
+  path: ["expected_revenue_next_12m_eur"],
 });
 
 function bucketize(value: number, buckets: number[]): string {
