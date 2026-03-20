@@ -1,8 +1,17 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef, useCallback } from "react";
 import { Shield, Zap } from "lucide-react";
-import { trackFormEvent, trackLeadGeneration, trackEvent, createTrackingEventId } from "@/lib/analytics";
+import {
+  trackFormEvent,
+  trackLeadGeneration,
+  trackEvent,
+  createTrackingEventId,
+  trackQuickLeadFunnel,
+  quickLeadMessageToValidationReason,
+  type QuickLeadSurface,
+  type QuickLeadCloseMethod,
+} from "@/lib/analytics";
 import { getABTestVariant, trackABTestConversion } from "@/lib/ab-test";
 import { getLeadAttribution } from "@/lib/attribution";
 
@@ -121,12 +130,28 @@ export default function QuickLeadForm({
   isModal = false,
   defaultSource,
   onStepChange,
+  surface: surfaceProp,
+  openTrigger,
 }: {
   onSuccess?: () => void;
   isModal?: boolean;
   defaultSource?: string;
   onStepChange?: (step: 1 | 2) => void;
+  /** For funnel reporting: drawer widget vs exit-intent modal vs inline page */
+  surface?: QuickLeadSurface;
+  /** Last open CTA (drawer) or fixed label (exit intent) */
+  openTrigger?: string;
 }) {
+  const surface: QuickLeadSurface = surfaceProp ?? (isModal ? "drawer" : "inline");
+
+  /** Set in useEffect so SSR/hydration never leaves analysis stuck on a sentinel id */
+  const [funnelSessionId, setFunnelSessionId] = useState<string | null>(null);
+  const funnelCompletedRef = useRef(false);
+  const lastStepRef = useRef<1 | 2>(1);
+  const closeMethodRef = useRef<QuickLeadCloseMethod | undefined>(undefined);
+  const prevStepRef = useRef<1 | 2 | null>(null);
+  const formMountOnceRef = useRef(false);
+
   const [step, setStep] = useState<1 | 2>(1);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -250,12 +275,125 @@ export default function QuickLeadForm({
   }, [persistKey, step, data]);
 
   useEffect(() => {
-    trackFormEvent("view", "quick_lead", { variant: isModal ? "modal" : "page" });
-  }, [isModal]);
+    trackFormEvent("view", "quick_lead", { variant: isModal ? "modal" : "page", surface });
+  }, [isModal, surface]);
 
   useEffect(() => {
     onStepChange?.(step);
   }, [onStepChange, step]);
+
+  useEffect(() => {
+    lastStepRef.current = step;
+  }, [step]);
+
+  useEffect(() => {
+    setFunnelSessionId(createTrackingEventId("qlf"));
+  }, []);
+
+  // Surface dismissed (drawer / exit-intent): capture method before unmount for abandon event
+  useEffect(() => {
+    if (surface === "inline") return;
+    const handler = (e: Event) => {
+      const d = (e as CustomEvent<{ method?: QuickLeadCloseMethod }>).detail;
+      if (d?.method) closeMethodRef.current = d.method;
+    };
+    window.addEventListener("quick_lead_surface_close", handler);
+    return () => window.removeEventListener("quick_lead_surface_close", handler);
+  }, [surface]);
+
+  // One-shot: form opened + step 1 visible (guard: contactVariant/context can update later)
+  useEffect(() => {
+    if (!funnelSessionId || formMountOnceRef.current) return;
+    formMountOnceRef.current = true;
+    trackQuickLeadFunnel({
+      action: "form_mount",
+      step: 1,
+      surface,
+      funnel_session_id: funnelSessionId,
+      open_trigger: openTrigger,
+      lead_source: context.source,
+      sector: context.sector,
+      contact_variant: contactVariant,
+    });
+    trackQuickLeadFunnel({
+      action: "step_view",
+      step: 1,
+      surface,
+      funnel_session_id: funnelSessionId,
+    });
+    prevStepRef.current = 1;
+  }, [funnelSessionId, surface, openTrigger, context.source, context.sector, contactVariant]);
+
+  // Step changes (2 ↔ 1): where users navigate after initial view
+  useEffect(() => {
+    if (!funnelSessionId) return;
+    if (prevStepRef.current === step) return;
+    const fromStep = prevStepRef.current;
+    if (fromStep !== null) {
+      trackQuickLeadFunnel({
+        action: "step_view",
+        step,
+        surface,
+        funnel_session_id: funnelSessionId,
+        from_step: fromStep,
+        lead_source: context.source,
+        sector: context.sector,
+      });
+    }
+    prevStepRef.current = step;
+  }, [step, surface, funnelSessionId, context.source, context.sector]);
+
+  // Drawer / popup closed without successful submit → abandon (not inline pages)
+  useEffect(() => {
+    return () => {
+      if (surface === "inline") return;
+      if (!funnelSessionId) return;
+      if (funnelCompletedRef.current) return;
+      trackQuickLeadFunnel({
+        action: "surface_close_abandon",
+        step: lastStepRef.current,
+        surface,
+        funnel_session_id: funnelSessionId,
+        close_method: closeMethodRef.current,
+        lead_source: context.source,
+        sector: context.sector,
+      });
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- abandon snapshot at unmount only
+  }, [surface, funnelSessionId]);
+
+  const emitValidationBlocked = useCallback(
+    (stepNum: 1 | 2, message: string) => {
+      if (!funnelSessionId) return;
+      const { reason, detail } = quickLeadMessageToValidationReason(message);
+      trackQuickLeadFunnel({
+        action: "validation_blocked",
+        step: stepNum,
+        surface,
+        funnel_session_id: funnelSessionId,
+        validation_reason: reason,
+        validation_detail: detail,
+        sector: context.sector,
+        lead_source: context.source,
+        contact_variant: contactVariant,
+        purpose: data.purpose || undefined,
+      });
+      trackFormEvent("error", "quick_lead", {
+        step: stepNum,
+        reason,
+        surface,
+        funnel_session_id: funnelSessionId,
+      });
+    },
+    [
+      funnelSessionId,
+      surface,
+      context.sector,
+      context.source,
+      contactVariant,
+      data.purpose,
+    ]
+  );
 
   const amountEUR = normalizeAmountEUR(data);
 
@@ -290,7 +428,7 @@ export default function QuickLeadForm({
     const err = validateStep1();
     if (err) {
       setSubmitError(err);
-      trackFormEvent("error", "quick_lead", { step: 1, reason: err });
+      emitValidationBlocked(1, err);
       return;
     }
 
@@ -298,13 +436,25 @@ export default function QuickLeadForm({
       const err2 = validateStep2();
       if (err2) {
         setSubmitError(err2);
-        trackFormEvent("error", "quick_lead", { step: 2, reason: err2 });
+        emitValidationBlocked(2, err2);
         return;
       }
     }
 
     setSubmitting(true);
-    trackFormEvent("start", "quick_lead", { step: extra.submitFromStep });
+    if (funnelSessionId) {
+      trackQuickLeadFunnel({
+        action: "submit_attempt",
+        step: extra.submitFromStep,
+        surface,
+        funnel_session_id: funnelSessionId,
+        purpose: data.purpose || undefined,
+        sector: context.sector,
+        lead_source: context.source,
+        contact_variant: contactVariant,
+      });
+    }
+    trackFormEvent("start", "quick_lead", { step: extra.submitFromStep, surface, funnel_session_id: funnelSessionId });
 
     try {
       const attribution = getLeadAttribution();
@@ -349,7 +499,21 @@ export default function QuickLeadForm({
       const resJson = await res.json().catch(() => ({}));
       const returnedQuality = resJson?.leadQuality || "onbekend";
 
+      funnelCompletedRef.current = true;
       setOk(true);
+      if (funnelSessionId) {
+        trackQuickLeadFunnel({
+          action: "submit_success",
+          step: extra.submitFromStep,
+          surface,
+          funnel_session_id: funnelSessionId,
+          purpose: data.purpose,
+          sector: context.sector,
+          lead_source: context.source,
+          contact_variant: contactVariant,
+          lead_quality: returnedQuality,
+        });
+      }
       trackFormEvent("complete", "quick_lead", {
         submit_from_step: extra.submitFromStep,
         sector: context.sector,
@@ -393,7 +557,25 @@ export default function QuickLeadForm({
     } catch (e: any) {
       const msg = e?.message && typeof e.message === "string" ? e.message : "Verzenden mislukt, probeer opnieuw.";
       setSubmitError(msg);
-      trackFormEvent("error", "quick_lead", { step: extra.submitFromStep, reason: "submit_failed" });
+      const { reason, detail } = quickLeadMessageToValidationReason(msg);
+      if (funnelSessionId) {
+        trackQuickLeadFunnel({
+          action: "submit_failed",
+          step: extra.submitFromStep,
+          surface,
+          funnel_session_id: funnelSessionId,
+          validation_reason: reason,
+          validation_detail: detail,
+          purpose: data.purpose || undefined,
+          sector: context.sector,
+        });
+      }
+      trackFormEvent("error", "quick_lead", {
+        step: extra.submitFromStep,
+        reason: reason,
+        surface,
+        funnel_session_id: funnelSessionId,
+      });
     } finally {
       setSubmitting(false);
     }
@@ -434,7 +616,20 @@ export default function QuickLeadForm({
         <button
           type="button"
           className={`quick-lead-stepper__step ${step === 1 ? "is-active" : ""}`}
-          onClick={() => setStep(1)}
+          onClick={() => {
+            if (step === 2) {
+              if (funnelSessionId) {
+                trackQuickLeadFunnel({
+                  action: "step_tab_to_1",
+                  step: 1,
+                  from_step: 2,
+                  surface,
+                  funnel_session_id: funnelSessionId,
+                });
+              }
+              setStep(1);
+            }
+          }}
         >
           <span className="quick-lead-stepper__dot">1</span>
           <span className="quick-lead-stepper__label">Basis</span>
@@ -447,9 +642,19 @@ export default function QuickLeadForm({
             const err = validateStep1();
             if (err) {
               setSubmitError(err);
+              emitValidationBlocked(1, err);
               return;
             }
-            trackFormEvent("start", "quick_lead", { step: 2 });
+            if (funnelSessionId) {
+              trackQuickLeadFunnel({
+                action: "step_advance",
+                step: 2,
+                from_step: 1,
+                surface,
+                funnel_session_id: funnelSessionId,
+              });
+            }
+            trackFormEvent("start", "quick_lead", { step: 2, surface, funnel_session_id: funnelSessionId });
             setStep(2);
           }}
         >
@@ -600,9 +805,19 @@ export default function QuickLeadForm({
                 const err = validateStep1();
                 if (err) {
                   setSubmitError(err);
+                  emitValidationBlocked(1, err);
                   return;
                 }
-                trackFormEvent("start", "quick_lead", { step: 2 });
+                if (funnelSessionId) {
+                  trackQuickLeadFunnel({
+                    action: "step_advance",
+                    step: 2,
+                    from_step: 1,
+                    surface,
+                    funnel_session_id: funnelSessionId,
+                  });
+                }
+                trackFormEvent("start", "quick_lead", { step: 2, surface, funnel_session_id: funnelSessionId });
                 setStep(2);
               }}
             >
@@ -750,7 +965,23 @@ export default function QuickLeadForm({
             >
               {submitting ? "Verzenden…" : "Verstuur"}
             </button>
-            <button type="button" className="btn btn-secondary" disabled={submitting} onClick={() => setStep(1)}>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              disabled={submitting}
+              onClick={() => {
+                if (funnelSessionId) {
+                  trackQuickLeadFunnel({
+                    action: "step_back",
+                    step: 1,
+                    from_step: 2,
+                    surface,
+                    funnel_session_id: funnelSessionId,
+                  });
+                }
+                setStep(1);
+              }}
+            >
               Terug
             </button>
           </div>

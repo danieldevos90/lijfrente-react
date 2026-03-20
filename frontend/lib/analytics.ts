@@ -231,6 +231,142 @@ export function trackDrawerEvent(
   });
 }
 
+/** Where the quick lead form is shown (for funnel reporting). */
+export type QuickLeadSurface = 'drawer' | 'exit_intent_modal' | 'inline';
+
+/** How the user dismissed the drawer/modal (for abandon breakdown). */
+export type QuickLeadCloseMethod = 'overlay' | 'close_button' | 'escape';
+
+/** Normalized reasons so GA4 explorations can group drop-offs. */
+export type QuickLeadValidationReason =
+  | 'missing_amount'
+  | 'missing_purpose'
+  | 'missing_first_name'
+  | 'missing_last_name'
+  | 'missing_company'
+  | 'invalid_email'
+  | 'missing_phone'
+  | 'invalid_kvk'
+  | 'missing_revenue'
+  | 'revenue_below_minimum'
+  | 'missing_business_activities'
+  | 'missing_urgency'
+  | 'submit_http_error'
+  | 'submit_api_rejected'
+  | 'other';
+
+const QUICK_LEAD_MSG_TO_REASON: Record<string, QuickLeadValidationReason> = {
+  'Kies een bedrag.': 'missing_amount',
+  'Kies waarvoor je de financiering gebruikt.': 'missing_purpose',
+  'Vul je naam in.': 'missing_first_name',
+  'Vul je achternaam in.': 'missing_last_name',
+  'Vul je bedrijfsnaam in.': 'missing_company',
+  'Vul een geldig e-mailadres in.': 'invalid_email',
+  'Vul een telefoonnummer in.': 'missing_phone',
+  'Vul een geldig KvK-nummer in (8 cijfers).': 'invalid_kvk',
+  'Kies je verwachte jaaromzet.': 'missing_revenue',
+  'De minimale jaaromzet is € 100.000. Kom je niet in aanmerking voor deze financiering.':
+    'revenue_below_minimum',
+  'Beschrijf je bedrijfsactiviteiten.': 'missing_business_activities',
+  'Kies wanneer je het geld nodig hebt.': 'missing_urgency',
+};
+
+/**
+ * Map Dutch validation copy to a stable reason code (and optional short detail for "other").
+ */
+export function quickLeadMessageToValidationReason(message: string): {
+  reason: QuickLeadValidationReason;
+  detail?: string;
+} {
+  const trimmed = (message || '').trim();
+  if (QUICK_LEAD_MSG_TO_REASON[trimmed]) {
+    return { reason: QUICK_LEAD_MSG_TO_REASON[trimmed] };
+  }
+  if (trimmed === 'submit_failed' || /Verzenden mislukt|Too many requests|400|500/i.test(trimmed)) {
+    if (/100\.000|jaaromzet|minimaal/i.test(trimmed)) {
+      return { reason: 'submit_api_rejected', detail: trimmed.slice(0, 100) };
+    }
+    return { reason: 'submit_http_error', detail: trimmed.slice(0, 100) };
+  }
+  return {
+    reason: 'other',
+    detail: trimmed.slice(0, 100),
+  };
+}
+
+export type QuickLeadFunnelAction =
+  | 'form_mount'
+  | 'step_view'
+  | 'step_advance'
+  | 'step_back'
+  | 'step_tab_to_1'
+  | 'validation_blocked'
+  | 'submit_attempt'
+  | 'submit_success'
+  | 'submit_failed'
+  | 'surface_close_abandon';
+
+/**
+ * Unified GA4 + dataLayer event for quick lead drawer/modal/page funnel analysis.
+ * Register in GA4 as recommended event or create explorations filtering by event name
+ * `quick_lead_funnel` and dimensions: funnel_action, funnel_step, funnel_surface,
+ * validation_reason, close_method, funnel_session_id.
+ */
+export function trackQuickLeadFunnel(params: {
+  action: QuickLeadFunnelAction;
+  /** Current step after the action (or step user was on for abandon). */
+  step: 1 | 2;
+  surface: QuickLeadSurface;
+  /** One id per form open; correlate all steps in one session. */
+  funnel_session_id: string;
+  from_step?: 1 | 2;
+  validation_reason?: QuickLeadValidationReason;
+  /** Human-readable fallback when reason is other */
+  validation_detail?: string;
+  close_method?: 'overlay' | 'close_button' | 'escape';
+  open_trigger?: string;
+  purpose?: string;
+  sector?: string;
+  lead_source?: string;
+  contact_variant?: string;
+  lead_quality?: string;
+}): void {
+  if (typeof window === 'undefined') return;
+
+  const payload: Record<string, unknown> = {
+    event_category: 'Lead Funnel',
+    funnel_action: params.action,
+    funnel_step: params.step,
+    funnel_surface: params.surface,
+    funnel_session_short: params.funnel_session_id,
+  };
+  if (params.from_step !== undefined) payload.from_step = params.from_step;
+  if (params.validation_reason) payload.validation_reason = params.validation_reason;
+  if (params.validation_detail) payload.validation_detail = params.validation_detail;
+  if (params.close_method) payload.close_method = params.close_method;
+  if (params.open_trigger) payload.open_trigger = params.open_trigger;
+  if (params.purpose) payload.purpose = params.purpose;
+  if (params.sector) payload.sector = params.sector;
+  if (params.lead_source) payload.lead_source = params.lead_source;
+  if (params.contact_variant) payload.contact_variant = params.contact_variant;
+  if (params.lead_quality) payload.lead_quality = params.lead_quality;
+
+  trackEvent('quick_lead_funnel', {
+    ...payload,
+    funnel_session_id: params.funnel_session_id,
+  } as Record<string, unknown>);
+
+  // GTM / Tag Manager (many setups listen on dataLayer)
+  if (hasAnalyticsConsent()) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'quick_lead_funnel',
+      ...payload,
+      funnel_session_id: params.funnel_session_id,
+    });
+  }
+}
+
 /**
  * Track search events
  */

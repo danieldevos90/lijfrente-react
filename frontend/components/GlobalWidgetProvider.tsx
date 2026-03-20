@@ -53,6 +53,8 @@ interface WidgetContextType {
   openDrawer: (source: string) => void;
   closeDrawer: () => void;
   isOpen: boolean;
+  /** Last CTA source passed to openDrawer (for funnel analytics). */
+  drawerOpenTrigger: string | null;
 }
 
 const WidgetContext = createContext<WidgetContextType | undefined>(undefined);
@@ -69,6 +71,7 @@ export default function GlobalWidgetProvider({ children }: { children: ReactNode
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   // Track if drawer has been opened at least once (for preloading)
   const [hasBeenOpened, setHasBeenOpened] = useState(false);
+  const [drawerOpenTrigger, setDrawerOpenTrigger] = useState<string | null>(null);
 
   // Capture attribution as early as possible on the client.
   useEffect(() => {
@@ -76,6 +79,7 @@ export default function GlobalWidgetProvider({ children }: { children: ReactNode
   }, []);
 
   const openDrawer = (source: string) => {
+    setDrawerOpenTrigger(source);
     setIsDrawerOpen(true);
     setHasBeenOpened(true);
     
@@ -96,7 +100,8 @@ export default function GlobalWidgetProvider({ children }: { children: ReactNode
     if (typeof window !== 'undefined') {
       (window as any).dataLayer = (window as any).dataLayer || [];
       (window as any).dataLayer.push({ 
-        event: 'cta_drawer_close'
+        event: 'cta_drawer_close',
+        drawer_open_trigger: drawerOpenTrigger,
       });
     }
   };
@@ -134,11 +139,11 @@ export default function GlobalWidgetProvider({ children }: { children: ReactNode
   }, []);
 
   return (
-    <WidgetContext.Provider value={{ openDrawer, closeDrawer, isOpen: isDrawerOpen }}>
+    <WidgetContext.Provider value={{ openDrawer, closeDrawer, isOpen: isDrawerOpen, drawerOpenTrigger }}>
       {children}
       {/* Only render DrawerWidget if it has been opened at least once or is currently open */}
       {(isDrawerOpen || hasBeenOpened) && (
-        <DrawerWidget isOpen={isDrawerOpen} onClose={closeDrawer} />
+        <DrawerWidget isOpen={isDrawerOpen} onClose={closeDrawer} openTrigger={drawerOpenTrigger} />
       )}
     </WidgetContext.Provider>
   );

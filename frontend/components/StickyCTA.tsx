@@ -62,9 +62,10 @@ export default function StickyCTA({ href, label, useDrawer = true }: StickyCTAPr
       </button>
 
       {useDrawer && (
-        <DrawerWidget 
-          isOpen={isDrawerOpen} 
+        <DrawerWidget
+          isOpen={isDrawerOpen}
           onClose={handleDrawerClose}
+          openTrigger="sticky_cta"
         />
       )}
     </>
