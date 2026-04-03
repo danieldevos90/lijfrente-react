@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useLayoutEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { LeadDetailPanel } from './LeadDetailPanel';
 
@@ -106,49 +106,102 @@ function Badge({ label, bg, color }: { label: string; bg: string; color: string 
   );
 }
 
+type PaginationMeta = {
+  page: number;
+  pageSize: number;
+  pageCount: number;
+  total: number;
+};
+
+const SORT_OPTIONS: { value: string; label: string }[] = [
+  { value: 'createdAt:desc', label: 'Datum (nieuwste eerst)' },
+  { value: 'createdAt:asc', label: 'Datum (oudste eerst)' },
+  { value: 'amount_requested_eur:desc', label: 'Bedrag (hoog → laag)' },
+  { value: 'amount_requested_eur:asc', label: 'Bedrag (laag → hoog)' },
+  { value: 'company_name:asc', label: 'Bedrijf (A–Z)' },
+  { value: 'company_name:desc', label: 'Bedrijf (Z–A)' },
+  { value: 'status:asc', label: 'Status (A–Z)' },
+  { value: 'status:desc', label: 'Status (Z–A)' },
+];
+
 export default function LeadsPage() {
   const router = useRouter();
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
-  const [search, setSearch] = useState('');
+  const [searchInput, setSearchInput] = useState('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(25);
+  const [sort, setSort] = useState('createdAt:desc');
+  const [statusFilter, setStatusFilter] = useState('');
+  const [qualityFilter, setQualityFilter] = useState('');
+  const [sourceFilter, setSourceFilter] = useState('');
+  const [siteIdFilter, setSiteIdFilter] = useState('');
+  const [pagination, setPagination] = useState<PaginationMeta | null>(null);
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedSearch(searchInput), 350);
+    return () => clearTimeout(t);
+  }, [searchInput]);
+
+  useLayoutEffect(() => {
+    setPage(1);
+  }, [debouncedSearch, statusFilter, qualityFilter, sourceFilter, siteIdFilter, sort, pageSize]);
 
   const fetchLeads = useCallback(async () => {
+    setLoading(true);
     try {
-      const res = await fetch('/api/backoffice/leads?pageSize=100');
+      const params = new URLSearchParams();
+      params.set('page', String(page));
+      params.set('pageSize', String(pageSize));
+      params.set('sort', sort);
+      if (debouncedSearch.trim()) params.set('q', debouncedSearch.trim());
+      if (statusFilter) params.set('status', statusFilter);
+      if (qualityFilter) params.set('lead_quality', qualityFilter);
+      if (sourceFilter) params.set('source', sourceFilter);
+      if (siteIdFilter.trim()) params.set('siteId', siteIdFilter.trim());
+
+      const res = await fetch(`/api/backoffice/leads?${params.toString()}`);
       if (res.status === 401) {
         router.push('/backoffice');
-        return;
+        return null;
       }
       const data = await res.json();
-      setLeads(data.data || []);
+      const list = data.data || [];
+      setLeads(list);
+      const p = data.meta?.pagination;
+      if (p && typeof p.page === 'number') {
+        setPagination({
+          page: p.page,
+          pageSize: p.pageSize,
+          pageCount: p.pageCount,
+          total: p.total,
+        });
+      } else {
+        setPagination(null);
+      }
+      return { listLength: list.length, fetchedPage: page };
     } catch {
       console.error('Failed to fetch leads');
+      return null;
     } finally {
       setLoading(false);
     }
-  }, [router]);
+  }, [router, page, pageSize, sort, debouncedSearch, statusFilter, qualityFilter, sourceFilter, siteIdFilter]);
 
-  useEffect(() => { fetchLeads(); }, [fetchLeads]);
-
-  const filtered = leads.filter((l) => {
-    if (!search) return true;
-    const q = search.toLowerCase();
-    return (
-      l.company_name?.toLowerCase().includes(q) ||
-      l.email?.toLowerCase().includes(q) ||
-      l.kvk_number?.includes(q) ||
-      l.firstName?.toLowerCase().includes(q) ||
-      l.lastName?.toLowerCase().includes(q)
-    );
-  });
+  useEffect(() => {
+    void fetchLeads();
+  }, [fetchLeads]);
 
   const handleDelete = async (documentId: string) => {
     if (!confirm('Weet je zeker dat je deze lead wilt verwijderen?')) return;
     const res = await fetch(`/api/backoffice/leads/${documentId}`, { method: 'DELETE' });
     if (res.ok) {
-      setLeads((prev) => prev.filter((l) => l.documentId !== documentId));
       if (selectedLead?.documentId === documentId) setSelectedLead(null);
+      const result = await fetchLeads();
+      if (result && result.listLength === 0 && result.fetchedPage > 1) {
+        setPage((prev) => Math.max(1, prev - 1));
+      }
     }
   };
 
@@ -179,6 +232,17 @@ export default function LeadsPage() {
     return { ok: res.ok, data };
   };
 
+  const totalLeads = pagination?.total ?? 0;
+  const pageCount = pagination?.pageCount ?? 1;
+  const rangeFrom =
+    pagination && totalLeads > 0
+      ? (pagination.page - 1) * pagination.pageSize + 1
+      : 0;
+  const rangeTo =
+    pagination && totalLeads > 0
+      ? Math.min(pagination.page * pagination.pageSize, totalLeads)
+      : 0;
+
   return (
     <div className="bo-page">
       {/* Header */}
@@ -190,32 +254,123 @@ export default function LeadsPage() {
           <span className="bo-header-title">Leads</span>
         </div>
         <div className="bo-header-right">
-          <span className="bo-header-count">{filtered.length} leads</span>
+          <span className="bo-header-count">
+            {loading ? '…' : `${totalLeads.toLocaleString('nl-NL')} leads`}
+          </span>
           <button className="bo-btn-ghost" onClick={() => { document.cookie = 'bo-auth=; path=/; max-age=0'; router.push('/backoffice'); }}>
             Uitloggen
           </button>
         </div>
       </header>
 
-      {/* Search */}
-      <div className="bo-toolbar">
-        <input
-          type="search"
-          className="bo-search"
-          placeholder="Zoek op bedrijf, email, KvK..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button className="bo-btn-secondary" onClick={() => { setLoading(true); fetchLeads(); }}>
-          Vernieuwen
-        </button>
+      {/* Filters & search */}
+      <div className="bo-toolbar bo-toolbar-stack">
+        <div className="bo-toolbar-row">
+          <input
+            type="search"
+            className="bo-search"
+            placeholder="Zoek op bedrijf, email, KvK, naam..."
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+          <label className="bo-field">
+            <span className="bo-field-label">Sorteren</span>
+            <select
+              className="bo-select"
+              value={sort}
+              onChange={(e) => setSort(e.target.value)}
+              aria-label="Sorteer leads"
+            >
+              {SORT_OPTIONS.map((o) => (
+                <option key={o.value} value={o.value}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="bo-field">
+            <span className="bo-field-label">Per pagina</span>
+            <select
+              className="bo-select"
+              value={String(pageSize)}
+              onChange={(e) => setPageSize(Number(e.target.value))}
+              aria-label="Aantal per pagina"
+            >
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </label>
+        </div>
+        <div className="bo-toolbar-row">
+          <label className="bo-field">
+            <span className="bo-field-label">Status</span>
+            <select
+              className="bo-select"
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+              aria-label="Filter op status"
+            >
+              <option value="">Alle statussen</option>
+              {Object.entries(STATUS_LABELS).map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="bo-field">
+            <span className="bo-field-label">Kwaliteit</span>
+            <select
+              className="bo-select"
+              value={qualityFilter}
+              onChange={(e) => setQualityFilter(e.target.value)}
+              aria-label="Filter op kwaliteit"
+            >
+              <option value="">Alle</option>
+              <option value="warm">Warm</option>
+              <option value="koud">Koud</option>
+              <option value="onbekend">Onbekend</option>
+            </select>
+          </label>
+          <label className="bo-field">
+            <span className="bo-field-label">Bron</span>
+            <select
+              className="bo-select"
+              value={sourceFilter}
+              onChange={(e) => setSourceFilter(e.target.value)}
+              aria-label="Filter op bron"
+            >
+              <option value="">Alle bronnen</option>
+              {Object.entries(SOURCE_LABELS).map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="bo-field bo-field-grow">
+            <span className="bo-field-label">Site-ID</span>
+            <input
+              type="text"
+              className="bo-input-sm"
+              placeholder="Optioneel"
+              value={siteIdFilter}
+              onChange={(e) => setSiteIdFilter(e.target.value)}
+              aria-label="Filter op site-ID"
+            />
+          </label>
+          <button type="button" className="bo-btn-secondary" onClick={() => void fetchLeads()}>
+            Vernieuwen
+          </button>
+        </div>
       </div>
 
       {/* Table */}
       <div className="bo-table-wrap">
         {loading ? (
           <div className="bo-loading">Laden...</div>
-        ) : filtered.length === 0 ? (
+        ) : leads.length === 0 ? (
           <div className="bo-empty">Geen leads gevonden</div>
         ) : (
           <table className="bo-table">
@@ -233,7 +388,7 @@ export default function LeadsPage() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((lead) => {
+              {leads.map((lead) => {
                 const status = lead.status || 'nieuw';
                 const quality = lead.lead_quality || 'onbekend';
                 const sc = STATUS_COLORS[status] || STATUS_COLORS.nieuw;
@@ -271,6 +426,33 @@ export default function LeadsPage() {
           </table>
         )}
       </div>
+
+      {!loading && pagination && totalLeads > 0 && (
+        <nav className="bo-pagination" aria-label="Paginatie">
+          <p className="bo-pagination-meta">
+            {rangeFrom}–{rangeTo} van {totalLeads.toLocaleString('nl-NL')} · pagina {pagination.page} van{' '}
+            {pageCount}
+          </p>
+          <div className="bo-pagination-actions">
+            <button
+              type="button"
+              className="bo-btn-secondary"
+              disabled={pagination.page <= 1}
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+            >
+              Vorige
+            </button>
+            <button
+              type="button"
+              className="bo-btn-secondary"
+              disabled={pagination.page >= pageCount}
+              onClick={() => setPage((p) => p + 1)}
+            >
+              Volgende
+            </button>
+          </div>
+        </nav>
+      )}
 
       {/* Detail Panel */}
       {selectedLead && (
@@ -330,6 +512,55 @@ export default function LeadsPage() {
           gap: 0.75rem;
           margin-bottom: 1rem;
           flex-wrap: wrap;
+        }
+        .bo-toolbar-stack {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .bo-toolbar-row {
+          display: flex;
+          gap: 0.75rem;
+          flex-wrap: wrap;
+          align-items: flex-end;
+        }
+        .bo-field {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          min-width: 0;
+        }
+        .bo-field-grow {
+          flex: 1;
+          min-width: 140px;
+        }
+        .bo-field-label {
+          font-size: 0.6875rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          color: var(--color-text-muted, #6c737a);
+        }
+        .bo-select, .bo-input-sm {
+          padding: 0.5rem 0.75rem;
+          border: 1.5px solid var(--color-border-gray, #e5e7eb);
+          border-radius: var(--radius-md, 8px);
+          font-size: 0.875rem;
+          font-family: inherit;
+          background: #fff;
+          color: var(--color-text, #1e2021);
+          min-height: 38px;
+        }
+        .bo-select {
+          min-width: 200px;
+          cursor: pointer;
+        }
+        .bo-input-sm {
+          width: 100%;
+        }
+        .bo-select:focus, .bo-input-sm:focus {
+          outline: none;
+          border-color: var(--color-brand, #00c800);
+          box-shadow: 0 0 0 3px rgba(0, 200, 0, 0.1);
         }
         .bo-search {
           flex: 1;
@@ -447,6 +678,29 @@ export default function LeadsPage() {
           padding: 3rem;
           text-align: center;
           color: var(--color-text-muted, #6c737a);
+        }
+
+        .bo-pagination {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          flex-wrap: wrap;
+          margin-top: 1rem;
+          padding: 0.75rem 0;
+        }
+        .bo-pagination-meta {
+          margin: 0;
+          font-size: 0.875rem;
+          color: var(--color-text-muted, #6c737a);
+        }
+        .bo-pagination-actions {
+          display: flex;
+          gap: 0.5rem;
+        }
+        .bo-pagination .bo-btn-secondary:disabled {
+          opacity: 0.45;
+          cursor: not-allowed;
         }
 
         @media (max-width: 768px) {

@@ -4,6 +4,8 @@ import Footer from '../../components/Footer';
 import { renderSection } from '@/lib/render-section';
 import SubpageHero from '../../components/SubpageHero';
 import SectorsPreviewSection from '../../components/sections/SectorsPreviewSection';
+import EligibilityRequirements from '../../components/EligibilityRequirements';
+import '../../components/EligibilityRequirements.css';
 import type { Metadata } from 'next';
 import { generateMetadata as generateSEOMetadata, buildCanonicalUrl } from '@/lib/seo';
 import { buildTitle, buildDescription } from '../messaging';
@@ -84,6 +86,10 @@ export default async function HoeWerktHetPage() {
                 ))}
               </div>
             </div>
+          </section>
+
+          <section style={{ padding: '4rem 2rem', background: 'var(--color-bg)' }}>
+            <EligibilityRequirements variant="section" />
           </section>
 
           <SectorsPreviewSection

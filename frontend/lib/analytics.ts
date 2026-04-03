@@ -251,6 +251,7 @@ export type QuickLeadValidationReason =
   | 'revenue_below_minimum'
   | 'missing_business_activities'
   | 'missing_urgency'
+  | 'screening_disqualified'
   | 'submit_http_error'
   | 'submit_api_rejected'
   | 'other';
@@ -271,6 +272,10 @@ const QUICK_LEAD_MSG_TO_REASON: Record<string, QuickLeadValidationReason> = {
   'Kies wanneer je het geld nodig hebt.': 'missing_urgency',
 };
 
+function isScreeningMessage(msg: string): boolean {
+  return msg.startsWith('screening_disqualified:');
+}
+
 /**
  * Map Dutch validation copy to a stable reason code (and optional short detail for "other").
  */
@@ -279,6 +284,9 @@ export function quickLeadMessageToValidationReason(message: string): {
   detail?: string;
 } {
   const trimmed = (message || '').trim();
+  if (isScreeningMessage(trimmed)) {
+    return { reason: 'screening_disqualified', detail: trimmed.split(':')[1] };
+  }
   if (QUICK_LEAD_MSG_TO_REASON[trimmed]) {
     return { reason: QUICK_LEAD_MSG_TO_REASON[trimmed] };
   }

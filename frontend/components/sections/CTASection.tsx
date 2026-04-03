@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
 import { trackCTAClick } from '@/lib/analytics';
+import EligibilityRequirements from '../EligibilityRequirements';
+import '../EligibilityRequirements.css';
 
 interface CTASectionProps {
   title: string;
@@ -10,6 +12,7 @@ interface CTASectionProps {
   background?: 'white' | 'gray' | 'blue' | 'dark';
   trustBullets?: string[];
   trackingLocation?: string;
+  showEligibility?: boolean;
 }
 
 function sanitizeHref(href: string | undefined, fallback: string) {
@@ -24,7 +27,8 @@ export default function CTASection({
   ctaHref,
   background = 'dark',
   trustBullets = [],
-  trackingLocation = 'cta_section'
+  trackingLocation = 'cta_section',
+  showEligibility = true,
 }: CTASectionProps) {
   const backgroundColor = background === 'dark' ? 'var(--color-charcoal)' : background === 'gray' ? 'var(--color-bg)' : background === 'blue' ? 'var(--color-sky500)' : 'var(--color-white)';
   const textColor = background === 'dark' ? 'var(--color-white)' : 'var(--color-text)';
@@ -106,6 +110,14 @@ export default function CTASection({
             {ctaLabel}
           </a>
         </div>
+        {showEligibility && (
+          <div style={{ marginTop: '2rem' }}>
+            <EligibilityRequirements
+              variant="banner"
+              theme={background === 'dark' ? 'dark' : 'light'}
+            />
+          </div>
+        )}
       </div>
     </section>
   );

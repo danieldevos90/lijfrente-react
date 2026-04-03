@@ -159,6 +159,12 @@ export default function QuickLeadForm({
   // Honeypot field (bots tend to fill hidden inputs).
   const [website, setWebsite] = useState("");
 
+  const [screening, setScreening] = useState({
+    noLoss: false,
+    noArrears: false,
+  });
+  const screeningConfirmed = screening.noLoss && screening.noArrears;
+
   const [data, setData] = useState<QuickLeadData>({
     amount: "",
     amountCustom: "",
@@ -414,6 +420,12 @@ export default function QuickLeadForm({
   }
 
   function validateStep2(): string | null {
+    if (!screeningConfirmed) {
+      const missing: string[] = [];
+      if (!screening.noLoss) missing.push("geen verlies");
+      if (!screening.noArrears) missing.push("geen achterstanden");
+      return `screening_disqualified:${missing.join(",")}`;
+    }
     const kvk = (data.kvkNumber || "").replace(/\D/g, "");
     if (kvk.length !== 8) return "Vul een geldig KvK-nummer in (8 cijfers).";
     if (!data.revenue) return "Kies je verwachte jaaromzet.";
@@ -899,29 +911,6 @@ export default function QuickLeadForm({
             </div>
 
             <div>
-              <label style={{ display: "block", marginBottom: 4 }}>Is het bedrijf winstgevend?</label>
-              <div style={{ display: "flex", gap: "1rem" }}>
-                {[
-                  { value: "ja", label: "Ja" },
-                  { value: "nee", label: "Nee" },
-                  { value: "onbekend", label: "Weet ik niet" },
-                ].map((o) => (
-                  <label key={o.value} style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: 0 }}>
-                    <input
-                      type="radio"
-                      name="isProfitable"
-                      value={o.value}
-                      checked={data.isProfitable === o.value}
-                      onChange={(e) => setField("isProfitable", e.target.value)}
-                      style={{ width: "auto" }}
-                    />
-                    <span>{o.label}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            <div>
               <label style={{ display: "block", marginBottom: 4 }}>Wanneer heb je het geld nodig?</label>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "0.5rem" }}>
                 {URGENCY_OPTIONS.map((o) => (
@@ -954,13 +943,43 @@ export default function QuickLeadForm({
             </div>
           </div>
 
-          {submitError && <p className="quick-lead-error" style={{ marginTop: "0.75rem" }}>{submitError}</p>}
+          {submitError && !submitError.startsWith("screening_disqualified:") && (
+            <p className="quick-lead-error" style={{ marginTop: "0.75rem" }}>{submitError}</p>
+          )}
+
+          <div className="screening-confirm" role="group" aria-labelledby="screening-confirm-heading">
+            <p className="screening-confirm__heading" id="screening-confirm-heading">Ik bevestig dat:</p>
+            <label className={`screening-confirm__item ${screening.noLoss ? "is-checked" : ""}`}>
+              <input
+                type="checkbox"
+                checked={screening.noLoss}
+                onChange={(e) => {
+                  setScreening((s) => ({ ...s, noLoss: e.target.checked }));
+                  setSubmitError(null);
+                }}
+                style={{ width: "auto" }}
+              />
+              <span>Mijn bedrijf draait geen verlies</span>
+            </label>
+            <label className={`screening-confirm__item ${screening.noArrears ? "is-checked" : ""}`}>
+              <input
+                type="checkbox"
+                checked={screening.noArrears}
+                onChange={(e) => {
+                  setScreening((s) => ({ ...s, noArrears: e.target.checked }));
+                  setSubmitError(null);
+                }}
+                style={{ width: "auto" }}
+              />
+              <span>Geen betaalachterstanden op de bankrekening</span>
+            </label>
+          </div>
 
           <div className="quick-lead-actions">
             <button
               type="button"
               className="btn btn-primary"
-              disabled={submitting}
+              disabled={submitting || !screeningConfirmed}
               onClick={() => submit({ submitFromStep: 2 })}
             >
               {submitting ? "Verzenden…" : "Verstuur"}
